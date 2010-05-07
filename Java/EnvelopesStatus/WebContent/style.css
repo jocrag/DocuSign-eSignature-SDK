@@ -1,0 +1,127 @@
+/**
+* @copyright Copyright (C) DocuSign, Inc.  All rights reserved.
+*
+* This source code is intended only as a supplement to DocuSign SDK
+* and/or on-line documentation.
+* This sample is designed to demonstrate DocuSign features and is not intended
+* for production use. Code and policy for a production application must be
+* developed to meet the specific data and security requirements of the
+* application.
+*
+* THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+* KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+* IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+* PARTICULAR PURPOSE.
+*/
+
+Body { 
+    BACKGROUND-COLOR: #e6e6e6; MARGIN:0px; PADDING: 0px;
+}
+
+.WindowBackground {
+    BACKGROUND-COLOR: #e6e6e6;
+}
+
+.MainContent {
+    BACKGROUND-COLOR: #ffffff; BORDER: 0px;
+    WIDTH:99%; MARGIN-LEFT: 0px; MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px; MARGIN-RIGHT: 0px;
+    PADDING-TOP: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-BOTTOM: 0px;
+    FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Verdana;
+}
+
+.HeaderContent {
+    WIDTH:100%; HEIGHT: 39px; MARGIN: 0px; PADDING: 0px; BACKGROUND-IMAGE:url(images/top.png); BORDER: 0px;
+}
+
+.FooterContent {
+    WIDTH:100%; HEIGHT: 28px; MARGIN: 0px; PADDING: 0px; BACKGROUND-IMAGE:url(images/footer.png); BACKGROUND-COLOR:#e6e6e6;
+}
+
+.NoPadding {
+    MARGIN: 0px; PADDING: 0px; BORDER: 0px;
+}
+
+.TableContent {
+    BACKGROUND-COLOR: #ffffff;
+    WIDTH: 100%;
+}
+
+.FieldPromptTextBold {
+    FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: black; FONT-FAMILY: Verdana
+}
+.FieldPromptText {
+    FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Verdana
+}
+.Field {
+    FONT-WEIGHT: normal; FONT-SIZE: 13px; COLOR: black; FONT-FAMILY: Verdana; PADDING-LEFT: 10px; PADDING-BOTTOM: 5px;
+}
+.ErrorMessageText {
+    FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #dc143c; FONT-FAMILY: Verdana
+}
+
+.Button {
+    FONT-WEIGHT: normal; FONT-SIZE: 13px; WIDTH: 85px; COLOR: black; FONT-FAMILY: Verdana; HEIGHT: 26px;
+}
+.ButtonWide{
+    FONT-WEIGHT: normal; FONT-SIZE: 13px; WIDTH: 140px; COLOR: black; FONT-FAMILY: Verdana; HEIGHT: 26px;
+}
+
+.LinkText {
+    FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: blue; FONT-FAMILY: Verdana; TEXT-DECORATION: underline
+}
+
+.EnvelopeStatus {
+    FONT-WEIGHT: normal; FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: Verdana;
+    PADDING-LEFT: 5px;
+    PADDING-BOTTOM: 5px; BACKGROUND-COLOR: #ffffff;
+}
+
+
+.TdWhite {
+    background-color:white;
+}
+
+TD {
+    PADDING: 3px;
+}
+
+INPUT {
+    FONT-SIZE: 13px; FONT-FAMILY: Verdana,  sans-serif;
+}
+
+SELECT {
+    FONT-SIZE: 13px; FONT-FAMILY: Verdana,  sans-serif; WIDTH:92%; MARGIN-TOP:8px; HEIGHT: 26px;
+}
+
+TEXTAREA {
+    FONT-SIZE: 13px; FONT-FAMILY: Verdana, sans-serif; COLOR: #000000;
+}
+H3 {
+    FONT-FAMILY: Verdana; FONT-SIZE: 14px; COLOR: #2A5871;
+}
+H4 {
+    FONT-SIZE: 12px; COLOR: #000000; TEXT-ALIGN:center;
+}
+H5 {
+    FONT-SIZE: 11px; COLOR: #000000; TEXT-ALIGN:center;
+}
+H6 {
+    FONT-SIZE: 10px; COLOR: #FFFFFF;
+}
+
+#sectionContainer {
+    MARGIN-LEFT: 0px;  WIDTH: 99%; MARGIN-RIGHT: 5px; MARGIN-TOP: 10px; BORDER: #336699 1px solid;
+}
+#sectionContainer .section {
+    MARGIN-TOP: 11px; BORDER-BOTTOM: #336699 1px solid; background-color: #eeeeee; MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px;
+}
+#sectionContainer .section H3 {
+    PADDING-LEFT: 5px; PADDING-RIGHT: 2px; PADDING-BOTTOM: 5px; MARGIN: 0px; CURSOR: pointer;
+    PADDING-TOP: 5px; background-color: #ffffff;
+}
+#sectionContainer .section .contents {
+    PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 2px; OVERFLOW: auto; PADDING-TOP: 2px;
+    FONT-SIZE: 12px; COLOR: #000000; TEXT-ALIGN:left; FONT-FAMILY: Arial; background-color: #CEE7FA;
+}
+
+

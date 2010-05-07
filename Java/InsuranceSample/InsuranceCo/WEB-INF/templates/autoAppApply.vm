@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>#springMessage("app.title")</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="static/css/style.css" />
+		
+		<script type="text/javascript" src="static/scripts/jquery-1.4.1.min.js"></script>
+		<script type="text/javascript" src="static/scripts/webservice-status.js"></script>
+		<script type="text/javascript" src="static/scripts/util.js"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<div style="float:left;">
+				<img src="static/images/logo.png" alt="#springMessage('logo.alternateText')" />
+			</div>
+			<div class="userBox">
+				<table cellspacing="0" border="0">
+                    <tr style="border-bottom: 2px; solid #000000">
+                        <td>Username:</td>
+                        <td>$model.user.userName</td>
+                        <td>Account:</td>
+                        <td>$model.user.accountName</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="right">
+                            <img id="ws3_0_img" src="static/images/spinner.gif" /><span style="font-size: 0.75em;">(WS3_0 webservice)</span>
+                            <img id="credential_img" src="static/images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
+                            <a href="logDump.html" target="_blank"><img src="static/images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
+                        </td>
+                    </tr>
+                </table>
+			</div>
+		</div>
+
+		<div class="gutter"></div>
+
+		<div class="sidebar">
+			<h1>#springMessage("menu.offerMsg")</h1>
+
+			<div id="navcontainer">
+				<ul id="navlist">
+					<li><a href="#springUrl('/index.html')">#springMessage("menu.products")</a></li>
+					<li><a href="#springUrl('/home.html')">#springMessage("menu.myAccount")</a></li>
+					<li><a href="#springUrl('/autoAppStatus.html')">&nbsp;&nbsp;- #springMessage("menu.subitem.status")</a></li>
+					<li><a href="#springUrl('/logout')">&nbsp;&nbsp;- #springMessage("menu.subitem.logout")</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div>
+			<span class="col1">
+				<h1>Automobile Insurance Application</h1>
+
+				<span class="error">&nbsp;&nbsp;$!model.fieldRequiredError</span>
+
+				<form id="applicationForm" method="post" action="autoAppApply.html">
+					<fieldset>
+						<legend class="heading">#springMessage("autoAppCar.userDetails")</legend>
+
+						<p>#springMessage("autoAppCar.fillInstructions")</p>
+						<label for="firstName">
+							<input type="text" name="firstName" tabindex="1" size="50" id="firstName" value="$!model.details.firstName" />
+							#springMessage("autoAppCar.userFirstName")
+						</label>
+						<label for="lastName">
+							<input type="text" name="lastName" tabindex="2" size="50" id="lastName" value="$!model.details.lastName" />
+							#springMessage("autoAppCar.userLastName")
+						</label>
+					</fieldset>
+
+					<br/>
+					<fieldset>
+						<legend class="heading">#springMessage("autoAppCar.carDetails")</legend>
+
+						<p>#springMessage("autoAppCar.fillInstructions")</p>
+						<label for="carMake">
+							<input type="text" name="carMake" tabindex="3" size="50" id="carMake" value="$!model.details.carMake" />
+							#springMessage("autoAppCar.carMake")
+						</label>
+						<label for="carModel">
+							<input type="text" name="carModel" tabindex="4" size="50" id="carModel" value="$!model.details.carModel" />
+							#springMessage("autoAppCar.carModel")
+						</label>
+						<label for="carVIN">
+							<input type="text" name="carVIN" tabindex="5" size="50" id="carVIN" value="$!model.details.carVIN" />
+							#springMessage("autoAppCar.carVIN")
+						</label>
+						<div id="embeddedSigningFieldSection">
+							<label for="embeddedSigning">
+								<input type="checkbox" name="embeddedSigning" tabindex="6" id="embeddedSigning" />
+								<span>#springMessage("autoAppCar.embeddedSigning")</span>
+							</label>
+						</div>
+						<div id="embeddedSendingFieldSection">
+							<label for="embeddedSending">
+								<input type="checkbox" name="embeddedSending" tabindex="6" id="embeddedSending" />
+								<span>#springMessage("autoAppCar.embeddedSending")</span>
+							</label>
+						</div>
+						<label for="emailDestination">
+							<input type="text" name="emailDestination" tabindex="6" id="emailDestination" value="$!model.details.emailDestination" />
+							<span>#springMessage("autoAppCar.emailDestination")</span>
+						</label>
+                        <label for="emailDestinationCC">
+                            <input type="text" name="emailDestinationCC" tabindex="6" id="emailDestinationCC" value="$!model.details.emailDestinationCC" />
+                            <span>#springMessage("autoAppCar.emailDestinationCC")</span>
+                        </label>
+					</fieldset>
+
+                    <br/>
+                    <fieldset>
+                        <legend class="heading">#springMessage("autoAppCar.authorizationSection")</legend>
+
+                        <p>#springMessage("autoAppCar.fillOptional")</p>
+                        <label for="idCheck">
+                            <input type="checkbox" name="idCheck" tabindex="7" id="idCheck" />
+                            <span>#springMessage("autoAppCar.idCheck")</span>
+                        </label>
+                        <label for="accessCode">
+                            <input type="text" name="accessCode" tabindex="8" id="accessCode" value="$!model.details.accessCode" />
+                            <span>#springMessage("autoAppCar.accessCode")</span>
+                        </label>
+                    </fieldset>
+
+                    <br/>
+                    <input name="Submit" type="submit" id="submit" tabindex="9" value="#springMessage('buttons.submit')" />
+				</form>
+			</span>
+		</div>
+
+		<div class="footer">
+			#springMessage("standard.footer")
+		</div>
+	</body>
+</html>

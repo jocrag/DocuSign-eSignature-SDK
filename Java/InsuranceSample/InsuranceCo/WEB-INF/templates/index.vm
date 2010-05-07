@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>#springMessage("app.title")</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<script type="text/javascript" src="static/scripts/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="static/scripts/webservice-status.js"></script>
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="floatLeft">
+				<img src="static/images/logo.png" alt="#springMessage('logo.alternateText')" />
+			</div>
+			<div class="userBox">
+			    <table cellspacing="0" border="0">
+			        #if($model.user)
+			        <tr style="border-bottom: 2px; solid #000000">
+				        <td>Username:</td>
+				        <td>$model.user.userName</td>
+				        <td>Account:</td>
+				        <td>$model.user.accountName</td>
+				    </tr>
+				    <tr>
+				        <td colspan="4" align="right">
+				            <img id="ws3_0_img" src="static/images/spinner.gif" /><span style="font-size: 0.75em;">(WS3_0 webservice)</span>
+				            <img id="credential_img" src="static/images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
+				            <a href="logDump.html" target="_blank"><img src="static/images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
+				        </td>
+				    </tr>
+				    #else
+				    <tr>
+                        <td colspan="4" align="right">
+                            <img id="credential_img" src="static/images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
+                            <a href="logDump.html" target="_blank"><img src="static/images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
+                        </td>
+                    </tr>
+				    #end
+                </table>
+			</div>
+		</div>
+	
+		<div class="gutter"></div>
+	
+		<div class="sidebar">
+			<h1>#springMessage("menu.offerMsg")</h1>
+	
+			<div id="navcontainer">
+				<ul id="navlist">
+					<li><a href="#springUrl("/index.html")">#springMessage("menu.products")</a></li>
+					<li><a href="#springUrl("/home.html")">#springMessage("menu.myAccount")</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="allCol">
+			<div class="allColAlignment">
+				<img src="static/images/car.png" />
+			</div>
+			<div class="textBlock">
+				<h3>#springMessage("auto.insurance.header")</h3>
+				<p>#springMessage("auto.insurance.description")</p>
+				<p>
+					#if($model.user)
+					<a href="#springUrl("/autoAppTemplate.html")">Complete</a> an Application Today!
+					#else
+					<a href="#springUrl("/login.html")">Login</a> to apply.
+					#end
+				</p>
+			</div>
+		</div>
+	
+		<div class="footer">
+			#springMessage("standard.footer")
+		</div>
+	</body>
+</html>

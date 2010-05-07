@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security-2.0.xsd">
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+           <list>
+               <value>WEB-INF/config/config.properties</value>
+               <value>/WEB-INF/config/application.properties</value>
+           </list>
+        </property>
+    </bean>
+
+    <!-- [AUTHENTICATION] Enable only one type of Authentication factory below.  -->
+    
+    <!-- Authentication: UsernameToken -->
+    <!--
+    <bean id="docusignWebserviceFactory" class="net.docusign.ws3_0.DocusignWebserviceFactory">
+        <property name="integratorsId" value="${docusign.integratorKey.id}" />
+        <property name="email" value="${docusign.integratorKey.email}" />
+    </bean>
+    -->
+    
+    <!-- Authentication: X509 -->
+    <!--
+    <bean id="docusignWebserviceFactory" class="net.docusign.ws3_0.X509DocusignWebserviceFactory">
+        <property name="integratorsId" value="${docusign.integratorKey.id}" />
+        <property name="email" value="${docusign.integratorKey.email}" />
+        <property name="keystoreAlias" value="${keystore.alias}" />
+        <property name="keystorePassword" value="${keystore.password}" />
+    </bean>
+    -->
+	
+	<!-- Webservice API Setup -->
+    <bean id="docusignWebserviceFactoryBean" class="net.docusign.context.DocusignWebserviceFactoryBean">
+        <property name="docusignWebserviceFactory" ref="docusignWebserviceFactory" />
+        <property name="webserviceEndpoint" value="${docusign.webservice.endpoint}" />
+    </bean>
+    <bean id="credentialFactory" class="net.docusign.context.CredentialFactoryBean">
+        <property name="webserviceEndpoint" value="${credential.webservice.endpoint}" />
+    </bean>
+	
+	<import resource="contexts/applicationContext.xml" />
+	<import resource="contexts/securityContext.xml" />
+	<import resource="contexts/serviceContext.xml" />
+</beans>

@@ -1,0 +1,11 @@
+Configuration Instructions
+
+1. Modify build.properties and set the following properties:
+   * docusign.accountId - Your Docusign accountId GUID.
+   * docusign.username  - Your Docusign username as a GUID.
+   * docusign.password  - Your Docusign account password.
+   * user.email         - Your email to use for testing purposes.
+
+2. Run the ANT build file using the command 'ant configure' from the base directory.
+
+3. Check for proper configuration in conf/axis2.xml and conf/client.properties.

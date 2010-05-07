@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DocusignWS" basedir="." default="jar">
+	<path id="class.path">
+        <pathelement path="${java.class.path}"/>
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+	
+	<target name="clean">
+        <delete dir="build"/>
+    </target>
+	
+    <target name="init" depends="clean">
+        <mkdir dir="build/classes"/>
+    </target>
+	
+    <target name="compile-src" depends="init">
+        <javac destdir="build/classes" srcdir="src" debug="true" includeantruntime="false">
+            <classpath refid="class.path"/>
+        </javac>
+    </target>
+	
+    <target name="compile-test" depends="compile-src">
+        <javac destdir="build/classes" debug="true" includeantruntime="false">
+            <src path="test"/>
+            <classpath refid="class.path"/>
+        </javac>
+    </target>
+	
+    <target name="jar" depends="compile-test">
+    	<tstamp>
+    	   <format property="createDate" pattern="yyyyMMdd" />
+    	</tstamp>
+    	
+        <jar destfile="build/${ant.project.name}.jar">
+            <fileset dir="build/classes">
+                <exclude name="**/META-INF/*.*"/>
+                <exclude name="**/lib/*.*"/>
+                <exclude name="**/*MessageReceiver.class"/>
+                <exclude name="**/*Skeleton.class"/>
+            	<exclude name="**/*Test.class"/>
+            	<exclude name="**/*TestCase.class"/>
+            </fileset>
+        </jar>
+    </target>
+</project>

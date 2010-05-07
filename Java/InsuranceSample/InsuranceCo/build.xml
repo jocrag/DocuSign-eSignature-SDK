@@ -1,0 +1,57 @@
+<project name="InsuranceCo" default="war" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<property file="build.properties" />
+
+	<path id="class.path">
+        <pathelement path="${java.class.path}"/>
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+	
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+	
+	<target name="load-dependencies">
+		<ant antfile="ivy-build.xml" target="load-dependencies" inheritAll="true" />
+	</target>
+	
+	<target name="build" depends="clean,load-dependencies">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/${web.inf.dir}/classes" />
+		
+		<javac srcdir="${src.dir}" destdir="${build.dir}/${web.inf.dir}/classes" classpathref="class.path" source="${java.source.version}" target="${java.target.version}" debug="true" />
+		
+		<copy file="${src.dir}/autoInsuranceApplication.dpd" todir="${build.dir}/${web.inf.dir}/classes" />
+		<copy file="${src.dir}/cert.properties" todir="${build.dir}/${web.inf.dir}/classes" />
+		<copy file="${src.dir}/customInsuranceApplication.pdf" todir="${build.dir}/${web.inf.dir}/classes" />
+		<copy file="${src.dir}/log4j.properties" todir="${build.dir}/${web.inf.dir}/classes" />
+		<copy file="${src.dir}/org.apache.cxf.Logger" todir="${build.dir}/${web.inf.dir}/classes" />
+	</target>
+	
+	<target name="war" depends="build">
+		<copy todir="${build.dir}/${web.inf.dir}">
+			<fileset dir="${web.inf.dir}">
+				<exclude name="lib/*" />	
+			</fileset>
+		</copy>
+		
+		<copy todir="${build.dir}/${lib.dir}">
+			<fileset dir="${lib.dir}" />
+		</copy>
+
+		<copy todir="${build.dir}/${static.files.dir}">
+			<fileset dir="${static.files.dir}" />
+		</copy>
+		
+		<mkdir dir="${dist.dir}" />
+
+		<war destfile="${dist.dir}/${ant.project.name}.war" webxml="${build.dir}/${web.inf.dir}/web.xml" duplicate="fail">
+			<fileset dir="${build.dir}" defaultexcludes="true">
+				<include name="${static.files.dir}/**" />
+				<include name="${web.inf.dir}/**" />
+			</fileset>
+		</war>
+	</target>
+</project>

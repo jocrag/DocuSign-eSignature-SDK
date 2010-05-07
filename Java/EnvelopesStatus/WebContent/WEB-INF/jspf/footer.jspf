@@ -1,0 +1,9 @@
+            <div class="FooterContent">
+                <div class="NoPadding" style="float:left; ">
+                    <img src="images/footerleft.png" alt="Rounded left footer" style="border: 0px;">
+                </div>
+                <div class="NoPadding" style="float:right;">
+                    <img src="images/footerright.png" alt="Rounded right footer" style="border: 0px;">
+                </div>
+            </div>
+

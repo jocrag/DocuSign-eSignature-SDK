@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Elements  xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomAction Id="ItemAuditing.ECBItemMenu"
+  RegistrationType="List"
+  RegistrationId="101"
+  ImageUrl="/_layouts/images/ActionsSettings.gif"
+  Location="EditControlBlock"
+  Sequence="300"
+  Title="Add DocuSign Signature">
+    <UrlAction Url="~site/_layouts/DocuSignSignature/Login.aspx?ItemId={ItemId}&amp;ListId={ListId}"/>
+  </CustomAction>
+  <CustomAction Id="ItemAuditing.ECBItemMenu"
+  RegistrationType="List"
+  RegistrationId="101"
+  ImageUrl="/_layouts/images/lg_ICREVIEW.gif"
+  Location="EditControlBlock"
+  Sequence="300"
+  Title="Send DocuSign Request">
+    <UrlAction Url="~site/_layouts/DocuSignSignature/SignatureRequest.aspx?ItemId={ItemId}&amp;ListId={ListId}"/>
+  </CustomAction>
+</Elements>

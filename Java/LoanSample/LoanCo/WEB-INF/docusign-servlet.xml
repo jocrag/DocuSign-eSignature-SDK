@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:config.properties</value>
+        </property>
+    </bean>
+
+	<!-- Authentication: Username Token -->
+	<!--
+	<bean id="apiService" class="net.docusign.loanco.APIServiceStubFactory">
+        <property name="integratorsKey" value="${docusign.integrators.key}" />
+        <property name="accountId" value="${docusign.account.id}" />
+        <property name="password" value="${docusign.password}" />
+        <property name="userEmail" value="${email}" />
+        <property name="webserviceEndpoint" value="${docusign.webservice.endpoint}" />
+        <property name="keystoreFile" value="${keystore.file}" />
+        <property name="keystoreAlias" value="${keystore.alias}" />
+        <property name="keystorePass" value="${keystore.password}" />
+    </bean>
+    -->
+    
+    <!-- Authentication: Username Token + X509 -->
+    <!--
+    <bean id="apiService" class="net.docusign.loanco.X509APIServiceStubFactory">
+        <property name="integratorsKey" value="${docusign.integrators.key}" />
+        <property name="accountId" value="${docusign.account.id}" />
+        <property name="password" value="${docusign.password}" />
+        <property name="userEmail" value="${email}" />
+        <property name="webserviceEndpoint" value="${docusign.webservice.endpoint}" />
+        <property name="keystoreFile" value="${keystore.file}" />
+        <property name="keystoreAlias" value="${keystore.alias}" />
+        <property name="keystorePass" value="${keystore.password}" />
+    </bean>
+    -->
+    
+    <bean id="simpleSignController" class="net.docusign.loanco.action.SimpleSignAction">
+    	<property name="apiService" ref="apiService" />
+    </bean>
+
+    <bean id="loanApplicationController" class="net.docusign.loanco.action.LoanApplicationAction">
+    	<property name="apiService" ref="apiService" />
+    </bean>
+
+    <bean id="signingReturnController" class="net.docusign.loanco.action.SigningReturnAction">
+        <property name="apiService" ref="apiService" />
+    </bean>
+
+    <bean id="viewPdfController" class="net.docusign.loanco.action.ViewPdfAction">
+    	<property name="apiService" ref="apiService" />
+    </bean>
+    
+    <bean id="wsHeartbeatController" class="net.docusign.loanco.action.WebserviceHeartbeatAction">
+        <property name="apiService" ref="apiService" />
+    </bean>
+    
+    <bean id="logDumpController" class="net.docusign.loanco.action.LogDumpAction" />
+    
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/simpleSign.do">simpleSignController</prop>
+                <prop key="/loanApplication.do">loanApplicationController</prop>
+                <prop key="/signingReturn.do">signingReturnController</prop>
+                <prop key="/viewPdf.do">viewPdfController</prop>
+                <prop key="/wsHeartbeat.do">wsHeartbeatController</prop>
+                <prop key="/logDump.do">logDumpController</prop>
+            </props>
+        </property>
+    </bean>
+
+     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"><value>org.springframework.web.servlet.view.JstlView</value></property>
+        <property name="prefix"><value>/WEB-INF/jsp/</value></property>
+        <property name="suffix"><value>.jsp</value></property>
+    </bean>
+</beans>

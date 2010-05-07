@@ -1,0 +1,307 @@
+WSPBuilder Manual
+
+
+* How to use the WSPBuilder
+* Arguments list
+* Links & Resources
+
+
+How to use the WSPBuilder
+-------------------------
+The WSPbuilder program builds WSP based on a folder structure.
+Add your solution files to this folder structure and you do not need to specify any
+thing else.
+
+To auto generate the folder structure use the -createfolder argument.
+To show the help use the -help argument.
+Otherwise the wspbuilder will assume that you will build an manifest.xml and wsp file.
+
+The root folder structure that WSPBuilder depends on looks like following:
+
+12
+80
+GAC
+
+The 12 folder represents the folders found in
+"%Program Files%\Common Files\Microsoft Shared\web server extensions\12"
+The 12 sub folders must have the same folder structure as the SharePoint 12 folder.
+E.g:
+12\ISAPI
+12\Template\Features
+12\Template\Layouts\1033
+and so on.
+Folders that are not used, do not need to be specified.
+It is possible to define your own folders and they will be included in the solution.
+
+If you want to build a Solution for a custom feature. Create the following structure.
+"12\Template\Features\MyCustomFeature" and add your feature files to the MyCustomFeature
+folder.
+
+The 80 folder represents the WebApplication folder and contains following subfolders
+80\bin, 80\wpcatalog, 80\resources. The 80\bin contains the dll's. If you have some
+webpart definitions (webpart, dwp) files, they goes into the wpcatalog folder.
+Any file can be added to the resource folder.
+
+The GAC folder contains all DLL's that goes into the Global Assembly Cache on
+installation. It is possible to define satellite assemblies within the same folder.
+
+ClassResource files for a DLL, can be added to the folder in "80\wpresources\[DLL name without the '.dll']"
+See the demo project where the path is : 80\wpresources\wspdemo
+You are free to add any file and make a folder structure if you like.
+
+You can create the folder structure anywhere you like. But I prefer to add them in
+the root of my SharePoint Visual Studio projects.
+
+CustomCAS, this parameter specifies an external file that contains custom CAS to append custom IPermission entries to the manifest.xml file.
+
+Example of Custom CAS file:
+<IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Unrestricted="True" version="1" Read="C:\Program Files\Common Files\Microsoft Shared\Web Server Extensions\12\TEMPLATE\CONTROLTEMPLATES\QuickMessageControl.ascx" Write="$AppDir$" Append="$AppDir$" PathDiscovery="$AppDir$" />
+<IPermission class="AspNetHostingPermission" version="1" Level="Medium" />
+<IPermission class="System.Net.Mail.SmtpPermission, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Access="Connect" />
+
+
+When you are done adding your files, just call the WSPBuilder application from the
+root of the folder structure. The WSPBuilder has been setup with default setting to
+automatically build a manifest.xml and WSP file. The manifest.xml file is automatically
+included in the WSP file.
+After the WSPBuilder application has run, it will create three files:
+
+mysolution.wsp      The file name is default taken from the current folder.
+manifest.xml        Contains the solution xml definition.
+solutionid.txt      Contains the solution id for reusing on the next build.
+
+The WSPBuilder.exe returns a 0 (int) when success full, otherwise a 1 when an exception has occurred.
+
+If you want use the arguments, you use them as parameters or create a WSPBuilder.exe.config for
+the WSPBuilder application.
+
+WSPBuilder.exe.config
+--------------------------------------
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <!--
+    Optional settings
+    You can set the arguments in this file or use them directly in the console.
+    All arguments has a defualt value. See wspbuilder -help
+    
+    <add key="12Path" value="" />
+    <add key="80Path" value="" />
+    <add key="BinPath" value="" />
+    <add key="BuildCAS" value="" />
+    <add key="BuildDDF" value="" />
+    <add key="BuildSafeControls" value="" />
+    <add key="BuildWSP" value="" />
+    <add key="Createfolders" value="" />
+    <add key="CustomCAS" value="" />
+    <add key="DeploymentTarget" value="" />
+    <add key="Destination" value="" />
+    <add key="DLLReferencePath" value="" />
+    <add key="Includefiles" value="" />
+    <add key="Excludefiles" value="" />
+    <add key="Includefiletypes" value="" />
+    <add key="Excludefiletypes" value="" />
+    <add key="ExpandTypes" value="" />
+    <add key="Help" value="" />
+    <add key="IncludeAssemblies" value="" />
+    <add key="IncludeFeatures" value="" />
+    <add key="ManifestEncoding" value="" />
+    <add key="Outputpath" value="" />
+    <add key="ResetWebServer" value="" />
+    <add key="Silence" value="" />
+    <add key="SolutionId" value="" />
+    <add key="SolutionPath" value="" />
+    <add key="WSPName" value="" />
+    -->
+  </appSettings>
+</configuration>
+
+ The WSPBuilder.exe.config has to be located in the same folder as the WSPBuilder application.
+
+
+
+Arguments --------------------------------- 
+
+-12Path [Path] (Default is the [current directory]/12)
+Specifies where the 12 folder is located.
+
+-80Path [Path] (Default is the [current directory]/80)
+Specifies where the 80 folder is located.
+
+-BinPath [Path] (Default is the [current directory]\80\bin)
+Specifies where the Bin folder is located.
+
+-BuildCAS [true|false] (Default value is true)
+Builds Code Access Security policy PermissionSets for assemblies found in the 80\bin folder.
+If no evidence is found on an assembly, a default PermissionSet is defined with wss_medium settings.
+
+-BuildDDF [True|False] (Default is false)
+If set to true, then a 'MakeCab.ddf' file will be placed in the output directory.
+
+-BuildMode [Default|Debug|Release] (Default is 'Default')
+BuildMode is to determine where to read the DLL's from. 
+In 'Default' mode the WSPBuilder will auto detect where to find the DLL's. It will use 'bin\Debug' or 'bin\release' directory depending on the current directory.
+In 'Debug' mode the WSPBuilder will find the DLL's from the 'bin\debug' folder and in 'Release' mode the 'bin\release' folder are used. 
+However the GAC and 80\bin folder are always included as normal.
+
+-BuildSafeControls [true|false] (Default value is true)
+Build Safe Controls definitions for every assembly included in the WSP.
+
+-BuildWSP [True|False] (Default is true)
+If set to true then a WSP file will be generated.
+
+-Cleanup [True|False] (Default value is true)
+The WSPBuilder cleans up any temporary file created to make the WSP package, this includes the manifest.xml.
+
+-Createfolders [true|false] (false is default)
+Creates the folder structure that supports building the wsp file.
+
+-CreateWSPFileList [outputfilename]
+Create a simple text file that contains a list of every file that goes into the WSP package.
+
+-CustomCAS [filepath] (Default is empty)
+Specifies the custom CAS for the solution.
+
+-DeploymentServerType [WebFrontEnd|ApplicationServer] (Argument ignored if empty)
+Specifies if the solution is a targeted to a webfront end or a backend application server. If no value are specified for this argument, then the argument is ignored.
+
+-DeploymentTarget [GAC|BIN|Auto] (Default is Auto)
+The default 'Auto' is that DLL's found in the \GAC folder is deployed to the Global Assembly Cache and DLL's found in the 80\bin folder are deployed to the virtual server bin directory
+
+-FolderDestination [Path] (Current directory is default)
+The path to where the folders are created.
+
+-DLLReferencePath [Path] (Default is the SolutionPath)
+Specifies where to look for reference DLL's used by the types in the solution. These reference DLL's are not included in the WSP package.
+
+-Excludefiles [filename]
+The WSPBuilder will exclude files from the WSP package, if they are specified in the file provided.
+To create a file list first use the -CreateWSPFileList argument.
+
+-Excludefiletypes ["cs,scc, ..."] (Default is 'cs,scc'. Use comma as a separator.)
+Specifies which file types to exclude in the manifest and wsp file.	
+Define more than one file type by using comma.	
+It is possible to use asterisk '*' to exclude every file type, except those defined in the Includefiletypes argument.
+
+-Excludepaths ["path1;path2"] (Default is empty. Use semicolon as a separator.)
+Specifies which paths to exclude and not include in the building process.
+
+-ExpandTypes [true|false] (Default is false)
+Writes a SafeControl tag for every public type in the assembly.
+
+-GACPath [Path] (Default is the [current directory]\GAC)
+Specifies where the GAC folder is located.
+
+-Help [Argument|Overview|Full] (Overview is default)
+Use the help to show detail description of the arguments.
+
+-IncludeAssemblies [True|False] (Default is true)
+If true all assemblies specified in the GAC and bin gets included in the WSP file. Except Microsoft SharePoint DLL's, they are never included.
+
+-Includefeatures [True|False] (Default is true)
+If true the features gets included into the WSP file.
+
+-Includefiles [filename]
+The WSPBuilder will only include files in the WSP package, if they are specified in the file provided.
+To create a file list first use the -CreateWSPFileList argument.
+
+-Includefiletypes [*|xml,gif,jpg, ...] (Default is asterisk '*' meaning every file type. Use comma as a separator.)
+Specifies which file types to include in the manifest and wsp file.	
+If the file type if not defined in the Includefiletypes or in the Excludefiletypes arguments then it is always included.	
+The Includefiletypes always overrules the Exludefiletypes argument.	
+Define more than one file type by using comma.
+
+-ManifestEncoding [UTF-8, UTF-16 and other standard encoding formats] (Default value is UTF-8)
+Defines the encoding used in the manifest.xml file.
+
+-Outputpath [Path] (Default is the current directory)
+Specifies where the wsp and the manifest file are saved.
+
+-PermissionSetLevel [None|Minimal|Medium] (Default value is Medium)
+A standard PermissionSet that are merge with the permission attibutes specified in the assemblies, to ensure that the assembly can run in SharePoint.
+'None'      Only the permission from the Assembly are used to build the PermissionSet.
+'Minimal'   The standard SharePoint minimal PermissionSet is merged with the assemblys permission attributes.
+'Medium'    The standard SharePoint medium PermissionSet is merged with the assemblys permission attributes.
+
+
+-ProjectPath [Path] (Default is the current SolutionPath directory)
+Specifies where the project is located.
+
+-ResetWebServer [true|false] (Default is true for GAC deployment and false for only bin deployment)
+Resets the WebServer after installation.
+
+-Silence [True|False] (Obsolete! Use -TraceLevel)
+Setting it to True, is the same as using -TraceLevel Off
+
+-SolutionId [GUID] (Default is taken from the solutionid.txt. The file will be automatically be created if it do not exist)
+Specifies unique identifier of generated Solution.
+
+-SolutionPath [Path] (Default is the current directory)
+Specifies where the solution is located.
+
+-TraceLevel [Off|Error|Warning|Info|Verbose] (Defaut value is Info)
+The trace level switch setting for the application. It's possible to add more Trace listeners in WSPBuilder.exe.config file.
+
+-WSPName [name] (Default is the name of the solution folder)
+Specifies the name of the wsp solution file.
+
+Examples ----------------------------------
+
+WSPBuilder -Createfolders true
+
+WSPBuilder -SolutionPath C:\MyProject -Outputpath C:\MySolution
+
+WSPBuilder -ExpandTypes true
+
+
+If you find any problems or bugs. Please do not hesitate to contact me.
+
+
+
+
+
+Links & Resources
+---------------------
+
+SharePoint Solution Installer
+by Lars Fastrup
+http://blog.mondosoft.com/ontolica/archive/2007/03/14/Generic-SharePoint-2007-Solution-Installer.aspx
+
+I can really recommend this application for installing SharPoint Solutions (WSP) with. I use it all the
+time my self (no more command line STSADM).
+
+
+
+Creating Advanced Solutions for SharePoint 2007
+By Gustavo Velez
+http://www.developer.com/mgmt/article.php/3675576
+
+This is a create article for SharePoint Solution Schema.
+
+
+Code Access Security policies within SharePoint v3
+by Maurice Prather
+http://www.bluedoglimited.com/SharePointThoughts/ViewPost.aspx?ID=249
+
+
+Cabinet File (*.CAB) Compression and Extraction
+by Elmue
+http://www.codeproject.com/cs/files/CABCompressExtract.asp
+
+This is a creat library for creating CAB files and is a central piece of
+WSPBuilder for creating the CAB (WSP) file.
+
+
+Inside Windows Cabinet Files
+http://www.ddj.com/184410186
+
+
+
+Author
+Carsten Keutmann
+Independent SharePoint Consultant.
+
+www.keutmann.dk
+carsten@keutmann.dk
+
+

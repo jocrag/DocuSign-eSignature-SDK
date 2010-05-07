@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security-2.0.xsd">
+
+    <security:global-method-security secured-annotations="enabled" />
+    <security:authentication-manager alias="authenticationManager" />
+    
+    <bean id="docusignAuthenticationManager" class="net.docusign.insco.security.DocusignAuthenticationManager">
+    	<property name="docusignLoginService" ref="docusignLoginService" />
+    </bean>
+
+	<bean id="customizedFormLoginFilter" class="net.docusign.insco.security.AuthenticationFilter">
+		<security:custom-filter position="AUTHENTICATION_PROCESSING_FILTER" />
+		
+		<property name="defaultTargetUrl" value="/home.html" />
+		<property name="authenticationFailureUrl" value="/login.html?error=true" />
+		<property name="selectAccountOnMultipleUrl" value="/selectAccount.html" />
+		
+		<property name="authenticationManager" ref="docusignAuthenticationManager"/>
+		<property name="allowSessionCreation" value="true" />
+		<property name="exceptionMappings"> 
+			<props>
+		  		<prop key="org.springframework.security.BadCredentialsException">/login.html?errorCode=0</prop>
+		 	</props>
+		</property>
+	</bean>
+    
+	<security:http entry-point-ref="authEntryPoint">
+        <!-- Anonymous Urls -->
+        <security:intercept-url pattern="/static/**" access="ROLE_ANONYMOUS,ROLE_MULTIPLE_ACCOUNT,ROLE_USER" />
+        
+        <security:intercept-url pattern="/selectAccount.html" access="ROLE_MULTIPLE_ACCOUNT" />
+        
+        <!-- Secured, User Urls -->
+        <security:intercept-url pattern="/home.html" access="ROLE_USER" />
+        <security:intercept-url pattern="/autoApply.html" access="ROLE_USER" />
+
+		<!-- Logout Url -->        
+		<security:logout logout-url="/logout" logout-success-url="/index.html" />
+		
+		<security:anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
+	</security:http>
+    
+	<bean id="authEntryPoint" class="org.springframework.security.ui.webapp.AuthenticationProcessingFilterEntryPoint" >
+		<property name="loginFormUrl" value="/login.html"/>
+	</bean>
+
+</beans>

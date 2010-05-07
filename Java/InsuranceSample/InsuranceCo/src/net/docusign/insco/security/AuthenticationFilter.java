@@ -1,0 +1,49 @@
+/*
+Copyright (C) DocuSign, Inc.  All rights reserved.
+
+This source code is intended only as a supplement to DocuSign SDK and/or on-line documentation.
+
+This sample is designed to demonstrate DocuSign features and is not intended for production use. 
+Code and policy for a production application must be developed to meet the specific data and 
+security requirements of the application.
+
+THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED 
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR 
+FITNESS FOR A PARTICULAR PURPOSE.
+*/
+package net.docusign.insco.security;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.security.Authentication;
+import org.springframework.security.context.SecurityContextHolder;
+import org.springframework.security.ui.webapp.AuthenticationProcessingFilter;
+
+/**
+ * Override <code>sendRedirect</code> of {@link AuthenticationProcessingFilter} in order
+ * to add username to redirect.
+ */
+public class AuthenticationFilter extends AuthenticationProcessingFilter {
+	private String selectAccountOnMultipleUrl;
+	
+	public void setSelectAccountOnMultipleUrl(String selectAccountOnMultipleUrl) {
+		this.selectAccountOnMultipleUrl = selectAccountOnMultipleUrl;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.springframework.security.ui.AbstractProcessingFilter#sendRedirect(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, java.lang.String)
+	 */
+	@Override
+	protected void sendRedirect(HttpServletRequest request, HttpServletResponse response, String url) throws IOException {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	
+		if(authentication != null && authentication.getDetails() != null && authentication.getDetails() instanceof MultipleAccountInformation) {
+			url = selectAccountOnMultipleUrl;
+		}
+		
+		super.sendRedirect(request, response, url);
+	}
+}

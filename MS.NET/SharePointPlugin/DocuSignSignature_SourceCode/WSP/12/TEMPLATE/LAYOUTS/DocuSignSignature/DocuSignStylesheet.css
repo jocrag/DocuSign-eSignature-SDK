@@ -1,0 +1,91 @@
+.Login .subHeader,.subHeaderText
+{
+    font-size:12px;
+    font-weight:bold;
+    color:#2292b5; 
+}
+#wrapper 
+{
+    padding:25px;
+}
+input
+{
+    border:1px solid #4c4c4c;
+    font-size:12px;
+    padding:3px;
+
+}
+.lbErrorMessage,.errorMessage 
+{
+    font-size:16px;
+    text-align:center;
+    color:red;
+}
+.errorMessage
+{
+	font-size:12px;
+}
+.ms-areaseparator
+{
+    background-image:url('/_layouts/DocuSignSignature/Images/headerbarbackground.jpg');
+    background-color:#e6e6e6;
+    background-repeat:repeat-x;
+    border:#e5e5e5 1px solid;
+}
+.brandHeaderTitle 
+{
+    font-family:Verdana;
+    font-size:19px;
+    font-weight:bold;
+    padding-bottom:0;
+    padding-left:12px;
+    float:left;
+}
+.docuSignImage
+{
+    width:250px;
+    background-image:url('/_layouts/DocuSignSignature/Images/HeaderBarTagLogo.jpg');
+    background-repeat:no-repeat;
+    background-position:right;
+    height:50px;
+    float:right;
+}
+.ms-titlearea
+{
+    padding:0px !important;
+}
+.subHeaderText
+{
+    padding-bottom:25px;
+    color:#ff6633;     /*#EFB20D;*/
+    font-size:14px;
+}
+.register
+{
+    font-weight:bold;
+    color:#ff6633 !important;
+}
+p
+{
+    font-weight:bold;
+    color:#000000;
+    font-size:12px;
+}
+.register:hover
+{
+    color:#2292b5 !important;
+}
+.pnlLogin,.pnlAssignedTo
+{
+    border:1px solid #b3b3b3;
+    padding:10px;
+    width:500px;
+}
+.pnlAssignedTo
+{
+    width:520px;
+}
+.ms-inputuserfield,textarea 
+{
+    height:30px !important;
+}

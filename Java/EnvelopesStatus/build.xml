@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build" name="EnvelopesStatus">
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="WebContent/WEB-INF/lib/activation.jar"/>    	
+        <pathelement location="WebContent/WEB-INF/lib/axis.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-discovery-0.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-logging.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jaxrpc.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/mailapi.jar"/>    	
+        <pathelement location="WebContent/WEB-INF/lib/saaj.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/wsdl4j.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/wss4j-1.5.3.jar"/>
+    </path>
+    <path id="EnvelopesStatus.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src" excludes="**/*.launch, **/*.java"/>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="build/classes"/>
+    	<delete dir="dist"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="EnvelopesStatus.classpath"/>
+        </javac>
+    	<mkdir dir="dist"/>
+    	<war destfile="dist/EnvelopesStatus.war">
+    		<fileset dir="WebContent"/>
+    		<classes dir="build/classes"/>
+    	</war>
+    </target>
+</project>

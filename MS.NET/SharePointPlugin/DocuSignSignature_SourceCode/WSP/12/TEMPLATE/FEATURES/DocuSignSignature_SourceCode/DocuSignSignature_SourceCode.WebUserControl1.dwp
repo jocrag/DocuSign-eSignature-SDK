@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebPart xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/WebPart/v2">
+  <Title>WebUserControl1</Title>
+  <Description>DocuSignSignature_SourceCode WebUserControl1 Description</Description>
+  <UserControl xmlns="SmartPart">~/_controltemplates/DocuSignSignature_SourceCode/WebUserControl1.ascx</UserControl>
+  
+  <FrameType>Default</FrameType>  
+  <IsIncluded>true</IsIncluded>
+  <PartOrder>0</PartOrder>
+  <FrameState>Normal</FrameState>
+  <AllowRemove>true</AllowRemove>
+  <AllowZoneChange>true</AllowZoneChange>
+  <AllowMinimize>true</AllowMinimize>
+  <AllowConnect>true</AllowConnect>
+  <AllowEdit>true</AllowEdit>
+  <AllowHide>true</AllowHide>
+  <IsVisible>true</IsVisible>
+  <HelpMode>Modeless</HelpMode>
+  <Dir>Default</Dir>
+  <PartImageSmall />
+  <MissingAssembly>Cannot import this Web Part.</MissingAssembly>
+  <PartImageLarge />
+  <IsIncludedFilter />
+  <Assembly>ReturnOfSmartPart, Version=1.3.0.0, Culture=neutral, PublicKeyToken=9f4da00116c38ec5</Assembly>
+  <TypeName>SmartPart.SmartPart</TypeName>
+  <ShowUserControlList xmlns="SmartPart">false</ShowUserControlList>
+</WebPart>

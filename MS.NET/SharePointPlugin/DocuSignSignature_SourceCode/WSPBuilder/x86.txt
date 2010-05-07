@@ -1,0 +1,5 @@
+The Cablib.dll has been build for x86 Systems.
+
+The WSPBuilder and WSPDeploy has been build for any system.
+
+/keutmann

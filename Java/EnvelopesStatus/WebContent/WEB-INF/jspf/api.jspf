@@ -1,0 +1,42 @@
+<%
+        /**
+         * @copyright Copyright (C) DocuSign, Inc.  All rights reserved.
+         *
+         * This source code is intended only as a supplement to DocuSign SDK
+         * and/or on-line documentation.
+         * This sample is designed to demonstrate DocuSign features and is not intended
+         * for production use. Code and policy for a production application must be
+         * developed to meet the specific data and security requirements of the
+         * application.
+         *
+         * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+         * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+         * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+         * PARTICULAR PURPOSE.
+         */
+
+        /**
+         * Uses the account information returned from the DocuSign Credential API to create
+         * a proxy for the DocuSign API https://www.docusign.net/API/3.0/api.asmx
+         */
+%>
+
+
+
+<%@page import="net.docusign.www.API._3_0.*, net.docusign.ws.*, java.util.*"%>
+<%
+
+            String email = session.getAttribute("Email").toString();
+            String password = session.getAttribute("Password").toString();
+            String accountId = session.getAttribute("AccountID").toString();
+            String accountName = session.getAttribute("AccountName").toString();
+            String userId = session.getAttribute("UserID").toString();
+            String userName = session.getAttribute("UserName").toString();
+
+            // DSApiService service = new DSApiService(accountId, userId, password); // Use production
+
+            DSApiService service = new DSApiService("https://demo.docusign.net/API/3.0/api.asmx",
+            	accountId, userId, password); // Use demo
+			APIServiceSoap port =service.getApiService();
+ 
+%>            

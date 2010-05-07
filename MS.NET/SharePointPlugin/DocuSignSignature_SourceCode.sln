@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSignSignature_SourceCode", "DocuSignSignature_SourceCode\DocuSignSignature_SourceCode.csproj", "{324B9081-0D88-4C23-BBD6-2D9AC13E2EFE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EE414790-33B0-4929-BD4F-FF1CC6BA814A} = {EE414790-33B0-4929-BD4F-FF1CC6BA814A}
+		{15CD3DAA-F210-4572-A4F2-3004C67415C9} = {15CD3DAA-F210-4572-A4F2-3004C67415C9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSignSignature.WebConfigModification", "DocuSignSignature\DocuSignSignature.WebConfigModification.csproj", "{EE414790-33B0-4929-BD4F-FF1CC6BA814A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSignAPI", "DocuSignAPI\DocuSignAPI.csproj", "{15CD3DAA-F210-4572-A4F2-3004C67415C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{324B9081-0D88-4C23-BBD6-2D9AC13E2EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{324B9081-0D88-4C23-BBD6-2D9AC13E2EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{324B9081-0D88-4C23-BBD6-2D9AC13E2EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{324B9081-0D88-4C23-BBD6-2D9AC13E2EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE414790-33B0-4929-BD4F-FF1CC6BA814A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE414790-33B0-4929-BD4F-FF1CC6BA814A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE414790-33B0-4929-BD4F-FF1CC6BA814A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE414790-33B0-4929-BD4F-FF1CC6BA814A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CD3DAA-F210-4572-A4F2-3004C67415C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CD3DAA-F210-4572-A4F2-3004C67415C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CD3DAA-F210-4572-A4F2-3004C67415C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CD3DAA-F210-4572-A4F2-3004C67415C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

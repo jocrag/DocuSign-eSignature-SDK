@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Feature
+  Id="2413684a-82f8-479a-b430-ca4060b30d37"
+   Title="DocuSign Signature"
+  Description="Quickly and easily get Signature in pdf files"
+  Scope="Site"
+  ReceiverAssembly ="DocuSignSignature.WebConfigModification, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5c8dc2158d4b01e4"
+  ReceiverClass ="DocuSignSignature.WebConfigModification.FeatureReceiver"
+  xmlns="http://schemas.microsoft.com/sharepoint/">
+
+  <ElementManifests>
+    <ElementManifest Location="manifest.xml"/>
+    <ElementFile Location="DocuSignSignature_SourceCode.WebUserControl1.dwp" />
+  </ElementManifests>
+
+</Feature>

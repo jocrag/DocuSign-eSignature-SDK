@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="docusign-services" basedir="." default="jar">
+	<property file="build.properties" />
+	
+	<path id="class.path">
+        <pathelement path="${java.class.path}"/>
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+	
+	<target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="init" depends="clean">
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${build.dir}/classes" />
+    </target>
+	
+    <target name="build" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes" source="${java.source.version}" target="${java.target.version}" debug="true">
+            <classpath refid="class.path"/>
+        </javac>
+    </target>
+	
+    <target name="jar" depends="build">
+        <jar destfile="${build.dir}/${ant.project.name}-${version}.jar" basedir="${build.dir}/classes" />
+    </target>
+</project>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sender", "Sender\Sender.csproj", "{BCFA5B80-697C-41A3-89B3-54CF938E966C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuSignAPI", "DocuSignAPI\DocuSignAPI.csproj", "{FF80A785-6D7A-40F2-AF58-99CCACB18FF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCFA5B80-697C-41A3-89B3-54CF938E966C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFA5B80-697C-41A3-89B3-54CF938E966C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFA5B80-697C-41A3-89B3-54CF938E966C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFA5B80-697C-41A3-89B3-54CF938E966C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF80A785-6D7A-40F2-AF58-99CCACB18FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF80A785-6D7A-40F2-AF58-99CCACB18FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF80A785-6D7A-40F2-AF58-99CCACB18FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF80A785-6D7A-40F2-AF58-99CCACB18FF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

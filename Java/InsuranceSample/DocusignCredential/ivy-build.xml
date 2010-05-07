@@ -1,0 +1,25 @@
+<project name="Generic-Ivy-Build" default="load-dependencies" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <!-- Apache Ivy Setup -->
+    <target name="clean-cache" depends="install-ivy">
+        <ivy:cleancache />
+    </target>
+    
+    <target name="download-ivy" unless="skip.download">
+        <echo message="installing ivy..."/>
+        <get src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar" dest="${ivy.jar.file}" usetimestamp="true" />
+    </target>
+    
+    <target name="install-ivy" depends="download-ivy">
+        <path id="ivy.lib.path">
+            <fileset dir="${lib.dir}" includes="*.jar"/>
+        </path>
+        
+        <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path" />
+    </target>
+    
+    <!-- Project Dependencies -->
+    <target name="load-dependencies" depends="install-ivy">
+        <ivy:retrieve pattern="${lib.dir}/[artifact].[ext]" />
+    </target>
+</project>

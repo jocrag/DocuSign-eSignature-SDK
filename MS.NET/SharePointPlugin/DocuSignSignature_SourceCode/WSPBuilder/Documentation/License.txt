@@ -1,0 +1,17 @@
+WSPTools / WSPBuilder Copyright (c) 2007-present by Carsten Keutmann. All rights reserved.
+
+This software is provided 'as-is', without any express or implied warranty. In no event will the author be held liable for any damages arising from the use of this software.
+
+The WSPTools and WSPBuilder comes under GNU GENERAL PUBLIC LICENSE (GPL).
+- Except the CABLIB.DLL, please see: http://www.codeproject.com/cs/files/CABCompressExtract.asp
+- Except the WizardBase, please see: http://www.codeproject.com/cs/library/WizardDemo.asp
+
+Please email to the author if you are unclear about where to get a copy of GPL.
+
+
+Carsten Keutmann
+
+www.keutmann.dk
+carsten@keutmann.dk
+
+

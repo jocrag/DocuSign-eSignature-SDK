@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>#springMessage("app.title")</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<script type="text/javascript" src="static/scripts/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="static/scripts/webservice-status.js"></script>
+		<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="floatLeft">
+				<img src="static/images/logo.png" alt="#springMessage('logo.alternateText')" />
+			</div>
+			<div class="userBox">
+                <table cellspacing="0" border="0">
+                    <tr>
+                        <td colspan="4" align="right">
+                            <img id="credential_img" src="static/images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
+                            <a href="logDump.html" target="_blank"><img src="static/images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+		</div>
+	
+		<div class="gutter"></div>
+	
+		<div class="sidebar">
+			<h1>#springMessage("menu.offerMsg")</h1>
+	
+			<div id="navcontainer">
+				<ul id="navlist">
+					<li><a href="#springUrl("/index.html")">#springMessage("menu.products")</a></li>
+					<li><a href="#springUrl("/home.html")">#springMessage("menu.myAccount")</a></li>
+				</ul>
+			</div>
+		</div>
+	
+		<div class="col1">
+			<form id="applicationForm" method="post" action="j_spring_security_check">
+				<fieldset>
+					<legend class="heading">#springMessage("login.logIn")</legend>
+					
+					<span style="color:red;">$!model.authenticationErrorMessage</span>
+	
+					<p>#springMessage("login.pleaseEnter")</p>
+					
+					<label for="email">
+						<input type="text" name="j_username" tabindex="1" id="email" size="40" value="$!status.value" />
+						#springMessage("login.email")
+					</label>
+					<label for="password">
+					 	<input type="password" name="j_password" tabindex="2" id="password" size="40" value="$!status.value" />
+					 	#springMessage("login.password")
+					</label>
+					<label for="submit">
+						<input name="Submit" type="submit" id="submit" tabindex="4" value="Log in" />
+					</label>
+				</fieldset>
+			</form>
+		</div>
+	
+		<div class="footer">
+			#springMessage("standard.footer")
+		</div>
+	</body>
+</html>
