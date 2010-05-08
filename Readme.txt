@@ -1,4 +1,4 @@
-DocuSign Web Services API 3.0 SDK
+DocuSign Web Services API 3.5 SDK
 
 The DocuSign Web Services API provides methods that allow developers to integrate the DocuSign service into their applications. By building DocuSign into existing applications, those applications gain the ability to gather electronic signatures and data.  
 
