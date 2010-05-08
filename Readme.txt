@@ -6,42 +6,42 @@ Transactions are completely defined on the host application side by generating X
  
 The service allows developers to build solutions that are able to perform the following -
 
-•	Send documents for signature through the web service from host applications either one at a time, or as a group in an electronic envelope
-•	Define the authentication required to sign or access the envelope including 3 different types, or pass through authentication from the host application
-•	Define the signature locations using either static or relative signature location descriptions on any page in the document
-•	Define data field locations, masks, and if they are optional or required, and if they contain pre-populated data if those fields are locked or editable.
-•	Assign specific signing tasks or data fields to specific individuals
-•	Support embedded signing where the signing process is invoked with a token that allows the signing to be embedded in an iframe of a host application
-•	Support remote signing where the signing process generates an email to return to sign
-•	Select the workflow the  routing of signing  either in parallel or in serial or a combination
-•	Submit completely specified envelopes that are immediately processed for delivery. 
-•	Submit partially specified envelopes for later completion by the customer.
-•	Void an envelope that has been submitted but not yet completed.
-•	Retrieve the status of an envelope including sent, signed, voided, forwarded, etc.
-•	Retrieve the digitally signed completed PDF of every document in an envelope.
-•	Retrieve the completed PDF for each separate document in an envelope.
-•	Retrieve the e-sign status of a recipient.
-•	Retrieve the certificate and audit log of the transaction
-•	Transfer an envelope to another DocuSign user or account.
-•	Correct recipient information for an existing envelope.
-•	Resend a notification email to an existing recipient.
-•	Correct the workflow for envelopes have already been submitted
-•	Retrieve the Member level permissions for the optional features.
-•	 Turn on or off the envelope ID stamp
-•	Retrieve data entered by signers filling in the data fields. 
-•	Submit documents for signature without any signing tabs at all, which invokes a freeform signing process that the recipient will follow to place signatures
-•	Specify electronic vaulting for Envelopes.
-•	Exract and remove original copies of documents from the DocuSign systems.
+-	Send documents for signature through the web service from host applications either one at a time, or as a group in an electronic envelope
+-	Define the authentication required to sign or access the envelope including 3 different types, or pass through authentication from the host application
+-	Define the signature locations using either static or relative signature location descriptions on any page in the document
+-	Define data field locations, masks, and if they are optional or required, and if they contain pre-populated data if those fields are locked or editable.
+-	Assign specific signing tasks or data fields to specific individuals
+-	Support embedded signing where the signing process is invoked with a token that allows the signing to be embedded in an iframe of a host application
+-	Support remote signing where the signing process generates an email to return to sign
+-	Select the workflow the  routing of signing  either in parallel or in serial or a combination
+-	Submit completely specified envelopes that are immediately processed for delivery. 
+-	Submit partially specified envelopes for later completion by the customer.
+-	Void an envelope that has been submitted but not yet completed.
+-	Retrieve the status of an envelope including sent, signed, voided, forwarded, etc.
+-	Retrieve the digitally signed completed PDF of every document in an envelope.
+-	Retrieve the completed PDF for each separate document in an envelope.
+-	Retrieve the e-sign status of a recipient.
+-	Retrieve the certificate and audit log of the transaction
+-	Transfer an envelope to another DocuSign user or account.
+-	Correct recipient information for an existing envelope.
+-	Resend a notification email to an existing recipient.
+-	Correct the workflow for envelopes have already been submitted
+-	Retrieve the Member level permissions for the optional features.
+-	 Turn on or off the envelope ID stamp
+-	Retrieve data entered by signers filling in the data fields. 
+-	Submit documents for signature without any signing tabs at all, which invokes a freeform signing process that the recipient will follow to place signatures
+-	Specify electronic vaulting for Envelopes.
+-	Exract and remove original copies of documents from the DocuSign systems.
 
-In order to help developers get started with the Web Services API, we have developed sample code and documentation for .NET and Java environments.  
+In order to help developers get started with the Web Services API, we have developed sample code and documentation for .NET, PHP, Ruby and Java environments.  
 
 The SDK includes:
 -	Documentation
 -	Web Service Description File (WSDL)
 -	Samples in Java, .NET and PHP
-NOTE: You will need to contact DocuSign in order to get a development account which is required to run the samples.
+NOTE: You will need to apply here http://www.docusign.com/devcenter/sign_up/register.php in order to get a development account which is required to run the samples.
  
-System requirements for Microsoft® samples:
+System requirements for Microsoft .NET samples:
 -	Visual Studio 2008+ (with applicable system requirements)
  
 System requirements for Java samples:
