@@ -16,7 +16,7 @@
                         <b class="b1f"></b><b class="b2f"></b><b class="b3f"></b><b class="b4f"></b> 
                         <asp:Panel ID="pnlLogin" runat="server">
                             <div class="heading">
-                                Login with your DocuSign account credentials
+                                Login with your DocuSign account credentials..
                             </div>
                             <div class="login">
                                 <ul>
