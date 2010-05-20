@@ -1,0 +1,20 @@
+<h1>Please Login</h1>
+
+<% form_tag login_path, :method => :post do %>
+  <ol>
+    <li>
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </li>
+    <li>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </li>
+  </ol>
+  
+  <p class="separator">
+    <%= submit_tag 'Login' %> |
+    <%= link_to "Cancel", root_path %>
+  </p>
+
+<% end %>

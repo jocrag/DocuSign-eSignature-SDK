@@ -1,0 +1,93 @@
+--- 
+dependencies: 
+  soap4r: 
+    group: 
+    - :default
+    version: ">= 0"
+  fakeweb: 
+    group: 
+    - :test
+    version: ">= 0"
+  rails: 
+    group: 
+    - :default
+    version: = 2.3.5
+  mysql: 
+    group: 
+    - :production
+    version: ">= 0"
+  sqlite3-ruby: 
+    group: 
+    - :default
+    version: ">= 0"
+    require: 
+    - sqlite3
+  intercession: 
+    group: 
+    - :default
+    version: ">= 0"
+  rspec: 
+    group: 
+    - :test
+    version: ">= 1.3.0"
+  rspec-rails: 
+    group: 
+    - :test
+    version: ">= 1.3.2"
+  factory_girl: 
+    group: 
+    - :test
+    version: ">= 0"
+  docusign: 
+    group: 
+    - :default
+    version: ">= 0.7.1"
+    require: 
+    - docusign
+  mocha: 
+    group: 
+    - :test
+    version: ">= 0"
+specs: 
+- rake: 
+    version: 0.8.7
+- activesupport: 
+    version: 2.3.5
+- rack: 
+    version: 1.0.1
+- actionpack: 
+    version: 2.3.5
+- actionmailer: 
+    version: 2.3.5
+- activerecord: 
+    version: 2.3.5
+- activeresource: 
+    version: 2.3.5
+- docusign: 
+    version: 0.7.1
+- factory_girl: 
+    version: 1.2.4
+- fakeweb: 
+    version: 1.2.8
+- httpclient: 
+    version: 2.1.5.2
+- intercession: 
+    version: 2.0.0
+- mocha: 
+    version: 0.9.8
+- mysql: 
+    version: 2.8.1
+- rails: 
+    version: 2.3.5
+- rspec: 
+    version: 1.3.0
+- rspec-rails: 
+    version: 1.3.2
+- soap4r: 
+    version: 1.5.8
+- sqlite3-ruby: 
+    version: 1.2.5
+hash: 43891c8bc76cf3549650d385e846d0e918df7a4d
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org

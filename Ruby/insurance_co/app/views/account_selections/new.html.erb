@@ -1,0 +1,15 @@
+<h1>Please Select an Account</h1>
+
+<% @accounts.each do |account| %>
+  <div class="account_listing">
+    <h2><%= account[:account_name] %> (<%= link_to "select", account_selection_path(:account_id => account[:account_id]), :method => :post %>)</h2>
+    <dl>
+      <dt>User ID</dt>
+      <dd><%= account[:user_id] %></dd>
+      <dt>User Name</dt>
+      <dd><%= account[:user_name] %></dd>
+      <dt>Account ID</dt>
+      <dd><%= account[:account_id] %></dd>
+    </dl>
+  </div>
+<% end %>

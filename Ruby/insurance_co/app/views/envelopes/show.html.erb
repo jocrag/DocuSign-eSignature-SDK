@@ -1,0 +1,18 @@
+<h1>Envelope Info</h1>
+
+<div class="envelope_listing">
+  <dl>
+    <dt>ID</dt>
+    <dd><%= params[:id] %></dd>
+    <dt>Status</dt>
+    <dd><%= @envelope_info.status %></dd>
+    
+    <% @tab_label_info.each do |key, value| %>
+      <dt><%= key %></dt>
+      <dd><%= value %></dd>
+    <% end %>
+  </dl>
+</div>
+
+<hr>
+<p><%= link_to "Back To Envelopes", envelopes_path %></p>

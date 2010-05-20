@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  outline: none;
+  color: 1085c7;
+}
+
+h1, h2, h3, h4, h5, h6, input, select, textarea {
+  font-size: 100%;
+}
+
+body {
+  font: normal 62.5% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+/* normalize font size across browsers */
+  line-height: 18px;
+}
+
+#wrapper {
+  overflow: hidden;
+  min-width: 600px;
+}
+
+#header {
+  overflow: hidden;
+  background-color: #e4a300;
+  height: 30px;
+  width: 100%;
+  padding: 30px 0 15px 20px;
+}
+
+#header p {
+  font-size: 2em;
+  color: #FFF;
+}
+
+#top_menu {
+  overflow: hidden;
+  background-color: #e4a300;
+  width: 100%;
+}
+
+#user_bar {
+  float: right;
+  color: #FFF;
+  font-size: 1.2em;
+  margin-right: 30px;
+  padding-bottom: 10px;
+}
+
+#user_bar a {
+  color: #d9e3ef;
+  text-decoration: underline;
+}
+
+#top_menu {
+  padding-left: 10px;
+}
+
+#top_menu ul li {
+  float: left;
+  list-style: none;
+  padding: 3px 5px 3px 5px;
+  margin: 0 0 0 10px;
+  background-color: #d9e3ef;
+  font-weight: bold;
+}
+
+#top_menu li.selected {
+  background-color: white;
+}
+
+#content {
+  float: left;
+  margin: 15px 10px 0 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 3em;
+}
+
+p, li {
+  font-size: 1.2em;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+#login_wrapper {
+  float: left;
+  padding: 10px;
+  margin: 50px 0 0 30px;
+  border-style: solid;
+  border-color: #1085c7;
+}
+
+p.flash {
+  border-style: solid;
+  border-width: 3px;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.error {
+  border-color: red;
+}
+
+.notice {
+  border-color: lime;
+}
+
+.info {
+  border-color: #1085c7;
+}
+
+table {
+  border: 1px solid #e4a300;
+}
+
+thead tr {
+  background-color: #e4a300;
+}
+
+th {
+  border: 0;
+  margin: 0;
+  padding: 5px 10px 5px 5px;
+  font-size: 1.2em;
+  color: white;
+  text-align: left;
+}
+
+td {
+  border: 0;
+  padding: 5px 10px 5px 5px;
+  font-size: 1.2em;
+}
+
+hr {
+  clear: both;
+  height: 1px;
+  margin-bottom: 17px;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.separator {
+  padding-top: 10px;
+  border-top: 1px solid #909090;
+}
+
+/* home */
+
+ul.home_menu {
+  list-style: none;
+}
+
+/* form */
+
+fieldset {
+  border-style: none;
+  margin-bottom: 2em;
+}
+
+legend {
+  float: left;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: .5em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #ddd;
+}
+
+form ol {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+form p {
+  margin-bottom: 10px;
+}
+
+form li {
+  font-size: 1.2em;
+}
+
+form label {
+  display: block;
+}
+
+form .radio_buttons {
+  margin-bottom: 1em;
+}
+
+/* Account Home */
+ol#account_menu {
+  list-style: none;
+}
+
+/* Account Listings */
+.account_listing {
+  position: relative;
+}
+
+dt, dd {
+  font-size:  1.2em;
+}
+
+dt {
+  width: 10em;
+  float: left;
+  clear: left;
+  font-weight: bold;
+}
+
+dd {
+  display: block;
+  width: 30em;
+  float: left;
+}
+
+/* Envelope Status */
+.envelope_listing {
+  overflow: auto;
+  width: 100%;
+  position:  relative;
+  padding-top: 0.5em;;
+  margin-bottom: 1em;
+  border-top: 1px solid #ddd;
+}
+
+/* Errors */
+
+.errorExplanation {
+  border: 3px solid #f00;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.errorExplanation h2 {
+  font-size: 1.4em;
+  line-height: 1.6em;
+}
+
+.errorExplanation ul {
+  margin-left: 2em;
+}
+
+.fieldWithErrors input {
+  background-color: #f4a9a7;
+}

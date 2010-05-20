@@ -1,0 +1,8 @@
+<h1><%= @status_message %></h1>
+
+<% if session.envelope_id %>
+  <p><%= link_to 'View the envelope status', envelope_path(session.envelope_id) %></p>
+<% end %>
+
+<hr>
+<p><%= link_to "Back To Account", account_path %></p>

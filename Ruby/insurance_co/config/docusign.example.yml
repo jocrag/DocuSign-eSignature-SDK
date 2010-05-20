@@ -1,0 +1,7 @@
+development:
+  user_name: 'docusign-user-name'
+  password: 'docusign-password'
+  integrators_key: 'docusign-integrators-key'
+  account_id: 'docusign-account-id'
+  default_endpoint_url: 'https://demo.docusign.net/api/3.0/api.asmx'
+  credential_endpoint_url: 'https://demo.docusign.net/api/3.0/Credential.asmx'

@@ -1,0 +1,8 @@
+*.DS_Store
+log
+db/*.sqlite3
+config/docusign.yml
+Capfile
+config/deploy.rb
+.bundle
+tmp/*

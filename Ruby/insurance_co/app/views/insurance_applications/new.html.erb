@@ -1,0 +1,64 @@
+<h1>Insurance Application</h1>
+
+<%= error_messages_for :insurance_application %>
+
+<% form_for @insurance_application do |f| %>
+  <fieldset>
+    <legend>Motorist Information</legend>
+    <ol>
+      <li>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+      </li>
+      <li>
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+      </li>
+    </ol>
+  </fieldset>
+  
+  <fieldset>
+    <legend>Vehicle Information</legend>
+    <ol>
+      <li>
+        <%= f.label :make %>
+        <%= f.text_field :make %>
+      </li>
+      <li>
+        <%= f.label :model %>
+        <%= f.text_field :model %>
+      </li>
+      <li>
+        <%= f.label :vin, 'VIN' %>
+        <%= f.text_field :vin %>
+      </li>
+    </ol>
+  </fieldset>
+  
+  <fieldset>
+    <legend>Signing Information</legend>
+    <ol>
+      <li class="radio_buttons">
+        <%= f.label :completion_option, content_tag(:strong, 'I Would Like To:') %>
+        <% InsuranceApplication::COMPLETE_OPTIONS.each do |name, value| %>
+          <label><%= f.radio_button :completion_option, value %> <%= name %></label>
+        <% end %>
+      </li>
+      
+      <li>
+        <%= f.label :signer_email %>
+        <%= f.text_field :signer_email %>
+      </li>
+      
+      <li>
+        <%= f.label :cc_email %>
+        <%= f.text_field :cc_email %>
+      </li>
+    </ol>
+  </fieldset>
+  
+  <p class="separator">
+    <%= submit_tag 'Submit Application' %> |
+    <%= link_to "Cancel", account_path %>
+  </p>
+<% end %>

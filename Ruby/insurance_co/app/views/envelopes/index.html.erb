@@ -1,0 +1,27 @@
+<h1>Envelopes</h1>
+
+<% if @statuses.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Envelope ID</th>
+        <th>Subject</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @statuses.each do |s| %>
+        <tr>
+          <td><%= s.envelope_id %></td>
+          <td><%= link_to s.subject, envelope_path(s.envelope_id) %></td>
+          <td><%= s.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No envelopes to show.</p>
+<% end %>
+
+<hr>
+<p><%= link_to "Back To Account", account_path %>

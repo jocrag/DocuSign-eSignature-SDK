@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>InsuranceCo</title>
+    <%= stylesheet_link_tag 'docusign.css' %>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <p>InsuranceCo Example</p>
+      </div>
+      <div id="top_menu">
+      </div>
+      <div id="content">
+        <%= render :partial => '/shared/flash_messages' %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
