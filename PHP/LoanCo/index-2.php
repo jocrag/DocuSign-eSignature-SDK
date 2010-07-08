@@ -1,11 +1,4 @@
-<?php
-session_start();
-include("log.php");
 
-if (!isset($_SESSION["OPENED_SITE"])) AddToLog("Open site");
-
-$_SESSION["OPENED_SITE"] = "1";
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
@@ -16,24 +9,7 @@ $_SESSION["OPENED_SITE"] = "1";
   <link href="css/style.css" rel="stylesheet" type="text/css"></link>
   </head>
   <body>
-    <div id="maincontainer">
-      <div id="contentwrapper">
-        <div id="contentcolumn">
-          <div class="innertube">
-            <div id="webserviceHeartbeat">
-              <a href="LoanCo.log" target="_blank">
-                <img src="images/script.png" style="border: 0px;" />
-                <span style="font-size: 0.75em;">View LoanCo Event Log</span>
-              </a>
-              <br/>
-              <img id="ws3_0_img" src="images/spinner.gif" />
-              <span style="font-size: 0.75em;">(WS3_0 webservice)</span>
-            </div>
-            <div class="contentbarstart">&nbsp;</div>
-            <div class="contentbarrepeat">&nbsp;</div>
-            <div class="money-bar">
-              <div class="money-repeat">&nbsp;</div>
-            </div>
+ <?php include("include/standardheader.php"); ?>
               <div class="content-section">
                   <strong>How DocuSign® Enterprise Works</strong><br />DocuSign Enterprise is a web service designed for high-volume applications. Most customers deploy Enterprise via the DocuSign Gateway API, which allows them to easily integrate online signing into their applications and web sites.
                   <div>
@@ -58,26 +34,6 @@ $_SESSION["OPENED_SITE"] = "1";
                   </ol>
                   The external application completely controls the signing process at all times through the API. The DocuSign web service operates as a secure 'black box,' processing the signing instructions per the XML definition. The DocuSign system is deployed across multiple servers in a high-availability, SAS70-compliant data center that is monitored 7x24x365 days per year. The distributed service architecture allows massive scaling for enterprise-class customers, ensuring the application will be available at all times. The signing experience can be co-branded to enhance customer confidence in the signing process <a href="http://www.docusign.com/resources/index.php" target="_blank">read more</a>
               </div>
-           </div>
-          </div>
-        </div>
-      </div>
-      <div id="leftcolumn">
-        <div class="innertube">
-          <div class="mortgage-co-logo"><img src="images/mortgageco-logo.png" /></div>
-          <div class="menu"><div class="dotted-menu-item"><a class="menu-label" href="index.php">HOME</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-1.php">GET A LOAN!</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-2.php">HOW IT WORKS</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-3.php">MORTGAGE TOOLS</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-4.php">ABOUT US</a></div>
-          </div>
-          <div class="menu-border">&nbsp;</div>
-          <div class="year30">&nbsp;</div>
-          <div class="year15">&nbsp;</div>
-          <div class="arm51">&nbsp;</div>
-          <div class="esign-banner"><a href="#">&nbsp;</a></div>
-        </div>
-      </div>
-      <div id="footer">&nbsp;</div>
+<?php include("include/standardfooter.php"); ?>
   </body>
 </html>

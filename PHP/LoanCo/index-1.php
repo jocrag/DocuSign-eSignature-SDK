@@ -1,10 +1,23 @@
 <?php
-session_start();
-include("log.php");
-
-if (!isset($_SESSION["OPENED_SITE"])) AddToLog("Open site");
-
-$_SESSION["OPENED_SITE"] = "1";
+/**
+ * @copyright Copyright (C) DocuSign, Inc.  All rights reserved.
+ *
+ * This source code is intended only as a supplement to DocuSign SDK
+ * and/or on-line documentation.
+ * This sample is designed to demonstrate DocuSign features and is not intended
+ * for production use. Code and policy for a production application must be
+ * developed to meet the specific data and security requirements of the
+ * application.
+ *
+ * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ * PARTICULAR PURPOSE.
+ */ 
+ 
+// start session and some helper functions
+include("include/session.php");
+include("api/api.php");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
@@ -22,10 +35,11 @@ $_SESSION["OPENED_SITE"] = "1";
 
         var signForm = document.getElementById("signForm");
         
-        why += isEmpty(signForm.FullName.value, "FullName");
+        why += isEmpty(signForm.FirstName.value, "FirstName");
+        why += isEmpty(signForm.LastName.value, "LastName");
         why += checkPhone(signForm.Phone.value, "Phone");
         why += checkFloat(signForm.Amount.value, "Amount");
-        why += checkEmail(signForm.EMail.value, "E-mail" );
+        why += checkEmail(signForm.Email.value, "Email" );
                 
         document.getElementById("formErrorText").innerHTML = why; 
         
@@ -39,26 +53,9 @@ $_SESSION["OPENED_SITE"] = "1";
     </script>
   </head>
   <body>
-    <div id="maincontainer">
-      <div id="contentwrapper">
-        <div id="contentcolumn">
-          <div class="innertube">
-            <div id="webserviceHeartbeat">
-              <a href="LoanCo.log" target="_blank">
-                <img src="images/script.png" style="border: 0px;" />
-                <span style="font-size: 0.75em;">View LoanCo Event Log</span>
-              </a>
-              <br/>
-              <img id="ws3_0_img" src="images/spinner.gif" />
-              <span style="font-size: 0.75em;">(WS3_0 webservice)</span>
-            </div>
-            <div class="contentbarstart">&nbsp;</div>
-            <div class="contentbarrepeat">&nbsp;</div>
-            <div class="money-bar">
-              <div class="money-repeat">&nbsp;</div>
-            </div>
-            <form action="loanApplication.php" id="signForm" method="post" onsubmit="return checkForm();">
+ <?php include("include/standardheader.php"); ?>
               <div class="content-section">
+	            <form action="formhandler.php" id="signForm" method="post" onsubmit="return checkForm();">
                 <div id="formErrorText" class="red"></div>
                 <table style="width: 420px;">
                   <tbody>
@@ -69,7 +66,8 @@ $_SESSION["OPENED_SITE"] = "1";
                       <td>Desired loan amount:</td>
                       <td><input type="text" class="form" name="Amount" /></td>
                     </tr>
-                    <tr>
+<!--
+                   <tr>
                       <td>If refinance, why:</td>
                       <td>
                         <select class="form" name="LoanPdf">
@@ -78,17 +76,22 @@ $_SESSION["OPENED_SITE"] = "1";
                         </select>
                       </td>
                     </tr>
+-->
                     <tr><td>&nbsp;</td></tr>
                     <tr>
                       <td colspan="2"><strong>Contact Information:</strong></td>
                     </tr>
                     <tr>
-                      <td>Enter your full name here:</td>
-                      <td><input type="text" class="form" style="width: 150px;" name="FullName" /></td>
+                      <td>First Name:</td>
+                      <td><input type="text" class="form" style="width: 150px;" name="FirstName" /></td>
+                    </tr>
+                    <tr>
+                      <td>Last Name:</td>
+                      <td><input type="text" class="form" style="width: 150px;" name="LastName" /></td>
                     </tr>
                     <tr>
                       <td>Enter your e-mail address:</td>
-                      <td><input type="text" class="form" style="width: 150px;" name="EMail" /></td>
+                      <td><input type="text" class="form" style="width: 150px;" name="Email" /></td>
                     </tr>
                     <tr>
                       <td>Your phone number here:</td>
@@ -101,29 +104,10 @@ $_SESSION["OPENED_SITE"] = "1";
                     </tr>
                   </tbody>
                 </table>
+						<input type="hidden" name="formid" id="formid" value="form2">
+
+	            </form>
               </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div id="leftcolumn">
-        <div class="innertube">
-          <div class="mortgage-co-logo"><img src="images/mortgageco-logo.png" /></div>
-          <div class="menu"><div class="dotted-menu-item"><a class="menu-label" href="index.php">HOME</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-1.php">GET A LOAN!</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-2.php">HOW IT WORKS</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-3.php">MORTGAGE TOOLS</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-4.php">ABOUT US</a></div>
-          </div>
-          <div class="menu-border">&nbsp;</div>
-          <div class="year30">&nbsp;</div>
-          <div class="year15">&nbsp;</div>
-          <div class="arm51">&nbsp;</div>
-          <div class="esign-banner"><a href="#">&nbsp;</a></div>
-        </div>
-      </div>
-      
-      <div id="footer">&nbsp;</div>
-    </div>
+<?php include("include/standardfooter.php"); ?>
   </body>
 </html>

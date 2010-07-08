@@ -16,14 +16,6 @@
  */
 	// start session and some helper functions
 	include("include/session.php");
-	// grab error message from session
-	if(isset($_SESSION["errorMessage"])) {
-		$error= $_SESSION["errorMessage"];
-		unset($_SESSION["errorMessage"]);
-	} else {
-		$error = "Session Error Message not set";
-	}  
-	$demoTitle = "Error";
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -112,14 +104,21 @@
                                 </td>
                                 <td style="height: 379px;" valign="top">
                                     <div style="margin:12px; font-size:12px">
-													<h2>An Error Occurred</h2>
-													<p>
-														<?php echo $error; ?>
-														</p>
-													<p>
-														<?php if(isset($_SESSION["lastRequest"])) echo(xmlpp($_SESSION["lastRequest"]));?>
-													</p>
-                                    </div>
+										    		<h2>PHP Configuration</h2>
+														<p>The following PHP modules are required for this demo:</p>
+														<ul>
+															<li>Soap  <?php echo extension_loaded('soap') ? "<span style='color: green'>Present</span>": "<span style='color: red'>Missing</span>"; ?></li>
+															<li>Curl   <?php echo extension_loaded('curl') ? "<span style='color: green'>Present</span>": "<span style='color: red'>Missing</span>"; ?></li>
+															<li>mcrypt   <?php echo extension_loaded('mcrypt') ? "<span style='color: green'>Present</span>": "<span style='color: red'>Missing</span>"; ?></li>
+															<li>OpenSSL   <?php echo extension_loaded('openssl') ? "<span style='color: green'>Present</span>": "<span style='color: red'>Missing</span>"; ?></li>
+															<li>xml   <?php echo extension_loaded('xml') ? "<span style='color: green'>Present</span>": "<span style='color: red'>Missing</span>"; ?></li>
+															<li>dom   <?php echo extension_loaded('dom') ? "<span style='color: green'>Present</span>": "<span style='color: red'>Missing</span>"; ?></li>
+
+														</ul>
+														<p><a href="configcheck.php">Refresh</a></p>
+													<p>If any modules are listed as missing you may have to enable them in your php.ini</p>
+													<p><a href="index.php">Click here to return to the demo</a> </p>
+                                   </div>
                                 </td>
                             </tr>
                         </tbody></table>

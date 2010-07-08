@@ -14,37 +14,24 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
  * PARTICULAR PURPOSE.
  */ 
-    $ini_array = parse_ini_file("Credentials.ini");
-    $username = $ini_array["APIUserEmail"];
-    $password = $ini_array["Password"];
-    $IntegratorsKey = $ini_array["IntegratorsKey"];
-    $APIAccountId = $ini_array["APIAccountId"];
-    $APIUrl = $ini_array["APIUrl"];
-    
-    $envelopeId = $_POST["envelopeId"];
-    
-    include("Envelope.php");
-    $client = new SoapClient("https://demo.docusign.net/API/3.0/Credential.asmx?WSDL");
-    $arr = array("Email" => $username, "Password" => $password);
-    $response = $client->Login($arr);
-    
-    $AccountID = $APIAccountId;//$response->LoginResult->Accounts->Account[0]->AccountID;
-    $UserID = "[".$IntegratorsKey."]".$response->LoginResult->Accounts->Account[0]->UserID;
-    $UserName = $response->LoginResult->Accounts->Account[0]->UserName;
-    $Email = $response->LoginResult->Accounts->Account[0]->Email;
-    $AccountName = $response->LoginResult->Accounts->Account[0]->AccountName;
-    
-    $config = array("userId" =>$UserID, "password" => $password, "accountId" => $AccountID, "subject" => "Loan Application", "blurb" => "Sign the Loan application to submit.");
-    $envelope = new Docusign_Envelope($APIUrl."?wsdl", $config);
-    $envelope->AccountId = $config['accountId'];
-    $envelope->Subject = $config['subject'];
-    $envelope->EmailBlurb = $config['blurb'];
-    
-    $RequestPDFParam = array();
-    $RequestPDFParam["EnvelopeID"] = $envelopeId;
-    
-    $EnvelopePDF = $envelope->RequestPDF($RequestPDFParam);
-    $PDFBytes = $EnvelopePDF->RequestPDFResult->PDFBytes;
-    header("Content-type:application/pdf");
-    echo($PDFBytes);
+
+// start session and some helper functions
+include("include/session.php");
+
+// init api and some helper functions
+include("api/api.php");
+
+	$RequestPDFParam = new RequestPDF();
+	$RequestPDFParam->EnvelopeID = $_GET["EnvelopeID"];
+	try{
+		$EnvelopePDF = $api->RequestPDF($RequestPDFParam);
+	} catch(SoapFault $fault) {
+		$_SESSION["errorMessage"]=$fault;
+		header("Location: error.php");
+		die();
+	}
+	
+	$PDFBytes = $EnvelopePDF->RequestPDFResult->PDFBytes;
+	header("Content-type:application/pdf");
+	echo($PDFBytes);
 ?>
