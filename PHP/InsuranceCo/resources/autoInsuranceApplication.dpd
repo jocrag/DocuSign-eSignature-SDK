@@ -1,6 +1,6 @@
 <DocuSignDocumentTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" canAddTabs="true" xmlns="http://www.docusign.net/API/2.2">
   <Header>
-    <Name>Auto Insurance Application</Name>
+    <Name>InsuranceCo Auto Insurance Application</Name>
     <Version>1.0</Version>
     <Description>This template is an auto insurance application.</Description>
     <Password>
@@ -13,7 +13,7 @@
     <Size>0</Size>
   </Document>
   <Recipients>
-    <Recipient locked="true" required="true">
+    <Recipient locked="false" required="false">
       <UserName>
       </UserName>
       <LockedUserName>false</LockedUserName>

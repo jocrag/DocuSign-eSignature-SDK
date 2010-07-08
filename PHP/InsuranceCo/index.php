@@ -13,14 +13,11 @@
  * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
  * PARTICULAR PURPOSE.
- */     
-    session_start();
-    if ($_SESSION["InsuranceCo_logged"]=="true")  header( 'Location: login.php' ) ;
-    include("log.php");
+ */
+ 
+// start session and some helper functions
+include("include/session.php");
 
-    if (!isset($_SESSION["OPENED_SITE"])) AddToLog("Open site");
-
-    $_SESSION["OPENED_SITE"] = "1";
     
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -44,7 +41,7 @@
                     <tr>
                         <td colspan="4" align="right">
                             <img id="credential_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
-                            <a href="InsuranceCo.log" target="_blank"><img src="images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
+                            <a href="sessionlog.php" target="_blank"><img src="images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
                         </td>
                     </tr>
                 </table>

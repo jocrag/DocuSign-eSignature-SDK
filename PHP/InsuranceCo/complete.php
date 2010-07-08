@@ -15,18 +15,11 @@
  * PARTICULAR PURPOSE.
  */
  
+// start session and some helper functions
+include("include/session.php");
+// redirect to setup page if we aren't logged in
+loginCheck("../login.php");
 
-    session_start();
-        include("log.php");
-
-    if (!isset($_SESSION["OPENED_SITE"])) AddToLog("Open site");
-
-    $_SESSION["OPENED_SITE"] = "1";
-    if ($_SESSION["DS_LOGED"]) {
-        if($_SESSION["DS_LOGED"]=="1") {
-            
-        } else {header( 'Location: login.php' ) ; }
-    } else {header( 'Location: login.php' ) ; }    
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
@@ -58,7 +51,7 @@
                         <td colspan="4" align="right">
                             <img id="ws3_0_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(WS3_0 webservice)</span>
                             <img id="credential_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
-                            <a href="InsuranceCo.log" target="_blank"><img src="images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
+                            <a href="sessionlog.php" target="_blank"><img src="images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
                         </td>
                     </tr>
                 </table>
@@ -98,7 +91,6 @@
                     if ($id==2) $msg = "Signing Status:   Application has been viewed, but has not yet been completed. ";
                     if ($id==1) $msg = "Signing Status:   Application was not signed successfully due to an Id Check Failure. ";
                     echo($msg);
-                    AddToLog($_SESSION["email"]." ".$msg);
                 ?>                                
             </span>
         </div>

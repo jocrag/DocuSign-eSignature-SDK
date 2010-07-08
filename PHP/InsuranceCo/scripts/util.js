@@ -24,6 +24,23 @@ function ShowHide1() {
 	}
 }
 
+function togglePhoneNumberInput(){
+	var el = document.forms[0].AuthenticationMethod;
+	for (var i=0; i < el.length; i++)
+	{
+		if (el[i].checked)
+		{
+			var val = el[i].value;
+		}
+	}
+	if (val=="Phone") {
+		document.getElementById("authPhoneNumberContainer").style.display="block";
+	} else {
+		document.getElementById("authPhoneNumberContainer").style.display="none";
+	}
+}
+
+
 /*$(document).ready(function() {
 	$("#embeddedSigning").change(function() {
 		alert("test");								  

@@ -14,21 +14,55 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
  * PARTICULAR PURPOSE.
  */
-    include("Envelope.php");
-    session_start();
-    $ini_array = parse_ini_file("Credentials.ini");    
-    $APIUrl = $ini_array["APIUrl"];
-    include("log.php");
+ 
+// start session and some helper functions
+include("include/session.php");
+// credential service proxy classes and soapclient
+include("api/CredentialService.php");
+// api service proxy classes and soapclient
+include("api/APIService.php");
+// redirect to setup page if we aren't logged in
+loginCheck("../login.php");
 
-    if (!isset($_SESSION["OPENED_SITE"])) AddToLog("Open site");
+// get Integrator Key from credentials.ini 
+$ini_array = parse_ini_file("integrator.php");    
+$IntegratorsKey = $ini_array["IntegratorsKey"];
 
-    $_SESSION["OPENED_SITE"] = "1";
-    
-    if ($_SESSION["DS_LOGED"]) {
-        if($_SESSION["DS_LOGED"]=="1") {
-            
-        } else {header( 'Location: login.php' ) ; }
-    } else {header( 'Location: login.php' ) ; }
+// setup api connection 
+$api_endpoint="https://demo.docusign.net/api/3.0/api.asmx";
+$api_wsdl = "api/APIService.wsdl";
+$api_options =  array('location'=>$api_endpoint,'trace'=>true,'features' => SOAP_SINGLE_ELEMENT_ARRAYS);
+$api = new APIService($api_wsdl, $api_options);
+// set credentials on the api object - if we have an integrator key then we prepend that to the UserID
+if(isset($IntegratorsKey) && $IntegratorsKey<>""){
+	$api->setCredentials($IntegratorsKey . $_SESSION["UserID"], $_SESSION["Password"]);
+} else {
+	$api->setCredentials($_SESSION["UserID"], $_SESSION["Password"]);
+}
+
+
+$RequestStatusesParams = new RequestStatuses();
+/*
+$RequestStatusesParams->EnvelopeStatusFilter->UserInfo->UserName = $_SESSION["UserName"];
+$RequestStatusesParams->EnvelopeStatusFilter->UserInfo->Email = $_SESSION["Email"];
+$RequestStatusesParams->EnvelopeStatusFilter->AccountId = $_SESSION["AccountID"];
+$RequestStatusesParams->EnvelopeStatusFilter->Statuses->Status = "Any";
+*/
+$RequestStatusParams = new RequestStatus();
+$RequestStatusParams->EnvelopeID = $_SESSION["EnvelopeID"];
+
+try{
+	$RequestStatusResponse = $api->RequestStatus($RequestStatusParams);
+	addToLog("API Call - RequestStatus Request", '<pre>' . xmlpp($api->_lastRequest,true) . '</pre>');
+	addToLog("API Call - RequestStatus Response", '<pre>' . xmlpp($api->__getlastResponse(),true) . '</pre>');
+	
+} catch (SoapFault $fault){
+	$_SESSION["errorMessage"] = $fault;
+	$_SESSION["lastRequest"] = $api->_lastRequest;
+	header("Location: error.php");
+	die();
+}
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
@@ -58,7 +92,7 @@
                         <td colspan="4" align="right">
                             <img id="ws3_0_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(WS3_0 webservice)</span>
                             <img id="credential_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
-                            <a href="InsuranceCo.log" target="_blank"><img src="images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
+                            <a href="sessionlog.php" target="_blank"><img src="images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
                         </td>
                     </tr>
                 </table>
@@ -84,50 +118,6 @@
         <div>
             <span class="col1">
                 <h1>Status - Automobile Insurance Application</h1>
-                <?php
-                    try {
-                                                
-                        
-                        $config = array("userId" => $_SESSION["UserID"], "password" => $_SESSION["password"], "accountId" => $_SESSION["AccountID"], "subject" => "These are the documents you requested!", "blurb" => "We need your signature to move forward.");
-                        $envelope = new Docusign_Envelope($APIUrl."?wsdl", $config);
-                        $envelope->AccountId = $config['accountId'];
-                        $envelope->Subject = $config['subject'];
-                        $envelope->EmailBlurb = $config['blurb'];
-                        
-                        $RequestStatusesParams = array();
-                        
-                        $RequestStatusesParams["EnvelopeStatusFilter"]["UserInfo"]["UserName"] = $_SESSION["UserName"];
-                        $RequestStatusesParams["EnvelopeStatusFilter"]["UserInfo"]["Email"] = $_SESSION["email"];
-                        $RequestStatusesParams["EnvelopeStatusFilter"]["AccountId"] = $_SESSION["AccountID"];
-                        $RequestStatusesParams["EnvelopeStatusFilter"]["Statuses"]["Status"] = "Any";
-                        
-                        
-                        try {
-                        $Envelopes = $envelope->RequestStatuses($RequestStatusesParams);
-                        } catch( SoapFault $fault) {
-            
-                            $pos = strpos($fault, "\n");
-                            ?>
-                                <script language="javascript" >
-                                    alert("Something is wrong : +<?php echo(str_replace("\n","\\n",$fault)); ?>");
-                                    window.location = "home.php";
-                                </script>
-                                
-                            <?php
-                            die(1);
-                        }
-                        
-                        //$TmplParam = array();
-                        //$TmplParam["AccountID"] = $_SESSION["AccountID"];
-                        //$Tmlp = $envelope->RequestTemplates($TmplParam);
-                        //print_r($Tmlp);
-                        
-                    } catch( SoapFault $fault) {
-    
-                        echo $fault;
-                        die(1);
-                    }
-                ?>
                 <table class="dataTable">
                     <thead>
                         <tr>
@@ -137,20 +127,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-                        foreach ($Envelopes->RequestStatusesResult->EnvelopeStatuses->EnvelopeStatus as $EnvelopeStatusResult) {
-                            if ($EnvelopeStatusResult->Subject == "Automobile Insurance Application") {
-                    ?>
-                                                <tr>
-                            <td align="left"><?php echo($EnvelopeStatusResult->EnvelopeID);?></td>
-                            <td align="left">Autombile Insurance Rider</td>
-                            <td align="left"><?php echo($EnvelopeStatusResult->Status);?></td>
-                        </tr>
-                            <?php
+                        <tr>
+                           <td align="left"><?php echo($RequestStatusResponse->RequestStatusResult->EnvelopeID);?></td>
+                           <td align="left">Autombile Insurance Rider</td>
+                           <td align="left"><?php echo($RequestStatusResponse->RequestStatusResult->Status);?></td>
+                       </tr>
+							
+                    <?php /*
+                        foreach ($RequestStatusResponse->RequestStatusesResult->EnvelopeStatuses->EnvelopeStatus as $EnvelopeStatusResult) {
+                            if ($EnvelopeStatusResult->Subject == "InsuranceCo Auto Rider") {
                             }
-                        }                            
-                            ?>                    
-                                            </tbody>
+                        }   */                         
+                    ?>                    
+                   </tbody>
                 </table>
             </span>
         </div>

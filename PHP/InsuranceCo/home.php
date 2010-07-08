@@ -15,17 +15,11 @@
  * PARTICULAR PURPOSE.
  */
  
-    session_start();
-        include("log.php");
+// start session and some helper functions
+include("include/session.php");
+// redirect to setup page if we aren't logged in
+loginCheck("login.php");
 
-    if (!isset($_SESSION["OPENED_SITE"])) AddToLog("Open site");
-
-    $_SESSION["OPENED_SITE"] = "1";
-    if ($_SESSION["DS_LOGED"]) {
-        if($_SESSION["DS_LOGED"]=="1") {
-            
-        } else {header( 'Location: login.php' ) ; }
-    } else {header( 'Location: login.php' ) ; }
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
@@ -55,7 +49,7 @@
                         <td colspan="4" align="right">
                             <img id="ws3_0_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(WS3_0 webservice)</span>
                             <img id="credential_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
-                            <a href="InsuranceCo.log" target="_blank"><img src="images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
+                            <a href="sessionlog.php" target="_blank"><img src="images/script.png" style="border: 0px;" /><span style="font-size: 0.75em;">View InsuranceCo Event Log</span></a>
                         </td>
                     </tr>
                 </table>
@@ -90,7 +84,7 @@ at InsuranceCo we're ready to keep you safe in the car of your dreams
 even if that car isn't what you pictured. With our plan the choice of
 coverage is entirely up to you. We want to keep you as safe as possible
 while staying within your budget.</p>
-                <p><a href="autoAppTemplate.php">Complete</a> an Application Today!</p>
+                <p><a href="autoAppApply.php">Complete</a> an Application Today!</p>
             </div>
         </div>
     
