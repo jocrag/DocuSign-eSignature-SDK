@@ -1,0 +1,61 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="DefaultPage.Master.cs" Inherits="InsuranceCo.DefaultPage" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+    
+        <title>InsuranceCo</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
+        <script type="text/javascript" src="scripts/webservice-status.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </head><body>
+        <div class="header" style=" background:url(images/fond.jpg); background-repeat:repeat-x; background-position:top">
+            <div class="floatLeft" >
+                <img src="images/logo.png" alt="InsuranceCo - Insuring the security of your future">
+            </div>
+            <div class="userBox">
+                <table cellspacing="0" border="0">
+<%if (Session["LoggedIn"] != null)  { %>
+                    <tr style="border-bottom: 2px solid #000000;">
+                        <td>Username:</td>
+                        <td><%=Session["UserName"]%></td>
+                        <td>Account:</td>
+                        <td id="DefaultPage"><%=Session["AccountName"]%></td>
+                    </tr>
+<% } %>
+                    <tr>
+                        <td colspan="4" align="right">
+<%if (Session["LoggedIn"] != null)
+  { %>                        
+                        <img id="ws3_0_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(WS3_0 webservice)</span>
+<% } %>                        
+                            <img id="credential_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="gutter"></div>
+        <div class="sidebar">
+            <h1>What we offer?</h1>
+            <div id="navcontainer">
+                <ul>
+                    <li><a href="Index.aspx">Products</a></li>
+                    <li><a href="Home.aspx">My Account Home</a></li>
+<%if (Session["LoggedIn"] != null)  { %>   
+                    <li><a href="AutoAppStatus.aspx">&nbsp;&nbsp;- Application Status</a></li>
+                    <li><a href="Logout.aspx">&nbsp;&nbsp;- Log Out</a></li>
+<% } %>                        
+                </ul>
+            </div>
+        </div>
+        <div class="allCol">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">Sample Code &copy;DocuSign 2010 - See <a href="http://www.docusign.com/devcenter" target="devcenter">DocuSign DevCenter</a> for more information.</div>
+    </body>
+</html>

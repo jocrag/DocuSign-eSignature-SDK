@@ -1,26 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "LoanCo", "LoanCo\", "{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFramework = "3.5"
-		ProjectReferences = "{9112D6BD-373C-4077-91F5-78103FBFCCD2}|Signing2008.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/LoanCo"
-		Debug.AspNetCompiler.PhysicalPath = "LoanCo\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\LoanCo\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/LoanCo"
-		Release.AspNetCompiler.PhysicalPath = "LoanCo\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\LoanCo\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "52476"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanCo", "LoanCo\LoanCo.csproj", "{3F52D888-5D07-4B6D-8BE1-315499DF3307}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signing2008", "Signing2008\Signing2008.csproj", "{9112D6BD-373C-4077-91F5-78103FBFCCD2}"
 EndProject
@@ -34,16 +15,16 @@ Global
 		Release|Mixed Platforms = Release|Mixed Platforms
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Debug|.NET.ActiveCfg = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Debug|.NET.Build.0 = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Debug|Any CPU.ActiveCfg = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Debug|Mixed Platforms.Build.0 = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Release|.NET.ActiveCfg = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Release|.NET.Build.0 = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Release|Any CPU.ActiveCfg = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
-		{BFB1850B-AF94-4ACE-A512-423E3D0A8C90}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Release|.NET.ActiveCfg = Release|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3F52D888-5D07-4B6D-8BE1-315499DF3307}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9112D6BD-373C-4077-91F5-78103FBFCCD2}.Debug|.NET.ActiveCfg = Debug|Any CPU
 		{9112D6BD-373C-4077-91F5-78103FBFCCD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9112D6BD-373C-4077-91F5-78103FBFCCD2}.Debug|Any CPU.Build.0 = Debug|Any CPU

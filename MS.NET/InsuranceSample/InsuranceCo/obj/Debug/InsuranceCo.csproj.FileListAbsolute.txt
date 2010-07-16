@@ -1,0 +1,9 @@
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\obj\Debug\ResolveAssemblyReference.cache
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\bin\InsuranceCo.dll
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\bin\InsuranceCo.pdb
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\bin\Signing2008.dll
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\bin\nunit.framework.dll
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\bin\Signing2008.pdb
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\obj\Debug\InsuranceCo.dll
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\obj\Debug\InsuranceCo.pdb
+C:\dsx\DotNetSDK\InsuranceSample\InsuranceCo\bin\nunit.framework.xml

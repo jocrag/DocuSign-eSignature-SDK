@@ -1,0 +1,38 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HeaderOnly.master.cs" Inherits="InsuranceCo.HeaderOnly" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>InsuranceCo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="scripts/webservice-status.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+    <body>
+        <div class="header" style=" background:url(images/fond.jpg); background-repeat:repeat-x; background-position:top">
+            <div class="floatLeft" >
+                <img src="images/logo.png" alt="InsuranceCo - Insuring the security of your future">
+            </div>
+            <div class="userBox">
+                <table cellspacing="0" border="0">
+
+                    <tr>
+                        <td colspan="4" align="right">
+                            <img id="credential_img" src="images/spinner.gif" /><span style="font-size: 0.75em;">(Credential webservice)</span>
+                           
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="gutter"></div>
+        <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">Sample Code &copy;DocuSign 2010 - See <a href="http://www.docusign.com/devcenter" target="devcenter">DocuSign DevCenter</a> for more information.</div>
+    </body>
+</html>        

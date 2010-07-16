@@ -1,54 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <title>Mortgage Tools - DocuSign, Inc. ESIGN Sample</title>
-  <script language="javascript" type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
-  <script language="javascript" type="text/javascript" src="js/webservice-status.js"></script>
-  <link href="css/style.css" rel="stylesheet" type="text/css"></link>
-  </head>
-  <body>
-    <div id="maincontainer">
-      <div id="contentwrapper">
-        <div id="contentcolumn">
-          <div class="innertube">
-            <div id="webserviceHeartbeat">
-              <img id="ws3_0_img" src="images/spinner.gif" />
-              <span style="font-size: 0.75em;">(WS3_0 webservice)</span>
-            </div>
-            <div class="contentbarstart">&nbsp;</div>
-            <div class="contentbarrepeat">&nbsp;</div>
-            <div class="money-bar">
-              <div class="money-repeat">&nbsp;</div>
-            </div>
-            <div class="content-section" style="line-height: 12px;">
+<%@ Page Title="" Language="C#" MasterPageFile="~/FullNav.master" AutoEventWireup="true" CodeBehind="index-3.aspx.cs" Inherits="LoanCo.index_3" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+           <div class="content-section" style="line-height: 12px;">
               <embed src="flash/howtodocusign.swf" bgcolor="#ffffff" width="700" height="380" />
               <br/>
               <br/>
               <strong>Legal Compliance</strong>
               <br />
-              DocuSign&reg; exceeds all Federal ESIGN Legislation (Electronic Signatures in Global and National Commerce Act) requirements.  The law states that, “In effect no contract can be denied on the basis that it is electronic, and when executed correctly, electronic contracts should be treated like any other contract under ordinary contract law.” This legislation has since been tested successfully by Microsoft, AOL and other corporations that have prosecuted and won lawsuits where consumers attempted to renege on signed electronic contracts. Today, consumers sign online contracts every day, including website agreements and online stock trading accounts. DocuSign, Inc., was founded to extend this model to all documents sent by businesses for signature or certification. DocuSign provides the secure knowledge that signed electronic agreements will have the same legal effect as signed offline agreements.
+              DocuSign &reg; exceeds all Federal ESIGN Legislation (Electronic Signatures in Global and National Commerce Act) requirements.  The law states that, “In effect no contract can be denied on the basis that it is electronic, and when executed correctly, electronic contracts should be treated like any other contract under ordinary contract law.” This legislation has since been tested successfully by Microsoft, AOL and other corporations that have prosecuted and won lawsuits where consumers attempted to renege on signed electronic contracts. Today, consumers sign online contracts every day, including website agreements and online stock trading accounts. DocuSign, Inc., was founded to extend this model to all documents sent by businesses for signature or certification. DocuSign provides the secure knowledge that signed electronic agreements will have the same legal effect as signed offline agreements.
             </div>
-          </div>
-         </div>
-       </div>
-      </div>
-      <div id="leftcolumn">
-        <div class="innertube">
-          <div class="mortgage-co-logo"><img src="images/mortgageco-logo.png" /></div>
-          <div class="menu"><div class="dotted-menu-item"><a class="menu-label" href="index.aspx">HOME</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-1.aspx">GET A LOAN!</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-2.aspx">HOW IT WORKS</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-3.aspx">MORTGAGE TOOLS</a></div>
-            <div class="dotted-menu-item"><a class="menu-label" href="index-4.aspx">ABOUT US</a></div>
-          </div>
-          <div class="menu-border">&nbsp;</div>
-          <div class="year30">&nbsp;</div>
-          <div class="year15">&nbsp;</div>
-          <div class="arm51">&nbsp;</div>
-          <div class="esign-banner"><a href="#">&nbsp;</a></div>
-        </div>
-      </div>
-      <div id="footer">&nbsp;</div>
-  </body>
-</html>
+</asp:Content>

@@ -26,6 +26,7 @@ em {
 #contentwrapper {
   float: left;
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
 }
 
@@ -38,7 +39,7 @@ em {
   width: 230px; /*Width of left column*/
   margin-left: -100%;
   background: #868281;
-  height: 1200px;
+  height: 100%;
 }
 
 .left-menu-gap {
@@ -106,6 +107,8 @@ em {
   clear: left;
   width: 100%;
   background: #868281;
+  font-family: Tahoma, Sans-Serif;
+  font-size: 11px  ;
   color: #FFF;
   text-align: center;
   padding: 0;
@@ -121,13 +124,17 @@ em {
   background: url(../images/gradient-start.png) repeat-y;
   float: left;
   width: 220px;
-  height: 1200px;
+
+  height: 700px;
 }
 
 .contentbarrepeat {
   background: url(../images/gradient-cap-repeat.png) repeat;
   width: 80%;
-  height: 1200px;}
+/*
+  height:600px;
+*/
+  }
 
 .content {
   white-space: nowrap;
@@ -191,7 +198,9 @@ em {
   margin-left: 0px;
   margin-top: 173px;
   width: 100%;
+/*
   height: 825px;
+*/
   text-align: left;
   font-family: tahoma;
   font-size: 11px;
@@ -204,7 +213,9 @@ em {
   margin-left: 30px;
   margin-top: 200px;
   width: 90%;
+/*
   height: 850px;
+*/
   text-align: left;
   font-family: tahoma;
   font-size: 11px;
@@ -219,3 +230,38 @@ em {
   float: right;
   margin-right: 10px;
 }
+
+#header{
+	height: 218px;
+	background: url(../images/LoanCoHeaderRepeat.png) repeat-x;
+	width: 100%;
+	
+}
+.logo {
+  position: absolute;
+  background: url(../images/LoanCoHeader.png) no-repeat;
+  left: 0px;
+  width: 718px;
+  height:218px;
+}
+
+.embedHostFrame {
+   overflow:visible;
+   width: 100%;
+   height:500px;
+   border-width: 0;
+   }
+ .CredsMissingDiv{
+
+ }
+ .CredsMissingBanner{
+   clear: left;
+  width: 100%;
+  background: #868281;
+  font-family: Tahoma, Sans-Serif;
+  font-size: 11px  ;
+  color: #FFF;
+  text-align: center;
+  padding: 0;
+
+ }

@@ -1,0 +1,11 @@
+C:\dsx\DotNetSDK\InsuranceSample\Signing\bin\Debug\wse3policyCache.config
+C:\dsx\DotNetSDK\InsuranceSample\Signing\bin\Debug\Signing.dll.config
+C:\dsx\DotNetSDK\InsuranceSample\Signing\bin\Debug\Signing.dll
+C:\dsx\DotNetSDK\InsuranceSample\Signing\bin\Debug\Signing.pdb
+C:\dsx\DotNetSDK\InsuranceSample\Signing\bin\Debug\nunit.framework.dll
+C:\dsx\DotNetSDK\InsuranceSample\Signing\bin\Debug\nunit.framework.xml
+C:\dsx\DotNetSDK\InsuranceSample\Signing\obj\Debug\ResolveAssemblyReference.cache
+C:\dsx\DotNetSDK\InsuranceSample\Signing\obj\Debug\Signing.resources.resources
+C:\dsx\DotNetSDK\InsuranceSample\Signing\obj\Debug\Signing.csproj.GenerateResource.Cache
+C:\dsx\DotNetSDK\InsuranceSample\Signing\obj\Debug\Signing.dll
+C:\dsx\DotNetSDK\InsuranceSample\Signing\obj\Debug\Signing.pdb

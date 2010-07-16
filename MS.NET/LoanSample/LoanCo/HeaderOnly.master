@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="HeaderOnly.master.cs" Inherits="HeaderOnly" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+    <title>DocuSign, Inc. ESIGN Sample</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"></link>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+  </head>
+  <body>
+		<div id="header">
+			<div class="logo">&nbsp;</div>
+			<div class="logorepeat">&nbsp;</div>
+		</div>
+		<div id="content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+		</div>	
+        <div id="footer" >Sample Code &copy;DocuSign 2010 - See <a href="http://www.docusign.com/devcenter" target="devcenter">DocuSign DevCenter</a> for more information.</div>
+  </body>
+</html>
