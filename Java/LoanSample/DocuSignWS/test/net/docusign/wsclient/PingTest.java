@@ -10,19 +10,19 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.wsclient;
 
 import net.docusign.www.api._3_0.Ping;
 import net.docusign.www.api._3_0.PingResponse;
 
 public class PingTest extends WebserviceTestCase {
-	public void testPing() throws Exception {
-		Ping pingDocument = new Ping();
+    public void testPing() throws Exception {
+        Ping pingDocument = new Ping();
 
-		PingResponse pingResponse = wsApi.ping(pingDocument);
+        PingResponse pingResponse = wsApi.ping(pingDocument);
 
-		assertNotNull(pingResponse);
-		assertTrue(pingResponse.getPingResult());
-	}
+        assertNotNull(pingResponse);
+        assertTrue(pingResponse.getPingResult());
+    }
 }

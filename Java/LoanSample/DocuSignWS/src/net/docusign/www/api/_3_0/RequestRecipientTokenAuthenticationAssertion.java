@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getAssertionID() {
@@ -55,7 +55,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AssertionID
      */
@@ -64,8 +64,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
         if (param != null) {
             // update the setting tracker
             localAssertionIDTracker = true;
-        }
-        else {
+        } else {
             localAssertionIDTracker = false;
 
         }
@@ -82,7 +81,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.util.Calendar
      */
     public java.util.Calendar getAuthenticationInstant() {
@@ -91,7 +90,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AuthenticationInstant
      */
@@ -109,7 +108,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.
      *         RequestRecipientTokenAuthenticationAssertionAuthenticationMethod
      */
@@ -119,7 +118,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AuthenticationMethod
      */
@@ -144,7 +143,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getSecurityDomain() {
@@ -153,7 +152,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            SecurityDomain
      */
@@ -162,8 +161,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
         if (param != null) {
             // update the setting tracker
             localSecurityDomainTracker = true;
-        }
-        else {
+        } else {
             localSecurityDomainTracker = false;
 
         }
@@ -174,7 +172,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -182,15 +180,14 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -223,8 +220,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -233,8 +229,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -243,8 +238,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":RequestRecipientTokenAuthenticationAssertion", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "RequestRecipientTokenAuthenticationAssertion", xmlWriter);
             }
 
@@ -261,13 +255,11 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AssertionID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AssertionID");
             }
 
@@ -276,8 +268,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
                 throw new org.apache.axis2.databinding.ADBException("AssertionID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localAssertionID);
 
@@ -296,13 +287,11 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "AuthenticationInstant");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("AuthenticationInstant");
         }
 
@@ -311,8 +300,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
             throw new org.apache.axis2.databinding.ADBException("AuthenticationInstant cannot be null!!");
 
-        }
-        else {
+        } else {
 
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuthenticationInstant));
 
@@ -336,13 +324,11 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "SecurityDomain");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("SecurityDomain");
             }
 
@@ -351,8 +337,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
                 throw new org.apache.axis2.databinding.ADBException("SecurityDomain cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localSecurityDomain);
 
@@ -384,8 +369,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -404,15 +388,13 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -434,14 +416,12 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -471,12 +451,10 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -507,7 +485,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -519,8 +497,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
             if (localAssertionID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAssertionID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("AssertionID cannot be null!!");
             }
         }
@@ -528,8 +505,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
         if (localAuthenticationInstant != null) {
             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuthenticationInstant));
-        }
-        else {
+        } else {
             throw new org.apache.axis2.databinding.ADBException("AuthenticationInstant cannot be null!!");
         }
 
@@ -544,8 +520,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
 
             if (localSecurityDomain != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSecurityDomain));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("SecurityDomain cannot be null!!");
             }
         }
@@ -687,8 +662,7 @@ public class RequestRecipientTokenAuthenticationAssertion implements org.apache.
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

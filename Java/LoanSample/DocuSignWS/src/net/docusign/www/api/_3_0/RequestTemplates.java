@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -43,7 +43,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getAccountID() {
@@ -52,7 +52,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AccountID
      */
@@ -61,8 +61,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localAccountIDTracker = true;
-        }
-        else {
+        } else {
             localAccountIDTracker = false;
 
         }
@@ -72,8 +71,35 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
     }
 
     /**
+     * field for IncludeAdvancedTemplates
+     */
+
+    protected boolean localIncludeAdvancedTemplates;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return boolean
+     */
+    public boolean getIncludeAdvancedTemplates() {
+        return localIncludeAdvancedTemplates;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            IncludeAdvancedTemplates
+     */
+    public void setIncludeAdvancedTemplates(boolean param) {
+
+        this.localIncludeAdvancedTemplates = param;
+
+    }
+
+    /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -81,15 +107,14 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -122,8 +147,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -132,8 +156,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -142,8 +165,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":RequestTemplates", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "RequestTemplates", xmlWriter);
             }
 
@@ -160,13 +182,11 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AccountID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AccountID");
             }
 
@@ -175,8 +195,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("AccountID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localAccountID);
 
@@ -184,6 +203,35 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
             xmlWriter.writeEndElement();
         }
+        namespace = "http://www.docusign.net/API/3.0";
+        if (!namespace.equals("")) {
+            prefix = xmlWriter.getPrefix(namespace);
+
+            if (prefix == null) {
+                prefix = generatePrefix(namespace);
+
+                xmlWriter.writeStartElement(prefix, "IncludeAdvancedTemplates", namespace);
+                xmlWriter.writeNamespace(prefix, namespace);
+                xmlWriter.setPrefix(prefix, namespace);
+
+            } else {
+                xmlWriter.writeStartElement(namespace, "IncludeAdvancedTemplates");
+            }
+
+        } else {
+            xmlWriter.writeStartElement("IncludeAdvancedTemplates");
+        }
+
+        if (false) {
+
+            throw new org.apache.axis2.databinding.ADBException("IncludeAdvancedTemplates cannot be null!!");
+
+        } else {
+            xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIncludeAdvancedTemplates));
+        }
+
+        xmlWriter.writeEndElement();
+
         xmlWriter.writeEndElement();
 
     }
@@ -208,8 +256,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -228,15 +275,13 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -258,14 +303,12 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -295,12 +338,10 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -331,7 +372,7 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -343,11 +384,13 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
 
             if (localAccountID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAccountID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("AccountID cannot be null!!");
             }
         }
+        elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "IncludeAdvancedTemplates"));
+
+        elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIncludeAdvancedTemplates));
 
         return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
 
@@ -428,13 +471,31 @@ public class RequestTemplates implements org.apache.axis2.databinding.ADBBean {
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "IncludeAdvancedTemplates").equals(reader.getName())) {
+
+                    java.lang.String content = reader.getElementText();
+
+                    object.setIncludeAdvancedTemplates(org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+                    // A start element we are not expecting indicates an invalid
+                    // parameter was passed
+                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
                 if (reader.isStartElement())
                     // A start element we are not expecting indicates a trailing
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

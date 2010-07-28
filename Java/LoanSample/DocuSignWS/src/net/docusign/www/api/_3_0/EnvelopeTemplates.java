@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EnvelopeTemplateDefinition[]
      */
     public net.docusign.www.api._3_0.EnvelopeTemplateDefinition[] getEnvelopeTemplateDefinition() {
@@ -62,7 +62,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnvelopeTemplateDefinition
      */
@@ -73,8 +73,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localEnvelopeTemplateDefinitionTracker = true;
-        }
-        else {
+        } else {
             localEnvelopeTemplateDefinitionTracker = false;
 
         }
@@ -84,7 +83,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated add method for the array for convenience
-     *
+     * 
      * @param param
      *            net.docusign.www.api._3_0.EnvelopeTemplateDefinition
      */
@@ -104,7 +103,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -112,15 +111,14 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -153,8 +151,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -163,8 +160,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -173,8 +169,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":EnvelopeTemplates", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "EnvelopeTemplates", xmlWriter);
             }
 
@@ -184,8 +179,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
                 for (int i = 0; i < localEnvelopeTemplateDefinition.length; i++) {
                     if (localEnvelopeTemplateDefinition[i] != null) {
                         localEnvelopeTemplateDefinition[i].serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeTemplateDefinition"), factory, xmlWriter);
-                    }
-                    else {
+                    } else {
 
                         // we don't have to do any thing since minOccures is
                         // zero
@@ -193,8 +187,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
                     }
 
                 }
-            }
-            else {
+            } else {
 
                 throw new org.apache.axis2.databinding.ADBException("EnvelopeTemplateDefinition cannot be null!!");
 
@@ -224,8 +217,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -244,15 +236,13 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -274,14 +264,12 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -311,12 +299,10 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -347,7 +333,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -361,16 +347,14 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
                     if (localEnvelopeTemplateDefinition[i] != null) {
                         elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeTemplateDefinition"));
                         elementList.add(localEnvelopeTemplateDefinition[i]);
-                    }
-                    else {
+                    } else {
 
                         // nothing to do
 
                     }
 
                 }
-            }
-            else {
+            } else {
 
                 throw new org.apache.axis2.databinding.ADBException("EnvelopeTemplateDefinition cannot be null!!");
 
@@ -463,13 +447,11 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
                             // two continuous end elements means we are exiting
                             // the xml structure
                             loopDone1 = true;
-                        }
-                        else {
+                        } else {
                             if (new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeTemplateDefinition").equals(reader.getName())) {
                                 list1.add(net.docusign.www.api._3_0.EnvelopeTemplateDefinition.Factory.parse(reader));
 
-                            }
-                            else {
+                            } else {
                                 loopDone1 = true;
                             }
                         }
@@ -492,8 +474,7 @@ public class EnvelopeTemplates implements org.apache.axis2.databinding.ADBBean {
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

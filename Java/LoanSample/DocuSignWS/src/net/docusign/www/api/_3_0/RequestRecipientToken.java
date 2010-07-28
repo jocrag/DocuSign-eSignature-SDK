@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -43,7 +43,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getEnvelopeID() {
@@ -52,7 +52,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnvelopeID
      */
@@ -61,8 +61,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
         if (param != null) {
             // update the setting tracker
             localEnvelopeIDTracker = true;
-        }
-        else {
+        } else {
             localEnvelopeIDTracker = false;
 
         }
@@ -86,7 +85,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getClientUserID() {
@@ -95,7 +94,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ClientUserID
      */
@@ -104,8 +103,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
         if (param != null) {
             // update the setting tracker
             localClientUserIDTracker = true;
-        }
-        else {
+        } else {
             localClientUserIDTracker = false;
 
         }
@@ -129,7 +127,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getUsername() {
@@ -138,7 +136,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Username
      */
@@ -147,8 +145,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
         if (param != null) {
             // update the setting tracker
             localUsernameTracker = true;
-        }
-        else {
+        } else {
             localUsernameTracker = false;
 
         }
@@ -172,7 +169,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getEmail() {
@@ -181,7 +178,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Email
      */
@@ -190,8 +187,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
         if (param != null) {
             // update the setting tracker
             localEmailTracker = true;
-        }
-        else {
+        } else {
             localEmailTracker = false;
 
         }
@@ -215,8 +211,8 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated getter method
-     *
-     * @return
+     * 
+     * @return 
      *         net.docusign.www.api._3_0.RequestRecipientTokenAuthenticationAssertion
      */
     public net.docusign.www.api._3_0.RequestRecipientTokenAuthenticationAssertion getAuthenticationAssertion() {
@@ -225,7 +221,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AuthenticationAssertion
      */
@@ -234,8 +230,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
         if (param != null) {
             // update the setting tracker
             localAuthenticationAssertionTracker = true;
-        }
-        else {
+        } else {
             localAuthenticationAssertionTracker = false;
 
         }
@@ -259,7 +254,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.RequestRecipientTokenClientURLs
      */
     public net.docusign.www.api._3_0.RequestRecipientTokenClientURLs getClientURLs() {
@@ -268,7 +263,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ClientURLs
      */
@@ -277,8 +272,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
         if (param != null) {
             // update the setting tracker
             localClientURLsTracker = true;
-        }
-        else {
+        } else {
             localClientURLsTracker = false;
 
         }
@@ -289,7 +283,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -297,15 +291,14 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -338,8 +331,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -348,8 +340,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -358,8 +349,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":RequestRecipientToken", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "RequestRecipientToken", xmlWriter);
             }
 
@@ -376,13 +366,11 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "EnvelopeID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("EnvelopeID");
             }
 
@@ -391,8 +379,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
                 throw new org.apache.axis2.databinding.ADBException("EnvelopeID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localEnvelopeID);
 
@@ -412,13 +399,11 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "ClientUserID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("ClientUserID");
             }
 
@@ -427,8 +412,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
                 throw new org.apache.axis2.databinding.ADBException("ClientUserID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localClientUserID);
 
@@ -448,13 +432,11 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Username");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Username");
             }
 
@@ -463,8 +445,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
                 throw new org.apache.axis2.databinding.ADBException("Username cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localUsername);
 
@@ -484,13 +465,11 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Email");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Email");
             }
 
@@ -499,8 +478,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
                 throw new org.apache.axis2.databinding.ADBException("Email cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localEmail);
 
@@ -544,8 +522,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -564,15 +541,13 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -594,14 +569,12 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -631,12 +604,10 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -667,7 +638,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -679,8 +650,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
             if (localEnvelopeID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEnvelopeID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("EnvelopeID cannot be null!!");
             }
         }
@@ -689,8 +659,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
             if (localClientUserID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localClientUserID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("ClientUserID cannot be null!!");
             }
         }
@@ -699,8 +668,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
             if (localUsername != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localUsername));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Username cannot be null!!");
             }
         }
@@ -709,8 +677,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
 
             if (localEmail != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEmail));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Email cannot be null!!");
             }
         }
@@ -896,8 +863,7 @@ public class RequestRecipientToken implements org.apache.axis2.databinding.ADBBe
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

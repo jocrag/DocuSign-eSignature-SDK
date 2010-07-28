@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -39,7 +39,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.util.Calendar
      */
     public java.util.Calendar getDateTime() {
@@ -48,7 +48,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            DateTime
      */
@@ -72,7 +72,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getStatusQualifier() {
@@ -81,7 +81,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            StatusQualifier
      */
@@ -93,7 +93,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -101,15 +101,14 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -142,8 +141,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -152,8 +150,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -162,8 +159,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":EnvelopeStatusFilterBeginDateTime", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "EnvelopeStatusFilterBeginDateTime", xmlWriter);
             }
 
@@ -180,8 +176,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
             throw new org.apache.axis2.databinding.ADBException("dateTime cannot be null!!");
 
-        }
-        else {
+        } else {
 
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDateTime));
 
@@ -211,8 +206,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -231,15 +225,13 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -261,14 +253,12 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -298,12 +288,10 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -334,7 +322,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -345,8 +333,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
         if (localDateTime != null) {
             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDateTime));
-        }
-        else {
+        } else {
             throw new org.apache.axis2.databinding.ADBException("dateTime cannot be null!!");
         }
 
@@ -376,8 +363,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
                 java.lang.String prefix = content.substring(0, content.indexOf(":"));
                 java.lang.String namespaceUri = xmlStreamReader.getNamespaceContext().getNamespaceURI(prefix);
                 return EnvelopeStatusFilterBeginDateTime.Factory.fromString(content, namespaceUri);
-            }
-            else {
+            } else {
                 return EnvelopeStatusFilterBeginDateTime.Factory.fromString(content, "");
             }
         }
@@ -440,8 +426,7 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
 
                     object.setStatusQualifier(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(tempAttribStatusQualifier));
 
-                }
-                else {
+                } else {
 
                 }
                 handledAttributes.add("statusQualifier");
@@ -463,14 +448,12 @@ public class EnvelopeStatusFilterBeginDateTime implements org.apache.axis2.datab
                             throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
                         }
 
-                    }
-                    else {
+                    } else {
                         reader.next();
                     }
                 } // end of while loop
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

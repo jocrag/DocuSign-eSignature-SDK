@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EventResult
      */
     public net.docusign.www.api._3_0.EventResult getAccessCodeResult() {
@@ -55,7 +55,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AccessCodeResult
      */
@@ -64,8 +64,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localAccessCodeResultTracker = true;
-        }
-        else {
+        } else {
             localAccessCodeResultTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EventResult
      */
     public net.docusign.www.api._3_0.EventResult getIDQuestionsResult() {
@@ -98,7 +97,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            IDQuestionsResult
      */
@@ -107,8 +106,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localIDQuestionsResultTracker = true;
-        }
-        else {
+        } else {
             localIDQuestionsResultTracker = false;
 
         }
@@ -132,7 +130,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EventResult
      */
     public net.docusign.www.api._3_0.EventResult getIDLookupResult() {
@@ -141,7 +139,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            IDLookupResult
      */
@@ -150,8 +148,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localIDLookupResultTracker = true;
-        }
-        else {
+        } else {
             localIDLookupResultTracker = false;
 
         }
@@ -175,7 +172,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EventResult
      */
     public net.docusign.www.api._3_0.EventResult getAgeVerifyResult() {
@@ -184,7 +181,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AgeVerifyResult
      */
@@ -193,8 +190,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localAgeVerifyResultTracker = true;
-        }
-        else {
+        } else {
             localAgeVerifyResultTracker = false;
 
         }
@@ -218,7 +214,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EventResult
      */
     public net.docusign.www.api._3_0.EventResult getSTANPinResult() {
@@ -227,7 +223,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            STANPinResult
      */
@@ -236,8 +232,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localSTANPinResultTracker = true;
-        }
-        else {
+        } else {
             localSTANPinResultTracker = false;
 
         }
@@ -261,7 +256,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EventResult
      */
     public net.docusign.www.api._3_0.EventResult getOFACResult() {
@@ -270,7 +265,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OFACResult
      */
@@ -279,8 +274,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localOFACResultTracker = true;
-        }
-        else {
+        } else {
             localOFACResultTracker = false;
 
         }
@@ -290,8 +284,50 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
     }
 
     /**
+     * field for PhoneAuthResult
+     */
+
+    protected net.docusign.www.api._3_0.EventResult localPhoneAuthResult;
+
+    /*
+     * This tracker boolean wil be used to detect whether the user called the
+     * set method for this attribute. It will be used to determine whether to
+     * include this field in the serialized XML
+     */
+    protected boolean localPhoneAuthResultTracker = false;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return net.docusign.www.api._3_0.EventResult
+     */
+    public net.docusign.www.api._3_0.EventResult getPhoneAuthResult() {
+        return localPhoneAuthResult;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            PhoneAuthResult
+     */
+    public void setPhoneAuthResult(net.docusign.www.api._3_0.EventResult param) {
+
+        if (param != null) {
+            // update the setting tracker
+            localPhoneAuthResultTracker = true;
+        } else {
+            localPhoneAuthResultTracker = false;
+
+        }
+
+        this.localPhoneAuthResult = param;
+
+    }
+
+    /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -299,15 +335,14 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -340,8 +375,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -350,8 +384,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -360,8 +393,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":AuthenticationStatus", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "AuthenticationStatus", xmlWriter);
             }
 
@@ -402,6 +434,12 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
             }
             localOFACResult.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "OFACResult"), factory, xmlWriter);
         }
+        if (localPhoneAuthResultTracker) {
+            if (localPhoneAuthResult == null) {
+                throw new org.apache.axis2.databinding.ADBException("PhoneAuthResult cannot be null!!");
+            }
+            localPhoneAuthResult.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PhoneAuthResult"), factory, xmlWriter);
+        }
         xmlWriter.writeEndElement();
 
     }
@@ -426,8 +464,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -446,15 +483,13 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -476,14 +511,12 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -513,12 +546,10 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -549,7 +580,7 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -603,6 +634,14 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
                 throw new org.apache.axis2.databinding.ADBException("OFACResult cannot be null!!");
             }
             elementList.add(localOFACResult);
+        }
+        if (localPhoneAuthResultTracker) {
+            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PhoneAuthResult"));
+
+            if (localPhoneAuthResult == null) {
+                throw new org.apache.axis2.databinding.ADBException("PhoneAuthResult cannot be null!!");
+            }
+            elementList.add(localPhoneAuthResult);
         }
 
         return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -757,13 +796,27 @@ public class AuthenticationStatus implements org.apache.axis2.databinding.ADBBea
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PhoneAuthResult").equals(reader.getName())) {
+
+                    object.setPhoneAuthResult(net.docusign.www.api._3_0.EventResult.Factory.parse(reader));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
                 if (reader.isStartElement())
                     // A start element we are not expecting indicates a trailing
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

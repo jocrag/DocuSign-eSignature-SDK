@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -39,7 +39,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return org.apache.axiom.om.OMElement
      */
     public org.apache.axiom.om.OMElement getExtraElement() {
@@ -48,7 +48,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ExtraElement
      */
@@ -60,7 +60,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -68,15 +68,14 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -109,8 +108,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -119,8 +117,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -129,8 +126,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":EnvelopeAuditEventsResult_type0", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "EnvelopeAuditEventsResult_type0", xmlWriter);
             }
 
@@ -138,8 +134,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
 
         if (localExtraElement != null) {
             localExtraElement.serialize(xmlWriter);
-        }
-        else {
+        } else {
             throw new org.apache.axis2.databinding.ADBException("extraElement cannot be null!!");
         }
 
@@ -167,8 +162,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -187,15 +181,13 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -217,14 +209,12 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -254,12 +244,10 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -290,7 +278,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -300,8 +288,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
         if (localExtraElement != null) {
             elementList.add(org.apache.axis2.databinding.utils.Constants.OM_ELEMENT_KEY);
             elementList.add(localExtraElement);
-        }
-        else {
+        } else {
             throw new org.apache.axis2.databinding.ADBException("extraElement cannot be null!!");
         }
 
@@ -396,8 +383,7 @@ public class EnvelopeAuditEventsResult_type0 implements org.apache.axis2.databin
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

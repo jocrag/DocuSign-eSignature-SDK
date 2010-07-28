@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -32,79 +32,78 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
     }
 
     /**
-     * field for EnabledFeatures This was an Array!
+     * field for RecipientName This was an Array!
      */
 
-    protected java.lang.String[] localEnabledFeatures;
+    protected java.lang.String[] localRecipientName;
 
     /*
      * This tracker boolean wil be used to detect whether the user called the
      * set method for this attribute. It will be used to determine whether to
      * include this field in the serialized XML
      */
-    protected boolean localEnabledFeaturesTracker = false;
+    protected boolean localRecipientNameTracker = false;
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String[]
      */
-    public java.lang.String[] getEnabledFeatures() {
-        return localEnabledFeatures;
+    public java.lang.String[] getRecipientName() {
+        return localRecipientName;
     }
 
     /**
-     * validate the array for EnabledFeatures
+     * validate the array for RecipientName
      */
-    protected void validateEnabledFeatures(java.lang.String[] param) {
+    protected void validateRecipientName(java.lang.String[] param) {
 
     }
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
-     *            EnabledFeatures
+     *            RecipientName
      */
-    public void setEnabledFeatures(java.lang.String[] param) {
+    public void setRecipientName(java.lang.String[] param) {
 
-        validateEnabledFeatures(param);
+        validateRecipientName(param);
 
         if (param != null) {
             // update the setting tracker
-            localEnabledFeaturesTracker = true;
-        }
-        else {
-            localEnabledFeaturesTracker = false;
+            localRecipientNameTracker = true;
+        } else {
+            localRecipientNameTracker = false;
 
         }
 
-        this.localEnabledFeatures = param;
+        this.localRecipientName = param;
     }
 
     /**
      * Auto generated add method for the array for convenience
-     *
+     * 
      * @param param
      *            java.lang.String
      */
-    public void addEnabledFeatures(java.lang.String param) {
-        if (localEnabledFeatures == null) {
-            localEnabledFeatures = new java.lang.String[] {};
+    public void addRecipientName(java.lang.String param) {
+        if (localRecipientName == null) {
+            localRecipientName = new java.lang.String[] {};
         }
 
         // update the setting tracker
-        localEnabledFeaturesTracker = true;
+        localRecipientNameTracker = true;
 
-        java.util.List list = org.apache.axis2.databinding.utils.ConverterUtil.toList(localEnabledFeatures);
+        java.util.List list = org.apache.axis2.databinding.utils.ConverterUtil.toList(localRecipientName);
         list.add(param);
-        this.localEnabledFeatures = (java.lang.String[]) list.toArray(new java.lang.String[list.size()]);
+        this.localRecipientName = (java.lang.String[]) list.toArray(new java.lang.String[list.size()]);
 
     }
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -112,15 +111,14 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -153,8 +151,7 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -163,8 +160,7 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -173,55 +169,50 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":ArrayOfString3", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "ArrayOfString3", xmlWriter);
             }
 
         }
-        if (localEnabledFeaturesTracker) {
-            if (localEnabledFeatures != null) {
+        if (localRecipientNameTracker) {
+            if (localRecipientName != null) {
                 namespace = "http://www.docusign.net/API/3.0";
                 boolean emptyNamespace = namespace == null || namespace.length() == 0;
                 prefix = emptyNamespace ? null : xmlWriter.getPrefix(namespace);
-                for (int i = 0; i < localEnabledFeatures.length; i++) {
+                for (int i = 0; i < localRecipientName.length; i++) {
 
-                    if (localEnabledFeatures[i] != null) {
+                    if (localRecipientName[i] != null) {
 
                         if (!emptyNamespace) {
                             if (prefix == null) {
                                 java.lang.String prefix2 = generatePrefix(namespace);
 
-                                xmlWriter.writeStartElement(prefix2, "EnabledFeatures", namespace);
+                                xmlWriter.writeStartElement(prefix2, "RecipientName", namespace);
                                 xmlWriter.writeNamespace(prefix2, namespace);
                                 xmlWriter.setPrefix(prefix2, namespace);
 
-                            }
-                            else {
-                                xmlWriter.writeStartElement(namespace, "EnabledFeatures");
+                            } else {
+                                xmlWriter.writeStartElement(namespace, "RecipientName");
                             }
 
-                        }
-                        else {
-                            xmlWriter.writeStartElement("EnabledFeatures");
+                        } else {
+                            xmlWriter.writeStartElement("RecipientName");
                         }
 
-                        xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEnabledFeatures[i]));
+                        xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRecipientName[i]));
 
                         xmlWriter.writeEndElement();
 
-                    }
-                    else {
+                    } else {
 
                         // we have to do nothing since minOccurs is zero
 
                     }
 
                 }
-            }
-            else {
+            } else {
 
-                throw new org.apache.axis2.databinding.ADBException("EnabledFeatures cannot be null!!");
+                throw new org.apache.axis2.databinding.ADBException("RecipientName cannot be null!!");
 
             }
 
@@ -250,8 +241,7 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -270,15 +260,13 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -300,14 +288,12 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -337,12 +323,10 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -373,32 +357,30 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
         java.util.ArrayList elementList = new java.util.ArrayList();
         java.util.ArrayList attribList = new java.util.ArrayList();
 
-        if (localEnabledFeaturesTracker) {
-            if (localEnabledFeatures != null) {
-                for (int i = 0; i < localEnabledFeatures.length; i++) {
+        if (localRecipientNameTracker) {
+            if (localRecipientName != null) {
+                for (int i = 0; i < localRecipientName.length; i++) {
 
-                    if (localEnabledFeatures[i] != null) {
-                        elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnabledFeatures"));
-                        elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEnabledFeatures[i]));
-                    }
-                    else {
+                    if (localRecipientName[i] != null) {
+                        elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientName"));
+                        elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRecipientName[i]));
+                    } else {
 
                         // have to do nothing
 
                     }
 
                 }
-            }
-            else {
+            } else {
 
-                throw new org.apache.axis2.databinding.ADBException("EnabledFeatures cannot be null!!");
+                throw new org.apache.axis2.databinding.ADBException("RecipientName cannot be null!!");
 
             }
 
@@ -468,7 +450,7 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
-                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnabledFeatures").equals(reader.getName())) {
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientName").equals(reader.getName())) {
 
                     // Process the array and step past its final element's end.
                     list1.add(reader.getElementText());
@@ -490,20 +472,18 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
                             // two continuous end elements means we are exiting
                             // the xml structure
                             loopDone1 = true;
-                        }
-                        else {
-                            if (new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnabledFeatures").equals(reader.getName())) {
+                        } else {
+                            if (new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientName").equals(reader.getName())) {
                                 list1.add(reader.getElementText());
 
-                            }
-                            else {
+                            } else {
                                 loopDone1 = true;
                             }
                         }
                     }
                     // call the converter utility to convert and set the array
 
-                    object.setEnabledFeatures((java.lang.String[]) list1.toArray(new java.lang.String[list1.size()]));
+                    object.setRecipientName((java.lang.String[]) list1.toArray(new java.lang.String[list1.size()]));
 
                 } // End of if for expected property start element
 
@@ -519,8 +499,7 @@ public class ArrayOfString3 implements org.apache.axis2.databinding.ADBBean {
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

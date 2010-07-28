@@ -8,7 +8,7 @@
     <parameter name="OutflowSecurity">
         <action>
             <items>UsernameToken Timestamp</items>
-            <user>[DOCUSIGN INTEGRATORS KEY]</user>
+            <user>[USER ID]</user>
             <passwordCallbackClass>net.docusign.wsclient.Authenticator</passwordCallbackClass>
             <passwordType>PasswordText</passwordType>
         </action>

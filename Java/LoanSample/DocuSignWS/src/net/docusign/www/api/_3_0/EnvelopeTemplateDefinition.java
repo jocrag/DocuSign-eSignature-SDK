@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getTemplateID() {
@@ -55,7 +55,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TemplateID
      */
@@ -64,8 +64,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
         if (param != null) {
             // update the setting tracker
             localTemplateIDTracker = true;
-        }
-        else {
+        } else {
             localTemplateIDTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getName() {
@@ -98,7 +97,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Name
      */
@@ -107,8 +106,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
         if (param != null) {
             // update the setting tracker
             localNameTracker = true;
-        }
-        else {
+        } else {
             localNameTracker = false;
 
         }
@@ -125,7 +123,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getShared() {
@@ -134,7 +132,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Shared
      */
@@ -159,7 +157,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getTemplatePassword() {
@@ -168,7 +166,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TemplatePassword
      */
@@ -177,8 +175,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
         if (param != null) {
             // update the setting tracker
             localTemplatePasswordTracker = true;
-        }
-        else {
+        } else {
             localTemplatePasswordTracker = false;
 
         }
@@ -202,7 +199,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getTemplateDescription() {
@@ -211,7 +208,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TemplateDescription
      */
@@ -220,8 +217,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
         if (param != null) {
             // update the setting tracker
             localTemplateDescriptionTracker = true;
-        }
-        else {
+        } else {
             localTemplateDescriptionTracker = false;
 
         }
@@ -245,7 +241,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.util.Calendar
      */
     public java.util.Calendar getLastModified() {
@@ -254,7 +250,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            LastModified
      */
@@ -263,8 +259,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
         if (param != null) {
             // update the setting tracker
             localLastModifiedTracker = true;
-        }
-        else {
+        } else {
             localLastModifiedTracker = false;
 
         }
@@ -288,7 +283,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return int
      */
     public int getPageCount() {
@@ -297,7 +292,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            PageCount
      */
@@ -308,8 +303,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
         if (param == java.lang.Integer.MIN_VALUE) {
             localPageCountTracker = false;
 
-        }
-        else {
+        } else {
             localPageCountTracker = true;
         }
 
@@ -319,7 +313,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -327,15 +321,14 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -368,8 +361,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -378,8 +370,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -388,8 +379,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":EnvelopeTemplateDefinition", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "EnvelopeTemplateDefinition", xmlWriter);
             }
 
@@ -406,13 +396,11 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TemplateID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TemplateID");
             }
 
@@ -421,8 +409,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
                 throw new org.apache.axis2.databinding.ADBException("TemplateID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localTemplateID);
 
@@ -442,13 +429,11 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Name");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Name");
             }
 
@@ -457,8 +442,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
                 throw new org.apache.axis2.databinding.ADBException("Name cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localName);
 
@@ -477,13 +461,11 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "Shared");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("Shared");
         }
 
@@ -491,8 +473,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
             throw new org.apache.axis2.databinding.ADBException("Shared cannot be null!!");
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localShared));
         }
 
@@ -509,13 +490,11 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TemplatePassword");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TemplatePassword");
             }
 
@@ -524,8 +503,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
                 throw new org.apache.axis2.databinding.ADBException("TemplatePassword cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localTemplatePassword);
 
@@ -545,13 +523,11 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TemplateDescription");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TemplateDescription");
             }
 
@@ -560,8 +536,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
                 throw new org.apache.axis2.databinding.ADBException("TemplateDescription cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localTemplateDescription);
 
@@ -581,13 +556,11 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "LastModified");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("LastModified");
             }
 
@@ -596,8 +569,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
                 throw new org.apache.axis2.databinding.ADBException("LastModified cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastModified));
 
@@ -617,13 +589,11 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "PageCount");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("PageCount");
             }
 
@@ -631,8 +601,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
                 throw new org.apache.axis2.databinding.ADBException("PageCount cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPageCount));
             }
 
@@ -662,8 +631,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -682,15 +650,13 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -712,14 +678,12 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -749,12 +713,10 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -785,7 +747,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -797,8 +759,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
             if (localTemplateID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTemplateID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("TemplateID cannot be null!!");
             }
         }
@@ -807,8 +768,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
             if (localName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Name cannot be null!!");
             }
         }
@@ -820,8 +780,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
             if (localTemplatePassword != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTemplatePassword));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("TemplatePassword cannot be null!!");
             }
         }
@@ -830,8 +789,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
             if (localTemplateDescription != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTemplateDescription));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("TemplateDescription cannot be null!!");
             }
         }
@@ -840,8 +798,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
 
             if (localLastModified != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localLastModified));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("LastModified cannot be null!!");
             }
         }
@@ -1041,8 +998,7 @@ public class EnvelopeTemplateDefinition implements org.apache.axis2.databinding.
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

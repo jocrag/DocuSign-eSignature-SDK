@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getAddressBookID() {
@@ -55,7 +55,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AddressBookID
      */
@@ -64,8 +64,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localAddressBookIDTracker = true;
-        }
-        else {
+        } else {
             localAddressBookIDTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getEmail() {
@@ -98,7 +97,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Email
      */
@@ -107,8 +106,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localEmailTracker = true;
-        }
-        else {
+        } else {
             localEmailTracker = false;
 
         }
@@ -132,7 +130,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getUserName() {
@@ -141,7 +139,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            UserName
      */
@@ -150,8 +148,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localUserNameTracker = true;
-        }
-        else {
+        } else {
             localUserNameTracker = false;
 
         }
@@ -175,7 +172,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getAccountName() {
@@ -184,7 +181,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AccountName
      */
@@ -193,8 +190,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localAccountNameTracker = true;
-        }
-        else {
+        } else {
             localAccountNameTracker = false;
 
         }
@@ -211,7 +207,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getShared() {
@@ -220,7 +216,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Shared
      */
@@ -245,7 +241,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.util.Calendar
      */
     public java.util.Calendar getCreated() {
@@ -254,7 +250,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Created
      */
@@ -263,8 +259,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localCreatedTracker = true;
-        }
-        else {
+        } else {
             localCreatedTracker = false;
 
         }
@@ -288,7 +283,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getOwner() {
@@ -297,7 +292,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Owner
      */
@@ -308,8 +303,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
         if (false) {
             localOwnerTracker = false;
 
-        }
-        else {
+        } else {
             localOwnerTracker = true;
         }
 
@@ -318,8 +312,176 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
     }
 
     /**
+     * field for Phone1
+     */
+
+    protected net.docusign.www.api._3_0.AddressBookPhoneNumber localPhone1;
+
+    /*
+     * This tracker boolean wil be used to detect whether the user called the
+     * set method for this attribute. It will be used to determine whether to
+     * include this field in the serialized XML
+     */
+    protected boolean localPhone1Tracker = false;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return net.docusign.www.api._3_0.AddressBookPhoneNumber
+     */
+    public net.docusign.www.api._3_0.AddressBookPhoneNumber getPhone1() {
+        return localPhone1;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            Phone1
+     */
+    public void setPhone1(net.docusign.www.api._3_0.AddressBookPhoneNumber param) {
+
+        if (param != null) {
+            // update the setting tracker
+            localPhone1Tracker = true;
+        } else {
+            localPhone1Tracker = false;
+
+        }
+
+        this.localPhone1 = param;
+
+    }
+
+    /**
+     * field for Phone2
+     */
+
+    protected net.docusign.www.api._3_0.AddressBookPhoneNumber localPhone2;
+
+    /*
+     * This tracker boolean wil be used to detect whether the user called the
+     * set method for this attribute. It will be used to determine whether to
+     * include this field in the serialized XML
+     */
+    protected boolean localPhone2Tracker = false;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return net.docusign.www.api._3_0.AddressBookPhoneNumber
+     */
+    public net.docusign.www.api._3_0.AddressBookPhoneNumber getPhone2() {
+        return localPhone2;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            Phone2
+     */
+    public void setPhone2(net.docusign.www.api._3_0.AddressBookPhoneNumber param) {
+
+        if (param != null) {
+            // update the setting tracker
+            localPhone2Tracker = true;
+        } else {
+            localPhone2Tracker = false;
+
+        }
+
+        this.localPhone2 = param;
+
+    }
+
+    /**
+     * field for Phone3
+     */
+
+    protected net.docusign.www.api._3_0.AddressBookPhoneNumber localPhone3;
+
+    /*
+     * This tracker boolean wil be used to detect whether the user called the
+     * set method for this attribute. It will be used to determine whether to
+     * include this field in the serialized XML
+     */
+    protected boolean localPhone3Tracker = false;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return net.docusign.www.api._3_0.AddressBookPhoneNumber
+     */
+    public net.docusign.www.api._3_0.AddressBookPhoneNumber getPhone3() {
+        return localPhone3;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            Phone3
+     */
+    public void setPhone3(net.docusign.www.api._3_0.AddressBookPhoneNumber param) {
+
+        if (param != null) {
+            // update the setting tracker
+            localPhone3Tracker = true;
+        } else {
+            localPhone3Tracker = false;
+
+        }
+
+        this.localPhone3 = param;
+
+    }
+
+    /**
+     * field for Phone4
+     */
+
+    protected net.docusign.www.api._3_0.AddressBookPhoneNumber localPhone4;
+
+    /*
+     * This tracker boolean wil be used to detect whether the user called the
+     * set method for this attribute. It will be used to determine whether to
+     * include this field in the serialized XML
+     */
+    protected boolean localPhone4Tracker = false;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return net.docusign.www.api._3_0.AddressBookPhoneNumber
+     */
+    public net.docusign.www.api._3_0.AddressBookPhoneNumber getPhone4() {
+        return localPhone4;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            Phone4
+     */
+    public void setPhone4(net.docusign.www.api._3_0.AddressBookPhoneNumber param) {
+
+        if (param != null) {
+            // update the setting tracker
+            localPhone4Tracker = true;
+        } else {
+            localPhone4Tracker = false;
+
+        }
+
+        this.localPhone4 = param;
+
+    }
+
+    /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -327,15 +489,14 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -368,8 +529,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -378,8 +538,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -388,8 +547,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":AddressBookItem", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "AddressBookItem", xmlWriter);
             }
 
@@ -406,13 +564,11 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AddressBookID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AddressBookID");
             }
 
@@ -421,8 +577,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("AddressBookID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localAddressBookID);
 
@@ -442,13 +597,11 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Email");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Email");
             }
 
@@ -457,8 +610,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Email cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localEmail);
 
@@ -478,13 +630,11 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "UserName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("UserName");
             }
 
@@ -493,8 +643,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("UserName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localUserName);
 
@@ -514,13 +663,11 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AccountName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AccountName");
             }
 
@@ -529,8 +676,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("AccountName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localAccountName);
 
@@ -549,13 +695,11 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "Shared");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("Shared");
         }
 
@@ -563,8 +707,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
             throw new org.apache.axis2.databinding.ADBException("Shared cannot be null!!");
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localShared));
         }
 
@@ -581,13 +724,11 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Created");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Created");
             }
 
@@ -596,8 +737,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Created cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCreated));
 
@@ -617,13 +757,11 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Owner");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Owner");
             }
 
@@ -631,12 +769,35 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Owner cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOwner));
             }
 
             xmlWriter.writeEndElement();
+        }
+        if (localPhone1Tracker) {
+            if (localPhone1 == null) {
+                throw new org.apache.axis2.databinding.ADBException("Phone1 cannot be null!!");
+            }
+            localPhone1.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone1"), factory, xmlWriter);
+        }
+        if (localPhone2Tracker) {
+            if (localPhone2 == null) {
+                throw new org.apache.axis2.databinding.ADBException("Phone2 cannot be null!!");
+            }
+            localPhone2.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone2"), factory, xmlWriter);
+        }
+        if (localPhone3Tracker) {
+            if (localPhone3 == null) {
+                throw new org.apache.axis2.databinding.ADBException("Phone3 cannot be null!!");
+            }
+            localPhone3.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone3"), factory, xmlWriter);
+        }
+        if (localPhone4Tracker) {
+            if (localPhone4 == null) {
+                throw new org.apache.axis2.databinding.ADBException("Phone4 cannot be null!!");
+            }
+            localPhone4.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone4"), factory, xmlWriter);
         }
         xmlWriter.writeEndElement();
 
@@ -662,8 +823,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -682,15 +842,13 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -712,14 +870,12 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -749,12 +905,10 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -785,7 +939,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -797,8 +951,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
             if (localAddressBookID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAddressBookID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("AddressBookID cannot be null!!");
             }
         }
@@ -807,8 +960,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
             if (localEmail != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEmail));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Email cannot be null!!");
             }
         }
@@ -817,8 +969,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
             if (localUserName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localUserName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("UserName cannot be null!!");
             }
         }
@@ -827,8 +978,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
             if (localAccountName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAccountName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("AccountName cannot be null!!");
             }
         }
@@ -840,8 +990,7 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
 
             if (localCreated != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCreated));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Created cannot be null!!");
             }
         }
@@ -849,6 +998,38 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
             elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Owner"));
 
             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOwner));
+        }
+        if (localPhone1Tracker) {
+            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone1"));
+
+            if (localPhone1 == null) {
+                throw new org.apache.axis2.databinding.ADBException("Phone1 cannot be null!!");
+            }
+            elementList.add(localPhone1);
+        }
+        if (localPhone2Tracker) {
+            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone2"));
+
+            if (localPhone2 == null) {
+                throw new org.apache.axis2.databinding.ADBException("Phone2 cannot be null!!");
+            }
+            elementList.add(localPhone2);
+        }
+        if (localPhone3Tracker) {
+            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone3"));
+
+            if (localPhone3 == null) {
+                throw new org.apache.axis2.databinding.ADBException("Phone3 cannot be null!!");
+            }
+            elementList.add(localPhone3);
+        }
+        if (localPhone4Tracker) {
+            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone4"));
+
+            if (localPhone4 == null) {
+                throw new org.apache.axis2.databinding.ADBException("Phone4 cannot be null!!");
+            }
+            elementList.add(localPhone4);
         }
 
         return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -1034,13 +1215,72 @@ public class AddressBookItem implements org.apache.axis2.databinding.ADBBean {
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone1").equals(reader.getName())) {
+
+                    object.setPhone1(net.docusign.www.api._3_0.AddressBookPhoneNumber.Factory.parse(reader));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone2").equals(reader.getName())) {
+
+                    object.setPhone2(net.docusign.www.api._3_0.AddressBookPhoneNumber.Factory.parse(reader));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone3").equals(reader.getName())) {
+
+                    object.setPhone3(net.docusign.www.api._3_0.AddressBookPhoneNumber.Factory.parse(reader));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Phone4").equals(reader.getName())) {
+
+                    object.setPhone4(net.docusign.www.api._3_0.AddressBookPhoneNumber.Factory.parse(reader));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
                 if (reader.isStartElement())
                     // A start element we are not expecting indicates a trailing
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

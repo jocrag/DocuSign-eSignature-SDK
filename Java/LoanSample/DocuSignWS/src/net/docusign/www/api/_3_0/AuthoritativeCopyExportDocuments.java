@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getEnvelopeId() {
@@ -55,7 +55,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnvelopeId
      */
@@ -64,8 +64,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
         if (param != null) {
             // update the setting tracker
             localEnvelopeIdTracker = true;
-        }
-        else {
+        } else {
             localEnvelopeIdTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getTransactionId() {
@@ -98,7 +97,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TransactionId
      */
@@ -107,8 +106,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
         if (param != null) {
             // update the setting tracker
             localTransactionIdTracker = true;
-        }
-        else {
+        } else {
             localTransactionIdTracker = false;
 
         }
@@ -125,7 +123,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return int
      */
     public int getCount() {
@@ -134,7 +132,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Count
      */
@@ -159,7 +157,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.DocumentPDF[]
      */
     public net.docusign.www.api._3_0.DocumentPDF[] getDocumentPDF() {
@@ -175,7 +173,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            DocumentPDF
      */
@@ -186,8 +184,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
         if (param != null) {
             // update the setting tracker
             localDocumentPDFTracker = true;
-        }
-        else {
+        } else {
             localDocumentPDFTracker = false;
 
         }
@@ -197,7 +194,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * Auto generated add method for the array for convenience
-     *
+     * 
      * @param param
      *            net.docusign.www.api._3_0.DocumentPDF
      */
@@ -217,7 +214,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -225,15 +222,14 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -266,8 +262,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -276,8 +271,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -286,8 +280,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":AuthoritativeCopyExportDocuments", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "AuthoritativeCopyExportDocuments", xmlWriter);
             }
 
@@ -304,13 +297,11 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "EnvelopeId");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("EnvelopeId");
             }
 
@@ -319,8 +310,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
                 throw new org.apache.axis2.databinding.ADBException("EnvelopeId cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localEnvelopeId);
 
@@ -340,13 +330,11 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TransactionId");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TransactionId");
             }
 
@@ -355,8 +343,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
                 throw new org.apache.axis2.databinding.ADBException("TransactionId cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localTransactionId);
 
@@ -375,13 +362,11 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "Count");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("Count");
         }
 
@@ -389,8 +374,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
             throw new org.apache.axis2.databinding.ADBException("Count cannot be null!!");
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCount));
         }
 
@@ -400,8 +384,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                 for (int i = 0; i < localDocumentPDF.length; i++) {
                     if (localDocumentPDF[i] != null) {
                         localDocumentPDF[i].serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "DocumentPDF"), factory, xmlWriter);
-                    }
-                    else {
+                    } else {
 
                         // we don't have to do any thing since minOccures is
                         // zero
@@ -409,8 +392,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                     }
 
                 }
-            }
-            else {
+            } else {
 
                 throw new org.apache.axis2.databinding.ADBException("DocumentPDF cannot be null!!");
 
@@ -440,8 +422,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -460,15 +441,13 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -490,14 +469,12 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -527,12 +504,10 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -563,7 +538,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -575,8 +550,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
             if (localEnvelopeId != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEnvelopeId));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("EnvelopeId cannot be null!!");
             }
         }
@@ -585,8 +559,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
 
             if (localTransactionId != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTransactionId));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("TransactionId cannot be null!!");
             }
         }
@@ -600,16 +573,14 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                     if (localDocumentPDF[i] != null) {
                         elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "DocumentPDF"));
                         elementList.add(localDocumentPDF[i]);
-                    }
-                    else {
+                    } else {
 
                         // nothing to do
 
                     }
 
                 }
-            }
-            else {
+            } else {
 
                 throw new org.apache.axis2.databinding.ADBException("DocumentPDF cannot be null!!");
 
@@ -755,13 +726,11 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                             // two continuous end elements means we are exiting
                             // the xml structure
                             loopDone4 = true;
-                        }
-                        else {
+                        } else {
                             if (new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "DocumentPDF").equals(reader.getName())) {
                                 list4.add(net.docusign.www.api._3_0.DocumentPDF.Factory.parse(reader));
 
-                            }
-                            else {
+                            } else {
                                 loopDone4 = true;
                             }
                         }
@@ -784,8 +753,7 @@ public class AuthoritativeCopyExportDocuments implements org.apache.axis2.databi
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

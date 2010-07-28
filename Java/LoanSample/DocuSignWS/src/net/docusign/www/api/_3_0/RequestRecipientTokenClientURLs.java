@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnSigningComplete() {
@@ -55,7 +55,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnSigningComplete
      */
@@ -64,8 +64,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnSigningCompleteTracker = true;
-        }
-        else {
+        } else {
             localOnSigningCompleteTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnViewingComplete() {
@@ -98,7 +97,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnViewingComplete
      */
@@ -107,8 +106,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnViewingCompleteTracker = true;
-        }
-        else {
+        } else {
             localOnViewingCompleteTracker = false;
 
         }
@@ -132,7 +130,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnCancel() {
@@ -141,7 +139,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnCancel
      */
@@ -150,8 +148,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnCancelTracker = true;
-        }
-        else {
+        } else {
             localOnCancelTracker = false;
 
         }
@@ -175,7 +172,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnDecline() {
@@ -184,7 +181,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnDecline
      */
@@ -193,8 +190,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnDeclineTracker = true;
-        }
-        else {
+        } else {
             localOnDeclineTracker = false;
 
         }
@@ -218,7 +214,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnSessionTimeout() {
@@ -227,7 +223,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnSessionTimeout
      */
@@ -236,8 +232,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnSessionTimeoutTracker = true;
-        }
-        else {
+        } else {
             localOnSessionTimeoutTracker = false;
 
         }
@@ -261,7 +256,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnTTLExpired() {
@@ -270,7 +265,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnTTLExpired
      */
@@ -279,8 +274,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnTTLExpiredTracker = true;
-        }
-        else {
+        } else {
             localOnTTLExpiredTracker = false;
 
         }
@@ -304,7 +298,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnException() {
@@ -313,7 +307,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnException
      */
@@ -322,8 +316,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnExceptionTracker = true;
-        }
-        else {
+        } else {
             localOnExceptionTracker = false;
 
         }
@@ -347,7 +340,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnAccessCodeFailed() {
@@ -356,7 +349,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnAccessCodeFailed
      */
@@ -365,8 +358,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnAccessCodeFailedTracker = true;
-        }
-        else {
+        } else {
             localOnAccessCodeFailedTracker = false;
 
         }
@@ -390,7 +382,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOnIdCheckFailed() {
@@ -399,7 +391,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OnIdCheckFailed
      */
@@ -408,13 +400,54 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (param != null) {
             // update the setting tracker
             localOnIdCheckFailedTracker = true;
-        }
-        else {
+        } else {
             localOnIdCheckFailedTracker = false;
 
         }
 
         this.localOnIdCheckFailed = param;
+
+    }
+
+    /**
+     * field for OnFaxPending
+     */
+
+    protected java.lang.String localOnFaxPending;
+
+    /*
+     * This tracker boolean wil be used to detect whether the user called the
+     * set method for this attribute. It will be used to determine whether to
+     * include this field in the serialized XML
+     */
+    protected boolean localOnFaxPendingTracker = false;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return java.lang.String
+     */
+    public java.lang.String getOnFaxPending() {
+        return localOnFaxPending;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            OnFaxPending
+     */
+    public void setOnFaxPending(java.lang.String param) {
+
+        if (param != null) {
+            // update the setting tracker
+            localOnFaxPendingTracker = true;
+        } else {
+            localOnFaxPendingTracker = false;
+
+        }
+
+        this.localOnFaxPending = param;
 
     }
 
@@ -433,7 +466,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getGenerateSignedDocumentAsynch() {
@@ -442,7 +475,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            GenerateSignedDocumentAsynch
      */
@@ -453,8 +486,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         if (false) {
             localGenerateSignedDocumentAsynchTracker = false;
 
-        }
-        else {
+        } else {
             localGenerateSignedDocumentAsynchTracker = true;
         }
 
@@ -464,7 +496,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -472,15 +504,14 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -513,8 +544,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -523,8 +553,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -533,8 +562,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":RequestRecipientTokenClientURLs", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "RequestRecipientTokenClientURLs", xmlWriter);
             }
 
@@ -551,13 +579,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnSigningComplete");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnSigningComplete");
             }
 
@@ -566,8 +592,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnSigningComplete cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnSigningComplete);
 
@@ -587,13 +612,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnViewingComplete");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnViewingComplete");
             }
 
@@ -602,8 +625,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnViewingComplete cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnViewingComplete);
 
@@ -623,13 +645,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnCancel");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnCancel");
             }
 
@@ -638,8 +658,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnCancel cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnCancel);
 
@@ -659,13 +678,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnDecline");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnDecline");
             }
 
@@ -674,8 +691,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnDecline cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnDecline);
 
@@ -695,13 +711,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnSessionTimeout");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnSessionTimeout");
             }
 
@@ -710,8 +724,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnSessionTimeout cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnSessionTimeout);
 
@@ -731,13 +744,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnTTLExpired");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnTTLExpired");
             }
 
@@ -746,8 +757,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnTTLExpired cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnTTLExpired);
 
@@ -767,13 +777,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnException");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnException");
             }
 
@@ -782,8 +790,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnException cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnException);
 
@@ -803,13 +810,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnAccessCodeFailed");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnAccessCodeFailed");
             }
 
@@ -818,8 +823,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnAccessCodeFailed cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnAccessCodeFailed);
 
@@ -839,13 +843,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OnIdCheckFailed");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OnIdCheckFailed");
             }
 
@@ -854,10 +856,42 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("OnIdCheckFailed cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOnIdCheckFailed);
+
+            }
+
+            xmlWriter.writeEndElement();
+        }
+        if (localOnFaxPendingTracker) {
+            namespace = "http://www.docusign.net/API/3.0";
+            if (!namespace.equals("")) {
+                prefix = xmlWriter.getPrefix(namespace);
+
+                if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+
+                    xmlWriter.writeStartElement(prefix, "OnFaxPending", namespace);
+                    xmlWriter.writeNamespace(prefix, namespace);
+                    xmlWriter.setPrefix(prefix, namespace);
+
+                } else {
+                    xmlWriter.writeStartElement(namespace, "OnFaxPending");
+                }
+
+            } else {
+                xmlWriter.writeStartElement("OnFaxPending");
+            }
+
+            if (localOnFaxPending == null) {
+                // write the nil attribute
+
+                throw new org.apache.axis2.databinding.ADBException("OnFaxPending cannot be null!!");
+
+            } else {
+
+                xmlWriter.writeCharacters(localOnFaxPending);
 
             }
 
@@ -875,13 +909,11 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "GenerateSignedDocumentAsynch");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("GenerateSignedDocumentAsynch");
             }
 
@@ -889,8 +921,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                 throw new org.apache.axis2.databinding.ADBException("GenerateSignedDocumentAsynch cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localGenerateSignedDocumentAsynch));
             }
 
@@ -920,8 +951,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -940,15 +970,13 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -970,14 +998,12 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -1007,12 +1033,10 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -1043,7 +1067,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -1055,8 +1079,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnSigningComplete != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnSigningComplete));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnSigningComplete cannot be null!!");
             }
         }
@@ -1065,8 +1088,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnViewingComplete != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnViewingComplete));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnViewingComplete cannot be null!!");
             }
         }
@@ -1075,8 +1097,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnCancel != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnCancel));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnCancel cannot be null!!");
             }
         }
@@ -1085,8 +1106,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnDecline != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnDecline));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnDecline cannot be null!!");
             }
         }
@@ -1095,8 +1115,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnSessionTimeout != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnSessionTimeout));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnSessionTimeout cannot be null!!");
             }
         }
@@ -1105,8 +1124,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnTTLExpired != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnTTLExpired));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnTTLExpired cannot be null!!");
             }
         }
@@ -1115,8 +1133,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnException != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnException));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnException cannot be null!!");
             }
         }
@@ -1125,8 +1142,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnAccessCodeFailed != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnAccessCodeFailed));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnAccessCodeFailed cannot be null!!");
             }
         }
@@ -1135,9 +1151,17 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
 
             if (localOnIdCheckFailed != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnIdCheckFailed));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OnIdCheckFailed cannot be null!!");
+            }
+        }
+        if (localOnFaxPendingTracker) {
+            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "OnFaxPending"));
+
+            if (localOnFaxPending != null) {
+                elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOnFaxPending));
+            } else {
+                throw new org.apache.axis2.databinding.ADBException("OnFaxPending cannot be null!!");
             }
         }
         if (localGenerateSignedDocumentAsynchTracker) {
@@ -1361,6 +1385,23 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "OnFaxPending").equals(reader.getName())) {
+
+                    java.lang.String content = reader.getElementText();
+
+                    object.setOnFaxPending(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
                 if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GenerateSignedDocumentAsynch").equals(reader.getName())) {
 
                     java.lang.String content = reader.getElementText();
@@ -1383,8 +1424,7 @@ public class RequestRecipientTokenClientURLs implements org.apache.axis2.databin
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

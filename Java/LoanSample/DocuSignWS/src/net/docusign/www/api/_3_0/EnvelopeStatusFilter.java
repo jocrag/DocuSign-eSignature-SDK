@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.UserInfo
      */
     public net.docusign.www.api._3_0.UserInfo getUserInfo() {
@@ -55,7 +55,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            UserInfo
      */
@@ -64,8 +64,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localUserInfoTracker = true;
-        }
-        else {
+        } else {
             localUserInfoTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getAccountId() {
@@ -98,7 +97,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AccountId
      */
@@ -107,8 +106,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localAccountIdTracker = true;
-        }
-        else {
+        } else {
             localAccountIdTracker = false;
 
         }
@@ -125,7 +123,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EnvelopeStatusFilterBeginDateTime
      */
     public net.docusign.www.api._3_0.EnvelopeStatusFilterBeginDateTime getBeginDateTime() {
@@ -134,7 +132,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            BeginDateTime
      */
@@ -159,7 +157,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.util.Calendar
      */
     public java.util.Calendar getEndDateTime() {
@@ -168,7 +166,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EndDateTime
      */
@@ -177,8 +175,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localEndDateTimeTracker = true;
-        }
-        else {
+        } else {
             localEndDateTimeTracker = false;
 
         }
@@ -202,7 +199,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.ArrayOfEnvelopeStatusCode
      */
     public net.docusign.www.api._3_0.ArrayOfEnvelopeStatusCode getStatuses() {
@@ -211,7 +208,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Statuses
      */
@@ -220,8 +217,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localStatusesTracker = true;
-        }
-        else {
+        } else {
             localStatusesTracker = false;
 
         }
@@ -234,7 +230,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
      * field for EnvelopeIds
      */
 
-    protected net.docusign.www.api._3_0.ArrayOfString1 localEnvelopeIds;
+    protected net.docusign.www.api._3_0.ArrayOfString2 localEnvelopeIds;
 
     /*
      * This tracker boolean wil be used to detect whether the user called the
@@ -245,26 +241,25 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
-     * @return net.docusign.www.api._3_0.ArrayOfString1
+     * 
+     * @return net.docusign.www.api._3_0.ArrayOfString2
      */
-    public net.docusign.www.api._3_0.ArrayOfString1 getEnvelopeIds() {
+    public net.docusign.www.api._3_0.ArrayOfString2 getEnvelopeIds() {
         return localEnvelopeIds;
     }
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnvelopeIds
      */
-    public void setEnvelopeIds(net.docusign.www.api._3_0.ArrayOfString1 param) {
+    public void setEnvelopeIds(net.docusign.www.api._3_0.ArrayOfString2 param) {
 
         if (param != null) {
             // update the setting tracker
             localEnvelopeIdsTracker = true;
-        }
-        else {
+        } else {
             localEnvelopeIdsTracker = false;
 
         }
@@ -281,7 +276,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return org.apache.axis2.databinding.types.NonNegativeInteger
      */
     public org.apache.axis2.databinding.types.NonNegativeInteger getStartAtIndex() {
@@ -290,7 +285,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            StartAtIndex
      */
@@ -315,7 +310,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EnvelopeACStatusCode
      */
     public net.docusign.www.api._3_0.EnvelopeACStatusCode getACStatus() {
@@ -324,7 +319,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ACStatus
      */
@@ -333,8 +328,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
         if (param != null) {
             // update the setting tracker
             localACStatusTracker = true;
-        }
-        else {
+        } else {
             localACStatusTracker = false;
 
         }
@@ -345,7 +339,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -353,15 +347,14 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -394,8 +387,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -404,8 +396,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -414,8 +405,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":EnvelopeStatusFilter", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "EnvelopeStatusFilter", xmlWriter);
             }
 
@@ -438,13 +428,11 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AccountId");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AccountId");
             }
 
@@ -453,8 +441,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
                 throw new org.apache.axis2.databinding.ADBException("AccountId cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localAccountId);
 
@@ -476,21 +463,18 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
                     xmlWriter.writeNamespace(prefix2, namespace2);
                     xmlWriter.setPrefix(prefix2, namespace2);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace2, "BeginDateTime");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("BeginDateTime");
             }
 
             // write the nil attribute
             writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "nil", "1", xmlWriter);
             xmlWriter.writeEndElement();
-        }
-        else {
+        } else {
             localBeginDateTime.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "BeginDateTime"), factory, xmlWriter);
         }
         if (localEndDateTimeTracker) {
@@ -505,13 +489,11 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "EndDateTime");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("EndDateTime");
             }
 
@@ -520,8 +502,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
                 throw new org.apache.axis2.databinding.ADBException("EndDateTime cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEndDateTime));
 
@@ -552,13 +533,11 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "StartAtIndex");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("StartAtIndex");
         }
 
@@ -567,8 +546,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
             writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "nil", "1", xmlWriter);
 
-        }
-        else {
+        } else {
 
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStartAtIndex));
 
@@ -605,8 +583,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -625,15 +602,13 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -655,14 +630,12 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -692,12 +665,10 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -728,7 +699,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -748,8 +719,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
             if (localAccountId != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAccountId));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("AccountId cannot be null!!");
             }
         }
@@ -761,8 +731,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
             if (localEndDateTime != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEndDateTime));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("EndDateTime cannot be null!!");
             }
         }
@@ -897,8 +866,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
                         reader.next();
 
-                    }
-                    else {
+                    } else {
 
                         object.setBeginDateTime(net.docusign.www.api._3_0.EnvelopeStatusFilterBeginDateTime.Factory.parse(reader));
 
@@ -949,7 +917,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
                 if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeIds").equals(reader.getName())) {
 
-                    object.setEnvelopeIds(net.docusign.www.api._3_0.ArrayOfString1.Factory.parse(reader));
+                    object.setEnvelopeIds(net.docusign.www.api._3_0.ArrayOfString2.Factory.parse(reader));
 
                     reader.next();
 
@@ -971,8 +939,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
 
                         object.setStartAtIndex(org.apache.axis2.databinding.utils.ConverterUtil.convertToNonNegativeInteger(content));
 
-                    }
-                    else {
+                    } else {
 
                         reader.getElementText(); // throw away text nodes if
                                                  // any.
@@ -1011,8 +978,7 @@ public class EnvelopeStatusFilter implements org.apache.axis2.databinding.ADBBea
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

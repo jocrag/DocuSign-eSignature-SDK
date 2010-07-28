@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.AddressBookItem[]
      */
     public net.docusign.www.api._3_0.AddressBookItem[] getAddressBookItem() {
@@ -62,7 +62,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AddressBookItem
      */
@@ -73,8 +73,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
         if (param != null) {
             // update the setting tracker
             localAddressBookItemTracker = true;
-        }
-        else {
+        } else {
             localAddressBookItemTracker = true;
 
         }
@@ -84,7 +83,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
 
     /**
      * Auto generated add method for the array for convenience
-     *
+     * 
      * @param param
      *            net.docusign.www.api._3_0.AddressBookItem
      */
@@ -104,7 +103,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -112,15 +111,14 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -153,8 +151,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -163,8 +160,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -173,8 +169,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":ArrayOfAddressBookItem", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "ArrayOfAddressBookItem", xmlWriter);
             }
 
@@ -184,8 +179,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                 for (int i = 0; i < localAddressBookItem.length; i++) {
                     if (localAddressBookItem[i] != null) {
                         localAddressBookItem[i].serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddressBookItem"), factory, xmlWriter);
-                    }
-                    else {
+                    } else {
 
                         // write null attribute
                         java.lang.String namespace2 = "http://www.docusign.net/API/3.0";
@@ -199,13 +193,11 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                                 xmlWriter.writeNamespace(prefix2, namespace2);
                                 xmlWriter.setPrefix(prefix2, namespace2);
 
-                            }
-                            else {
+                            } else {
                                 xmlWriter.writeStartElement(namespace2, "AddressBookItem");
                             }
 
-                        }
-                        else {
+                        } else {
                             xmlWriter.writeStartElement("AddressBookItem");
                         }
 
@@ -216,8 +208,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                     }
 
                 }
-            }
-            else {
+            } else {
 
                 // write null attribute
                 java.lang.String namespace2 = "http://www.docusign.net/API/3.0";
@@ -231,13 +222,11 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                         xmlWriter.writeNamespace(prefix2, namespace2);
                         xmlWriter.setPrefix(prefix2, namespace2);
 
-                    }
-                    else {
+                    } else {
                         xmlWriter.writeStartElement(namespace2, "AddressBookItem");
                     }
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement("AddressBookItem");
                 }
 
@@ -271,8 +260,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -291,15 +279,13 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -321,14 +307,12 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -358,12 +342,10 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -394,7 +376,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -408,8 +390,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                     if (localAddressBookItem[i] != null) {
                         elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddressBookItem"));
                         elementList.add(localAddressBookItem[i]);
-                    }
-                    else {
+                    } else {
 
                         elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddressBookItem"));
                         elementList.add(null);
@@ -417,8 +398,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                     }
 
                 }
-            }
-            else {
+            } else {
 
                 elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddressBookItem"));
                 elementList.add(localAddressBookItem);
@@ -499,8 +479,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                     if ("true".equals(nillableValue) || "1".equals(nillableValue)) {
                         list1.add(null);
                         reader.next();
-                    }
-                    else {
+                    } else {
                         list1.add(net.docusign.www.api._3_0.AddressBookItem.Factory.parse(reader));
                     }
                     // loop until we find a start element that is not part of
@@ -519,20 +498,17 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                             // two continuous end elements means we are exiting
                             // the xml structure
                             loopDone1 = true;
-                        }
-                        else {
+                        } else {
                             if (new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddressBookItem").equals(reader.getName())) {
 
                                 nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "nil");
                                 if ("true".equals(nillableValue) || "1".equals(nillableValue)) {
                                     list1.add(null);
                                     reader.next();
-                                }
-                                else {
+                                } else {
                                     list1.add(net.docusign.www.api._3_0.AddressBookItem.Factory.parse(reader));
                                 }
-                            }
-                            else {
+                            } else {
                                 loopDone1 = true;
                             }
                         }
@@ -555,8 +531,7 @@ public class ArrayOfAddressBookItem implements org.apache.axis2.databinding.ADBB
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

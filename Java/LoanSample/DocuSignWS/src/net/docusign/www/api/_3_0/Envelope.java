@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -45,7 +45,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getTransactionID() {
@@ -54,7 +54,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TransactionID
      */
@@ -63,8 +63,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localTransactionIDTracker = true;
-        }
-        else {
+        } else {
             localTransactionIDTracker = false;
 
         }
@@ -88,7 +87,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getAsynchronous() {
@@ -97,7 +96,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Asynchronous
      */
@@ -108,8 +107,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (false) {
             localAsynchronousTracker = false;
 
-        }
-        else {
+        } else {
             localAsynchronousTracker = true;
         }
 
@@ -132,7 +130,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getAccountId() {
@@ -141,7 +139,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AccountId
      */
@@ -150,8 +148,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localAccountIdTracker = true;
-        }
-        else {
+        } else {
             localAccountIdTracker = false;
 
         }
@@ -175,7 +172,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.ArrayOfDocument
      */
     public net.docusign.www.api._3_0.ArrayOfDocument getDocuments() {
@@ -184,7 +181,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Documents
      */
@@ -193,8 +190,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localDocumentsTracker = true;
-        }
-        else {
+        } else {
             localDocumentsTracker = false;
 
         }
@@ -218,7 +214,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.ArrayOfRecipient
      */
     public net.docusign.www.api._3_0.ArrayOfRecipient getRecipients() {
@@ -227,7 +223,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Recipients
      */
@@ -236,8 +232,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localRecipientsTracker = true;
-        }
-        else {
+        } else {
             localRecipientsTracker = false;
 
         }
@@ -261,7 +256,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.ArrayOfTab
      */
     public net.docusign.www.api._3_0.ArrayOfTab getTabs() {
@@ -270,7 +265,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Tabs
      */
@@ -279,8 +274,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localTabsTracker = true;
-        }
-        else {
+        } else {
             localTabsTracker = false;
 
         }
@@ -304,7 +298,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getSubject() {
@@ -313,7 +307,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Subject
      */
@@ -322,8 +316,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localSubjectTracker = true;
-        }
-        else {
+        } else {
             localSubjectTracker = false;
 
         }
@@ -347,7 +340,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getEmailBlurb() {
@@ -356,7 +349,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EmailBlurb
      */
@@ -365,8 +358,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localEmailBlurbTracker = true;
-        }
-        else {
+        } else {
             localEmailBlurbTracker = false;
 
         }
@@ -390,7 +382,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.SigningLocationCode
      */
     public net.docusign.www.api._3_0.SigningLocationCode getSigningLocation() {
@@ -399,7 +391,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            SigningLocation
      */
@@ -408,8 +400,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localSigningLocationTracker = true;
-        }
-        else {
+        } else {
             localSigningLocationTracker = false;
 
         }
@@ -433,7 +424,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.ArrayOfCustomField
      */
     public net.docusign.www.api._3_0.ArrayOfCustomField getCustomFields() {
@@ -442,7 +433,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CustomFields
      */
@@ -451,8 +442,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localCustomFieldsTracker = true;
-        }
-        else {
+        } else {
             localCustomFieldsTracker = false;
 
         }
@@ -476,7 +466,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.VaultingOptions
      */
     public net.docusign.www.api._3_0.VaultingOptions getVaultingOptions() {
@@ -485,7 +475,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            VaultingOptions
      */
@@ -494,8 +484,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localVaultingOptionsTracker = true;
-        }
-        else {
+        } else {
             localVaultingOptionsTracker = false;
 
         }
@@ -519,7 +508,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getAutoNavigation() {
@@ -528,7 +517,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AutoNavigation
      */
@@ -539,8 +528,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (false) {
             localAutoNavigationTracker = false;
 
-        }
-        else {
+        } else {
             localAutoNavigationTracker = true;
         }
 
@@ -563,7 +551,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getEnvelopeIdStamping() {
@@ -572,7 +560,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnvelopeIdStamping
      */
@@ -583,8 +571,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (false) {
             localEnvelopeIdStampingTracker = false;
 
-        }
-        else {
+        } else {
             localEnvelopeIdStampingTracker = true;
         }
 
@@ -607,7 +594,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getAuthoritativeCopy() {
@@ -616,7 +603,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AuthoritativeCopy
      */
@@ -627,8 +614,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (false) {
             localAuthoritativeCopyTracker = false;
 
-        }
-        else {
+        } else {
             localAuthoritativeCopyTracker = true;
         }
 
@@ -651,7 +637,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.Notification
      */
     public net.docusign.www.api._3_0.Notification getNotification() {
@@ -660,7 +646,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Notification
      */
@@ -669,8 +655,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localNotificationTracker = true;
-        }
-        else {
+        } else {
             localNotificationTracker = false;
 
         }
@@ -694,7 +679,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.ArrayOfAttachment
      */
     public net.docusign.www.api._3_0.ArrayOfAttachment getEnvelopeAttachment() {
@@ -703,7 +688,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnvelopeAttachment
      */
@@ -712,8 +697,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localEnvelopeAttachmentTracker = true;
-        }
-        else {
+        } else {
             localEnvelopeAttachmentTracker = false;
 
         }
@@ -737,7 +721,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getEnforceSignerVisibility() {
@@ -746,7 +730,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnforceSignerVisibility
      */
@@ -757,8 +741,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (false) {
             localEnforceSignerVisibilityTracker = false;
 
-        }
-        else {
+        } else {
             localEnforceSignerVisibilityTracker = true;
         }
 
@@ -781,7 +764,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getEnableWetSign() {
@@ -790,7 +773,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnableWetSign
      */
@@ -801,8 +784,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         if (false) {
             localEnableWetSignTracker = false;
 
-        }
-        else {
+        } else {
             localEnableWetSignTracker = true;
         }
 
@@ -811,8 +793,93 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
     }
 
     /**
+     * field for AllowMarkup
+     */
+
+    protected boolean localAllowMarkup;
+
+    /*
+     * This tracker boolean wil be used to detect whether the user called the
+     * set method for this attribute. It will be used to determine whether to
+     * include this field in the serialized XML
+     */
+    protected boolean localAllowMarkupTracker = false;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return boolean
+     */
+    public boolean getAllowMarkup() {
+        return localAllowMarkup;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            AllowMarkup
+     */
+    public void setAllowMarkup(boolean param) {
+
+        // setting primitive attribute tracker to true
+
+        if (false) {
+            localAllowMarkupTracker = false;
+
+        } else {
+            localAllowMarkupTracker = true;
+        }
+
+        this.localAllowMarkup = param;
+
+    }
+
+    /**
+     * field for EventNotification
+     */
+
+    protected net.docusign.www.api._3_0.EventNotification localEventNotification;
+
+    /*
+     * This tracker boolean wil be used to detect whether the user called the
+     * set method for this attribute. It will be used to determine whether to
+     * include this field in the serialized XML
+     */
+    protected boolean localEventNotificationTracker = false;
+
+    /**
+     * Auto generated getter method
+     * 
+     * @return net.docusign.www.api._3_0.EventNotification
+     */
+    public net.docusign.www.api._3_0.EventNotification getEventNotification() {
+        return localEventNotification;
+    }
+
+    /**
+     * Auto generated setter method
+     * 
+     * @param param
+     *            EventNotification
+     */
+    public void setEventNotification(net.docusign.www.api._3_0.EventNotification param) {
+
+        if (param != null) {
+            // update the setting tracker
+            localEventNotificationTracker = true;
+        } else {
+            localEventNotificationTracker = false;
+
+        }
+
+        this.localEventNotification = param;
+
+    }
+
+    /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -820,15 +887,14 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -861,8 +927,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -871,8 +936,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -881,8 +945,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":Envelope", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "Envelope", xmlWriter);
             }
 
@@ -899,13 +962,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TransactionID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TransactionID");
             }
 
@@ -914,8 +975,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("TransactionID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localTransactionID);
 
@@ -935,13 +995,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Asynchronous");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Asynchronous");
             }
 
@@ -949,8 +1007,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Asynchronous cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAsynchronous));
             }
 
@@ -968,13 +1025,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AccountId");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AccountId");
             }
 
@@ -983,8 +1038,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("AccountId cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localAccountId);
 
@@ -1022,13 +1076,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Subject");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Subject");
             }
 
@@ -1037,8 +1089,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Subject cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localSubject);
 
@@ -1058,13 +1109,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "EmailBlurb");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("EmailBlurb");
             }
 
@@ -1073,8 +1122,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("EmailBlurb cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localEmailBlurb);
 
@@ -1112,13 +1160,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AutoNavigation");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AutoNavigation");
             }
 
@@ -1126,8 +1172,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("AutoNavigation cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAutoNavigation));
             }
 
@@ -1145,13 +1190,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "EnvelopeIdStamping");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("EnvelopeIdStamping");
             }
 
@@ -1159,8 +1202,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("EnvelopeIdStamping cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEnvelopeIdStamping));
             }
 
@@ -1178,13 +1220,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AuthoritativeCopy");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AuthoritativeCopy");
             }
 
@@ -1192,8 +1232,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("AuthoritativeCopy cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAuthoritativeCopy));
             }
 
@@ -1223,13 +1262,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "EnforceSignerVisibility");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("EnforceSignerVisibility");
             }
 
@@ -1237,8 +1274,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("EnforceSignerVisibility cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEnforceSignerVisibility));
             }
 
@@ -1256,13 +1292,11 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "EnableWetSign");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("EnableWetSign");
             }
 
@@ -1270,12 +1304,47 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("EnableWetSign cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEnableWetSign));
             }
 
             xmlWriter.writeEndElement();
+        }
+        if (localAllowMarkupTracker) {
+            namespace = "http://www.docusign.net/API/3.0";
+            if (!namespace.equals("")) {
+                prefix = xmlWriter.getPrefix(namespace);
+
+                if (prefix == null) {
+                    prefix = generatePrefix(namespace);
+
+                    xmlWriter.writeStartElement(prefix, "AllowMarkup", namespace);
+                    xmlWriter.writeNamespace(prefix, namespace);
+                    xmlWriter.setPrefix(prefix, namespace);
+
+                } else {
+                    xmlWriter.writeStartElement(namespace, "AllowMarkup");
+                }
+
+            } else {
+                xmlWriter.writeStartElement("AllowMarkup");
+            }
+
+            if (false) {
+
+                throw new org.apache.axis2.databinding.ADBException("AllowMarkup cannot be null!!");
+
+            } else {
+                xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAllowMarkup));
+            }
+
+            xmlWriter.writeEndElement();
+        }
+        if (localEventNotificationTracker) {
+            if (localEventNotification == null) {
+                throw new org.apache.axis2.databinding.ADBException("EventNotification cannot be null!!");
+            }
+            localEventNotification.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventNotification"), factory, xmlWriter);
         }
         xmlWriter.writeEndElement();
 
@@ -1301,8 +1370,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -1321,15 +1389,13 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -1351,14 +1417,12 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -1388,12 +1452,10 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -1424,7 +1486,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -1436,8 +1498,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
             if (localTransactionID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTransactionID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("TransactionID cannot be null!!");
             }
         }
@@ -1451,8 +1512,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
             if (localAccountId != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAccountId));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("AccountId cannot be null!!");
             }
         }
@@ -1485,8 +1545,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
             if (localSubject != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSubject));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Subject cannot be null!!");
             }
         }
@@ -1495,8 +1554,7 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
 
             if (localEmailBlurb != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEmailBlurb));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("EmailBlurb cannot be null!!");
             }
         }
@@ -1564,6 +1622,19 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
             elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnableWetSign"));
 
             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEnableWetSign));
+        }
+        if (localAllowMarkupTracker) {
+            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AllowMarkup"));
+
+            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAllowMarkup));
+        }
+        if (localEventNotificationTracker) {
+            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventNotification"));
+
+            if (localEventNotification == null) {
+                throw new org.apache.axis2.databinding.ADBException("EventNotification cannot be null!!");
+            }
+            elementList.add(localEventNotification);
         }
 
         return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
@@ -1918,13 +1989,44 @@ public class Envelope implements org.apache.axis2.databinding.ADBBean {
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AllowMarkup").equals(reader.getName())) {
+
+                    java.lang.String content = reader.getElementText();
+
+                    object.setAllowMarkup(org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventNotification").equals(reader.getName())) {
+
+                    object.setEventNotification(net.docusign.www.api._3_0.EventNotification.Factory.parse(reader));
+
+                    reader.next();
+
+                } // End of if for expected property start element
+
+                else {
+
+                }
+
+                while (!reader.isStartElement() && !reader.isEndElement())
+                    reader.next();
+
                 if (reader.isStartElement())
                     // A start element we are not expecting indicates a trailing
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

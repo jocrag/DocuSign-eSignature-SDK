@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -24,6 +24,12 @@ public class ExtensionMapper {
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "ArrayOfRecipientStatus".equals(typeName)) {
 
             return net.docusign.www.api._3_0.ArrayOfRecipientStatus.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EnvelopeEventStatusCode".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.EnvelopeEventStatusCode.Factory.parse(reader);
 
         }
 
@@ -45,15 +51,15 @@ public class ExtensionMapper {
 
         }
 
-        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EnvelopePDF".equals(typeName)) {
-
-            return net.docusign.www.api._3_0.EnvelopePDF.Factory.parse(reader);
-
-        }
-
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "FormData".equals(typeName)) {
 
             return net.docusign.www.api._3_0.FormData.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EnvelopePDF".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.EnvelopePDF.Factory.parse(reader);
 
         }
 
@@ -66,6 +72,12 @@ public class ExtensionMapper {
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "Document".equals(typeName)) {
 
             return net.docusign.www.api._3_0.Document.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EventNotification".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.EventNotification.Factory.parse(reader);
 
         }
 
@@ -90,6 +102,18 @@ public class ExtensionMapper {
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "ArrayOfRecipientCorrection".equals(typeName)) {
 
             return net.docusign.www.api._3_0.ArrayOfRecipientCorrection.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EnvelopeEvent".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.EnvelopeEvent.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "ArrayOfEnvelopeEvent".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.ArrayOfEnvelopeEvent.Factory.parse(reader);
 
         }
 
@@ -153,6 +177,12 @@ public class ExtensionMapper {
 
         }
 
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "ArrayOfString4".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.ArrayOfString4.Factory.parse(reader);
+
+        }
+
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "DocumentType".equals(typeName)) {
 
             return net.docusign.www.api._3_0.DocumentType.Factory.parse(reader);
@@ -213,15 +243,15 @@ public class ExtensionMapper {
 
         }
 
-        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EnvelopeTemplateDefinition".equals(typeName)) {
-
-            return net.docusign.www.api._3_0.EnvelopeTemplateDefinition.Factory.parse(reader);
-
-        }
-
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "PurgeDocumentStatus".equals(typeName)) {
 
             return net.docusign.www.api._3_0.PurgeDocumentStatus.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EnvelopeTemplateDefinition".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.EnvelopeTemplateDefinition.Factory.parse(reader);
 
         }
 
@@ -264,6 +294,12 @@ public class ExtensionMapper {
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EnvelopeInformation".equals(typeName)) {
 
             return net.docusign.www.api._3_0.EnvelopeInformation.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "PhoneNumberDesignation".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.PhoneNumberDesignation.Factory.parse(reader);
 
         }
 
@@ -336,6 +372,12 @@ public class ExtensionMapper {
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "ArrayOfTab".equals(typeName)) {
 
             return net.docusign.www.api._3_0.ArrayOfTab.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "AddressBookPhoneNumber".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.AddressBookPhoneNumber.Factory.parse(reader);
 
         }
 
@@ -621,6 +663,12 @@ public class ExtensionMapper {
 
         }
 
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "RecipientPhoneAuthentication".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.RecipientPhoneAuthentication.Factory.parse(reader);
+
+        }
+
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "TemplateReferenceFieldDataDataValue".equals(typeName)) {
 
             return net.docusign.www.api._3_0.TemplateReferenceFieldDataDataValue.Factory.parse(reader);
@@ -723,15 +771,15 @@ public class ExtensionMapper {
 
         }
 
-        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "AddressBookItem".equals(typeName)) {
-
-            return net.docusign.www.api._3_0.AddressBookItem.Factory.parse(reader);
-
-        }
-
         if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "EventStatusCode".equals(typeName)) {
 
             return net.docusign.www.api._3_0.EventStatusCode.Factory.parse(reader);
+
+        }
+
+        if ("http://www.docusign.net/API/3.0".equals(namespaceURI) && "AddressBookItem".equals(typeName)) {
+
+            return net.docusign.www.api._3_0.AddressBookItem.Factory.parse(reader);
 
         }
 
