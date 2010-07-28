@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.util.ArrayList;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for DocumentPDFs complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="DocumentPDFs">
  *   &lt;complexContent>
@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DocumentPDFs", propOrder = {
@@ -55,11 +55,11 @@ public class DocumentPDFs {
 
     /**
      * Gets the value of the envelopeId property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEnvelopeId() {
         return envelopeId;
@@ -67,11 +67,11 @@ public class DocumentPDFs {
 
     /**
      * Sets the value of the envelopeId property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEnvelopeId(String value) {
         this.envelopeId = value;
@@ -79,25 +79,25 @@ public class DocumentPDFs {
 
     /**
      * Gets the value of the documentPDF property.
-     *
+     * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the documentPDF property.
-     *
+     * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getDocumentPDF().add(newItem);
      * </pre>
-     *
-     *
+     * 
+     * 
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link DocumentPDF }
-     *
-     *
+     * 
+     * 
      */
     public List<DocumentPDF> getDocumentPDF() {
         if (documentPDF == null) {

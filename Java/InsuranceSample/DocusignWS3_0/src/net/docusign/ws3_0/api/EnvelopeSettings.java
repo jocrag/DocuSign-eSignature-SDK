@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for EnvelopeSettings complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="EnvelopeSettings">
  *   &lt;complexContent>
@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnvelopeSettings", propOrder = {
@@ -53,11 +53,11 @@ public class EnvelopeSettings {
 
     /**
      * Gets the value of the autoNavigation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAutoNavigation() {
         return autoNavigation;
@@ -65,11 +65,11 @@ public class EnvelopeSettings {
 
     /**
      * Sets the value of the autoNavigation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAutoNavigation(Boolean value) {
         this.autoNavigation = value;
@@ -77,11 +77,11 @@ public class EnvelopeSettings {
 
     /**
      * Gets the value of the envelopeIdStamping property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isEnvelopeIdStamping() {
         return envelopeIdStamping;
@@ -89,11 +89,11 @@ public class EnvelopeSettings {
 
     /**
      * Sets the value of the envelopeIdStamping property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setEnvelopeIdStamping(Boolean value) {
         this.envelopeIdStamping = value;

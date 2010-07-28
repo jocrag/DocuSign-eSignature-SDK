@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,9 +23,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for EnvelopeTemplateDefinition complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="EnvelopeTemplateDefinition">
  *   &lt;complexContent>
@@ -43,8 +43,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnvelopeTemplateDefinition", propOrder = {
@@ -76,11 +76,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Gets the value of the templateID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTemplateID() {
         return templateID;
@@ -88,11 +88,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Sets the value of the templateID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTemplateID(String value) {
         this.templateID = value;
@@ -100,11 +100,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Gets the value of the name property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getName() {
         return name;
@@ -112,11 +112,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Sets the value of the name property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setName(String value) {
         this.name = value;
@@ -124,7 +124,7 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Gets the value of the shared property.
-     *
+     * 
      */
     public boolean isShared() {
         return shared;
@@ -132,7 +132,7 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Sets the value of the shared property.
-     *
+     * 
      */
     public void setShared(boolean value) {
         this.shared = value;
@@ -140,11 +140,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Gets the value of the templatePassword property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTemplatePassword() {
         return templatePassword;
@@ -152,11 +152,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Sets the value of the templatePassword property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTemplatePassword(String value) {
         this.templatePassword = value;
@@ -164,11 +164,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Gets the value of the templateDescription property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTemplateDescription() {
         return templateDescription;
@@ -176,11 +176,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Sets the value of the templateDescription property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTemplateDescription(String value) {
         this.templateDescription = value;
@@ -188,11 +188,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Gets the value of the lastModified property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getLastModified() {
         return lastModified;
@@ -200,11 +200,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Sets the value of the lastModified property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setLastModified(XMLGregorianCalendar value) {
         this.lastModified = value;
@@ -212,11 +212,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Gets the value of the pageCount property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Integer }
-     *
+     *     
      */
     public Integer getPageCount() {
         return pageCount;
@@ -224,11 +224,11 @@ public class EnvelopeTemplateDefinition {
 
     /**
      * Sets the value of the pageCount property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Integer }
-     *
+     *     
      */
     public void setPageCount(Integer value) {
         this.pageCount = value;

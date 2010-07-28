@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for RecipientList complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RecipientList">
  *   &lt;complexContent>
@@ -31,14 +31,14 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="ReservedRecipientEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="MultipleUsers" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="RecipientName" type="{http://www.docusign.net/API/3.0}ArrayOfString2" minOccurs="0"/>
+ *         &lt;element name="RecipientName" type="{http://www.docusign.net/API/3.0}ArrayOfString3" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RecipientList", propOrder = {
@@ -53,15 +53,15 @@ public class RecipientList {
     @XmlElement(name = "MultipleUsers")
     protected Boolean multipleUsers;
     @XmlElement(name = "RecipientName")
-    protected ArrayOfString2 recipientName;
+    protected ArrayOfString3 recipientName;
 
     /**
      * Gets the value of the reservedRecipientEmail property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isReservedRecipientEmail() {
         return reservedRecipientEmail;
@@ -69,11 +69,11 @@ public class RecipientList {
 
     /**
      * Sets the value of the reservedRecipientEmail property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setReservedRecipientEmail(Boolean value) {
         this.reservedRecipientEmail = value;
@@ -81,11 +81,11 @@ public class RecipientList {
 
     /**
      * Gets the value of the multipleUsers property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isMultipleUsers() {
         return multipleUsers;
@@ -93,11 +93,11 @@ public class RecipientList {
 
     /**
      * Sets the value of the multipleUsers property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setMultipleUsers(Boolean value) {
         this.multipleUsers = value;
@@ -105,25 +105,25 @@ public class RecipientList {
 
     /**
      * Gets the value of the recipientName property.
-     *
+     * 
      * @return
      *     possible object is
-     *     {@link ArrayOfString2 }
-     *
+     *     {@link ArrayOfString3 }
+     *     
      */
-    public ArrayOfString2 getRecipientName() {
+    public ArrayOfString3 getRecipientName() {
         return recipientName;
     }
 
     /**
      * Sets the value of the recipientName property.
-     *
+     * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfString2 }
-     *
+     *     {@link ArrayOfString3 }
+     *     
      */
-    public void setRecipientName(ArrayOfString2 value) {
+    public void setRecipientName(ArrayOfString3 value) {
         this.recipientName = value;
     }
 

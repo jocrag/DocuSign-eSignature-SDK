@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for RecipientSignatureInfo complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RecipientSignatureInfo">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RecipientSignatureInfo", propOrder = {
@@ -57,11 +57,11 @@ public class RecipientSignatureInfo {
 
     /**
      * Gets the value of the signatureName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getSignatureName() {
         return signatureName;
@@ -69,11 +69,11 @@ public class RecipientSignatureInfo {
 
     /**
      * Sets the value of the signatureName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSignatureName(String value) {
         this.signatureName = value;
@@ -81,11 +81,11 @@ public class RecipientSignatureInfo {
 
     /**
      * Gets the value of the signatureInitials property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getSignatureInitials() {
         return signatureInitials;
@@ -93,11 +93,11 @@ public class RecipientSignatureInfo {
 
     /**
      * Sets the value of the signatureInitials property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSignatureInitials(String value) {
         this.signatureInitials = value;
@@ -105,11 +105,11 @@ public class RecipientSignatureInfo {
 
     /**
      * Gets the value of the fontStyle property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link FontStyleCode }
-     *
+     *     
      */
     public FontStyleCode getFontStyle() {
         return fontStyle;
@@ -117,11 +117,11 @@ public class RecipientSignatureInfo {
 
     /**
      * Sets the value of the fontStyle property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link FontStyleCode }
-     *
+     *     
      */
     public void setFontStyle(FontStyleCode value) {
         this.fontStyle = value;

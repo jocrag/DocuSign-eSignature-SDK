@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,9 +23,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for RecipientStatusEsignAgreementInformation complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RecipientStatusEsignAgreementInformation">
  *   &lt;complexContent>
@@ -39,8 +39,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RecipientStatusEsignAgreementInformation", propOrder = {
@@ -60,11 +60,11 @@ public class RecipientStatusEsignAgreementInformation {
 
     /**
      * Gets the value of the accountEsignId property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAccountEsignId() {
         return accountEsignId;
@@ -72,11 +72,11 @@ public class RecipientStatusEsignAgreementInformation {
 
     /**
      * Sets the value of the accountEsignId property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAccountEsignId(String value) {
         this.accountEsignId = value;
@@ -84,11 +84,11 @@ public class RecipientStatusEsignAgreementInformation {
 
     /**
      * Gets the value of the userEsignId property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getUserEsignId() {
         return userEsignId;
@@ -96,11 +96,11 @@ public class RecipientStatusEsignAgreementInformation {
 
     /**
      * Sets the value of the userEsignId property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setUserEsignId(String value) {
         this.userEsignId = value;
@@ -108,11 +108,11 @@ public class RecipientStatusEsignAgreementInformation {
 
     /**
      * Gets the value of the agreementDate property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getAgreementDate() {
         return agreementDate;
@@ -120,11 +120,11 @@ public class RecipientStatusEsignAgreementInformation {
 
     /**
      * Sets the value of the agreementDate property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setAgreementDate(XMLGregorianCalendar value) {
         this.agreementDate = value;

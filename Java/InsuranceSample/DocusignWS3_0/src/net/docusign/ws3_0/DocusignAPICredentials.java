@@ -20,7 +20,8 @@ public class DocusignAPICredentials {
 	private String integratorsKey;
 	private String password;
 	private String accountId;
-	private String userEmail;
+	private String userId;
+    private String userEmail;
 	private String docusignWebserviceEndpoint;
 	
     public String getIntegratorsKey() {
@@ -46,6 +47,14 @@ public class DocusignAPICredentials {
 	public void setAccountId(String accountId) {
 		this.accountId = accountId;
 	}
+	
+	public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 	
 	public String getUserEmail() {
         return userEmail;

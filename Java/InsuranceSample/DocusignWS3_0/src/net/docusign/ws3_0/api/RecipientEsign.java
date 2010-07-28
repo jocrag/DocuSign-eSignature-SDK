@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for RecipientEsign complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RecipientEsign">
  *   &lt;complexContent>
@@ -39,8 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RecipientEsign", propOrder = {
@@ -65,11 +65,11 @@ public class RecipientEsign {
 
     /**
      * Gets the value of the userName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getUserName() {
         return userName;
@@ -77,11 +77,11 @@ public class RecipientEsign {
 
     /**
      * Sets the value of the userName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setUserName(String value) {
         this.userName = value;
@@ -89,11 +89,11 @@ public class RecipientEsign {
 
     /**
      * Gets the value of the email property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEmail() {
         return email;
@@ -101,11 +101,11 @@ public class RecipientEsign {
 
     /**
      * Sets the value of the email property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEmail(String value) {
         this.email = value;
@@ -113,7 +113,7 @@ public class RecipientEsign {
 
     /**
      * Gets the value of the esign property.
-     *
+     * 
      */
     public boolean isEsign() {
         return esign;
@@ -121,7 +121,7 @@ public class RecipientEsign {
 
     /**
      * Sets the value of the esign property.
-     *
+     * 
      */
     public void setEsign(boolean value) {
         this.esign = value;
@@ -129,11 +129,11 @@ public class RecipientEsign {
 
     /**
      * Gets the value of the reservedRecipientEmail property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isReservedRecipientEmail() {
         return reservedRecipientEmail;
@@ -141,11 +141,11 @@ public class RecipientEsign {
 
     /**
      * Sets the value of the reservedRecipientEmail property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setReservedRecipientEmail(Boolean value) {
         this.reservedRecipientEmail = value;
@@ -153,11 +153,11 @@ public class RecipientEsign {
 
     /**
      * Gets the value of the reservedRecipientNames property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getReservedRecipientNames() {
         return reservedRecipientNames;
@@ -165,11 +165,11 @@ public class RecipientEsign {
 
     /**
      * Sets the value of the reservedRecipientNames property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setReservedRecipientNames(String value) {
         this.reservedRecipientNames = value;

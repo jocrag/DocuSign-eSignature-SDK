@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for TemplateReferenceRoleAssignment complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="TemplateReferenceRoleAssignment">
  *   &lt;complexContent>
@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TemplateReferenceRoleAssignment", propOrder = {
@@ -56,11 +56,11 @@ public class TemplateReferenceRoleAssignment {
 
     /**
      * Gets the value of the roleName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getRoleName() {
         return roleName;
@@ -68,11 +68,11 @@ public class TemplateReferenceRoleAssignment {
 
     /**
      * Sets the value of the roleName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setRoleName(String value) {
         this.roleName = value;
@@ -80,11 +80,11 @@ public class TemplateReferenceRoleAssignment {
 
     /**
      * Gets the value of the recipientID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getRecipientID() {
         return recipientID;
@@ -92,11 +92,11 @@ public class TemplateReferenceRoleAssignment {
 
     /**
      * Sets the value of the recipientID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setRecipientID(BigInteger value) {
         this.recipientID = value;

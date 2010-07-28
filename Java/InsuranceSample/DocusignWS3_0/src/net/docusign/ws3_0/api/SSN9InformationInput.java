@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for SSN9InformationInput complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="SSN9InformationInput">
  *   &lt;complexContent>
@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SSN9InformationInput", propOrder = {
@@ -53,11 +53,11 @@ public class SSN9InformationInput {
 
     /**
      * Gets the value of the ssn9Information property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link SSN9Information }
-     *
+     *     
      */
     public SSN9Information getSSN9Information() {
         return ssn9Information;
@@ -65,11 +65,11 @@ public class SSN9InformationInput {
 
     /**
      * Sets the value of the ssn9Information property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link SSN9Information }
-     *
+     *     
      */
     public void setSSN9Information(SSN9Information value) {
         this.ssn9Information = value;
@@ -77,11 +77,11 @@ public class SSN9InformationInput {
 
     /**
      * Gets the value of the displayLevel property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link DisplayLevelCode }
-     *
+     *     
      */
     public DisplayLevelCode getDisplayLevel() {
         return displayLevel;
@@ -89,11 +89,11 @@ public class SSN9InformationInput {
 
     /**
      * Sets the value of the displayLevel property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link DisplayLevelCode }
-     *
+     *     
      */
     public void setDisplayLevel(DisplayLevelCode value) {
         this.displayLevel = value;

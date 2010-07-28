@@ -25,7 +25,8 @@ public class User implements Serializable {
 	private String email;
 	private String password;
 	private String accountId;
-	private String userName;
+	private String userId;
+    private String userName;
 	private String accountName;
 	private String firstName;
 	private String lastName;
@@ -53,6 +54,14 @@ public class User implements Serializable {
 	public void setAccountId(String accountId) {
 		this.accountId = accountId;
 	}
+	
+	public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
 
 	public String getUserName() {
 		return userName;
@@ -98,6 +107,7 @@ public class User implements Serializable {
 	public User loadFromAccount(Account account) {
 		setEmail(account.getEmail());
 		setAccountId(account.getAccountID());
+		setUserId(account.getUserID());
 		setUserName(account.getUserName());
 		setAccountName(account.getAccountName());
 		

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for DocumentStatus complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="DocumentStatus">
  *   &lt;complexContent>
@@ -40,8 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DocumentStatus", propOrder = {
@@ -65,11 +65,11 @@ public class DocumentStatus {
 
     /**
      * Gets the value of the id property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getID() {
         return id;
@@ -77,11 +77,11 @@ public class DocumentStatus {
 
     /**
      * Sets the value of the id property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setID(BigInteger value) {
         this.id = value;
@@ -89,11 +89,11 @@ public class DocumentStatus {
 
     /**
      * Gets the value of the name property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getName() {
         return name;
@@ -101,11 +101,11 @@ public class DocumentStatus {
 
     /**
      * Sets the value of the name property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setName(String value) {
         this.name = value;
@@ -113,11 +113,11 @@ public class DocumentStatus {
 
     /**
      * Gets the value of the templateName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTemplateName() {
         return templateName;
@@ -125,11 +125,11 @@ public class DocumentStatus {
 
     /**
      * Sets the value of the templateName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTemplateName(String value) {
         this.templateName = value;
@@ -137,11 +137,11 @@ public class DocumentStatus {
 
     /**
      * Gets the value of the sequence property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getSequence() {
         return sequence;
@@ -149,11 +149,11 @@ public class DocumentStatus {
 
     /**
      * Sets the value of the sequence property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setSequence(BigInteger value) {
         this.sequence = value;

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for AuthenticationStatus complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="AuthenticationStatus">
  *   &lt;complexContent>
@@ -35,13 +35,14 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="AgeVerifyResult" type="{http://www.docusign.net/API/3.0}EventResult" minOccurs="0"/>
  *         &lt;element name="STANPinResult" type="{http://www.docusign.net/API/3.0}EventResult" minOccurs="0"/>
  *         &lt;element name="OFACResult" type="{http://www.docusign.net/API/3.0}EventResult" minOccurs="0"/>
+ *         &lt;element name="PhoneAuthResult" type="{http://www.docusign.net/API/3.0}EventResult" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AuthenticationStatus", propOrder = {
@@ -50,7 +51,8 @@ import javax.xml.bind.annotation.XmlType;
     "idLookupResult",
     "ageVerifyResult",
     "stanPinResult",
-    "ofacResult"
+    "ofacResult",
+    "phoneAuthResult"
 })
 public class AuthenticationStatus {
 
@@ -66,14 +68,16 @@ public class AuthenticationStatus {
     protected EventResult stanPinResult;
     @XmlElement(name = "OFACResult")
     protected EventResult ofacResult;
+    @XmlElement(name = "PhoneAuthResult")
+    protected EventResult phoneAuthResult;
 
     /**
      * Gets the value of the accessCodeResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EventResult }
-     *
+     *     
      */
     public EventResult getAccessCodeResult() {
         return accessCodeResult;
@@ -81,11 +85,11 @@ public class AuthenticationStatus {
 
     /**
      * Sets the value of the accessCodeResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EventResult }
-     *
+     *     
      */
     public void setAccessCodeResult(EventResult value) {
         this.accessCodeResult = value;
@@ -93,11 +97,11 @@ public class AuthenticationStatus {
 
     /**
      * Gets the value of the idQuestionsResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EventResult }
-     *
+     *     
      */
     public EventResult getIDQuestionsResult() {
         return idQuestionsResult;
@@ -105,11 +109,11 @@ public class AuthenticationStatus {
 
     /**
      * Sets the value of the idQuestionsResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EventResult }
-     *
+     *     
      */
     public void setIDQuestionsResult(EventResult value) {
         this.idQuestionsResult = value;
@@ -117,11 +121,11 @@ public class AuthenticationStatus {
 
     /**
      * Gets the value of the idLookupResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EventResult }
-     *
+     *     
      */
     public EventResult getIDLookupResult() {
         return idLookupResult;
@@ -129,11 +133,11 @@ public class AuthenticationStatus {
 
     /**
      * Sets the value of the idLookupResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EventResult }
-     *
+     *     
      */
     public void setIDLookupResult(EventResult value) {
         this.idLookupResult = value;
@@ -141,11 +145,11 @@ public class AuthenticationStatus {
 
     /**
      * Gets the value of the ageVerifyResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EventResult }
-     *
+     *     
      */
     public EventResult getAgeVerifyResult() {
         return ageVerifyResult;
@@ -153,11 +157,11 @@ public class AuthenticationStatus {
 
     /**
      * Sets the value of the ageVerifyResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EventResult }
-     *
+     *     
      */
     public void setAgeVerifyResult(EventResult value) {
         this.ageVerifyResult = value;
@@ -165,11 +169,11 @@ public class AuthenticationStatus {
 
     /**
      * Gets the value of the stanPinResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EventResult }
-     *
+     *     
      */
     public EventResult getSTANPinResult() {
         return stanPinResult;
@@ -177,11 +181,11 @@ public class AuthenticationStatus {
 
     /**
      * Sets the value of the stanPinResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EventResult }
-     *
+     *     
      */
     public void setSTANPinResult(EventResult value) {
         this.stanPinResult = value;
@@ -189,11 +193,11 @@ public class AuthenticationStatus {
 
     /**
      * Gets the value of the ofacResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EventResult }
-     *
+     *     
      */
     public EventResult getOFACResult() {
         return ofacResult;
@@ -201,14 +205,38 @@ public class AuthenticationStatus {
 
     /**
      * Sets the value of the ofacResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EventResult }
-     *
+     *     
      */
     public void setOFACResult(EventResult value) {
         this.ofacResult = value;
+    }
+
+    /**
+     * Gets the value of the phoneAuthResult property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link EventResult }
+     *     
+     */
+    public EventResult getPhoneAuthResult() {
+        return phoneAuthResult;
+    }
+
+    /**
+     * Sets the value of the phoneAuthResult property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link EventResult }
+     *     
+     */
+    public void setPhoneAuthResult(EventResult value) {
+        this.phoneAuthResult = value;
     }
 
 }

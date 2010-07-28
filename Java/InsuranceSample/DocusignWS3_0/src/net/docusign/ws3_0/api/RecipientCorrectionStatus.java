@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for RecipientCorrectionStatus complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RecipientCorrectionStatus">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RecipientCorrectionStatus", propOrder = {
@@ -57,7 +57,7 @@ public class RecipientCorrectionStatus {
 
     /**
      * Gets the value of the correctionSucceeded property.
-     *
+     * 
      */
     public boolean isCorrectionSucceeded() {
         return correctionSucceeded;
@@ -65,7 +65,7 @@ public class RecipientCorrectionStatus {
 
     /**
      * Sets the value of the correctionSucceeded property.
-     *
+     * 
      */
     public void setCorrectionSucceeded(boolean value) {
         this.correctionSucceeded = value;
@@ -73,11 +73,11 @@ public class RecipientCorrectionStatus {
 
     /**
      * Gets the value of the recipientCorrection property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientCorrection }
-     *
+     *     
      */
     public RecipientCorrection getRecipientCorrection() {
         return recipientCorrection;
@@ -85,11 +85,11 @@ public class RecipientCorrectionStatus {
 
     /**
      * Sets the value of the recipientCorrection property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientCorrection }
-     *
+     *     
      */
     public void setRecipientCorrection(RecipientCorrection value) {
         this.recipientCorrection = value;
@@ -97,11 +97,11 @@ public class RecipientCorrectionStatus {
 
     /**
      * Gets the value of the recipientStatus property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientStatus }
-     *
+     *     
      */
     public RecipientStatus getRecipientStatus() {
         return recipientStatus;
@@ -109,11 +109,11 @@ public class RecipientCorrectionStatus {
 
     /**
      * Sets the value of the recipientStatus property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientStatus }
-     *
+     *     
      */
     public void setRecipientStatus(RecipientStatus value) {
         this.recipientStatus = value;

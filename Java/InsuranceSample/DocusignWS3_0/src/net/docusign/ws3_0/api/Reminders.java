@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Reminders complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Reminders">
  *   &lt;complexContent>
@@ -39,8 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Reminders", propOrder = {
@@ -61,7 +61,7 @@ public class Reminders {
 
     /**
      * Gets the value of the reminderEnabled property.
-     *
+     * 
      */
     public boolean isReminderEnabled() {
         return reminderEnabled;
@@ -69,7 +69,7 @@ public class Reminders {
 
     /**
      * Sets the value of the reminderEnabled property.
-     *
+     * 
      */
     public void setReminderEnabled(boolean value) {
         this.reminderEnabled = value;
@@ -77,11 +77,11 @@ public class Reminders {
 
     /**
      * Gets the value of the reminderDelay property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getReminderDelay() {
         return reminderDelay;
@@ -89,11 +89,11 @@ public class Reminders {
 
     /**
      * Sets the value of the reminderDelay property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setReminderDelay(BigInteger value) {
         this.reminderDelay = value;
@@ -101,11 +101,11 @@ public class Reminders {
 
     /**
      * Gets the value of the reminderFrequency property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getReminderFrequency() {
         return reminderFrequency;
@@ -113,11 +113,11 @@ public class Reminders {
 
     /**
      * Sets the value of the reminderFrequency property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setReminderFrequency(BigInteger value) {
         this.reminderFrequency = value;

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for AuthoritativeCopyExportStatus complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="AuthoritativeCopyExportStatus">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AuthoritativeCopyExportStatus", propOrder = {
@@ -57,11 +57,11 @@ public class AuthoritativeCopyExportStatus {
 
     /**
      * Gets the value of the authoritativeCopyExportSuccess property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAuthoritativeCopyExportSuccess() {
         return authoritativeCopyExportSuccess;
@@ -69,11 +69,11 @@ public class AuthoritativeCopyExportStatus {
 
     /**
      * Sets the value of the authoritativeCopyExportSuccess property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAuthoritativeCopyExportSuccess(Boolean value) {
         this.authoritativeCopyExportSuccess = value;
@@ -81,11 +81,11 @@ public class AuthoritativeCopyExportStatus {
 
     /**
      * Gets the value of the envelopeId property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEnvelopeId() {
         return envelopeId;
@@ -93,11 +93,11 @@ public class AuthoritativeCopyExportStatus {
 
     /**
      * Sets the value of the envelopeId property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEnvelopeId(String value) {
         this.envelopeId = value;
@@ -105,11 +105,11 @@ public class AuthoritativeCopyExportStatus {
 
     /**
      * Gets the value of the exportKey property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getExportKey() {
         return exportKey;
@@ -117,11 +117,11 @@ public class AuthoritativeCopyExportStatus {
 
     /**
      * Sets the value of the exportKey property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setExportKey(String value) {
         this.exportKey = value;

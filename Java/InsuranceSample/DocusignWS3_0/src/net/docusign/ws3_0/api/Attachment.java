@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Attachment complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Attachment">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Attachment", propOrder = {
@@ -57,7 +57,7 @@ public class Attachment {
 
     /**
      * Gets the value of the data property.
-     *
+     * 
      * @return
      *     possible object is
      *     byte[]
@@ -68,7 +68,7 @@ public class Attachment {
 
     /**
      * Sets the value of the data property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     byte[]
@@ -79,11 +79,11 @@ public class Attachment {
 
     /**
      * Gets the value of the label property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getLabel() {
         return label;
@@ -91,11 +91,11 @@ public class Attachment {
 
     /**
      * Sets the value of the label property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setLabel(String value) {
         this.label = value;
@@ -103,11 +103,11 @@ public class Attachment {
 
     /**
      * Gets the value of the type property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getType() {
         return type;
@@ -115,11 +115,11 @@ public class Attachment {
 
     /**
      * Sets the value of the type property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setType(String value) {
         this.type = value;

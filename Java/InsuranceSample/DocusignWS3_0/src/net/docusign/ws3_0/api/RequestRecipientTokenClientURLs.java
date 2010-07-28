@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for RequestRecipientTokenClientURLs complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RequestRecipientTokenClientURLs">
  *   &lt;complexContent>
@@ -38,14 +38,15 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="OnException" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="OnAccessCodeFailed" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="OnIdCheckFailed" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="OnFaxPending" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="GenerateSignedDocumentAsynch" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RequestRecipientTokenClientURLs", propOrder = {
@@ -58,6 +59,7 @@ import javax.xml.bind.annotation.XmlType;
     "onException",
     "onAccessCodeFailed",
     "onIdCheckFailed",
+    "onFaxPending",
     "generateSignedDocumentAsynch"
 })
 public class RequestRecipientTokenClientURLs {
@@ -80,16 +82,18 @@ public class RequestRecipientTokenClientURLs {
     protected String onAccessCodeFailed;
     @XmlElement(name = "OnIdCheckFailed")
     protected String onIdCheckFailed;
+    @XmlElement(name = "OnFaxPending")
+    protected String onFaxPending;
     @XmlElement(name = "GenerateSignedDocumentAsynch")
     protected Boolean generateSignedDocumentAsynch;
 
     /**
      * Gets the value of the onSigningComplete property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnSigningComplete() {
         return onSigningComplete;
@@ -97,11 +101,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onSigningComplete property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnSigningComplete(String value) {
         this.onSigningComplete = value;
@@ -109,11 +113,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Gets the value of the onViewingComplete property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnViewingComplete() {
         return onViewingComplete;
@@ -121,11 +125,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onViewingComplete property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnViewingComplete(String value) {
         this.onViewingComplete = value;
@@ -133,11 +137,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Gets the value of the onCancel property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnCancel() {
         return onCancel;
@@ -145,11 +149,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onCancel property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnCancel(String value) {
         this.onCancel = value;
@@ -157,11 +161,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Gets the value of the onDecline property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnDecline() {
         return onDecline;
@@ -169,11 +173,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onDecline property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnDecline(String value) {
         this.onDecline = value;
@@ -181,11 +185,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Gets the value of the onSessionTimeout property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnSessionTimeout() {
         return onSessionTimeout;
@@ -193,11 +197,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onSessionTimeout property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnSessionTimeout(String value) {
         this.onSessionTimeout = value;
@@ -205,11 +209,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Gets the value of the onTTLExpired property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnTTLExpired() {
         return onTTLExpired;
@@ -217,11 +221,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onTTLExpired property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnTTLExpired(String value) {
         this.onTTLExpired = value;
@@ -229,11 +233,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Gets the value of the onException property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnException() {
         return onException;
@@ -241,11 +245,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onException property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnException(String value) {
         this.onException = value;
@@ -253,11 +257,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Gets the value of the onAccessCodeFailed property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnAccessCodeFailed() {
         return onAccessCodeFailed;
@@ -265,11 +269,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onAccessCodeFailed property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnAccessCodeFailed(String value) {
         this.onAccessCodeFailed = value;
@@ -277,11 +281,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Gets the value of the onIdCheckFailed property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOnIdCheckFailed() {
         return onIdCheckFailed;
@@ -289,23 +293,47 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the onIdCheckFailed property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOnIdCheckFailed(String value) {
         this.onIdCheckFailed = value;
     }
 
     /**
+     * Gets the value of the onFaxPending property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getOnFaxPending() {
+        return onFaxPending;
+    }
+
+    /**
+     * Sets the value of the onFaxPending property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setOnFaxPending(String value) {
+        this.onFaxPending = value;
+    }
+
+    /**
      * Gets the value of the generateSignedDocumentAsynch property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isGenerateSignedDocumentAsynch() {
         return generateSignedDocumentAsynch;
@@ -313,11 +341,11 @@ public class RequestRecipientTokenClientURLs {
 
     /**
      * Sets the value of the generateSignedDocumentAsynch property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setGenerateSignedDocumentAsynch(Boolean value) {
         this.generateSignedDocumentAsynch = value;

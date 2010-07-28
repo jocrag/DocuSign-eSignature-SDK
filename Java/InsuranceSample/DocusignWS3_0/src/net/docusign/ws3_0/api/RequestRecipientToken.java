@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -41,8 +41,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -71,11 +71,11 @@ public class RequestRecipientToken {
 
     /**
      * Gets the value of the envelopeID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEnvelopeID() {
         return envelopeID;
@@ -83,11 +83,11 @@ public class RequestRecipientToken {
 
     /**
      * Sets the value of the envelopeID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEnvelopeID(String value) {
         this.envelopeID = value;
@@ -95,11 +95,11 @@ public class RequestRecipientToken {
 
     /**
      * Gets the value of the clientUserID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getClientUserID() {
         return clientUserID;
@@ -107,11 +107,11 @@ public class RequestRecipientToken {
 
     /**
      * Sets the value of the clientUserID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setClientUserID(String value) {
         this.clientUserID = value;
@@ -119,11 +119,11 @@ public class RequestRecipientToken {
 
     /**
      * Gets the value of the username property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getUsername() {
         return username;
@@ -131,11 +131,11 @@ public class RequestRecipientToken {
 
     /**
      * Sets the value of the username property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setUsername(String value) {
         this.username = value;
@@ -143,11 +143,11 @@ public class RequestRecipientToken {
 
     /**
      * Gets the value of the email property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEmail() {
         return email;
@@ -155,11 +155,11 @@ public class RequestRecipientToken {
 
     /**
      * Sets the value of the email property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEmail(String value) {
         this.email = value;
@@ -167,11 +167,11 @@ public class RequestRecipientToken {
 
     /**
      * Gets the value of the authenticationAssertion property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RequestRecipientTokenAuthenticationAssertion }
-     *
+     *     
      */
     public RequestRecipientTokenAuthenticationAssertion getAuthenticationAssertion() {
         return authenticationAssertion;
@@ -179,11 +179,11 @@ public class RequestRecipientToken {
 
     /**
      * Sets the value of the authenticationAssertion property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RequestRecipientTokenAuthenticationAssertion }
-     *
+     *     
      */
     public void setAuthenticationAssertion(RequestRecipientTokenAuthenticationAssertion value) {
         this.authenticationAssertion = value;
@@ -191,11 +191,11 @@ public class RequestRecipientToken {
 
     /**
      * Gets the value of the clientURLs property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RequestRecipientTokenClientURLs }
-     *
+     *     
      */
     public RequestRecipientTokenClientURLs getClientURLs() {
         return clientURLs;
@@ -203,11 +203,11 @@ public class RequestRecipientToken {
 
     /**
      * Sets the value of the clientURLs property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RequestRecipientTokenClientURLs }
-     *
+     *     
      */
     public void setClientURLs(RequestRecipientTokenClientURLs value) {
         this.clientURLs = value;

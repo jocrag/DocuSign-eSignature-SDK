@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for CustomField complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="CustomField">
  *   &lt;complexContent>
@@ -40,8 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CustomField", propOrder = {
@@ -69,11 +69,11 @@ public class CustomField {
 
     /**
      * Gets the value of the name property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getName() {
         return name;
@@ -81,11 +81,11 @@ public class CustomField {
 
     /**
      * Sets the value of the name property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setName(String value) {
         this.name = value;
@@ -93,11 +93,11 @@ public class CustomField {
 
     /**
      * Gets the value of the show property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getShow() {
         return show;
@@ -105,11 +105,11 @@ public class CustomField {
 
     /**
      * Sets the value of the show property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setShow(String value) {
         this.show = value;
@@ -117,11 +117,11 @@ public class CustomField {
 
     /**
      * Gets the value of the required property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getRequired() {
         return required;
@@ -129,11 +129,11 @@ public class CustomField {
 
     /**
      * Sets the value of the required property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setRequired(String value) {
         this.required = value;
@@ -141,11 +141,11 @@ public class CustomField {
 
     /**
      * Gets the value of the value property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getValue() {
         return value;
@@ -153,11 +153,11 @@ public class CustomField {
 
     /**
      * Sets the value of the value property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setValue(String value) {
         this.value = value;
@@ -165,11 +165,11 @@ public class CustomField {
 
     /**
      * Gets the value of the customFieldType property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link CustomFieldType }
-     *
+     *     
      */
     public CustomFieldType getCustomFieldType() {
         return customFieldType;
@@ -177,11 +177,11 @@ public class CustomField {
 
     /**
      * Sets the value of the customFieldType property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link CustomFieldType }
-     *
+     *     
      */
     public void setCustomFieldType(CustomFieldType value) {
         this.customFieldType = value;
@@ -189,11 +189,11 @@ public class CustomField {
 
     /**
      * Gets the value of the listItems property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getListItems() {
         return listItems;
@@ -201,11 +201,11 @@ public class CustomField {
 
     /**
      * Sets the value of the listItems property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setListItems(String value) {
         this.listItems = value;

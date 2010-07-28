@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,9 +23,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for RecipientStatus complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RecipientStatus">
  *   &lt;complexContent>
@@ -46,19 +46,20 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="AutoNavigation" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="IDCheckInformation" type="{http://www.docusign.net/API/3.0}IDCheckInformation" minOccurs="0"/>
  *         &lt;element name="RecipientAuthenticationStatus" type="{http://www.docusign.net/API/3.0}AuthenticationStatus" minOccurs="0"/>
- *         &lt;element name="CustomFields" type="{http://www.docusign.net/API/3.0}ArrayOfString" minOccurs="0"/>
+ *         &lt;element name="CustomFields" type="{http://www.docusign.net/API/3.0}ArrayOfString1" minOccurs="0"/>
  *         &lt;element name="TabStatuses" type="{http://www.docusign.net/API/3.0}ArrayOfTabStatus" minOccurs="0"/>
  *         &lt;element name="RecipientAttachment" type="{http://www.docusign.net/API/3.0}ArrayOfAttachment" minOccurs="0"/>
  *         &lt;element name="AccountStatus" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="EsignAgreementInformation" type="{http://www.docusign.net/API/3.0}RecipientStatusEsignAgreementInformation" minOccurs="0"/>
  *         &lt;element name="FormData" type="{http://www.docusign.net/API/3.0}FormData" minOccurs="0"/>
+ *         &lt;element name="RecipientId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RecipientStatus", propOrder = {
@@ -82,7 +83,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "recipientAttachment",
     "accountStatus",
     "esignAgreementInformation",
-    "formData"
+    "formData",
+    "recipientId"
 })
 public class RecipientStatus {
 
@@ -122,7 +124,7 @@ public class RecipientStatus {
     @XmlElement(name = "RecipientAuthenticationStatus")
     protected AuthenticationStatus recipientAuthenticationStatus;
     @XmlElement(name = "CustomFields")
-    protected ArrayOfString customFields;
+    protected ArrayOfString1 customFields;
     @XmlElement(name = "TabStatuses")
     protected ArrayOfTabStatus tabStatuses;
     @XmlElement(name = "RecipientAttachment")
@@ -133,14 +135,16 @@ public class RecipientStatus {
     protected RecipientStatusEsignAgreementInformation esignAgreementInformation;
     @XmlElement(name = "FormData")
     protected FormData formData;
+    @XmlElement(name = "RecipientId")
+    protected String recipientId;
 
     /**
      * Gets the value of the type property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientTypeCode }
-     *
+     *     
      */
     public RecipientTypeCode getType() {
         return type;
@@ -148,11 +152,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the type property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientTypeCode }
-     *
+     *     
      */
     public void setType(RecipientTypeCode value) {
         this.type = value;
@@ -160,11 +164,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the email property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEmail() {
         return email;
@@ -172,11 +176,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the email property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEmail(String value) {
         this.email = value;
@@ -184,11 +188,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the userName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getUserName() {
         return userName;
@@ -196,11 +200,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the userName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setUserName(String value) {
         this.userName = value;
@@ -208,7 +212,7 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the routingOrder property.
-     *
+     * 
      */
     public int getRoutingOrder() {
         return routingOrder;
@@ -216,7 +220,7 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the routingOrder property.
-     *
+     * 
      */
     public void setRoutingOrder(int value) {
         this.routingOrder = value;
@@ -224,11 +228,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the sent property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getSent() {
         return sent;
@@ -236,11 +240,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the sent property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setSent(XMLGregorianCalendar value) {
         this.sent = value;
@@ -248,11 +252,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the delivered property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getDelivered() {
         return delivered;
@@ -260,11 +264,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the delivered property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setDelivered(XMLGregorianCalendar value) {
         this.delivered = value;
@@ -272,11 +276,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the signed property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getSigned() {
         return signed;
@@ -284,11 +288,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the signed property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setSigned(XMLGregorianCalendar value) {
         this.signed = value;
@@ -296,11 +300,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the declined property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getDeclined() {
         return declined;
@@ -308,11 +312,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the declined property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setDeclined(XMLGregorianCalendar value) {
         this.declined = value;
@@ -320,11 +324,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the declineReason property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getDeclineReason() {
         return declineReason;
@@ -332,11 +336,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the declineReason property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setDeclineReason(String value) {
         this.declineReason = value;
@@ -344,11 +348,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the status property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientStatusCode }
-     *
+     *     
      */
     public RecipientStatusCode getStatus() {
         return status;
@@ -356,11 +360,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the status property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientStatusCode }
-     *
+     *     
      */
     public void setStatus(RecipientStatusCode value) {
         this.status = value;
@@ -368,11 +372,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the recipientIPAddress property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getRecipientIPAddress() {
         return recipientIPAddress;
@@ -380,11 +384,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the recipientIPAddress property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setRecipientIPAddress(String value) {
         this.recipientIPAddress = value;
@@ -392,11 +396,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the clientUserId property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getClientUserId() {
         return clientUserId;
@@ -404,11 +408,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the clientUserId property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setClientUserId(String value) {
         this.clientUserId = value;
@@ -416,11 +420,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the autoNavigation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAutoNavigation() {
         return autoNavigation;
@@ -428,11 +432,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the autoNavigation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAutoNavigation(Boolean value) {
         this.autoNavigation = value;
@@ -440,11 +444,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the idCheckInformation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link IDCheckInformation }
-     *
+     *     
      */
     public IDCheckInformation getIDCheckInformation() {
         return idCheckInformation;
@@ -452,11 +456,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the idCheckInformation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link IDCheckInformation }
-     *
+     *     
      */
     public void setIDCheckInformation(IDCheckInformation value) {
         this.idCheckInformation = value;
@@ -464,11 +468,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the recipientAuthenticationStatus property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link AuthenticationStatus }
-     *
+     *     
      */
     public AuthenticationStatus getRecipientAuthenticationStatus() {
         return recipientAuthenticationStatus;
@@ -476,11 +480,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the recipientAuthenticationStatus property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link AuthenticationStatus }
-     *
+     *     
      */
     public void setRecipientAuthenticationStatus(AuthenticationStatus value) {
         this.recipientAuthenticationStatus = value;
@@ -488,35 +492,35 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the customFields property.
-     *
+     * 
      * @return
      *     possible object is
-     *     {@link ArrayOfString }
-     *
+     *     {@link ArrayOfString1 }
+     *     
      */
-    public ArrayOfString getCustomFields() {
+    public ArrayOfString1 getCustomFields() {
         return customFields;
     }
 
     /**
      * Sets the value of the customFields property.
-     *
+     * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfString }
-     *
+     *     {@link ArrayOfString1 }
+     *     
      */
-    public void setCustomFields(ArrayOfString value) {
+    public void setCustomFields(ArrayOfString1 value) {
         this.customFields = value;
     }
 
     /**
      * Gets the value of the tabStatuses property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfTabStatus }
-     *
+     *     
      */
     public ArrayOfTabStatus getTabStatuses() {
         return tabStatuses;
@@ -524,11 +528,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the tabStatuses property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfTabStatus }
-     *
+     *     
      */
     public void setTabStatuses(ArrayOfTabStatus value) {
         this.tabStatuses = value;
@@ -536,11 +540,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the recipientAttachment property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public ArrayOfAttachment getRecipientAttachment() {
         return recipientAttachment;
@@ -548,11 +552,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the recipientAttachment property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public void setRecipientAttachment(ArrayOfAttachment value) {
         this.recipientAttachment = value;
@@ -560,11 +564,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the accountStatus property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAccountStatus() {
         return accountStatus;
@@ -572,11 +576,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the accountStatus property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAccountStatus(String value) {
         this.accountStatus = value;
@@ -584,11 +588,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the esignAgreementInformation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientStatusEsignAgreementInformation }
-     *
+     *     
      */
     public RecipientStatusEsignAgreementInformation getEsignAgreementInformation() {
         return esignAgreementInformation;
@@ -596,11 +600,11 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the esignAgreementInformation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientStatusEsignAgreementInformation }
-     *
+     *     
      */
     public void setEsignAgreementInformation(RecipientStatusEsignAgreementInformation value) {
         this.esignAgreementInformation = value;
@@ -608,11 +612,11 @@ public class RecipientStatus {
 
     /**
      * Gets the value of the formData property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link FormData }
-     *
+     *     
      */
     public FormData getFormData() {
         return formData;
@@ -620,14 +624,38 @@ public class RecipientStatus {
 
     /**
      * Sets the value of the formData property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link FormData }
-     *
+     *     
      */
     public void setFormData(FormData value) {
         this.formData = value;
+    }
+
+    /**
+     * Gets the value of the recipientId property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getRecipientId() {
+        return recipientId;
+    }
+
+    /**
+     * Sets the value of the recipientId property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setRecipientId(String value) {
+        this.recipientId = value;
     }
 
 }

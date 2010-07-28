@@ -31,6 +31,7 @@ public abstract class WebserviceTestCase extends TestCase {
     private static final String CONFIG_PROPERTIES_CLASSPATH_LOCATION = "/config.properties";
     private static final String DOCUSIGN_INTEGRATORS_KEY = "docusign.integrators.key";
     private static final String DOCUSIGN_ACCOUNT_ID = "docusign.account.id";
+    private static final String DOCUSIGN_USER_ID = "docusign.user.id";
     private static final String DOCUSIGN_PASSWORD = "docusign.password";
     private static final String EMAIL = "email";
     private static final String DOCUSIGN_WEBSERVICE_ENDPOINT = "docusign.webservice.endpoint";
@@ -48,11 +49,17 @@ public abstract class WebserviceTestCase extends TestCase {
 
         DocusignAPICredentials apiCredentials = new DocusignAPICredentials();
         apiCredentials.setAccountId(testProperties.getProperty(DOCUSIGN_ACCOUNT_ID));
+        apiCredentials.setUserId(testProperties.getProperty(DOCUSIGN_USER_ID));
         apiCredentials.setIntegratorsKey(testProperties.getProperty(DOCUSIGN_INTEGRATORS_KEY));
         apiCredentials.setPassword(testProperties.getProperty(DOCUSIGN_PASSWORD));
         apiCredentials.setUserEmail(testProperties.getProperty(EMAIL));
         apiCredentials.setDocusignWebserviceEndpoint(testProperties.getProperty(DOCUSIGN_WEBSERVICE_ENDPOINT));
 
-        api = new DocusignWebserviceFactory().setupClient(apiCredentials.getDocusignWebserviceEndpoint()).authorizeAPI(apiCredentials);
+        DocusignWebserviceFactory docusignWebserviceFactory = new DocusignWebserviceFactory();
+        docusignWebserviceFactory.setEmail(apiCredentials.getUserEmail());
+        docusignWebserviceFactory.setIntegratorsId(apiCredentials.getIntegratorsKey());
+        docusignWebserviceFactory.setUserId(apiCredentials.getUserId());
+        
+        api = docusignWebserviceFactory.setupClient(apiCredentials.getDocusignWebserviceEndpoint()).authorizeAPI(apiCredentials);
     }
 }

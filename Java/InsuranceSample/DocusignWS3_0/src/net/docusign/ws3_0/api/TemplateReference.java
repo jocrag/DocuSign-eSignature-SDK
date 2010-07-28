@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for TemplateReference complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="TemplateReference">
  *   &lt;complexContent>
@@ -44,8 +44,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TemplateReference", propOrder = {
@@ -80,11 +80,11 @@ public class TemplateReference {
 
     /**
      * Gets the value of the templateLocation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link TemplateLocationCode }
-     *
+     *     
      */
     public TemplateLocationCode getTemplateLocation() {
         return templateLocation;
@@ -92,11 +92,11 @@ public class TemplateReference {
 
     /**
      * Sets the value of the templateLocation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link TemplateLocationCode }
-     *
+     *     
      */
     public void setTemplateLocation(TemplateLocationCode value) {
         this.templateLocation = value;
@@ -104,11 +104,11 @@ public class TemplateReference {
 
     /**
      * Gets the value of the template property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTemplate() {
         return template;
@@ -116,11 +116,11 @@ public class TemplateReference {
 
     /**
      * Sets the value of the template property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTemplate(String value) {
         this.template = value;
@@ -128,11 +128,11 @@ public class TemplateReference {
 
     /**
      * Gets the value of the document property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Document }
-     *
+     *     
      */
     public Document getDocument() {
         return document;
@@ -140,11 +140,11 @@ public class TemplateReference {
 
     /**
      * Sets the value of the document property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Document }
-     *
+     *     
      */
     public void setDocument(Document value) {
         this.document = value;
@@ -152,11 +152,11 @@ public class TemplateReference {
 
     /**
      * Gets the value of the roleAssignments property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfTemplateReferenceRoleAssignment }
-     *
+     *     
      */
     public ArrayOfTemplateReferenceRoleAssignment getRoleAssignments() {
         return roleAssignments;
@@ -164,11 +164,11 @@ public class TemplateReference {
 
     /**
      * Sets the value of the roleAssignments property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfTemplateReferenceRoleAssignment }
-     *
+     *     
      */
     public void setRoleAssignments(ArrayOfTemplateReferenceRoleAssignment value) {
         this.roleAssignments = value;
@@ -176,11 +176,11 @@ public class TemplateReference {
 
     /**
      * Gets the value of the fieldData property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link TemplateReferenceFieldData }
-     *
+     *     
      */
     public TemplateReferenceFieldData getFieldData() {
         return fieldData;
@@ -188,11 +188,11 @@ public class TemplateReference {
 
     /**
      * Sets the value of the fieldData property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link TemplateReferenceFieldData }
-     *
+     *     
      */
     public void setFieldData(TemplateReferenceFieldData value) {
         this.fieldData = value;
@@ -200,11 +200,11 @@ public class TemplateReference {
 
     /**
      * Gets the value of the additionalTabs property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfTab }
-     *
+     *     
      */
     public ArrayOfTab getAdditionalTabs() {
         return additionalTabs;
@@ -212,11 +212,11 @@ public class TemplateReference {
 
     /**
      * Sets the value of the additionalTabs property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfTab }
-     *
+     *     
      */
     public void setAdditionalTabs(ArrayOfTab value) {
         this.additionalTabs = value;
@@ -224,11 +224,11 @@ public class TemplateReference {
 
     /**
      * Gets the value of the sequence property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getSequence() {
         return sequence;
@@ -236,11 +236,11 @@ public class TemplateReference {
 
     /**
      * Sets the value of the sequence property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setSequence(BigInteger value) {
         this.sequence = value;
@@ -248,11 +248,11 @@ public class TemplateReference {
 
     /**
      * Gets the value of the templateAttachments property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public ArrayOfAttachment getTemplateAttachments() {
         return templateAttachments;
@@ -260,11 +260,11 @@ public class TemplateReference {
 
     /**
      * Sets the value of the templateAttachments property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public void setTemplateAttachments(ArrayOfAttachment value) {
         this.templateAttachments = value;

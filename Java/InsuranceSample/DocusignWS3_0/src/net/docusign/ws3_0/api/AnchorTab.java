@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for AnchorTab complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="AnchorTab">
  *   &lt;complexContent>
@@ -39,8 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AnchorTab", propOrder = {
@@ -65,11 +65,11 @@ public class AnchorTab {
 
     /**
      * Gets the value of the anchorTabString property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAnchorTabString() {
         return anchorTabString;
@@ -77,11 +77,11 @@ public class AnchorTab {
 
     /**
      * Sets the value of the anchorTabString property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAnchorTabString(String value) {
         this.anchorTabString = value;
@@ -89,11 +89,11 @@ public class AnchorTab {
 
     /**
      * Gets the value of the xOffset property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Double }
-     *
+     *     
      */
     public Double getXOffset() {
         return xOffset;
@@ -101,11 +101,11 @@ public class AnchorTab {
 
     /**
      * Sets the value of the xOffset property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Double }
-     *
+     *     
      */
     public void setXOffset(Double value) {
         this.xOffset = value;
@@ -113,11 +113,11 @@ public class AnchorTab {
 
     /**
      * Gets the value of the yOffset property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Double }
-     *
+     *     
      */
     public Double getYOffset() {
         return yOffset;
@@ -125,11 +125,11 @@ public class AnchorTab {
 
     /**
      * Sets the value of the yOffset property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Double }
-     *
+     *     
      */
     public void setYOffset(Double value) {
         this.yOffset = value;
@@ -137,11 +137,11 @@ public class AnchorTab {
 
     /**
      * Gets the value of the unit property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link UnitTypeCode }
-     *
+     *     
      */
     public UnitTypeCode getUnit() {
         return unit;
@@ -149,11 +149,11 @@ public class AnchorTab {
 
     /**
      * Sets the value of the unit property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link UnitTypeCode }
-     *
+     *     
      */
     public void setUnit(UnitTypeCode value) {
         this.unit = value;
@@ -161,11 +161,11 @@ public class AnchorTab {
 
     /**
      * Gets the value of the ignoreIfNotPresent property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isIgnoreIfNotPresent() {
         return ignoreIfNotPresent;
@@ -173,11 +173,11 @@ public class AnchorTab {
 
     /**
      * Sets the value of the ignoreIfNotPresent property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setIgnoreIfNotPresent(Boolean value) {
         this.ignoreIfNotPresent = value;

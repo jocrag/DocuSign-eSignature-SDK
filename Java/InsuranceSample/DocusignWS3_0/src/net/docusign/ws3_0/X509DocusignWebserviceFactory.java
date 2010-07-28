@@ -16,7 +16,6 @@ package net.docusign.ws3_0;
 import java.util.HashMap;
 import java.util.Map;
 
-
 import org.apache.ws.security.WSConstants;
 import org.apache.ws.security.WSPasswordCallback;
 import org.apache.ws.security.handler.WSHandlerConstants;
@@ -77,7 +76,7 @@ public class X509DocusignWebserviceFactory extends DocusignWebserviceFactory {
 	}
 
 	protected void configureUsernameToken(DocusignAPICredentials docusignAPICredentials, Map<String, Object> securityProperties) {
-		securityProperties.put(WSHandlerConstants.USER, getIntegratorsKey());
+		setUsernameToken(securityProperties);
 		securityProperties.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_TEXT);
 	}
 

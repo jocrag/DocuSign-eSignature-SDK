@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigDecimal;
@@ -24,9 +24,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Tab complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Tab">
  *   &lt;complexContent>
@@ -57,13 +57,17 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="CustomTabValidationMessage" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="TemplateLocked" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="TemplateRequired" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="ConditionalParentLabel" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="ConditionalParentValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="SharedTab" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="RequireInitialOnSharedTabChange" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Tab", propOrder = {
@@ -91,7 +95,11 @@ import javax.xml.bind.annotation.XmlType;
     "customTabValidationPattern",
     "customTabValidationMessage",
     "templateLocked",
-    "templateRequired"
+    "templateRequired",
+    "conditionalParentLabel",
+    "conditionalParentValue",
+    "sharedTab",
+    "requireInitialOnSharedTabChange"
 })
 public class Tab {
 
@@ -150,14 +158,22 @@ public class Tab {
     protected Boolean templateLocked;
     @XmlElement(name = "TemplateRequired")
     protected Boolean templateRequired;
+    @XmlElement(name = "ConditionalParentLabel")
+    protected String conditionalParentLabel;
+    @XmlElement(name = "ConditionalParentValue")
+    protected String conditionalParentValue;
+    @XmlElement(name = "SharedTab")
+    protected Boolean sharedTab;
+    @XmlElement(name = "RequireInitialOnSharedTabChange")
+    protected Boolean requireInitialOnSharedTabChange;
 
     /**
      * Gets the value of the documentID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getDocumentID() {
         return documentID;
@@ -165,11 +181,11 @@ public class Tab {
 
     /**
      * Sets the value of the documentID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setDocumentID(BigInteger value) {
         this.documentID = value;
@@ -177,11 +193,11 @@ public class Tab {
 
     /**
      * Gets the value of the recipientID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getRecipientID() {
         return recipientID;
@@ -189,11 +205,11 @@ public class Tab {
 
     /**
      * Sets the value of the recipientID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setRecipientID(BigInteger value) {
         this.recipientID = value;
@@ -201,11 +217,11 @@ public class Tab {
 
     /**
      * Gets the value of the pageNumber property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getPageNumber() {
         return pageNumber;
@@ -213,11 +229,11 @@ public class Tab {
 
     /**
      * Sets the value of the pageNumber property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setPageNumber(BigInteger value) {
         this.pageNumber = value;
@@ -225,11 +241,11 @@ public class Tab {
 
     /**
      * Gets the value of the xPosition property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getXPosition() {
         return xPosition;
@@ -237,11 +253,11 @@ public class Tab {
 
     /**
      * Sets the value of the xPosition property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setXPosition(BigInteger value) {
         this.xPosition = value;
@@ -249,11 +265,11 @@ public class Tab {
 
     /**
      * Gets the value of the yPosition property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getYPosition() {
         return yPosition;
@@ -261,11 +277,11 @@ public class Tab {
 
     /**
      * Sets the value of the yPosition property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setYPosition(BigInteger value) {
         this.yPosition = value;
@@ -273,11 +289,11 @@ public class Tab {
 
     /**
      * Gets the value of the scaleValue property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *
+     *     
      */
     public BigDecimal getScaleValue() {
         return scaleValue;
@@ -285,11 +301,11 @@ public class Tab {
 
     /**
      * Sets the value of the scaleValue property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *
+     *     
      */
     public void setScaleValue(BigDecimal value) {
         this.scaleValue = value;
@@ -297,11 +313,11 @@ public class Tab {
 
     /**
      * Gets the value of the anchorTabItem property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link AnchorTab }
-     *
+     *     
      */
     public AnchorTab getAnchorTabItem() {
         return anchorTabItem;
@@ -309,11 +325,11 @@ public class Tab {
 
     /**
      * Sets the value of the anchorTabItem property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link AnchorTab }
-     *
+     *     
      */
     public void setAnchorTabItem(AnchorTab value) {
         this.anchorTabItem = value;
@@ -321,11 +337,11 @@ public class Tab {
 
     /**
      * Gets the value of the type property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link TabTypeCode }
-     *
+     *     
      */
     public TabTypeCode getType() {
         return type;
@@ -333,11 +349,11 @@ public class Tab {
 
     /**
      * Sets the value of the type property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link TabTypeCode }
-     *
+     *     
      */
     public void setType(TabTypeCode value) {
         this.type = value;
@@ -345,11 +361,11 @@ public class Tab {
 
     /**
      * Gets the value of the name property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getName() {
         return name;
@@ -357,11 +373,11 @@ public class Tab {
 
     /**
      * Sets the value of the name property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setName(String value) {
         this.name = value;
@@ -369,11 +385,11 @@ public class Tab {
 
     /**
      * Gets the value of the tabLabel property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTabLabel() {
         return tabLabel;
@@ -381,11 +397,11 @@ public class Tab {
 
     /**
      * Sets the value of the tabLabel property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTabLabel(String value) {
         this.tabLabel = value;
@@ -393,11 +409,11 @@ public class Tab {
 
     /**
      * Gets the value of the value property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getValue() {
         return value;
@@ -405,11 +421,11 @@ public class Tab {
 
     /**
      * Sets the value of the value property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setValue(String value) {
         this.value = value;
@@ -417,11 +433,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabType property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link CustomTabType }
-     *
+     *     
      */
     public CustomTabType getCustomTabType() {
         return customTabType;
@@ -429,11 +445,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabType property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link CustomTabType }
-     *
+     *     
      */
     public void setCustomTabType(CustomTabType value) {
         this.customTabType = value;
@@ -441,11 +457,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabWidth property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Integer }
-     *
+     *     
      */
     public Integer getCustomTabWidth() {
         return customTabWidth;
@@ -453,11 +469,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabWidth property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Integer }
-     *
+     *     
      */
     public void setCustomTabWidth(Integer value) {
         this.customTabWidth = value;
@@ -465,11 +481,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabHeight property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Integer }
-     *
+     *     
      */
     public Integer getCustomTabHeight() {
         return customTabHeight;
@@ -477,11 +493,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabHeight property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Integer }
-     *
+     *     
      */
     public void setCustomTabHeight(Integer value) {
         this.customTabHeight = value;
@@ -489,11 +505,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabRequired property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isCustomTabRequired() {
         return customTabRequired;
@@ -501,11 +517,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabRequired property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setCustomTabRequired(Boolean value) {
         this.customTabRequired = value;
@@ -513,11 +529,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabLocked property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isCustomTabLocked() {
         return customTabLocked;
@@ -525,11 +541,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabLocked property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setCustomTabLocked(Boolean value) {
         this.customTabLocked = value;
@@ -537,11 +553,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabDisableAutoSize property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isCustomTabDisableAutoSize() {
         return customTabDisableAutoSize;
@@ -549,11 +565,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabDisableAutoSize property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setCustomTabDisableAutoSize(Boolean value) {
         this.customTabDisableAutoSize = value;
@@ -561,11 +577,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabListItems property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCustomTabListItems() {
         return customTabListItems;
@@ -573,11 +589,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabListItems property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCustomTabListItems(String value) {
         this.customTabListItems = value;
@@ -585,11 +601,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabListValues property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCustomTabListValues() {
         return customTabListValues;
@@ -597,11 +613,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabListValues property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCustomTabListValues(String value) {
         this.customTabListValues = value;
@@ -609,11 +625,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabListSelectedValue property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCustomTabListSelectedValue() {
         return customTabListSelectedValue;
@@ -621,11 +637,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabListSelectedValue property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCustomTabListSelectedValue(String value) {
         this.customTabListSelectedValue = value;
@@ -633,11 +649,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabRadioGroupName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCustomTabRadioGroupName() {
         return customTabRadioGroupName;
@@ -645,11 +661,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabRadioGroupName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCustomTabRadioGroupName(String value) {
         this.customTabRadioGroupName = value;
@@ -657,11 +673,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabValidationPattern property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCustomTabValidationPattern() {
         return customTabValidationPattern;
@@ -669,11 +685,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabValidationPattern property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCustomTabValidationPattern(String value) {
         this.customTabValidationPattern = value;
@@ -681,11 +697,11 @@ public class Tab {
 
     /**
      * Gets the value of the customTabValidationMessage property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCustomTabValidationMessage() {
         return customTabValidationMessage;
@@ -693,11 +709,11 @@ public class Tab {
 
     /**
      * Sets the value of the customTabValidationMessage property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCustomTabValidationMessage(String value) {
         this.customTabValidationMessage = value;
@@ -705,11 +721,11 @@ public class Tab {
 
     /**
      * Gets the value of the templateLocked property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isTemplateLocked() {
         return templateLocked;
@@ -717,11 +733,11 @@ public class Tab {
 
     /**
      * Sets the value of the templateLocked property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setTemplateLocked(Boolean value) {
         this.templateLocked = value;
@@ -729,11 +745,11 @@ public class Tab {
 
     /**
      * Gets the value of the templateRequired property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isTemplateRequired() {
         return templateRequired;
@@ -741,14 +757,110 @@ public class Tab {
 
     /**
      * Sets the value of the templateRequired property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setTemplateRequired(Boolean value) {
         this.templateRequired = value;
+    }
+
+    /**
+     * Gets the value of the conditionalParentLabel property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getConditionalParentLabel() {
+        return conditionalParentLabel;
+    }
+
+    /**
+     * Sets the value of the conditionalParentLabel property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setConditionalParentLabel(String value) {
+        this.conditionalParentLabel = value;
+    }
+
+    /**
+     * Gets the value of the conditionalParentValue property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getConditionalParentValue() {
+        return conditionalParentValue;
+    }
+
+    /**
+     * Sets the value of the conditionalParentValue property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setConditionalParentValue(String value) {
+        this.conditionalParentValue = value;
+    }
+
+    /**
+     * Gets the value of the sharedTab property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isSharedTab() {
+        return sharedTab;
+    }
+
+    /**
+     * Sets the value of the sharedTab property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setSharedTab(Boolean value) {
+        this.sharedTab = value;
+    }
+
+    /**
+     * Gets the value of the requireInitialOnSharedTabChange property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isRequireInitialOnSharedTabChange() {
+        return requireInitialOnSharedTabChange;
+    }
+
+    /**
+     * Sets the value of the requireInitialOnSharedTabChange property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setRequireInitialOnSharedTabChange(Boolean value) {
+        this.requireInitialOnSharedTabChange = value;
     }
 
 }

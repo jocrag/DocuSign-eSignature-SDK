@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Notification complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Notification">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Notification", propOrder = {
@@ -57,11 +57,11 @@ public class Notification {
 
     /**
      * Gets the value of the useAccountDefaults property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isUseAccountDefaults() {
         return useAccountDefaults;
@@ -69,11 +69,11 @@ public class Notification {
 
     /**
      * Sets the value of the useAccountDefaults property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setUseAccountDefaults(Boolean value) {
         this.useAccountDefaults = value;
@@ -81,11 +81,11 @@ public class Notification {
 
     /**
      * Gets the value of the reminders property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Reminders }
-     *
+     *     
      */
     public Reminders getReminders() {
         return reminders;
@@ -93,11 +93,11 @@ public class Notification {
 
     /**
      * Sets the value of the reminders property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Reminders }
-     *
+     *     
      */
     public void setReminders(Reminders value) {
         this.reminders = value;
@@ -105,11 +105,11 @@ public class Notification {
 
     /**
      * Gets the value of the expirations property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Expirations }
-     *
+     *     
      */
     public Expirations getExpirations() {
         return expirations;
@@ -117,11 +117,11 @@ public class Notification {
 
     /**
      * Sets the value of the expirations property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Expirations }
-     *
+     *     
      */
     public void setExpirations(Expirations value) {
         this.expirations = value;

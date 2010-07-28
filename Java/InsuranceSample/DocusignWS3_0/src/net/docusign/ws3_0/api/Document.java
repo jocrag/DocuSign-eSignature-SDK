@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Document complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Document">
  *   &lt;complexContent>
@@ -44,8 +44,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Document", propOrder = {
@@ -80,11 +80,11 @@ public class Document {
 
     /**
      * Gets the value of the id property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getID() {
         return id;
@@ -92,11 +92,11 @@ public class Document {
 
     /**
      * Sets the value of the id property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setID(BigInteger value) {
         this.id = value;
@@ -104,11 +104,11 @@ public class Document {
 
     /**
      * Gets the value of the name property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getName() {
         return name;
@@ -116,11 +116,11 @@ public class Document {
 
     /**
      * Sets the value of the name property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setName(String value) {
         this.name = value;
@@ -128,7 +128,7 @@ public class Document {
 
     /**
      * Gets the value of the pdfBytes property.
-     *
+     * 
      * @return
      *     possible object is
      *     byte[]
@@ -139,7 +139,7 @@ public class Document {
 
     /**
      * Sets the value of the pdfBytes property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     byte[]
@@ -150,11 +150,11 @@ public class Document {
 
     /**
      * Gets the value of the password property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getPassword() {
         return password;
@@ -162,11 +162,11 @@ public class Document {
 
     /**
      * Sets the value of the password property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setPassword(String value) {
         this.password = value;
@@ -174,11 +174,11 @@ public class Document {
 
     /**
      * Gets the value of the transformPdfFields property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isTransformPdfFields() {
         return transformPdfFields;
@@ -186,11 +186,11 @@ public class Document {
 
     /**
      * Sets the value of the transformPdfFields property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setTransformPdfFields(Boolean value) {
         this.transformPdfFields = value;
@@ -198,11 +198,11 @@ public class Document {
 
     /**
      * Gets the value of the fileExtension property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getFileExtension() {
         return fileExtension;
@@ -210,11 +210,11 @@ public class Document {
 
     /**
      * Sets the value of the fileExtension property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setFileExtension(String value) {
         this.fileExtension = value;
@@ -222,11 +222,11 @@ public class Document {
 
     /**
      * Gets the value of the matchBoxes property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfMatchBox }
-     *
+     *     
      */
     public ArrayOfMatchBox getMatchBoxes() {
         return matchBoxes;
@@ -234,11 +234,11 @@ public class Document {
 
     /**
      * Sets the value of the matchBoxes property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfMatchBox }
-     *
+     *     
      */
     public void setMatchBoxes(ArrayOfMatchBox value) {
         this.matchBoxes = value;
@@ -246,11 +246,11 @@ public class Document {
 
     /**
      * Gets the value of the attachmentDescription property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAttachmentDescription() {
         return attachmentDescription;
@@ -258,11 +258,11 @@ public class Document {
 
     /**
      * Sets the value of the attachmentDescription property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAttachmentDescription(String value) {
         this.attachmentDescription = value;

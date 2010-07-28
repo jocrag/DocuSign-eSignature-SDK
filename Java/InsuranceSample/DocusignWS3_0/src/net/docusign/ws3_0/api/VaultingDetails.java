@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for VaultingDetails complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="VaultingDetails">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "VaultingDetails", propOrder = {
@@ -57,11 +57,11 @@ public class VaultingDetails {
 
     /**
      * Gets the value of the eodTransactionName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEODTransactionName() {
         return eodTransactionName;
@@ -69,11 +69,11 @@ public class VaultingDetails {
 
     /**
      * Sets the value of the eodTransactionName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEODTransactionName(String value) {
         this.eodTransactionName = value;
@@ -81,11 +81,11 @@ public class VaultingDetails {
 
     /**
      * Gets the value of the eodTransactionID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEODTransactionID() {
         return eodTransactionID;
@@ -93,11 +93,11 @@ public class VaultingDetails {
 
     /**
      * Sets the value of the eodTransactionID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEODTransactionID(String value) {
         this.eodTransactionID = value;
@@ -105,11 +105,11 @@ public class VaultingDetails {
 
     /**
      * Gets the value of the eodDocumentProfileID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEODDocumentProfileID() {
         return eodDocumentProfileID;
@@ -117,11 +117,11 @@ public class VaultingDetails {
 
     /**
      * Sets the value of the eodDocumentProfileID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEODDocumentProfileID(String value) {
         this.eodDocumentProfileID = value;

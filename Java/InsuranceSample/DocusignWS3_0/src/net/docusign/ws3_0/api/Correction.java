@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Correction complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Correction">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Correction", propOrder = {
@@ -57,11 +57,11 @@ public class Correction {
 
     /**
      * Gets the value of the envelopeID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEnvelopeID() {
         return envelopeID;
@@ -69,11 +69,11 @@ public class Correction {
 
     /**
      * Sets the value of the envelopeID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEnvelopeID(String value) {
         this.envelopeID = value;
@@ -81,11 +81,11 @@ public class Correction {
 
     /**
      * Gets the value of the envelopeSettingsCorrection property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EnvelopeSettings }
-     *
+     *     
      */
     public EnvelopeSettings getEnvelopeSettingsCorrection() {
         return envelopeSettingsCorrection;
@@ -93,11 +93,11 @@ public class Correction {
 
     /**
      * Sets the value of the envelopeSettingsCorrection property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EnvelopeSettings }
-     *
+     *     
      */
     public void setEnvelopeSettingsCorrection(EnvelopeSettings value) {
         this.envelopeSettingsCorrection = value;
@@ -105,11 +105,11 @@ public class Correction {
 
     /**
      * Gets the value of the recipientCorrections property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfRecipientCorrection }
-     *
+     *     
      */
     public ArrayOfRecipientCorrection getRecipientCorrections() {
         return recipientCorrections;
@@ -117,11 +117,11 @@ public class Correction {
 
     /**
      * Sets the value of the recipientCorrections property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfRecipientCorrection }
-     *
+     *     
      */
     public void setRecipientCorrections(ArrayOfRecipientCorrection value) {
         this.recipientCorrections = value;

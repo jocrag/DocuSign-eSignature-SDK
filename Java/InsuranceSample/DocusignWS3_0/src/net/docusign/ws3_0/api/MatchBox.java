@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for MatchBox complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="MatchBox">
  *   &lt;complexContent>
@@ -41,8 +41,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "MatchBox", propOrder = {
@@ -68,11 +68,11 @@ public class MatchBox {
 
     /**
      * Gets the value of the pageNumber property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getPageNumber() {
         return pageNumber;
@@ -80,11 +80,11 @@ public class MatchBox {
 
     /**
      * Sets the value of the pageNumber property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setPageNumber(BigInteger value) {
         this.pageNumber = value;
@@ -92,7 +92,7 @@ public class MatchBox {
 
     /**
      * Gets the value of the xPosition property.
-     *
+     * 
      */
     public int getXPosition() {
         return xPosition;
@@ -100,7 +100,7 @@ public class MatchBox {
 
     /**
      * Sets the value of the xPosition property.
-     *
+     * 
      */
     public void setXPosition(int value) {
         this.xPosition = value;
@@ -108,7 +108,7 @@ public class MatchBox {
 
     /**
      * Gets the value of the yPosition property.
-     *
+     * 
      */
     public int getYPosition() {
         return yPosition;
@@ -116,7 +116,7 @@ public class MatchBox {
 
     /**
      * Sets the value of the yPosition property.
-     *
+     * 
      */
     public void setYPosition(int value) {
         this.yPosition = value;
@@ -124,7 +124,7 @@ public class MatchBox {
 
     /**
      * Gets the value of the width property.
-     *
+     * 
      */
     public int getWidth() {
         return width;
@@ -132,7 +132,7 @@ public class MatchBox {
 
     /**
      * Sets the value of the width property.
-     *
+     * 
      */
     public void setWidth(int value) {
         this.width = value;
@@ -140,7 +140,7 @@ public class MatchBox {
 
     /**
      * Gets the value of the height property.
-     *
+     * 
      */
     public int getHeight() {
         return height;
@@ -148,7 +148,7 @@ public class MatchBox {
 
     /**
      * Sets the value of the height property.
-     *
+     * 
      */
     public void setHeight(int value) {
         this.height = value;

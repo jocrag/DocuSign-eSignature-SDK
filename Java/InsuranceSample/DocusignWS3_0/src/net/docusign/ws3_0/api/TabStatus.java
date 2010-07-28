@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigDecimal;
@@ -25,9 +25,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for TabStatus complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="TabStatus">
  *   &lt;complexContent>
@@ -54,8 +54,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TabStatus", propOrder = {
@@ -116,11 +116,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the tabType property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link TabTypeCode }
-     *
+     *     
      */
     public TabTypeCode getTabType() {
         return tabType;
@@ -128,11 +128,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the tabType property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link TabTypeCode }
-     *
+     *     
      */
     public void setTabType(TabTypeCode value) {
         this.tabType = value;
@@ -140,11 +140,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the status property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getStatus() {
         return status;
@@ -152,11 +152,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the status property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setStatus(String value) {
         this.status = value;
@@ -164,7 +164,7 @@ public class TabStatus {
 
     /**
      * Gets the value of the xPosition property.
-     *
+     * 
      */
     public double getXPosition() {
         return xPosition;
@@ -172,7 +172,7 @@ public class TabStatus {
 
     /**
      * Sets the value of the xPosition property.
-     *
+     * 
      */
     public void setXPosition(double value) {
         this.xPosition = value;
@@ -180,7 +180,7 @@ public class TabStatus {
 
     /**
      * Gets the value of the yPosition property.
-     *
+     * 
      */
     public double getYPosition() {
         return yPosition;
@@ -188,7 +188,7 @@ public class TabStatus {
 
     /**
      * Sets the value of the yPosition property.
-     *
+     * 
      */
     public void setYPosition(double value) {
         this.yPosition = value;
@@ -196,11 +196,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the signed property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getSigned() {
         return signed;
@@ -208,11 +208,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the signed property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setSigned(XMLGregorianCalendar value) {
         this.signed = value;
@@ -220,11 +220,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the tabLabel property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTabLabel() {
         return tabLabel;
@@ -232,11 +232,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the tabLabel property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTabLabel(String value) {
         this.tabLabel = value;
@@ -244,11 +244,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the tabName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTabName() {
         return tabName;
@@ -256,11 +256,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the tabName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTabName(String value) {
         this.tabName = value;
@@ -268,11 +268,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the tabValue property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTabValue() {
         return tabValue;
@@ -280,11 +280,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the tabValue property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTabValue(String value) {
         this.tabValue = value;
@@ -292,11 +292,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the documentID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getDocumentID() {
         return documentID;
@@ -304,11 +304,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the documentID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setDocumentID(BigInteger value) {
         this.documentID = value;
@@ -316,11 +316,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the pageNumber property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getPageNumber() {
         return pageNumber;
@@ -328,11 +328,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the pageNumber property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setPageNumber(BigInteger value) {
         this.pageNumber = value;
@@ -340,11 +340,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the originalValue property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getOriginalValue() {
         return originalValue;
@@ -352,11 +352,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the originalValue property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setOriginalValue(String value) {
         this.originalValue = value;
@@ -364,11 +364,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the validationPattern property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getValidationPattern() {
         return validationPattern;
@@ -376,11 +376,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the validationPattern property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setValidationPattern(String value) {
         this.validationPattern = value;
@@ -388,11 +388,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the roleName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getRoleName() {
         return roleName;
@@ -400,11 +400,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the roleName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setRoleName(String value) {
         this.roleName = value;
@@ -412,11 +412,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the listValues property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getListValues() {
         return listValues;
@@ -424,11 +424,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the listValues property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setListValues(String value) {
         this.listValues = value;
@@ -436,11 +436,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the listSelectedValue property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getListSelectedValue() {
         return listSelectedValue;
@@ -448,11 +448,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the listSelectedValue property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setListSelectedValue(String value) {
         this.listSelectedValue = value;
@@ -460,11 +460,11 @@ public class TabStatus {
 
     /**
      * Gets the value of the scaleValue property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigDecimal }
-     *
+     *     
      */
     public BigDecimal getScaleValue() {
         return scaleValue;
@@ -472,11 +472,11 @@ public class TabStatus {
 
     /**
      * Sets the value of the scaleValue property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigDecimal }
-     *
+     *     
      */
     public void setScaleValue(BigDecimal value) {
         this.scaleValue = value;

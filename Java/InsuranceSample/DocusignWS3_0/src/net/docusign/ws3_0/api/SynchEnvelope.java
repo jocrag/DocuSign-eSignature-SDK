@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -59,11 +59,11 @@ public class SynchEnvelope {
 
     /**
      * Gets the value of the transactionID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTransactionID() {
         return transactionID;
@@ -71,11 +71,11 @@ public class SynchEnvelope {
 
     /**
      * Sets the value of the transactionID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTransactionID(String value) {
         this.transactionID = value;
@@ -83,11 +83,11 @@ public class SynchEnvelope {
 
     /**
      * Gets the value of the accountID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAccountID() {
         return accountID;
@@ -95,11 +95,11 @@ public class SynchEnvelope {
 
     /**
      * Sets the value of the accountID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAccountID(String value) {
         this.accountID = value;
@@ -107,7 +107,7 @@ public class SynchEnvelope {
 
     /**
      * Gets the value of the block property.
-     *
+     * 
      */
     public boolean isBlock() {
         return block;
@@ -115,7 +115,7 @@ public class SynchEnvelope {
 
     /**
      * Sets the value of the block property.
-     *
+     * 
      */
     public void setBlock(boolean value) {
         this.block = value;

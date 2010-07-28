@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for PurgeDocumentStatus complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="PurgeDocumentStatus">
  *   &lt;complexContent>
@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "PurgeDocumentStatus", propOrder = {
@@ -53,7 +53,7 @@ public class PurgeDocumentStatus {
 
     /**
      * Gets the value of the purgeDocumentSuccess property.
-     *
+     * 
      */
     public boolean isPurgeDocumentSuccess() {
         return purgeDocumentSuccess;
@@ -61,7 +61,7 @@ public class PurgeDocumentStatus {
 
     /**
      * Sets the value of the purgeDocumentSuccess property.
-     *
+     * 
      */
     public void setPurgeDocumentSuccess(boolean value) {
         this.purgeDocumentSuccess = value;
@@ -69,11 +69,11 @@ public class PurgeDocumentStatus {
 
     /**
      * Gets the value of the purgeDocumentError property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getPurgeDocumentError() {
         return purgeDocumentError;
@@ -81,11 +81,11 @@ public class PurgeDocumentStatus {
 
     /**
      * Sets the value of the purgeDocumentError property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setPurgeDocumentError(String value) {
         this.purgeDocumentError = value;
