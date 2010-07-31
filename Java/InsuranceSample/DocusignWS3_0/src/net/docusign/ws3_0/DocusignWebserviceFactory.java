@@ -41,6 +41,7 @@ public class DocusignWebserviceFactory {
     private static final String INTEGRATORS_KEY_FORMAT = "[%s]%s"; 
 	private JaxWsProxyFactoryBean factory;
 	protected String integratorsId;
+	protected String userId;
 	protected String email;
 	
 	public String getIntegratorsKey() {
@@ -49,6 +50,10 @@ public class DocusignWebserviceFactory {
 	
 	public void setIntegratorsId(String integratorsId) {
 	    this.integratorsId = integratorsId;
+	}
+	
+	public void setUserId(String userId) {
+	    this.userId = userId;
 	}
 	
 	public void setEmail(String email) {
@@ -121,7 +126,9 @@ public class DocusignWebserviceFactory {
 	    
 		Map<String,Object> securityInterceptorProperties = new HashMap<String,Object>();
 		securityInterceptorProperties.put(WSHandlerConstants.ACTION, WSHandlerConstants.USERNAME_TOKEN);
-		securityInterceptorProperties.put(WSHandlerConstants.USER, getIntegratorsKey());
+		
+		setUsernameToken(securityInterceptorProperties);
+		
 		securityInterceptorProperties.put(WSHandlerConstants.PASSWORD_TYPE, WSConstants.PW_TEXT);
 
 		Map<Integer, String> passwordUsageMap = new HashMap<Integer, String>();
@@ -131,6 +138,16 @@ public class DocusignWebserviceFactory {
 
 		return securityInterceptorProperties;
 	}
+
+    protected void setUsernameToken(Map<String, Object> securityProperties) {
+        if(integratorsId != null) {
+		    securityProperties.put(WSHandlerConstants.USER, getIntegratorsKey());
+		} else if(userId != null) {
+		    securityProperties.put(WSHandlerConstants.USER, userId);
+		} else {
+		    throw new IllegalStateException("Docusign user id or integrators key not provided.  Please consult documentation.");
+		}
+    }
 
 	/**
 	 * Enable the Message Transmission Optimization Mechanism for optimizing binary data in SOAP responses.

@@ -31,8 +31,11 @@ public abstract class AuthenticatedDocusignService {
 	public APIServiceSoap getApi(User user) {
 		DocusignAPICredentials apiCredentials = new DocusignAPICredentials();
 		apiCredentials.setAccountId(user.getAccountId());
+		apiCredentials.setUserId(user.getUserId());
 		apiCredentials.setUserEmail(user.getEmail());
+		
 		apiCredentials.setIntegratorsKey(docusignWebserviceFactory.getIntegratorsKey());
+		docusignWebserviceFactory.setUserId(user.getUserId());
 		apiCredentials.setPassword(user.getPassword());
 		
 		return docusignWebserviceFactory.authorizeAPI(apiCredentials);

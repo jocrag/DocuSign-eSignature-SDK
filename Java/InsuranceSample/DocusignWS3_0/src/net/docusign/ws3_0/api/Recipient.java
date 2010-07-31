@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Recipient complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Recipient">
  *   &lt;complexContent>
@@ -40,9 +40,10 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="AddAccessCodeToEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="RequireIDLookup" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *         &lt;element name="IDCheckConfigurationName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="PhoneAuthentication" type="{http://www.docusign.net/API/3.0}RecipientPhoneAuthentication" minOccurs="0"/>
  *         &lt;element name="SignatureInfo" type="{http://www.docusign.net/API/3.0}RecipientSignatureInfo" minOccurs="0"/>
  *         &lt;element name="CaptiveInfo" type="{http://www.docusign.net/API/3.0}RecipientCaptiveInfo" minOccurs="0"/>
- *         &lt;element name="CustomFields" type="{http://www.docusign.net/API/3.0}ArrayOfString" minOccurs="0"/>
+ *         &lt;element name="CustomFields" type="{http://www.docusign.net/API/3.0}ArrayOfString1" minOccurs="0"/>
  *         &lt;element name="RoutingOrder" type="{http://www.w3.org/2001/XMLSchema}unsignedShort" minOccurs="0"/>
  *         &lt;element name="IDCheckInformationInput" type="{http://www.docusign.net/API/3.0}IDCheckInformationInput" minOccurs="0"/>
  *         &lt;element name="AutoNavigation" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
@@ -57,8 +58,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Recipient", propOrder = {
@@ -71,6 +72,7 @@ import javax.xml.bind.annotation.XmlType;
     "addAccessCodeToEmail",
     "requireIDLookup",
     "idCheckConfigurationName",
+    "phoneAuthentication",
     "signatureInfo",
     "captiveInfo",
     "customFields",
@@ -105,12 +107,14 @@ public class Recipient {
     protected boolean requireIDLookup;
     @XmlElement(name = "IDCheckConfigurationName")
     protected String idCheckConfigurationName;
+    @XmlElement(name = "PhoneAuthentication")
+    protected RecipientPhoneAuthentication phoneAuthentication;
     @XmlElement(name = "SignatureInfo")
     protected RecipientSignatureInfo signatureInfo;
     @XmlElement(name = "CaptiveInfo")
     protected RecipientCaptiveInfo captiveInfo;
     @XmlElement(name = "CustomFields")
-    protected ArrayOfString customFields;
+    protected ArrayOfString1 customFields;
     @XmlElement(name = "RoutingOrder")
     @XmlSchemaType(name = "unsignedShort")
     protected Integer routingOrder;
@@ -133,11 +137,11 @@ public class Recipient {
 
     /**
      * Gets the value of the id property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getID() {
         return id;
@@ -145,11 +149,11 @@ public class Recipient {
 
     /**
      * Sets the value of the id property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setID(BigInteger value) {
         this.id = value;
@@ -157,11 +161,11 @@ public class Recipient {
 
     /**
      * Gets the value of the userName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getUserName() {
         return userName;
@@ -169,11 +173,11 @@ public class Recipient {
 
     /**
      * Sets the value of the userName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setUserName(String value) {
         this.userName = value;
@@ -181,11 +185,11 @@ public class Recipient {
 
     /**
      * Gets the value of the signerName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getSignerName() {
         return signerName;
@@ -193,11 +197,11 @@ public class Recipient {
 
     /**
      * Sets the value of the signerName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSignerName(String value) {
         this.signerName = value;
@@ -205,11 +209,11 @@ public class Recipient {
 
     /**
      * Gets the value of the email property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEmail() {
         return email;
@@ -217,11 +221,11 @@ public class Recipient {
 
     /**
      * Sets the value of the email property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEmail(String value) {
         this.email = value;
@@ -229,11 +233,11 @@ public class Recipient {
 
     /**
      * Gets the value of the type property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientTypeCode }
-     *
+     *     
      */
     public RecipientTypeCode getType() {
         return type;
@@ -241,11 +245,11 @@ public class Recipient {
 
     /**
      * Sets the value of the type property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientTypeCode }
-     *
+     *     
      */
     public void setType(RecipientTypeCode value) {
         this.type = value;
@@ -253,11 +257,11 @@ public class Recipient {
 
     /**
      * Gets the value of the accessCode property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAccessCode() {
         return accessCode;
@@ -265,11 +269,11 @@ public class Recipient {
 
     /**
      * Sets the value of the accessCode property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAccessCode(String value) {
         this.accessCode = value;
@@ -277,11 +281,11 @@ public class Recipient {
 
     /**
      * Gets the value of the addAccessCodeToEmail property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAddAccessCodeToEmail() {
         return addAccessCodeToEmail;
@@ -289,11 +293,11 @@ public class Recipient {
 
     /**
      * Sets the value of the addAccessCodeToEmail property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAddAccessCodeToEmail(Boolean value) {
         this.addAccessCodeToEmail = value;
@@ -301,7 +305,7 @@ public class Recipient {
 
     /**
      * Gets the value of the requireIDLookup property.
-     *
+     * 
      */
     public boolean isRequireIDLookup() {
         return requireIDLookup;
@@ -309,7 +313,7 @@ public class Recipient {
 
     /**
      * Sets the value of the requireIDLookup property.
-     *
+     * 
      */
     public void setRequireIDLookup(boolean value) {
         this.requireIDLookup = value;
@@ -317,11 +321,11 @@ public class Recipient {
 
     /**
      * Gets the value of the idCheckConfigurationName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getIDCheckConfigurationName() {
         return idCheckConfigurationName;
@@ -329,23 +333,47 @@ public class Recipient {
 
     /**
      * Sets the value of the idCheckConfigurationName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setIDCheckConfigurationName(String value) {
         this.idCheckConfigurationName = value;
     }
 
     /**
+     * Gets the value of the phoneAuthentication property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link RecipientPhoneAuthentication }
+     *     
+     */
+    public RecipientPhoneAuthentication getPhoneAuthentication() {
+        return phoneAuthentication;
+    }
+
+    /**
+     * Sets the value of the phoneAuthentication property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link RecipientPhoneAuthentication }
+     *     
+     */
+    public void setPhoneAuthentication(RecipientPhoneAuthentication value) {
+        this.phoneAuthentication = value;
+    }
+
+    /**
      * Gets the value of the signatureInfo property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientSignatureInfo }
-     *
+     *     
      */
     public RecipientSignatureInfo getSignatureInfo() {
         return signatureInfo;
@@ -353,11 +381,11 @@ public class Recipient {
 
     /**
      * Sets the value of the signatureInfo property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientSignatureInfo }
-     *
+     *     
      */
     public void setSignatureInfo(RecipientSignatureInfo value) {
         this.signatureInfo = value;
@@ -365,11 +393,11 @@ public class Recipient {
 
     /**
      * Gets the value of the captiveInfo property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientCaptiveInfo }
-     *
+     *     
      */
     public RecipientCaptiveInfo getCaptiveInfo() {
         return captiveInfo;
@@ -377,11 +405,11 @@ public class Recipient {
 
     /**
      * Sets the value of the captiveInfo property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientCaptiveInfo }
-     *
+     *     
      */
     public void setCaptiveInfo(RecipientCaptiveInfo value) {
         this.captiveInfo = value;
@@ -389,35 +417,35 @@ public class Recipient {
 
     /**
      * Gets the value of the customFields property.
-     *
+     * 
      * @return
      *     possible object is
-     *     {@link ArrayOfString }
-     *
+     *     {@link ArrayOfString1 }
+     *     
      */
-    public ArrayOfString getCustomFields() {
+    public ArrayOfString1 getCustomFields() {
         return customFields;
     }
 
     /**
      * Sets the value of the customFields property.
-     *
+     * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfString }
-     *
+     *     {@link ArrayOfString1 }
+     *     
      */
-    public void setCustomFields(ArrayOfString value) {
+    public void setCustomFields(ArrayOfString1 value) {
         this.customFields = value;
     }
 
     /**
      * Gets the value of the routingOrder property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Integer }
-     *
+     *     
      */
     public Integer getRoutingOrder() {
         return routingOrder;
@@ -425,11 +453,11 @@ public class Recipient {
 
     /**
      * Sets the value of the routingOrder property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Integer }
-     *
+     *     
      */
     public void setRoutingOrder(Integer value) {
         this.routingOrder = value;
@@ -437,11 +465,11 @@ public class Recipient {
 
     /**
      * Gets the value of the idCheckInformationInput property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link IDCheckInformationInput }
-     *
+     *     
      */
     public IDCheckInformationInput getIDCheckInformationInput() {
         return idCheckInformationInput;
@@ -449,11 +477,11 @@ public class Recipient {
 
     /**
      * Sets the value of the idCheckInformationInput property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link IDCheckInformationInput }
-     *
+     *     
      */
     public void setIDCheckInformationInput(IDCheckInformationInput value) {
         this.idCheckInformationInput = value;
@@ -461,11 +489,11 @@ public class Recipient {
 
     /**
      * Gets the value of the autoNavigation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAutoNavigation() {
         return autoNavigation;
@@ -473,11 +501,11 @@ public class Recipient {
 
     /**
      * Sets the value of the autoNavigation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAutoNavigation(Boolean value) {
         this.autoNavigation = value;
@@ -485,11 +513,11 @@ public class Recipient {
 
     /**
      * Gets the value of the recipientAttachment property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public ArrayOfAttachment getRecipientAttachment() {
         return recipientAttachment;
@@ -497,11 +525,11 @@ public class Recipient {
 
     /**
      * Sets the value of the recipientAttachment property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public void setRecipientAttachment(ArrayOfAttachment value) {
         this.recipientAttachment = value;
@@ -509,11 +537,11 @@ public class Recipient {
 
     /**
      * Gets the value of the note property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getNote() {
         return note;
@@ -521,11 +549,11 @@ public class Recipient {
 
     /**
      * Sets the value of the note property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setNote(String value) {
         this.note = value;
@@ -533,11 +561,11 @@ public class Recipient {
 
     /**
      * Gets the value of the roleName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getRoleName() {
         return roleName;
@@ -545,11 +573,11 @@ public class Recipient {
 
     /**
      * Sets the value of the roleName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setRoleName(String value) {
         this.roleName = value;
@@ -557,11 +585,11 @@ public class Recipient {
 
     /**
      * Gets the value of the templateLocked property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isTemplateLocked() {
         return templateLocked;
@@ -569,11 +597,11 @@ public class Recipient {
 
     /**
      * Sets the value of the templateLocked property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setTemplateLocked(Boolean value) {
         this.templateLocked = value;
@@ -581,11 +609,11 @@ public class Recipient {
 
     /**
      * Gets the value of the templateRequired property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isTemplateRequired() {
         return templateRequired;
@@ -593,11 +621,11 @@ public class Recipient {
 
     /**
      * Sets the value of the templateRequired property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setTemplateRequired(Boolean value) {
         this.templateRequired = value;
@@ -605,11 +633,11 @@ public class Recipient {
 
     /**
      * Gets the value of the templateAccessCodeRequired property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isTemplateAccessCodeRequired() {
         return templateAccessCodeRequired;
@@ -617,11 +645,11 @@ public class Recipient {
 
     /**
      * Sets the value of the templateAccessCodeRequired property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setTemplateAccessCodeRequired(Boolean value) {
         this.templateAccessCodeRequired = value;

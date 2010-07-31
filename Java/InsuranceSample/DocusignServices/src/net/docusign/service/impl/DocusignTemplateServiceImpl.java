@@ -54,7 +54,7 @@ public class DocusignTemplateServiceImpl extends AuthenticatedDocusignService im
 	    String accountId = user.getAccountId();
 	    log.info(LogUtil.logRequestTemplatesRequest(accountId));
 
-	    EnvelopeTemplates requestTemplates = getApi(user).requestTemplates(accountId);
+	    EnvelopeTemplates requestTemplates = getApi(user).requestTemplates(accountId, true);
 		
 	    log.info(LogUtil.logRequestTemplatesResponse(requestTemplates));
 		return requestTemplates;

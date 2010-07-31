@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -58,11 +58,11 @@ public class AcknowledgeAuthoritativeCopyExport {
 
     /**
      * Gets the value of the envelopeId property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEnvelopeId() {
         return envelopeId;
@@ -70,11 +70,11 @@ public class AcknowledgeAuthoritativeCopyExport {
 
     /**
      * Sets the value of the envelopeId property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEnvelopeId(String value) {
         this.envelopeId = value;
@@ -82,11 +82,11 @@ public class AcknowledgeAuthoritativeCopyExport {
 
     /**
      * Gets the value of the transactionId property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTransactionId() {
         return transactionId;
@@ -94,11 +94,11 @@ public class AcknowledgeAuthoritativeCopyExport {
 
     /**
      * Sets the value of the transactionId property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTransactionId(String value) {
         this.transactionId = value;
@@ -106,7 +106,7 @@ public class AcknowledgeAuthoritativeCopyExport {
 
     /**
      * Gets the value of the checkSumHash property.
-     *
+     * 
      * @return
      *     possible object is
      *     byte[]
@@ -117,7 +117,7 @@ public class AcknowledgeAuthoritativeCopyExport {
 
     /**
      * Sets the value of the checkSumHash property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     byte[]

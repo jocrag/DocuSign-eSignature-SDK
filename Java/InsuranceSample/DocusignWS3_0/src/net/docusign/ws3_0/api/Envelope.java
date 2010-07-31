@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Envelope complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Envelope">
  *   &lt;complexContent>
@@ -47,13 +47,15 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="EnvelopeAttachment" type="{http://www.docusign.net/API/3.0}ArrayOfAttachment" minOccurs="0"/>
  *         &lt;element name="EnforceSignerVisibility" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="EnableWetSign" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="AllowMarkup" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="EventNotification" type="{http://www.docusign.net/API/3.0}EventNotification" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Envelope", propOrder = {
@@ -74,7 +76,9 @@ import javax.xml.bind.annotation.XmlType;
     "notification",
     "envelopeAttachment",
     "enforceSignerVisibility",
-    "enableWetSign"
+    "enableWetSign",
+    "allowMarkup",
+    "eventNotification"
 })
 public class Envelope {
 
@@ -114,14 +118,18 @@ public class Envelope {
     protected Boolean enforceSignerVisibility;
     @XmlElement(name = "EnableWetSign")
     protected Boolean enableWetSign;
+    @XmlElement(name = "AllowMarkup")
+    protected Boolean allowMarkup;
+    @XmlElement(name = "EventNotification")
+    protected EventNotification eventNotification;
 
     /**
      * Gets the value of the transactionID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTransactionID() {
         return transactionID;
@@ -129,11 +137,11 @@ public class Envelope {
 
     /**
      * Sets the value of the transactionID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTransactionID(String value) {
         this.transactionID = value;
@@ -141,11 +149,11 @@ public class Envelope {
 
     /**
      * Gets the value of the asynchronous property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAsynchronous() {
         return asynchronous;
@@ -153,11 +161,11 @@ public class Envelope {
 
     /**
      * Sets the value of the asynchronous property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAsynchronous(Boolean value) {
         this.asynchronous = value;
@@ -165,11 +173,11 @@ public class Envelope {
 
     /**
      * Gets the value of the accountId property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAccountId() {
         return accountId;
@@ -177,11 +185,11 @@ public class Envelope {
 
     /**
      * Sets the value of the accountId property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAccountId(String value) {
         this.accountId = value;
@@ -189,11 +197,11 @@ public class Envelope {
 
     /**
      * Gets the value of the documents property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfDocument }
-     *
+     *     
      */
     public ArrayOfDocument getDocuments() {
         return documents;
@@ -201,11 +209,11 @@ public class Envelope {
 
     /**
      * Sets the value of the documents property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfDocument }
-     *
+     *     
      */
     public void setDocuments(ArrayOfDocument value) {
         this.documents = value;
@@ -213,11 +221,11 @@ public class Envelope {
 
     /**
      * Gets the value of the recipients property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfRecipient }
-     *
+     *     
      */
     public ArrayOfRecipient getRecipients() {
         return recipients;
@@ -225,11 +233,11 @@ public class Envelope {
 
     /**
      * Sets the value of the recipients property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfRecipient }
-     *
+     *     
      */
     public void setRecipients(ArrayOfRecipient value) {
         this.recipients = value;
@@ -237,11 +245,11 @@ public class Envelope {
 
     /**
      * Gets the value of the tabs property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfTab }
-     *
+     *     
      */
     public ArrayOfTab getTabs() {
         return tabs;
@@ -249,11 +257,11 @@ public class Envelope {
 
     /**
      * Sets the value of the tabs property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfTab }
-     *
+     *     
      */
     public void setTabs(ArrayOfTab value) {
         this.tabs = value;
@@ -261,11 +269,11 @@ public class Envelope {
 
     /**
      * Gets the value of the subject property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getSubject() {
         return subject;
@@ -273,11 +281,11 @@ public class Envelope {
 
     /**
      * Sets the value of the subject property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSubject(String value) {
         this.subject = value;
@@ -285,11 +293,11 @@ public class Envelope {
 
     /**
      * Gets the value of the emailBlurb property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEmailBlurb() {
         return emailBlurb;
@@ -297,11 +305,11 @@ public class Envelope {
 
     /**
      * Sets the value of the emailBlurb property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEmailBlurb(String value) {
         this.emailBlurb = value;
@@ -309,11 +317,11 @@ public class Envelope {
 
     /**
      * Gets the value of the signingLocation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link SigningLocationCode }
-     *
+     *     
      */
     public SigningLocationCode getSigningLocation() {
         return signingLocation;
@@ -321,11 +329,11 @@ public class Envelope {
 
     /**
      * Sets the value of the signingLocation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link SigningLocationCode }
-     *
+     *     
      */
     public void setSigningLocation(SigningLocationCode value) {
         this.signingLocation = value;
@@ -333,11 +341,11 @@ public class Envelope {
 
     /**
      * Gets the value of the customFields property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfCustomField }
-     *
+     *     
      */
     public ArrayOfCustomField getCustomFields() {
         return customFields;
@@ -345,11 +353,11 @@ public class Envelope {
 
     /**
      * Sets the value of the customFields property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfCustomField }
-     *
+     *     
      */
     public void setCustomFields(ArrayOfCustomField value) {
         this.customFields = value;
@@ -357,11 +365,11 @@ public class Envelope {
 
     /**
      * Gets the value of the vaultingOptions property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link VaultingOptions }
-     *
+     *     
      */
     public VaultingOptions getVaultingOptions() {
         return vaultingOptions;
@@ -369,11 +377,11 @@ public class Envelope {
 
     /**
      * Sets the value of the vaultingOptions property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link VaultingOptions }
-     *
+     *     
      */
     public void setVaultingOptions(VaultingOptions value) {
         this.vaultingOptions = value;
@@ -381,11 +389,11 @@ public class Envelope {
 
     /**
      * Gets the value of the autoNavigation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAutoNavigation() {
         return autoNavigation;
@@ -393,11 +401,11 @@ public class Envelope {
 
     /**
      * Sets the value of the autoNavigation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAutoNavigation(Boolean value) {
         this.autoNavigation = value;
@@ -405,11 +413,11 @@ public class Envelope {
 
     /**
      * Gets the value of the envelopeIdStamping property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isEnvelopeIdStamping() {
         return envelopeIdStamping;
@@ -417,11 +425,11 @@ public class Envelope {
 
     /**
      * Sets the value of the envelopeIdStamping property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setEnvelopeIdStamping(Boolean value) {
         this.envelopeIdStamping = value;
@@ -429,11 +437,11 @@ public class Envelope {
 
     /**
      * Gets the value of the authoritativeCopy property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAuthoritativeCopy() {
         return authoritativeCopy;
@@ -441,11 +449,11 @@ public class Envelope {
 
     /**
      * Sets the value of the authoritativeCopy property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAuthoritativeCopy(Boolean value) {
         this.authoritativeCopy = value;
@@ -453,11 +461,11 @@ public class Envelope {
 
     /**
      * Gets the value of the notification property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Notification }
-     *
+     *     
      */
     public Notification getNotification() {
         return notification;
@@ -465,11 +473,11 @@ public class Envelope {
 
     /**
      * Sets the value of the notification property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Notification }
-     *
+     *     
      */
     public void setNotification(Notification value) {
         this.notification = value;
@@ -477,11 +485,11 @@ public class Envelope {
 
     /**
      * Gets the value of the envelopeAttachment property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public ArrayOfAttachment getEnvelopeAttachment() {
         return envelopeAttachment;
@@ -489,11 +497,11 @@ public class Envelope {
 
     /**
      * Sets the value of the envelopeAttachment property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public void setEnvelopeAttachment(ArrayOfAttachment value) {
         this.envelopeAttachment = value;
@@ -501,11 +509,11 @@ public class Envelope {
 
     /**
      * Gets the value of the enforceSignerVisibility property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isEnforceSignerVisibility() {
         return enforceSignerVisibility;
@@ -513,11 +521,11 @@ public class Envelope {
 
     /**
      * Sets the value of the enforceSignerVisibility property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setEnforceSignerVisibility(Boolean value) {
         this.enforceSignerVisibility = value;
@@ -525,11 +533,11 @@ public class Envelope {
 
     /**
      * Gets the value of the enableWetSign property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isEnableWetSign() {
         return enableWetSign;
@@ -537,14 +545,62 @@ public class Envelope {
 
     /**
      * Sets the value of the enableWetSign property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setEnableWetSign(Boolean value) {
         this.enableWetSign = value;
+    }
+
+    /**
+     * Gets the value of the allowMarkup property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isAllowMarkup() {
+        return allowMarkup;
+    }
+
+    /**
+     * Sets the value of the allowMarkup property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setAllowMarkup(Boolean value) {
+        this.allowMarkup = value;
+    }
+
+    /**
+     * Gets the value of the eventNotification property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link EventNotification }
+     *     
+     */
+    public EventNotification getEventNotification() {
+        return eventNotification;
+    }
+
+    /**
+     * Sets the value of the eventNotification property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link EventNotification }
+     *     
+     */
+    public void setEventNotification(EventNotification value) {
+        this.eventNotification = value;
     }
 
 }

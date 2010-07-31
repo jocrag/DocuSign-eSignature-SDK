@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -32,79 +32,78 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
     }
 
     /**
-     * field for CustomField This was an Array!
+     * field for SenderProvidedNumber This was an Array!
      */
 
-    protected java.lang.String[] localCustomField;
+    protected java.lang.String[] localSenderProvidedNumber;
 
     /*
      * This tracker boolean wil be used to detect whether the user called the
      * set method for this attribute. It will be used to determine whether to
      * include this field in the serialized XML
      */
-    protected boolean localCustomFieldTracker = false;
+    protected boolean localSenderProvidedNumberTracker = false;
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String[]
      */
-    public java.lang.String[] getCustomField() {
-        return localCustomField;
+    public java.lang.String[] getSenderProvidedNumber() {
+        return localSenderProvidedNumber;
     }
 
     /**
-     * validate the array for CustomField
+     * validate the array for SenderProvidedNumber
      */
-    protected void validateCustomField(java.lang.String[] param) {
+    protected void validateSenderProvidedNumber(java.lang.String[] param) {
 
     }
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
-     *            CustomField
+     *            SenderProvidedNumber
      */
-    public void setCustomField(java.lang.String[] param) {
+    public void setSenderProvidedNumber(java.lang.String[] param) {
 
-        validateCustomField(param);
+        validateSenderProvidedNumber(param);
 
         if (param != null) {
             // update the setting tracker
-            localCustomFieldTracker = true;
-        }
-        else {
-            localCustomFieldTracker = false;
+            localSenderProvidedNumberTracker = true;
+        } else {
+            localSenderProvidedNumberTracker = false;
 
         }
 
-        this.localCustomField = param;
+        this.localSenderProvidedNumber = param;
     }
 
     /**
      * Auto generated add method for the array for convenience
-     *
+     * 
      * @param param
      *            java.lang.String
      */
-    public void addCustomField(java.lang.String param) {
-        if (localCustomField == null) {
-            localCustomField = new java.lang.String[] {};
+    public void addSenderProvidedNumber(java.lang.String param) {
+        if (localSenderProvidedNumber == null) {
+            localSenderProvidedNumber = new java.lang.String[] {};
         }
 
         // update the setting tracker
-        localCustomFieldTracker = true;
+        localSenderProvidedNumberTracker = true;
 
-        java.util.List list = org.apache.axis2.databinding.utils.ConverterUtil.toList(localCustomField);
+        java.util.List list = org.apache.axis2.databinding.utils.ConverterUtil.toList(localSenderProvidedNumber);
         list.add(param);
-        this.localCustomField = (java.lang.String[]) list.toArray(new java.lang.String[list.size()]);
+        this.localSenderProvidedNumber = (java.lang.String[]) list.toArray(new java.lang.String[list.size()]);
 
     }
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -112,15 +111,14 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -153,8 +151,7 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -163,8 +160,7 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -173,55 +169,50 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":ArrayOfString", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "ArrayOfString", xmlWriter);
             }
 
         }
-        if (localCustomFieldTracker) {
-            if (localCustomField != null) {
+        if (localSenderProvidedNumberTracker) {
+            if (localSenderProvidedNumber != null) {
                 namespace = "http://www.docusign.net/API/3.0";
                 boolean emptyNamespace = namespace == null || namespace.length() == 0;
                 prefix = emptyNamespace ? null : xmlWriter.getPrefix(namespace);
-                for (int i = 0; i < localCustomField.length; i++) {
+                for (int i = 0; i < localSenderProvidedNumber.length; i++) {
 
-                    if (localCustomField[i] != null) {
+                    if (localSenderProvidedNumber[i] != null) {
 
                         if (!emptyNamespace) {
                             if (prefix == null) {
                                 java.lang.String prefix2 = generatePrefix(namespace);
 
-                                xmlWriter.writeStartElement(prefix2, "CustomField", namespace);
+                                xmlWriter.writeStartElement(prefix2, "SenderProvidedNumber", namespace);
                                 xmlWriter.writeNamespace(prefix2, namespace);
                                 xmlWriter.setPrefix(prefix2, namespace);
 
-                            }
-                            else {
-                                xmlWriter.writeStartElement(namespace, "CustomField");
+                            } else {
+                                xmlWriter.writeStartElement(namespace, "SenderProvidedNumber");
                             }
 
-                        }
-                        else {
-                            xmlWriter.writeStartElement("CustomField");
+                        } else {
+                            xmlWriter.writeStartElement("SenderProvidedNumber");
                         }
 
-                        xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCustomField[i]));
+                        xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSenderProvidedNumber[i]));
 
                         xmlWriter.writeEndElement();
 
-                    }
-                    else {
+                    } else {
 
                         // we have to do nothing since minOccurs is zero
 
                     }
 
                 }
-            }
-            else {
+            } else {
 
-                throw new org.apache.axis2.databinding.ADBException("CustomField cannot be null!!");
+                throw new org.apache.axis2.databinding.ADBException("SenderProvidedNumber cannot be null!!");
 
             }
 
@@ -250,8 +241,7 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -270,15 +260,13 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -300,14 +288,12 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -337,12 +323,10 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -373,32 +357,30 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
         java.util.ArrayList elementList = new java.util.ArrayList();
         java.util.ArrayList attribList = new java.util.ArrayList();
 
-        if (localCustomFieldTracker) {
-            if (localCustomField != null) {
-                for (int i = 0; i < localCustomField.length; i++) {
+        if (localSenderProvidedNumberTracker) {
+            if (localSenderProvidedNumber != null) {
+                for (int i = 0; i < localSenderProvidedNumber.length; i++) {
 
-                    if (localCustomField[i] != null) {
-                        elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CustomField"));
-                        elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCustomField[i]));
-                    }
-                    else {
+                    if (localSenderProvidedNumber[i] != null) {
+                        elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SenderProvidedNumber"));
+                        elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSenderProvidedNumber[i]));
+                    } else {
 
                         // have to do nothing
 
                     }
 
                 }
-            }
-            else {
+            } else {
 
-                throw new org.apache.axis2.databinding.ADBException("CustomField cannot be null!!");
+                throw new org.apache.axis2.databinding.ADBException("SenderProvidedNumber cannot be null!!");
 
             }
 
@@ -468,7 +450,7 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
-                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CustomField").equals(reader.getName())) {
+                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SenderProvidedNumber").equals(reader.getName())) {
 
                     // Process the array and step past its final element's end.
                     list1.add(reader.getElementText());
@@ -490,20 +472,18 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
                             // two continuous end elements means we are exiting
                             // the xml structure
                             loopDone1 = true;
-                        }
-                        else {
-                            if (new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CustomField").equals(reader.getName())) {
+                        } else {
+                            if (new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SenderProvidedNumber").equals(reader.getName())) {
                                 list1.add(reader.getElementText());
 
-                            }
-                            else {
+                            } else {
                                 loopDone1 = true;
                             }
                         }
                     }
                     // call the converter utility to convert and set the array
 
-                    object.setCustomField((java.lang.String[]) list1.toArray(new java.lang.String[list1.size()]));
+                    object.setSenderProvidedNumber((java.lang.String[]) list1.toArray(new java.lang.String[list1.size()]));
 
                 } // End of if for expected property start element
 
@@ -519,8 +499,7 @@ public class ArrayOfString implements org.apache.axis2.databinding.ADBBean {
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

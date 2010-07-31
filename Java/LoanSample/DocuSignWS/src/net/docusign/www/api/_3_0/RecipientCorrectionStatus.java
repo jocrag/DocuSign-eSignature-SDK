@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -39,7 +39,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getCorrectionSucceeded() {
@@ -48,7 +48,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectionSucceeded
      */
@@ -73,7 +73,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.RecipientCorrection
      */
     public net.docusign.www.api._3_0.RecipientCorrection getRecipientCorrection() {
@@ -82,7 +82,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            RecipientCorrection
      */
@@ -91,8 +91,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
         if (param != null) {
             // update the setting tracker
             localRecipientCorrectionTracker = true;
-        }
-        else {
+        } else {
             localRecipientCorrectionTracker = false;
 
         }
@@ -116,7 +115,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.RecipientStatus
      */
     public net.docusign.www.api._3_0.RecipientStatus getRecipientStatus() {
@@ -125,7 +124,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            RecipientStatus
      */
@@ -134,8 +133,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
         if (param != null) {
             // update the setting tracker
             localRecipientStatusTracker = true;
-        }
-        else {
+        } else {
             localRecipientStatusTracker = false;
 
         }
@@ -146,7 +144,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -154,15 +152,14 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -195,8 +192,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -205,8 +201,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -215,8 +210,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":RecipientCorrectionStatus", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "RecipientCorrectionStatus", xmlWriter);
             }
 
@@ -233,13 +227,11 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "CorrectionSucceeded");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("CorrectionSucceeded");
         }
 
@@ -247,8 +239,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
             throw new org.apache.axis2.databinding.ADBException("CorrectionSucceeded cannot be null!!");
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectionSucceeded));
         }
 
@@ -289,8 +280,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -309,15 +299,13 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -339,14 +327,12 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -376,12 +362,10 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -412,7 +396,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -555,8 +539,7 @@ public class RecipientCorrectionStatus implements org.apache.axis2.databinding.A
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

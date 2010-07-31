@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getEmail() {
@@ -55,7 +55,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Email
      */
@@ -64,8 +64,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
         if (param != null) {
             // update the setting tracker
             localEmailTracker = true;
-        }
-        else {
+        } else {
             localEmailTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getUserName() {
@@ -98,7 +97,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            UserName
      */
@@ -107,8 +106,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
         if (param != null) {
             // update the setting tracker
             localUserNameTracker = true;
-        }
-        else {
+        } else {
             localUserNameTracker = false;
 
         }
@@ -121,7 +119,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
      * field for EnabledFeaturesSet
      */
 
-    protected net.docusign.www.api._3_0.ArrayOfString3 localEnabledFeaturesSet;
+    protected net.docusign.www.api._3_0.ArrayOfString4 localEnabledFeaturesSet;
 
     /*
      * This tracker boolean wil be used to detect whether the user called the
@@ -132,26 +130,25 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
     /**
      * Auto generated getter method
-     *
-     * @return net.docusign.www.api._3_0.ArrayOfString3
+     * 
+     * @return net.docusign.www.api._3_0.ArrayOfString4
      */
-    public net.docusign.www.api._3_0.ArrayOfString3 getEnabledFeaturesSet() {
+    public net.docusign.www.api._3_0.ArrayOfString4 getEnabledFeaturesSet() {
         return localEnabledFeaturesSet;
     }
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnabledFeaturesSet
      */
-    public void setEnabledFeaturesSet(net.docusign.www.api._3_0.ArrayOfString3 param) {
+    public void setEnabledFeaturesSet(net.docusign.www.api._3_0.ArrayOfString4 param) {
 
         if (param != null) {
             // update the setting tracker
             localEnabledFeaturesSetTracker = true;
-        }
-        else {
+        } else {
             localEnabledFeaturesSetTracker = false;
 
         }
@@ -162,7 +159,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -170,15 +167,14 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -211,8 +207,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -221,8 +216,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -231,8 +225,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":AccountMembershipFeaturesList", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "AccountMembershipFeaturesList", xmlWriter);
             }
 
@@ -249,13 +242,11 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Email");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Email");
             }
 
@@ -264,8 +255,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
                 throw new org.apache.axis2.databinding.ADBException("Email cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localEmail);
 
@@ -285,13 +275,11 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "UserName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("UserName");
             }
 
@@ -300,8 +288,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
                 throw new org.apache.axis2.databinding.ADBException("UserName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localUserName);
 
@@ -339,8 +326,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -359,15 +345,13 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -389,14 +373,12 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -426,12 +408,10 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -462,7 +442,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -474,8 +454,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
             if (localEmail != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localEmail));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Email cannot be null!!");
             }
         }
@@ -484,8 +463,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
             if (localUserName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localUserName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("UserName cannot be null!!");
             }
         }
@@ -596,7 +574,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
 
                 if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnabledFeaturesSet").equals(reader.getName())) {
 
-                    object.setEnabledFeaturesSet(net.docusign.www.api._3_0.ArrayOfString3.Factory.parse(reader));
+                    object.setEnabledFeaturesSet(net.docusign.www.api._3_0.ArrayOfString4.Factory.parse(reader));
 
                     reader.next();
 
@@ -614,8 +592,7 @@ public class AccountMembershipFeaturesList implements org.apache.axis2.databindi
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

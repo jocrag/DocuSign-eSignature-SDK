@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -51,11 +51,11 @@ public class RequestStatusResponse {
 
     /**
      * Gets the value of the requestStatusResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EnvelopeStatus }
-     *
+     *     
      */
     public EnvelopeStatus getRequestStatusResult() {
         return requestStatusResult;
@@ -63,11 +63,11 @@ public class RequestStatusResponse {
 
     /**
      * Sets the value of the requestStatusResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EnvelopeStatus }
-     *
+     *     
      */
     public void setRequestStatusResult(EnvelopeStatus value) {
         this.requestStatusResult = value;

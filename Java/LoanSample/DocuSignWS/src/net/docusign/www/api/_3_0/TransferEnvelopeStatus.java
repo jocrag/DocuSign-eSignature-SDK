@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -39,7 +39,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getTransferEnvelopeSuccess() {
@@ -48,7 +48,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TransferEnvelopeSuccess
      */
@@ -60,7 +60,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -68,15 +68,14 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -109,8 +108,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -119,8 +117,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -129,8 +126,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":TransferEnvelopeStatus", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "TransferEnvelopeStatus", xmlWriter);
             }
 
@@ -147,13 +143,11 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "TransferEnvelopeSuccess");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("TransferEnvelopeSuccess");
         }
 
@@ -161,8 +155,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
 
             throw new org.apache.axis2.databinding.ADBException("TransferEnvelopeSuccess cannot be null!!");
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTransferEnvelopeSuccess));
         }
 
@@ -192,8 +185,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -212,15 +204,13 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -242,14 +232,12 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -279,12 +267,10 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -315,7 +301,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -412,8 +398,7 @@ public class TransferEnvelopeStatus implements org.apache.axis2.databinding.ADBB
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

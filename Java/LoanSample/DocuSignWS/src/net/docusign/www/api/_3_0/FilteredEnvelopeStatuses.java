@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -39,7 +39,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return int
      */
     public int getResultSetSize() {
@@ -48,7 +48,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ResultSetSize
      */
@@ -73,7 +73,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.EnvelopeStatusFilter
      */
     public net.docusign.www.api._3_0.EnvelopeStatusFilter getEnvelopeStatusFilter() {
@@ -82,7 +82,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnvelopeStatusFilter
      */
@@ -91,8 +91,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
         if (param != null) {
             // update the setting tracker
             localEnvelopeStatusFilterTracker = true;
-        }
-        else {
+        } else {
             localEnvelopeStatusFilterTracker = false;
 
         }
@@ -109,7 +108,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.ArrayOfEnvelopeStatus
      */
     public net.docusign.www.api._3_0.ArrayOfEnvelopeStatus getEnvelopeStatuses() {
@@ -118,7 +117,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            EnvelopeStatuses
      */
@@ -130,7 +129,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -138,15 +137,14 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -179,8 +177,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -189,8 +186,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -199,8 +195,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":FilteredEnvelopeStatuses", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "FilteredEnvelopeStatuses", xmlWriter);
             }
 
@@ -217,13 +212,11 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "ResultSetSize");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("ResultSetSize");
         }
 
@@ -231,8 +224,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
             throw new org.apache.axis2.databinding.ADBException("ResultSetSize cannot be null!!");
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localResultSetSize));
         }
 
@@ -257,21 +249,18 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
                     xmlWriter.writeNamespace(prefix2, namespace2);
                     xmlWriter.setPrefix(prefix2, namespace2);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace2, "EnvelopeStatuses");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("EnvelopeStatuses");
             }
 
             // write the nil attribute
             writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "nil", "1", xmlWriter);
             xmlWriter.writeEndElement();
-        }
-        else {
+        } else {
             localEnvelopeStatuses.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatuses"), factory, xmlWriter);
         }
 
@@ -299,8 +288,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -319,15 +307,13 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -349,14 +335,12 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -386,12 +370,10 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -422,7 +404,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -549,8 +531,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
 
                         reader.next();
 
-                    }
-                    else {
+                    } else {
 
                         object.setEnvelopeStatuses(net.docusign.www.api._3_0.ArrayOfEnvelopeStatus.Factory.parse(reader));
 
@@ -572,8 +553,7 @@ public class FilteredEnvelopeStatuses implements org.apache.axis2.databinding.AD
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

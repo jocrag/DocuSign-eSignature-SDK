@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for EnvelopeTemplate complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="EnvelopeTemplate">
  *   &lt;complexContent>
@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnvelopeTemplate", propOrder = {
@@ -53,11 +53,11 @@ public class EnvelopeTemplate {
 
     /**
      * Gets the value of the envelopeTemplateDefinition property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EnvelopeTemplateDefinition }
-     *
+     *     
      */
     public EnvelopeTemplateDefinition getEnvelopeTemplateDefinition() {
         return envelopeTemplateDefinition;
@@ -65,11 +65,11 @@ public class EnvelopeTemplate {
 
     /**
      * Sets the value of the envelopeTemplateDefinition property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EnvelopeTemplateDefinition }
-     *
+     *     
      */
     public void setEnvelopeTemplateDefinition(EnvelopeTemplateDefinition value) {
         this.envelopeTemplateDefinition = value;
@@ -77,11 +77,11 @@ public class EnvelopeTemplate {
 
     /**
      * Gets the value of the envelope property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Envelope }
-     *
+     *     
      */
     public Envelope getEnvelope() {
         return envelope;
@@ -89,11 +89,11 @@ public class EnvelopeTemplate {
 
     /**
      * Sets the value of the envelope property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Envelope }
-     *
+     *     
      */
     public void setEnvelope(Envelope value) {
         this.envelope = value;

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -39,7 +39,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.TabTypeCode
      */
     public net.docusign.www.api._3_0.TabTypeCode getTabType() {
@@ -48,7 +48,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TabType
      */
@@ -73,7 +73,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getStatus() {
@@ -82,7 +82,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Status
      */
@@ -91,8 +91,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localStatusTracker = true;
-        }
-        else {
+        } else {
             localStatusTracker = false;
 
         }
@@ -109,7 +108,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return double
      */
     public double getXPosition() {
@@ -118,7 +117,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            XPosition
      */
@@ -136,7 +135,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return double
      */
     public double getYPosition() {
@@ -145,7 +144,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            YPosition
      */
@@ -170,7 +169,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.util.Calendar
      */
     public java.util.Calendar getSigned() {
@@ -179,7 +178,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Signed
      */
@@ -188,8 +187,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localSignedTracker = true;
-        }
-        else {
+        } else {
             localSignedTracker = false;
 
         }
@@ -213,7 +211,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getTabLabel() {
@@ -222,7 +220,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TabLabel
      */
@@ -231,8 +229,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localTabLabelTracker = true;
-        }
-        else {
+        } else {
             localTabLabelTracker = false;
 
         }
@@ -256,7 +253,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getTabName() {
@@ -265,7 +262,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TabName
      */
@@ -274,8 +271,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localTabNameTracker = true;
-        }
-        else {
+        } else {
             localTabNameTracker = false;
 
         }
@@ -299,7 +295,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getTabValue() {
@@ -308,7 +304,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TabValue
      */
@@ -317,8 +313,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localTabValueTracker = true;
-        }
-        else {
+        } else {
             localTabValueTracker = false;
 
         }
@@ -342,7 +337,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return org.apache.axis2.databinding.types.PositiveInteger
      */
     public org.apache.axis2.databinding.types.PositiveInteger getDocumentID() {
@@ -351,7 +346,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            DocumentID
      */
@@ -360,8 +355,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localDocumentIDTracker = true;
-        }
-        else {
+        } else {
             localDocumentIDTracker = false;
 
         }
@@ -385,7 +379,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return org.apache.axis2.databinding.types.NonNegativeInteger
      */
     public org.apache.axis2.databinding.types.NonNegativeInteger getPageNumber() {
@@ -394,7 +388,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            PageNumber
      */
@@ -403,8 +397,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localPageNumberTracker = true;
-        }
-        else {
+        } else {
             localPageNumberTracker = false;
 
         }
@@ -428,7 +421,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getOriginalValue() {
@@ -437,7 +430,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            OriginalValue
      */
@@ -446,8 +439,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localOriginalValueTracker = true;
-        }
-        else {
+        } else {
             localOriginalValueTracker = false;
 
         }
@@ -471,7 +463,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getValidationPattern() {
@@ -480,7 +472,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ValidationPattern
      */
@@ -489,8 +481,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localValidationPatternTracker = true;
-        }
-        else {
+        } else {
             localValidationPatternTracker = false;
 
         }
@@ -514,7 +505,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getRoleName() {
@@ -523,7 +514,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            RoleName
      */
@@ -532,8 +523,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localRoleNameTracker = true;
-        }
-        else {
+        } else {
             localRoleNameTracker = false;
 
         }
@@ -557,7 +547,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getListValues() {
@@ -566,7 +556,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ListValues
      */
@@ -575,8 +565,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localListValuesTracker = true;
-        }
-        else {
+        } else {
             localListValuesTracker = false;
 
         }
@@ -600,7 +589,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getListSelectedValue() {
@@ -609,7 +598,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ListSelectedValue
      */
@@ -618,8 +607,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localListSelectedValueTracker = true;
-        }
-        else {
+        } else {
             localListSelectedValueTracker = false;
 
         }
@@ -643,7 +631,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.math.BigDecimal
      */
     public java.math.BigDecimal getScaleValue() {
@@ -652,7 +640,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ScaleValue
      */
@@ -661,8 +649,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localScaleValueTracker = true;
-        }
-        else {
+        } else {
             localScaleValueTracker = false;
 
         }
@@ -673,7 +660,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -681,15 +668,14 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -722,8 +708,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -732,8 +717,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -742,8 +726,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":TabStatus", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "TabStatus", xmlWriter);
             }
 
@@ -765,13 +748,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Status");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Status");
             }
 
@@ -780,8 +761,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Status cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localStatus);
 
@@ -800,13 +780,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "XPosition");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("XPosition");
         }
 
@@ -814,8 +792,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             throw new org.apache.axis2.databinding.ADBException("XPosition cannot be null!!");
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localXPosition));
         }
 
@@ -832,13 +809,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "YPosition");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("YPosition");
         }
 
@@ -846,8 +821,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             throw new org.apache.axis2.databinding.ADBException("YPosition cannot be null!!");
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localYPosition));
         }
 
@@ -864,13 +838,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Signed");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Signed");
             }
 
@@ -879,8 +851,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Signed cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSigned));
 
@@ -900,13 +871,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TabLabel");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TabLabel");
             }
 
@@ -915,8 +884,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("TabLabel cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localTabLabel);
 
@@ -936,13 +904,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TabName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TabName");
             }
 
@@ -951,8 +917,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("TabName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localTabName);
 
@@ -972,13 +937,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TabValue");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TabValue");
             }
 
@@ -987,8 +950,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("TabValue cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localTabValue);
 
@@ -1008,13 +970,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "DocumentID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("DocumentID");
             }
 
@@ -1023,8 +983,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("DocumentID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDocumentID));
 
@@ -1044,13 +1003,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "PageNumber");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("PageNumber");
             }
 
@@ -1059,8 +1016,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("PageNumber cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPageNumber));
 
@@ -1080,13 +1036,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "OriginalValue");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("OriginalValue");
             }
 
@@ -1095,8 +1049,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("OriginalValue cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localOriginalValue);
 
@@ -1116,13 +1069,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "ValidationPattern");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("ValidationPattern");
             }
 
@@ -1131,8 +1082,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("ValidationPattern cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localValidationPattern);
 
@@ -1152,13 +1102,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "RoleName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("RoleName");
             }
 
@@ -1167,8 +1115,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("RoleName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localRoleName);
 
@@ -1188,13 +1135,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "ListValues");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("ListValues");
             }
 
@@ -1203,8 +1148,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("ListValues cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localListValues);
 
@@ -1224,13 +1168,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "ListSelectedValue");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("ListSelectedValue");
             }
 
@@ -1239,8 +1181,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("ListSelectedValue cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localListSelectedValue);
 
@@ -1260,13 +1201,11 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "ScaleValue");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("ScaleValue");
             }
 
@@ -1275,8 +1214,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("ScaleValue cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localScaleValue));
 
@@ -1308,8 +1246,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -1328,15 +1265,13 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -1358,14 +1293,12 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -1395,12 +1328,10 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -1431,7 +1362,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -1449,8 +1380,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localStatus != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localStatus));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Status cannot be null!!");
             }
         }
@@ -1466,8 +1396,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localSigned != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSigned));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Signed cannot be null!!");
             }
         }
@@ -1476,8 +1405,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localTabLabel != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTabLabel));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("TabLabel cannot be null!!");
             }
         }
@@ -1486,8 +1414,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localTabName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTabName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("TabName cannot be null!!");
             }
         }
@@ -1496,8 +1423,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localTabValue != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTabValue));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("TabValue cannot be null!!");
             }
         }
@@ -1506,8 +1432,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localDocumentID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDocumentID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("DocumentID cannot be null!!");
             }
         }
@@ -1516,8 +1441,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localPageNumber != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPageNumber));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("PageNumber cannot be null!!");
             }
         }
@@ -1526,8 +1450,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localOriginalValue != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOriginalValue));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("OriginalValue cannot be null!!");
             }
         }
@@ -1536,8 +1459,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localValidationPattern != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localValidationPattern));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("ValidationPattern cannot be null!!");
             }
         }
@@ -1546,8 +1468,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localRoleName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRoleName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("RoleName cannot be null!!");
             }
         }
@@ -1556,8 +1477,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localListValues != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localListValues));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("ListValues cannot be null!!");
             }
         }
@@ -1566,8 +1486,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localListSelectedValue != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localListSelectedValue));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("ListSelectedValue cannot be null!!");
             }
         }
@@ -1576,8 +1495,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
 
             if (localScaleValue != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localScaleValue));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("ScaleValue cannot be null!!");
             }
         }
@@ -1925,8 +1843,7 @@ public class TabStatus implements org.apache.axis2.databinding.ADBBean {
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

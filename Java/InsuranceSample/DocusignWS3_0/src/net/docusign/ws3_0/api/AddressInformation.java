@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for AddressInformation complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="AddressInformation">
  *   &lt;complexContent>
@@ -40,8 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AddressInformation", propOrder = {
@@ -69,11 +69,11 @@ public class AddressInformation {
 
     /**
      * Gets the value of the street1 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getStreet1() {
         return street1;
@@ -81,11 +81,11 @@ public class AddressInformation {
 
     /**
      * Sets the value of the street1 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setStreet1(String value) {
         this.street1 = value;
@@ -93,11 +93,11 @@ public class AddressInformation {
 
     /**
      * Gets the value of the street2 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getStreet2() {
         return street2;
@@ -105,11 +105,11 @@ public class AddressInformation {
 
     /**
      * Sets the value of the street2 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setStreet2(String value) {
         this.street2 = value;
@@ -117,11 +117,11 @@ public class AddressInformation {
 
     /**
      * Gets the value of the city property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCity() {
         return city;
@@ -129,11 +129,11 @@ public class AddressInformation {
 
     /**
      * Sets the value of the city property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCity(String value) {
         this.city = value;
@@ -141,11 +141,11 @@ public class AddressInformation {
 
     /**
      * Gets the value of the state property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getState() {
         return state;
@@ -153,11 +153,11 @@ public class AddressInformation {
 
     /**
      * Sets the value of the state property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setState(String value) {
         this.state = value;
@@ -165,11 +165,11 @@ public class AddressInformation {
 
     /**
      * Gets the value of the zip property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getZip() {
         return zip;
@@ -177,11 +177,11 @@ public class AddressInformation {
 
     /**
      * Sets the value of the zip property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setZip(String value) {
         this.zip = value;
@@ -189,11 +189,11 @@ public class AddressInformation {
 
     /**
      * Gets the value of the zipPlus4 property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getZipPlus4() {
         return zipPlus4;
@@ -201,11 +201,11 @@ public class AddressInformation {
 
     /**
      * Sets the value of the zipPlus4 property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setZipPlus4(String value) {
         this.zipPlus4 = value;

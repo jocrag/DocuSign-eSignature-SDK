@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for SaveTemplateResult complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="SaveTemplateResult">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SaveTemplateResult", propOrder = {
@@ -57,7 +57,7 @@ public class SaveTemplateResult {
 
     /**
      * Gets the value of the success property.
-     *
+     * 
      */
     public boolean isSuccess() {
         return success;
@@ -65,7 +65,7 @@ public class SaveTemplateResult {
 
     /**
      * Sets the value of the success property.
-     *
+     * 
      */
     public void setSuccess(boolean value) {
         this.success = value;
@@ -73,11 +73,11 @@ public class SaveTemplateResult {
 
     /**
      * Gets the value of the templateID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getTemplateID() {
         return templateID;
@@ -85,11 +85,11 @@ public class SaveTemplateResult {
 
     /**
      * Sets the value of the templateID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setTemplateID(String value) {
         this.templateID = value;
@@ -97,11 +97,11 @@ public class SaveTemplateResult {
 
     /**
      * Gets the value of the name property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getName() {
         return name;
@@ -109,11 +109,11 @@ public class SaveTemplateResult {
 
     /**
      * Sets the value of the name property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setName(String value) {
         this.name = value;

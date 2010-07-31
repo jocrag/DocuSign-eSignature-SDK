@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for SSN4InformationInput complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="SSN4InformationInput">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "SSN4InformationInput", propOrder = {
@@ -57,11 +57,11 @@ public class SSN4InformationInput {
 
     /**
      * Gets the value of the ssn4Information property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link SSN4Information }
-     *
+     *     
      */
     public SSN4Information getSSN4Information() {
         return ssn4Information;
@@ -69,11 +69,11 @@ public class SSN4InformationInput {
 
     /**
      * Sets the value of the ssn4Information property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link SSN4Information }
-     *
+     *     
      */
     public void setSSN4Information(SSN4Information value) {
         this.ssn4Information = value;
@@ -81,11 +81,11 @@ public class SSN4InformationInput {
 
     /**
      * Gets the value of the displayLevel property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link DisplayLevelCode }
-     *
+     *     
      */
     public DisplayLevelCode getDisplayLevel() {
         return displayLevel;
@@ -93,11 +93,11 @@ public class SSN4InformationInput {
 
     /**
      * Sets the value of the displayLevel property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link DisplayLevelCode }
-     *
+     *     
      */
     public void setDisplayLevel(DisplayLevelCode value) {
         this.displayLevel = value;
@@ -105,11 +105,11 @@ public class SSN4InformationInput {
 
     /**
      * Gets the value of the receiveInResponse property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isReceiveInResponse() {
         return receiveInResponse;
@@ -117,11 +117,11 @@ public class SSN4InformationInput {
 
     /**
      * Sets the value of the receiveInResponse property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setReceiveInResponse(Boolean value) {
         this.receiveInResponse = value;

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -24,9 +24,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for EnvelopeStatusFilterBeginDateTime complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="EnvelopeStatusFilterBeginDateTime">
  *   &lt;simpleContent>
@@ -36,8 +36,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/simpleContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnvelopeStatusFilterBeginDateTime", propOrder = {
@@ -48,16 +48,16 @@ public class EnvelopeStatusFilterBeginDateTime {
     @XmlValue
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar value;
-    @XmlAttribute(namespace = "http://www.docusign.net/API/3.0")
+    @XmlAttribute(name = "statusQualifier", namespace = "http://www.docusign.net/API/3.0")
     protected String statusQualifier;
 
     /**
      * Gets the value of the value property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getValue() {
         return value;
@@ -65,11 +65,11 @@ public class EnvelopeStatusFilterBeginDateTime {
 
     /**
      * Sets the value of the value property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setValue(XMLGregorianCalendar value) {
         this.value = value;
@@ -77,11 +77,11 @@ public class EnvelopeStatusFilterBeginDateTime {
 
     /**
      * Gets the value of the statusQualifier property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getStatusQualifier() {
         return statusQualifier;
@@ -89,11 +89,11 @@ public class EnvelopeStatusFilterBeginDateTime {
 
     /**
      * Sets the value of the statusQualifier property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setStatusQualifier(String value) {
         this.statusQualifier = value;

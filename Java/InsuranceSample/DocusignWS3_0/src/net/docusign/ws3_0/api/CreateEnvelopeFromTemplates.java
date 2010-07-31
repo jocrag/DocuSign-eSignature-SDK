@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -39,8 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -63,11 +63,11 @@ public class CreateEnvelopeFromTemplates {
 
     /**
      * Gets the value of the templateReferences property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfTemplateReference }
-     *
+     *     
      */
     public ArrayOfTemplateReference getTemplateReferences() {
         return templateReferences;
@@ -75,11 +75,11 @@ public class CreateEnvelopeFromTemplates {
 
     /**
      * Sets the value of the templateReferences property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfTemplateReference }
-     *
+     *     
      */
     public void setTemplateReferences(ArrayOfTemplateReference value) {
         this.templateReferences = value;
@@ -87,11 +87,11 @@ public class CreateEnvelopeFromTemplates {
 
     /**
      * Gets the value of the recipients property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfRecipient1 }
-     *
+     *     
      */
     public ArrayOfRecipient1 getRecipients() {
         return recipients;
@@ -99,11 +99,11 @@ public class CreateEnvelopeFromTemplates {
 
     /**
      * Sets the value of the recipients property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfRecipient1 }
-     *
+     *     
      */
     public void setRecipients(ArrayOfRecipient1 value) {
         this.recipients = value;
@@ -111,11 +111,11 @@ public class CreateEnvelopeFromTemplates {
 
     /**
      * Gets the value of the envelopeInformation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EnvelopeInformation }
-     *
+     *     
      */
     public EnvelopeInformation getEnvelopeInformation() {
         return envelopeInformation;
@@ -123,11 +123,11 @@ public class CreateEnvelopeFromTemplates {
 
     /**
      * Sets the value of the envelopeInformation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EnvelopeInformation }
-     *
+     *     
      */
     public void setEnvelopeInformation(EnvelopeInformation value) {
         this.envelopeInformation = value;
@@ -135,7 +135,7 @@ public class CreateEnvelopeFromTemplates {
 
     /**
      * Gets the value of the activateEnvelope property.
-     *
+     * 
      */
     public boolean isActivateEnvelope() {
         return activateEnvelope;
@@ -143,7 +143,7 @@ public class CreateEnvelopeFromTemplates {
 
     /**
      * Sets the value of the activateEnvelope property.
-     *
+     * 
      */
     public void setActivateEnvelope(boolean value) {
         this.activateEnvelope = value;

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -22,9 +22,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for RecipientCorrection complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RecipientCorrection">
  *   &lt;complexContent>
@@ -51,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RecipientCorrection", propOrder = {
@@ -112,11 +112,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the previousUserName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getPreviousUserName() {
         return previousUserName;
@@ -124,11 +124,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the previousUserName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setPreviousUserName(String value) {
         this.previousUserName = value;
@@ -136,11 +136,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the previousEmail property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getPreviousEmail() {
         return previousEmail;
@@ -148,11 +148,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the previousEmail property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setPreviousEmail(String value) {
         this.previousEmail = value;
@@ -160,7 +160,7 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the previousRoutingOrder property.
-     *
+     * 
      */
     public int getPreviousRoutingOrder() {
         return previousRoutingOrder;
@@ -168,7 +168,7 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the previousRoutingOrder property.
-     *
+     * 
      */
     public void setPreviousRoutingOrder(int value) {
         this.previousRoutingOrder = value;
@@ -176,11 +176,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the previousSignerName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getPreviousSignerName() {
         return previousSignerName;
@@ -188,11 +188,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the previousSignerName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setPreviousSignerName(String value) {
         this.previousSignerName = value;
@@ -200,11 +200,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedUserName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCorrectedUserName() {
         return correctedUserName;
@@ -212,11 +212,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedUserName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCorrectedUserName(String value) {
         this.correctedUserName = value;
@@ -224,11 +224,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedSignerName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCorrectedSignerName() {
         return correctedSignerName;
@@ -236,11 +236,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedSignerName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCorrectedSignerName(String value) {
         this.correctedSignerName = value;
@@ -248,11 +248,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedEmail property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCorrectedEmail() {
         return correctedEmail;
@@ -260,11 +260,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedEmail property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCorrectedEmail(String value) {
         this.correctedEmail = value;
@@ -272,11 +272,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedCaptiveInfo property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RecipientCorrectionCorrectedCaptiveInfo }
-     *
+     *     
      */
     public RecipientCorrectionCorrectedCaptiveInfo getCorrectedCaptiveInfo() {
         return correctedCaptiveInfo;
@@ -284,11 +284,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedCaptiveInfo property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RecipientCorrectionCorrectedCaptiveInfo }
-     *
+     *     
      */
     public void setCorrectedCaptiveInfo(RecipientCorrectionCorrectedCaptiveInfo value) {
         this.correctedCaptiveInfo = value;
@@ -296,11 +296,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedAccessCode property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCorrectedAccessCode() {
         return correctedAccessCode;
@@ -308,11 +308,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedAccessCode property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCorrectedAccessCode(String value) {
         this.correctedAccessCode = value;
@@ -320,11 +320,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedAccessCodeRequired property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isCorrectedAccessCodeRequired() {
         return correctedAccessCodeRequired;
@@ -332,11 +332,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedAccessCodeRequired property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setCorrectedAccessCodeRequired(Boolean value) {
         this.correctedAccessCodeRequired = value;
@@ -344,11 +344,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedRequireIDLookup property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isCorrectedRequireIDLookup() {
         return correctedRequireIDLookup;
@@ -356,11 +356,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedRequireIDLookup property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setCorrectedRequireIDLookup(Boolean value) {
         this.correctedRequireIDLookup = value;
@@ -368,11 +368,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedIDCheckConfigurationName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getCorrectedIDCheckConfigurationName() {
         return correctedIDCheckConfigurationName;
@@ -380,11 +380,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedIDCheckConfigurationName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setCorrectedIDCheckConfigurationName(String value) {
         this.correctedIDCheckConfigurationName = value;
@@ -392,11 +392,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedRoutingOrder property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Integer }
-     *
+     *     
      */
     public Integer getCorrectedRoutingOrder() {
         return correctedRoutingOrder;
@@ -404,11 +404,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedRoutingOrder property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Integer }
-     *
+     *     
      */
     public void setCorrectedRoutingOrder(Integer value) {
         this.correctedRoutingOrder = value;
@@ -416,11 +416,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedAutoNavigation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isCorrectedAutoNavigation() {
         return correctedAutoNavigation;
@@ -428,11 +428,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedAutoNavigation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setCorrectedAutoNavigation(Boolean value) {
         this.correctedAutoNavigation = value;
@@ -440,11 +440,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the correctedIDCheckInformationInput property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link IDCheckInformationInput }
-     *
+     *     
      */
     public IDCheckInformationInput getCorrectedIDCheckInformationInput() {
         return correctedIDCheckInformationInput;
@@ -452,11 +452,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the correctedIDCheckInformationInput property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link IDCheckInformationInput }
-     *
+     *     
      */
     public void setCorrectedIDCheckInformationInput(IDCheckInformationInput value) {
         this.correctedIDCheckInformationInput = value;
@@ -464,11 +464,11 @@ public class RecipientCorrection {
 
     /**
      * Gets the value of the resend property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isResend() {
         return resend;
@@ -476,11 +476,11 @@ public class RecipientCorrection {
 
     /**
      * Sets the value of the resend property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setResend(Boolean value) {
         this.resend = value;

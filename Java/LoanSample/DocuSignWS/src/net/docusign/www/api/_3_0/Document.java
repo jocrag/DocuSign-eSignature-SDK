@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -45,7 +45,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return org.apache.axis2.databinding.types.PositiveInteger
      */
     public org.apache.axis2.databinding.types.PositiveInteger getID() {
@@ -54,7 +54,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            ID
      */
@@ -63,8 +63,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localIDTracker = true;
-        }
-        else {
+        } else {
             localIDTracker = false;
 
         }
@@ -88,7 +87,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getName() {
@@ -97,7 +96,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Name
      */
@@ -106,8 +105,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localNameTracker = true;
-        }
-        else {
+        } else {
             localNameTracker = false;
 
         }
@@ -131,7 +129,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return javax.activation.DataHandler
      */
     public javax.activation.DataHandler getPDFBytes() {
@@ -140,7 +138,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            PDFBytes
      */
@@ -149,8 +147,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localPDFBytesTracker = true;
-        }
-        else {
+        } else {
             localPDFBytesTracker = false;
 
         }
@@ -174,7 +171,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getPassword() {
@@ -183,7 +180,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Password
      */
@@ -192,8 +189,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localPasswordTracker = true;
-        }
-        else {
+        } else {
             localPasswordTracker = false;
 
         }
@@ -217,7 +213,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getTransformPdfFields() {
@@ -226,7 +222,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            TransformPdfFields
      */
@@ -237,8 +233,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         if (false) {
             localTransformPdfFieldsTracker = false;
 
-        }
-        else {
+        } else {
             localTransformPdfFieldsTracker = true;
         }
 
@@ -261,7 +256,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getFileExtension() {
@@ -270,7 +265,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            FileExtension
      */
@@ -279,8 +274,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localFileExtensionTracker = true;
-        }
-        else {
+        } else {
             localFileExtensionTracker = false;
 
         }
@@ -304,7 +298,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.ArrayOfMatchBox
      */
     public net.docusign.www.api._3_0.ArrayOfMatchBox getMatchBoxes() {
@@ -313,7 +307,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            MatchBoxes
      */
@@ -322,8 +316,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localMatchBoxesTracker = true;
-        }
-        else {
+        } else {
             localMatchBoxesTracker = false;
 
         }
@@ -347,7 +340,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getAttachmentDescription() {
@@ -356,7 +349,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AttachmentDescription
      */
@@ -365,8 +358,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         if (param != null) {
             // update the setting tracker
             localAttachmentDescriptionTracker = true;
-        }
-        else {
+        } else {
             localAttachmentDescriptionTracker = false;
 
         }
@@ -377,7 +369,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -385,15 +377,14 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -426,8 +417,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -436,8 +426,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -446,8 +435,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":Document", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "Document", xmlWriter);
             }
 
@@ -464,13 +452,11 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "ID");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("ID");
             }
 
@@ -479,8 +465,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("ID cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localID));
 
@@ -500,13 +485,11 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Name");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Name");
             }
 
@@ -515,8 +498,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Name cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localName);
 
@@ -536,13 +518,11 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "PDFBytes");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("PDFBytes");
             }
 
@@ -564,13 +544,11 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Password");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Password");
             }
 
@@ -579,8 +557,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("Password cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localPassword);
 
@@ -600,13 +577,11 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "TransformPdfFields");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("TransformPdfFields");
             }
 
@@ -614,8 +589,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("TransformPdfFields cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localTransformPdfFields));
             }
 
@@ -633,13 +607,11 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "FileExtension");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("FileExtension");
             }
 
@@ -648,8 +620,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("FileExtension cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localFileExtension);
 
@@ -675,13 +646,11 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AttachmentDescription");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AttachmentDescription");
             }
 
@@ -690,8 +659,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
                 throw new org.apache.axis2.databinding.ADBException("AttachmentDescription cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localAttachmentDescription);
 
@@ -723,8 +691,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -743,15 +710,13 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -773,14 +738,12 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -810,12 +773,10 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -846,7 +807,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -858,8 +819,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
             if (localID != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localID));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("ID cannot be null!!");
             }
         }
@@ -868,8 +828,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
             if (localName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Name cannot be null!!");
             }
         }
@@ -883,8 +842,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
             if (localPassword != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPassword));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("Password cannot be null!!");
             }
         }
@@ -898,8 +856,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
             if (localFileExtension != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localFileExtension));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("FileExtension cannot be null!!");
             }
         }
@@ -916,8 +873,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
             if (localAttachmentDescription != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAttachmentDescription));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("AttachmentDescription cannot be null!!");
             }
         }
@@ -1024,8 +980,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                         // MTOM aware reader - get the datahandler directly and
                         // put it in the object
                         object.setPDFBytes((javax.activation.DataHandler) reader.getProperty(org.apache.axiom.om.OMConstants.DATA_HANDLER));
-                    }
-                    else {
+                    } else {
                         if (reader.getEventType() == javax.xml.stream.XMLStreamConstants.START_ELEMENT && reader.getName().equals(new javax.xml.namespace.QName(org.apache.axiom.om.impl.MTOMConstants.XOP_NAMESPACE_URI, org.apache.axiom.om.impl.MTOMConstants.XOP_INCLUDE))) {
                             java.lang.String id = org.apache.axiom.om.util.ElementHelper.getContentID(reader, "UTF-8");
                             object.setPDFBytes(((org.apache.axiom.soap.impl.builder.MTOMStAXSOAPModelBuilder) ((org.apache.axiom.om.impl.llom.OMStAXWrapper) reader).getBuilder()).getDataHandler(id));
@@ -1033,8 +988,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
 
                             reader.next();
 
-                        }
-                        else if (reader.hasText()) {
+                        } else if (reader.hasText()) {
                             // Do the usual conversion
                             java.lang.String content = reader.getText();
                             object.setPDFBytes(org.apache.axis2.databinding.utils.ConverterUtil.convertToBase64Binary(content));
@@ -1143,8 +1097,7 @@ public class Document implements org.apache.axis2.databinding.ADBBean {
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

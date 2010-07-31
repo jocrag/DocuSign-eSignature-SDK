@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,9 +23,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for EnvelopeStatus complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="EnvelopeStatus">
  *   &lt;complexContent>
@@ -67,8 +67,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EnvelopeStatus", propOrder = {
@@ -181,11 +181,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the recipientStatuses property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfRecipientStatus }
-     *
+     *     
      */
     public ArrayOfRecipientStatus getRecipientStatuses() {
         return recipientStatuses;
@@ -193,11 +193,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the recipientStatuses property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfRecipientStatus }
-     *
+     *     
      */
     public void setRecipientStatuses(ArrayOfRecipientStatus value) {
         this.recipientStatuses = value;
@@ -205,11 +205,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the timeGenerated property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getTimeGenerated() {
         return timeGenerated;
@@ -217,11 +217,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the timeGenerated property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setTimeGenerated(XMLGregorianCalendar value) {
         this.timeGenerated = value;
@@ -229,11 +229,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the envelopeID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEnvelopeID() {
         return envelopeID;
@@ -241,11 +241,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the envelopeID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEnvelopeID(String value) {
         this.envelopeID = value;
@@ -253,11 +253,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the subject property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getSubject() {
         return subject;
@@ -265,11 +265,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the subject property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSubject(String value) {
         this.subject = value;
@@ -277,11 +277,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the userName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getUserName() {
         return userName;
@@ -289,11 +289,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the userName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setUserName(String value) {
         this.userName = value;
@@ -301,11 +301,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the email property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEmail() {
         return email;
@@ -313,11 +313,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the email property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEmail(String value) {
         this.email = value;
@@ -325,11 +325,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the status property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EnvelopeStatusCode }
-     *
+     *     
      */
     public EnvelopeStatusCode getStatus() {
         return status;
@@ -337,11 +337,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the status property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EnvelopeStatusCode }
-     *
+     *     
      */
     public void setStatus(EnvelopeStatusCode value) {
         this.status = value;
@@ -349,11 +349,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the created property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getCreated() {
         return created;
@@ -361,11 +361,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the created property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setCreated(XMLGregorianCalendar value) {
         this.created = value;
@@ -373,11 +373,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the deleted property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getDeleted() {
         return deleted;
@@ -385,11 +385,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the deleted property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setDeleted(XMLGregorianCalendar value) {
         this.deleted = value;
@@ -397,11 +397,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the sent property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getSent() {
         return sent;
@@ -409,11 +409,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the sent property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setSent(XMLGregorianCalendar value) {
         this.sent = value;
@@ -421,11 +421,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the delivered property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getDelivered() {
         return delivered;
@@ -433,11 +433,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the delivered property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setDelivered(XMLGregorianCalendar value) {
         this.delivered = value;
@@ -445,11 +445,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the signed property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getSigned() {
         return signed;
@@ -457,11 +457,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the signed property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setSigned(XMLGregorianCalendar value) {
         this.signed = value;
@@ -469,11 +469,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the completed property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getCompleted() {
         return completed;
@@ -481,11 +481,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the completed property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setCompleted(XMLGregorianCalendar value) {
         this.completed = value;
@@ -493,11 +493,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the declined property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getDeclined() {
         return declined;
@@ -505,11 +505,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the declined property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setDeclined(XMLGregorianCalendar value) {
         this.declined = value;
@@ -517,11 +517,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the timedOut property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getTimedOut() {
         return timedOut;
@@ -529,11 +529,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the timedOut property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setTimedOut(XMLGregorianCalendar value) {
         this.timedOut = value;
@@ -541,11 +541,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the acStatus property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getACStatus() {
         return acStatus;
@@ -553,11 +553,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the acStatus property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setACStatus(String value) {
         this.acStatus = value;
@@ -565,11 +565,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the acStatusDate property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getACStatusDate() {
         return acStatusDate;
@@ -577,11 +577,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the acStatusDate property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setACStatusDate(XMLGregorianCalendar value) {
         this.acStatusDate = value;
@@ -589,11 +589,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the acHolder property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getACHolder() {
         return acHolder;
@@ -601,11 +601,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the acHolder property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setACHolder(String value) {
         this.acHolder = value;
@@ -613,11 +613,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the acHolderEmail property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getACHolderEmail() {
         return acHolderEmail;
@@ -625,11 +625,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the acHolderEmail property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setACHolderEmail(String value) {
         this.acHolderEmail = value;
@@ -637,11 +637,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the acHolderLocation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getACHolderLocation() {
         return acHolderLocation;
@@ -649,11 +649,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the acHolderLocation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setACHolderLocation(String value) {
         this.acHolderLocation = value;
@@ -661,11 +661,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the signingLocation property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link SigningLocationCode }
-     *
+     *     
      */
     public SigningLocationCode getSigningLocation() {
         return signingLocation;
@@ -673,11 +673,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the signingLocation property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link SigningLocationCode }
-     *
+     *     
      */
     public void setSigningLocation(SigningLocationCode value) {
         this.signingLocation = value;
@@ -685,11 +685,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the senderIPAddress property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getSenderIPAddress() {
         return senderIPAddress;
@@ -697,11 +697,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the senderIPAddress property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSenderIPAddress(String value) {
         this.senderIPAddress = value;
@@ -709,11 +709,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the envelopePDFHash property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEnvelopePDFHash() {
         return envelopePDFHash;
@@ -721,11 +721,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the envelopePDFHash property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEnvelopePDFHash(String value) {
         this.envelopePDFHash = value;
@@ -733,11 +733,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the customFields property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfCustomField }
-     *
+     *     
      */
     public ArrayOfCustomField getCustomFields() {
         return customFields;
@@ -745,11 +745,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the customFields property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfCustomField }
-     *
+     *     
      */
     public void setCustomFields(ArrayOfCustomField value) {
         this.customFields = value;
@@ -757,11 +757,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the vaultingDetails property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link VaultingDetails }
-     *
+     *     
      */
     public VaultingDetails getVaultingDetails() {
         return vaultingDetails;
@@ -769,11 +769,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the vaultingDetails property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link VaultingDetails }
-     *
+     *     
      */
     public void setVaultingDetails(VaultingDetails value) {
         this.vaultingDetails = value;
@@ -781,7 +781,7 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the autoNavigation property.
-     *
+     * 
      */
     public boolean isAutoNavigation() {
         return autoNavigation;
@@ -789,7 +789,7 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the autoNavigation property.
-     *
+     * 
      */
     public void setAutoNavigation(boolean value) {
         this.autoNavigation = value;
@@ -797,7 +797,7 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the envelopeIdStamping property.
-     *
+     * 
      */
     public boolean isEnvelopeIdStamping() {
         return envelopeIdStamping;
@@ -805,7 +805,7 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the envelopeIdStamping property.
-     *
+     * 
      */
     public void setEnvelopeIdStamping(boolean value) {
         this.envelopeIdStamping = value;
@@ -813,11 +813,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the authoritativeCopy property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link Boolean }
-     *
+     *     
      */
     public Boolean isAuthoritativeCopy() {
         return authoritativeCopy;
@@ -825,11 +825,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the authoritativeCopy property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link Boolean }
-     *
+     *     
      */
     public void setAuthoritativeCopy(Boolean value) {
         this.authoritativeCopy = value;
@@ -837,11 +837,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the envelopeAttachment property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public ArrayOfAttachment getEnvelopeAttachment() {
         return envelopeAttachment;
@@ -849,11 +849,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the envelopeAttachment property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfAttachment }
-     *
+     *     
      */
     public void setEnvelopeAttachment(ArrayOfAttachment value) {
         this.envelopeAttachment = value;
@@ -861,11 +861,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the documentStatuses property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfDocumentStatus }
-     *
+     *     
      */
     public ArrayOfDocumentStatus getDocumentStatuses() {
         return documentStatuses;
@@ -873,11 +873,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the documentStatuses property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfDocumentStatus }
-     *
+     *     
      */
     public void setDocumentStatuses(ArrayOfDocumentStatus value) {
         this.documentStatuses = value;
@@ -885,11 +885,11 @@ public class EnvelopeStatus {
 
     /**
      * Gets the value of the formData property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link FormData }
-     *
+     *     
      */
     public FormData getFormData() {
         return formData;
@@ -897,11 +897,11 @@ public class EnvelopeStatus {
 
     /**
      * Sets the value of the formData property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link FormData }
-     *
+     *     
      */
     public void setFormData(FormData value) {
         this.formData = value;

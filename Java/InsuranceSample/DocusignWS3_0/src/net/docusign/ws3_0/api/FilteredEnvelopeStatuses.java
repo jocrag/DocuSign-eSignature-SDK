@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for FilteredEnvelopeStatuses complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="FilteredEnvelopeStatuses">
  *   &lt;complexContent>
@@ -37,8 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FilteredEnvelopeStatuses", propOrder = {
@@ -57,7 +57,7 @@ public class FilteredEnvelopeStatuses {
 
     /**
      * Gets the value of the resultSetSize property.
-     *
+     * 
      */
     public int getResultSetSize() {
         return resultSetSize;
@@ -65,7 +65,7 @@ public class FilteredEnvelopeStatuses {
 
     /**
      * Sets the value of the resultSetSize property.
-     *
+     * 
      */
     public void setResultSetSize(int value) {
         this.resultSetSize = value;
@@ -73,11 +73,11 @@ public class FilteredEnvelopeStatuses {
 
     /**
      * Gets the value of the envelopeStatusFilter property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EnvelopeStatusFilter }
-     *
+     *     
      */
     public EnvelopeStatusFilter getEnvelopeStatusFilter() {
         return envelopeStatusFilter;
@@ -85,11 +85,11 @@ public class FilteredEnvelopeStatuses {
 
     /**
      * Sets the value of the envelopeStatusFilter property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EnvelopeStatusFilter }
-     *
+     *     
      */
     public void setEnvelopeStatusFilter(EnvelopeStatusFilter value) {
         this.envelopeStatusFilter = value;
@@ -97,11 +97,11 @@ public class FilteredEnvelopeStatuses {
 
     /**
      * Gets the value of the envelopeStatuses property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfEnvelopeStatus }
-     *
+     *     
      */
     public ArrayOfEnvelopeStatus getEnvelopeStatuses() {
         return envelopeStatuses;
@@ -109,11 +109,11 @@ public class FilteredEnvelopeStatuses {
 
     /**
      * Sets the value of the envelopeStatuses property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfEnvelopeStatus }
-     *
+     *     
      */
     public void setEnvelopeStatuses(ArrayOfEnvelopeStatus value) {
         this.envelopeStatuses = value;

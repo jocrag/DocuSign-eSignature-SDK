@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -20,9 +20,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for FormDataXfdf complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="FormDataXfdf">
  *   &lt;complexContent>
@@ -34,8 +34,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "FormDataXfdf", propOrder = {
@@ -47,11 +47,11 @@ public class FormDataXfdf {
 
     /**
      * Gets the value of the fields property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfFormDataXfdfField }
-     *
+     *     
      */
     public ArrayOfFormDataXfdfField getFields() {
         return fields;
@@ -59,11 +59,11 @@ public class FormDataXfdf {
 
     /**
      * Sets the value of the fields property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfFormDataXfdfField }
-     *
+     *     
      */
     public void setFields(ArrayOfFormDataXfdfField value) {
         this.fields = value;

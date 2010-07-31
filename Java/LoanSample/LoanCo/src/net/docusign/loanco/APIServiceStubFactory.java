@@ -19,6 +19,7 @@ import org.springframework.beans.factory.FactoryBean;
 public class APIServiceStubFactory implements FactoryBean {
     private String integratorsKey;
 	private String accountId;
+	private String userId;
 	private String password;
 	private String userEmail;
 	private String webserviceEndpoint;
@@ -30,7 +31,11 @@ public class APIServiceStubFactory implements FactoryBean {
 		this.accountId = accountId;
 	}
 
-	public void setIntegratorsKey(String integratorsKey) {
+	public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public void setIntegratorsKey(String integratorsKey) {
 		this.integratorsKey = integratorsKey;
 	}
 
@@ -65,6 +70,7 @@ public class APIServiceStubFactory implements FactoryBean {
 	public Object getObject() throws Exception {
 		WebserviceCredentials credentials = WebserviceCredentials.getInstance();
 		credentials.setIntegratorsKey(integratorsKey);
+		credentials.setUserId(userId);
 		credentials.setUserEmail(userEmail);
 		credentials.setAccountId(accountId);
 		credentials.setPassword(password);

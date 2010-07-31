@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for DocumentPDF complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="DocumentPDF">
  *   &lt;complexContent>
@@ -40,8 +40,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "DocumentPDF", propOrder = {
@@ -64,11 +64,11 @@ public class DocumentPDF {
 
     /**
      * Gets the value of the name property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getName() {
         return name;
@@ -76,11 +76,11 @@ public class DocumentPDF {
 
     /**
      * Sets the value of the name property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setName(String value) {
         this.name = value;
@@ -88,7 +88,7 @@ public class DocumentPDF {
 
     /**
      * Gets the value of the pdfBytes property.
-     *
+     * 
      * @return
      *     possible object is
      *     byte[]
@@ -99,7 +99,7 @@ public class DocumentPDF {
 
     /**
      * Sets the value of the pdfBytes property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     byte[]
@@ -110,11 +110,11 @@ public class DocumentPDF {
 
     /**
      * Gets the value of the documentID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getDocumentID() {
         return documentID;
@@ -122,11 +122,11 @@ public class DocumentPDF {
 
     /**
      * Sets the value of the documentID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setDocumentID(BigInteger value) {
         this.documentID = value;
@@ -134,11 +134,11 @@ public class DocumentPDF {
 
     /**
      * Gets the value of the documentType property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link DocumentType }
-     *
+     *     
      */
     public DocumentType getDocumentType() {
         return documentType;
@@ -146,11 +146,11 @@ public class DocumentPDF {
 
     /**
      * Sets the value of the documentType property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link DocumentType }
-     *
+     *     
      */
     public void setDocumentType(DocumentType value) {
         this.documentType = value;

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for UpdateAddressBookResult complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="UpdateAddressBookResult">
  *   &lt;complexContent>
@@ -36,8 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "UpdateAddressBookResult", propOrder = {
@@ -53,7 +53,7 @@ public class UpdateAddressBookResult {
 
     /**
      * Gets the value of the success property.
-     *
+     * 
      */
     public boolean isSuccess() {
         return success;
@@ -61,7 +61,7 @@ public class UpdateAddressBookResult {
 
     /**
      * Sets the value of the success property.
-     *
+     * 
      */
     public void setSuccess(boolean value) {
         this.success = value;
@@ -69,11 +69,11 @@ public class UpdateAddressBookResult {
 
     /**
      * Gets the value of the addressBookItems property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfAddressBookItem1 }
-     *
+     *     
      */
     public ArrayOfAddressBookItem1 getAddressBookItems() {
         return addressBookItems;
@@ -81,11 +81,11 @@ public class UpdateAddressBookResult {
 
     /**
      * Sets the value of the addressBookItems property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfAddressBookItem1 }
-     *
+     *     
      */
     public void setAddressBookItems(ArrayOfAddressBookItem1 value) {
         this.addressBookItems = value;

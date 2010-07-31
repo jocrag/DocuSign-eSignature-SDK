@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for TemplateReferenceFieldData complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="TemplateReferenceFieldData">
  *   &lt;complexContent>
@@ -35,8 +35,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "TemplateReferenceFieldData", propOrder = {
@@ -49,11 +49,11 @@ public class TemplateReferenceFieldData {
 
     /**
      * Gets the value of the dataValues property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link ArrayOfTemplateReferenceFieldDataDataValue }
-     *
+     *     
      */
     public ArrayOfTemplateReferenceFieldDataDataValue getDataValues() {
         return dataValues;
@@ -61,11 +61,11 @@ public class TemplateReferenceFieldData {
 
     /**
      * Sets the value of the dataValues property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link ArrayOfTemplateReferenceFieldDataDataValue }
-     *
+     *     
      */
     public void setDataValues(ArrayOfTemplateReferenceFieldDataDataValue value) {
         this.dataValues = value;

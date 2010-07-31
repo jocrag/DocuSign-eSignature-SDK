@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,9 +23,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for EventResult complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="EventResult">
  *   &lt;complexContent>
@@ -38,8 +38,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "EventResult", propOrder = {
@@ -56,11 +56,11 @@ public class EventResult {
 
     /**
      * Gets the value of the status property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link EventStatusCode }
-     *
+     *     
      */
     public EventStatusCode getStatus() {
         return status;
@@ -68,11 +68,11 @@ public class EventResult {
 
     /**
      * Sets the value of the status property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link EventStatusCode }
-     *
+     *     
      */
     public void setStatus(EventStatusCode value) {
         this.status = value;
@@ -80,11 +80,11 @@ public class EventResult {
 
     /**
      * Gets the value of the eventTimestamp property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getEventTimestamp() {
         return eventTimestamp;
@@ -92,11 +92,11 @@ public class EventResult {
 
     /**
      * Sets the value of the eventTimestamp property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setEventTimestamp(XMLGregorianCalendar value) {
         this.eventTimestamp = value;

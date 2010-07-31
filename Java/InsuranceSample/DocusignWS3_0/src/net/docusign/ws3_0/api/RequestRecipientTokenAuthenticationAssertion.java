@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -23,9 +23,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for RequestRecipientTokenAuthenticationAssertion complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="RequestRecipientTokenAuthenticationAssertion">
  *   &lt;complexContent>
@@ -40,8 +40,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "RequestRecipientTokenAuthenticationAssertion", propOrder = {
@@ -64,11 +64,11 @@ public class RequestRecipientTokenAuthenticationAssertion {
 
     /**
      * Gets the value of the assertionID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAssertionID() {
         return assertionID;
@@ -76,11 +76,11 @@ public class RequestRecipientTokenAuthenticationAssertion {
 
     /**
      * Sets the value of the assertionID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAssertionID(String value) {
         this.assertionID = value;
@@ -88,11 +88,11 @@ public class RequestRecipientTokenAuthenticationAssertion {
 
     /**
      * Gets the value of the authenticationInstant property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public XMLGregorianCalendar getAuthenticationInstant() {
         return authenticationInstant;
@@ -100,11 +100,11 @@ public class RequestRecipientTokenAuthenticationAssertion {
 
     /**
      * Sets the value of the authenticationInstant property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link XMLGregorianCalendar }
-     *
+     *     
      */
     public void setAuthenticationInstant(XMLGregorianCalendar value) {
         this.authenticationInstant = value;
@@ -112,11 +112,11 @@ public class RequestRecipientTokenAuthenticationAssertion {
 
     /**
      * Gets the value of the authenticationMethod property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link RequestRecipientTokenAuthenticationAssertionAuthenticationMethod }
-     *
+     *     
      */
     public RequestRecipientTokenAuthenticationAssertionAuthenticationMethod getAuthenticationMethod() {
         return authenticationMethod;
@@ -124,11 +124,11 @@ public class RequestRecipientTokenAuthenticationAssertion {
 
     /**
      * Sets the value of the authenticationMethod property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link RequestRecipientTokenAuthenticationAssertionAuthenticationMethod }
-     *
+     *     
      */
     public void setAuthenticationMethod(RequestRecipientTokenAuthenticationAssertionAuthenticationMethod value) {
         this.authenticationMethod = value;
@@ -136,11 +136,11 @@ public class RequestRecipientTokenAuthenticationAssertion {
 
     /**
      * Gets the value of the securityDomain property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getSecurityDomain() {
         return securityDomain;
@@ -148,11 +148,11 @@ public class RequestRecipientTokenAuthenticationAssertion {
 
     /**
      * Sets the value of the securityDomain property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setSecurityDomain(String value) {
         this.securityDomain = value;

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getPreviousUserName() {
@@ -55,7 +55,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            PreviousUserName
      */
@@ -64,8 +64,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localPreviousUserNameTracker = true;
-        }
-        else {
+        } else {
             localPreviousUserNameTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getPreviousEmail() {
@@ -98,7 +97,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            PreviousEmail
      */
@@ -107,8 +106,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localPreviousEmailTracker = true;
-        }
-        else {
+        } else {
             localPreviousEmailTracker = false;
 
         }
@@ -125,7 +123,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return org.apache.axis2.databinding.types.UnsignedShort
      */
     public org.apache.axis2.databinding.types.UnsignedShort getPreviousRoutingOrder() {
@@ -134,7 +132,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            PreviousRoutingOrder
      */
@@ -159,7 +157,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getPreviousSignerName() {
@@ -168,7 +166,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            PreviousSignerName
      */
@@ -177,8 +175,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localPreviousSignerNameTracker = true;
-        }
-        else {
+        } else {
             localPreviousSignerNameTracker = false;
 
         }
@@ -202,7 +199,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getCorrectedUserName() {
@@ -211,7 +208,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedUserName
      */
@@ -220,8 +217,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localCorrectedUserNameTracker = true;
-        }
-        else {
+        } else {
             localCorrectedUserNameTracker = false;
 
         }
@@ -245,7 +241,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getCorrectedSignerName() {
@@ -254,7 +250,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedSignerName
      */
@@ -263,8 +259,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localCorrectedSignerNameTracker = true;
-        }
-        else {
+        } else {
             localCorrectedSignerNameTracker = false;
 
         }
@@ -288,7 +283,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getCorrectedEmail() {
@@ -297,7 +292,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedEmail
      */
@@ -306,8 +301,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localCorrectedEmailTracker = true;
-        }
-        else {
+        } else {
             localCorrectedEmailTracker = false;
 
         }
@@ -331,7 +325,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.RecipientCorrectionCorrectedCaptiveInfo
      */
     public net.docusign.www.api._3_0.RecipientCorrectionCorrectedCaptiveInfo getCorrectedCaptiveInfo() {
@@ -340,7 +334,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedCaptiveInfo
      */
@@ -349,8 +343,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localCorrectedCaptiveInfoTracker = true;
-        }
-        else {
+        } else {
             localCorrectedCaptiveInfoTracker = false;
 
         }
@@ -374,7 +367,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getCorrectedAccessCode() {
@@ -383,7 +376,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedAccessCode
      */
@@ -392,8 +385,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localCorrectedAccessCodeTracker = true;
-        }
-        else {
+        } else {
             localCorrectedAccessCodeTracker = false;
 
         }
@@ -417,7 +409,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getCorrectedAccessCodeRequired() {
@@ -426,7 +418,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedAccessCodeRequired
      */
@@ -437,8 +429,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (false) {
             localCorrectedAccessCodeRequiredTracker = false;
 
-        }
-        else {
+        } else {
             localCorrectedAccessCodeRequiredTracker = true;
         }
 
@@ -461,7 +452,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getCorrectedRequireIDLookup() {
@@ -470,7 +461,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedRequireIDLookup
      */
@@ -481,8 +472,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (false) {
             localCorrectedRequireIDLookupTracker = false;
 
-        }
-        else {
+        } else {
             localCorrectedRequireIDLookupTracker = true;
         }
 
@@ -505,7 +495,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getCorrectedIDCheckConfigurationName() {
@@ -514,7 +504,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedIDCheckConfigurationName
      */
@@ -523,8 +513,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localCorrectedIDCheckConfigurationNameTracker = true;
-        }
-        else {
+        } else {
             localCorrectedIDCheckConfigurationNameTracker = false;
 
         }
@@ -548,7 +537,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return org.apache.axis2.databinding.types.UnsignedShort
      */
     public org.apache.axis2.databinding.types.UnsignedShort getCorrectedRoutingOrder() {
@@ -557,7 +546,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedRoutingOrder
      */
@@ -566,8 +555,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localCorrectedRoutingOrderTracker = true;
-        }
-        else {
+        } else {
             localCorrectedRoutingOrderTracker = false;
 
         }
@@ -591,7 +579,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getCorrectedAutoNavigation() {
@@ -600,7 +588,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedAutoNavigation
      */
@@ -611,8 +599,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (false) {
             localCorrectedAutoNavigationTracker = false;
 
-        }
-        else {
+        } else {
             localCorrectedAutoNavigationTracker = true;
         }
 
@@ -635,7 +622,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return net.docusign.www.api._3_0.IDCheckInformationInput
      */
     public net.docusign.www.api._3_0.IDCheckInformationInput getCorrectedIDCheckInformationInput() {
@@ -644,7 +631,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            CorrectedIDCheckInformationInput
      */
@@ -653,8 +640,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (param != null) {
             // update the setting tracker
             localCorrectedIDCheckInformationInputTracker = true;
-        }
-        else {
+        } else {
             localCorrectedIDCheckInformationInputTracker = false;
 
         }
@@ -678,7 +664,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return boolean
      */
     public boolean getResend() {
@@ -687,7 +673,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            Resend
      */
@@ -698,8 +684,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         if (false) {
             localResendTracker = false;
 
-        }
-        else {
+        } else {
             localResendTracker = true;
         }
 
@@ -709,7 +694,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -717,15 +702,14 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -758,8 +742,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -768,8 +751,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -778,8 +760,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":RecipientCorrection", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "RecipientCorrection", xmlWriter);
             }
 
@@ -796,13 +777,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "PreviousUserName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("PreviousUserName");
             }
 
@@ -811,8 +790,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("PreviousUserName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localPreviousUserName);
 
@@ -832,13 +810,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "PreviousEmail");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("PreviousEmail");
             }
 
@@ -847,8 +823,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("PreviousEmail cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localPreviousEmail);
 
@@ -867,13 +842,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "PreviousRoutingOrder");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("PreviousRoutingOrder");
         }
 
@@ -882,8 +855,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             throw new org.apache.axis2.databinding.ADBException("PreviousRoutingOrder cannot be null!!");
 
-        }
-        else {
+        } else {
 
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPreviousRoutingOrder));
 
@@ -902,13 +874,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "PreviousSignerName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("PreviousSignerName");
             }
 
@@ -917,8 +887,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("PreviousSignerName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localPreviousSignerName);
 
@@ -938,13 +907,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedUserName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedUserName");
             }
 
@@ -953,8 +920,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedUserName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localCorrectedUserName);
 
@@ -974,13 +940,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedSignerName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedSignerName");
             }
 
@@ -989,8 +953,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedSignerName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localCorrectedSignerName);
 
@@ -1010,13 +973,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedEmail");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedEmail");
             }
 
@@ -1025,8 +986,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedEmail cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localCorrectedEmail);
 
@@ -1052,13 +1012,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedAccessCode");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedAccessCode");
             }
 
@@ -1067,8 +1025,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedAccessCode cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localCorrectedAccessCode);
 
@@ -1088,13 +1045,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedAccessCodeRequired");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedAccessCodeRequired");
             }
 
@@ -1102,8 +1057,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedAccessCodeRequired cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedAccessCodeRequired));
             }
 
@@ -1121,13 +1075,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedRequireIDLookup");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedRequireIDLookup");
             }
 
@@ -1135,8 +1087,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedRequireIDLookup cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedRequireIDLookup));
             }
 
@@ -1154,13 +1105,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedIDCheckConfigurationName");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedIDCheckConfigurationName");
             }
 
@@ -1169,8 +1118,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedIDCheckConfigurationName cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localCorrectedIDCheckConfigurationName);
 
@@ -1190,13 +1138,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedRoutingOrder");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedRoutingOrder");
             }
 
@@ -1205,8 +1151,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedRoutingOrder cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedRoutingOrder));
 
@@ -1226,13 +1171,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "CorrectedAutoNavigation");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("CorrectedAutoNavigation");
             }
 
@@ -1240,8 +1183,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("CorrectedAutoNavigation cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedAutoNavigation));
             }
 
@@ -1265,13 +1207,11 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "Resend");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("Resend");
             }
 
@@ -1279,8 +1219,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                 throw new org.apache.axis2.databinding.ADBException("Resend cannot be null!!");
 
-            }
-            else {
+            } else {
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localResend));
             }
 
@@ -1310,8 +1249,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -1330,15 +1268,13 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -1360,14 +1296,12 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -1397,12 +1331,10 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -1433,7 +1365,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -1445,8 +1377,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localPreviousUserName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPreviousUserName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("PreviousUserName cannot be null!!");
             }
         }
@@ -1455,8 +1386,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localPreviousEmail != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPreviousEmail));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("PreviousEmail cannot be null!!");
             }
         }
@@ -1464,8 +1394,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
         if (localPreviousRoutingOrder != null) {
             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPreviousRoutingOrder));
-        }
-        else {
+        } else {
             throw new org.apache.axis2.databinding.ADBException("PreviousRoutingOrder cannot be null!!");
         }
         if (localPreviousSignerNameTracker) {
@@ -1473,8 +1402,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localPreviousSignerName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPreviousSignerName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("PreviousSignerName cannot be null!!");
             }
         }
@@ -1483,8 +1411,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localCorrectedUserName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedUserName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("CorrectedUserName cannot be null!!");
             }
         }
@@ -1493,8 +1420,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localCorrectedSignerName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedSignerName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("CorrectedSignerName cannot be null!!");
             }
         }
@@ -1503,8 +1429,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localCorrectedEmail != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedEmail));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("CorrectedEmail cannot be null!!");
             }
         }
@@ -1521,8 +1446,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localCorrectedAccessCode != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedAccessCode));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("CorrectedAccessCode cannot be null!!");
             }
         }
@@ -1541,8 +1465,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localCorrectedIDCheckConfigurationName != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedIDCheckConfigurationName));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("CorrectedIDCheckConfigurationName cannot be null!!");
             }
         }
@@ -1551,8 +1474,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
 
             if (localCorrectedRoutingOrder != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localCorrectedRoutingOrder));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("CorrectedRoutingOrder cannot be null!!");
             }
         }
@@ -1912,8 +1834,7 @@ public class RecipientCorrection implements org.apache.axis2.databinding.ADBBean
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Expirations complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="Expirations">
  *   &lt;complexContent>
@@ -39,8 +39,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Expirations", propOrder = {
@@ -61,7 +61,7 @@ public class Expirations {
 
     /**
      * Gets the value of the expireEnabled property.
-     *
+     * 
      */
     public boolean isExpireEnabled() {
         return expireEnabled;
@@ -69,7 +69,7 @@ public class Expirations {
 
     /**
      * Sets the value of the expireEnabled property.
-     *
+     * 
      */
     public void setExpireEnabled(boolean value) {
         this.expireEnabled = value;
@@ -77,11 +77,11 @@ public class Expirations {
 
     /**
      * Gets the value of the expireAfter property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getExpireAfter() {
         return expireAfter;
@@ -89,11 +89,11 @@ public class Expirations {
 
     /**
      * Sets the value of the expireAfter property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setExpireAfter(BigInteger value) {
         this.expireAfter = value;
@@ -101,11 +101,11 @@ public class Expirations {
 
     /**
      * Gets the value of the expireWarn property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public BigInteger getExpireWarn() {
         return expireWarn;
@@ -113,11 +113,11 @@ public class Expirations {
 
     /**
      * Sets the value of the expireWarn property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link BigInteger }
-     *
+     *     
      */
     public void setExpireWarn(BigInteger value) {
         this.expireWarn = value;

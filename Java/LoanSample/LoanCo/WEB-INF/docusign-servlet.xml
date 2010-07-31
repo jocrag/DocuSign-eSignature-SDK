@@ -9,7 +9,19 @@
     </bean>
 
 	<!-- Authentication: Username Token -->
-	<!--
+	<bean id="apiService" class="net.docusign.loanco.APIServiceStubFactory">
+        <property name="accountId" value="${docusign.account.id}" />
+        <property name="userId" value="${docusign.user.id}" />
+        <property name="password" value="${docusign.password}" />
+        <property name="userEmail" value="${email}" />
+        <property name="webserviceEndpoint" value="${docusign.webservice.endpoint}" />
+        <property name="keystoreFile" value="${keystore.file}" />
+        <property name="keystoreAlias" value="${keystore.alias}" />
+        <property name="keystorePass" value="${keystore.password}" />
+    </bean>
+    
+    <!-- Authentication: Integrators Key -->
+    <!--
 	<bean id="apiService" class="net.docusign.loanco.APIServiceStubFactory">
         <property name="integratorsKey" value="${docusign.integrators.key}" />
         <property name="accountId" value="${docusign.account.id}" />
@@ -22,7 +34,21 @@
     </bean>
     -->
     
-    <!-- Authentication: Username Token + X509 -->
+    <!-- Authentication: X509 with Username Token -->
+    <!--
+    <bean id="apiService" class="net.docusign.loanco.X509APIServiceStubFactory">
+        <property name="accountId" value="${docusign.account.id}" />
+        <property name="userId" value="${docusign.user.id}" />
+        <property name="password" value="${docusign.password}" />
+        <property name="userEmail" value="${email}" />
+        <property name="webserviceEndpoint" value="${docusign.webservice.endpoint}" />
+        <property name="keystoreFile" value="${keystore.file}" />
+        <property name="keystoreAlias" value="${keystore.alias}" />
+        <property name="keystorePass" value="${keystore.password}" />
+    </bean>
+    -->
+    
+    <!-- Authentication: X509 with Integrators Key -->
     <!--
     <bean id="apiService" class="net.docusign.loanco.X509APIServiceStubFactory">
         <property name="integratorsKey" value="${docusign.integrators.key}" />

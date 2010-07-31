@@ -10,21 +10,23 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.wsclient;
+
 
 /**
  * APIServiceCallbackHandler Callback class, Users can extend this class and
  * implement their own receiveResult and receiveError methods.
  */
 public abstract class APIServiceCallbackHandler {
+
     protected Object clientData;
 
     /**
      * User can pass in any object that needs to be accessed once the
      * NonBlocking Web service call is finished and appropriate method of this
      * CallBack is called.
-     *
+     * 
      * @param clientData
      *            Object mechanism by which the user can pass in user data that
      *            will be avilable at the time this callback is called.
@@ -105,6 +107,21 @@ public abstract class APIServiceCallbackHandler {
      * error response from requestDocumentPDFs operation
      */
     public void receiveErrorrequestDocumentPDFs(java.lang.Exception e) {
+    }
+
+    /**
+     * auto generated Axis2 call back method for requestPDFWithCert method
+     * override this method for handling normal response from requestPDFWithCert
+     * operation
+     */
+    public void receiveResultrequestPDFWithCert(net.docusign.www.api._3_0.RequestPDFWithCertResponse result) {
+    }
+
+    /**
+     * auto generated Axis2 Error handler override this method for handling
+     * error response from requestPDFWithCert operation
+     */
+    public void receiveErrorrequestPDFWithCert(java.lang.Exception e) {
     }
 
     /**
@@ -208,6 +225,21 @@ public abstract class APIServiceCallbackHandler {
      * error response from requestStatusesEx operation
      */
     public void receiveErrorrequestStatusesEx(java.lang.Exception e) {
+    }
+
+    /**
+     * auto generated Axis2 call back method for requestCorrectToken method
+     * override this method for handling normal response from
+     * requestCorrectToken operation
+     */
+    public void receiveResultrequestCorrectToken(net.docusign.www.api._3_0.RequestCorrectTokenResponse result) {
+    }
+
+    /**
+     * auto generated Axis2 Error handler override this method for handling
+     * error response from requestCorrectToken operation
+     */
+    public void receiveErrorrequestCorrectToken(java.lang.Exception e) {
     }
 
     /**
@@ -491,6 +523,21 @@ public abstract class APIServiceCallbackHandler {
     }
 
     /**
+     * auto generated Axis2 call back method for envelopeAuditEvents method
+     * override this method for handling normal response from
+     * envelopeAuditEvents operation
+     */
+    public void receiveResultenvelopeAuditEvents(net.docusign.www.api._3_0.EnvelopeAuditEventsResponse result) {
+    }
+
+    /**
+     * auto generated Axis2 Error handler override this method for handling
+     * error response from envelopeAuditEvents operation
+     */
+    public void receiveErrorenvelopeAuditEvents(java.lang.Exception e) {
+    }
+
+    /**
      * auto generated Axis2 call back method for exportAuthoritativeCopy method
      * override this method for handling normal response from
      * exportAuthoritativeCopy operation
@@ -506,18 +553,17 @@ public abstract class APIServiceCallbackHandler {
     }
 
     /**
-     * auto generated Axis2 call back method for envelopeAuditEvents method
-     * override this method for handling normal response from
-     * envelopeAuditEvents operation
+     * auto generated Axis2 call back method for sendEnvelope method override
+     * this method for handling normal response from sendEnvelope operation
      */
-    public void receiveResultenvelopeAuditEvents(net.docusign.www.api._3_0.EnvelopeAuditEventsResponse result) {
+    public void receiveResultsendEnvelope(net.docusign.www.api._3_0.SendEnvelopeResponse result) {
     }
 
     /**
      * auto generated Axis2 Error handler override this method for handling
-     * error response from envelopeAuditEvents operation
+     * error response from sendEnvelope operation
      */
-    public void receiveErrorenvelopeAuditEvents(java.lang.Exception e) {
+    public void receiveErrorsendEnvelope(java.lang.Exception e) {
     }
 
     /**
@@ -561,4 +607,20 @@ public abstract class APIServiceCallbackHandler {
      */
     public void receiveErrorrequestStatus(java.lang.Exception e) {
     }
+
+    /**
+     * auto generated Axis2 call back method for requestPDFNoWaterMark method
+     * override this method for handling normal response from
+     * requestPDFNoWaterMark operation
+     */
+    public void receiveResultrequestPDFNoWaterMark(net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse result) {
+    }
+
+    /**
+     * auto generated Axis2 Error handler override this method for handling
+     * error response from requestPDFNoWaterMark operation
+     */
+    public void receiveErrorrequestPDFNoWaterMark(java.lang.Exception e) {
+    }
+
 }

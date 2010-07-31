@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for IDCheckInformationInput complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="IDCheckInformationInput">
  *   &lt;complexContent>
@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "IDCheckInformationInput", propOrder = {
@@ -61,11 +61,11 @@ public class IDCheckInformationInput {
 
     /**
      * Gets the value of the addressInformationInput property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link AddressInformationInput }
-     *
+     *     
      */
     public AddressInformationInput getAddressInformationInput() {
         return addressInformationInput;
@@ -73,11 +73,11 @@ public class IDCheckInformationInput {
 
     /**
      * Sets the value of the addressInformationInput property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link AddressInformationInput }
-     *
+     *     
      */
     public void setAddressInformationInput(AddressInformationInput value) {
         this.addressInformationInput = value;
@@ -85,11 +85,11 @@ public class IDCheckInformationInput {
 
     /**
      * Gets the value of the dobInformationInput property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link DOBInformationInput }
-     *
+     *     
      */
     public DOBInformationInput getDOBInformationInput() {
         return dobInformationInput;
@@ -97,11 +97,11 @@ public class IDCheckInformationInput {
 
     /**
      * Sets the value of the dobInformationInput property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link DOBInformationInput }
-     *
+     *     
      */
     public void setDOBInformationInput(DOBInformationInput value) {
         this.dobInformationInput = value;
@@ -109,11 +109,11 @@ public class IDCheckInformationInput {
 
     /**
      * Gets the value of the ssn4InformationInput property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link SSN4InformationInput }
-     *
+     *     
      */
     public SSN4InformationInput getSSN4InformationInput() {
         return ssn4InformationInput;
@@ -121,11 +121,11 @@ public class IDCheckInformationInput {
 
     /**
      * Sets the value of the ssn4InformationInput property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link SSN4InformationInput }
-     *
+     *     
      */
     public void setSSN4InformationInput(SSN4InformationInput value) {
         this.ssn4InformationInput = value;
@@ -133,11 +133,11 @@ public class IDCheckInformationInput {
 
     /**
      * Gets the value of the ssn9InformationInput property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link SSN9InformationInput }
-     *
+     *     
      */
     public SSN9InformationInput getSSN9InformationInput() {
         return ssn9InformationInput;
@@ -145,11 +145,11 @@ public class IDCheckInformationInput {
 
     /**
      * Sets the value of the ssn9InformationInput property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link SSN9InformationInput }
-     *
+     *     
      */
     public void setSSN9InformationInput(SSN9InformationInput value) {
         this.ssn9InformationInput = value;

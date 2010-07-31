@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.ws3_0.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,9 +21,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for AccountMembershipFeaturesList complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType name="AccountMembershipFeaturesList">
  *   &lt;complexContent>
@@ -31,14 +31,14 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="UserName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="EnabledFeaturesSet" type="{http://www.docusign.net/API/3.0}ArrayOfString3" minOccurs="0"/>
+ *         &lt;element name="EnabledFeaturesSet" type="{http://www.docusign.net/API/3.0}ArrayOfString4" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- *
- *
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "AccountMembershipFeaturesList", propOrder = {
@@ -53,15 +53,15 @@ public class AccountMembershipFeaturesList {
     @XmlElement(name = "UserName")
     protected String userName;
     @XmlElement(name = "EnabledFeaturesSet")
-    protected ArrayOfString3 enabledFeaturesSet;
+    protected ArrayOfString4 enabledFeaturesSet;
 
     /**
      * Gets the value of the email property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEmail() {
         return email;
@@ -69,11 +69,11 @@ public class AccountMembershipFeaturesList {
 
     /**
      * Sets the value of the email property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEmail(String value) {
         this.email = value;
@@ -81,11 +81,11 @@ public class AccountMembershipFeaturesList {
 
     /**
      * Gets the value of the userName property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getUserName() {
         return userName;
@@ -93,11 +93,11 @@ public class AccountMembershipFeaturesList {
 
     /**
      * Sets the value of the userName property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setUserName(String value) {
         this.userName = value;
@@ -105,25 +105,25 @@ public class AccountMembershipFeaturesList {
 
     /**
      * Gets the value of the enabledFeaturesSet property.
-     *
+     * 
      * @return
      *     possible object is
-     *     {@link ArrayOfString3 }
-     *
+     *     {@link ArrayOfString4 }
+     *     
      */
-    public ArrayOfString3 getEnabledFeaturesSet() {
+    public ArrayOfString4 getEnabledFeaturesSet() {
         return enabledFeaturesSet;
     }
 
     /**
      * Sets the value of the enabledFeaturesSet property.
-     *
+     * 
      * @param value
      *     allowed object is
-     *     {@link ArrayOfString3 }
-     *
+     *     {@link ArrayOfString4 }
+     *     
      */
-    public void setEnabledFeaturesSet(ArrayOfString3 value) {
+    public void setEnabledFeaturesSet(ArrayOfString4 value) {
         this.enabledFeaturesSet = value;
     }
 

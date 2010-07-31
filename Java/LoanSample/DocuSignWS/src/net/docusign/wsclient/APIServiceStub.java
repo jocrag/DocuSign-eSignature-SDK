@@ -14,103 +14,27 @@ FITNESS FOR A PARTICULAR PURPOSE.
 package net.docusign.wsclient;
 
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.xml.namespace.QName;
-
-import net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport;
-import net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse;
-import net.docusign.www.api._3_0.CorrectAndResendEnvelope;
-import net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse;
-import net.docusign.www.api._3_0.CreateAndSendEnvelope;
-import net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse;
-import net.docusign.www.api._3_0.CreateEnvelope;
-import net.docusign.www.api._3_0.CreateEnvelopeFromTemplates;
-import net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse;
-import net.docusign.www.api._3_0.CreateEnvelopeResponse;
-import net.docusign.www.api._3_0.EnvelopeAuditEvents;
-import net.docusign.www.api._3_0.EnvelopeAuditEventsResponse;
-import net.docusign.www.api._3_0.ExportAuthoritativeCopy;
-import net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse;
-import net.docusign.www.api._3_0.GetAccountMembershipFeaturesList;
-import net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse;
-import net.docusign.www.api._3_0.GetAccountSettingsList;
-import net.docusign.www.api._3_0.GetAccountSettingsListResponse;
-import net.docusign.www.api._3_0.GetAddressBookItems;
-import net.docusign.www.api._3_0.GetAddressBookItemsResponse;
-import net.docusign.www.api._3_0.GetAuthenticationToken;
-import net.docusign.www.api._3_0.GetAuthenticationTokenResponse;
-import net.docusign.www.api._3_0.GetRecipientEsignList;
-import net.docusign.www.api._3_0.GetRecipientEsignListResponse;
-import net.docusign.www.api._3_0.GetRecipientList;
-import net.docusign.www.api._3_0.GetRecipientListResponse;
-import net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat;
-import net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse;
-import net.docusign.www.api._3_0.Ping;
-import net.docusign.www.api._3_0.PingResponse;
-import net.docusign.www.api._3_0.PurgeDocuments;
-import net.docusign.www.api._3_0.PurgeDocumentsResponse;
-import net.docusign.www.api._3_0.RemoveAddressBookItems;
-import net.docusign.www.api._3_0.RemoveAddressBookItemsResponse;
-import net.docusign.www.api._3_0.RequestDocumentPDFs;
-import net.docusign.www.api._3_0.RequestDocumentPDFsEx;
-import net.docusign.www.api._3_0.RequestDocumentPDFsExResponse;
-import net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView;
-import net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse;
-import net.docusign.www.api._3_0.RequestDocumentPDFsResponse;
-import net.docusign.www.api._3_0.RequestPDF;
-import net.docusign.www.api._3_0.RequestPDFResponse;
-import net.docusign.www.api._3_0.RequestRecipientToken;
-import net.docusign.www.api._3_0.RequestRecipientTokenResponse;
-import net.docusign.www.api._3_0.RequestSenderToken;
-import net.docusign.www.api._3_0.RequestSenderTokenResponse;
-import net.docusign.www.api._3_0.RequestStatus;
-import net.docusign.www.api._3_0.RequestStatusEx;
-import net.docusign.www.api._3_0.RequestStatusExResponse;
-import net.docusign.www.api._3_0.RequestStatusResponse;
-import net.docusign.www.api._3_0.RequestStatuses;
-import net.docusign.www.api._3_0.RequestStatusesEx;
-import net.docusign.www.api._3_0.RequestStatusesExResponse;
-import net.docusign.www.api._3_0.RequestStatusesResponse;
-import net.docusign.www.api._3_0.RequestTemplate;
-import net.docusign.www.api._3_0.RequestTemplateResponse;
-import net.docusign.www.api._3_0.RequestTemplates;
-import net.docusign.www.api._3_0.RequestTemplatesResponse;
-import net.docusign.www.api._3_0.SaveTemplate;
-import net.docusign.www.api._3_0.SaveTemplateResponse;
-import net.docusign.www.api._3_0.SynchEnvelope;
-import net.docusign.www.api._3_0.SynchEnvelopeResponse;
-import net.docusign.www.api._3_0.TransferEnvelope;
-import net.docusign.www.api._3_0.TransferEnvelopeResponse;
-import net.docusign.www.api._3_0.UpdateAddressBookItems;
-import net.docusign.www.api._3_0.UpdateAddressBookItemsResponse;
-import net.docusign.www.api._3_0.UploadTemplate;
-import net.docusign.www.api._3_0.UploadTemplateResponse;
-import net.docusign.www.api._3_0.VoidEnvelope;
-import net.docusign.www.api._3_0.VoidEnvelopeResponse;
 
 import org.apache.axis2.AxisFault;
 import org.apache.axis2.Constants;
 import org.apache.axis2.addressing.EndpointReference;
 import org.apache.axis2.client.ServiceClient;
-import org.apache.axis2.client.Stub;
 import org.apache.axis2.context.ConfigurationContext;
 import org.apache.axis2.context.ConfigurationContextFactory;
-import org.apache.axis2.description.AxisOperation;
 
 /*
  *  APIServiceStub java implementation
  */
-public class APIServiceStub extends Stub implements APIService {
+
+public class APIServiceStub extends org.apache.axis2.client.Stub implements APIService {
+    protected org.apache.axis2.description.AxisOperation[] _operations;
+
+    // hashmaps to keep the fault mapping
+    private java.util.HashMap faultExceptionNameMap = new java.util.HashMap();
+    private java.util.HashMap faultExceptionClassNameMap = new java.util.HashMap();
+    private java.util.HashMap faultMessageMap = new java.util.HashMap();
+
     private static int counter = 0;
-    protected AxisOperation[] _operations;
-    private Map<QName, String> faultExceptionClassNameMap = new HashMap<QName, String>();
-    private Map<QName, String> faultExceptionNameMap = new HashMap<QName, String>();
-    private Map<QName, String> faultMessageMap = new HashMap<QName, String>();
-    private javax.xml.namespace.QName[] opNameArray = null;
 
     public void init(File axis2Configuration, String webserviceEndpoint) throws AxisFault {
         populateAxisService();
@@ -124,14 +48,14 @@ public class APIServiceStub extends Stub implements APIService {
         _serviceClient.getOptions().setProperty(Constants.Configuration.ENABLE_MTOM, Constants.VALUE_TRUE);
         _serviceClient.getOptions().setUseSeparateListener(false);
     }
-
-    private static synchronized String getUniqueSuffix() {
+    
+    private static synchronized java.lang.String getUniqueSuffix() {
         // reset the counter if it is greater than 99999
         if (counter > 99999) {
             counter = 0;
         }
         counter = counter + 1;
-        return Long.toString(System.currentTimeMillis()) + "_" + counter;
+        return java.lang.Long.toString(System.currentTimeMillis()) + "_" + counter;
     }
 
     private void populateAxisService() throws org.apache.axis2.AxisFault {
@@ -143,7 +67,7 @@ public class APIServiceStub extends Stub implements APIService {
         // creating the operations
         org.apache.axis2.description.AxisOperation __operation;
 
-        _operations = new org.apache.axis2.description.AxisOperation[35];
+        _operations = new org.apache.axis2.description.AxisOperation[39];
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
@@ -175,233 +99,317 @@ public class APIServiceStub extends Stub implements APIService {
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDF"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDFWithCert"));
         _service.addOperation(__operation);
 
         _operations[4] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAuthenticationToken"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDF"));
         _service.addOperation(__operation);
 
         _operations[5] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelopeFromTemplates"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAuthenticationToken"));
         _service.addOperation(__operation);
 
         _operations[6] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelope"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelopeFromTemplates"));
         _service.addOperation(__operation);
 
         _operations[7] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "acknowledgeAuthoritativeCopyExport"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelope"));
         _service.addOperation(__operation);
 
         _operations[8] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "uploadTemplate"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "acknowledgeAuthoritativeCopyExport"));
         _service.addOperation(__operation);
 
         _operations[9] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusesEx"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "uploadTemplate"));
         _service.addOperation(__operation);
 
         _operations[10] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createAndSendEnvelope"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusesEx"));
         _service.addOperation(__operation);
 
         _operations[11] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAddressBookItems"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestCorrectToken"));
         _service.addOperation(__operation);
 
         _operations[12] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusEx"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createAndSendEnvelope"));
         _service.addOperation(__operation);
 
         _operations[13] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountMembershipFeaturesList"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAddressBookItems"));
         _service.addOperation(__operation);
 
         _operations[14] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientList"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusEx"));
         _service.addOperation(__operation);
 
         _operations[15] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "synchEnvelope"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountMembershipFeaturesList"));
         _service.addOperation(__operation);
 
         _operations[16] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "updateAddressBookItems"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientList"));
         _service.addOperation(__operation);
 
         _operations[17] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getStatusInDocuSignConnectFormat"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "synchEnvelope"));
         _service.addOperation(__operation);
 
         _operations[18] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountSettingsList"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "updateAddressBookItems"));
         _service.addOperation(__operation);
 
         _operations[19] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsEx"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getStatusInDocuSignConnectFormat"));
         _service.addOperation(__operation);
 
         _operations[20] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "removeAddressBookItems"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountSettingsList"));
         _service.addOperation(__operation);
 
         _operations[21] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "saveTemplate"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsEx"));
         _service.addOperation(__operation);
 
         _operations[22] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ping"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "removeAddressBookItems"));
         _service.addOperation(__operation);
 
         _operations[23] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientEsignList"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "saveTemplate"));
         _service.addOperation(__operation);
 
         _operations[24] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatuses"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ping"));
         _service.addOperation(__operation);
 
         _operations[25] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "correctAndResendEnvelope"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientEsignList"));
         _service.addOperation(__operation);
 
         _operations[26] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsRecipientsView"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatuses"));
         _service.addOperation(__operation);
 
         _operations[27] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "transferEnvelope"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "correctAndResendEnvelope"));
         _service.addOperation(__operation);
 
         _operations[28] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestSenderToken"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsRecipientsView"));
         _service.addOperation(__operation);
 
         _operations[29] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "exportAuthoritativeCopy"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "transferEnvelope"));
         _service.addOperation(__operation);
 
         _operations[30] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "envelopeAuditEvents"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestSenderToken"));
         _service.addOperation(__operation);
 
         _operations[31] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "voidEnvelope"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "envelopeAuditEvents"));
         _service.addOperation(__operation);
 
         _operations[32] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "purgeDocuments"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "exportAuthoritativeCopy"));
         _service.addOperation(__operation);
 
         _operations[33] = __operation;
 
         __operation = new org.apache.axis2.description.OutInAxisOperation();
 
-        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatus"));
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "sendEnvelope"));
         _service.addOperation(__operation);
 
         _operations[34] = __operation;
 
+        __operation = new org.apache.axis2.description.OutInAxisOperation();
+
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "voidEnvelope"));
+        _service.addOperation(__operation);
+
+        _operations[35] = __operation;
+
+        __operation = new org.apache.axis2.description.OutInAxisOperation();
+
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "purgeDocuments"));
+        _service.addOperation(__operation);
+
+        _operations[36] = __operation;
+
+        __operation = new org.apache.axis2.description.OutInAxisOperation();
+
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatus"));
+        _service.addOperation(__operation);
+
+        _operations[37] = __operation;
+
+        __operation = new org.apache.axis2.description.OutInAxisOperation();
+
+        __operation.setName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDFNoWaterMark"));
+        _service.addOperation(__operation);
+
+        _operations[38] = __operation;
+
+    }
+
+    // populates the faults
+    private void populateFaults() {
+
+    }
+
+    /**
+     * Constructor that takes in a configContext
+     */
+
+    public APIServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext, java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
+        this(configurationContext, targetEndpoint, false);
+    }
+
+    /**
+     * Constructor that takes in a configContext and useseperate listner
+     */
+    public APIServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext, java.lang.String targetEndpoint, boolean useSeparateListener) throws org.apache.axis2.AxisFault {
+        // To populate AxisService
+        populateAxisService();
+        populateFaults();
+
+        _serviceClient = new org.apache.axis2.client.ServiceClient(configurationContext, _service);
+
+        _serviceClient.getOptions().setTo(new org.apache.axis2.addressing.EndpointReference(targetEndpoint));
+        _serviceClient.getOptions().setUseSeparateListener(useSeparateListener);
+
+        // Set the soap version
+        _serviceClient.getOptions().setSoapVersionURI(org.apache.axiom.soap.SOAP12Constants.SOAP_ENVELOPE_NAMESPACE_URI);
+
+    }
+
+    /**
+     * Default Constructor
+     */
+    public APIServiceStub(org.apache.axis2.context.ConfigurationContext configurationContext) throws org.apache.axis2.AxisFault {
+
+        this(configurationContext, "https://demo.docusign.net/api/3.0/api.asmx");
+
+    }
+
+    /**
+     * Default Constructor
+     */
+    public APIServiceStub() throws org.apache.axis2.AxisFault {
+
+        this("https://demo.docusign.net/api/3.0/api.asmx");
+
+    }
+
+    /**
+     * Constructor taking the target endpoint
+     */
+    public APIServiceStub(java.lang.String targetEndpoint) throws org.apache.axis2.AxisFault {
+        this(null, targetEndpoint);
     }
 
     /**
      * Auto generated method signature
-     *
+     * 
      * @see net.docusign.wsclient.APIService#requestTemplate
-     * @param requestTemplate70
+     * @param requestTemplate78
      */
 
-    public RequestTemplateResponse requestTemplate(
+    public net.docusign.www.api._3_0.RequestTemplateResponse requestTemplate(
 
-    RequestTemplate requestTemplate70)
+    net.docusign.www.api._3_0.RequestTemplate requestTemplate78)
 
     throws java.rmi.RemoteException
 
@@ -420,7 +428,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestTemplate70, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestTemplate")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestTemplate78, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestTemplate")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -436,83 +444,73 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestTemplateResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestTemplateResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestTemplateResponse) object;
+            return (net.docusign.www.api._3_0.RequestTemplateResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
+     * 
      * @see net.docusign.wsclient.APIService#startrequestTemplate
-     * @param requestTemplate70
+     * @param requestTemplate78
      */
     public void startrequestTemplate(
 
-    RequestTemplate requestTemplate70,
+    net.docusign.www.api._3_0.RequestTemplate requestTemplate78,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
@@ -530,7 +528,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestTemplate70, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestTemplate")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestTemplate78, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestTemplate")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -545,16 +543,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestTemplateResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestTemplate((RequestTemplateResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestTemplateResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestTemplate((net.docusign.www.api._3_0.RequestTemplateResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
+                } catch (org.apache.axis2.AxisFault e) {
                     callback.receiveErrorrequestTemplate(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -562,63 +559,53 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
                                 callback.receiveErrorrequestTemplate(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplate(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplate(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplate(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplate(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplate(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplate(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
                                 callback.receiveErrorrequestTemplate(f);
                             }
-                            catch (ClassNotFoundException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplate(f);
-                            }
-                            catch (NoSuchMethodException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplate(f);
-                            }
-                            catch (InvocationTargetException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplate(f);
-                            }
-                            catch (IllegalAccessException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplate(f);
-                            }
-                            catch (InstantiationException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplate(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplate(f);
-                            }
-                        }
-                        else {
+                        } else {
                             callback.receiveErrorrequestTemplate(f);
                         }
-                    }
-                    else {
+                    } else {
                         callback.receiveErrorrequestTemplate(f);
                     }
-                }
-                else {
+                } else {
                     callback.receiveErrorrequestTemplate(error);
                 }
             }
@@ -631,8 +618,7 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
+                } catch (org.apache.axis2.AxisFault axisFault) {
                     callback.receiveErrorrequestTemplate(axisFault);
                 }
             }
@@ -651,14 +637,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
+     * 
      * @see net.docusign.wsclient.APIService#requestTemplates
-     * @param requestTemplates72
+     * @param requestTemplates80
      */
 
-    public RequestTemplatesResponse requestTemplates(
+    public net.docusign.www.api._3_0.RequestTemplatesResponse requestTemplates(
 
-    RequestTemplates requestTemplates72)
+    net.docusign.www.api._3_0.RequestTemplates requestTemplates80)
 
     throws java.rmi.RemoteException
 
@@ -677,7 +663,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestTemplates72, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestTemplates")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestTemplates80, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestTemplates")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -693,83 +679,73 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestTemplatesResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestTemplatesResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestTemplatesResponse) object;
+            return (net.docusign.www.api._3_0.RequestTemplatesResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
+     * 
      * @see net.docusign.wsclient.APIService#startrequestTemplates
-     * @param requestTemplates72
+     * @param requestTemplates80
      */
     public void startrequestTemplates(
 
-    RequestTemplates requestTemplates72,
+    net.docusign.www.api._3_0.RequestTemplates requestTemplates80,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
@@ -787,7 +763,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestTemplates72, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestTemplates")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestTemplates80, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestTemplates")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -802,16 +778,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestTemplatesResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestTemplates((RequestTemplatesResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestTemplatesResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestTemplates((net.docusign.www.api._3_0.RequestTemplatesResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
+                } catch (org.apache.axis2.AxisFault e) {
                     callback.receiveErrorrequestTemplates(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -819,63 +794,53 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
                                 callback.receiveErrorrequestTemplates(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplates(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplates(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplates(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplates(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplates(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestTemplates(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
                                 callback.receiveErrorrequestTemplates(f);
                             }
-                            catch (ClassNotFoundException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplates(f);
-                            }
-                            catch (NoSuchMethodException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplates(f);
-                            }
-                            catch (InvocationTargetException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplates(f);
-                            }
-                            catch (IllegalAccessException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplates(f);
-                            }
-                            catch (InstantiationException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplates(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestTemplates(f);
-                            }
-                        }
-                        else {
+                        } else {
                             callback.receiveErrorrequestTemplates(f);
                         }
-                    }
-                    else {
+                    } else {
                         callback.receiveErrorrequestTemplates(f);
                     }
-                }
-                else {
+                } else {
                     callback.receiveErrorrequestTemplates(error);
                 }
             }
@@ -888,8 +853,7 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
+                } catch (org.apache.axis2.AxisFault axisFault) {
                     callback.receiveErrorrequestTemplates(axisFault);
                 }
             }
@@ -908,14 +872,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
+     * 
      * @see net.docusign.wsclient.APIService#requestRecipientToken
-     * @param requestRecipientToken74
+     * @param requestRecipientToken82
      */
 
-    public RequestRecipientTokenResponse requestRecipientToken(
+    public net.docusign.www.api._3_0.RequestRecipientTokenResponse requestRecipientToken(
 
-    RequestRecipientToken requestRecipientToken74)
+    net.docusign.www.api._3_0.RequestRecipientToken requestRecipientToken82)
 
     throws java.rmi.RemoteException
 
@@ -934,7 +898,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestRecipientToken74, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestRecipientToken")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestRecipientToken82, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestRecipientToken")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -950,83 +914,73 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestRecipientTokenResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestRecipientTokenResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestRecipientTokenResponse) object;
+            return (net.docusign.www.api._3_0.RequestRecipientTokenResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
+     * 
      * @see net.docusign.wsclient.APIService#startrequestRecipientToken
-     * @param requestRecipientToken74
+     * @param requestRecipientToken82
      */
     public void startrequestRecipientToken(
 
-    RequestRecipientToken requestRecipientToken74,
+    net.docusign.www.api._3_0.RequestRecipientToken requestRecipientToken82,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
@@ -1044,7 +998,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestRecipientToken74, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestRecipientToken")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestRecipientToken82, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestRecipientToken")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -1059,16 +1013,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestRecipientTokenResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestRecipientToken((RequestRecipientTokenResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestRecipientTokenResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestRecipientToken((net.docusign.www.api._3_0.RequestRecipientTokenResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
+                } catch (org.apache.axis2.AxisFault e) {
                     callback.receiveErrorrequestRecipientToken(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -1076,63 +1029,53 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
                                 callback.receiveErrorrequestRecipientToken(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestRecipientToken(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestRecipientToken(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestRecipientToken(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestRecipientToken(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestRecipientToken(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestRecipientToken(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
                                 callback.receiveErrorrequestRecipientToken(f);
                             }
-                            catch (ClassNotFoundException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestRecipientToken(f);
-                            }
-                            catch (NoSuchMethodException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestRecipientToken(f);
-                            }
-                            catch (InvocationTargetException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestRecipientToken(f);
-                            }
-                            catch (IllegalAccessException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestRecipientToken(f);
-                            }
-                            catch (InstantiationException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestRecipientToken(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestRecipientToken(f);
-                            }
-                        }
-                        else {
+                        } else {
                             callback.receiveErrorrequestRecipientToken(f);
                         }
-                    }
-                    else {
+                    } else {
                         callback.receiveErrorrequestRecipientToken(f);
                     }
-                }
-                else {
+                } else {
                     callback.receiveErrorrequestRecipientToken(error);
                 }
             }
@@ -1145,8 +1088,7 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
+                } catch (org.apache.axis2.AxisFault axisFault) {
                     callback.receiveErrorrequestRecipientToken(axisFault);
                 }
             }
@@ -1165,14 +1107,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
+     * 
      * @see net.docusign.wsclient.APIService#requestDocumentPDFs
-     * @param requestDocumentPDFs76
+     * @param requestDocumentPDFs84
      */
 
-    public RequestDocumentPDFsResponse requestDocumentPDFs(
+    public net.docusign.www.api._3_0.RequestDocumentPDFsResponse requestDocumentPDFs(
 
-    RequestDocumentPDFs requestDocumentPDFs76)
+    net.docusign.www.api._3_0.RequestDocumentPDFs requestDocumentPDFs84)
 
     throws java.rmi.RemoteException
 
@@ -1191,7 +1133,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFs76, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFs")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFs84, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFs")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -1207,83 +1149,73 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestDocumentPDFsResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestDocumentPDFsResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestDocumentPDFsResponse) object;
+            return (net.docusign.www.api._3_0.RequestDocumentPDFsResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
+     * 
      * @see net.docusign.wsclient.APIService#startrequestDocumentPDFs
-     * @param requestDocumentPDFs76
+     * @param requestDocumentPDFs84
      */
     public void startrequestDocumentPDFs(
 
-    RequestDocumentPDFs requestDocumentPDFs76,
+    net.docusign.www.api._3_0.RequestDocumentPDFs requestDocumentPDFs84,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
@@ -1301,7 +1233,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFs76, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFs")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFs84, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFs")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -1316,16 +1248,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestDocumentPDFsResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestDocumentPDFs((RequestDocumentPDFsResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestDocumentPDFsResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestDocumentPDFs((net.docusign.www.api._3_0.RequestDocumentPDFsResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
+                } catch (org.apache.axis2.AxisFault e) {
                     callback.receiveErrorrequestDocumentPDFs(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -1333,63 +1264,53 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
                                 callback.receiveErrorrequestDocumentPDFs(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestDocumentPDFs(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestDocumentPDFs(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestDocumentPDFs(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestDocumentPDFs(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestDocumentPDFs(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestDocumentPDFs(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
                                 callback.receiveErrorrequestDocumentPDFs(f);
                             }
-                            catch (ClassNotFoundException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFs(f);
-                            }
-                            catch (NoSuchMethodException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFs(f);
-                            }
-                            catch (InvocationTargetException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFs(f);
-                            }
-                            catch (IllegalAccessException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFs(f);
-                            }
-                            catch (InstantiationException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFs(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFs(f);
-                            }
-                        }
-                        else {
+                        } else {
                             callback.receiveErrorrequestDocumentPDFs(f);
                         }
-                    }
-                    else {
+                    } else {
                         callback.receiveErrorrequestDocumentPDFs(f);
                     }
-                }
-                else {
+                } else {
                     callback.receiveErrorrequestDocumentPDFs(error);
                 }
             }
@@ -1402,8 +1323,7 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
+                } catch (org.apache.axis2.AxisFault axisFault) {
                     callback.receiveErrorrequestDocumentPDFs(axisFault);
                 }
             }
@@ -1422,14 +1342,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#requestPDF
-     * @param requestPDF78
+     * 
+     * @see net.docusign.wsclient.APIService#requestPDFWithCert
+     * @param requestPDFWithCert86
      */
 
-    public RequestPDFResponse requestPDF(
+    public net.docusign.www.api._3_0.RequestPDFWithCertResponse requestPDFWithCert(
 
-    RequestPDF requestPDF78)
+    net.docusign.www.api._3_0.RequestPDFWithCert requestPDFWithCert86)
 
     throws java.rmi.RemoteException
 
@@ -1437,7 +1357,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestPDF");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestPDFWithCert");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -1448,7 +1368,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestPDF78, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDF")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestPDFWithCert86, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDFWithCert")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -1464,90 +1384,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestPDFResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestPDFWithCertResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestPDFResponse) object;
+            return (net.docusign.www.api._3_0.RequestPDFWithCertResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startrequestPDF
-     * @param requestPDF78
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestPDFWithCert
+     * @param requestPDFWithCert86
      */
-    public void startrequestPDF(
+    public void startrequestPDFWithCert(
 
-    RequestPDF requestPDF78,
+    net.docusign.www.api._3_0.RequestPDFWithCert requestPDFWithCert86,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[4].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestPDF");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestPDFWithCert");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -1558,7 +1468,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestPDF78, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDF")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestPDFWithCert86, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDFWithCert")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -1573,16 +1483,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestPDFResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestPDF((RequestPDFResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestPDFWithCertResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestPDFWithCert((net.docusign.www.api._3_0.RequestPDFWithCertResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorrequestPDF(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestPDFWithCert(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -1590,64 +1499,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorrequestPDF(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestPDFWithCert(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestPDF(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestPDFWithCert(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestPDF(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestPDFWithCert(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestPDF(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestPDFWithCert(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestPDF(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestPDFWithCert(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestPDF(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestPDFWithCert(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestPDF(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestPDFWithCert(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestPDF(f);
+                                callback.receiveErrorrequestPDFWithCert(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestPDFWithCert(f);
                         }
-                        else {
-                            callback.receiveErrorrequestPDF(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestPDFWithCert(f);
                     }
-                    else {
-                        callback.receiveErrorrequestPDF(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorrequestPDF(error);
+                } else {
+                    callback.receiveErrorrequestPDFWithCert(error);
                 }
             }
 
@@ -1659,9 +1558,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorrequestPDF(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestPDFWithCert(axisFault);
                 }
             }
         });
@@ -1679,14 +1577,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#getAuthenticationToken
-     * @param getAuthenticationToken80
+     * 
+     * @see net.docusign.wsclient.APIService#requestPDF
+     * @param requestPDF88
      */
 
-    public GetAuthenticationTokenResponse getAuthenticationToken(
+    public net.docusign.www.api._3_0.RequestPDFResponse requestPDF(
 
-    GetAuthenticationToken getAuthenticationToken80)
+    net.docusign.www.api._3_0.RequestPDF requestPDF88)
 
     throws java.rmi.RemoteException
 
@@ -1694,7 +1592,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[5].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAuthenticationToken");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestPDF");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -1705,7 +1603,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAuthenticationToken80, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAuthenticationToken")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestPDF88, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDF")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -1721,90 +1619,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), GetAuthenticationTokenResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestPDFResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (GetAuthenticationTokenResponse) object;
+            return (net.docusign.www.api._3_0.RequestPDFResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startgetAuthenticationToken
-     * @param getAuthenticationToken80
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestPDF
+     * @param requestPDF88
      */
-    public void startgetAuthenticationToken(
+    public void startrequestPDF(
 
-    GetAuthenticationToken getAuthenticationToken80,
+    net.docusign.www.api._3_0.RequestPDF requestPDF88,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[5].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAuthenticationToken");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestPDF");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -1815,7 +1703,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAuthenticationToken80, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAuthenticationToken")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestPDF88, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDF")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -1830,16 +1718,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), GetAuthenticationTokenResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultgetAuthenticationToken((GetAuthenticationTokenResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestPDFResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestPDF((net.docusign.www.api._3_0.RequestPDFResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorgetAuthenticationToken(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestPDF(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -1847,64 +1734,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorgetAuthenticationToken(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestPDF(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAuthenticationToken(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestPDF(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAuthenticationToken(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestPDF(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAuthenticationToken(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestPDF(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAuthenticationToken(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestPDF(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAuthenticationToken(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestPDF(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAuthenticationToken(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestPDF(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAuthenticationToken(f);
+                                callback.receiveErrorrequestPDF(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestPDF(f);
                         }
-                        else {
-                            callback.receiveErrorgetAuthenticationToken(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestPDF(f);
                     }
-                    else {
-                        callback.receiveErrorgetAuthenticationToken(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorgetAuthenticationToken(error);
+                } else {
+                    callback.receiveErrorrequestPDF(error);
                 }
             }
 
@@ -1916,9 +1793,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorgetAuthenticationToken(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestPDF(axisFault);
                 }
             }
         });
@@ -1936,14 +1812,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#createEnvelopeFromTemplates
-     * @param createEnvelopeFromTemplates82
+     * 
+     * @see net.docusign.wsclient.APIService#getAuthenticationToken
+     * @param getAuthenticationToken90
      */
 
-    public CreateEnvelopeFromTemplatesResponse createEnvelopeFromTemplates(
+    public net.docusign.www.api._3_0.GetAuthenticationTokenResponse getAuthenticationToken(
 
-    CreateEnvelopeFromTemplates createEnvelopeFromTemplates82)
+    net.docusign.www.api._3_0.GetAuthenticationToken getAuthenticationToken90)
 
     throws java.rmi.RemoteException
 
@@ -1951,7 +1827,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[6].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateEnvelopeFromTemplates");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAuthenticationToken");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -1962,7 +1838,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createEnvelopeFromTemplates82, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelopeFromTemplates")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAuthenticationToken90, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAuthenticationToken")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -1978,90 +1854,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), CreateEnvelopeFromTemplatesResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetAuthenticationTokenResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (CreateEnvelopeFromTemplatesResponse) object;
+            return (net.docusign.www.api._3_0.GetAuthenticationTokenResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startcreateEnvelopeFromTemplates
-     * @param createEnvelopeFromTemplates82
+     * 
+     * @see net.docusign.wsclient.APIService#startgetAuthenticationToken
+     * @param getAuthenticationToken90
      */
-    public void startcreateEnvelopeFromTemplates(
+    public void startgetAuthenticationToken(
 
-    CreateEnvelopeFromTemplates createEnvelopeFromTemplates82,
+    net.docusign.www.api._3_0.GetAuthenticationToken getAuthenticationToken90,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[6].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateEnvelopeFromTemplates");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAuthenticationToken");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -2072,7 +1938,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createEnvelopeFromTemplates82, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelopeFromTemplates")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAuthenticationToken90, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAuthenticationToken")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -2087,16 +1953,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), CreateEnvelopeFromTemplatesResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultcreateEnvelopeFromTemplates((CreateEnvelopeFromTemplatesResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetAuthenticationTokenResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultgetAuthenticationToken((net.docusign.www.api._3_0.GetAuthenticationTokenResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorcreateEnvelopeFromTemplates(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorgetAuthenticationToken(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -2104,64 +1969,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorcreateEnvelopeFromTemplates(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorgetAuthenticationToken(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorgetAuthenticationToken(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorgetAuthenticationToken(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorgetAuthenticationToken(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorgetAuthenticationToken(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorgetAuthenticationToken(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorgetAuthenticationToken(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
+                                callback.receiveErrorgetAuthenticationToken(f);
                             }
+                        } else {
+                            callback.receiveErrorgetAuthenticationToken(f);
                         }
-                        else {
-                            callback.receiveErrorcreateEnvelopeFromTemplates(f);
-                        }
+                    } else {
+                        callback.receiveErrorgetAuthenticationToken(f);
                     }
-                    else {
-                        callback.receiveErrorcreateEnvelopeFromTemplates(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorcreateEnvelopeFromTemplates(error);
+                } else {
+                    callback.receiveErrorgetAuthenticationToken(error);
                 }
             }
 
@@ -2173,9 +2028,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorcreateEnvelopeFromTemplates(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorgetAuthenticationToken(axisFault);
                 }
             }
         });
@@ -2193,14 +2047,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#createEnvelope
-     * @param createEnvelope84
+     * 
+     * @see net.docusign.wsclient.APIService#createEnvelopeFromTemplates
+     * @param createEnvelopeFromTemplates92
      */
 
-    public CreateEnvelopeResponse createEnvelope(
+    public net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse createEnvelopeFromTemplates(
 
-    CreateEnvelope createEnvelope84)
+    net.docusign.www.api._3_0.CreateEnvelopeFromTemplates createEnvelopeFromTemplates92)
 
     throws java.rmi.RemoteException
 
@@ -2208,7 +2062,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[7].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateEnvelope");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateEnvelopeFromTemplates");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -2219,7 +2073,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createEnvelope84, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelope")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createEnvelopeFromTemplates92, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelopeFromTemplates")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -2235,90 +2089,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), CreateEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (CreateEnvelopeResponse) object;
+            return (net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startcreateEnvelope
-     * @param createEnvelope84
+     * 
+     * @see net.docusign.wsclient.APIService#startcreateEnvelopeFromTemplates
+     * @param createEnvelopeFromTemplates92
      */
-    public void startcreateEnvelope(
+    public void startcreateEnvelopeFromTemplates(
 
-    CreateEnvelope createEnvelope84,
+    net.docusign.www.api._3_0.CreateEnvelopeFromTemplates createEnvelopeFromTemplates92,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[7].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateEnvelope");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateEnvelopeFromTemplates");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -2329,7 +2173,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createEnvelope84, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelope")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createEnvelopeFromTemplates92, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelopeFromTemplates")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -2344,16 +2188,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), CreateEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultcreateEnvelope((CreateEnvelopeResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultcreateEnvelopeFromTemplates((net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorcreateEnvelope(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorcreateEnvelopeFromTemplates(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -2361,64 +2204,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorcreateEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorcreateEnvelopeFromTemplates(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelope(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelope(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelope(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelope(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelope(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelope(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateEnvelope(f);
+                                callback.receiveErrorcreateEnvelopeFromTemplates(f);
                             }
+                        } else {
+                            callback.receiveErrorcreateEnvelopeFromTemplates(f);
                         }
-                        else {
-                            callback.receiveErrorcreateEnvelope(f);
-                        }
+                    } else {
+                        callback.receiveErrorcreateEnvelopeFromTemplates(f);
                     }
-                    else {
-                        callback.receiveErrorcreateEnvelope(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorcreateEnvelope(error);
+                } else {
+                    callback.receiveErrorcreateEnvelopeFromTemplates(error);
                 }
             }
 
@@ -2430,9 +2263,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorcreateEnvelope(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorcreateEnvelopeFromTemplates(axisFault);
                 }
             }
         });
@@ -2450,14 +2282,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#acknowledgeAuthoritativeCopyExport
-     * @param acknowledgeAuthoritativeCopyExport86
+     * 
+     * @see net.docusign.wsclient.APIService#createEnvelope
+     * @param createEnvelope94
      */
 
-    public AcknowledgeAuthoritativeCopyExportResponse acknowledgeAuthoritativeCopyExport(
+    public net.docusign.www.api._3_0.CreateEnvelopeResponse createEnvelope(
 
-    AcknowledgeAuthoritativeCopyExport acknowledgeAuthoritativeCopyExport86)
+    net.docusign.www.api._3_0.CreateEnvelope createEnvelope94)
 
     throws java.rmi.RemoteException
 
@@ -2465,7 +2297,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[8].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/AcknowledgeAuthoritativeCopyExport");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateEnvelope");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -2476,7 +2308,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), acknowledgeAuthoritativeCopyExport86, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "acknowledgeAuthoritativeCopyExport")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createEnvelope94, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelope")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -2492,90 +2324,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), AcknowledgeAuthoritativeCopyExportResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.CreateEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (AcknowledgeAuthoritativeCopyExportResponse) object;
+            return (net.docusign.www.api._3_0.CreateEnvelopeResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startacknowledgeAuthoritativeCopyExport
-     * @param acknowledgeAuthoritativeCopyExport86
+     * 
+     * @see net.docusign.wsclient.APIService#startcreateEnvelope
+     * @param createEnvelope94
      */
-    public void startacknowledgeAuthoritativeCopyExport(
+    public void startcreateEnvelope(
 
-    AcknowledgeAuthoritativeCopyExport acknowledgeAuthoritativeCopyExport86,
+    net.docusign.www.api._3_0.CreateEnvelope createEnvelope94,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[8].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/AcknowledgeAuthoritativeCopyExport");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateEnvelope");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -2586,7 +2408,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), acknowledgeAuthoritativeCopyExport86, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "acknowledgeAuthoritativeCopyExport")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createEnvelope94, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createEnvelope")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -2601,16 +2423,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), AcknowledgeAuthoritativeCopyExportResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultacknowledgeAuthoritativeCopyExport((AcknowledgeAuthoritativeCopyExportResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.CreateEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultcreateEnvelope((net.docusign.www.api._3_0.CreateEnvelopeResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErroracknowledgeAuthoritativeCopyExport(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorcreateEnvelope(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -2618,64 +2439,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErroracknowledgeAuthoritativeCopyExport(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorcreateEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorcreateEnvelope(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorcreateEnvelope(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorcreateEnvelope(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorcreateEnvelope(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorcreateEnvelope(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorcreateEnvelope(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
+                                callback.receiveErrorcreateEnvelope(f);
                             }
+                        } else {
+                            callback.receiveErrorcreateEnvelope(f);
                         }
-                        else {
-                            callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
-                        }
+                    } else {
+                        callback.receiveErrorcreateEnvelope(f);
                     }
-                    else {
-                        callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
-                    }
-                }
-                else {
-                    callback.receiveErroracknowledgeAuthoritativeCopyExport(error);
+                } else {
+                    callback.receiveErrorcreateEnvelope(error);
                 }
             }
 
@@ -2687,9 +2498,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErroracknowledgeAuthoritativeCopyExport(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorcreateEnvelope(axisFault);
                 }
             }
         });
@@ -2707,14 +2517,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#uploadTemplate
-     * @param uploadTemplate88
+     * 
+     * @see net.docusign.wsclient.APIService#acknowledgeAuthoritativeCopyExport
+     * @param acknowledgeAuthoritativeCopyExport96
      */
 
-    public UploadTemplateResponse uploadTemplate(
+    public net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse acknowledgeAuthoritativeCopyExport(
 
-    UploadTemplate uploadTemplate88)
+    net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport acknowledgeAuthoritativeCopyExport96)
 
     throws java.rmi.RemoteException
 
@@ -2722,7 +2532,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[9].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/UploadTemplate");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/AcknowledgeAuthoritativeCopyExport");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -2733,7 +2543,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), uploadTemplate88, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "uploadTemplate")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), acknowledgeAuthoritativeCopyExport96, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "acknowledgeAuthoritativeCopyExport")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -2749,90 +2559,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), UploadTemplateResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (UploadTemplateResponse) object;
+            return (net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startuploadTemplate
-     * @param uploadTemplate88
+     * 
+     * @see net.docusign.wsclient.APIService#startacknowledgeAuthoritativeCopyExport
+     * @param acknowledgeAuthoritativeCopyExport96
      */
-    public void startuploadTemplate(
+    public void startacknowledgeAuthoritativeCopyExport(
 
-    UploadTemplate uploadTemplate88,
+    net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport acknowledgeAuthoritativeCopyExport96,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[9].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/UploadTemplate");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/AcknowledgeAuthoritativeCopyExport");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -2843,7 +2643,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), uploadTemplate88, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "uploadTemplate")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), acknowledgeAuthoritativeCopyExport96, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "acknowledgeAuthoritativeCopyExport")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -2858,16 +2658,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), UploadTemplateResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultuploadTemplate((UploadTemplateResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultacknowledgeAuthoritativeCopyExport((net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErroruploadTemplate(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErroracknowledgeAuthoritativeCopyExport(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -2875,64 +2674,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErroruploadTemplate(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErroracknowledgeAuthoritativeCopyExport(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroruploadTemplate(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroruploadTemplate(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroruploadTemplate(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroruploadTemplate(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroruploadTemplate(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroruploadTemplate(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErroruploadTemplate(f);
+                                callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
                             }
+                        } else {
+                            callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
                         }
-                        else {
-                            callback.receiveErroruploadTemplate(f);
-                        }
+                    } else {
+                        callback.receiveErroracknowledgeAuthoritativeCopyExport(f);
                     }
-                    else {
-                        callback.receiveErroruploadTemplate(f);
-                    }
-                }
-                else {
-                    callback.receiveErroruploadTemplate(error);
+                } else {
+                    callback.receiveErroracknowledgeAuthoritativeCopyExport(error);
                 }
             }
 
@@ -2944,9 +2733,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErroruploadTemplate(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErroracknowledgeAuthoritativeCopyExport(axisFault);
                 }
             }
         });
@@ -2964,14 +2752,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#requestStatusesEx
-     * @param requestStatusesEx90
+     * 
+     * @see net.docusign.wsclient.APIService#uploadTemplate
+     * @param uploadTemplate98
      */
 
-    public RequestStatusesExResponse requestStatusesEx(
+    public net.docusign.www.api._3_0.UploadTemplateResponse uploadTemplate(
 
-    RequestStatusesEx requestStatusesEx90)
+    net.docusign.www.api._3_0.UploadTemplate uploadTemplate98)
 
     throws java.rmi.RemoteException
 
@@ -2979,7 +2767,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[10].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatusesEx");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/UploadTemplate");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -2990,7 +2778,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatusesEx90, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusesEx")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), uploadTemplate98, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "uploadTemplate")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -3006,90 +2794,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestStatusesExResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.UploadTemplateResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestStatusesExResponse) object;
+            return (net.docusign.www.api._3_0.UploadTemplateResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startrequestStatusesEx
-     * @param requestStatusesEx90
+     * 
+     * @see net.docusign.wsclient.APIService#startuploadTemplate
+     * @param uploadTemplate98
      */
-    public void startrequestStatusesEx(
+    public void startuploadTemplate(
 
-    RequestStatusesEx requestStatusesEx90,
+    net.docusign.www.api._3_0.UploadTemplate uploadTemplate98,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[10].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatusesEx");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/UploadTemplate");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -3100,7 +2878,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatusesEx90, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusesEx")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), uploadTemplate98, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "uploadTemplate")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -3115,16 +2893,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestStatusesExResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestStatusesEx((RequestStatusesExResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.UploadTemplateResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultuploadTemplate((net.docusign.www.api._3_0.UploadTemplateResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorrequestStatusesEx(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErroruploadTemplate(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -3132,64 +2909,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorrequestStatusesEx(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErroruploadTemplate(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusesEx(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErroruploadTemplate(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusesEx(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErroruploadTemplate(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusesEx(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErroruploadTemplate(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusesEx(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErroruploadTemplate(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusesEx(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErroruploadTemplate(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusesEx(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErroruploadTemplate(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusesEx(f);
+                                callback.receiveErroruploadTemplate(f);
                             }
+                        } else {
+                            callback.receiveErroruploadTemplate(f);
                         }
-                        else {
-                            callback.receiveErrorrequestStatusesEx(f);
-                        }
+                    } else {
+                        callback.receiveErroruploadTemplate(f);
                     }
-                    else {
-                        callback.receiveErrorrequestStatusesEx(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorrequestStatusesEx(error);
+                } else {
+                    callback.receiveErroruploadTemplate(error);
                 }
             }
 
@@ -3201,9 +2968,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorrequestStatusesEx(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErroruploadTemplate(axisFault);
                 }
             }
         });
@@ -3221,14 +2987,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#createAndSendEnvelope
-     * @param createAndSendEnvelope92
+     * 
+     * @see net.docusign.wsclient.APIService#requestStatusesEx
+     * @param requestStatusesEx100
      */
 
-    public CreateAndSendEnvelopeResponse createAndSendEnvelope(
+    public net.docusign.www.api._3_0.RequestStatusesExResponse requestStatusesEx(
 
-    CreateAndSendEnvelope createAndSendEnvelope92)
+    net.docusign.www.api._3_0.RequestStatusesEx requestStatusesEx100)
 
     throws java.rmi.RemoteException
 
@@ -3236,7 +3002,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateAndSendEnvelope");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatusesEx");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -3247,7 +3013,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createAndSendEnvelope92, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createAndSendEnvelope")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatusesEx100, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusesEx")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -3263,90 +3029,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), CreateAndSendEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestStatusesExResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (CreateAndSendEnvelopeResponse) object;
+            return (net.docusign.www.api._3_0.RequestStatusesExResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startcreateAndSendEnvelope
-     * @param createAndSendEnvelope92
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestStatusesEx
+     * @param requestStatusesEx100
      */
-    public void startcreateAndSendEnvelope(
+    public void startrequestStatusesEx(
 
-    CreateAndSendEnvelope createAndSendEnvelope92,
+    net.docusign.www.api._3_0.RequestStatusesEx requestStatusesEx100,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[11].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateAndSendEnvelope");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatusesEx");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -3357,7 +3113,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createAndSendEnvelope92, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createAndSendEnvelope")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatusesEx100, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusesEx")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -3372,16 +3128,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), CreateAndSendEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultcreateAndSendEnvelope((CreateAndSendEnvelopeResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestStatusesExResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestStatusesEx((net.docusign.www.api._3_0.RequestStatusesExResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorcreateAndSendEnvelope(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestStatusesEx(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -3389,64 +3144,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorcreateAndSendEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestStatusesEx(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateAndSendEnvelope(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestStatusesEx(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateAndSendEnvelope(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestStatusesEx(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateAndSendEnvelope(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestStatusesEx(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateAndSendEnvelope(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestStatusesEx(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateAndSendEnvelope(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestStatusesEx(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateAndSendEnvelope(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestStatusesEx(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcreateAndSendEnvelope(f);
+                                callback.receiveErrorrequestStatusesEx(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestStatusesEx(f);
                         }
-                        else {
-                            callback.receiveErrorcreateAndSendEnvelope(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestStatusesEx(f);
                     }
-                    else {
-                        callback.receiveErrorcreateAndSendEnvelope(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorcreateAndSendEnvelope(error);
+                } else {
+                    callback.receiveErrorrequestStatusesEx(error);
                 }
             }
 
@@ -3458,9 +3203,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorcreateAndSendEnvelope(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestStatusesEx(axisFault);
                 }
             }
         });
@@ -3478,14 +3222,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#getAddressBookItems
-     * @param getAddressBookItems94
+     * 
+     * @see net.docusign.wsclient.APIService#requestCorrectToken
+     * @param requestCorrectToken102
      */
 
-    public GetAddressBookItemsResponse getAddressBookItems(
+    public net.docusign.www.api._3_0.RequestCorrectTokenResponse requestCorrectToken(
 
-    GetAddressBookItems getAddressBookItems94)
+    net.docusign.www.api._3_0.RequestCorrectToken requestCorrectToken102)
 
     throws java.rmi.RemoteException
 
@@ -3493,7 +3237,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAddressBookItems");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestCorrectToken");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -3504,7 +3248,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAddressBookItems94, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAddressBookItems")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestCorrectToken102, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestCorrectToken")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -3520,90 +3264,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), GetAddressBookItemsResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestCorrectTokenResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (GetAddressBookItemsResponse) object;
+            return (net.docusign.www.api._3_0.RequestCorrectTokenResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startgetAddressBookItems
-     * @param getAddressBookItems94
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestCorrectToken
+     * @param requestCorrectToken102
      */
-    public void startgetAddressBookItems(
+    public void startrequestCorrectToken(
 
-    GetAddressBookItems getAddressBookItems94,
+    net.docusign.www.api._3_0.RequestCorrectToken requestCorrectToken102,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[12].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAddressBookItems");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestCorrectToken");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -3614,7 +3348,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAddressBookItems94, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAddressBookItems")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestCorrectToken102, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestCorrectToken")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -3629,16 +3363,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), GetAddressBookItemsResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultgetAddressBookItems((GetAddressBookItemsResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestCorrectTokenResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestCorrectToken((net.docusign.www.api._3_0.RequestCorrectTokenResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorgetAddressBookItems(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestCorrectToken(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -3646,64 +3379,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorgetAddressBookItems(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestCorrectToken(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAddressBookItems(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestCorrectToken(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAddressBookItems(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestCorrectToken(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAddressBookItems(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestCorrectToken(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAddressBookItems(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestCorrectToken(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAddressBookItems(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestCorrectToken(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAddressBookItems(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestCorrectToken(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAddressBookItems(f);
+                                callback.receiveErrorrequestCorrectToken(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestCorrectToken(f);
                         }
-                        else {
-                            callback.receiveErrorgetAddressBookItems(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestCorrectToken(f);
                     }
-                    else {
-                        callback.receiveErrorgetAddressBookItems(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorgetAddressBookItems(error);
+                } else {
+                    callback.receiveErrorrequestCorrectToken(error);
                 }
             }
 
@@ -3715,9 +3438,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorgetAddressBookItems(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestCorrectToken(axisFault);
                 }
             }
         });
@@ -3735,14 +3457,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#requestStatusEx
-     * @param requestStatusEx96
+     * 
+     * @see net.docusign.wsclient.APIService#createAndSendEnvelope
+     * @param createAndSendEnvelope104
      */
 
-    public RequestStatusExResponse requestStatusEx(
+    public net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse createAndSendEnvelope(
 
-    RequestStatusEx requestStatusEx96)
+    net.docusign.www.api._3_0.CreateAndSendEnvelope createAndSendEnvelope104)
 
     throws java.rmi.RemoteException
 
@@ -3750,7 +3472,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatusEx");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateAndSendEnvelope");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -3761,7 +3483,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatusEx96, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusEx")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createAndSendEnvelope104, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createAndSendEnvelope")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -3777,90 +3499,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestStatusExResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestStatusExResponse) object;
+            return (net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startrequestStatusEx
-     * @param requestStatusEx96
+     * 
+     * @see net.docusign.wsclient.APIService#startcreateAndSendEnvelope
+     * @param createAndSendEnvelope104
      */
-    public void startrequestStatusEx(
+    public void startcreateAndSendEnvelope(
 
-    RequestStatusEx requestStatusEx96,
+    net.docusign.www.api._3_0.CreateAndSendEnvelope createAndSendEnvelope104,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[13].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatusEx");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CreateAndSendEnvelope");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -3871,7 +3583,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatusEx96, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusEx")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), createAndSendEnvelope104, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "createAndSendEnvelope")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -3886,16 +3598,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestStatusExResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestStatusEx((RequestStatusExResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultcreateAndSendEnvelope((net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorrequestStatusEx(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorcreateAndSendEnvelope(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -3903,64 +3614,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorrequestStatusEx(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorcreateAndSendEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusEx(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorcreateAndSendEnvelope(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusEx(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorcreateAndSendEnvelope(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusEx(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorcreateAndSendEnvelope(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusEx(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorcreateAndSendEnvelope(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusEx(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorcreateAndSendEnvelope(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusEx(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorcreateAndSendEnvelope(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatusEx(f);
+                                callback.receiveErrorcreateAndSendEnvelope(f);
                             }
+                        } else {
+                            callback.receiveErrorcreateAndSendEnvelope(f);
                         }
-                        else {
-                            callback.receiveErrorrequestStatusEx(f);
-                        }
+                    } else {
+                        callback.receiveErrorcreateAndSendEnvelope(f);
                     }
-                    else {
-                        callback.receiveErrorrequestStatusEx(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorrequestStatusEx(error);
+                } else {
+                    callback.receiveErrorcreateAndSendEnvelope(error);
                 }
             }
 
@@ -3972,9 +3673,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorrequestStatusEx(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorcreateAndSendEnvelope(axisFault);
                 }
             }
         });
@@ -3992,14 +3692,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#getAccountMembershipFeaturesList
-     * @param getAccountMembershipFeaturesList98
+     * 
+     * @see net.docusign.wsclient.APIService#getAddressBookItems
+     * @param getAddressBookItems106
      */
 
-    public GetAccountMembershipFeaturesListResponse getAccountMembershipFeaturesList(
+    public net.docusign.www.api._3_0.GetAddressBookItemsResponse getAddressBookItems(
 
-    GetAccountMembershipFeaturesList getAccountMembershipFeaturesList98)
+    net.docusign.www.api._3_0.GetAddressBookItems getAddressBookItems106)
 
     throws java.rmi.RemoteException
 
@@ -4007,7 +3707,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[14].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAccountMembershipFeaturesList");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAddressBookItems");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -4018,7 +3718,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAccountMembershipFeaturesList98, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountMembershipFeaturesList")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAddressBookItems106, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAddressBookItems")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -4034,90 +3734,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), GetAccountMembershipFeaturesListResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetAddressBookItemsResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (GetAccountMembershipFeaturesListResponse) object;
+            return (net.docusign.www.api._3_0.GetAddressBookItemsResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startgetAccountMembershipFeaturesList
-     * @param getAccountMembershipFeaturesList98
+     * 
+     * @see net.docusign.wsclient.APIService#startgetAddressBookItems
+     * @param getAddressBookItems106
      */
-    public void startgetAccountMembershipFeaturesList(
+    public void startgetAddressBookItems(
 
-    GetAccountMembershipFeaturesList getAccountMembershipFeaturesList98,
+    net.docusign.www.api._3_0.GetAddressBookItems getAddressBookItems106,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[14].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAccountMembershipFeaturesList");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAddressBookItems");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -4128,7 +3818,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAccountMembershipFeaturesList98, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountMembershipFeaturesList")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAddressBookItems106, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAddressBookItems")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -4143,16 +3833,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), GetAccountMembershipFeaturesListResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultgetAccountMembershipFeaturesList((GetAccountMembershipFeaturesListResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetAddressBookItemsResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultgetAddressBookItems((net.docusign.www.api._3_0.GetAddressBookItemsResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorgetAccountMembershipFeaturesList(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorgetAddressBookItems(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -4160,64 +3849,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorgetAccountMembershipFeaturesList(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorgetAddressBookItems(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorgetAddressBookItems(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorgetAddressBookItems(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorgetAddressBookItems(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorgetAddressBookItems(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorgetAddressBookItems(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorgetAddressBookItems(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
+                                callback.receiveErrorgetAddressBookItems(f);
                             }
+                        } else {
+                            callback.receiveErrorgetAddressBookItems(f);
                         }
-                        else {
-                            callback.receiveErrorgetAccountMembershipFeaturesList(f);
-                        }
+                    } else {
+                        callback.receiveErrorgetAddressBookItems(f);
                     }
-                    else {
-                        callback.receiveErrorgetAccountMembershipFeaturesList(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorgetAccountMembershipFeaturesList(error);
+                } else {
+                    callback.receiveErrorgetAddressBookItems(error);
                 }
             }
 
@@ -4229,9 +3908,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorgetAccountMembershipFeaturesList(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorgetAddressBookItems(axisFault);
                 }
             }
         });
@@ -4249,14 +3927,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#getRecipientList
-     * @param getRecipientList100
+     * 
+     * @see net.docusign.wsclient.APIService#requestStatusEx
+     * @param requestStatusEx108
      */
 
-    public GetRecipientListResponse getRecipientList(
+    public net.docusign.www.api._3_0.RequestStatusExResponse requestStatusEx(
 
-    GetRecipientList getRecipientList100)
+    net.docusign.www.api._3_0.RequestStatusEx requestStatusEx108)
 
     throws java.rmi.RemoteException
 
@@ -4264,7 +3942,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[15].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetRecipientList");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatusEx");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -4275,7 +3953,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getRecipientList100, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientList")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatusEx108, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusEx")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -4291,90 +3969,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), GetRecipientListResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestStatusExResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (GetRecipientListResponse) object;
+            return (net.docusign.www.api._3_0.RequestStatusExResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startgetRecipientList
-     * @param getRecipientList100
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestStatusEx
+     * @param requestStatusEx108
      */
-    public void startgetRecipientList(
+    public void startrequestStatusEx(
 
-    GetRecipientList getRecipientList100,
+    net.docusign.www.api._3_0.RequestStatusEx requestStatusEx108,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[15].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetRecipientList");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatusEx");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -4385,7 +4053,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getRecipientList100, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientList")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatusEx108, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatusEx")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -4400,16 +4068,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), GetRecipientListResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultgetRecipientList((GetRecipientListResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestStatusExResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestStatusEx((net.docusign.www.api._3_0.RequestStatusExResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorgetRecipientList(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestStatusEx(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -4417,64 +4084,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorgetRecipientList(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestStatusEx(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientList(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestStatusEx(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientList(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestStatusEx(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientList(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestStatusEx(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientList(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestStatusEx(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientList(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestStatusEx(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientList(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestStatusEx(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientList(f);
+                                callback.receiveErrorrequestStatusEx(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestStatusEx(f);
                         }
-                        else {
-                            callback.receiveErrorgetRecipientList(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestStatusEx(f);
                     }
-                    else {
-                        callback.receiveErrorgetRecipientList(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorgetRecipientList(error);
+                } else {
+                    callback.receiveErrorrequestStatusEx(error);
                 }
             }
 
@@ -4486,9 +4143,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorgetRecipientList(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestStatusEx(axisFault);
                 }
             }
         });
@@ -4506,14 +4162,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#synchEnvelope
-     * @param synchEnvelope102
+     * 
+     * @see net.docusign.wsclient.APIService#getAccountMembershipFeaturesList
+     * @param getAccountMembershipFeaturesList110
      */
 
-    public SynchEnvelopeResponse synchEnvelope(
+    public net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse getAccountMembershipFeaturesList(
 
-    SynchEnvelope synchEnvelope102)
+    net.docusign.www.api._3_0.GetAccountMembershipFeaturesList getAccountMembershipFeaturesList110)
 
     throws java.rmi.RemoteException
 
@@ -4521,7 +4177,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[16].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SynchEnvelope");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAccountMembershipFeaturesList");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -4532,7 +4188,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), synchEnvelope102, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "synchEnvelope")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAccountMembershipFeaturesList110, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountMembershipFeaturesList")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -4548,90 +4204,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), SynchEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (SynchEnvelopeResponse) object;
+            return (net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startsynchEnvelope
-     * @param synchEnvelope102
+     * 
+     * @see net.docusign.wsclient.APIService#startgetAccountMembershipFeaturesList
+     * @param getAccountMembershipFeaturesList110
      */
-    public void startsynchEnvelope(
+    public void startgetAccountMembershipFeaturesList(
 
-    SynchEnvelope synchEnvelope102,
+    net.docusign.www.api._3_0.GetAccountMembershipFeaturesList getAccountMembershipFeaturesList110,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[16].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SynchEnvelope");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAccountMembershipFeaturesList");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -4642,7 +4288,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), synchEnvelope102, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "synchEnvelope")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAccountMembershipFeaturesList110, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountMembershipFeaturesList")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -4657,16 +4303,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), SynchEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultsynchEnvelope((SynchEnvelopeResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultgetAccountMembershipFeaturesList((net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorsynchEnvelope(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorgetAccountMembershipFeaturesList(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -4674,64 +4319,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorsynchEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorgetAccountMembershipFeaturesList(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsynchEnvelope(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsynchEnvelope(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsynchEnvelope(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsynchEnvelope(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsynchEnvelope(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsynchEnvelope(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsynchEnvelope(f);
+                                callback.receiveErrorgetAccountMembershipFeaturesList(f);
                             }
+                        } else {
+                            callback.receiveErrorgetAccountMembershipFeaturesList(f);
                         }
-                        else {
-                            callback.receiveErrorsynchEnvelope(f);
-                        }
+                    } else {
+                        callback.receiveErrorgetAccountMembershipFeaturesList(f);
                     }
-                    else {
-                        callback.receiveErrorsynchEnvelope(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorsynchEnvelope(error);
+                } else {
+                    callback.receiveErrorgetAccountMembershipFeaturesList(error);
                 }
             }
 
@@ -4743,9 +4378,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorsynchEnvelope(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorgetAccountMembershipFeaturesList(axisFault);
                 }
             }
         });
@@ -4763,14 +4397,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#updateAddressBookItems
-     * @param updateAddressBookItems104
+     * 
+     * @see net.docusign.wsclient.APIService#getRecipientList
+     * @param getRecipientList112
      */
 
-    public UpdateAddressBookItemsResponse updateAddressBookItems(
+    public net.docusign.www.api._3_0.GetRecipientListResponse getRecipientList(
 
-    UpdateAddressBookItems updateAddressBookItems104)
+    net.docusign.www.api._3_0.GetRecipientList getRecipientList112)
 
     throws java.rmi.RemoteException
 
@@ -4778,7 +4412,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[17].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/UpdateAddressBookItems");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetRecipientList");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -4789,7 +4423,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), updateAddressBookItems104, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "updateAddressBookItems")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getRecipientList112, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientList")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -4805,90 +4439,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), UpdateAddressBookItemsResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetRecipientListResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (UpdateAddressBookItemsResponse) object;
+            return (net.docusign.www.api._3_0.GetRecipientListResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startupdateAddressBookItems
-     * @param updateAddressBookItems104
+     * 
+     * @see net.docusign.wsclient.APIService#startgetRecipientList
+     * @param getRecipientList112
      */
-    public void startupdateAddressBookItems(
+    public void startgetRecipientList(
 
-    UpdateAddressBookItems updateAddressBookItems104,
+    net.docusign.www.api._3_0.GetRecipientList getRecipientList112,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[17].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/UpdateAddressBookItems");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetRecipientList");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -4899,7 +4523,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), updateAddressBookItems104, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "updateAddressBookItems")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getRecipientList112, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientList")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -4914,16 +4538,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), UpdateAddressBookItemsResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultupdateAddressBookItems((UpdateAddressBookItemsResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetRecipientListResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultgetRecipientList((net.docusign.www.api._3_0.GetRecipientListResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorupdateAddressBookItems(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorgetRecipientList(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -4931,64 +4554,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorupdateAddressBookItems(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorgetRecipientList(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorupdateAddressBookItems(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorgetRecipientList(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorupdateAddressBookItems(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorgetRecipientList(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorupdateAddressBookItems(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorgetRecipientList(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorupdateAddressBookItems(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorgetRecipientList(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorupdateAddressBookItems(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorgetRecipientList(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorupdateAddressBookItems(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorgetRecipientList(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorupdateAddressBookItems(f);
+                                callback.receiveErrorgetRecipientList(f);
                             }
+                        } else {
+                            callback.receiveErrorgetRecipientList(f);
                         }
-                        else {
-                            callback.receiveErrorupdateAddressBookItems(f);
-                        }
+                    } else {
+                        callback.receiveErrorgetRecipientList(f);
                     }
-                    else {
-                        callback.receiveErrorupdateAddressBookItems(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorupdateAddressBookItems(error);
+                } else {
+                    callback.receiveErrorgetRecipientList(error);
                 }
             }
 
@@ -5000,9 +4613,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorupdateAddressBookItems(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorgetRecipientList(axisFault);
                 }
             }
         });
@@ -5020,14 +4632,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#getStatusInDocuSignConnectFormat
-     * @param getStatusInDocuSignConnectFormat106
+     * 
+     * @see net.docusign.wsclient.APIService#synchEnvelope
+     * @param synchEnvelope114
      */
 
-    public GetStatusInDocuSignConnectFormatResponse getStatusInDocuSignConnectFormat(
+    public net.docusign.www.api._3_0.SynchEnvelopeResponse synchEnvelope(
 
-    GetStatusInDocuSignConnectFormat getStatusInDocuSignConnectFormat106)
+    net.docusign.www.api._3_0.SynchEnvelope synchEnvelope114)
 
     throws java.rmi.RemoteException
 
@@ -5035,7 +4647,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[18].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetStatusInDocuSignConnectFormat");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SynchEnvelope");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -5046,7 +4658,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getStatusInDocuSignConnectFormat106, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getStatusInDocuSignConnectFormat")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), synchEnvelope114, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "synchEnvelope")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -5062,90 +4674,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), GetStatusInDocuSignConnectFormatResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.SynchEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (GetStatusInDocuSignConnectFormatResponse) object;
+            return (net.docusign.www.api._3_0.SynchEnvelopeResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startgetStatusInDocuSignConnectFormat
-     * @param getStatusInDocuSignConnectFormat106
+     * 
+     * @see net.docusign.wsclient.APIService#startsynchEnvelope
+     * @param synchEnvelope114
      */
-    public void startgetStatusInDocuSignConnectFormat(
+    public void startsynchEnvelope(
 
-    GetStatusInDocuSignConnectFormat getStatusInDocuSignConnectFormat106,
+    net.docusign.www.api._3_0.SynchEnvelope synchEnvelope114,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[18].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetStatusInDocuSignConnectFormat");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SynchEnvelope");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -5156,7 +4758,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getStatusInDocuSignConnectFormat106, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getStatusInDocuSignConnectFormat")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), synchEnvelope114, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "synchEnvelope")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -5171,16 +4773,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), GetStatusInDocuSignConnectFormatResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultgetStatusInDocuSignConnectFormat((GetStatusInDocuSignConnectFormatResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.SynchEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultsynchEnvelope((net.docusign.www.api._3_0.SynchEnvelopeResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorgetStatusInDocuSignConnectFormat(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorsynchEnvelope(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -5188,64 +4789,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorgetStatusInDocuSignConnectFormat(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorsynchEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorsynchEnvelope(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorsynchEnvelope(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorsynchEnvelope(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorsynchEnvelope(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorsynchEnvelope(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorsynchEnvelope(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
+                                callback.receiveErrorsynchEnvelope(f);
                             }
+                        } else {
+                            callback.receiveErrorsynchEnvelope(f);
                         }
-                        else {
-                            callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
-                        }
+                    } else {
+                        callback.receiveErrorsynchEnvelope(f);
                     }
-                    else {
-                        callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorgetStatusInDocuSignConnectFormat(error);
+                } else {
+                    callback.receiveErrorsynchEnvelope(error);
                 }
             }
 
@@ -5257,9 +4848,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorgetStatusInDocuSignConnectFormat(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorsynchEnvelope(axisFault);
                 }
             }
         });
@@ -5277,14 +4867,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#getAccountSettingsList
-     * @param getAccountSettingsList108
+     * 
+     * @see net.docusign.wsclient.APIService#updateAddressBookItems
+     * @param updateAddressBookItems116
      */
 
-    public GetAccountSettingsListResponse getAccountSettingsList(
+    public net.docusign.www.api._3_0.UpdateAddressBookItemsResponse updateAddressBookItems(
 
-    GetAccountSettingsList getAccountSettingsList108)
+    net.docusign.www.api._3_0.UpdateAddressBookItems updateAddressBookItems116)
 
     throws java.rmi.RemoteException
 
@@ -5292,7 +4882,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[19].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAccountSettingsList");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/UpdateAddressBookItems");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -5303,7 +4893,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAccountSettingsList108, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountSettingsList")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), updateAddressBookItems116, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "updateAddressBookItems")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -5319,90 +4909,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), GetAccountSettingsListResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.UpdateAddressBookItemsResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (GetAccountSettingsListResponse) object;
+            return (net.docusign.www.api._3_0.UpdateAddressBookItemsResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startgetAccountSettingsList
-     * @param getAccountSettingsList108
+     * 
+     * @see net.docusign.wsclient.APIService#startupdateAddressBookItems
+     * @param updateAddressBookItems116
      */
-    public void startgetAccountSettingsList(
+    public void startupdateAddressBookItems(
 
-    GetAccountSettingsList getAccountSettingsList108,
+    net.docusign.www.api._3_0.UpdateAddressBookItems updateAddressBookItems116,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[19].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAccountSettingsList");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/UpdateAddressBookItems");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -5413,7 +4993,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAccountSettingsList108, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountSettingsList")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), updateAddressBookItems116, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "updateAddressBookItems")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -5428,16 +5008,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), GetAccountSettingsListResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultgetAccountSettingsList((GetAccountSettingsListResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.UpdateAddressBookItemsResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultupdateAddressBookItems((net.docusign.www.api._3_0.UpdateAddressBookItemsResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorgetAccountSettingsList(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorupdateAddressBookItems(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -5445,64 +5024,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorgetAccountSettingsList(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorupdateAddressBookItems(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountSettingsList(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorupdateAddressBookItems(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountSettingsList(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorupdateAddressBookItems(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountSettingsList(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorupdateAddressBookItems(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountSettingsList(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorupdateAddressBookItems(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountSettingsList(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorupdateAddressBookItems(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountSettingsList(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorupdateAddressBookItems(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetAccountSettingsList(f);
+                                callback.receiveErrorupdateAddressBookItems(f);
                             }
+                        } else {
+                            callback.receiveErrorupdateAddressBookItems(f);
                         }
-                        else {
-                            callback.receiveErrorgetAccountSettingsList(f);
-                        }
+                    } else {
+                        callback.receiveErrorupdateAddressBookItems(f);
                     }
-                    else {
-                        callback.receiveErrorgetAccountSettingsList(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorgetAccountSettingsList(error);
+                } else {
+                    callback.receiveErrorupdateAddressBookItems(error);
                 }
             }
 
@@ -5514,9 +5083,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorgetAccountSettingsList(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorupdateAddressBookItems(axisFault);
                 }
             }
         });
@@ -5534,14 +5102,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#requestDocumentPDFsEx
-     * @param requestDocumentPDFsEx110
+     * 
+     * @see net.docusign.wsclient.APIService#getStatusInDocuSignConnectFormat
+     * @param getStatusInDocuSignConnectFormat118
      */
 
-    public RequestDocumentPDFsExResponse requestDocumentPDFsEx(
+    public net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse getStatusInDocuSignConnectFormat(
 
-    RequestDocumentPDFsEx requestDocumentPDFsEx110)
+    net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat getStatusInDocuSignConnectFormat118)
 
     throws java.rmi.RemoteException
 
@@ -5549,7 +5117,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[20].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestDocumentPDFsEx");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetStatusInDocuSignConnectFormat");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -5560,7 +5128,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFsEx110, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsEx")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getStatusInDocuSignConnectFormat118, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getStatusInDocuSignConnectFormat")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -5576,90 +5144,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestDocumentPDFsExResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestDocumentPDFsExResponse) object;
+            return (net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startrequestDocumentPDFsEx
-     * @param requestDocumentPDFsEx110
+     * 
+     * @see net.docusign.wsclient.APIService#startgetStatusInDocuSignConnectFormat
+     * @param getStatusInDocuSignConnectFormat118
      */
-    public void startrequestDocumentPDFsEx(
+    public void startgetStatusInDocuSignConnectFormat(
 
-    RequestDocumentPDFsEx requestDocumentPDFsEx110,
+    net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat getStatusInDocuSignConnectFormat118,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[20].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestDocumentPDFsEx");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetStatusInDocuSignConnectFormat");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -5670,7 +5228,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFsEx110, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsEx")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getStatusInDocuSignConnectFormat118, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getStatusInDocuSignConnectFormat")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -5685,16 +5243,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestDocumentPDFsExResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestDocumentPDFsEx((RequestDocumentPDFsExResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultgetStatusInDocuSignConnectFormat((net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorrequestDocumentPDFsEx(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorgetStatusInDocuSignConnectFormat(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -5702,64 +5259,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorrequestDocumentPDFsEx(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorgetStatusInDocuSignConnectFormat(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsEx(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsEx(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsEx(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsEx(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsEx(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsEx(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsEx(f);
+                                callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
                             }
+                        } else {
+                            callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
                         }
-                        else {
-                            callback.receiveErrorrequestDocumentPDFsEx(f);
-                        }
+                    } else {
+                        callback.receiveErrorgetStatusInDocuSignConnectFormat(f);
                     }
-                    else {
-                        callback.receiveErrorrequestDocumentPDFsEx(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorrequestDocumentPDFsEx(error);
+                } else {
+                    callback.receiveErrorgetStatusInDocuSignConnectFormat(error);
                 }
             }
 
@@ -5771,9 +5318,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorrequestDocumentPDFsEx(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorgetStatusInDocuSignConnectFormat(axisFault);
                 }
             }
         });
@@ -5791,14 +5337,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#removeAddressBookItems
-     * @param removeAddressBookItems112
+     * 
+     * @see net.docusign.wsclient.APIService#getAccountSettingsList
+     * @param getAccountSettingsList120
      */
 
-    public RemoveAddressBookItemsResponse removeAddressBookItems(
+    public net.docusign.www.api._3_0.GetAccountSettingsListResponse getAccountSettingsList(
 
-    RemoveAddressBookItems removeAddressBookItems112)
+    net.docusign.www.api._3_0.GetAccountSettingsList getAccountSettingsList120)
 
     throws java.rmi.RemoteException
 
@@ -5806,7 +5352,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[21].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RemoveAddressBookItems");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAccountSettingsList");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -5817,7 +5363,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), removeAddressBookItems112, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "removeAddressBookItems")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAccountSettingsList120, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountSettingsList")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -5833,90 +5379,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RemoveAddressBookItemsResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetAccountSettingsListResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RemoveAddressBookItemsResponse) object;
+            return (net.docusign.www.api._3_0.GetAccountSettingsListResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startremoveAddressBookItems
-     * @param removeAddressBookItems112
+     * 
+     * @see net.docusign.wsclient.APIService#startgetAccountSettingsList
+     * @param getAccountSettingsList120
      */
-    public void startremoveAddressBookItems(
+    public void startgetAccountSettingsList(
 
-    RemoveAddressBookItems removeAddressBookItems112,
+    net.docusign.www.api._3_0.GetAccountSettingsList getAccountSettingsList120,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[21].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RemoveAddressBookItems");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetAccountSettingsList");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -5927,7 +5463,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), removeAddressBookItems112, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "removeAddressBookItems")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getAccountSettingsList120, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getAccountSettingsList")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -5942,16 +5478,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RemoveAddressBookItemsResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultremoveAddressBookItems((RemoveAddressBookItemsResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetAccountSettingsListResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultgetAccountSettingsList((net.docusign.www.api._3_0.GetAccountSettingsListResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorremoveAddressBookItems(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorgetAccountSettingsList(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -5959,64 +5494,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorremoveAddressBookItems(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorgetAccountSettingsList(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorremoveAddressBookItems(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorgetAccountSettingsList(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorremoveAddressBookItems(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorgetAccountSettingsList(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorremoveAddressBookItems(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorgetAccountSettingsList(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorremoveAddressBookItems(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorgetAccountSettingsList(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorremoveAddressBookItems(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorgetAccountSettingsList(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorremoveAddressBookItems(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorgetAccountSettingsList(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorremoveAddressBookItems(f);
+                                callback.receiveErrorgetAccountSettingsList(f);
                             }
+                        } else {
+                            callback.receiveErrorgetAccountSettingsList(f);
                         }
-                        else {
-                            callback.receiveErrorremoveAddressBookItems(f);
-                        }
+                    } else {
+                        callback.receiveErrorgetAccountSettingsList(f);
                     }
-                    else {
-                        callback.receiveErrorremoveAddressBookItems(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorremoveAddressBookItems(error);
+                } else {
+                    callback.receiveErrorgetAccountSettingsList(error);
                 }
             }
 
@@ -6028,9 +5553,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorremoveAddressBookItems(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorgetAccountSettingsList(axisFault);
                 }
             }
         });
@@ -6048,14 +5572,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#saveTemplate
-     * @param saveTemplate114
+     * 
+     * @see net.docusign.wsclient.APIService#requestDocumentPDFsEx
+     * @param requestDocumentPDFsEx122
      */
 
-    public SaveTemplateResponse saveTemplate(
+    public net.docusign.www.api._3_0.RequestDocumentPDFsExResponse requestDocumentPDFsEx(
 
-    SaveTemplate saveTemplate114)
+    net.docusign.www.api._3_0.RequestDocumentPDFsEx requestDocumentPDFsEx122)
 
     throws java.rmi.RemoteException
 
@@ -6063,7 +5587,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[22].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SaveTemplate");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestDocumentPDFsEx");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -6074,7 +5598,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), saveTemplate114, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "saveTemplate")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFsEx122, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsEx")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -6090,90 +5614,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), SaveTemplateResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestDocumentPDFsExResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (SaveTemplateResponse) object;
+            return (net.docusign.www.api._3_0.RequestDocumentPDFsExResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startsaveTemplate
-     * @param saveTemplate114
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestDocumentPDFsEx
+     * @param requestDocumentPDFsEx122
      */
-    public void startsaveTemplate(
+    public void startrequestDocumentPDFsEx(
 
-    SaveTemplate saveTemplate114,
+    net.docusign.www.api._3_0.RequestDocumentPDFsEx requestDocumentPDFsEx122,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[22].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SaveTemplate");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestDocumentPDFsEx");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -6184,7 +5698,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), saveTemplate114, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "saveTemplate")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFsEx122, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsEx")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -6199,16 +5713,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), SaveTemplateResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultsaveTemplate((SaveTemplateResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestDocumentPDFsExResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestDocumentPDFsEx((net.docusign.www.api._3_0.RequestDocumentPDFsExResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorsaveTemplate(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestDocumentPDFsEx(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -6216,64 +5729,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorsaveTemplate(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestDocumentPDFsEx(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsaveTemplate(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestDocumentPDFsEx(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsaveTemplate(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestDocumentPDFsEx(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsaveTemplate(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestDocumentPDFsEx(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsaveTemplate(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestDocumentPDFsEx(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsaveTemplate(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestDocumentPDFsEx(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsaveTemplate(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestDocumentPDFsEx(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorsaveTemplate(f);
+                                callback.receiveErrorrequestDocumentPDFsEx(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestDocumentPDFsEx(f);
                         }
-                        else {
-                            callback.receiveErrorsaveTemplate(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestDocumentPDFsEx(f);
                     }
-                    else {
-                        callback.receiveErrorsaveTemplate(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorsaveTemplate(error);
+                } else {
+                    callback.receiveErrorrequestDocumentPDFsEx(error);
                 }
             }
 
@@ -6285,9 +5788,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorsaveTemplate(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestDocumentPDFsEx(axisFault);
                 }
             }
         });
@@ -6305,14 +5807,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#ping
-     * @param ping116
+     * 
+     * @see net.docusign.wsclient.APIService#removeAddressBookItems
+     * @param removeAddressBookItems124
      */
 
-    public PingResponse ping(
+    public net.docusign.www.api._3_0.RemoveAddressBookItemsResponse removeAddressBookItems(
 
-    Ping ping116)
+    net.docusign.www.api._3_0.RemoveAddressBookItems removeAddressBookItems124)
 
     throws java.rmi.RemoteException
 
@@ -6320,7 +5822,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[23].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/Ping");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RemoveAddressBookItems");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -6331,7 +5833,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), ping116, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ping")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), removeAddressBookItems124, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "removeAddressBookItems")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -6347,90 +5849,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), PingResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RemoveAddressBookItemsResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (PingResponse) object;
+            return (net.docusign.www.api._3_0.RemoveAddressBookItemsResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startping
-     * @param ping116
+     * 
+     * @see net.docusign.wsclient.APIService#startremoveAddressBookItems
+     * @param removeAddressBookItems124
      */
-    public void startping(
+    public void startremoveAddressBookItems(
 
-    Ping ping116,
+    net.docusign.www.api._3_0.RemoveAddressBookItems removeAddressBookItems124,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[23].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/Ping");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RemoveAddressBookItems");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -6441,7 +5933,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), ping116, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ping")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), removeAddressBookItems124, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "removeAddressBookItems")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -6456,16 +5948,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), PingResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultping((PingResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RemoveAddressBookItemsResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultremoveAddressBookItems((net.docusign.www.api._3_0.RemoveAddressBookItemsResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorping(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorremoveAddressBookItems(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -6473,64 +5964,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorping(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorremoveAddressBookItems(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorping(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorremoveAddressBookItems(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorping(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorremoveAddressBookItems(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorping(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorremoveAddressBookItems(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorping(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorremoveAddressBookItems(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorping(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorremoveAddressBookItems(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorping(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorremoveAddressBookItems(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorping(f);
+                                callback.receiveErrorremoveAddressBookItems(f);
                             }
+                        } else {
+                            callback.receiveErrorremoveAddressBookItems(f);
                         }
-                        else {
-                            callback.receiveErrorping(f);
-                        }
+                    } else {
+                        callback.receiveErrorremoveAddressBookItems(f);
                     }
-                    else {
-                        callback.receiveErrorping(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorping(error);
+                } else {
+                    callback.receiveErrorremoveAddressBookItems(error);
                 }
             }
 
@@ -6542,9 +6023,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorping(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorremoveAddressBookItems(axisFault);
                 }
             }
         });
@@ -6562,14 +6042,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#getRecipientEsignList
-     * @param getRecipientEsignList118
+     * 
+     * @see net.docusign.wsclient.APIService#saveTemplate
+     * @param saveTemplate126
      */
 
-    public GetRecipientEsignListResponse getRecipientEsignList(
+    public net.docusign.www.api._3_0.SaveTemplateResponse saveTemplate(
 
-    GetRecipientEsignList getRecipientEsignList118)
+    net.docusign.www.api._3_0.SaveTemplate saveTemplate126)
 
     throws java.rmi.RemoteException
 
@@ -6577,7 +6057,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[24].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetRecipientEsignList");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SaveTemplate");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -6588,7 +6068,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getRecipientEsignList118, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientEsignList")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), saveTemplate126, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "saveTemplate")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -6604,90 +6084,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), GetRecipientEsignListResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.SaveTemplateResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (GetRecipientEsignListResponse) object;
+            return (net.docusign.www.api._3_0.SaveTemplateResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startgetRecipientEsignList
-     * @param getRecipientEsignList118
+     * 
+     * @see net.docusign.wsclient.APIService#startsaveTemplate
+     * @param saveTemplate126
      */
-    public void startgetRecipientEsignList(
+    public void startsaveTemplate(
 
-    GetRecipientEsignList getRecipientEsignList118,
+    net.docusign.www.api._3_0.SaveTemplate saveTemplate126,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[24].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetRecipientEsignList");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SaveTemplate");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -6698,7 +6168,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getRecipientEsignList118, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientEsignList")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), saveTemplate126, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "saveTemplate")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -6713,16 +6183,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), GetRecipientEsignListResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultgetRecipientEsignList((GetRecipientEsignListResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.SaveTemplateResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultsaveTemplate((net.docusign.www.api._3_0.SaveTemplateResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorgetRecipientEsignList(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorsaveTemplate(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -6730,64 +6199,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorgetRecipientEsignList(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorsaveTemplate(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientEsignList(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorsaveTemplate(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientEsignList(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorsaveTemplate(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientEsignList(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorsaveTemplate(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientEsignList(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorsaveTemplate(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientEsignList(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorsaveTemplate(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientEsignList(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorsaveTemplate(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorgetRecipientEsignList(f);
+                                callback.receiveErrorsaveTemplate(f);
                             }
+                        } else {
+                            callback.receiveErrorsaveTemplate(f);
                         }
-                        else {
-                            callback.receiveErrorgetRecipientEsignList(f);
-                        }
+                    } else {
+                        callback.receiveErrorsaveTemplate(f);
                     }
-                    else {
-                        callback.receiveErrorgetRecipientEsignList(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorgetRecipientEsignList(error);
+                } else {
+                    callback.receiveErrorsaveTemplate(error);
                 }
             }
 
@@ -6799,9 +6258,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorgetRecipientEsignList(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorsaveTemplate(axisFault);
                 }
             }
         });
@@ -6819,14 +6277,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#requestStatuses
-     * @param requestStatuses120
+     * 
+     * @see net.docusign.wsclient.APIService#ping
+     * @param ping128
      */
 
-    public RequestStatusesResponse requestStatuses(
+    public net.docusign.www.api._3_0.PingResponse ping(
 
-    RequestStatuses requestStatuses120)
+    net.docusign.www.api._3_0.Ping ping128)
 
     throws java.rmi.RemoteException
 
@@ -6834,7 +6292,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[25].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatuses");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/Ping");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -6845,7 +6303,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatuses120, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatuses")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), ping128, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ping")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -6861,90 +6319,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestStatusesResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.PingResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestStatusesResponse) object;
+            return (net.docusign.www.api._3_0.PingResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startrequestStatuses
-     * @param requestStatuses120
+     * 
+     * @see net.docusign.wsclient.APIService#startping
+     * @param ping128
      */
-    public void startrequestStatuses(
+    public void startping(
 
-    RequestStatuses requestStatuses120,
+    net.docusign.www.api._3_0.Ping ping128,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[25].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatuses");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/Ping");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -6955,7 +6403,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatuses120, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatuses")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), ping128, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ping")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -6970,16 +6418,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestStatusesResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestStatuses((RequestStatusesResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.PingResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultping((net.docusign.www.api._3_0.PingResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorrequestStatuses(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorping(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -6987,64 +6434,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorrequestStatuses(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorping(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatuses(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorping(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatuses(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorping(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatuses(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorping(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatuses(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorping(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatuses(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorping(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatuses(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorping(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestStatuses(f);
+                                callback.receiveErrorping(f);
                             }
+                        } else {
+                            callback.receiveErrorping(f);
                         }
-                        else {
-                            callback.receiveErrorrequestStatuses(f);
-                        }
+                    } else {
+                        callback.receiveErrorping(f);
                     }
-                    else {
-                        callback.receiveErrorrequestStatuses(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorrequestStatuses(error);
+                } else {
+                    callback.receiveErrorping(error);
                 }
             }
 
@@ -7056,9 +6493,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorrequestStatuses(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorping(axisFault);
                 }
             }
         });
@@ -7076,14 +6512,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#correctAndResendEnvelope
-     * @param correctAndResendEnvelope122
+     * 
+     * @see net.docusign.wsclient.APIService#getRecipientEsignList
+     * @param getRecipientEsignList130
      */
 
-    public CorrectAndResendEnvelopeResponse correctAndResendEnvelope(
+    public net.docusign.www.api._3_0.GetRecipientEsignListResponse getRecipientEsignList(
 
-    CorrectAndResendEnvelope correctAndResendEnvelope122)
+    net.docusign.www.api._3_0.GetRecipientEsignList getRecipientEsignList130)
 
     throws java.rmi.RemoteException
 
@@ -7091,7 +6527,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[26].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CorrectAndResendEnvelope");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetRecipientEsignList");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -7102,7 +6538,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), correctAndResendEnvelope122, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "correctAndResendEnvelope")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getRecipientEsignList130, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientEsignList")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -7118,90 +6554,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), CorrectAndResendEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetRecipientEsignListResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (CorrectAndResendEnvelopeResponse) object;
+            return (net.docusign.www.api._3_0.GetRecipientEsignListResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startcorrectAndResendEnvelope
-     * @param correctAndResendEnvelope122
+     * 
+     * @see net.docusign.wsclient.APIService#startgetRecipientEsignList
+     * @param getRecipientEsignList130
      */
-    public void startcorrectAndResendEnvelope(
+    public void startgetRecipientEsignList(
 
-    CorrectAndResendEnvelope correctAndResendEnvelope122,
+    net.docusign.www.api._3_0.GetRecipientEsignList getRecipientEsignList130,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[26].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CorrectAndResendEnvelope");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/GetRecipientEsignList");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -7212,7 +6638,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), correctAndResendEnvelope122, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "correctAndResendEnvelope")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), getRecipientEsignList130, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "getRecipientEsignList")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -7227,16 +6653,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), CorrectAndResendEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultcorrectAndResendEnvelope((CorrectAndResendEnvelopeResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.GetRecipientEsignListResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultgetRecipientEsignList((net.docusign.www.api._3_0.GetRecipientEsignListResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorcorrectAndResendEnvelope(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorgetRecipientEsignList(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -7244,64 +6669,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorcorrectAndResendEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorgetRecipientEsignList(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcorrectAndResendEnvelope(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorgetRecipientEsignList(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcorrectAndResendEnvelope(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorgetRecipientEsignList(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcorrectAndResendEnvelope(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorgetRecipientEsignList(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcorrectAndResendEnvelope(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorgetRecipientEsignList(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcorrectAndResendEnvelope(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorgetRecipientEsignList(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcorrectAndResendEnvelope(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorgetRecipientEsignList(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorcorrectAndResendEnvelope(f);
+                                callback.receiveErrorgetRecipientEsignList(f);
                             }
+                        } else {
+                            callback.receiveErrorgetRecipientEsignList(f);
                         }
-                        else {
-                            callback.receiveErrorcorrectAndResendEnvelope(f);
-                        }
+                    } else {
+                        callback.receiveErrorgetRecipientEsignList(f);
                     }
-                    else {
-                        callback.receiveErrorcorrectAndResendEnvelope(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorcorrectAndResendEnvelope(error);
+                } else {
+                    callback.receiveErrorgetRecipientEsignList(error);
                 }
             }
 
@@ -7313,9 +6728,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorcorrectAndResendEnvelope(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorgetRecipientEsignList(axisFault);
                 }
             }
         });
@@ -7333,14 +6747,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#requestDocumentPDFsRecipientsView
-     * @param requestDocumentPDFsRecipientsView124
+     * 
+     * @see net.docusign.wsclient.APIService#requestStatuses
+     * @param requestStatuses132
      */
 
-    public RequestDocumentPDFsRecipientsViewResponse requestDocumentPDFsRecipientsView(
+    public net.docusign.www.api._3_0.RequestStatusesResponse requestStatuses(
 
-    RequestDocumentPDFsRecipientsView requestDocumentPDFsRecipientsView124)
+    net.docusign.www.api._3_0.RequestStatuses requestStatuses132)
 
     throws java.rmi.RemoteException
 
@@ -7348,7 +6762,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[27].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestDocumentPDFsRecipientsView");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatuses");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -7359,7 +6773,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFsRecipientsView124, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsRecipientsView")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatuses132, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatuses")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -7375,90 +6789,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestDocumentPDFsRecipientsViewResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestStatusesResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestDocumentPDFsRecipientsViewResponse) object;
+            return (net.docusign.www.api._3_0.RequestStatusesResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startrequestDocumentPDFsRecipientsView
-     * @param requestDocumentPDFsRecipientsView124
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestStatuses
+     * @param requestStatuses132
      */
-    public void startrequestDocumentPDFsRecipientsView(
+    public void startrequestStatuses(
 
-    RequestDocumentPDFsRecipientsView requestDocumentPDFsRecipientsView124,
+    net.docusign.www.api._3_0.RequestStatuses requestStatuses132,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[27].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestDocumentPDFsRecipientsView");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatuses");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -7469,7 +6873,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFsRecipientsView124, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsRecipientsView")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatuses132, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatuses")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -7484,16 +6888,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestDocumentPDFsRecipientsViewResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestDocumentPDFsRecipientsView((RequestDocumentPDFsRecipientsViewResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestStatusesResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestStatuses((net.docusign.www.api._3_0.RequestStatusesResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorrequestDocumentPDFsRecipientsView(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestStatuses(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -7501,64 +6904,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorrequestDocumentPDFsRecipientsView(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestStatuses(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestStatuses(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestStatuses(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestStatuses(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestStatuses(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestStatuses(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestStatuses(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
+                                callback.receiveErrorrequestStatuses(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestStatuses(f);
                         }
-                        else {
-                            callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestStatuses(f);
                     }
-                    else {
-                        callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorrequestDocumentPDFsRecipientsView(error);
+                } else {
+                    callback.receiveErrorrequestStatuses(error);
                 }
             }
 
@@ -7570,9 +6963,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorrequestDocumentPDFsRecipientsView(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestStatuses(axisFault);
                 }
             }
         });
@@ -7590,14 +6982,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#transferEnvelope
-     * @param transferEnvelope126
+     * 
+     * @see net.docusign.wsclient.APIService#correctAndResendEnvelope
+     * @param correctAndResendEnvelope134
      */
 
-    public TransferEnvelopeResponse transferEnvelope(
+    public net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse correctAndResendEnvelope(
 
-    TransferEnvelope transferEnvelope126)
+    net.docusign.www.api._3_0.CorrectAndResendEnvelope correctAndResendEnvelope134)
 
     throws java.rmi.RemoteException
 
@@ -7605,7 +6997,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[28].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/TransferEnvelope");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CorrectAndResendEnvelope");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -7616,7 +7008,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), transferEnvelope126, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "transferEnvelope")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), correctAndResendEnvelope134, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "correctAndResendEnvelope")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -7632,90 +7024,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), TransferEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (TransferEnvelopeResponse) object;
+            return (net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#starttransferEnvelope
-     * @param transferEnvelope126
+     * 
+     * @see net.docusign.wsclient.APIService#startcorrectAndResendEnvelope
+     * @param correctAndResendEnvelope134
      */
-    public void starttransferEnvelope(
+    public void startcorrectAndResendEnvelope(
 
-    TransferEnvelope transferEnvelope126,
+    net.docusign.www.api._3_0.CorrectAndResendEnvelope correctAndResendEnvelope134,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[28].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/TransferEnvelope");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/CorrectAndResendEnvelope");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -7726,7 +7108,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), transferEnvelope126, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "transferEnvelope")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), correctAndResendEnvelope134, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "correctAndResendEnvelope")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -7741,16 +7123,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), TransferEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResulttransferEnvelope((TransferEnvelopeResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultcorrectAndResendEnvelope((net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrortransferEnvelope(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorcorrectAndResendEnvelope(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -7758,64 +7139,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrortransferEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorcorrectAndResendEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrortransferEnvelope(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorcorrectAndResendEnvelope(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrortransferEnvelope(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorcorrectAndResendEnvelope(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrortransferEnvelope(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorcorrectAndResendEnvelope(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrortransferEnvelope(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorcorrectAndResendEnvelope(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrortransferEnvelope(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorcorrectAndResendEnvelope(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrortransferEnvelope(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorcorrectAndResendEnvelope(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrortransferEnvelope(f);
+                                callback.receiveErrorcorrectAndResendEnvelope(f);
                             }
+                        } else {
+                            callback.receiveErrorcorrectAndResendEnvelope(f);
                         }
-                        else {
-                            callback.receiveErrortransferEnvelope(f);
-                        }
+                    } else {
+                        callback.receiveErrorcorrectAndResendEnvelope(f);
                     }
-                    else {
-                        callback.receiveErrortransferEnvelope(f);
-                    }
-                }
-                else {
-                    callback.receiveErrortransferEnvelope(error);
+                } else {
+                    callback.receiveErrorcorrectAndResendEnvelope(error);
                 }
             }
 
@@ -7827,9 +7198,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrortransferEnvelope(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorcorrectAndResendEnvelope(axisFault);
                 }
             }
         });
@@ -7847,14 +7217,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#requestSenderToken
-     * @param requestSenderToken128
+     * 
+     * @see net.docusign.wsclient.APIService#requestDocumentPDFsRecipientsView
+     * @param requestDocumentPDFsRecipientsView136
      */
 
-    public RequestSenderTokenResponse requestSenderToken(
+    public net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse requestDocumentPDFsRecipientsView(
 
-    RequestSenderToken requestSenderToken128)
+    net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView requestDocumentPDFsRecipientsView136)
 
     throws java.rmi.RemoteException
 
@@ -7862,7 +7232,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[29].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestSenderToken");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestDocumentPDFsRecipientsView");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -7873,7 +7243,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestSenderToken128, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestSenderToken")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFsRecipientsView136, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsRecipientsView")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -7889,90 +7259,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestSenderTokenResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestSenderTokenResponse) object;
+            return (net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startrequestSenderToken
-     * @param requestSenderToken128
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestDocumentPDFsRecipientsView
+     * @param requestDocumentPDFsRecipientsView136
      */
-    public void startrequestSenderToken(
+    public void startrequestDocumentPDFsRecipientsView(
 
-    RequestSenderToken requestSenderToken128,
+    net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView requestDocumentPDFsRecipientsView136,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[29].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestSenderToken");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestDocumentPDFsRecipientsView");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -7983,7 +7343,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestSenderToken128, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestSenderToken")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestDocumentPDFsRecipientsView136, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestDocumentPDFsRecipientsView")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -7998,16 +7358,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestSenderTokenResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestSenderToken((RequestSenderTokenResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestDocumentPDFsRecipientsView((net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorrequestSenderToken(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestDocumentPDFsRecipientsView(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -8015,64 +7374,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorrequestSenderToken(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestDocumentPDFsRecipientsView(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestSenderToken(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestSenderToken(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestSenderToken(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestSenderToken(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestSenderToken(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestSenderToken(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorrequestSenderToken(f);
+                                callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
                         }
-                        else {
-                            callback.receiveErrorrequestSenderToken(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestDocumentPDFsRecipientsView(f);
                     }
-                    else {
-                        callback.receiveErrorrequestSenderToken(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorrequestSenderToken(error);
+                } else {
+                    callback.receiveErrorrequestDocumentPDFsRecipientsView(error);
                 }
             }
 
@@ -8084,9 +7433,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorrequestSenderToken(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestDocumentPDFsRecipientsView(axisFault);
                 }
             }
         });
@@ -8104,14 +7452,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#exportAuthoritativeCopy
-     * @param exportAuthoritativeCopy130
+     * 
+     * @see net.docusign.wsclient.APIService#transferEnvelope
+     * @param transferEnvelope138
      */
 
-    public ExportAuthoritativeCopyResponse exportAuthoritativeCopy(
+    public net.docusign.www.api._3_0.TransferEnvelopeResponse transferEnvelope(
 
-    ExportAuthoritativeCopy exportAuthoritativeCopy130)
+    net.docusign.www.api._3_0.TransferEnvelope transferEnvelope138)
 
     throws java.rmi.RemoteException
 
@@ -8119,7 +7467,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[30].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/ExportAuthoritativeCopy");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/TransferEnvelope");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -8130,7 +7478,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), exportAuthoritativeCopy130, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "exportAuthoritativeCopy")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), transferEnvelope138, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "transferEnvelope")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -8146,90 +7494,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), ExportAuthoritativeCopyResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.TransferEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (ExportAuthoritativeCopyResponse) object;
+            return (net.docusign.www.api._3_0.TransferEnvelopeResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startexportAuthoritativeCopy
-     * @param exportAuthoritativeCopy130
+     * 
+     * @see net.docusign.wsclient.APIService#starttransferEnvelope
+     * @param transferEnvelope138
      */
-    public void startexportAuthoritativeCopy(
+    public void starttransferEnvelope(
 
-    ExportAuthoritativeCopy exportAuthoritativeCopy130,
+    net.docusign.www.api._3_0.TransferEnvelope transferEnvelope138,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[30].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/ExportAuthoritativeCopy");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/TransferEnvelope");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -8240,7 +7578,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), exportAuthoritativeCopy130, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "exportAuthoritativeCopy")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), transferEnvelope138, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "transferEnvelope")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -8255,16 +7593,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), ExportAuthoritativeCopyResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultexportAuthoritativeCopy((ExportAuthoritativeCopyResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.TransferEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResulttransferEnvelope((net.docusign.www.api._3_0.TransferEnvelopeResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorexportAuthoritativeCopy(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrortransferEnvelope(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -8272,64 +7609,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorexportAuthoritativeCopy(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrortransferEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorexportAuthoritativeCopy(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrortransferEnvelope(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorexportAuthoritativeCopy(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrortransferEnvelope(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorexportAuthoritativeCopy(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrortransferEnvelope(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorexportAuthoritativeCopy(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrortransferEnvelope(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorexportAuthoritativeCopy(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrortransferEnvelope(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorexportAuthoritativeCopy(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrortransferEnvelope(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorexportAuthoritativeCopy(f);
+                                callback.receiveErrortransferEnvelope(f);
                             }
+                        } else {
+                            callback.receiveErrortransferEnvelope(f);
                         }
-                        else {
-                            callback.receiveErrorexportAuthoritativeCopy(f);
-                        }
+                    } else {
+                        callback.receiveErrortransferEnvelope(f);
                     }
-                    else {
-                        callback.receiveErrorexportAuthoritativeCopy(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorexportAuthoritativeCopy(error);
+                } else {
+                    callback.receiveErrortransferEnvelope(error);
                 }
             }
 
@@ -8341,9 +7668,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorexportAuthoritativeCopy(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrortransferEnvelope(axisFault);
                 }
             }
         });
@@ -8361,14 +7687,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#envelopeAuditEvents
-     * @param envelopeAuditEvents132
+     * 
+     * @see net.docusign.wsclient.APIService#requestSenderToken
+     * @param requestSenderToken140
      */
 
-    public EnvelopeAuditEventsResponse envelopeAuditEvents(
+    public net.docusign.www.api._3_0.RequestSenderTokenResponse requestSenderToken(
 
-    EnvelopeAuditEvents envelopeAuditEvents132)
+    net.docusign.www.api._3_0.RequestSenderToken requestSenderToken140)
 
     throws java.rmi.RemoteException
 
@@ -8376,7 +7702,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[31].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/EnvelopeAuditEvents");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestSenderToken");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -8387,7 +7713,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), envelopeAuditEvents132, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "envelopeAuditEvents")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestSenderToken140, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestSenderToken")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -8403,90 +7729,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), EnvelopeAuditEventsResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestSenderTokenResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (EnvelopeAuditEventsResponse) object;
+            return (net.docusign.www.api._3_0.RequestSenderTokenResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startenvelopeAuditEvents
-     * @param envelopeAuditEvents132
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestSenderToken
+     * @param requestSenderToken140
      */
-    public void startenvelopeAuditEvents(
+    public void startrequestSenderToken(
 
-    EnvelopeAuditEvents envelopeAuditEvents132,
+    net.docusign.www.api._3_0.RequestSenderToken requestSenderToken140,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[31].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/EnvelopeAuditEvents");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestSenderToken");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -8497,7 +7813,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), envelopeAuditEvents132, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "envelopeAuditEvents")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestSenderToken140, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestSenderToken")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -8512,16 +7828,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), EnvelopeAuditEventsResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultenvelopeAuditEvents((EnvelopeAuditEventsResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestSenderTokenResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestSenderToken((net.docusign.www.api._3_0.RequestSenderTokenResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorenvelopeAuditEvents(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestSenderToken(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -8529,64 +7844,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorenvelopeAuditEvents(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorrequestSenderToken(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorenvelopeAuditEvents(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorrequestSenderToken(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorenvelopeAuditEvents(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorrequestSenderToken(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorenvelopeAuditEvents(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorrequestSenderToken(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorenvelopeAuditEvents(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorrequestSenderToken(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorenvelopeAuditEvents(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorrequestSenderToken(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorenvelopeAuditEvents(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorrequestSenderToken(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorenvelopeAuditEvents(f);
+                                callback.receiveErrorrequestSenderToken(f);
                             }
+                        } else {
+                            callback.receiveErrorrequestSenderToken(f);
                         }
-                        else {
-                            callback.receiveErrorenvelopeAuditEvents(f);
-                        }
+                    } else {
+                        callback.receiveErrorrequestSenderToken(f);
                     }
-                    else {
-                        callback.receiveErrorenvelopeAuditEvents(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorenvelopeAuditEvents(error);
+                } else {
+                    callback.receiveErrorrequestSenderToken(error);
                 }
             }
 
@@ -8598,9 +7903,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorenvelopeAuditEvents(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestSenderToken(axisFault);
                 }
             }
         });
@@ -8618,14 +7922,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#voidEnvelope
-     * @param voidEnvelope134
+     * 
+     * @see net.docusign.wsclient.APIService#envelopeAuditEvents
+     * @param envelopeAuditEvents142
      */
 
-    public VoidEnvelopeResponse voidEnvelope(
+    public net.docusign.www.api._3_0.EnvelopeAuditEventsResponse envelopeAuditEvents(
 
-    VoidEnvelope voidEnvelope134)
+    net.docusign.www.api._3_0.EnvelopeAuditEvents envelopeAuditEvents142)
 
     throws java.rmi.RemoteException
 
@@ -8633,7 +7937,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[32].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/VoidEnvelope");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/EnvelopeAuditEvents");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -8644,7 +7948,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), voidEnvelope134, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "voidEnvelope")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), envelopeAuditEvents142, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "envelopeAuditEvents")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -8660,90 +7964,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), VoidEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.EnvelopeAuditEventsResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (VoidEnvelopeResponse) object;
+            return (net.docusign.www.api._3_0.EnvelopeAuditEventsResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startvoidEnvelope
-     * @param voidEnvelope134
+     * 
+     * @see net.docusign.wsclient.APIService#startenvelopeAuditEvents
+     * @param envelopeAuditEvents142
      */
-    public void startvoidEnvelope(
+    public void startenvelopeAuditEvents(
 
-    VoidEnvelope voidEnvelope134,
+    net.docusign.www.api._3_0.EnvelopeAuditEvents envelopeAuditEvents142,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[32].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/VoidEnvelope");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/EnvelopeAuditEvents");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -8754,7 +8048,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), voidEnvelope134, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "voidEnvelope")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), envelopeAuditEvents142, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "envelopeAuditEvents")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -8769,16 +8063,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), VoidEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultvoidEnvelope((VoidEnvelopeResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.EnvelopeAuditEventsResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultenvelopeAuditEvents((net.docusign.www.api._3_0.EnvelopeAuditEventsResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorvoidEnvelope(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorenvelopeAuditEvents(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -8786,64 +8079,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorvoidEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorenvelopeAuditEvents(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorvoidEnvelope(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorenvelopeAuditEvents(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorvoidEnvelope(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorenvelopeAuditEvents(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorvoidEnvelope(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorenvelopeAuditEvents(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorvoidEnvelope(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorenvelopeAuditEvents(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorvoidEnvelope(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorenvelopeAuditEvents(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorvoidEnvelope(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorenvelopeAuditEvents(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorvoidEnvelope(f);
+                                callback.receiveErrorenvelopeAuditEvents(f);
                             }
+                        } else {
+                            callback.receiveErrorenvelopeAuditEvents(f);
                         }
-                        else {
-                            callback.receiveErrorvoidEnvelope(f);
-                        }
+                    } else {
+                        callback.receiveErrorenvelopeAuditEvents(f);
                     }
-                    else {
-                        callback.receiveErrorvoidEnvelope(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorvoidEnvelope(error);
+                } else {
+                    callback.receiveErrorenvelopeAuditEvents(error);
                 }
             }
 
@@ -8855,9 +8138,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorvoidEnvelope(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorenvelopeAuditEvents(axisFault);
                 }
             }
         });
@@ -8875,14 +8157,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#purgeDocuments
-     * @param purgeDocuments136
+     * 
+     * @see net.docusign.wsclient.APIService#exportAuthoritativeCopy
+     * @param exportAuthoritativeCopy144
      */
 
-    public PurgeDocumentsResponse purgeDocuments(
+    public net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse exportAuthoritativeCopy(
 
-    PurgeDocuments purgeDocuments136)
+    net.docusign.www.api._3_0.ExportAuthoritativeCopy exportAuthoritativeCopy144)
 
     throws java.rmi.RemoteException
 
@@ -8890,7 +8172,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[33].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/PurgeDocuments");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/ExportAuthoritativeCopy");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -8901,7 +8183,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), purgeDocuments136, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "purgeDocuments")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), exportAuthoritativeCopy144, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "exportAuthoritativeCopy")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -8917,90 +8199,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), PurgeDocumentsResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (PurgeDocumentsResponse) object;
+            return (net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startpurgeDocuments
-     * @param purgeDocuments136
+     * 
+     * @see net.docusign.wsclient.APIService#startexportAuthoritativeCopy
+     * @param exportAuthoritativeCopy144
      */
-    public void startpurgeDocuments(
+    public void startexportAuthoritativeCopy(
 
-    PurgeDocuments purgeDocuments136,
+    net.docusign.www.api._3_0.ExportAuthoritativeCopy exportAuthoritativeCopy144,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[33].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/PurgeDocuments");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/ExportAuthoritativeCopy");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -9011,7 +8283,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), purgeDocuments136, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "purgeDocuments")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), exportAuthoritativeCopy144, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "exportAuthoritativeCopy")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -9026,16 +8298,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), PurgeDocumentsResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultpurgeDocuments((PurgeDocumentsResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultexportAuthoritativeCopy((net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorpurgeDocuments(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorexportAuthoritativeCopy(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -9043,64 +8314,54 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
-                                callback.receiveErrorpurgeDocuments(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                                callback.receiveErrorexportAuthoritativeCopy(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorpurgeDocuments(f);
-                            }
-                            catch (ClassNotFoundException e) {
+                                callback.receiveErrorexportAuthoritativeCopy(f);
+                            } catch (java.lang.ClassNotFoundException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorpurgeDocuments(f);
-                            }
-                            catch (NoSuchMethodException e) {
+                                callback.receiveErrorexportAuthoritativeCopy(f);
+                            } catch (java.lang.NoSuchMethodException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorpurgeDocuments(f);
-                            }
-                            catch (InvocationTargetException e) {
+                                callback.receiveErrorexportAuthoritativeCopy(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorpurgeDocuments(f);
-                            }
-                            catch (IllegalAccessException e) {
+                                callback.receiveErrorexportAuthoritativeCopy(f);
+                            } catch (java.lang.IllegalAccessException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorpurgeDocuments(f);
-                            }
-                            catch (InstantiationException e) {
+                                callback.receiveErrorexportAuthoritativeCopy(f);
+                            } catch (java.lang.InstantiationException e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorpurgeDocuments(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
+                                callback.receiveErrorexportAuthoritativeCopy(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
-                                callback.receiveErrorpurgeDocuments(f);
+                                callback.receiveErrorexportAuthoritativeCopy(f);
                             }
+                        } else {
+                            callback.receiveErrorexportAuthoritativeCopy(f);
                         }
-                        else {
-                            callback.receiveErrorpurgeDocuments(f);
-                        }
+                    } else {
+                        callback.receiveErrorexportAuthoritativeCopy(f);
                     }
-                    else {
-                        callback.receiveErrorpurgeDocuments(f);
-                    }
-                }
-                else {
-                    callback.receiveErrorpurgeDocuments(error);
+                } else {
+                    callback.receiveErrorexportAuthoritativeCopy(error);
                 }
             }
 
@@ -9112,9 +8373,8 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
-                    callback.receiveErrorpurgeDocuments(axisFault);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorexportAuthoritativeCopy(axisFault);
                 }
             }
         });
@@ -9132,14 +8392,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /**
      * Auto generated method signature
-     *
-     * @see net.docusign.wsclient.APIService#requestStatus
-     * @param requestStatus138
+     * 
+     * @see net.docusign.wsclient.APIService#sendEnvelope
+     * @param sendEnvelope146
      */
 
-    public RequestStatusResponse requestStatus(
+    public net.docusign.www.api._3_0.SendEnvelopeResponse sendEnvelope(
 
-    RequestStatus requestStatus138)
+    net.docusign.www.api._3_0.SendEnvelope sendEnvelope146)
 
     throws java.rmi.RemoteException
 
@@ -9147,7 +8407,7 @@ public class APIServiceStub extends Stub implements APIService {
         org.apache.axis2.context.MessageContext _messageContext = null;
         try {
             org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[34].getName());
-            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatus");
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SendEnvelope");
             _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
             addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -9158,7 +8418,7 @@ public class APIServiceStub extends Stub implements APIService {
             // create SOAP envelope with that payload
             org.apache.axiom.soap.SOAPEnvelope env = null;
 
-            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatus138, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatus")));
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), sendEnvelope146, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "sendEnvelope")));
 
             // adding SOAP soap_headers
             _serviceClient.addHeadersToEnvelope(env);
@@ -9174,90 +8434,80 @@ public class APIServiceStub extends Stub implements APIService {
             org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
             org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
 
-            Object object = fromOM(_returnEnv.getBody().getFirstElement(), RequestStatusResponse.class, getEnvelopeNamespaces(_returnEnv));
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.SendEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
 
-            return (RequestStatusResponse) object;
+            return (net.docusign.www.api._3_0.SendEnvelopeResponse) object;
 
-        }
-        catch (org.apache.axis2.AxisFault f) {
+        } catch (org.apache.axis2.AxisFault f) {
 
             org.apache.axiom.om.OMElement faultElt = f.getDetail();
             if (faultElt != null) {
                 if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                     // make the fault by reflection
                     try {
-                        String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                        Class exceptionClass = Class.forName(exceptionClassName);
-                        Exception ex = (Exception) exceptionClass.newInstance();
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                         // message class
-                        String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                        Class messageClass = Class.forName(messageClassName);
-                        Object messageObject = fromOM(faultElt, messageClass, null);
-                        Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                        m.invoke(ex, new Object[] { messageObject });
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
 
                         throw new java.rmi.RemoteException(ex.getMessage(), ex);
-                    }
-                    catch (ClassCastException e) {
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
                         // we cannot intantiate the class - throw the original
                         // Axis fault
                         throw f;
                     }
-                    catch (ClassNotFoundException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (NoSuchMethodException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InvocationTargetException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (IllegalAccessException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                    catch (InstantiationException e) {
-                        // we cannot intantiate the class - throw the original
-                        // Axis fault
-                        throw f;
-                    }
-                }
-                else {
+                } else {
                     throw f;
                 }
-            }
-            else {
+            } else {
                 throw f;
             }
-        }
-        finally {
+        } finally {
             _messageContext.getTransportOut().getSender().cleanup(_messageContext);
         }
     }
 
     /**
      * Auto generated method signature for Asynchronous Invocations
-     *
-     * @see net.docusign.wsclient.APIService#startrequestStatus
-     * @param requestStatus138
+     * 
+     * @see net.docusign.wsclient.APIService#startsendEnvelope
+     * @param sendEnvelope146
      */
-    public void startrequestStatus(
+    public void startsendEnvelope(
 
-    RequestStatus requestStatus138,
+    net.docusign.www.api._3_0.SendEnvelope sendEnvelope146,
 
     final net.docusign.wsclient.APIServiceCallbackHandler callback)
 
     throws java.rmi.RemoteException {
 
         org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[34].getName());
-        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatus");
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/SendEnvelope");
         _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
 
         addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
@@ -9268,7 +8518,7 @@ public class APIServiceStub extends Stub implements APIService {
 
         // Style is Doc.
 
-        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatus138, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatus")));
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), sendEnvelope146, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "sendEnvelope")));
 
         // adding SOAP soap_headers
         _serviceClient.addHeadersToEnvelope(env);
@@ -9283,16 +8533,15 @@ public class APIServiceStub extends Stub implements APIService {
                 try {
                     org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
 
-                    Object object = fromOM(resultEnv.getBody().getFirstElement(), RequestStatusResponse.class, getEnvelopeNamespaces(resultEnv));
-                    callback.receiveResultrequestStatus((RequestStatusResponse) object);
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.SendEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultsendEnvelope((net.docusign.www.api._3_0.SendEnvelopeResponse) object);
 
-                }
-                catch (org.apache.axis2.AxisFault e) {
-                    callback.receiveErrorrequestStatus(e);
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorsendEnvelope(e);
                 }
             }
 
-            public void onError(Exception error) {
+            public void onError(java.lang.Exception error) {
                 if (error instanceof org.apache.axis2.AxisFault) {
                     org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
                     org.apache.axiom.om.OMElement faultElt = f.getDetail();
@@ -9300,63 +8549,758 @@ public class APIServiceStub extends Stub implements APIService {
                         if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
                             // make the fault by reflection
                             try {
-                                String exceptionClassName = (String) faultExceptionClassNameMap.get(faultElt.getQName());
-                                Class exceptionClass = Class.forName(exceptionClassName);
-                                Exception ex = (Exception) exceptionClass.newInstance();
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
                                 // message class
-                                String messageClassName = (String) faultMessageMap.get(faultElt.getQName());
-                                Class messageClass = Class.forName(messageClassName);
-                                Object messageObject = fromOM(faultElt, messageClass, null);
-                                Method m = exceptionClass.getMethod("setFaultMessage", new Class[] { messageClass });
-                                m.invoke(ex, new Object[] { messageObject });
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
+
+                                callback.receiveErrorsendEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorsendEnvelope(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorsendEnvelope(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorsendEnvelope(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorsendEnvelope(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorsendEnvelope(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorsendEnvelope(f);
+                            } catch (org.apache.axis2.AxisFault e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorsendEnvelope(f);
+                            }
+                        } else {
+                            callback.receiveErrorsendEnvelope(f);
+                        }
+                    } else {
+                        callback.receiveErrorsendEnvelope(f);
+                    }
+                } else {
+                    callback.receiveErrorsendEnvelope(error);
+                }
+            }
+
+            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
+                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                onError(fault);
+            }
+
+            public void onComplete() {
+                try {
+                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorsendEnvelope(axisFault);
+                }
+            }
+        });
+
+        org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        if (_operations[34].getMessageReceiver() == null && _operationClient.getOptions().isUseSeparateListener()) {
+            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
+            _operations[34].setMessageReceiver(_callbackReceiver);
+        }
+
+        // execute the operation client
+        _operationClient.execute(false);
+
+    }
+
+    /**
+     * Auto generated method signature
+     * 
+     * @see net.docusign.wsclient.APIService#voidEnvelope
+     * @param voidEnvelope148
+     */
+
+    public net.docusign.www.api._3_0.VoidEnvelopeResponse voidEnvelope(
+
+    net.docusign.www.api._3_0.VoidEnvelope voidEnvelope148)
+
+    throws java.rmi.RemoteException
+
+    {
+        org.apache.axis2.context.MessageContext _messageContext = null;
+        try {
+            org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[35].getName());
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/VoidEnvelope");
+            _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+            addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
+
+            // create a message context
+            _messageContext = new org.apache.axis2.context.MessageContext();
+
+            // create SOAP envelope with that payload
+            org.apache.axiom.soap.SOAPEnvelope env = null;
+
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), voidEnvelope148, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "voidEnvelope")));
+
+            // adding SOAP soap_headers
+            _serviceClient.addHeadersToEnvelope(env);
+            // set the message context with that soap envelope
+            _messageContext.setEnvelope(env);
+
+            // add the message contxt to the operation client
+            _operationClient.addMessageContext(_messageContext);
+
+            // execute the operation client
+            _operationClient.execute(true);
+
+            org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+            org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
+
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.VoidEnvelopeResponse.class, getEnvelopeNamespaces(_returnEnv));
+
+            return (net.docusign.www.api._3_0.VoidEnvelopeResponse) object;
+
+        } catch (org.apache.axis2.AxisFault f) {
+
+            org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            if (faultElt != null) {
+                if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
+                    // make the fault by reflection
+                    try {
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                        // message class
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
+
+                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    }
+                } else {
+                    throw f;
+                }
+            } else {
+                throw f;
+            }
+        } finally {
+            _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+        }
+    }
+
+    /**
+     * Auto generated method signature for Asynchronous Invocations
+     * 
+     * @see net.docusign.wsclient.APIService#startvoidEnvelope
+     * @param voidEnvelope148
+     */
+    public void startvoidEnvelope(
+
+    net.docusign.www.api._3_0.VoidEnvelope voidEnvelope148,
+
+    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+
+    throws java.rmi.RemoteException {
+
+        org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[35].getName());
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/VoidEnvelope");
+        _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+        addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
+
+        // create SOAP envelope with that payload
+        org.apache.axiom.soap.SOAPEnvelope env = null;
+        final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
+
+        // Style is Doc.
+
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), voidEnvelope148, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "voidEnvelope")));
+
+        // adding SOAP soap_headers
+        _serviceClient.addHeadersToEnvelope(env);
+        // create message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message context to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
+            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
+                try {
+                    org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.VoidEnvelopeResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultvoidEnvelope((net.docusign.www.api._3_0.VoidEnvelopeResponse) object);
+
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorvoidEnvelope(e);
+                }
+            }
+
+            public void onError(java.lang.Exception error) {
+                if (error instanceof org.apache.axis2.AxisFault) {
+                    org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+                    org.apache.axiom.om.OMElement faultElt = f.getDetail();
+                    if (faultElt != null) {
+                        if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
+                            // make the fault by reflection
+                            try {
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                                // message class
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
+
+                                callback.receiveErrorvoidEnvelope(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorvoidEnvelope(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorvoidEnvelope(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorvoidEnvelope(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorvoidEnvelope(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorvoidEnvelope(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorvoidEnvelope(f);
+                            } catch (org.apache.axis2.AxisFault e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorvoidEnvelope(f);
+                            }
+                        } else {
+                            callback.receiveErrorvoidEnvelope(f);
+                        }
+                    } else {
+                        callback.receiveErrorvoidEnvelope(f);
+                    }
+                } else {
+                    callback.receiveErrorvoidEnvelope(error);
+                }
+            }
+
+            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
+                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                onError(fault);
+            }
+
+            public void onComplete() {
+                try {
+                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorvoidEnvelope(axisFault);
+                }
+            }
+        });
+
+        org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        if (_operations[35].getMessageReceiver() == null && _operationClient.getOptions().isUseSeparateListener()) {
+            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
+            _operations[35].setMessageReceiver(_callbackReceiver);
+        }
+
+        // execute the operation client
+        _operationClient.execute(false);
+
+    }
+
+    /**
+     * Auto generated method signature
+     * 
+     * @see net.docusign.wsclient.APIService#purgeDocuments
+     * @param purgeDocuments150
+     */
+
+    public net.docusign.www.api._3_0.PurgeDocumentsResponse purgeDocuments(
+
+    net.docusign.www.api._3_0.PurgeDocuments purgeDocuments150)
+
+    throws java.rmi.RemoteException
+
+    {
+        org.apache.axis2.context.MessageContext _messageContext = null;
+        try {
+            org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[36].getName());
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/PurgeDocuments");
+            _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+            addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
+
+            // create a message context
+            _messageContext = new org.apache.axis2.context.MessageContext();
+
+            // create SOAP envelope with that payload
+            org.apache.axiom.soap.SOAPEnvelope env = null;
+
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), purgeDocuments150, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "purgeDocuments")));
+
+            // adding SOAP soap_headers
+            _serviceClient.addHeadersToEnvelope(env);
+            // set the message context with that soap envelope
+            _messageContext.setEnvelope(env);
+
+            // add the message contxt to the operation client
+            _operationClient.addMessageContext(_messageContext);
+
+            // execute the operation client
+            _operationClient.execute(true);
+
+            org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+            org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
+
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.PurgeDocumentsResponse.class, getEnvelopeNamespaces(_returnEnv));
+
+            return (net.docusign.www.api._3_0.PurgeDocumentsResponse) object;
+
+        } catch (org.apache.axis2.AxisFault f) {
+
+            org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            if (faultElt != null) {
+                if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
+                    // make the fault by reflection
+                    try {
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                        // message class
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
+
+                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    }
+                } else {
+                    throw f;
+                }
+            } else {
+                throw f;
+            }
+        } finally {
+            _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+        }
+    }
+
+    /**
+     * Auto generated method signature for Asynchronous Invocations
+     * 
+     * @see net.docusign.wsclient.APIService#startpurgeDocuments
+     * @param purgeDocuments150
+     */
+    public void startpurgeDocuments(
+
+    net.docusign.www.api._3_0.PurgeDocuments purgeDocuments150,
+
+    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+
+    throws java.rmi.RemoteException {
+
+        org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[36].getName());
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/PurgeDocuments");
+        _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+        addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
+
+        // create SOAP envelope with that payload
+        org.apache.axiom.soap.SOAPEnvelope env = null;
+        final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
+
+        // Style is Doc.
+
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), purgeDocuments150, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "purgeDocuments")));
+
+        // adding SOAP soap_headers
+        _serviceClient.addHeadersToEnvelope(env);
+        // create message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message context to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
+            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
+                try {
+                    org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.PurgeDocumentsResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultpurgeDocuments((net.docusign.www.api._3_0.PurgeDocumentsResponse) object);
+
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorpurgeDocuments(e);
+                }
+            }
+
+            public void onError(java.lang.Exception error) {
+                if (error instanceof org.apache.axis2.AxisFault) {
+                    org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+                    org.apache.axiom.om.OMElement faultElt = f.getDetail();
+                    if (faultElt != null) {
+                        if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
+                            // make the fault by reflection
+                            try {
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                                // message class
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
+
+                                callback.receiveErrorpurgeDocuments(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorpurgeDocuments(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorpurgeDocuments(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorpurgeDocuments(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorpurgeDocuments(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorpurgeDocuments(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorpurgeDocuments(f);
+                            } catch (org.apache.axis2.AxisFault e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorpurgeDocuments(f);
+                            }
+                        } else {
+                            callback.receiveErrorpurgeDocuments(f);
+                        }
+                    } else {
+                        callback.receiveErrorpurgeDocuments(f);
+                    }
+                } else {
+                    callback.receiveErrorpurgeDocuments(error);
+                }
+            }
+
+            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
+                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                onError(fault);
+            }
+
+            public void onComplete() {
+                try {
+                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorpurgeDocuments(axisFault);
+                }
+            }
+        });
+
+        org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        if (_operations[36].getMessageReceiver() == null && _operationClient.getOptions().isUseSeparateListener()) {
+            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
+            _operations[36].setMessageReceiver(_callbackReceiver);
+        }
+
+        // execute the operation client
+        _operationClient.execute(false);
+
+    }
+
+    /**
+     * Auto generated method signature
+     * 
+     * @see net.docusign.wsclient.APIService#requestStatus
+     * @param requestStatus152
+     */
+
+    public net.docusign.www.api._3_0.RequestStatusResponse requestStatus(
+
+    net.docusign.www.api._3_0.RequestStatus requestStatus152)
+
+    throws java.rmi.RemoteException
+
+    {
+        org.apache.axis2.context.MessageContext _messageContext = null;
+        try {
+            org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[37].getName());
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatus");
+            _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+            addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
+
+            // create a message context
+            _messageContext = new org.apache.axis2.context.MessageContext();
+
+            // create SOAP envelope with that payload
+            org.apache.axiom.soap.SOAPEnvelope env = null;
+
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatus152, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatus")));
+
+            // adding SOAP soap_headers
+            _serviceClient.addHeadersToEnvelope(env);
+            // set the message context with that soap envelope
+            _messageContext.setEnvelope(env);
+
+            // add the message contxt to the operation client
+            _operationClient.addMessageContext(_messageContext);
+
+            // execute the operation client
+            _operationClient.execute(true);
+
+            org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+            org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
+
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestStatusResponse.class, getEnvelopeNamespaces(_returnEnv));
+
+            return (net.docusign.www.api._3_0.RequestStatusResponse) object;
+
+        } catch (org.apache.axis2.AxisFault f) {
+
+            org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            if (faultElt != null) {
+                if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
+                    // make the fault by reflection
+                    try {
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                        // message class
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
+
+                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    }
+                } else {
+                    throw f;
+                }
+            } else {
+                throw f;
+            }
+        } finally {
+            _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+        }
+    }
+
+    /**
+     * Auto generated method signature for Asynchronous Invocations
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestStatus
+     * @param requestStatus152
+     */
+    public void startrequestStatus(
+
+    net.docusign.www.api._3_0.RequestStatus requestStatus152,
+
+    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+
+    throws java.rmi.RemoteException {
+
+        org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[37].getName());
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestStatus");
+        _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+        addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
+
+        // create SOAP envelope with that payload
+        org.apache.axiom.soap.SOAPEnvelope env = null;
+        final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
+
+        // Style is Doc.
+
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestStatus152, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestStatus")));
+
+        // adding SOAP soap_headers
+        _serviceClient.addHeadersToEnvelope(env);
+        // create message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message context to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
+            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
+                try {
+                    org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestStatusResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestStatus((net.docusign.www.api._3_0.RequestStatusResponse) object);
+
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestStatus(e);
+                }
+            }
+
+            public void onError(java.lang.Exception error) {
+                if (error instanceof org.apache.axis2.AxisFault) {
+                    org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+                    org.apache.axiom.om.OMElement faultElt = f.getDetail();
+                    if (faultElt != null) {
+                        if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
+                            // make the fault by reflection
+                            try {
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                                // message class
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
 
                                 callback.receiveErrorrequestStatus(new java.rmi.RemoteException(ex.getMessage(), ex));
-                            }
-                            catch (ClassCastException e) {
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestStatus(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestStatus(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestStatus(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestStatus(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestStatus(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestStatus(f);
+                            } catch (org.apache.axis2.AxisFault e) {
                                 // we cannot intantiate the class - throw the
                                 // original Axis fault
                                 callback.receiveErrorrequestStatus(f);
                             }
-                            catch (ClassNotFoundException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestStatus(f);
-                            }
-                            catch (NoSuchMethodException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestStatus(f);
-                            }
-                            catch (InvocationTargetException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestStatus(f);
-                            }
-                            catch (IllegalAccessException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestStatus(f);
-                            }
-                            catch (InstantiationException e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestStatus(f);
-                            }
-                            catch (org.apache.axis2.AxisFault e) {
-                                // we cannot intantiate the class - throw the
-                                // original Axis fault
-                                callback.receiveErrorrequestStatus(f);
-                            }
-                        }
-                        else {
+                        } else {
                             callback.receiveErrorrequestStatus(f);
                         }
-                    }
-                    else {
+                    } else {
                         callback.receiveErrorrequestStatus(f);
                     }
-                }
-                else {
+                } else {
                     callback.receiveErrorrequestStatus(error);
                 }
             }
@@ -9369,17 +9313,251 @@ public class APIServiceStub extends Stub implements APIService {
             public void onComplete() {
                 try {
                     _messageContext.getTransportOut().getSender().cleanup(_messageContext);
-                }
-                catch (org.apache.axis2.AxisFault axisFault) {
+                } catch (org.apache.axis2.AxisFault axisFault) {
                     callback.receiveErrorrequestStatus(axisFault);
                 }
             }
         });
 
         org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
-        if (_operations[34].getMessageReceiver() == null && _operationClient.getOptions().isUseSeparateListener()) {
+        if (_operations[37].getMessageReceiver() == null && _operationClient.getOptions().isUseSeparateListener()) {
             _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
-            _operations[34].setMessageReceiver(_callbackReceiver);
+            _operations[37].setMessageReceiver(_callbackReceiver);
+        }
+
+        // execute the operation client
+        _operationClient.execute(false);
+
+    }
+
+    /**
+     * Auto generated method signature
+     * 
+     * @see net.docusign.wsclient.APIService#requestPDFNoWaterMark
+     * @param requestPDFNoWaterMark154
+     */
+
+    public net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse requestPDFNoWaterMark(
+
+    net.docusign.www.api._3_0.RequestPDFNoWaterMark requestPDFNoWaterMark154)
+
+    throws java.rmi.RemoteException
+
+    {
+        org.apache.axis2.context.MessageContext _messageContext = null;
+        try {
+            org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[38].getName());
+            _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestPDFNoWaterMark");
+            _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+            addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
+
+            // create a message context
+            _messageContext = new org.apache.axis2.context.MessageContext();
+
+            // create SOAP envelope with that payload
+            org.apache.axiom.soap.SOAPEnvelope env = null;
+
+            env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestPDFNoWaterMark154, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDFNoWaterMark")));
+
+            // adding SOAP soap_headers
+            _serviceClient.addHeadersToEnvelope(env);
+            // set the message context with that soap envelope
+            _messageContext.setEnvelope(env);
+
+            // add the message contxt to the operation client
+            _operationClient.addMessageContext(_messageContext);
+
+            // execute the operation client
+            _operationClient.execute(true);
+
+            org.apache.axis2.context.MessageContext _returnMessageContext = _operationClient.getMessageContext(org.apache.axis2.wsdl.WSDLConstants.MESSAGE_LABEL_IN_VALUE);
+            org.apache.axiom.soap.SOAPEnvelope _returnEnv = _returnMessageContext.getEnvelope();
+
+            java.lang.Object object = fromOM(_returnEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse.class, getEnvelopeNamespaces(_returnEnv));
+
+            return (net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse) object;
+
+        } catch (org.apache.axis2.AxisFault f) {
+
+            org.apache.axiom.om.OMElement faultElt = f.getDetail();
+            if (faultElt != null) {
+                if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
+                    // make the fault by reflection
+                    try {
+                        java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                        java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                        java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                        // message class
+                        java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                        java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                        java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                        java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                        m.invoke(ex, new java.lang.Object[] { messageObject });
+
+                        throw new java.rmi.RemoteException(ex.getMessage(), ex);
+                    } catch (java.lang.ClassCastException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.ClassNotFoundException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.NoSuchMethodException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.reflect.InvocationTargetException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.IllegalAccessException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    } catch (java.lang.InstantiationException e) {
+                        // we cannot intantiate the class - throw the original
+                        // Axis fault
+                        throw f;
+                    }
+                } else {
+                    throw f;
+                }
+            } else {
+                throw f;
+            }
+        } finally {
+            _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+        }
+    }
+
+    /**
+     * Auto generated method signature for Asynchronous Invocations
+     * 
+     * @see net.docusign.wsclient.APIService#startrequestPDFNoWaterMark
+     * @param requestPDFNoWaterMark154
+     */
+    public void startrequestPDFNoWaterMark(
+
+    net.docusign.www.api._3_0.RequestPDFNoWaterMark requestPDFNoWaterMark154,
+
+    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+
+    throws java.rmi.RemoteException {
+
+        org.apache.axis2.client.OperationClient _operationClient = _serviceClient.createClient(_operations[38].getName());
+        _operationClient.getOptions().setAction("http://www.docusign.net/API/3.0/RequestPDFNoWaterMark");
+        _operationClient.getOptions().setExceptionToBeThrownOnSOAPFault(true);
+
+        addPropertyToOperationClient(_operationClient, org.apache.axis2.description.WSDL2Constants.ATTR_WHTTP_QUERY_PARAMETER_SEPARATOR, "&");
+
+        // create SOAP envelope with that payload
+        org.apache.axiom.soap.SOAPEnvelope env = null;
+        final org.apache.axis2.context.MessageContext _messageContext = new org.apache.axis2.context.MessageContext();
+
+        // Style is Doc.
+
+        env = toEnvelope(getFactory(_operationClient.getOptions().getSoapVersionURI()), requestPDFNoWaterMark154, optimizeContent(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "requestPDFNoWaterMark")));
+
+        // adding SOAP soap_headers
+        _serviceClient.addHeadersToEnvelope(env);
+        // create message context with that soap envelope
+        _messageContext.setEnvelope(env);
+
+        // add the message context to the operation client
+        _operationClient.addMessageContext(_messageContext);
+
+        _operationClient.setCallback(new org.apache.axis2.client.async.AxisCallback() {
+            public void onMessage(org.apache.axis2.context.MessageContext resultContext) {
+                try {
+                    org.apache.axiom.soap.SOAPEnvelope resultEnv = resultContext.getEnvelope();
+
+                    java.lang.Object object = fromOM(resultEnv.getBody().getFirstElement(), net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse.class, getEnvelopeNamespaces(resultEnv));
+                    callback.receiveResultrequestPDFNoWaterMark((net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse) object);
+
+                } catch (org.apache.axis2.AxisFault e) {
+                    callback.receiveErrorrequestPDFNoWaterMark(e);
+                }
+            }
+
+            public void onError(java.lang.Exception error) {
+                if (error instanceof org.apache.axis2.AxisFault) {
+                    org.apache.axis2.AxisFault f = (org.apache.axis2.AxisFault) error;
+                    org.apache.axiom.om.OMElement faultElt = f.getDetail();
+                    if (faultElt != null) {
+                        if (faultExceptionNameMap.containsKey(faultElt.getQName())) {
+                            // make the fault by reflection
+                            try {
+                                java.lang.String exceptionClassName = (java.lang.String) faultExceptionClassNameMap.get(faultElt.getQName());
+                                java.lang.Class exceptionClass = java.lang.Class.forName(exceptionClassName);
+                                java.lang.Exception ex = (java.lang.Exception) exceptionClass.newInstance();
+                                // message class
+                                java.lang.String messageClassName = (java.lang.String) faultMessageMap.get(faultElt.getQName());
+                                java.lang.Class messageClass = java.lang.Class.forName(messageClassName);
+                                java.lang.Object messageObject = fromOM(faultElt, messageClass, null);
+                                java.lang.reflect.Method m = exceptionClass.getMethod("setFaultMessage", new java.lang.Class[] { messageClass });
+                                m.invoke(ex, new java.lang.Object[] { messageObject });
+
+                                callback.receiveErrorrequestPDFNoWaterMark(new java.rmi.RemoteException(ex.getMessage(), ex));
+                            } catch (java.lang.ClassCastException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestPDFNoWaterMark(f);
+                            } catch (java.lang.ClassNotFoundException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestPDFNoWaterMark(f);
+                            } catch (java.lang.NoSuchMethodException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestPDFNoWaterMark(f);
+                            } catch (java.lang.reflect.InvocationTargetException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestPDFNoWaterMark(f);
+                            } catch (java.lang.IllegalAccessException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestPDFNoWaterMark(f);
+                            } catch (java.lang.InstantiationException e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestPDFNoWaterMark(f);
+                            } catch (org.apache.axis2.AxisFault e) {
+                                // we cannot intantiate the class - throw the
+                                // original Axis fault
+                                callback.receiveErrorrequestPDFNoWaterMark(f);
+                            }
+                        } else {
+                            callback.receiveErrorrequestPDFNoWaterMark(f);
+                        }
+                    } else {
+                        callback.receiveErrorrequestPDFNoWaterMark(f);
+                    }
+                } else {
+                    callback.receiveErrorrequestPDFNoWaterMark(error);
+                }
+            }
+
+            public void onFault(org.apache.axis2.context.MessageContext faultContext) {
+                org.apache.axis2.AxisFault fault = org.apache.axis2.util.Utils.getInboundFaultFromMessageContext(faultContext);
+                onError(fault);
+            }
+
+            public void onComplete() {
+                try {
+                    _messageContext.getTransportOut().getSender().cleanup(_messageContext);
+                } catch (org.apache.axis2.AxisFault axisFault) {
+                    callback.receiveErrorrequestPDFNoWaterMark(axisFault);
+                }
+            }
+        });
+
+        org.apache.axis2.util.CallbackReceiver _callbackReceiver = null;
+        if (_operations[38].getMessageReceiver() == null && _operationClient.getOptions().isUseSeparateListener()) {
+            _callbackReceiver = new org.apache.axis2.util.CallbackReceiver();
+            _operations[38].setMessageReceiver(_callbackReceiver);
         }
 
         // execute the operation client
@@ -9400,6 +9578,8 @@ public class APIServiceStub extends Stub implements APIService {
         return returnMap;
     }
 
+    private javax.xml.namespace.QName[] opNameArray = null;
+
     private boolean optimizeContent(javax.xml.namespace.QName opName) {
 
         if (opNameArray == null) {
@@ -9414,785 +9594,794 @@ public class APIServiceStub extends Stub implements APIService {
     }
 
     // https://demo.docusign.net/api/3.0/api.asmx
-    private org.apache.axiom.om.OMElement toOM(RequestTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestTemplate.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestTemplate.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestTemplateResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestTemplateResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestTemplateResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestTemplateResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestTemplates param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestTemplates param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestTemplates.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestTemplates.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestTemplatesResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestTemplatesResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestTemplatesResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestTemplatesResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestRecipientToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestRecipientToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestRecipientToken.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestRecipientToken.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestRecipientTokenResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestRecipientTokenResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestRecipientTokenResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestRecipientTokenResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestDocumentPDFs param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestDocumentPDFs param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestDocumentPDFs.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFs.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestDocumentPDFsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestDocumentPDFsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestDocumentPDFsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestPDF param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestPDFWithCert param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestPDF.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestPDFWithCert.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestPDFResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestPDFWithCertResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestPDFResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestPDFWithCertResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetAuthenticationToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestPDF param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetAuthenticationToken.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestPDF.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetAuthenticationTokenResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestPDFResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetAuthenticationTokenResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestPDFResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(CreateEnvelopeFromTemplates param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetAuthenticationToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(CreateEnvelopeFromTemplates.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetAuthenticationToken.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(CreateEnvelopeFromTemplatesResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetAuthenticationTokenResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(CreateEnvelopeFromTemplatesResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetAuthenticationTokenResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(CreateEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.CreateEnvelopeFromTemplates param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(CreateEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.CreateEnvelopeFromTemplates.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(CreateEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(CreateEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(AcknowledgeAuthoritativeCopyExport param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.CreateEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(AcknowledgeAuthoritativeCopyExport.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.CreateEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(AcknowledgeAuthoritativeCopyExportResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.CreateEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(AcknowledgeAuthoritativeCopyExportResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.CreateEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(UploadTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(UploadTemplate.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(UploadTemplateResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(UploadTemplateResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestStatusesEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.UploadTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestStatusesEx.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.UploadTemplate.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestStatusesExResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.UploadTemplateResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestStatusesExResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.UploadTemplateResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(CreateAndSendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestStatusesEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(CreateAndSendEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestStatusesEx.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(CreateAndSendEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestStatusesExResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(CreateAndSendEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestStatusesExResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestCorrectToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetAddressBookItems.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestCorrectToken.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetAddressBookItemsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestCorrectTokenResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetAddressBookItemsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestCorrectTokenResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestStatusEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.CreateAndSendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestStatusEx.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.CreateAndSendEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestStatusExResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestStatusExResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetAccountMembershipFeaturesList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetAccountMembershipFeaturesList.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetAddressBookItems.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetAccountMembershipFeaturesListResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetAddressBookItemsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetAccountMembershipFeaturesListResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetAddressBookItemsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetRecipientList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestStatusEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetRecipientList.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestStatusEx.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetRecipientListResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestStatusExResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetRecipientListResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestStatusExResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(SynchEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetAccountMembershipFeaturesList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(SynchEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetAccountMembershipFeaturesList.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(SynchEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(SynchEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(UpdateAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetRecipientList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(UpdateAddressBookItems.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetRecipientList.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(UpdateAddressBookItemsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetRecipientListResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(UpdateAddressBookItemsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetRecipientListResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetStatusInDocuSignConnectFormat param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.SynchEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetStatusInDocuSignConnectFormat.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.SynchEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetStatusInDocuSignConnectFormatResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.SynchEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetStatusInDocuSignConnectFormatResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.SynchEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetAccountSettingsList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.UpdateAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetAccountSettingsList.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.UpdateAddressBookItems.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetAccountSettingsListResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.UpdateAddressBookItemsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetAccountSettingsListResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.UpdateAddressBookItemsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestDocumentPDFsEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestDocumentPDFsEx.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestDocumentPDFsExResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestDocumentPDFsExResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RemoveAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetAccountSettingsList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RemoveAddressBookItems.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetAccountSettingsList.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RemoveAddressBookItemsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetAccountSettingsListResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RemoveAddressBookItemsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetAccountSettingsListResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(SaveTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestDocumentPDFsEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(SaveTemplate.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFsEx.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(SaveTemplateResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestDocumentPDFsExResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(SaveTemplateResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFsExResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(Ping param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RemoveAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(Ping.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RemoveAddressBookItems.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(PingResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RemoveAddressBookItemsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(PingResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RemoveAddressBookItemsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetRecipientEsignList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.SaveTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetRecipientEsignList.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.SaveTemplate.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(GetRecipientEsignListResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.SaveTemplateResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(GetRecipientEsignListResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.SaveTemplateResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestStatuses param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.Ping param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestStatuses.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.Ping.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestStatusesResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.PingResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestStatusesResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.PingResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(CorrectAndResendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetRecipientEsignList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(CorrectAndResendEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetRecipientEsignList.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(CorrectAndResendEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.GetRecipientEsignListResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(CorrectAndResendEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.GetRecipientEsignListResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestDocumentPDFsRecipientsView param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestStatuses param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestDocumentPDFsRecipientsView.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestStatuses.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestDocumentPDFsRecipientsViewResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestStatusesResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestDocumentPDFsRecipientsViewResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestStatusesResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(TransferEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.CorrectAndResendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(TransferEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.CorrectAndResendEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(TransferEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(TransferEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestSenderToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestSenderToken.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestSenderTokenResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestSenderTokenResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(ExportAuthoritativeCopy param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.TransferEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(ExportAuthoritativeCopy.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.TransferEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(ExportAuthoritativeCopyResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.TransferEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(ExportAuthoritativeCopyResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+            return param.getOMElement(net.docusign.www.api._3_0.TransferEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(EnvelopeAuditEvents param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestSenderToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(EnvelopeAuditEvents.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+            return param.getOMElement(net.docusign.www.api._3_0.RequestSenderToken.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestSenderTokenResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestSenderTokenResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(EnvelopeAuditEventsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.EnvelopeAuditEvents param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(EnvelopeAuditEventsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+            return param.getOMElement(net.docusign.www.api._3_0.EnvelopeAuditEvents.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.EnvelopeAuditEventsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(net.docusign.www.api._3_0.EnvelopeAuditEventsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(VoidEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.ExportAuthoritativeCopy param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(VoidEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+            return param.getOMElement(net.docusign.www.api._3_0.ExportAuthoritativeCopy.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(VoidEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.SendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(VoidEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+            return param.getOMElement(net.docusign.www.api._3_0.SendEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.SendEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(net.docusign.www.api._3_0.SendEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(PurgeDocuments param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.VoidEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(PurgeDocuments.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+            return param.getOMElement(net.docusign.www.api._3_0.VoidEnvelope.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.VoidEnvelopeResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(net.docusign.www.api._3_0.VoidEnvelopeResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(PurgeDocumentsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.PurgeDocuments param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(PurgeDocumentsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+            return param.getOMElement(net.docusign.www.api._3_0.PurgeDocuments.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.PurgeDocumentsResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(net.docusign.www.api._3_0.PurgeDocumentsResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestStatus param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestStatus param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestStatus.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+            return param.getOMElement(net.docusign.www.api._3_0.RequestStatus.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestStatusResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestStatusResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.om.OMElement toOM(RequestStatusResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestPDFNoWaterMark param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
-            return param.getOMElement(RequestStatusResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+            return param.getOMElement(net.docusign.www.api._3_0.RequestPDFNoWaterMark.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    private org.apache.axiom.om.OMElement toOM(net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+            return param.getOMElement(net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse.MY_QNAME, org.apache.axiom.om.OMAbstractFactory.getOMFactory());
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
     }
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestTemplate.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestTemplate.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10200,15 +10389,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestTemplates param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestTemplates param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestTemplates.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestTemplates.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10216,15 +10404,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestRecipientToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestRecipientToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestRecipientToken.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestRecipientToken.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10232,15 +10419,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestDocumentPDFs param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestDocumentPDFs param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestDocumentPDFs.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFs.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10248,15 +10434,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestPDF param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestPDFWithCert param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestPDF.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestPDFWithCert.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10264,15 +10449,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, GetAuthenticationToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestPDF param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(GetAuthenticationToken.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestPDF.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10280,15 +10464,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, CreateEnvelopeFromTemplates param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.GetAuthenticationToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(CreateEnvelopeFromTemplates.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.GetAuthenticationToken.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10296,15 +10479,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, CreateEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.CreateEnvelopeFromTemplates param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(CreateEnvelope.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.CreateEnvelopeFromTemplates.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10312,15 +10494,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, AcknowledgeAuthoritativeCopyExport param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.CreateEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(AcknowledgeAuthoritativeCopyExport.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.CreateEnvelope.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10328,15 +10509,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, UploadTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(UploadTemplate.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10344,15 +10524,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestStatusesEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.UploadTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestStatusesEx.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.UploadTemplate.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10360,15 +10539,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, CreateAndSendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestStatusesEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(CreateAndSendEnvelope.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestStatusesEx.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10376,15 +10554,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, GetAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestCorrectToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(GetAddressBookItems.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestCorrectToken.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10392,15 +10569,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestStatusEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.CreateAndSendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestStatusEx.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.CreateAndSendEnvelope.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10408,15 +10584,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, GetAccountMembershipFeaturesList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.GetAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(GetAccountMembershipFeaturesList.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.GetAddressBookItems.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10424,15 +10599,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, GetRecipientList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestStatusEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(GetRecipientList.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestStatusEx.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10440,15 +10614,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, SynchEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.GetAccountMembershipFeaturesList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(SynchEnvelope.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.GetAccountMembershipFeaturesList.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10456,15 +10629,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, UpdateAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.GetRecipientList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(UpdateAddressBookItems.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.GetRecipientList.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10472,15 +10644,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, GetStatusInDocuSignConnectFormat param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.SynchEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(GetStatusInDocuSignConnectFormat.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.SynchEnvelope.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10488,15 +10659,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, GetAccountSettingsList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.UpdateAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(GetAccountSettingsList.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.UpdateAddressBookItems.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10504,15 +10674,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestDocumentPDFsEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestDocumentPDFsEx.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10520,15 +10689,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RemoveAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.GetAccountSettingsList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RemoveAddressBookItems.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.GetAccountSettingsList.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10536,15 +10704,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, SaveTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestDocumentPDFsEx param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(SaveTemplate.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFsEx.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10552,15 +10719,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, Ping param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RemoveAddressBookItems param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(Ping.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RemoveAddressBookItems.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10568,15 +10734,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, GetRecipientEsignList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.SaveTemplate param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(GetRecipientEsignList.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.SaveTemplate.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10584,15 +10749,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestStatuses param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.Ping param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestStatuses.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.Ping.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10600,15 +10764,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, CorrectAndResendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.GetRecipientEsignList param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(CorrectAndResendEnvelope.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.GetRecipientEsignList.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10616,15 +10779,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestDocumentPDFsRecipientsView param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestStatuses param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestDocumentPDFsRecipientsView.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestStatuses.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10632,15 +10794,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, TransferEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.CorrectAndResendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(TransferEnvelope.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.CorrectAndResendEnvelope.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10648,15 +10809,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestSenderToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestSenderToken.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10664,15 +10824,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, ExportAuthoritativeCopy param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.TransferEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(ExportAuthoritativeCopy.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.TransferEnvelope.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10680,15 +10839,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, EnvelopeAuditEvents param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestSenderToken param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(EnvelopeAuditEvents.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestSenderToken.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10696,15 +10854,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, VoidEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.EnvelopeAuditEvents param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(VoidEnvelope.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.EnvelopeAuditEvents.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10712,15 +10869,14 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, PurgeDocuments param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.ExportAuthoritativeCopy param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(PurgeDocuments.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.ExportAuthoritativeCopy.MY_QNAME, factory));
             return emptyEnvelope;
-        }
-        catch (org.apache.axis2.databinding.ADBException e) {
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10728,15 +10884,74 @@ public class APIServiceStub extends Stub implements APIService {
 
     /* methods to provide back word compatibility */
 
-    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, RequestStatus param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.SendEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
 
         try {
 
             org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
-            emptyEnvelope.getBody().addChild(param.getOMElement(RequestStatus.MY_QNAME, factory));
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.SendEnvelope.MY_QNAME, factory));
             return emptyEnvelope;
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
         }
-        catch (org.apache.axis2.databinding.ADBException e) {
+
+    }
+
+    /* methods to provide back word compatibility */
+
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.VoidEnvelope param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.VoidEnvelope.MY_QNAME, factory));
+            return emptyEnvelope;
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    /* methods to provide back word compatibility */
+
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.PurgeDocuments param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.PurgeDocuments.MY_QNAME, factory));
+            return emptyEnvelope;
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    /* methods to provide back word compatibility */
+
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestStatus param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestStatus.MY_QNAME, factory));
+            return emptyEnvelope;
+        } catch (org.apache.axis2.databinding.ADBException e) {
+            throw org.apache.axis2.AxisFault.makeFault(e);
+        }
+
+    }
+
+    /* methods to provide back word compatibility */
+
+    private org.apache.axiom.soap.SOAPEnvelope toEnvelope(org.apache.axiom.soap.SOAPFactory factory, net.docusign.www.api._3_0.RequestPDFNoWaterMark param, boolean optimizeContent) throws org.apache.axis2.AxisFault {
+
+        try {
+
+            org.apache.axiom.soap.SOAPEnvelope emptyEnvelope = factory.getDefaultEnvelope();
+            emptyEnvelope.getBody().addChild(param.getOMElement(net.docusign.www.api._3_0.RequestPDFNoWaterMark.MY_QNAME, factory));
+            return emptyEnvelope;
+        } catch (org.apache.axis2.databinding.ADBException e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
 
@@ -10751,434 +10966,482 @@ public class APIServiceStub extends Stub implements APIService {
         return factory.getDefaultEnvelope();
     }
 
-    private Object fromOM(org.apache.axiom.om.OMElement param, Class type, java.util.Map extraNamespaces) throws org.apache.axis2.AxisFault {
+    private java.lang.Object fromOM(org.apache.axiom.om.OMElement param, java.lang.Class type, java.util.Map extraNamespaces) throws org.apache.axis2.AxisFault {
 
         try {
 
-            if (RequestTemplate.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestTemplate.class.equals(type)) {
 
-                return RequestTemplate.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestTemplate.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestTemplateResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestTemplateResponse.class.equals(type)) {
 
-                return RequestTemplateResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestTemplateResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestTemplates.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestTemplates.class.equals(type)) {
 
-                return RequestTemplates.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestTemplates.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestTemplatesResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestTemplatesResponse.class.equals(type)) {
 
-                return RequestTemplatesResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestTemplatesResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestRecipientToken.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestRecipientToken.class.equals(type)) {
 
-                return RequestRecipientToken.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestRecipientToken.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestRecipientTokenResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestRecipientTokenResponse.class.equals(type)) {
 
-                return RequestRecipientTokenResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestRecipientTokenResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestDocumentPDFs.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestDocumentPDFs.class.equals(type)) {
 
-                return RequestDocumentPDFs.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestDocumentPDFs.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestDocumentPDFsResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestDocumentPDFsResponse.class.equals(type)) {
 
-                return RequestDocumentPDFsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestDocumentPDFsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestPDF.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestPDFWithCert.class.equals(type)) {
 
-                return RequestPDF.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestPDFWithCert.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestPDFResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestPDFWithCertResponse.class.equals(type)) {
 
-                return RequestPDFResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestPDFWithCertResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetAuthenticationToken.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestPDF.class.equals(type)) {
 
-                return GetAuthenticationToken.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestPDF.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetAuthenticationTokenResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestPDFResponse.class.equals(type)) {
 
-                return GetAuthenticationTokenResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestPDFResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (CreateEnvelopeFromTemplates.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetAuthenticationToken.class.equals(type)) {
 
-                return CreateEnvelopeFromTemplates.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetAuthenticationToken.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (CreateEnvelopeFromTemplatesResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetAuthenticationTokenResponse.class.equals(type)) {
 
-                return CreateEnvelopeFromTemplatesResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetAuthenticationTokenResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (CreateEnvelope.class.equals(type)) {
+            if (net.docusign.www.api._3_0.CreateEnvelopeFromTemplates.class.equals(type)) {
 
-                return CreateEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.CreateEnvelopeFromTemplates.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (CreateEnvelopeResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse.class.equals(type)) {
 
-                return CreateEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (AcknowledgeAuthoritativeCopyExport.class.equals(type)) {
+            if (net.docusign.www.api._3_0.CreateEnvelope.class.equals(type)) {
 
-                return AcknowledgeAuthoritativeCopyExport.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.CreateEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (AcknowledgeAuthoritativeCopyExportResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.CreateEnvelopeResponse.class.equals(type)) {
 
-                return AcknowledgeAuthoritativeCopyExportResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.CreateEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (UploadTemplate.class.equals(type)) {
+            if (net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport.class.equals(type)) {
 
-                return UploadTemplate.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (UploadTemplateResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse.class.equals(type)) {
 
-                return UploadTemplateResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestStatusesEx.class.equals(type)) {
+            if (net.docusign.www.api._3_0.UploadTemplate.class.equals(type)) {
 
-                return RequestStatusesEx.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.UploadTemplate.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestStatusesExResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.UploadTemplateResponse.class.equals(type)) {
 
-                return RequestStatusesExResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.UploadTemplateResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (CreateAndSendEnvelope.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestStatusesEx.class.equals(type)) {
 
-                return CreateAndSendEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestStatusesEx.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (CreateAndSendEnvelopeResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestStatusesExResponse.class.equals(type)) {
 
-                return CreateAndSendEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestStatusesExResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetAddressBookItems.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestCorrectToken.class.equals(type)) {
 
-                return GetAddressBookItems.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestCorrectToken.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetAddressBookItemsResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestCorrectTokenResponse.class.equals(type)) {
 
-                return GetAddressBookItemsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestCorrectTokenResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestStatusEx.class.equals(type)) {
+            if (net.docusign.www.api._3_0.CreateAndSendEnvelope.class.equals(type)) {
 
-                return RequestStatusEx.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.CreateAndSendEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestStatusExResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse.class.equals(type)) {
 
-                return RequestStatusExResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetAccountMembershipFeaturesList.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetAddressBookItems.class.equals(type)) {
 
-                return GetAccountMembershipFeaturesList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetAddressBookItems.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetAccountMembershipFeaturesListResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetAddressBookItemsResponse.class.equals(type)) {
 
-                return GetAccountMembershipFeaturesListResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetAddressBookItemsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetRecipientList.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestStatusEx.class.equals(type)) {
 
-                return GetRecipientList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestStatusEx.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetRecipientListResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestStatusExResponse.class.equals(type)) {
 
-                return GetRecipientListResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestStatusExResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (SynchEnvelope.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetAccountMembershipFeaturesList.class.equals(type)) {
 
-                return SynchEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetAccountMembershipFeaturesList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (SynchEnvelopeResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse.class.equals(type)) {
 
-                return SynchEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (UpdateAddressBookItems.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetRecipientList.class.equals(type)) {
 
-                return UpdateAddressBookItems.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetRecipientList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (UpdateAddressBookItemsResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetRecipientListResponse.class.equals(type)) {
 
-                return UpdateAddressBookItemsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetRecipientListResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetStatusInDocuSignConnectFormat.class.equals(type)) {
+            if (net.docusign.www.api._3_0.SynchEnvelope.class.equals(type)) {
 
-                return GetStatusInDocuSignConnectFormat.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.SynchEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetStatusInDocuSignConnectFormatResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.SynchEnvelopeResponse.class.equals(type)) {
 
-                return GetStatusInDocuSignConnectFormatResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.SynchEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetAccountSettingsList.class.equals(type)) {
+            if (net.docusign.www.api._3_0.UpdateAddressBookItems.class.equals(type)) {
 
-                return GetAccountSettingsList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.UpdateAddressBookItems.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetAccountSettingsListResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.UpdateAddressBookItemsResponse.class.equals(type)) {
 
-                return GetAccountSettingsListResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.UpdateAddressBookItemsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestDocumentPDFsEx.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat.class.equals(type)) {
 
-                return RequestDocumentPDFsEx.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestDocumentPDFsExResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse.class.equals(type)) {
 
-                return RequestDocumentPDFsExResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RemoveAddressBookItems.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetAccountSettingsList.class.equals(type)) {
 
-                return RemoveAddressBookItems.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetAccountSettingsList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RemoveAddressBookItemsResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetAccountSettingsListResponse.class.equals(type)) {
 
-                return RemoveAddressBookItemsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetAccountSettingsListResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (SaveTemplate.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestDocumentPDFsEx.class.equals(type)) {
 
-                return SaveTemplate.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestDocumentPDFsEx.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (SaveTemplateResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestDocumentPDFsExResponse.class.equals(type)) {
 
-                return SaveTemplateResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestDocumentPDFsExResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (Ping.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RemoveAddressBookItems.class.equals(type)) {
 
-                return Ping.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RemoveAddressBookItems.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (PingResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RemoveAddressBookItemsResponse.class.equals(type)) {
 
-                return PingResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RemoveAddressBookItemsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetRecipientEsignList.class.equals(type)) {
+            if (net.docusign.www.api._3_0.SaveTemplate.class.equals(type)) {
 
-                return GetRecipientEsignList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.SaveTemplate.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (GetRecipientEsignListResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.SaveTemplateResponse.class.equals(type)) {
 
-                return GetRecipientEsignListResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.SaveTemplateResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestStatuses.class.equals(type)) {
+            if (net.docusign.www.api._3_0.Ping.class.equals(type)) {
 
-                return RequestStatuses.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.Ping.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestStatusesResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.PingResponse.class.equals(type)) {
 
-                return RequestStatusesResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.PingResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (CorrectAndResendEnvelope.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetRecipientEsignList.class.equals(type)) {
 
-                return CorrectAndResendEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetRecipientEsignList.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (CorrectAndResendEnvelopeResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.GetRecipientEsignListResponse.class.equals(type)) {
 
-                return CorrectAndResendEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.GetRecipientEsignListResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestDocumentPDFsRecipientsView.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestStatuses.class.equals(type)) {
 
-                return RequestDocumentPDFsRecipientsView.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestStatuses.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestDocumentPDFsRecipientsViewResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestStatusesResponse.class.equals(type)) {
 
-                return RequestDocumentPDFsRecipientsViewResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestStatusesResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (TransferEnvelope.class.equals(type)) {
+            if (net.docusign.www.api._3_0.CorrectAndResendEnvelope.class.equals(type)) {
 
-                return TransferEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.CorrectAndResendEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (TransferEnvelopeResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse.class.equals(type)) {
 
-                return TransferEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestSenderToken.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView.class.equals(type)) {
 
-                return RequestSenderToken.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestSenderTokenResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse.class.equals(type)) {
 
-                return RequestSenderTokenResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (ExportAuthoritativeCopy.class.equals(type)) {
+            if (net.docusign.www.api._3_0.TransferEnvelope.class.equals(type)) {
 
-                return ExportAuthoritativeCopy.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.TransferEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (ExportAuthoritativeCopyResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.TransferEnvelopeResponse.class.equals(type)) {
 
-                return ExportAuthoritativeCopyResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.TransferEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (EnvelopeAuditEvents.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestSenderToken.class.equals(type)) {
 
-                return EnvelopeAuditEvents.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestSenderToken.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (EnvelopeAuditEventsResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.RequestSenderTokenResponse.class.equals(type)) {
 
-                return EnvelopeAuditEventsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.RequestSenderTokenResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (VoidEnvelope.class.equals(type)) {
+            if (net.docusign.www.api._3_0.EnvelopeAuditEvents.class.equals(type)) {
 
-                return VoidEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.EnvelopeAuditEvents.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (VoidEnvelopeResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.EnvelopeAuditEventsResponse.class.equals(type)) {
 
-                return VoidEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.EnvelopeAuditEventsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (PurgeDocuments.class.equals(type)) {
+            if (net.docusign.www.api._3_0.ExportAuthoritativeCopy.class.equals(type)) {
 
-                return PurgeDocuments.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.ExportAuthoritativeCopy.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (PurgeDocumentsResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse.class.equals(type)) {
 
-                return PurgeDocumentsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestStatus.class.equals(type)) {
+            if (net.docusign.www.api._3_0.SendEnvelope.class.equals(type)) {
 
-                return RequestStatus.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.SendEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-            if (RequestStatusResponse.class.equals(type)) {
+            if (net.docusign.www.api._3_0.SendEnvelopeResponse.class.equals(type)) {
 
-                return RequestStatusResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+                return net.docusign.www.api._3_0.SendEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
 
             }
 
-        }
-        catch (Exception e) {
+            if (net.docusign.www.api._3_0.VoidEnvelope.class.equals(type)) {
+
+                return net.docusign.www.api._3_0.VoidEnvelope.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (net.docusign.www.api._3_0.VoidEnvelopeResponse.class.equals(type)) {
+
+                return net.docusign.www.api._3_0.VoidEnvelopeResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (net.docusign.www.api._3_0.PurgeDocuments.class.equals(type)) {
+
+                return net.docusign.www.api._3_0.PurgeDocuments.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (net.docusign.www.api._3_0.PurgeDocumentsResponse.class.equals(type)) {
+
+                return net.docusign.www.api._3_0.PurgeDocumentsResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (net.docusign.www.api._3_0.RequestStatus.class.equals(type)) {
+
+                return net.docusign.www.api._3_0.RequestStatus.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (net.docusign.www.api._3_0.RequestStatusResponse.class.equals(type)) {
+
+                return net.docusign.www.api._3_0.RequestStatusResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (net.docusign.www.api._3_0.RequestPDFNoWaterMark.class.equals(type)) {
+
+                return net.docusign.www.api._3_0.RequestPDFNoWaterMark.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+            if (net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse.class.equals(type)) {
+
+                return net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse.Factory.parse(param.getXMLStreamReaderWithoutCaching());
+
+            }
+
+        } catch (java.lang.Exception e) {
             throw org.apache.axis2.AxisFault.makeFault(e);
         }
         return null;
     }
+
 }

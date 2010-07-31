@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.www.api._3_0;
 
 /**
@@ -46,7 +46,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getAccountEsignId() {
@@ -55,7 +55,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AccountEsignId
      */
@@ -64,8 +64,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
         if (param != null) {
             // update the setting tracker
             localAccountEsignIdTracker = true;
-        }
-        else {
+        } else {
             localAccountEsignIdTracker = false;
 
         }
@@ -89,7 +88,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.lang.String
      */
     public java.lang.String getUserEsignId() {
@@ -98,7 +97,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            UserEsignId
      */
@@ -107,8 +106,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
         if (param != null) {
             // update the setting tracker
             localUserEsignIdTracker = true;
-        }
-        else {
+        } else {
             localUserEsignIdTracker = false;
 
         }
@@ -125,7 +123,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
     /**
      * Auto generated getter method
-     *
+     * 
      * @return java.util.Calendar
      */
     public java.util.Calendar getAgreementDate() {
@@ -134,7 +132,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
     /**
      * Auto generated setter method
-     *
+     * 
      * @param param
      *            AgreementDate
      */
@@ -146,7 +144,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
     /**
      * isReaderMTOMAware
-     *
+     * 
      * @return true if the reader supports MTOM
      */
     public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
@@ -154,15 +152,14 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
         try {
             isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        }
-        catch (java.lang.IllegalArgumentException e) {
+        } catch (java.lang.IllegalArgumentException e) {
             isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
     }
 
     /**
-     *
+     * 
      * @param parentQName
      * @param factory
      * @return org.apache.axiom.om.OMElement
@@ -195,8 +192,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
             java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
             if (writerPrefix != null) {
                 xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            }
-            else {
+            } else {
                 if (prefix == null) {
                     prefix = generatePrefix(namespace);
                 }
@@ -205,8 +201,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
             }
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement(parentQName.getLocalPart());
         }
 
@@ -215,8 +210,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
             java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
             if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":RecipientStatusEsignAgreementInformation", xmlWriter);
-            }
-            else {
+            } else {
                 writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "RecipientStatusEsignAgreementInformation", xmlWriter);
             }
 
@@ -233,13 +227,11 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "AccountEsignId");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("AccountEsignId");
             }
 
@@ -248,8 +240,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
                 throw new org.apache.axis2.databinding.ADBException("AccountEsignId cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localAccountEsignId);
 
@@ -269,13 +260,11 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
                     xmlWriter.writeNamespace(prefix, namespace);
                     xmlWriter.setPrefix(prefix, namespace);
 
-                }
-                else {
+                } else {
                     xmlWriter.writeStartElement(namespace, "UserEsignId");
                 }
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement("UserEsignId");
             }
 
@@ -284,8 +273,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
                 throw new org.apache.axis2.databinding.ADBException("UserEsignId cannot be null!!");
 
-            }
-            else {
+            } else {
 
                 xmlWriter.writeCharacters(localUserEsignId);
 
@@ -304,13 +292,11 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
                 xmlWriter.writeNamespace(prefix, namespace);
                 xmlWriter.setPrefix(prefix, namespace);
 
-            }
-            else {
+            } else {
                 xmlWriter.writeStartElement(namespace, "AgreementDate");
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeStartElement("AgreementDate");
         }
 
@@ -319,8 +305,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
             throw new org.apache.axis2.databinding.ADBException("AgreementDate cannot be null!!");
 
-        }
-        else {
+        } else {
 
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAgreementDate));
 
@@ -352,8 +337,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
     private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attValue);
         }
@@ -372,15 +356,13 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
         java.lang.String attributeValue;
         if (attributePrefix.trim().length() > 0) {
             attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        }
-        else {
+        } else {
             attributeValue = qname.getLocalPart();
         }
 
         if (namespace.equals("")) {
             xmlWriter.writeAttribute(attName, attributeValue);
-        }
-        else {
+        } else {
             registerPrefix(xmlWriter, namespace);
             xmlWriter.writeAttribute(namespace, attName, attributeValue);
         }
@@ -402,14 +384,12 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
             if (prefix.trim().length() > 0) {
                 xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            }
-            else {
+            } else {
                 // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
 
-        }
-        else {
+        } else {
             xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
     }
@@ -439,12 +419,10 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
                     if (prefix.trim().length() > 0) {
                         stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
-                    }
-                    else {
+                    } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                }
-                else {
+                } else {
                     stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
             }
@@ -475,7 +453,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
     /**
      * databinding method to get an XML representation of this object
-     *
+     * 
      */
     public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
 
@@ -487,8 +465,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
             if (localAccountEsignId != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAccountEsignId));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("AccountEsignId cannot be null!!");
             }
         }
@@ -497,8 +474,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
             if (localUserEsignId != null) {
                 elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localUserEsignId));
-            }
-            else {
+            } else {
                 throw new org.apache.axis2.databinding.ADBException("UserEsignId cannot be null!!");
             }
         }
@@ -506,8 +482,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
 
         if (localAgreementDate != null) {
             elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localAgreementDate));
-        }
-        else {
+        } else {
             throw new org.apache.axis2.databinding.ADBException("AgreementDate cannot be null!!");
         }
 
@@ -631,8 +606,7 @@ public class RecipientStatusEsignAgreementInformation implements org.apache.axis
                     // invalid property
                     throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
-            }
-            catch (javax.xml.stream.XMLStreamException e) {
+            } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
             }
 

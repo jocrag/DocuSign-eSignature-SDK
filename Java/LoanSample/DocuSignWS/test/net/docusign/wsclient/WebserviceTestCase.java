@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
-*/
+ */
 package net.docusign.wsclient;
 
 import junit.framework.TestCase;
@@ -18,20 +18,20 @@ import junit.framework.TestCase;
 import org.apache.axis2.AxisFault;
 
 public class WebserviceTestCase extends TestCase {
-	protected APIServiceStub wsApi;
+    protected APIServiceStub wsApi;
 
-	@Override
-	protected void setUp() throws Exception {
-		//Reads accountId, username, and password for Docusign webservice.
-	    ClientConfiguration.getInstance();
+    @Override
+    protected void setUp() throws Exception {
+        // Reads accountId, username, and password for Docusign webservice.
+        ClientConfiguration.getInstance();
 
-	    try {
-			wsApi = new APIServiceStub();
-			wsApi.init(new UsernameTokenConfiguration(WebserviceCredentials.getInstance()).configureService(), WebserviceCredentials.getInstance().getWebserviceEndpoint());
-		} catch (AxisFault e) {
-			fail(e.getMessage());
-		}
+        try {
+            wsApi = new APIServiceStub();
+            wsApi.init(new UsernameTokenConfiguration(WebserviceCredentials.getInstance()).configureService(), WebserviceCredentials.getInstance().getWebserviceEndpoint());
+        } catch (AxisFault e) {
+            fail(e.getMessage());
+        }
 
-		assertNotNull(wsApi);
-	}
+        assertNotNull(wsApi);
+    }
 }
