@@ -48,7 +48,9 @@ public class DocusignDeferredSigningServiceImpl extends AuthenticatedDocusignSer
 	    //Setup envelope details
 		Envelope envelope = model.getEnvelope();
 		envelope.setEnvelopeIdStamping(true);
-
+        envelope.setSubject(model.getSignEmailSubject());
+        envelope.setEmailBlurb(model.getSignEmailBlurb());
+    
 		log.info(LogUtil.logEnvelopeAccountId(envelope.getAccountId()));
 		
 		//Make sure envelope recipients are not present by clearing.
