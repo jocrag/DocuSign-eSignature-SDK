@@ -42,6 +42,7 @@ You will need to apply here http://www.docusign.com/devcenter in order to get a 
  
 System requirements for Microsoft .NET samples:
 -	Visual Studio 2008+ (with applicable system requirements)
+-	NUnit 2.5.7+ (from http://www.nunit.org/?p=download)
  
 System requirements for Java samples:
 -	Java Development Kit 1.6
