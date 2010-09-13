@@ -6,8 +6,10 @@ System requirements for PHP samples:
 
 OverView:
 
-This project is an example of using the DocuSign webservice client in a web application. 
-This example demonstrates the following:
+This project an example of using the DocuSign webservice / DocuSign Credential webservice
+in a web application. This example demonstrates the following:
+•	account login
+•	template retrieving / saving
 •	envelope creation / sending
 •	signing / sending envelopes via DocuSign web interface
 •	confirmation of sign status
