@@ -8,11 +8,11 @@ Before getting started you need to get a free Salesforce.com developer account a
 1. Start out by adding DocuSign webservices to your authorized endpoints for your Salesforce.com developer account.  To do this, go to Setup > Security > Remote Sites and add https://demo.docusign.net/api/3.0/dsapi.asmx. 
 2. Next, set up a Salesforce.com site so you can test rendering pages.  There is plenty of documentation on how to get started with VisualForce, so we will leave it up to Salesforce.com to explain the best options there.  For the purpose of this walkthrough you just need to have a site for testing.  You can get to the screen below by clicking Setup > Develop > Sites. 
 
-<img src="./Readme_files/image001.png">
+see Readme_files/image001.png
 
 From there you can create a site label.  Once the site is created all you need to do is make it active.
 
-
+see Readme_files/image002.jpg
 
 3. Now we need to create two pages; one for rendering a contract as a PDF and another that makes a web service call to DocuSign.  We will start with the rendering page that we will call RenderContract (Note: the second page is set up in step 8).  The code for the rendering page is fairly minimal.  As you can see below, it just uses the standard Contract controller class and we are just rendering standard contract details with a couple of signature lines.
 
@@ -30,15 +30,15 @@ From there you can create a site label.  Once the site is created all you need t
 
 The page needs to be added to the site to ensure that you can access it for testing.  You can accomplish that by going to the site detail and selecting Site VisualForce Pages.
 
-
+see Readme_files/image003.png
 
 The other setting that has to be adjusted for testing is adding Contracts as something that is accessible from this site.  To accomplish this go to Public Access Settings and edit the standard object permission. 
 
-
+see Readme_files/image004.png
 
 4. In order to test the first page and other code in our sample, we will create a test Contract.  For simplicity we are going to put a contact in the Customer Signed By field.
 
-
+see Readme_files/image005.png
 
 At this point in time we have all the test data we need.  You can note the Contract object ID in the URL 
 https://na7.salesforce.com/800A0000000Q8ol 
@@ -205,6 +205,9 @@ In the properties, select Detail Page Button and then add the URL with the Contr
 
 Add the button to the page layout for the Contract object.  This lets your users click on the button to get their Contracts electronically signed!  They don’t need to learn any other systems or follow complicated steps.  The logic behind the button does all the work.
 
+see Readme_files/image006.png
+
+For a nice formatted version of this document see Readme_files/Readme.pdf
 
 
 
