@@ -1,0 +1,701 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Code, li.Code, div.Code
+	{mso-style-name:Code;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Courier New";}
+span.fieldprompttextbold
+	{mso-style-name:fieldprompttextbold;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Calibri","sans-serif";
+	color:#345A8A;
+	font-weight:bold;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma","sans-serif";}
+p.Indent, li.Indent, div.Indent
+	{mso-style-name:Indent;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Cambria","serif";}
+p.Apex, li.Apex, div.Apex
+	{mso-style-name:Apex;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	font-size:9.0pt;
+	font-family:"Courier New";}
+.MsoChpDefault
+	{font-size:12.0pt;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<h1>README: Accessing DocuSign API from Salesforce.com to send Contracts for
+eSignatures.</h1>
+
+<p class=MsoNormal align=right style='text-align:right'>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>This readme provides a step-by-step example explaining how
+to set up a DocuSign ApexCode sample in your Salesforce.com account to send an
+object with a single click of a button.  When you are done with this walkthrough
+you will be able to send a Salesforce.com Contract object for signing with just
+one button click. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Before getting started you need to get a free Salesforce.com
+developer account at <a href="https://developer.force.com">https://developer.force.com</a>
+and a free DocuSign developer account at <a
+href="http://www.docusign.com/devcenter">www.docusign.com/devcenter</a>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:.25in;text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Start out
+by adding DocuSign webservices to your authorized endpoints for your
+Salesforce.com developer account.  To do this, go to Setup &gt; Security &gt;
+Remote Sites and add <a href="https://demo.docusign.net/api/3.0/dsapi.asmx">https://demo.docusign.net/api/3.0/dsapi.asmx</a>.
+</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-left:.25in;text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Next, set
+up a Salesforce.com site so you can test rendering pages.  There is plenty of
+documentation on how to get started with VisualForce, so we will leave it up to
+Salesforce.com to explain the best options there.  For the purpose of this walkthrough
+you just need to have a site for testing.  You can get to the screen below by
+clicking Setup &gt; Develop &gt; Sites. </p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=577 height=235 id="Picture 2"
+src="Readme_files/image001.png"></p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>From there you can create a site label.  Once the site is
+created all you need to do is make it active.</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=576 height=304 id="Picture 3"
+src="Readme_files/image002.jpg"
+alt="Macintosh HD:private:tmp:Site Detail ~ salesforce.com - Developer Edition.jpg"></p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Now we
+need to create two pages; one for rendering a contract as a PDF and another
+that makes a web service call to DocuSign.  We will start with the rendering
+page that we will call <b>RenderContract</b> (Note: the second page is set up
+in step 8)<b>.</b>  The code for the rendering page is fairly minimal.  As you
+can see below, it just uses the standard Contract controller class and we are
+just rendering standard contract details with a couple of signature lines.</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Apex>&lt;apex:page renderAs=&quot;pdf&quot;
+standardController=&quot;Contract&quot;&gt;</p>
+
+<p class=Apex>    &lt;apex:detail relatedList=&quot;true&quot;
+title=&quot;true&quot;/&gt;</p>
+
+<p class=Apex>    &lt;div style='clear:right;margin-top:50px'&gt;</p>
+
+<p class=Apex>    &lt;div
+style='float:right'&gt;____________________________________&lt;/div&gt;</p>
+
+<p class=Apex>    &lt;div style='float:right'&gt;By:&lt;/div&gt;</p>
+
+<p class=Apex>    &lt;/div&gt;    </p>
+
+<p class=Apex>    &lt;div style='clear:right;margin-top:50px'&gt;</p>
+
+<p class=Apex>    &lt;div style='float:right'&gt;____________________________________&lt;/div&gt;</p>
+
+<p class=Apex>    &lt;div style='float:right'&gt;Date Signed:&lt;/div&gt;</p>
+
+<p class=Apex>    &lt;/div&gt;  </p>
+
+<p class=Apex>&lt;/apex:page&gt;</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>The page needs to be added to the site to ensure that you can
+access it for testing.  You can accomplish that by going to the site detail and
+selecting Site VisualForce Pages.</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=575 height=250 id="Picture 6"
+src="Readme_files/image003.jpg"
+alt="Macintosh HD:private:tmp:Site Detail ~ salesforce.com - Developer Edition-1.jpg"></p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>The other setting that has to be adjusted for testing is adding
+Contracts as something that is accessible from this site.  To accomplish this go
+to Public Access Settings and edit the standard object permission. </p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=576 height=354 id="Picture 7"
+src="Readme_files/image004.png"></p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>In order
+to test the first page and other code in our sample, we will create a test
+Contract.  For simplicity we are going to put a contact in the Customer Signed
+By field.</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=577 height=223 id="Picture 5"
+src="Readme_files/image005.png"></p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>At this point in time we have all the test data we need.  You
+can note the Contract object ID in the URL </p>
+
+<p class=Indent><a href="https://na7.salesforce.com/800A0000000Q8ol">https://na7.salesforce.com/<b>800A0000000Q8ol</b></a><b>
+</b></p>
+
+<p class=Indent>And then use it to test the rendering page by plugging in the ID
+there:</p>
+
+<p class=Indent><a
+href="http://devcenter-demo-developer-edition.na7.force.com/apex/RenderContract?id=800A0000000Q8ol">http://devcenter-demo-developer-edition.na7.force.com/apex/RenderContract?id=<b>800A0000000Q8ol</b></a>
+</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>At this point you should be getting a PDF file. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'>5.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>In this
+step we are going to create a class to access the DocuSign API.  For this
+walkthrough we are just going to get the sending WSDL, which can be found at <a
+href="https://demo.docusign.net/api/3.0/Schema/dsapi-send.wsdl">https://demo.docusign.net/api/3.0/Schema/dsapi-send.wsdl</a>. 
+You should save the WSDL file to your desktop.  (Note: For complete set of WSDL
+files please refer to documentation on DocuSign DevCenter.) </p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>Next go to the Apex Classes and select “Generate from WSDL”. 
+When the class generator asks you to supply a class name, we suggest that you
+overwrite the class name with <b>DocuSignAPI</b>. </p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'>6.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Using the
+new API endpoint, you can create a controller for the second page.  In order to
+do this you need to go to Apex Classes again and create a new class.  The code
+for the controller class is shown below:</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=Apex>public with sharing class SendToDocuSignController {</p>
+
+<p class=Apex>    private final Contract contract;</p>
+
+<p class=Apex>    </p>
+
+<p class=Apex>    public String envelopeId {get;set;}</p>
+
+<p class=Apex>    private String accountId = '';</p>
+
+<p class=Apex>    private String userId = '';</p>
+
+<p class=Apex>    private String password = '';</p>
+
+<p class=Apex>    private String integratorsKey = '';</p>
+
+<p class=Apex>    private String webServiceUrl </p>
+
+<p class=Apex>        = 'https://demo.docusign.net/api/3.0/dsapi.asmx';</p>
+
+<p class=Apex>    </p>
+
+<p class=Apex>    public SendToDocuSignController(ApexPages.StandardController
+controller)</p>
+
+<p class=Apex>    {</p>
+
+<p class=Apex>        this.contract = [select Id, CustomerSignedId, AccountId,
+ContractNumber </p>
+
+<p class=Apex>        from Contract where id = :controller.getRecord().Id];</p>
+
+<p class=Apex>        envelopeId = 'Not sent yet';</p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>        SendNow();</p>
+
+<p class=Apex>    }</p>
+
+<p class=Apex>&nbsp;</p>
+
+<p class=Apex>    public void SendNow()</p>
+
+<p class=Apex>    {</p>
+
+<p class=Apex>        DocuSignAPI.APIServiceSoap dsApiSend </p>
+
+<p class=Apex>            = new DocuSignAPI.APIServiceSoap();</p>
+
+<p class=Apex>        dsApiSend.endpoint_x = webServiceUrl;</p>
+
+<p class=Apex>&nbsp;</p>
+
+<p class=Apex>        //Set Authentication</p>
+
+<p class=Apex>        String auth =
+'&lt;DocuSignCredentials&gt;&lt;Username&gt;'+ userId </p>
+
+<p class=Apex>            +'&lt;/Username&gt;&lt;Password&gt;' + password </p>
+
+<p class=Apex>            + '&lt;/Password&gt;&lt;IntegratorKey&gt;' +
+integratorsKey </p>
+
+<p class=Apex>            +
+'&lt;/IntegratorKey&gt;&lt;/DocuSignCredentials&gt;';</p>
+
+<p class=Apex>        System.debug('Setting authentication to: ' + auth);</p>
+
+<p class=Apex>            </p>
+
+<p class=Apex>        dsApiSend.inputHttpHeaders_x = new Map&lt;String,
+String&gt;();</p>
+
+<p class=Apex>        dsApiSend.inputHttpHeaders_x.put('X-DocuSign-Authentication',
+</p>
+
+<p class=Apex>            auth);</p>
+
+<p class=Apex> </p>
+
+<p class=Apex>        DocuSignAPI.Envelope envelope = new
+DocuSignAPI.Envelope();</p>
+
+<p class=Apex>        envelope.Subject = 'Please Sign this Contract: ' </p>
+
+<p class=Apex>            + contract.ContractNumber;</p>
+
+<p class=Apex>        envelope.EmailBlurb = 'This is my new eSignature
+service,'+ </p>
+
+<p class=Apex>            ' it allows me to get your signoff without having to
+fax, ' +</p>
+
+<p class=Apex>            'scan, retype, refile and wait forever';</p>
+
+<p class=Apex>        envelope.AccountId  = accountId; </p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>&nbsp;</p>
+
+<p class=Apex>        // Render the contract</p>
+
+<p class=Apex>        System.debug('Rendering the contract');</p>
+
+<p class=Apex>        PageReference pageRef = new
+PageReference('/apex/RenderContract');</p>
+
+<p class=Apex>        pageRef.getParameters().put('id',contract.Id);</p>
+
+<p class=Apex>        Blob pdfBlob = pageRef.getContent();     </p>
+
+<p class=Apex>&nbsp;</p>
+
+<p class=Apex>        // Document</p>
+
+<p class=Apex>        DocuSignAPI.Document document = new
+DocuSignAPI.Document();</p>
+
+<p class=Apex>        document.ID = 1;</p>
+
+<p class=Apex>        document.pdfBytes = EncodingUtil.base64Encode(pdfBlob);</p>
+
+<p class=Apex>        document.Name = 'Contract';</p>
+
+<p class=Apex>        document.FileExtension = 'pdf';</p>
+
+<p class=Apex>        envelope.Documents = new DocuSignAPI.ArrayOfDocument();</p>
+
+<p class=Apex>        envelope.Documents.Document = new
+DocuSignAPI.Document[1];</p>
+
+<p class=Apex>        envelope.Documents.Document[0] = document;</p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>        // Recipient</p>
+
+<p class=Apex>        System.debug('getting the contact');</p>
+
+<p class=Apex>        Contact contact = [SELECT email, FirstName, LastName </p>
+
+<p class=Apex>            from Contact where id = :contract.CustomerSignedId];</p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>        DocuSignAPI.Recipient recipient = new
+DocuSignAPI.Recipient();</p>
+
+<p class=Apex>        recipient.ID = 1;</p>
+
+<p class=Apex>        recipient.Type_x = 'Signer';</p>
+
+<p class=Apex>        recipient.RoutingOrder = 1;</p>
+
+<p class=Apex>        recipient.Email = contact.Email;</p>
+
+<p class=Apex>        recipient.UserName = contact.FirstName + ' ' +
+contact.LastName;</p>
+
+<p class=Apex>            </p>
+
+<p class=Apex>        // This setting seems required or you see the error:</p>
+
+<p class=Apex>        // &quot;The string '' is not a valid Boolean value. </p>
+
+<p class=Apex>        // at System.Xml.XmlConvert.ToBoolean(String s)&quot; </p>
+
+<p class=Apex>        recipient.RequireIDLookup = false;      </p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>        envelope.Recipients = new DocuSignAPI.ArrayOfRecipient();</p>
+
+<p class=Apex>        envelope.Recipients.Recipient = new
+DocuSignAPI.Recipient[1];</p>
+
+<p class=Apex>        envelope.Recipients.Recipient[0] = recipient;</p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>        // Tab</p>
+
+<p class=Apex>        DocuSignAPI.Tab tab1 = new DocuSignAPI.Tab();</p>
+
+<p class=Apex>        tab1.Type_x = 'SignHere';</p>
+
+<p class=Apex>        tab1.RecipientID = 1;</p>
+
+<p class=Apex>        tab1.DocumentID = 1;</p>
+
+<p class=Apex>        tab1.AnchorTabItem = new DocuSignAPI.AnchorTab();</p>
+
+<p class=Apex>        tab1.AnchorTabItem.AnchorTabString = 'By:';</p>
+
+<p class=Apex>&nbsp;</p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>        DocuSignAPI.Tab tab2 = new DocuSignAPI.Tab();</p>
+
+<p class=Apex>        tab2.Type_x = 'DateSigned';</p>
+
+<p class=Apex>        tab2.RecipientID = 1;</p>
+
+<p class=Apex>        tab2.DocumentID = 1;</p>
+
+<p class=Apex>        tab2.AnchorTabItem = new DocuSignAPI.AnchorTab();</p>
+
+<p class=Apex>        tab2.AnchorTabItem.AnchorTabString = 'Date Signed:';</p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>        envelope.Tabs = new DocuSignAPI.ArrayOfTab();</p>
+
+<p class=Apex>        envelope.Tabs.Tab = new DocuSignAPI.Tab[2];</p>
+
+<p class=Apex>        envelope.Tabs.Tab[0] = tab1;        </p>
+
+<p class=Apex>        envelope.Tabs.Tab[1] = tab2;        </p>
+
+<p class=Apex>        </p>
+
+<p class=Apex>        System.debug('Calling the API');</p>
+
+<p class=Apex>        try {</p>
+
+<p class=Apex>            DocuSignAPI.EnvelopeStatus es </p>
+
+<p class=Apex>            = dsApiSend.CreateAndSendEnvelope(envelope);</p>
+
+<p class=Apex>            envelopeId = es.EnvelopeID;</p>
+
+<p class=Apex>        } catch ( CalloutException e) {</p>
+
+<p class=Apex>            System.debug('Exception - ' + e );</p>
+
+<p class=Apex>            envelopeId = 'Exception - ' + e;</p>
+
+<p class=Apex>        }</p>
+
+<p class=Apex>      </p>
+
+<p class=Apex>    }</p>
+
+<p class=Apex>}</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>This might seem like a lot of code to understand, but the basics
+are pretty simple and you can see how a DocuSign envelope is constructed here: <a
+href="http://wiki.github.com/docusign/DocuSign-eSignature-SDK/code-walkthrough-create-and-send-envelope">http://wiki.github.com/docusign/DocuSign-eSignature-SDK/code-walkthrough-create-and-send-envelope</a>
+</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'>7.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>In order
+to use DocuSign API, you need to retrieve your DocuSign API credentials.  Go to
+<a href="https://demo.docusign.net/">https://demo.docusign.net/</a>, sign into
+your demo account, and then go to Preferences &gt; API.  There you will find
+these values:</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>Integrator's Key: <span class=fieldprompttextbold><b>ZORO-a81ec71a-cb17-4af0-b1aa-9513115cbf02</b></span>
+</p>
+
+<p class=Indent>API UserName: <b>0e212ae6-1e12-40c1-8f5a-a57458ccaa63</b></p>
+
+<p class=Indent>API Password: <b>&lt;your current password&gt;</b></p>
+
+<p class=Indent>API Account ID: <b>736e7948-6861-4ef3-ae71-4c56603dc14f </b></p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>Plug these values into the controller class.</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'>8.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>The next
+step is to create the second page, which actually calls SendToDocuSign.  You will
+add this page to the site and hook it up to the custom controller we just
+developed:</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Apex><span style='color:teal'>&lt;</span>apex:page<span
+style='color:black'> </span><span style='color:#7F007F'>standardcontroller</span><span
+style='color:black'>=</span><i><span style='color:#2A00FF'>&quot;Contract&quot;</span></i><span
+style='color:black'> </span><span style='color:#7F007F'>extensions</span><span
+style='color:black'>=</span><i><span style='color:#2A00FF'>&quot;SendToDocuSignController&quot;</span></i><span
+style='color:teal'>&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&lt;</span>h1<span style='color:teal'>&gt;</span><span
+style='color:black'>Your eSignature request is being sent to DocuSign API!</span><span
+style='color:teal'>&lt;/</span>h1<span style='color:teal'>&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&lt;</span>hr<span style='color:teal'>/&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&lt;</span>apex:form<span
+style='color:black'> </span><span style='color:teal'>&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&lt;</span>apex:commandButton<span
+style='color:black'> </span><span style='color:#7F007F'>value</span><span
+style='color:black'>=</span><i><span style='color:#2A00FF'>&quot;Send
+Again!&quot;</span></i><span style='color:black'> </span><span
+style='color:#7F007F'>action</span><span style='color:black'>=</span><i><span
+style='color:#2A00FF'>&quot;{!SendNow}&quot;</span></i><span style='color:teal'>/&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&lt;/</span>apex:form<span
+style='color:teal'>&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&lt;</span>hr<span style='color:teal'>/&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&lt;</span>strong<span style='color:
+teal'>&gt;</span><span style='color:black'>The DocuSign EnvelopeId:</span><span
+style='color:teal'>&lt;/</span>strong<span style='color:teal'>&gt;</span><span
+style='color:black'>{!envelopeId}</span><span style='color:teal'>&lt;</span>br<span
+style='color:teal'>/&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&lt;/</span>apex:page<span
+style='color:teal'>&gt;</span></p>
+
+<p class=Apex><span style='color:teal'>&nbsp;</span></p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>Now you should be able to test sending of the contract by
+calling the page with the same ID you used for testing the rendering page:</p>
+
+<p class=Indent><a
+href="http://devcenter-demo-developer-edition.na7.force.com/SendToDocuSign?id=800A0000000Q8ol">http://devcenter-demo-developer-edition.na7.force.com/SendToDocuSign?id=800A0000000Q8ol</a>
+</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoListParagraph style='margin-left:.25in;text-indent:-.25in'>9.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>The last step
+is creating a custom button on the contract object that calls the sending page. 
+Go to Setup &gt; Customize &gt; Contracts &gt; Buttons and Links and create a <b>New
+</b>button.</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>In the properties, select <b>Detail Page Button</b> and then add
+the URL with the Contract Id: </p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Apex>/apex/SendToDocuSign?id={!Contract.Id}</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=Indent>Add the button to the page layout for the Contract object.  This
+lets your users click on the button to get their Contracts electronically
+signed!  They don’t need to learn any other systems or follow complicated
+steps.  The logic behind the button does all the work.</p>
+
+<p class=Indent>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=576 height=310 id="Picture 9"
+src="Readme_files/image006.png"
+alt="Macintosh HD:private:tmp:Contract_ 00000101 ~ salesforce.com - Developer Edition-1.png"></p>
+
+</div>
+
+</body>
+
+</html>
