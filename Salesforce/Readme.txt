@@ -4,7 +4,7 @@ This readme provides a step-by-step example explaining how to set up a DocuSign 
 
 Before getting started you need to get a free Salesforce.com developer account at https://developer.force.com and a free DocuSign developer account at www.docusign.com/devcenter.
 
-1. Start out by adding DocuSign webservices to your authorized endpoints for your Salesforce.com developer account.  To do this, go to Setup > Security > Remote Sites and add https://demo.docusign.net/api/3.0/dsapi.asmx. 
+1. Start out by adding DocuSign webservices to your authorized endpoints for your Salesforce.com developer account.  To do this, go to Setup > Security Controls > Remote Site Settings and add https://demo.docusign.net/api/3.0/dsapi.asmx. 
 2. Next, set up a Salesforce.com site so you can test rendering pages.  There is plenty of documentation on how to get started with VisualForce, so we will leave it up to Salesforce.com to explain the best options there.  For the purpose of this walkthrough you just need to have a site for testing.  You can get to the screen below by clicking Setup > Develop > Sites. 
 
 see Readme_files/image001.png
