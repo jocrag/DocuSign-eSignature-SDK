@@ -20,6 +20,8 @@ public class AuthenticationStatus  implements java.io.Serializable {
 
     private net.docusign.www.API._3_0.EventResult OFACResult;
 
+    private net.docusign.www.API._3_0.EventResult phoneAuthResult;
+
     public AuthenticationStatus() {
     }
 
@@ -29,13 +31,15 @@ public class AuthenticationStatus  implements java.io.Serializable {
            net.docusign.www.API._3_0.EventResult IDLookupResult,
            net.docusign.www.API._3_0.EventResult ageVerifyResult,
            net.docusign.www.API._3_0.EventResult STANPinResult,
-           net.docusign.www.API._3_0.EventResult OFACResult) {
+           net.docusign.www.API._3_0.EventResult OFACResult,
+           net.docusign.www.API._3_0.EventResult phoneAuthResult) {
            this.accessCodeResult = accessCodeResult;
            this.IDQuestionsResult = IDQuestionsResult;
            this.IDLookupResult = IDLookupResult;
            this.ageVerifyResult = ageVerifyResult;
            this.STANPinResult = STANPinResult;
            this.OFACResult = OFACResult;
+           this.phoneAuthResult = phoneAuthResult;
     }
 
 
@@ -158,6 +162,26 @@ public class AuthenticationStatus  implements java.io.Serializable {
         this.OFACResult = OFACResult;
     }
 
+
+    /**
+     * Gets the phoneAuthResult value for this AuthenticationStatus.
+     * 
+     * @return phoneAuthResult
+     */
+    public net.docusign.www.API._3_0.EventResult getPhoneAuthResult() {
+        return phoneAuthResult;
+    }
+
+
+    /**
+     * Sets the phoneAuthResult value for this AuthenticationStatus.
+     * 
+     * @param phoneAuthResult
+     */
+    public void setPhoneAuthResult(net.docusign.www.API._3_0.EventResult phoneAuthResult) {
+        this.phoneAuthResult = phoneAuthResult;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof AuthenticationStatus)) return false;
@@ -187,7 +211,10 @@ public class AuthenticationStatus  implements java.io.Serializable {
               this.STANPinResult.equals(other.getSTANPinResult()))) &&
             ((this.OFACResult==null && other.getOFACResult()==null) || 
              (this.OFACResult!=null &&
-              this.OFACResult.equals(other.getOFACResult())));
+              this.OFACResult.equals(other.getOFACResult()))) &&
+            ((this.phoneAuthResult==null && other.getPhoneAuthResult()==null) || 
+             (this.phoneAuthResult!=null &&
+              this.phoneAuthResult.equals(other.getPhoneAuthResult())));
         __equalsCalc = null;
         return _equals;
     }
@@ -216,6 +243,9 @@ public class AuthenticationStatus  implements java.io.Serializable {
         }
         if (getOFACResult() != null) {
             _hashCode += getOFACResult().hashCode();
+        }
+        if (getPhoneAuthResult() != null) {
+            _hashCode += getPhoneAuthResult().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -265,6 +295,13 @@ public class AuthenticationStatus  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("OFACResult");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "OFACResult"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventResult"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phoneAuthResult");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PhoneAuthResult"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventResult"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

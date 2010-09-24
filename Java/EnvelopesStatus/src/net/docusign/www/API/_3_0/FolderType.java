@@ -1,5 +1,5 @@
 /**
- * RecipientTypeCode.java
+ * FolderType.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,37 +7,35 @@
 
 package net.docusign.www.API._3_0;
 
-public class RecipientTypeCode implements java.io.Serializable {
+public class FolderType implements java.io.Serializable {
     private java.lang.String _value_;
     private static java.util.HashMap _table_ = new java.util.HashMap();
 
     // Constructor
-    protected RecipientTypeCode(java.lang.String value) {
+    protected FolderType(java.lang.String value) {
         _value_ = value;
         _table_.put(_value_,this);
     }
 
-    public static final java.lang.String _Signer = "Signer";
-    public static final java.lang.String _Agent = "Agent";
-    public static final java.lang.String _Editor = "Editor";
-    public static final java.lang.String _CarbonCopy = "CarbonCopy";
-    public static final java.lang.String _CertifiedDelivery = "CertifiedDelivery";
-    public static final java.lang.String _InPersonSigner = "InPersonSigner";
-    public static final RecipientTypeCode Signer = new RecipientTypeCode(_Signer);
-    public static final RecipientTypeCode Agent = new RecipientTypeCode(_Agent);
-    public static final RecipientTypeCode Editor = new RecipientTypeCode(_Editor);
-    public static final RecipientTypeCode CarbonCopy = new RecipientTypeCode(_CarbonCopy);
-    public static final RecipientTypeCode CertifiedDelivery = new RecipientTypeCode(_CertifiedDelivery);
-    public static final RecipientTypeCode InPersonSigner = new RecipientTypeCode(_InPersonSigner);
+    public static final java.lang.String _RecycleBin = "RecycleBin";
+    public static final java.lang.String _Draft = "Draft";
+    public static final java.lang.String _Inbox = "Inbox";
+    public static final java.lang.String _SentItems = "SentItems";
+    public static final java.lang.String _Normal = "Normal";
+    public static final FolderType RecycleBin = new FolderType(_RecycleBin);
+    public static final FolderType Draft = new FolderType(_Draft);
+    public static final FolderType Inbox = new FolderType(_Inbox);
+    public static final FolderType SentItems = new FolderType(_SentItems);
+    public static final FolderType Normal = new FolderType(_Normal);
     public java.lang.String getValue() { return _value_;}
-    public static RecipientTypeCode fromValue(java.lang.String value)
+    public static FolderType fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {
-        RecipientTypeCode enumeration = (RecipientTypeCode)
+        FolderType enumeration = (FolderType)
             _table_.get(value);
         if (enumeration==null) throw new java.lang.IllegalArgumentException();
         return enumeration;
     }
-    public static RecipientTypeCode fromString(java.lang.String value)
+    public static FolderType fromString(java.lang.String value)
           throws java.lang.IllegalArgumentException {
         return fromValue(value);
     }
@@ -63,10 +61,10 @@ public class RecipientTypeCode implements java.io.Serializable {
     }
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(RecipientTypeCode.class);
+        new org.apache.axis.description.TypeDesc(FolderType.class);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientTypeCode"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderType"));
     }
     /**
      * Return type metadata object

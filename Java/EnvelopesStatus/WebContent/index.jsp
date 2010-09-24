@@ -44,9 +44,9 @@
                 String email = request.getParameter("txtEmail");
                 String password = request.getParameter("txtPassword");
 
-                //CredentialSoapProxy port = new CredentialSoapProxy(); // Use production
+                //CredentialSoapStub port = new CredentialSoapStub(); // Use production
 
-                CredentialSoapProxy port = new CredentialSoapProxy("https://demo.docusign.net/API/3.0/Credential.asmx"); // Use demo
+                CredentialSoapStub port = new CredentialSoapStub(new java.net.URL ("https://demo.docusign.net/API/3.0/Credential.asmx"), null); // Use demo
 
                 // Get the list of accounts associated with the e-mail and password entered
                 LoginResponseLoginResult result = port.login(email, password);

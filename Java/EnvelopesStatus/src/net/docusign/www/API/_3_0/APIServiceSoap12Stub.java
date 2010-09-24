@@ -16,11 +16,12 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[35];
+        _operations = new org.apache.axis.description.OperationDesc[43];
         _initOperationDesc1();
         _initOperationDesc2();
         _initOperationDesc3();
         _initOperationDesc4();
+        _initOperationDesc5();
     }
 
     private static void _initOperationDesc1(){
@@ -51,6 +52,21 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("SendEnvelope");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AccountId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatus"));
+        oper.setReturnClass(net.docusign.www.API._3_0.EnvelopeStatus.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SendEnvelopeResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[2] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CorrectAndResendEnvelope");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Correction"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Correction"), net.docusign.www.API._3_0.Correction.class, false, false);
         param.setOmittable(true);
@@ -60,7 +76,19 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CorrectAndResendEnvelopeResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[2] = oper;
+        _operations[3] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("RequestPDFNoWaterMark");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopePDF"));
+        oper.setReturnClass(net.docusign.www.API._3_0.EnvelopePDF.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestPDFNoWaterMarkResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestPDF");
@@ -72,7 +100,21 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestPDFResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[3] = oper;
+        _operations[5] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("RequestPDFWithCert");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddWaterMark"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopePDF"));
+        oper.setReturnClass(net.docusign.www.API._3_0.EnvelopePDF.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestPDFWithCertResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestDocumentPDFs");
@@ -84,7 +126,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestDocumentPDFsResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[4] = oper;
+        _operations[7] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestDocumentPDFsEx");
@@ -96,7 +138,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestDocumentPDFsExResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[5] = oper;
+        _operations[8] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestDocumentPDFsRecipientsView");
@@ -114,8 +156,13 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestDocumentPDFsRecipientsViewResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[6] = oper;
+        _operations[9] = oper;
 
+    }
+
+    private static void _initOperationDesc2(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestStatusEx");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -126,7 +173,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestStatusExResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[7] = oper;
+        _operations[10] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestStatus");
@@ -138,7 +185,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestStatusResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[8] = oper;
+        _operations[11] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestStatusesEx");
@@ -150,13 +197,8 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestStatusesExResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[9] = oper;
+        _operations[12] = oper;
 
-    }
-
-    private static void _initOperationDesc2(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestStatuses");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatusFilter"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatusFilter"), net.docusign.www.API._3_0.EnvelopeStatusFilter.class, false, false);
@@ -167,7 +209,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestStatusesResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[10] = oper;
+        _operations[13] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetRecipientEsignList");
@@ -188,7 +230,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetRecipientEsignListResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[11] = oper;
+        _operations[14] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetRecipientList");
@@ -203,7 +245,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetRecipientListResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[12] = oper;
+        _operations[15] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("VoidEnvelope");
@@ -218,7 +260,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "VoidEnvelopeResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[13] = oper;
+        _operations[16] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestRecipientToken");
@@ -245,7 +287,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestRecipientTokenResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[14] = oper;
+        _operations[17] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("TransferEnvelope");
@@ -263,7 +305,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "TransferEnvelopeResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[15] = oper;
+        _operations[18] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetAccountMembershipFeaturesList");
@@ -275,8 +317,13 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetAccountMembershipFeaturesListResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[16] = oper;
+        _operations[19] = oper;
 
+    }
+
+    private static void _initOperationDesc3(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetAccountSettingsList");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AccountId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -289,7 +336,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         param.setItemQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AccountSetting"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[17] = oper;
+        _operations[20] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("AcknowledgeAuthoritativeCopyExport");
@@ -307,7 +354,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AcknowledgeAuthoritativeCopyExportResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[18] = oper;
+        _operations[21] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ExportAuthoritativeCopy");
@@ -319,13 +366,8 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ExportAuthoritativeCopyResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[19] = oper;
+        _operations[22] = oper;
 
-    }
-
-    private static void _initOperationDesc3(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("EnvelopeAuditEvents");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -336,7 +378,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeAuditEventsResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[20] = oper;
+        _operations[23] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("Ping");
@@ -345,7 +387,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PingResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[21] = oper;
+        _operations[24] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("CreateEnvelopeFromTemplates");
@@ -367,7 +409,25 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CreateEnvelopeFromTemplatesResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[22] = oper;
+        _operations[25] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("CreateEnvelopeFromTemplatesAndForms");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeInformation"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeInformation"), net.docusign.www.API._3_0.EnvelopeInformation.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CompositeTemplates"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfCompositeTemplate"), net.docusign.www.API._3_0.CompositeTemplate[].class, false, false);
+        param.setItemQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CompositeTemplate"));
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ActivateEnvelope"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatus"));
+        oper.setReturnClass(net.docusign.www.API._3_0.EnvelopeStatus.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CreateEnvelopeFromTemplatesAndFormsResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[26] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetStatusInDocuSignConnectFormat");
@@ -379,7 +439,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetStatusInDocuSignConnectFormatResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[23] = oper;
+        _operations[27] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("PurgeDocuments");
@@ -391,7 +451,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PurgeDocumentsResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[24] = oper;
+        _operations[28] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("SaveTemplate");
@@ -403,8 +463,13 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SaveTemplateResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[25] = oper;
+        _operations[29] = oper;
 
+    }
+
+    private static void _initOperationDesc4(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UploadTemplate");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "TemplateXML"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -420,12 +485,14 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "UploadTemplateResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[26] = oper;
+        _operations[30] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestTemplates");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AccountID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "IncludeAdvancedTemplates"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeTemplates"));
         oper.setReturnClass(net.docusign.www.API._3_0.EnvelopeTemplateDefinition[].class);
@@ -434,7 +501,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         param.setItemQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeTemplateDefinition"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[27] = oper;
+        _operations[31] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestTemplate");
@@ -448,7 +515,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestTemplateResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[28] = oper;
+        _operations[32] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetAuthenticationToken");
@@ -460,13 +527,8 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetAuthenticationTokenResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[29] = oper;
+        _operations[33] = oper;
 
-    }
-
-    private static void _initOperationDesc4(){
-        org.apache.axis.description.OperationDesc oper;
-        org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetAddressBookItems");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AccountID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
@@ -479,7 +541,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         param.setItemQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddressBookItem"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[30] = oper;
+        _operations[34] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("UpdateAddressBookItems");
@@ -494,7 +556,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "UpdateAddressBookItemsResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[31] = oper;
+        _operations[35] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RemoveAddressBookItems");
@@ -509,7 +571,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RemoveAddressBookItemsResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[32] = oper;
+        _operations[36] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("SynchEnvelope");
@@ -526,7 +588,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SynchEnvelopeResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[33] = oper;
+        _operations[37] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("RequestSenderToken");
@@ -544,7 +606,83 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
         oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestSenderTokenResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[34] = oper;
+        _operations[38] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("RequestCorrectToken");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SuppressNavigation"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ReturnURL"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        oper.setReturnClass(java.lang.String.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestCorrectTokenResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[39] = oper;
+
+    }
+
+    private static void _initOperationDesc5(){
+        org.apache.axis.description.OperationDesc oper;
+        org.apache.axis.description.ParameterDesc param;
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetFolder");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AccountId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderType"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderType"), net.docusign.www.API._3_0.FolderType.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderName"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "StartPosition"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FromDate"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.util.Calendar.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ToDate"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"), java.util.Calendar.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SearchText"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Status"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatusCode"), net.docusign.www.API._3_0.EnvelopeStatusCode.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderResults"));
+        oper.setReturnClass(net.docusign.www.API._3_0.FolderResults.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetFolderResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[40] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("GetFolders");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AccountId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AvailableFolders"));
+        oper.setReturnClass(net.docusign.www.API._3_0.AvailableFolders.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetFoldersResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[41] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("RequestEnvelope");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeID"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "IncludeDocumentBytes"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"), boolean.class, false, false);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Envelope"));
+        oper.setReturnClass(net.docusign.www.API._3_0.Envelope.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestEnvelopeResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[42] = oper;
 
     }
 
@@ -609,6 +747,20 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">CreateEnvelopeFromTemplatesAndForms");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.CreateEnvelopeFromTemplatesAndForms.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">CreateEnvelopeFromTemplatesAndFormsResponse");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.CreateEnvelopeFromTemplatesAndFormsResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">CreateEnvelopeFromTemplatesResponse");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.CreateEnvelopeFromTemplatesResponse.class;
@@ -640,6 +792,34 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">GetAuthenticationTokenResponse");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.GetAuthenticationTokenResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">GetFolder");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.GetFolder.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">GetFolderResponse");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.GetFolderResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">GetFolders");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.GetFolders.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">GetFoldersResponse");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.GetFoldersResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -696,6 +876,34 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">RemoveAddressBookItemsResponse");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.RemoveAddressBookItemsResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">RequestCorrectToken");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.RequestCorrectToken.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">RequestCorrectTokenResponse");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.RequestCorrectTokenResponse.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">RequestEnvelope");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.RequestEnvelope.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", ">RequestEnvelopeResponse");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.RequestEnvelopeResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -828,6 +1036,13 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddressBookPhoneNumber");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.AddressBookPhoneNumber.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AddressBookRemoveItem");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.AddressBookRemoveItem.class;
@@ -892,6 +1107,15 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfCompositeTemplate");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.CompositeTemplate[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CompositeTemplate");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CompositeTemplate");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfCustomField");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.CustomField[].class;
@@ -928,6 +1152,15 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfEnvelopeEvent");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.EnvelopeEvent[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeEvent");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeEvent");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfEnvelopeStatus");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.EnvelopeStatus[].class;
@@ -946,12 +1179,39 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfFolder");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.Folder[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Folder");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Folder");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfFolderItem");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.FolderItem[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderItem");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderItem");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfFormDataXfdfField");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.FormDataXfdfField[].class;
             cachedSerClasses.add(cls);
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FormDataXfdfField");
             qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "field");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfInlineTemplate");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.InlineTemplate[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "InlineTemplate");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "InlineTemplate");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
@@ -1018,12 +1278,21 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfServerTemplate");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.ServerTemplate[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ServerTemplate");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ServerTemplate");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfString");
             cachedSerQNames.add(qName);
             cls = java.lang.String[].class;
             cachedSerClasses.add(cls);
             qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string");
-            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CustomField");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SenderProvidedNumber");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
@@ -1032,7 +1301,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cls = java.lang.String[].class;
             cachedSerClasses.add(cls);
             qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string");
-            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeId");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CustomField");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
@@ -1041,11 +1310,20 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cls = java.lang.String[].class;
             cachedSerClasses.add(cls);
             qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string");
-            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientName");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeId");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfString3");
+            cachedSerQNames.add(qName);
+            cls = java.lang.String[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string");
+            qName2 = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientName");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ArrayOfString4");
             cachedSerQNames.add(qName);
             cls = java.lang.String[].class;
             cachedSerClasses.add(cls);
@@ -1123,6 +1401,20 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AuthoritativeCopyExportStatus");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.AuthoritativeCopyExportStatus.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AvailableFolders");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.AvailableFolders.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CompositeTemplate");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.CompositeTemplate.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1211,6 +1503,21 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+    }
+    private void addBindings1() {
+            java.lang.Class cls;
+            javax.xml.namespace.QName qName;
+            javax.xml.namespace.QName qName2;
+            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
+            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
+            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
+            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
+            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
+            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
+            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
+            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
+            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
+            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "DocumentType");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.DocumentType.class;
@@ -1235,6 +1542,20 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeACStatusCode");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.EnvelopeACStatusCode.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeEvent");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.EnvelopeEvent.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeEventStatusCode");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.EnvelopeEventStatusCode.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
@@ -1311,6 +1632,13 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventNotification");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.EventNotification.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventResult");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.EventResult.class;
@@ -1339,6 +1667,34 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "Folder");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.Folder.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderItem");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.FolderItem.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderResults");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.FolderResults.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FolderType");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.FolderType.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FontStyleCode");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.FontStyleCode.class;
@@ -1353,21 +1709,6 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-    }
-    private void addBindings1() {
-            java.lang.Class cls;
-            javax.xml.namespace.QName qName;
-            javax.xml.namespace.QName qName2;
-            java.lang.Class beansf = org.apache.axis.encoding.ser.BeanSerializerFactory.class;
-            java.lang.Class beandf = org.apache.axis.encoding.ser.BeanDeserializerFactory.class;
-            java.lang.Class enumsf = org.apache.axis.encoding.ser.EnumSerializerFactory.class;
-            java.lang.Class enumdf = org.apache.axis.encoding.ser.EnumDeserializerFactory.class;
-            java.lang.Class arraysf = org.apache.axis.encoding.ser.ArraySerializerFactory.class;
-            java.lang.Class arraydf = org.apache.axis.encoding.ser.ArrayDeserializerFactory.class;
-            java.lang.Class simplesf = org.apache.axis.encoding.ser.SimpleSerializerFactory.class;
-            java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
-            java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
-            java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FormDataXfdf");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.FormDataXfdf.class;
@@ -1396,6 +1737,13 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "InlineTemplate");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.InlineTemplate.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "MatchBox");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.MatchBox.class;
@@ -1409,6 +1757,20 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PDFMetaDataTemplate");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.PDFMetaDataTemplate.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PhoneNumberDesignation");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.PhoneNumberDesignation.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(enumsf);
+            cachedDeserFactories.add(enumdf);
 
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PurgeDocumentStatus");
             cachedSerQNames.add(qName);
@@ -1469,6 +1831,13 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientList");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.RecipientList.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientPhoneAuthentication");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.RecipientPhoneAuthentication.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1539,6 +1908,13 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SaveTemplateResult");
             cachedSerQNames.add(qName);
             cls = net.docusign.www.API._3_0.SaveTemplateResult.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ServerTemplate");
+            cachedSerQNames.add(qName);
+            cls = net.docusign.www.API._3_0.ServerTemplate.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -1831,12 +2207,46 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
 }
     }
 
-    public net.docusign.www.API._3_0.CorrectionStatus correctAndResendEnvelope(net.docusign.www.API._3_0.Correction correction) throws java.rmi.RemoteException {
+    public net.docusign.www.API._3_0.EnvelopeStatus sendEnvelope(java.lang.String envelopeId, java.lang.String accountId) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[2]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://www.docusign.net/API/3.0/SendEnvelope");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP12_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SendEnvelope"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {envelopeId, accountId});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (net.docusign.www.API._3_0.EnvelopeStatus) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (net.docusign.www.API._3_0.EnvelopeStatus) org.apache.axis.utils.JavaUtils.convert(_resp, net.docusign.www.API._3_0.EnvelopeStatus.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public net.docusign.www.API._3_0.CorrectionStatus correctAndResendEnvelope(net.docusign.www.API._3_0.Correction correction) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[3]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/CorrectAndResendEnvelope");
         _call.setEncodingStyle(null);
@@ -1865,12 +2275,46 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
 }
     }
 
+    public net.docusign.www.API._3_0.EnvelopePDF requestPDFNoWaterMark(java.lang.String envelopeID) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[4]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestPDFNoWaterMark");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP12_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestPDFNoWaterMark"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {envelopeID});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (net.docusign.www.API._3_0.EnvelopePDF) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (net.docusign.www.API._3_0.EnvelopePDF) org.apache.axis.utils.JavaUtils.convert(_resp, net.docusign.www.API._3_0.EnvelopePDF.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public net.docusign.www.API._3_0.EnvelopePDF requestPDF(java.lang.String envelopeID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestPDF");
         _call.setEncodingStyle(null);
@@ -1899,12 +2343,46 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
 }
     }
 
+    public net.docusign.www.API._3_0.EnvelopePDF requestPDFWithCert(java.lang.String envelopeID, boolean addWaterMark) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[6]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestPDFWithCert");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP12_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestPDFWithCert"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {envelopeID, new java.lang.Boolean(addWaterMark)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (net.docusign.www.API._3_0.EnvelopePDF) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (net.docusign.www.API._3_0.EnvelopePDF) org.apache.axis.utils.JavaUtils.convert(_resp, net.docusign.www.API._3_0.EnvelopePDF.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public net.docusign.www.API._3_0.DocumentPDFs requestDocumentPDFs(java.lang.String envelopeID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[4]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestDocumentPDFs");
         _call.setEncodingStyle(null);
@@ -1938,7 +2416,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[5]);
+        _call.setOperation(_operations[8]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestDocumentPDFsEx");
         _call.setEncodingStyle(null);
@@ -1972,7 +2450,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[6]);
+        _call.setOperation(_operations[9]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestDocumentPDFsRecipientsView");
         _call.setEncodingStyle(null);
@@ -2006,7 +2484,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[7]);
+        _call.setOperation(_operations[10]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestStatusEx");
         _call.setEncodingStyle(null);
@@ -2040,7 +2518,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[8]);
+        _call.setOperation(_operations[11]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestStatus");
         _call.setEncodingStyle(null);
@@ -2074,7 +2552,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[9]);
+        _call.setOperation(_operations[12]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestStatusesEx");
         _call.setEncodingStyle(null);
@@ -2108,7 +2586,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[10]);
+        _call.setOperation(_operations[13]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestStatuses");
         _call.setEncodingStyle(null);
@@ -2142,7 +2620,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[11]);
+        _call.setOperation(_operations[14]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetRecipientEsignList");
         _call.setEncodingStyle(null);
@@ -2176,7 +2654,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[12]);
+        _call.setOperation(_operations[15]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetRecipientList");
         _call.setEncodingStyle(null);
@@ -2210,7 +2688,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[13]);
+        _call.setOperation(_operations[16]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/VoidEnvelope");
         _call.setEncodingStyle(null);
@@ -2244,7 +2722,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[14]);
+        _call.setOperation(_operations[17]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestRecipientToken");
         _call.setEncodingStyle(null);
@@ -2278,7 +2756,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[15]);
+        _call.setOperation(_operations[18]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/TransferEnvelope");
         _call.setEncodingStyle(null);
@@ -2312,7 +2790,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[16]);
+        _call.setOperation(_operations[19]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetAccountMembershipFeaturesList");
         _call.setEncodingStyle(null);
@@ -2346,7 +2824,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[17]);
+        _call.setOperation(_operations[20]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetAccountSettingsList");
         _call.setEncodingStyle(null);
@@ -2380,7 +2858,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[18]);
+        _call.setOperation(_operations[21]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/AcknowledgeAuthoritativeCopyExport");
         _call.setEncodingStyle(null);
@@ -2414,7 +2892,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[19]);
+        _call.setOperation(_operations[22]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/ExportAuthoritativeCopy");
         _call.setEncodingStyle(null);
@@ -2448,7 +2926,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[20]);
+        _call.setOperation(_operations[23]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/EnvelopeAuditEvents");
         _call.setEncodingStyle(null);
@@ -2482,7 +2960,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[21]);
+        _call.setOperation(_operations[24]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/Ping");
         _call.setEncodingStyle(null);
@@ -2516,7 +2994,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[22]);
+        _call.setOperation(_operations[25]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/CreateEnvelopeFromTemplates");
         _call.setEncodingStyle(null);
@@ -2545,12 +3023,46 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
 }
     }
 
+    public net.docusign.www.API._3_0.EnvelopeStatus createEnvelopeFromTemplatesAndForms(net.docusign.www.API._3_0.EnvelopeInformation envelopeInformation, net.docusign.www.API._3_0.CompositeTemplate[] compositeTemplates, boolean activateEnvelope) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[26]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://www.docusign.net/API/3.0/CreateEnvelopeFromTemplatesAndForms");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP12_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CreateEnvelopeFromTemplatesAndForms"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {envelopeInformation, compositeTemplates, new java.lang.Boolean(activateEnvelope)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (net.docusign.www.API._3_0.EnvelopeStatus) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (net.docusign.www.API._3_0.EnvelopeStatus) org.apache.axis.utils.JavaUtils.convert(_resp, net.docusign.www.API._3_0.EnvelopeStatus.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public net.docusign.www.API._3_0.DocuSignEnvelopeInformation getStatusInDocuSignConnectFormat(java.lang.String envelopeID) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[23]);
+        _call.setOperation(_operations[27]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetStatusInDocuSignConnectFormat");
         _call.setEncodingStyle(null);
@@ -2584,7 +3096,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[24]);
+        _call.setOperation(_operations[28]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/PurgeDocuments");
         _call.setEncodingStyle(null);
@@ -2618,7 +3130,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[25]);
+        _call.setOperation(_operations[29]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/SaveTemplate");
         _call.setEncodingStyle(null);
@@ -2652,7 +3164,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[26]);
+        _call.setOperation(_operations[30]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/UploadTemplate");
         _call.setEncodingStyle(null);
@@ -2681,12 +3193,12 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
 }
     }
 
-    public net.docusign.www.API._3_0.EnvelopeTemplateDefinition[] requestTemplates(java.lang.String accountID) throws java.rmi.RemoteException {
+    public net.docusign.www.API._3_0.EnvelopeTemplateDefinition[] requestTemplates(java.lang.String accountID, boolean includeAdvancedTemplates) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[27]);
+        _call.setOperation(_operations[31]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestTemplates");
         _call.setEncodingStyle(null);
@@ -2697,7 +3209,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {accountID});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {accountID, new java.lang.Boolean(includeAdvancedTemplates)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -2720,7 +3232,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[28]);
+        _call.setOperation(_operations[32]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestTemplate");
         _call.setEncodingStyle(null);
@@ -2754,7 +3266,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[29]);
+        _call.setOperation(_operations[33]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetAuthenticationToken");
         _call.setEncodingStyle(null);
@@ -2788,7 +3300,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[30]);
+        _call.setOperation(_operations[34]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetAddressBookItems");
         _call.setEncodingStyle(null);
@@ -2822,7 +3334,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[31]);
+        _call.setOperation(_operations[35]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/UpdateAddressBookItems");
         _call.setEncodingStyle(null);
@@ -2856,7 +3368,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[32]);
+        _call.setOperation(_operations[36]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RemoveAddressBookItems");
         _call.setEncodingStyle(null);
@@ -2890,7 +3402,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[33]);
+        _call.setOperation(_operations[37]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/SynchEnvelope");
         _call.setEncodingStyle(null);
@@ -2924,7 +3436,7 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[34]);
+        _call.setOperation(_operations[38]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestSenderToken");
         _call.setEncodingStyle(null);
@@ -2946,6 +3458,142 @@ public class APIServiceSoap12Stub extends org.apache.axis.client.Stub implements
                 return (java.lang.String) _resp;
             } catch (java.lang.Exception _exception) {
                 return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public java.lang.String requestCorrectToken(java.lang.String envelopeID, boolean suppressNavigation, java.lang.String returnURL) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[39]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestCorrectToken");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP12_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestCorrectToken"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {envelopeID, new java.lang.Boolean(suppressNavigation), returnURL});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (java.lang.String) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (java.lang.String) org.apache.axis.utils.JavaUtils.convert(_resp, java.lang.String.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public net.docusign.www.API._3_0.FolderResults getFolder(java.lang.String accountId, net.docusign.www.API._3_0.FolderType folderType, java.lang.String folderName, int startPosition, java.util.Calendar fromDate, java.util.Calendar toDate, java.lang.String searchText, net.docusign.www.API._3_0.EnvelopeStatusCode status) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[40]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetFolder");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP12_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetFolder"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {accountId, folderType, folderName, new java.lang.Integer(startPosition), fromDate, toDate, searchText, status});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (net.docusign.www.API._3_0.FolderResults) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (net.docusign.www.API._3_0.FolderResults) org.apache.axis.utils.JavaUtils.convert(_resp, net.docusign.www.API._3_0.FolderResults.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public net.docusign.www.API._3_0.AvailableFolders getFolders(java.lang.String accountId) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[41]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://www.docusign.net/API/3.0/GetFolders");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP12_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetFolders"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {accountId});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (net.docusign.www.API._3_0.AvailableFolders) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (net.docusign.www.API._3_0.AvailableFolders) org.apache.axis.utils.JavaUtils.convert(_resp, net.docusign.www.API._3_0.AvailableFolders.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public net.docusign.www.API._3_0.Envelope requestEnvelope(java.lang.String envelopeID, boolean includeDocumentBytes) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[42]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://www.docusign.net/API/3.0/RequestEnvelope");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP12_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequestEnvelope"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {envelopeID, new java.lang.Boolean(includeDocumentBytes)});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (net.docusign.www.API._3_0.Envelope) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (net.docusign.www.API._3_0.Envelope) org.apache.axis.utils.JavaUtils.convert(_resp, net.docusign.www.API._3_0.Envelope.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

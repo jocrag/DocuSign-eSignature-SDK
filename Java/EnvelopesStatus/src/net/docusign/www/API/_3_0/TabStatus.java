@@ -40,6 +40,8 @@ public class TabStatus  implements java.io.Serializable {
 
     private java.math.BigDecimal scaleValue;
 
+    private java.lang.String customTabType;
+
     public TabStatus() {
     }
 
@@ -59,7 +61,8 @@ public class TabStatus  implements java.io.Serializable {
            java.lang.String roleName,
            java.lang.String listValues,
            java.lang.String listSelectedValue,
-           java.math.BigDecimal scaleValue) {
+           java.math.BigDecimal scaleValue,
+           java.lang.String customTabType) {
            this.tabType = tabType;
            this.status = status;
            this.XPosition = XPosition;
@@ -76,6 +79,7 @@ public class TabStatus  implements java.io.Serializable {
            this.listValues = listValues;
            this.listSelectedValue = listSelectedValue;
            this.scaleValue = scaleValue;
+           this.customTabType = customTabType;
     }
 
 
@@ -398,6 +402,26 @@ public class TabStatus  implements java.io.Serializable {
         this.scaleValue = scaleValue;
     }
 
+
+    /**
+     * Gets the customTabType value for this TabStatus.
+     * 
+     * @return customTabType
+     */
+    public java.lang.String getCustomTabType() {
+        return customTabType;
+    }
+
+
+    /**
+     * Sets the customTabType value for this TabStatus.
+     * 
+     * @param customTabType
+     */
+    public void setCustomTabType(java.lang.String customTabType) {
+        this.customTabType = customTabType;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof TabStatus)) return false;
@@ -453,7 +477,10 @@ public class TabStatus  implements java.io.Serializable {
               this.listSelectedValue.equals(other.getListSelectedValue()))) &&
             ((this.scaleValue==null && other.getScaleValue()==null) || 
              (this.scaleValue!=null &&
-              this.scaleValue.equals(other.getScaleValue())));
+              this.scaleValue.equals(other.getScaleValue()))) &&
+            ((this.customTabType==null && other.getCustomTabType()==null) || 
+             (this.customTabType!=null &&
+              this.customTabType.equals(other.getCustomTabType())));
         __equalsCalc = null;
         return _equals;
     }
@@ -508,6 +535,9 @@ public class TabStatus  implements java.io.Serializable {
         }
         if (getScaleValue() != null) {
             _hashCode += getScaleValue().hashCode();
+        }
+        if (getCustomTabType() != null) {
+            _hashCode += getCustomTabType().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -625,6 +655,13 @@ public class TabStatus  implements java.io.Serializable {
         elemField.setFieldName("scaleValue");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ScaleValue"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "decimal"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("customTabType");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "CustomTabType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

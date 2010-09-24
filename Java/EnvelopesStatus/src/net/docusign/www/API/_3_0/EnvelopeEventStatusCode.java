@@ -1,5 +1,5 @@
 /**
- * RecipientTypeCode.java
+ * EnvelopeEventStatusCode.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,37 +7,35 @@
 
 package net.docusign.www.API._3_0;
 
-public class RecipientTypeCode implements java.io.Serializable {
+public class EnvelopeEventStatusCode implements java.io.Serializable {
     private java.lang.String _value_;
     private static java.util.HashMap _table_ = new java.util.HashMap();
 
     // Constructor
-    protected RecipientTypeCode(java.lang.String value) {
+    protected EnvelopeEventStatusCode(java.lang.String value) {
         _value_ = value;
         _table_.put(_value_,this);
     }
 
-    public static final java.lang.String _Signer = "Signer";
-    public static final java.lang.String _Agent = "Agent";
-    public static final java.lang.String _Editor = "Editor";
-    public static final java.lang.String _CarbonCopy = "CarbonCopy";
-    public static final java.lang.String _CertifiedDelivery = "CertifiedDelivery";
-    public static final java.lang.String _InPersonSigner = "InPersonSigner";
-    public static final RecipientTypeCode Signer = new RecipientTypeCode(_Signer);
-    public static final RecipientTypeCode Agent = new RecipientTypeCode(_Agent);
-    public static final RecipientTypeCode Editor = new RecipientTypeCode(_Editor);
-    public static final RecipientTypeCode CarbonCopy = new RecipientTypeCode(_CarbonCopy);
-    public static final RecipientTypeCode CertifiedDelivery = new RecipientTypeCode(_CertifiedDelivery);
-    public static final RecipientTypeCode InPersonSigner = new RecipientTypeCode(_InPersonSigner);
+    public static final java.lang.String _Sent = "Sent";
+    public static final java.lang.String _Delivered = "Delivered";
+    public static final java.lang.String _Completed = "Completed";
+    public static final java.lang.String _Declined = "Declined";
+    public static final java.lang.String _Voided = "Voided";
+    public static final EnvelopeEventStatusCode Sent = new EnvelopeEventStatusCode(_Sent);
+    public static final EnvelopeEventStatusCode Delivered = new EnvelopeEventStatusCode(_Delivered);
+    public static final EnvelopeEventStatusCode Completed = new EnvelopeEventStatusCode(_Completed);
+    public static final EnvelopeEventStatusCode Declined = new EnvelopeEventStatusCode(_Declined);
+    public static final EnvelopeEventStatusCode Voided = new EnvelopeEventStatusCode(_Voided);
     public java.lang.String getValue() { return _value_;}
-    public static RecipientTypeCode fromValue(java.lang.String value)
+    public static EnvelopeEventStatusCode fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {
-        RecipientTypeCode enumeration = (RecipientTypeCode)
+        EnvelopeEventStatusCode enumeration = (EnvelopeEventStatusCode)
             _table_.get(value);
         if (enumeration==null) throw new java.lang.IllegalArgumentException();
         return enumeration;
     }
-    public static RecipientTypeCode fromString(java.lang.String value)
+    public static EnvelopeEventStatusCode fromString(java.lang.String value)
           throws java.lang.IllegalArgumentException {
         return fromValue(value);
     }
@@ -63,10 +61,10 @@ public class RecipientTypeCode implements java.io.Serializable {
     }
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(RecipientTypeCode.class);
+        new org.apache.axis.description.TypeDesc(EnvelopeEventStatusCode.class);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientTypeCode"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeEventStatusCode"));
     }
     /**
      * Return type metadata object
