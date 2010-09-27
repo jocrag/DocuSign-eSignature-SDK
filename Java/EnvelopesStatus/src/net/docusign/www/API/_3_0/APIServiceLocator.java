@@ -22,7 +22,7 @@ public class APIServiceLocator extends org.apache.axis.client.Service implements
     }
 
     // Use to get a proxy class for APIServiceSoap12
-    private java.lang.String APIServiceSoap12_address = "https://demo.docusign.net/api/3.0/api.asmx";
+    private java.lang.String APIServiceSoap12_address = "https://www.docusign.net/api/3.0/api.asmx";
 
     public java.lang.String getAPIServiceSoap12Address() {
         return APIServiceSoap12_address;
@@ -67,7 +67,7 @@ public class APIServiceLocator extends org.apache.axis.client.Service implements
 
 
     // Use to get a proxy class for APIServiceSoap
-    private java.lang.String APIServiceSoap_address = "https://demo.docusign.net/api/3.0/api.asmx";
+    private java.lang.String APIServiceSoap_address = "https://www.docusign.net/api/3.0/api.asmx";
 
     public java.lang.String getAPIServiceSoapAddress() {
         return APIServiceSoap_address;
