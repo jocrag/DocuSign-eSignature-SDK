@@ -91,24 +91,12 @@
 
                 <%
 		int size;		
-        try {
-			
-				
-			AddressBookItem[] result1 = port.getAddressBookItems(accountId);
-			size = Array.getLength(result1);
-			
+        try {			
             EnvelopeStatusFilter envelopeStatusFilter = new EnvelopeStatusFilter();
             envelopeStatusFilter.setAccountId(accountId);
 
             // Request envelope statuses
-            FilteredEnvelopeStatuses result = port.requestStatuses(envelopeStatusFilter);
-
-			if (request.getParameter("mail") != null) {
-				
-				out.print(request.getParameter("envelopeID"));
-				
-				DocumentPDFs result2 = port.requestDocumentPDFsRecipientsView(request.getParameter("envelopeID"), "Tony", "tony@smartmobilesolutions.com");
-			}	
+            FilteredEnvelopeStatuses result = port.requestStatuses(envelopeStatusFilter);	
 			
             // Iterate through the returned EnvelopeStatus objects and display details
             for (int i = 0; i < result.getEnvelopeStatuses().length; i++) {

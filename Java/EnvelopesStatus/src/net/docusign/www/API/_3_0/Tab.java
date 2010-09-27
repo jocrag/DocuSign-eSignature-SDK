@@ -58,6 +58,16 @@ public class Tab  implements java.io.Serializable {
 
     private java.lang.Boolean templateRequired;
 
+    private java.lang.String conditionalParentLabel;
+
+    private java.lang.String conditionalParentValue;
+
+    private java.lang.Boolean sharedTab;
+
+    private java.lang.Boolean requireInitialOnSharedTabChange;
+
+    private java.lang.Boolean concealValueOnDocument;
+
     public Tab() {
     }
 
@@ -86,7 +96,12 @@ public class Tab  implements java.io.Serializable {
            java.lang.String customTabValidationPattern,
            java.lang.String customTabValidationMessage,
            java.lang.Boolean templateLocked,
-           java.lang.Boolean templateRequired) {
+           java.lang.Boolean templateRequired,
+           java.lang.String conditionalParentLabel,
+           java.lang.String conditionalParentValue,
+           java.lang.Boolean sharedTab,
+           java.lang.Boolean requireInitialOnSharedTabChange,
+           java.lang.Boolean concealValueOnDocument) {
            this.documentID = documentID;
            this.recipientID = recipientID;
            this.pageNumber = pageNumber;
@@ -112,6 +127,11 @@ public class Tab  implements java.io.Serializable {
            this.customTabValidationMessage = customTabValidationMessage;
            this.templateLocked = templateLocked;
            this.templateRequired = templateRequired;
+           this.conditionalParentLabel = conditionalParentLabel;
+           this.conditionalParentValue = conditionalParentValue;
+           this.sharedTab = sharedTab;
+           this.requireInitialOnSharedTabChange = requireInitialOnSharedTabChange;
+           this.concealValueOnDocument = concealValueOnDocument;
     }
 
 
@@ -614,6 +634,106 @@ public class Tab  implements java.io.Serializable {
         this.templateRequired = templateRequired;
     }
 
+
+    /**
+     * Gets the conditionalParentLabel value for this Tab.
+     * 
+     * @return conditionalParentLabel
+     */
+    public java.lang.String getConditionalParentLabel() {
+        return conditionalParentLabel;
+    }
+
+
+    /**
+     * Sets the conditionalParentLabel value for this Tab.
+     * 
+     * @param conditionalParentLabel
+     */
+    public void setConditionalParentLabel(java.lang.String conditionalParentLabel) {
+        this.conditionalParentLabel = conditionalParentLabel;
+    }
+
+
+    /**
+     * Gets the conditionalParentValue value for this Tab.
+     * 
+     * @return conditionalParentValue
+     */
+    public java.lang.String getConditionalParentValue() {
+        return conditionalParentValue;
+    }
+
+
+    /**
+     * Sets the conditionalParentValue value for this Tab.
+     * 
+     * @param conditionalParentValue
+     */
+    public void setConditionalParentValue(java.lang.String conditionalParentValue) {
+        this.conditionalParentValue = conditionalParentValue;
+    }
+
+
+    /**
+     * Gets the sharedTab value for this Tab.
+     * 
+     * @return sharedTab
+     */
+    public java.lang.Boolean getSharedTab() {
+        return sharedTab;
+    }
+
+
+    /**
+     * Sets the sharedTab value for this Tab.
+     * 
+     * @param sharedTab
+     */
+    public void setSharedTab(java.lang.Boolean sharedTab) {
+        this.sharedTab = sharedTab;
+    }
+
+
+    /**
+     * Gets the requireInitialOnSharedTabChange value for this Tab.
+     * 
+     * @return requireInitialOnSharedTabChange
+     */
+    public java.lang.Boolean getRequireInitialOnSharedTabChange() {
+        return requireInitialOnSharedTabChange;
+    }
+
+
+    /**
+     * Sets the requireInitialOnSharedTabChange value for this Tab.
+     * 
+     * @param requireInitialOnSharedTabChange
+     */
+    public void setRequireInitialOnSharedTabChange(java.lang.Boolean requireInitialOnSharedTabChange) {
+        this.requireInitialOnSharedTabChange = requireInitialOnSharedTabChange;
+    }
+
+
+    /**
+     * Gets the concealValueOnDocument value for this Tab.
+     * 
+     * @return concealValueOnDocument
+     */
+    public java.lang.Boolean getConcealValueOnDocument() {
+        return concealValueOnDocument;
+    }
+
+
+    /**
+     * Sets the concealValueOnDocument value for this Tab.
+     * 
+     * @param concealValueOnDocument
+     */
+    public void setConcealValueOnDocument(java.lang.Boolean concealValueOnDocument) {
+        this.concealValueOnDocument = concealValueOnDocument;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof Tab)) return false;
@@ -700,7 +820,22 @@ public class Tab  implements java.io.Serializable {
               this.templateLocked.equals(other.getTemplateLocked()))) &&
             ((this.templateRequired==null && other.getTemplateRequired()==null) || 
              (this.templateRequired!=null &&
-              this.templateRequired.equals(other.getTemplateRequired())));
+              this.templateRequired.equals(other.getTemplateRequired()))) &&
+            ((this.conditionalParentLabel==null && other.getConditionalParentLabel()==null) || 
+             (this.conditionalParentLabel!=null &&
+              this.conditionalParentLabel.equals(other.getConditionalParentLabel()))) &&
+            ((this.conditionalParentValue==null && other.getConditionalParentValue()==null) || 
+             (this.conditionalParentValue!=null &&
+              this.conditionalParentValue.equals(other.getConditionalParentValue()))) &&
+            ((this.sharedTab==null && other.getSharedTab()==null) || 
+             (this.sharedTab!=null &&
+              this.sharedTab.equals(other.getSharedTab()))) &&
+            ((this.requireInitialOnSharedTabChange==null && other.getRequireInitialOnSharedTabChange()==null) || 
+             (this.requireInitialOnSharedTabChange!=null &&
+              this.requireInitialOnSharedTabChange.equals(other.getRequireInitialOnSharedTabChange()))) &&
+            ((this.concealValueOnDocument==null && other.getConcealValueOnDocument()==null) || 
+             (this.concealValueOnDocument!=null &&
+              this.concealValueOnDocument.equals(other.getConcealValueOnDocument())));
         __equalsCalc = null;
         return _equals;
     }
@@ -786,6 +921,21 @@ public class Tab  implements java.io.Serializable {
         }
         if (getTemplateRequired() != null) {
             _hashCode += getTemplateRequired().hashCode();
+        }
+        if (getConditionalParentLabel() != null) {
+            _hashCode += getConditionalParentLabel().hashCode();
+        }
+        if (getConditionalParentValue() != null) {
+            _hashCode += getConditionalParentValue().hashCode();
+        }
+        if (getSharedTab() != null) {
+            _hashCode += getSharedTab().hashCode();
+        }
+        if (getRequireInitialOnSharedTabChange() != null) {
+            _hashCode += getRequireInitialOnSharedTabChange().hashCode();
+        }
+        if (getConcealValueOnDocument() != null) {
+            _hashCode += getConcealValueOnDocument().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -967,6 +1117,41 @@ public class Tab  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("templateRequired");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "TemplateRequired"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("conditionalParentLabel");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ConditionalParentLabel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("conditionalParentValue");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ConditionalParentValue"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sharedTab");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SharedTab"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("requireInitialOnSharedTabChange");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequireInitialOnSharedTabChange"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("concealValueOnDocument");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "ConcealValueOnDocument"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

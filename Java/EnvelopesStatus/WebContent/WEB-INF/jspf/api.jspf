@@ -33,10 +33,26 @@
             String userId = session.getAttribute("UserID").toString();
             String userName = session.getAttribute("UserName").toString();
 
-            // DSApiService service = new DSApiService(accountId, userId, password); // Use production
-
+           /*
+            * The integrator key is used to allow you to send requests with the users passed via the UsernameToken.
+            * Users with DocuSign privileges will be allowed to be passed in the UsernameToken as long as a valid integrator key is provided.
+            * The integrator key is provided to API developers by DocuSign, you can request the integrator key in the DocuSign console on the Account Preferences ? API page.
+            * The integrator key must be placed in front of the user ID that is in the Username node of the UsernameToken.
+            * The integrator key must be wrapped with brackets, ?[ and ]?.
+            * Example format:
+            * <wsse:Username>[Key Here]2988541c-4ec7-4245-b520-f2d324062ca3</wsse:Username>
+            */
+            String apiKey = this.getServletContext().getInitParameter("DocuSignApiKey");
+	    if (apiKey == null) apiKey = "";
+            String apiUserId = userId;
+            if (apiKey.length() > 0)
+            {
+                apiUserId = "[" + apiKey + "]" + userId;
+            }
+            // DSApiService service = new DSApiService(accountId, apiUserId, password); // Use production
             DSApiService service = new DSApiService("https://demo.docusign.net/API/3.0/api.asmx",
-            	accountId, userId, password); // Use demo
-			APIServiceSoap port =service.getApiService();
+            	accountId, apiUserId, password); // Use demo
+
+	    APIServiceSoap port = service.getApiService();
  
 %>            

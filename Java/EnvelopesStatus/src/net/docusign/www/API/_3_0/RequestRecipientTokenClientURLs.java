@@ -26,6 +26,8 @@ public class RequestRecipientTokenClientURLs  implements java.io.Serializable {
 
     private java.lang.String onIdCheckFailed;
 
+    private java.lang.String onFaxPending;
+
     private java.lang.Boolean generateSignedDocumentAsynch;
 
     public RequestRecipientTokenClientURLs() {
@@ -41,6 +43,7 @@ public class RequestRecipientTokenClientURLs  implements java.io.Serializable {
            java.lang.String onException,
            java.lang.String onAccessCodeFailed,
            java.lang.String onIdCheckFailed,
+           java.lang.String onFaxPending,
            java.lang.Boolean generateSignedDocumentAsynch) {
            this.onSigningComplete = onSigningComplete;
            this.onViewingComplete = onViewingComplete;
@@ -51,6 +54,7 @@ public class RequestRecipientTokenClientURLs  implements java.io.Serializable {
            this.onException = onException;
            this.onAccessCodeFailed = onAccessCodeFailed;
            this.onIdCheckFailed = onIdCheckFailed;
+           this.onFaxPending = onFaxPending;
            this.generateSignedDocumentAsynch = generateSignedDocumentAsynch;
     }
 
@@ -236,6 +240,26 @@ public class RequestRecipientTokenClientURLs  implements java.io.Serializable {
 
 
     /**
+     * Gets the onFaxPending value for this RequestRecipientTokenClientURLs.
+     * 
+     * @return onFaxPending
+     */
+    public java.lang.String getOnFaxPending() {
+        return onFaxPending;
+    }
+
+
+    /**
+     * Sets the onFaxPending value for this RequestRecipientTokenClientURLs.
+     * 
+     * @param onFaxPending
+     */
+    public void setOnFaxPending(java.lang.String onFaxPending) {
+        this.onFaxPending = onFaxPending;
+    }
+
+
+    /**
      * Gets the generateSignedDocumentAsynch value for this RequestRecipientTokenClientURLs.
      * 
      * @return generateSignedDocumentAsynch
@@ -293,6 +317,9 @@ public class RequestRecipientTokenClientURLs  implements java.io.Serializable {
             ((this.onIdCheckFailed==null && other.getOnIdCheckFailed()==null) || 
              (this.onIdCheckFailed!=null &&
               this.onIdCheckFailed.equals(other.getOnIdCheckFailed()))) &&
+            ((this.onFaxPending==null && other.getOnFaxPending()==null) || 
+             (this.onFaxPending!=null &&
+              this.onFaxPending.equals(other.getOnFaxPending()))) &&
             ((this.generateSignedDocumentAsynch==null && other.getGenerateSignedDocumentAsynch()==null) || 
              (this.generateSignedDocumentAsynch!=null &&
               this.generateSignedDocumentAsynch.equals(other.getGenerateSignedDocumentAsynch())));
@@ -333,6 +360,9 @@ public class RequestRecipientTokenClientURLs  implements java.io.Serializable {
         }
         if (getOnIdCheckFailed() != null) {
             _hashCode += getOnIdCheckFailed().hashCode();
+        }
+        if (getOnFaxPending() != null) {
+            _hashCode += getOnFaxPending().hashCode();
         }
         if (getGenerateSignedDocumentAsynch() != null) {
             _hashCode += getGenerateSignedDocumentAsynch().hashCode();
@@ -406,6 +436,13 @@ public class RequestRecipientTokenClientURLs  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("onIdCheckFailed");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "OnIdCheckFailed"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("onFaxPending");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "OnFaxPending"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

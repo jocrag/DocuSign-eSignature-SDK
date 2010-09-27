@@ -44,12 +44,29 @@
                 String email = request.getParameter("txtEmail");
                 String password = request.getParameter("txtPassword");
 
-                //CredentialSoapProxy port = new CredentialSoapProxy(); // Use production
+                /*
+                 * The integrator key is used to allow you to send requests with the users passed via the UsernameToken.
+                 * Users with DocuSign privileges will be allowed to be passed in the UsernameToken as long as a valid integrator key is provided.
+                 * The integrator key is provided to API developers by DocuSign, you can request the integrator key in the DocuSign console on the Account Preferences – API page.
+                 * The integrator key must be placed in front of the user ID that is in the Username node of the UsernameToken.
+                 * The integrator key must be wrapped with brackets, “[ and ]”.
+                 */
+		String apiKey = this.getServletContext().getInitParameter("DocuSignApiKey"); // see web.xml
+		if (apiKey == null) apiKey = "";
 
-                CredentialSoapProxy port = new CredentialSoapProxy("https://demo.docusign.net/API/3.0/Credential.asmx"); // Use demo
+                //CredentialSoapStub port = new CredentialSoapStub(); // Use production
+                CredentialSoapStub port = new CredentialSoapStub(new java.net.URL ("https://demo.docusign.net/API/3.0/Credential.asmx"), null); // Use demo
 
                 // Get the list of accounts associated with the e-mail and password entered
-                LoginResponseLoginResult result = port.login(email, password);
+                LoginResponseLoginResult result;
+		if (apiKey.length() > 0)
+		{
+                    result = port.login("[" + apiKey + "]" + email, password);
+		}
+                else
+                {
+                    result = port.login(email, password);
+                }
                 if (result.isSuccess()) {
                     ArrayOfAccountAccount account = null;
                     // save in session

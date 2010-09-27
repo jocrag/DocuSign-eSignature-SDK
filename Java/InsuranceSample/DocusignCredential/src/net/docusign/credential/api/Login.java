@@ -10,7 +10,8 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
- */
+*/
+
 package net.docusign.credential.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -19,21 +20,32 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for anonymous complex type.
- *
- * <p>The following schema fragment specifies the expected content contained
- * within this class.
- *
- * <pre> &lt;complexType> &lt;complexContent> &lt;restriction
- * base="{http://www.w3.org/2001/XMLSchema}anyType"> &lt;sequence> &lt;element
- * name="Email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- * &lt;element name="Password" type="{http://www.w3.org/2001/XMLSchema}string"
- * minOccurs="0"/> &lt;/sequence> &lt;/restriction> &lt;/complexContent>
- * &lt;/complexType> </pre>
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * 
+ * <pre>
+ * &lt;complexType>
+ *   &lt;complexContent>
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *       &lt;sequence>
+ *         &lt;element name="Email" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="Password" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *       &lt;/sequence>
+ *     &lt;/restriction>
+ *   &lt;/complexContent>
+ * &lt;/complexType>
+ * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = { "email", "password" })
+@XmlType(name = "", propOrder = {
+    "email",
+    "password"
+})
 @XmlRootElement(name = "Login")
 public class Login {
 
@@ -44,9 +56,11 @@ public class Login {
 
     /**
      * Gets the value of the email property.
-     *
-     * @return possible object is {@link String }
-     *
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
     public String getEmail() {
         return email;
@@ -54,10 +68,11 @@ public class Login {
 
     /**
      * Sets the value of the email property.
-     *
+     * 
      * @param value
-     *            allowed object is {@link String }
-     *
+     *     allowed object is
+     *     {@link String }
+     *     
      */
     public void setEmail(String value) {
         this.email = value;
@@ -65,9 +80,11 @@ public class Login {
 
     /**
      * Gets the value of the password property.
-     *
-     * @return possible object is {@link String }
-     *
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
     public String getPassword() {
         return password;
@@ -75,12 +92,14 @@ public class Login {
 
     /**
      * Sets the value of the password property.
-     *
+     * 
      * @param value
-     *            allowed object is {@link String }
-     *
+     *     allowed object is
+     *     {@link String }
+     *     
      */
     public void setPassword(String value) {
         this.password = value;
     }
+
 }

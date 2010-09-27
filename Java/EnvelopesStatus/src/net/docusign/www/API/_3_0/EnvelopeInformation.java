@@ -36,6 +36,12 @@ public class EnvelopeInformation  implements java.io.Serializable {
 
     private java.lang.Boolean enableWetSign;
 
+    private java.lang.Boolean allowRecipientRecursion;
+
+    private java.lang.Boolean allowMarkup;
+
+    private net.docusign.www.API._3_0.EventNotification eventNotification;
+
     public EnvelopeInformation() {
     }
 
@@ -53,7 +59,10 @@ public class EnvelopeInformation  implements java.io.Serializable {
            java.lang.Boolean authoritativeCopy,
            net.docusign.www.API._3_0.Notification notification,
            java.lang.Boolean enforceSignerVisibility,
-           java.lang.Boolean enableWetSign) {
+           java.lang.Boolean enableWetSign,
+           java.lang.Boolean allowRecipientRecursion,
+           java.lang.Boolean allowMarkup,
+           net.docusign.www.API._3_0.EventNotification eventNotification) {
            this.transactionID = transactionID;
            this.asynchronous = asynchronous;
            this.accountId = accountId;
@@ -68,6 +77,9 @@ public class EnvelopeInformation  implements java.io.Serializable {
            this.notification = notification;
            this.enforceSignerVisibility = enforceSignerVisibility;
            this.enableWetSign = enableWetSign;
+           this.allowRecipientRecursion = allowRecipientRecursion;
+           this.allowMarkup = allowMarkup;
+           this.eventNotification = eventNotification;
     }
 
 
@@ -350,6 +362,66 @@ public class EnvelopeInformation  implements java.io.Serializable {
         this.enableWetSign = enableWetSign;
     }
 
+
+    /**
+     * Gets the allowRecipientRecursion value for this EnvelopeInformation.
+     * 
+     * @return allowRecipientRecursion
+     */
+    public java.lang.Boolean getAllowRecipientRecursion() {
+        return allowRecipientRecursion;
+    }
+
+
+    /**
+     * Sets the allowRecipientRecursion value for this EnvelopeInformation.
+     * 
+     * @param allowRecipientRecursion
+     */
+    public void setAllowRecipientRecursion(java.lang.Boolean allowRecipientRecursion) {
+        this.allowRecipientRecursion = allowRecipientRecursion;
+    }
+
+
+    /**
+     * Gets the allowMarkup value for this EnvelopeInformation.
+     * 
+     * @return allowMarkup
+     */
+    public java.lang.Boolean getAllowMarkup() {
+        return allowMarkup;
+    }
+
+
+    /**
+     * Sets the allowMarkup value for this EnvelopeInformation.
+     * 
+     * @param allowMarkup
+     */
+    public void setAllowMarkup(java.lang.Boolean allowMarkup) {
+        this.allowMarkup = allowMarkup;
+    }
+
+
+    /**
+     * Gets the eventNotification value for this EnvelopeInformation.
+     * 
+     * @return eventNotification
+     */
+    public net.docusign.www.API._3_0.EventNotification getEventNotification() {
+        return eventNotification;
+    }
+
+
+    /**
+     * Sets the eventNotification value for this EnvelopeInformation.
+     * 
+     * @param eventNotification
+     */
+    public void setEventNotification(net.docusign.www.API._3_0.EventNotification eventNotification) {
+        this.eventNotification = eventNotification;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof EnvelopeInformation)) return false;
@@ -403,7 +475,16 @@ public class EnvelopeInformation  implements java.io.Serializable {
               this.enforceSignerVisibility.equals(other.getEnforceSignerVisibility()))) &&
             ((this.enableWetSign==null && other.getEnableWetSign()==null) || 
              (this.enableWetSign!=null &&
-              this.enableWetSign.equals(other.getEnableWetSign())));
+              this.enableWetSign.equals(other.getEnableWetSign()))) &&
+            ((this.allowRecipientRecursion==null && other.getAllowRecipientRecursion()==null) || 
+             (this.allowRecipientRecursion!=null &&
+              this.allowRecipientRecursion.equals(other.getAllowRecipientRecursion()))) &&
+            ((this.allowMarkup==null && other.getAllowMarkup()==null) || 
+             (this.allowMarkup!=null &&
+              this.allowMarkup.equals(other.getAllowMarkup()))) &&
+            ((this.eventNotification==null && other.getEventNotification()==null) || 
+             (this.eventNotification!=null &&
+              this.eventNotification.equals(other.getEventNotification())));
         __equalsCalc = null;
         return _equals;
     }
@@ -464,6 +545,15 @@ public class EnvelopeInformation  implements java.io.Serializable {
         }
         if (getEnableWetSign() != null) {
             _hashCode += getEnableWetSign().hashCode();
+        }
+        if (getAllowRecipientRecursion() != null) {
+            _hashCode += getAllowRecipientRecursion().hashCode();
+        }
+        if (getAllowMarkup() != null) {
+            _hashCode += getAllowMarkup().hashCode();
+        }
+        if (getEventNotification() != null) {
+            _hashCode += getEventNotification().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -571,6 +661,27 @@ public class EnvelopeInformation  implements java.io.Serializable {
         elemField.setFieldName("enableWetSign");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnableWetSign"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowRecipientRecursion");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AllowRecipientRecursion"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("allowMarkup");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AllowMarkup"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("eventNotification");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventNotification"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EventNotification"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

@@ -22,9 +22,11 @@ public class Recipient  implements java.io.Serializable {
 
     private java.lang.Boolean addAccessCodeToEmail;
 
-    private boolean requireIDLookup;
+    private java.lang.Boolean requireIDLookup;
 
     private java.lang.String IDCheckConfigurationName;
+
+    private net.docusign.www.API._3_0.RecipientPhoneAuthentication phoneAuthentication;
 
     private net.docusign.www.API._3_0.RecipientSignatureInfo signatureInfo;
 
@@ -50,6 +52,8 @@ public class Recipient  implements java.io.Serializable {
 
     private java.lang.Boolean templateAccessCodeRequired;
 
+    private java.lang.Boolean defaultRecipient;
+
     public Recipient() {
     }
 
@@ -61,8 +65,9 @@ public class Recipient  implements java.io.Serializable {
            net.docusign.www.API._3_0.RecipientTypeCode type,
            java.lang.String accessCode,
            java.lang.Boolean addAccessCodeToEmail,
-           boolean requireIDLookup,
+           java.lang.Boolean requireIDLookup,
            java.lang.String IDCheckConfigurationName,
+           net.docusign.www.API._3_0.RecipientPhoneAuthentication phoneAuthentication,
            net.docusign.www.API._3_0.RecipientSignatureInfo signatureInfo,
            net.docusign.www.API._3_0.RecipientCaptiveInfo captiveInfo,
            java.lang.String[] customFields,
@@ -74,7 +79,8 @@ public class Recipient  implements java.io.Serializable {
            java.lang.String roleName,
            java.lang.Boolean templateLocked,
            java.lang.Boolean templateRequired,
-           java.lang.Boolean templateAccessCodeRequired) {
+           java.lang.Boolean templateAccessCodeRequired,
+           java.lang.Boolean defaultRecipient) {
            this.ID = ID;
            this.userName = userName;
            this.signerName = signerName;
@@ -84,6 +90,7 @@ public class Recipient  implements java.io.Serializable {
            this.addAccessCodeToEmail = addAccessCodeToEmail;
            this.requireIDLookup = requireIDLookup;
            this.IDCheckConfigurationName = IDCheckConfigurationName;
+           this.phoneAuthentication = phoneAuthentication;
            this.signatureInfo = signatureInfo;
            this.captiveInfo = captiveInfo;
            this.customFields = customFields;
@@ -96,6 +103,7 @@ public class Recipient  implements java.io.Serializable {
            this.templateLocked = templateLocked;
            this.templateRequired = templateRequired;
            this.templateAccessCodeRequired = templateAccessCodeRequired;
+           this.defaultRecipient = defaultRecipient;
     }
 
 
@@ -244,7 +252,7 @@ public class Recipient  implements java.io.Serializable {
      * 
      * @return requireIDLookup
      */
-    public boolean isRequireIDLookup() {
+    public java.lang.Boolean getRequireIDLookup() {
         return requireIDLookup;
     }
 
@@ -254,7 +262,7 @@ public class Recipient  implements java.io.Serializable {
      * 
      * @param requireIDLookup
      */
-    public void setRequireIDLookup(boolean requireIDLookup) {
+    public void setRequireIDLookup(java.lang.Boolean requireIDLookup) {
         this.requireIDLookup = requireIDLookup;
     }
 
@@ -276,6 +284,26 @@ public class Recipient  implements java.io.Serializable {
      */
     public void setIDCheckConfigurationName(java.lang.String IDCheckConfigurationName) {
         this.IDCheckConfigurationName = IDCheckConfigurationName;
+    }
+
+
+    /**
+     * Gets the phoneAuthentication value for this Recipient.
+     * 
+     * @return phoneAuthentication
+     */
+    public net.docusign.www.API._3_0.RecipientPhoneAuthentication getPhoneAuthentication() {
+        return phoneAuthentication;
+    }
+
+
+    /**
+     * Sets the phoneAuthentication value for this Recipient.
+     * 
+     * @param phoneAuthentication
+     */
+    public void setPhoneAuthentication(net.docusign.www.API._3_0.RecipientPhoneAuthentication phoneAuthentication) {
+        this.phoneAuthentication = phoneAuthentication;
     }
 
 
@@ -518,6 +546,26 @@ public class Recipient  implements java.io.Serializable {
         this.templateAccessCodeRequired = templateAccessCodeRequired;
     }
 
+
+    /**
+     * Gets the defaultRecipient value for this Recipient.
+     * 
+     * @return defaultRecipient
+     */
+    public java.lang.Boolean getDefaultRecipient() {
+        return defaultRecipient;
+    }
+
+
+    /**
+     * Sets the defaultRecipient value for this Recipient.
+     * 
+     * @param defaultRecipient
+     */
+    public void setDefaultRecipient(java.lang.Boolean defaultRecipient) {
+        this.defaultRecipient = defaultRecipient;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof Recipient)) return false;
@@ -551,10 +599,15 @@ public class Recipient  implements java.io.Serializable {
             ((this.addAccessCodeToEmail==null && other.getAddAccessCodeToEmail()==null) || 
              (this.addAccessCodeToEmail!=null &&
               this.addAccessCodeToEmail.equals(other.getAddAccessCodeToEmail()))) &&
-            this.requireIDLookup == other.isRequireIDLookup() &&
+            ((this.requireIDLookup==null && other.getRequireIDLookup()==null) || 
+             (this.requireIDLookup!=null &&
+              this.requireIDLookup.equals(other.getRequireIDLookup()))) &&
             ((this.IDCheckConfigurationName==null && other.getIDCheckConfigurationName()==null) || 
              (this.IDCheckConfigurationName!=null &&
               this.IDCheckConfigurationName.equals(other.getIDCheckConfigurationName()))) &&
+            ((this.phoneAuthentication==null && other.getPhoneAuthentication()==null) || 
+             (this.phoneAuthentication!=null &&
+              this.phoneAuthentication.equals(other.getPhoneAuthentication()))) &&
             ((this.signatureInfo==null && other.getSignatureInfo()==null) || 
              (this.signatureInfo!=null &&
               this.signatureInfo.equals(other.getSignatureInfo()))) &&
@@ -590,7 +643,10 @@ public class Recipient  implements java.io.Serializable {
               this.templateRequired.equals(other.getTemplateRequired()))) &&
             ((this.templateAccessCodeRequired==null && other.getTemplateAccessCodeRequired()==null) || 
              (this.templateAccessCodeRequired!=null &&
-              this.templateAccessCodeRequired.equals(other.getTemplateAccessCodeRequired())));
+              this.templateAccessCodeRequired.equals(other.getTemplateAccessCodeRequired()))) &&
+            ((this.defaultRecipient==null && other.getDefaultRecipient()==null) || 
+             (this.defaultRecipient!=null &&
+              this.defaultRecipient.equals(other.getDefaultRecipient())));
         __equalsCalc = null;
         return _equals;
     }
@@ -623,9 +679,14 @@ public class Recipient  implements java.io.Serializable {
         if (getAddAccessCodeToEmail() != null) {
             _hashCode += getAddAccessCodeToEmail().hashCode();
         }
-        _hashCode += (isRequireIDLookup() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        if (getRequireIDLookup() != null) {
+            _hashCode += getRequireIDLookup().hashCode();
+        }
         if (getIDCheckConfigurationName() != null) {
             _hashCode += getIDCheckConfigurationName().hashCode();
+        }
+        if (getPhoneAuthentication() != null) {
+            _hashCode += getPhoneAuthentication().hashCode();
         }
         if (getSignatureInfo() != null) {
             _hashCode += getSignatureInfo().hashCode();
@@ -678,6 +739,9 @@ public class Recipient  implements java.io.Serializable {
         }
         if (getTemplateAccessCodeRequired() != null) {
             _hashCode += getTemplateAccessCodeRequired().hashCode();
+        }
+        if (getDefaultRecipient() != null) {
+            _hashCode += getDefaultRecipient().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -740,12 +804,20 @@ public class Recipient  implements java.io.Serializable {
         elemField.setFieldName("requireIDLookup");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RequireIDLookup"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("IDCheckConfigurationName");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "IDCheckConfigurationName"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("phoneAuthentication");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "PhoneAuthentication"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientPhoneAuthentication"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -831,6 +903,13 @@ public class Recipient  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("templateAccessCodeRequired");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "TemplateAccessCodeRequired"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("defaultRecipient");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "DefaultRecipient"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

@@ -10,7 +10,8 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
- */
+*/
+
 package net.docusign.ws3_0.api;
 
 import java.math.BigInteger;
@@ -38,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="Type" type="{http://www.docusign.net/API/3.0}RecipientTypeCode"/>
  *         &lt;element name="AccessCode" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="AddAccessCodeToEmail" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="RequireIDLookup" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
+ *         &lt;element name="RequireIDLookup" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="IDCheckConfigurationName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="PhoneAuthentication" type="{http://www.docusign.net/API/3.0}RecipientPhoneAuthentication" minOccurs="0"/>
  *         &lt;element name="SignatureInfo" type="{http://www.docusign.net/API/3.0}RecipientSignatureInfo" minOccurs="0"/>
@@ -53,6 +54,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="TemplateLocked" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="TemplateRequired" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="TemplateAccessCodeRequired" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="DefaultRecipient" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -84,7 +86,8 @@ import javax.xml.bind.annotation.XmlType;
     "roleName",
     "templateLocked",
     "templateRequired",
-    "templateAccessCodeRequired"
+    "templateAccessCodeRequired",
+    "defaultRecipient"
 })
 public class Recipient {
 
@@ -104,7 +107,7 @@ public class Recipient {
     @XmlElement(name = "AddAccessCodeToEmail")
     protected Boolean addAccessCodeToEmail;
     @XmlElement(name = "RequireIDLookup")
-    protected boolean requireIDLookup;
+    protected Boolean requireIDLookup;
     @XmlElement(name = "IDCheckConfigurationName")
     protected String idCheckConfigurationName;
     @XmlElement(name = "PhoneAuthentication")
@@ -134,6 +137,8 @@ public class Recipient {
     protected Boolean templateRequired;
     @XmlElement(name = "TemplateAccessCodeRequired")
     protected Boolean templateAccessCodeRequired;
+    @XmlElement(name = "DefaultRecipient")
+    protected Boolean defaultRecipient;
 
     /**
      * Gets the value of the id property.
@@ -306,16 +311,24 @@ public class Recipient {
     /**
      * Gets the value of the requireIDLookup property.
      * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
      */
-    public boolean isRequireIDLookup() {
+    public Boolean isRequireIDLookup() {
         return requireIDLookup;
     }
 
     /**
      * Sets the value of the requireIDLookup property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
      */
-    public void setRequireIDLookup(boolean value) {
+    public void setRequireIDLookup(Boolean value) {
         this.requireIDLookup = value;
     }
 
@@ -653,6 +666,30 @@ public class Recipient {
      */
     public void setTemplateAccessCodeRequired(Boolean value) {
         this.templateAccessCodeRequired = value;
+    }
+
+    /**
+     * Gets the value of the defaultRecipient property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isDefaultRecipient() {
+        return defaultRecipient;
+    }
+
+    /**
+     * Sets the value of the defaultRecipient property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setDefaultRecipient(Boolean value) {
+        this.defaultRecipient = value;
     }
 
 }

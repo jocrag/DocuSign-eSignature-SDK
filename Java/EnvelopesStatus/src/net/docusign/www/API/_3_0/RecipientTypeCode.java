@@ -18,10 +18,14 @@ public class RecipientTypeCode implements java.io.Serializable {
     }
 
     public static final java.lang.String _Signer = "Signer";
+    public static final java.lang.String _Agent = "Agent";
+    public static final java.lang.String _Editor = "Editor";
     public static final java.lang.String _CarbonCopy = "CarbonCopy";
     public static final java.lang.String _CertifiedDelivery = "CertifiedDelivery";
     public static final java.lang.String _InPersonSigner = "InPersonSigner";
     public static final RecipientTypeCode Signer = new RecipientTypeCode(_Signer);
+    public static final RecipientTypeCode Agent = new RecipientTypeCode(_Agent);
+    public static final RecipientTypeCode Editor = new RecipientTypeCode(_Editor);
     public static final RecipientTypeCode CarbonCopy = new RecipientTypeCode(_CarbonCopy);
     public static final RecipientTypeCode CertifiedDelivery = new RecipientTypeCode(_CertifiedDelivery);
     public static final RecipientTypeCode InPersonSigner = new RecipientTypeCode(_InPersonSigner);

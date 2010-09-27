@@ -10,7 +10,8 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
- */
+*/
+
 package net.docusign.credential.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -19,11 +20,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for anonymous complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -48,6 +50,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -61,11 +65,11 @@ public class LoginResponse {
 
     /**
      * Gets the value of the loginResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link LoginResponse.LoginResult }
-     *
+     *     
      */
     public LoginResponse.LoginResult getLoginResult() {
         return loginResult;
@@ -73,11 +77,11 @@ public class LoginResponse {
 
     /**
      * Sets the value of the loginResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link LoginResponse.LoginResult }
-     *
+     *     
      */
     public void setLoginResult(LoginResponse.LoginResult value) {
         this.loginResult = value;
@@ -86,9 +90,9 @@ public class LoginResponse {
 
     /**
      * <p>Java class for anonymous complex type.
-     *
+     * 
      * <p>The following schema fragment specifies the expected content contained within this class.
-     *
+     * 
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -103,6 +107,8 @@ public class LoginResponse {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
+     * 
+     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
@@ -124,7 +130,7 @@ public class LoginResponse {
 
         /**
          * Gets the value of the success property.
-         *
+         * 
          */
         public boolean isSuccess() {
             return success;
@@ -132,7 +138,7 @@ public class LoginResponse {
 
         /**
          * Sets the value of the success property.
-         *
+         * 
          */
         public void setSuccess(boolean value) {
             this.success = value;
@@ -140,11 +146,11 @@ public class LoginResponse {
 
         /**
          * Gets the value of the errorCode property.
-         *
+         * 
          * @return
          *     possible object is
          *     {@link ErrorCode }
-         *
+         *     
          */
         public ErrorCode getErrorCode() {
             return errorCode;
@@ -152,11 +158,11 @@ public class LoginResponse {
 
         /**
          * Sets the value of the errorCode property.
-         *
+         * 
          * @param value
          *     allowed object is
          *     {@link ErrorCode }
-         *
+         *     
          */
         public void setErrorCode(ErrorCode value) {
             this.errorCode = value;
@@ -164,11 +170,11 @@ public class LoginResponse {
 
         /**
          * Gets the value of the authenticationMessage property.
-         *
+         * 
          * @return
          *     possible object is
          *     {@link String }
-         *
+         *     
          */
         public String getAuthenticationMessage() {
             return authenticationMessage;
@@ -176,11 +182,11 @@ public class LoginResponse {
 
         /**
          * Sets the value of the authenticationMessage property.
-         *
+         * 
          * @param value
          *     allowed object is
          *     {@link String }
-         *
+         *     
          */
         public void setAuthenticationMessage(String value) {
             this.authenticationMessage = value;
@@ -188,11 +194,11 @@ public class LoginResponse {
 
         /**
          * Gets the value of the accounts property.
-         *
+         * 
          * @return
          *     possible object is
          *     {@link ArrayOfAccount }
-         *
+         *     
          */
         public ArrayOfAccount getAccounts() {
             return accounts;
@@ -200,14 +206,16 @@ public class LoginResponse {
 
         /**
          * Sets the value of the accounts property.
-         *
+         * 
          * @param value
          *     allowed object is
          *     {@link ArrayOfAccount }
-         *
+         *     
          */
         public void setAccounts(ArrayOfAccount value) {
             this.accounts = value;
         }
+
     }
+
 }

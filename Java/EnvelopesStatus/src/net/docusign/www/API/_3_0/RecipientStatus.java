@@ -50,6 +50,8 @@ public class RecipientStatus  implements java.io.Serializable {
 
     private net.docusign.www.API._3_0.FormData formData;
 
+    private java.lang.String recipientId;
+
     public RecipientStatus() {
     }
 
@@ -74,7 +76,8 @@ public class RecipientStatus  implements java.io.Serializable {
            net.docusign.www.API._3_0.Attachment[] recipientAttachment,
            java.lang.String accountStatus,
            net.docusign.www.API._3_0.RecipientStatusEsignAgreementInformation esignAgreementInformation,
-           net.docusign.www.API._3_0.FormData formData) {
+           net.docusign.www.API._3_0.FormData formData,
+           java.lang.String recipientId) {
            this.type = type;
            this.email = email;
            this.userName = userName;
@@ -96,6 +99,7 @@ public class RecipientStatus  implements java.io.Serializable {
            this.accountStatus = accountStatus;
            this.esignAgreementInformation = esignAgreementInformation;
            this.formData = formData;
+           this.recipientId = recipientId;
     }
 
 
@@ -518,6 +522,26 @@ public class RecipientStatus  implements java.io.Serializable {
         this.formData = formData;
     }
 
+
+    /**
+     * Gets the recipientId value for this RecipientStatus.
+     * 
+     * @return recipientId
+     */
+    public java.lang.String getRecipientId() {
+        return recipientId;
+    }
+
+
+    /**
+     * Sets the recipientId value for this RecipientStatus.
+     * 
+     * @param recipientId
+     */
+    public void setRecipientId(java.lang.String recipientId) {
+        this.recipientId = recipientId;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof RecipientStatus)) return false;
@@ -592,7 +616,10 @@ public class RecipientStatus  implements java.io.Serializable {
               this.esignAgreementInformation.equals(other.getEsignAgreementInformation()))) &&
             ((this.formData==null && other.getFormData()==null) || 
              (this.formData!=null &&
-              this.formData.equals(other.getFormData())));
+              this.formData.equals(other.getFormData()))) &&
+            ((this.recipientId==null && other.getRecipientId()==null) || 
+             (this.recipientId!=null &&
+              this.recipientId.equals(other.getRecipientId())));
         __equalsCalc = null;
         return _equals;
     }
@@ -690,6 +717,9 @@ public class RecipientStatus  implements java.io.Serializable {
         }
         if (getFormData() != null) {
             _hashCode += getFormData().hashCode();
+        }
+        if (getRecipientId() != null) {
+            _hashCode += getRecipientId().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -844,6 +874,13 @@ public class RecipientStatus  implements java.io.Serializable {
         elemField.setFieldName("formData");
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FormData"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "FormData"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("recipientId");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientId"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

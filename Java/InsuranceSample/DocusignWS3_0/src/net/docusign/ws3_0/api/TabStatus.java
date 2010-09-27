@@ -10,7 +10,8 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
- */
+*/
+
 package net.docusign.ws3_0.api;
 
 import java.math.BigDecimal;
@@ -49,6 +50,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="ListValues" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ListSelectedValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="ScaleValue" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="CustomTabType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -74,7 +76,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "roleName",
     "listValues",
     "listSelectedValue",
-    "scaleValue"
+    "scaleValue",
+    "customTabType"
 })
 public class TabStatus {
 
@@ -113,6 +116,8 @@ public class TabStatus {
     protected String listSelectedValue;
     @XmlElement(name = "ScaleValue")
     protected BigDecimal scaleValue;
+    @XmlElement(name = "CustomTabType")
+    protected String customTabType;
 
     /**
      * Gets the value of the tabType property.
@@ -480,6 +485,30 @@ public class TabStatus {
      */
     public void setScaleValue(BigDecimal value) {
         this.scaleValue = value;
+    }
+
+    /**
+     * Gets the value of the customTabType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCustomTabType() {
+        return customTabType;
+    }
+
+    /**
+     * Sets the value of the customTabType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCustomTabType(String value) {
+        this.customTabType = value;
     }
 
 }

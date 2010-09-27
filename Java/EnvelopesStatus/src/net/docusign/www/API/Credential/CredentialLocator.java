@@ -22,7 +22,7 @@ public class CredentialLocator extends org.apache.axis.client.Service implements
     }
 
     // Use to get a proxy class for CredentialSoap
-    private java.lang.String CredentialSoap_address = "https://demo.docusign.net/api/3.0/Credential.asmx";
+    private java.lang.String CredentialSoap_address = "https://www.docusign.net/api/3.0/Credential.asmx";
 
     public java.lang.String getCredentialSoapAddress() {
         return CredentialSoap_address;
@@ -67,7 +67,7 @@ public class CredentialLocator extends org.apache.axis.client.Service implements
 
 
     // Use to get a proxy class for CredentialSoap12
-    private java.lang.String CredentialSoap12_address = "https://demo.docusign.net/api/3.0/Credential.asmx";
+    private java.lang.String CredentialSoap12_address = "https://www.docusign.net/api/3.0/Credential.asmx";
 
     public java.lang.String getCredentialSoap12Address() {
         return CredentialSoap12_address;

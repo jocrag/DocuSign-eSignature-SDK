@@ -10,16 +10,18 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
- */
+*/
+
 package net.docusign.credential.api;
 
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for ErrorCode.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * <p>
  * <pre>
@@ -34,10 +36,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
+ * 
  */
 @XmlType(name = "ErrorCode")
 @XmlEnum
 public enum ErrorCode {
+
     @XmlEnumValue("User_Does_Not_Exist_In_System")
     USER_DOES_NOT_EXIST_IN_SYSTEM("User_Does_Not_Exist_In_System"),
     @XmlEnumValue("Account_Lacks_Permissions")
@@ -68,4 +72,5 @@ public enum ErrorCode {
         }
         throw new IllegalArgumentException(v);
     }
+
 }

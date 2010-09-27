@@ -10,12 +10,16 @@ package net.docusign.www.API._3_0;
 public class RequestTemplates  implements java.io.Serializable {
     private java.lang.String accountID;
 
+    private boolean includeAdvancedTemplates;
+
     public RequestTemplates() {
     }
 
     public RequestTemplates(
-           java.lang.String accountID) {
+           java.lang.String accountID,
+           boolean includeAdvancedTemplates) {
            this.accountID = accountID;
+           this.includeAdvancedTemplates = includeAdvancedTemplates;
     }
 
 
@@ -38,6 +42,26 @@ public class RequestTemplates  implements java.io.Serializable {
         this.accountID = accountID;
     }
 
+
+    /**
+     * Gets the includeAdvancedTemplates value for this RequestTemplates.
+     * 
+     * @return includeAdvancedTemplates
+     */
+    public boolean isIncludeAdvancedTemplates() {
+        return includeAdvancedTemplates;
+    }
+
+
+    /**
+     * Sets the includeAdvancedTemplates value for this RequestTemplates.
+     * 
+     * @param includeAdvancedTemplates
+     */
+    public void setIncludeAdvancedTemplates(boolean includeAdvancedTemplates) {
+        this.includeAdvancedTemplates = includeAdvancedTemplates;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof RequestTemplates)) return false;
@@ -52,7 +76,8 @@ public class RequestTemplates  implements java.io.Serializable {
         _equals = true && 
             ((this.accountID==null && other.getAccountID()==null) || 
              (this.accountID!=null &&
-              this.accountID.equals(other.getAccountID())));
+              this.accountID.equals(other.getAccountID()))) &&
+            this.includeAdvancedTemplates == other.isIncludeAdvancedTemplates();
         __equalsCalc = null;
         return _equals;
     }
@@ -67,6 +92,7 @@ public class RequestTemplates  implements java.io.Serializable {
         if (getAccountID() != null) {
             _hashCode += getAccountID().hashCode();
         }
+        _hashCode += (isIncludeAdvancedTemplates() ? Boolean.TRUE : Boolean.FALSE).hashCode();
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -82,6 +108,12 @@ public class RequestTemplates  implements java.io.Serializable {
         elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "AccountID"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("includeAdvancedTemplates");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "IncludeAdvancedTemplates"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }

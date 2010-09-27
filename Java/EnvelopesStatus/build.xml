@@ -38,7 +38,7 @@
             <classpath refid="EnvelopesStatus.classpath"/>
         </javac>
     	<mkdir dir="dist"/>
-    	<war destfile="dist/EnvelopesStatus.war">
+    	<war destfile="dist/EnvelopesStatus.war" webxml="WebContent/WEB-INF/web.xml">
     		<fileset dir="WebContent"/>
     		<classes dir="build/classes"/>
     	</war>
