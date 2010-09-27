@@ -29,7 +29,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "Credential", targetNamespace = "http://www.docusign.net/API/Credential", wsdlLocation = "https://www.docusign.net/api/3.0/Credential.asmx?WSDL")
+@WebServiceClient(name = "Credential", targetNamespace = "http://www.docusign.net/API/Credential", wsdlLocation = "https://demo.docusign.net/api/3.0/Credential.asmx?WSDL")
 public class Credential
     extends Service
 {
@@ -39,10 +39,10 @@ public class Credential
     private final static QName CREDENTIAL_QNAME = new QName("http://www.docusign.net/API/Credential", "Credential");
 
     static {
-        CREDENTIAL_WSDL_LOCATION = net.docusign.credential.api.Credential.class.getResource("https://www.docusign.net/api/3.0/Credential.asmx?WSDL");
+        CREDENTIAL_WSDL_LOCATION = net.docusign.credential.api.Credential.class.getResource("https://demo.docusign.net/api/3.0/Credential.asmx?WSDL");
         WebServiceException e = null;
         if (CREDENTIAL_WSDL_LOCATION == null) {
-            e = new WebServiceException("Cannot find 'https://www.docusign.net/api/3.0/Credential.asmx?WSDL' wsdl. Place the resource correctly in the classpath.");
+            e = new WebServiceException("Cannot find 'https://demo.docusign.net/api/3.0/Credential.asmx?WSDL' wsdl. Place the resource correctly in the classpath.");
         }
         CREDENTIAL_EXCEPTION = e;
     }
