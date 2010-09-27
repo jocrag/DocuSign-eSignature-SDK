@@ -10,7 +10,7 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
- */
+*/
 
 package net.docusign.credential.api;
 
@@ -43,11 +43,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RequestSenderTokenResponse }
+     * Create an instance of {@link RequestCorrectTokenResponse }
      * 
      */
-    public RequestSenderTokenResponse createRequestSenderTokenResponse() {
-        return new RequestSenderTokenResponse();
+    public RequestCorrectTokenResponse createRequestCorrectTokenResponse() {
+        return new RequestCorrectTokenResponse();
     }
 
     /**
@@ -59,11 +59,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RequestCorrectToken }
+     * Create an instance of {@link LoginResponse }
      * 
      */
-    public RequestCorrectToken createRequestCorrectToken() {
-        return new RequestCorrectToken();
+    public LoginResponse createLoginResponse() {
+        return new LoginResponse();
+    }
+
+    /**
+     * Create an instance of {@link LoginResponse.LoginResult }
+     * 
+     */
+    public LoginResponse.LoginResult createLoginResponseLoginResult() {
+        return new LoginResponse.LoginResult();
     }
 
     /**
@@ -72,22 +80,6 @@ public class ObjectFactory {
      */
     public Ping createPing() {
         return new Ping();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfAccount.Account }
-     * 
-     */
-    public ArrayOfAccount.Account createArrayOfAccountAccount() {
-        return new ArrayOfAccount.Account();
-    }
-
-    /**
-     * Create an instance of {@link RequestSenderToken }
-     * 
-     */
-    public RequestSenderToken createRequestSenderToken() {
-        return new RequestSenderToken();
     }
 
     /**
@@ -107,27 +99,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LoginResponse }
+     * Create an instance of {@link RequestSenderTokenResponse }
      * 
      */
-    public LoginResponse createLoginResponse() {
-        return new LoginResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetAuthenticationToken }
-     * 
-     */
-    public GetAuthenticationToken createGetAuthenticationToken() {
-        return new GetAuthenticationToken();
-    }
-
-    /**
-     * Create an instance of {@link RequestCorrectTokenResponse }
-     * 
-     */
-    public RequestCorrectTokenResponse createRequestCorrectTokenResponse() {
-        return new RequestCorrectTokenResponse();
+    public RequestSenderTokenResponse createRequestSenderTokenResponse() {
+        return new RequestSenderTokenResponse();
     }
 
     /**
@@ -139,11 +115,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LoginResponse.LoginResult }
+     * Create an instance of {@link GetAuthenticationToken }
      * 
      */
-    public LoginResponse.LoginResult createLoginResponseLoginResult() {
-        return new LoginResponse.LoginResult();
+    public GetAuthenticationToken createGetAuthenticationToken() {
+        return new GetAuthenticationToken();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfAccount.Account }
+     * 
+     */
+    public ArrayOfAccount.Account createArrayOfAccountAccount() {
+        return new ArrayOfAccount.Account();
+    }
+
+    /**
+     * Create an instance of {@link RequestCorrectToken }
+     * 
+     */
+    public RequestCorrectToken createRequestCorrectToken() {
+        return new RequestCorrectToken();
+    }
+
+    /**
+     * Create an instance of {@link RequestSenderToken }
+     * 
+     */
+    public RequestSenderToken createRequestSenderToken() {
+        return new RequestSenderToken();
     }
 
 }

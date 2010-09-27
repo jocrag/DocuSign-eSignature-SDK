@@ -10,7 +10,8 @@ security requirements of the application.
 THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
- */
+*/
+
 package net.docusign.ws3_0.api;
 
 import java.math.BigDecimal;
@@ -61,6 +62,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="ConditionalParentValue" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="SharedTab" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="RequireInitialOnSharedTabChange" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="ConcealValueOnDocument" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -99,7 +101,8 @@ import javax.xml.bind.annotation.XmlType;
     "conditionalParentLabel",
     "conditionalParentValue",
     "sharedTab",
-    "requireInitialOnSharedTabChange"
+    "requireInitialOnSharedTabChange",
+    "concealValueOnDocument"
 })
 public class Tab {
 
@@ -166,6 +169,8 @@ public class Tab {
     protected Boolean sharedTab;
     @XmlElement(name = "RequireInitialOnSharedTabChange")
     protected Boolean requireInitialOnSharedTabChange;
+    @XmlElement(name = "ConcealValueOnDocument")
+    protected Boolean concealValueOnDocument;
 
     /**
      * Gets the value of the documentID property.
@@ -861,6 +866,30 @@ public class Tab {
      */
     public void setRequireInitialOnSharedTabChange(Boolean value) {
         this.requireInitialOnSharedTabChange = value;
+    }
+
+    /**
+     * Gets the value of the concealValueOnDocument property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Boolean }
+     *     
+     */
+    public Boolean isConcealValueOnDocument() {
+        return concealValueOnDocument;
+    }
+
+    /**
+     * Sets the value of the concealValueOnDocument property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Boolean }
+     *     
+     */
+    public void setConcealValueOnDocument(Boolean value) {
+        this.concealValueOnDocument = value;
     }
 
 }
