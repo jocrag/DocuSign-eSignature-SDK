@@ -11,6 +11,7 @@ THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EIT
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 package net.docusign.credential.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -19,11 +20,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for anonymous complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -35,6 +37,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -48,11 +52,11 @@ public class RequestSenderTokenResponse {
 
     /**
      * Gets the value of the requestSenderTokenResult property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getRequestSenderTokenResult() {
         return requestSenderTokenResult;
@@ -60,13 +64,14 @@ public class RequestSenderTokenResponse {
 
     /**
      * Sets the value of the requestSenderTokenResult property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setRequestSenderTokenResult(String value) {
         this.requestSenderTokenResult = value;
     }
+
 }

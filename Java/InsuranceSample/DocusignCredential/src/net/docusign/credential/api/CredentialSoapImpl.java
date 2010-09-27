@@ -97,4 +97,16 @@ public class CredentialSoapImpl implements CredentialSoap {
             throw new RuntimeException(ex);
         }
     }
+
+    public String requestCorrectToken(String email, String password, String envelopeID, boolean suppressNavigation, String returnURL)
+    {
+        try {
+            java.lang.String _return = "";
+            return _return;
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+            throw new RuntimeException(ex);
+        }
+    }
 }

@@ -11,5 +11,6 @@ THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EIT
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://www.docusign.net/API/Credential", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package net.docusign.credential.api;

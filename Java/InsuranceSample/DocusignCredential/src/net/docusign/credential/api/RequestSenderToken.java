@@ -11,6 +11,7 @@ THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EIT
 OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
 FITNESS FOR A PARTICULAR PURPOSE.
  */
+
 package net.docusign.credential.api;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -19,11 +20,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
+
 /**
  * <p>Java class for anonymous complex type.
- *
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -39,6 +41,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
@@ -64,11 +68,11 @@ public class RequestSenderToken {
 
     /**
      * Gets the value of the email property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEmail() {
         return email;
@@ -76,11 +80,11 @@ public class RequestSenderToken {
 
     /**
      * Sets the value of the email property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEmail(String value) {
         this.email = value;
@@ -88,11 +92,11 @@ public class RequestSenderToken {
 
     /**
      * Gets the value of the password property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getPassword() {
         return password;
@@ -100,11 +104,11 @@ public class RequestSenderToken {
 
     /**
      * Sets the value of the password property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setPassword(String value) {
         this.password = value;
@@ -112,11 +116,11 @@ public class RequestSenderToken {
 
     /**
      * Gets the value of the accountID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getAccountID() {
         return accountID;
@@ -124,11 +128,11 @@ public class RequestSenderToken {
 
     /**
      * Sets the value of the accountID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setAccountID(String value) {
         this.accountID = value;
@@ -136,11 +140,11 @@ public class RequestSenderToken {
 
     /**
      * Gets the value of the envelopeID property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getEnvelopeID() {
         return envelopeID;
@@ -148,11 +152,11 @@ public class RequestSenderToken {
 
     /**
      * Sets the value of the envelopeID property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setEnvelopeID(String value) {
         this.envelopeID = value;
@@ -160,11 +164,11 @@ public class RequestSenderToken {
 
     /**
      * Gets the value of the returnURL property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link String }
-     *
+     *     
      */
     public String getReturnURL() {
         return returnURL;
@@ -172,13 +176,14 @@ public class RequestSenderToken {
 
     /**
      * Sets the value of the returnURL property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link String }
-     *
+     *     
      */
     public void setReturnURL(String value) {
         this.returnURL = value;
     }
+
 }
