@@ -53,7 +53,7 @@ public class SigningReturnAction implements Controller {
 
 		log.info(LogUtil.logRequestStatusRequest(requestStatusParameters.getEnvelopeID()));
 		
-		RequestStatusResponse requestStatusResponse = apiService.requestStatus(requestStatusParameters);
+		RequestStatusResponse requestStatusResponse = apiService.RequestStatus(requestStatusParameters);
 		TabStatus[] responseTabStatuses = requestStatusResponse.getRequestStatusResult().getRecipientStatuses().getRecipientStatus()[0].getTabStatuses().getTabStatus();
 
 		SigningStatus signingStatus = SigningStatus.parseSigningStatus(request.getParameter("envStatus"));

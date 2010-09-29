@@ -40,7 +40,7 @@ public class ViewPdfAction implements Controller {
 		RequestPDF requestPdf = new RequestPDF();
 		requestPdf.setEnvelopeID(envelopeId);
 
-		RequestPDFResponse pdfResponse = apiService.requestPDF(requestPdf);
+		RequestPDFResponse pdfResponse = apiService.RequestPDF(requestPdf);
 
 		response.setContentType("application/pdf");
 		response.setHeader("Content-Disposition", "attachment; filename=envelope.pdf");

@@ -1,465 +1,542 @@
-/*
-Copyright (C) DocuSign, Inc.  All rights reserved.
-
-This source code is intended only as a supplement to DocuSign SDK and/or on-line documentation.
-
-This sample is designed to demonstrate DocuSign features and is not intended for production use.
-Code and policy for a production application must be developed to meet the specific data and
-security requirements of the application.
-
-THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
-FITNESS FOR A PARTICULAR PURPOSE.
+/**
+ * @copyright Copyright (C) DocuSign, Inc.  All rights reserved.
+ *
+ * This source code is intended only as a supplement to DocuSign SDK
+ * and/or on-line documentation.
+ * This sample is designed to demonstrate DocuSign features and is not intended
+ * for production use. Code and policy for a production application must be
+ * developed to meet the specific data and security requirements of the
+ * application.
+ *
+ * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ * PARTICULAR PURPOSE.
  */
-package net.docusign.www.api._3_0;
 
 /**
- * DocuSignEnvelopeInformation bean class
+ * DocuSignEnvelopeInformation.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis2 version: 1.4  Built on : Apr 26, 2008 (06:25:17 EDT)
  */
+            
+                package net.docusign.www.api._3_0;
+            
 
-public class DocuSignEnvelopeInformation implements org.apache.axis2.databinding.ADBBean {
-    /*
-     * This type was generated from the piece of schema that had name =
-     * DocuSignEnvelopeInformation Namespace URI =
-     * http://www.docusign.net/API/3.0 Namespace Prefix = ns1
-     */
+            /**
+            *  DocuSignEnvelopeInformation bean class
+            */
+        
+        public  class DocuSignEnvelopeInformation
+        implements org.apache.axis2.databinding.ADBBean{
+        /* This type was generated from the piece of schema that had
+                name = DocuSignEnvelopeInformation
+                Namespace URI = http://www.docusign.net/API/3.0
+                Namespace Prefix = ns1
+                */
+            
 
-    private static java.lang.String generatePrefix(java.lang.String namespace) {
-        if (namespace.equals("http://www.docusign.net/API/3.0")) {
-            return "ns1";
-        }
-        return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-    }
-
-    /**
-     * field for EnvelopeStatus
-     */
-
-    protected net.docusign.www.api._3_0.EnvelopeStatus localEnvelopeStatus;
-
-    /*
-     * This tracker boolean wil be used to detect whether the user called the
-     * set method for this attribute. It will be used to determine whether to
-     * include this field in the serialized XML
-     */
-    protected boolean localEnvelopeStatusTracker = false;
-
-    /**
-     * Auto generated getter method
-     * 
-     * @return net.docusign.www.api._3_0.EnvelopeStatus
-     */
-    public net.docusign.www.api._3_0.EnvelopeStatus getEnvelopeStatus() {
-        return localEnvelopeStatus;
-    }
-
-    /**
-     * Auto generated setter method
-     * 
-     * @param param
-     *            EnvelopeStatus
-     */
-    public void setEnvelopeStatus(net.docusign.www.api._3_0.EnvelopeStatus param) {
-
-        if (param != null) {
-            // update the setting tracker
-            localEnvelopeStatusTracker = true;
-        } else {
-            localEnvelopeStatusTracker = false;
-
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://www.docusign.net/API/3.0")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
-        this.localEnvelopeStatus = param;
+        
 
-    }
+                        /**
+                        * field for EnvelopeStatus
+                        */
 
-    /**
-     * field for DocumentPDFs
-     */
+                        
+                                    protected net.docusign.www.api._3_0.EnvelopeStatus localEnvelopeStatus ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localEnvelopeStatusTracker = false ;
+                           
 
-    protected net.docusign.www.api._3_0.ArrayOfDocumentPDF localDocumentPDFs;
+                           /**
+                           * Auto generated getter method
+                           * @return net.docusign.www.api._3_0.EnvelopeStatus
+                           */
+                           public  net.docusign.www.api._3_0.EnvelopeStatus getEnvelopeStatus(){
+                               return localEnvelopeStatus;
+                           }
 
-    /*
-     * This tracker boolean wil be used to detect whether the user called the
-     * set method for this attribute. It will be used to determine whether to
-     * include this field in the serialized XML
-     */
-    protected boolean localDocumentPDFsTracker = false;
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param EnvelopeStatus
+                               */
+                               public void setEnvelopeStatus(net.docusign.www.api._3_0.EnvelopeStatus param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localEnvelopeStatusTracker = true;
+                                       } else {
+                                          localEnvelopeStatusTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localEnvelopeStatus=param;
+                                    
 
-    /**
-     * Auto generated getter method
-     * 
-     * @return net.docusign.www.api._3_0.ArrayOfDocumentPDF
-     */
-    public net.docusign.www.api._3_0.ArrayOfDocumentPDF getDocumentPDFs() {
-        return localDocumentPDFs;
-    }
+                               }
+                            
 
-    /**
-     * Auto generated setter method
-     * 
-     * @param param
-     *            DocumentPDFs
-     */
-    public void setDocumentPDFs(net.docusign.www.api._3_0.ArrayOfDocumentPDF param) {
+                        /**
+                        * field for DocumentPDFs
+                        */
 
-        if (param != null) {
-            // update the setting tracker
-            localDocumentPDFsTracker = true;
-        } else {
-            localDocumentPDFsTracker = false;
+                        
+                                    protected net.docusign.www.api._3_0.ArrayOfDocumentPDF localDocumentPDFs ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localDocumentPDFsTracker = false ;
+                           
 
-        }
+                           /**
+                           * Auto generated getter method
+                           * @return net.docusign.www.api._3_0.ArrayOfDocumentPDF
+                           */
+                           public  net.docusign.www.api._3_0.ArrayOfDocumentPDF getDocumentPDFs(){
+                               return localDocumentPDFs;
+                           }
 
-        this.localDocumentPDFs = param;
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param DocumentPDFs
+                               */
+                               public void setDocumentPDFs(net.docusign.www.api._3_0.ArrayOfDocumentPDF param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localDocumentPDFsTracker = true;
+                                       } else {
+                                          localDocumentPDFsTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localDocumentPDFs=param;
+                                    
 
-    }
+                               }
+                            
 
-    /**
+     /**
      * isReaderMTOMAware
-     * 
      * @return true if the reader supports MTOM
      */
-    public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
+   public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
         boolean isReaderMTOMAware = false;
-
-        try {
-            isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        } catch (java.lang.IllegalArgumentException e) {
-            isReaderMTOMAware = false;
+        
+        try{
+          isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
+        }catch(java.lang.IllegalArgumentException e){
+          isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
-    }
+   }
+     
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
 
-    /**
-     * 
-     * @param parentQName
-     * @param factory
-     * @return org.apache.axiom.om.OMElement
-     */
-    public org.apache.axiom.om.OMElement getOMElement(final javax.xml.namespace.QName parentQName, final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException {
 
-        org.apache.axiom.om.OMDataSource dataSource = new org.apache.axis2.databinding.ADBDataSource(this, parentQName) {
+        
+               org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,parentQName){
 
-            public void serialize(org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-                DocuSignEnvelopeInformation.this.serialize(parentQName, factory, xmlWriter);
-            }
-        };
-        return new org.apache.axiom.om.impl.llom.OMSourcedElementImpl(parentQName, factory, dataSource);
+                 public void serialize(org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+                       DocuSignEnvelopeInformation.this.serialize(parentQName,factory,xmlWriter);
+                 }
+               };
+               return new org.apache.axiom.om.impl.llom.OMSourcedElementImpl(
+               parentQName,factory,dataSource);
+            
+       }
 
-    }
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       final org.apache.axiom.om.OMFactory factory,
+                                       org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,factory,xmlWriter,false);
+         }
 
-    public void serialize(final javax.xml.namespace.QName parentQName, final org.apache.axiom.om.OMFactory factory, org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException {
-        serialize(parentQName, factory, xmlWriter, false);
-    }
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               final org.apache.axiom.om.OMFactory factory,
+                               org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
 
-    public void serialize(final javax.xml.namespace.QName parentQName, final org.apache.axiom.om.OMFactory factory, org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter, boolean serializeType) throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException {
 
-        java.lang.String prefix = null;
-        java.lang.String namespace = null;
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
 
-        prefix = parentQName.getPrefix();
-        namespace = parentQName.getNamespaceURI();
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
 
-        if ((namespace != null) && (namespace.trim().length() > 0)) {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            } else {
-                if (prefix == null) {
-                    prefix = generatePrefix(namespace);
+                    if ((namespace != null) && (namespace.trim().length() > 0)) {
+                        java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+                        if (writerPrefix != null) {
+                            xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
+                        } else {
+                            if (prefix == null) {
+                                prefix = generatePrefix(namespace);
+                            }
+
+                            xmlWriter.writeStartElement(prefix, parentQName.getLocalPart(), namespace);
+                            xmlWriter.writeNamespace(prefix, namespace);
+                            xmlWriter.setPrefix(prefix, namespace);
+                        }
+                    } else {
+                        xmlWriter.writeStartElement(parentQName.getLocalPart());
+                    }
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.docusign.net/API/3.0");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":DocuSignEnvelopeInformation",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "DocuSignEnvelopeInformation",
+                           xmlWriter);
+                   }
+
+               
+                   }
+                if (localEnvelopeStatusTracker){
+                                            if (localEnvelopeStatus==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("EnvelopeStatus cannot be null!!");
+                                            }
+                                           localEnvelopeStatus.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0","EnvelopeStatus"),
+                                               factory,xmlWriter);
+                                        } if (localDocumentPDFsTracker){
+                                            if (localDocumentPDFs==null){
+                                                 throw new org.apache.axis2.databinding.ADBException("DocumentPDFs cannot be null!!");
+                                            }
+                                           localDocumentPDFs.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0","DocumentPDFs"),
+                                               factory,xmlWriter);
+                                        }
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+         /**
+          * Util method to write an attribute with the ns prefix
+          */
+          private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+              if (xmlWriter.getPrefix(namespace) == null) {
+                       xmlWriter.writeNamespace(prefix, namespace);
+                       xmlWriter.setPrefix(prefix, namespace);
+
+              }
+
+              xmlWriter.writeAttribute(namespace,attName,attValue);
+
+         }
+
+        /**
+          * Util method to write an attribute without the ns prefix
+          */
+          private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+                if (namespace.equals(""))
+              {
+                  xmlWriter.writeAttribute(attName,attValue);
+              }
+              else
+              {
+                  registerPrefix(xmlWriter, namespace);
+                  xmlWriter.writeAttribute(namespace,attName,attValue);
+              }
+          }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
+                }
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
+                } else {
+                    attributeValue = qname.getLocalPart();
                 }
 
-                xmlWriter.writeStartElement(prefix, parentQName.getLocalPart(), namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
+                } else {
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
+                }
             }
-        } else {
-            xmlWriter.writeStartElement(parentQName.getLocalPart());
-        }
+        /**
+         *  method to handle Qnames
+         */
 
-        if (serializeType) {
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
+                if (prefix == null) {
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
 
-            java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
-            if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
-                writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":DocuSignEnvelopeInformation", xmlWriter);
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                } else {
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
+                }
+
             } else {
-                writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "DocuSignEnvelopeInformation", xmlWriter);
-            }
-
-        }
-        if (localEnvelopeStatusTracker) {
-            if (localEnvelopeStatus == null) {
-                throw new org.apache.axis2.databinding.ADBException("EnvelopeStatus cannot be null!!");
-            }
-            localEnvelopeStatus.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatus"), factory, xmlWriter);
-        }
-        if (localDocumentPDFsTracker) {
-            if (localDocumentPDFs == null) {
-                throw new org.apache.axis2.databinding.ADBException("DocumentPDFs cannot be null!!");
-            }
-            localDocumentPDFs.serialize(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "DocumentPDFs"), factory, xmlWriter);
-        }
-        xmlWriter.writeEndElement();
-
-    }
-
-    /**
-     * Util method to write an attribute with the ns prefix
-     */
-    private void writeAttribute(java.lang.String prefix, java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-        if (xmlWriter.getPrefix(namespace) == null) {
-            xmlWriter.writeNamespace(prefix, namespace);
-            xmlWriter.setPrefix(prefix, namespace);
-
-        }
-
-        xmlWriter.writeAttribute(namespace, attName, attValue);
-
-    }
-
-    /**
-     * Util method to write an attribute without the ns prefix
-     */
-    private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-        if (namespace.equals("")) {
-            xmlWriter.writeAttribute(attName, attValue);
-        } else {
-            registerPrefix(xmlWriter, namespace);
-            xmlWriter.writeAttribute(namespace, attName, attValue);
-        }
-    }
-
-    /**
-     * Util method to write an attribute without the ns prefix
-     */
-    private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName, javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-        java.lang.String attributeNamespace = qname.getNamespaceURI();
-        java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-        if (attributePrefix == null) {
-            attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-        }
-        java.lang.String attributeValue;
-        if (attributePrefix.trim().length() > 0) {
-            attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        } else {
-            attributeValue = qname.getLocalPart();
-        }
-
-        if (namespace.equals("")) {
-            xmlWriter.writeAttribute(attName, attributeValue);
-        } else {
-            registerPrefix(xmlWriter, namespace);
-            xmlWriter.writeAttribute(namespace, attName, attributeValue);
-        }
-    }
-
-    /**
-     * method to handle Qnames
-     */
-
-    private void writeQName(javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-        java.lang.String namespaceURI = qname.getNamespaceURI();
-        if (namespaceURI != null) {
-            java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-            if (prefix == null) {
-                prefix = generatePrefix(namespaceURI);
-                xmlWriter.writeNamespace(prefix, namespaceURI);
-                xmlWriter.setPrefix(prefix, namespaceURI);
-            }
-
-            if (prefix.trim().length() > 0) {
-                xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            } else {
-                // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
-
-        } else {
-            xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
-    }
 
-    private void writeQNames(javax.xml.namespace.QName[] qnames, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
 
-        if (qnames != null) {
-            // we have to store this data until last moment since it is not
-            // possible to write any
-            // namespace data after writing the charactor data
-            java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-            java.lang.String namespaceURI = null;
-            java.lang.String prefix = null;
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
 
-            for (int i = 0; i < qnames.length; i++) {
-                if (i > 0) {
-                    stringToWrite.append(" ");
-                }
-                namespaceURI = qnames[i].getNamespaceURI();
-                if (namespaceURI != null) {
-                    prefix = xmlWriter.getPrefix(namespaceURI);
-                    if ((prefix == null) || (prefix.length() == 0)) {
-                        prefix = generatePrefix(namespaceURI);
-                        xmlWriter.writeNamespace(prefix, namespaceURI);
-                        xmlWriter.setPrefix(prefix, namespaceURI);
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
                     }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
 
-                    if (prefix.trim().length() > 0) {
-                        stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
                     } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                } else {
-                    stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
-            }
-            xmlWriter.writeCharacters(stringToWrite.toString());
-        }
-
-    }
-
-    /**
-     * Register a namespace prefix
-     */
-    private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-        java.lang.String prefix = xmlWriter.getPrefix(namespace);
-
-        if (prefix == null) {
-            prefix = generatePrefix(namespace);
-
-            while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
-                prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                xmlWriter.writeCharacters(stringToWrite.toString());
             }
 
-            xmlWriter.writeNamespace(prefix, namespace);
-            xmlWriter.setPrefix(prefix, namespace);
         }
 
-        return prefix;
-    }
 
-    /**
-     * databinding method to get an XML representation of this object
-     * 
-     */
-    public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
+         /**
+         * Register a namespace prefix
+         */
+         private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+                java.lang.String prefix = xmlWriter.getPrefix(namespace);
 
-        java.util.ArrayList elementList = new java.util.ArrayList();
-        java.util.ArrayList attribList = new java.util.ArrayList();
+                if (prefix == null) {
+                    prefix = generatePrefix(namespace);
 
-        if (localEnvelopeStatusTracker) {
-            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatus"));
+                    while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
+                        prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                    }
 
-            if (localEnvelopeStatus == null) {
-                throw new org.apache.axis2.databinding.ADBException("EnvelopeStatus cannot be null!!");
+                    xmlWriter.writeNamespace(prefix, namespace);
+                    xmlWriter.setPrefix(prefix, namespace);
+                }
+
+                return prefix;
             }
-            elementList.add(localEnvelopeStatus);
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                 if (localEnvelopeStatusTracker){
+                            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0",
+                                                                      "EnvelopeStatus"));
+                            
+                            
+                                    if (localEnvelopeStatus==null){
+                                         throw new org.apache.axis2.databinding.ADBException("EnvelopeStatus cannot be null!!");
+                                    }
+                                    elementList.add(localEnvelopeStatus);
+                                } if (localDocumentPDFsTracker){
+                            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0",
+                                                                      "DocumentPDFs"));
+                            
+                            
+                                    if (localDocumentPDFs==null){
+                                         throw new org.apache.axis2.databinding.ADBException("DocumentPDFs cannot be null!!");
+                                    }
+                                    elementList.add(localDocumentPDFs);
+                                }
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
         }
-        if (localDocumentPDFsTracker) {
-            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "DocumentPDFs"));
 
-            if (localDocumentPDFs == null) {
-                throw new org.apache.axis2.databinding.ADBException("DocumentPDFs cannot be null!!");
-            }
-            elementList.add(localDocumentPDFs);
-        }
+  
 
-        return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
 
-    }
-
-    /**
-     * Factory class that keeps the parse method
-     */
-    public static class Factory {
+        
+        
 
         /**
-         * static method to create the object Precondition: If this object is an
-         * element, the current or next start element starts this object and any
-         * intervening reader events are ignorable If this object is not an
-         * element, it is a complex type and the reader is at the event just
-         * after the outer start element Postcondition: If this object is an
-         * element, the reader is positioned at its end element If this object
-         * is a complex type, the reader is positioned at the end element of its
-         * outer element
-         */
-        public static DocuSignEnvelopeInformation parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
-            DocuSignEnvelopeInformation object = new DocuSignEnvelopeInformation();
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static DocuSignEnvelopeInformation parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            DocuSignEnvelopeInformation object =
+                new DocuSignEnvelopeInformation();
 
             int event;
             java.lang.String nillableValue = null;
-            java.lang.String prefix = "";
-            java.lang.String namespaceuri = "";
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
             try {
-
+                
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
-                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "type") != null) {
-                    java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "type");
-                    if (fullTypeName != null) {
-                        java.lang.String nsPrefix = null;
-                        if (fullTypeName.indexOf(":") > -1) {
-                            nsPrefix = fullTypeName.substring(0, fullTypeName.indexOf(":"));
-                        }
-                        nsPrefix = nsPrefix == null ? "" : nsPrefix;
-
-                        java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":") + 1);
-
-                        if (!"DocuSignEnvelopeInformation".equals(type)) {
-                            // find namespace for the prefix
-                            java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                            return (DocuSignEnvelopeInformation) net.docusign.www.api._3_0.ExtensionMapper.getTypeObject(nsUri, type, reader);
-                        }
-
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
                     }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"DocuSignEnvelopeInformation".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (DocuSignEnvelopeInformation)net.docusign.www.api._3_0.ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
 
                 }
 
-                // Note all attributes that were handled. Used to differ normal
-                // attributes
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
                 // from anyAttributes.
                 java.util.Vector handledAttributes = new java.util.Vector();
+                
 
-                reader.next();
-
-                while (!reader.isStartElement() && !reader.isEndElement())
+                 
+                    
                     reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0","EnvelopeStatus").equals(reader.getName())){
+                                
+                                                object.setEnvelopeStatus(net.docusign.www.api._3_0.EnvelopeStatus.Factory.parse(reader));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0","DocumentPDFs").equals(reader.getName())){
+                                
+                                                object.setDocumentPDFs(net.docusign.www.api._3_0.ArrayOfDocumentPDF.Factory.parse(reader));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                  
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                            
 
-                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "EnvelopeStatus").equals(reader.getName())) {
 
-                    object.setEnvelopeStatus(net.docusign.www.api._3_0.EnvelopeStatus.Factory.parse(reader));
-
-                    reader.next();
-
-                } // End of if for expected property start element
-
-                else {
-
-                }
-
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "DocumentPDFs").equals(reader.getName())) {
-
-                    object.setDocumentPDFs(net.docusign.www.api._3_0.ArrayOfDocumentPDF.Factory.parse(reader));
-
-                    reader.next();
-
-                } // End of if for expected property start element
-
-                else {
-
-                }
-
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                if (reader.isStartElement())
-                    // A start element we are not expecting indicates a trailing
-                    // invalid property
-                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
             } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
@@ -468,6 +545,10 @@ public class DocuSignEnvelopeInformation implements org.apache.axis2.databinding
             return object;
         }
 
-    }// end of factory class
+        }//end of factory class
 
-}
+        
+
+        }
+           
+          

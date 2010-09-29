@@ -1,921 +1,1371 @@
-/*
-Copyright (C) DocuSign, Inc.  All rights reserved.
-
-This source code is intended only as a supplement to DocuSign SDK and/or on-line documentation.
-
-This sample is designed to demonstrate DocuSign features and is not intended for production use.
-Code and policy for a production application must be developed to meet the specific data and
-security requirements of the application.
-
-THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
-FITNESS FOR A PARTICULAR PURPOSE.
- */
-package net.docusign.wsclient;
-
-
-/*
- *  APIService java interface
+/**
+ * @copyright Copyright (C) DocuSign, Inc.  All rights reserved.
+ *
+ * This source code is intended only as a supplement to DocuSign SDK
+ * and/or on-line documentation.
+ * This sample is designed to demonstrate DocuSign features and is not intended
+ * for production use. Code and policy for a production application must be
+ * developed to meet the specific data and security requirements of the
+ * application.
+ *
+ * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ * PARTICULAR PURPOSE.
  */
 
-public interface APIService {
-
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestTemplate0
-     */
+
+/**
+ * APIService.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis2 version: 1.4  Built on : Apr 26, 2008 (06:24:30 EDT)
+ */
 
-    public net.docusign.www.api._3_0.RequestTemplateResponse requestTemplate(
+    package net.docusign.wsclient;
 
-    net.docusign.www.api._3_0.RequestTemplate requestTemplate0) throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestTemplate0
+    /*
+     *  APIService java interface
      */
-    public void startrequestTemplate(
 
-    net.docusign.www.api._3_0.RequestTemplate requestTemplate0,
+    public interface APIService {
+          
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestTemplate0
+                
+         */
 
-    throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.RequestTemplateResponse RequestTemplate(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestTemplates2
-     */
+                        net.docusign.www.api._3_0.RequestTemplate requestTemplate0)
+                        throws java.rmi.RemoteException
+             ;
 
-    public net.docusign.www.api._3_0.RequestTemplatesResponse requestTemplates(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestTemplate0
+            
+          */
+        public void startRequestTemplate(
 
-    net.docusign.www.api._3_0.RequestTemplates requestTemplates2) throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.RequestTemplate requestTemplate0,
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestTemplates2
-     */
-    public void startrequestTemplates(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.RequestTemplates requestTemplates2,
+            throws java.rmi.RemoteException;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+     
 
-    throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestTemplates2
+                
+         */
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestRecipientToken4
-     */
+         
+                     public net.docusign.www.api._3_0.RequestTemplatesResponse RequestTemplates(
 
-    public net.docusign.www.api._3_0.RequestRecipientTokenResponse requestRecipientToken(
+                        net.docusign.www.api._3_0.RequestTemplates requestTemplates2)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.RequestRecipientToken requestRecipientToken4) throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestTemplates2
+            
+          */
+        public void startRequestTemplates(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestRecipientToken4
-     */
-    public void startrequestRecipientToken(
+            net.docusign.www.api._3_0.RequestTemplates requestTemplates2,
 
-    net.docusign.www.api._3_0.RequestRecipientToken requestRecipientToken4,
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            throws java.rmi.RemoteException;
 
-    throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestDocumentPDFs6
-     */
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestRecipientToken4
+                
+         */
 
-    public net.docusign.www.api._3_0.RequestDocumentPDFsResponse requestDocumentPDFs(
+         
+                     public net.docusign.www.api._3_0.RequestRecipientTokenResponse RequestRecipientToken(
 
-    net.docusign.www.api._3_0.RequestDocumentPDFs requestDocumentPDFs6) throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.RequestRecipientToken requestRecipientToken4)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestDocumentPDFs6
-     */
-    public void startrequestDocumentPDFs(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestRecipientToken4
+            
+          */
+        public void startRequestRecipientToken(
 
-    net.docusign.www.api._3_0.RequestDocumentPDFs requestDocumentPDFs6,
+            net.docusign.www.api._3_0.RequestRecipientToken requestRecipientToken4,
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestPDFWithCert8
-     */
+     
 
-    public net.docusign.www.api._3_0.RequestPDFWithCertResponse requestPDFWithCert(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestDocumentPDFs6
+                
+         */
 
-    net.docusign.www.api._3_0.RequestPDFWithCert requestPDFWithCert8) throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.RequestDocumentPDFsResponse RequestDocumentPDFs(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestPDFWithCert8
-     */
-    public void startrequestPDFWithCert(
+                        net.docusign.www.api._3_0.RequestDocumentPDFs requestDocumentPDFs6)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.RequestPDFWithCert requestPDFWithCert8,
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestDocumentPDFs6
+            
+          */
+        public void startRequestDocumentPDFs(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            net.docusign.www.api._3_0.RequestDocumentPDFs requestDocumentPDFs6,
 
-    throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestPDF10
-     */
+            throws java.rmi.RemoteException;
 
-    public net.docusign.www.api._3_0.RequestPDFResponse requestPDF(
+     
 
-    net.docusign.www.api._3_0.RequestPDF requestPDF10) throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param createEnvelopeFromTemplatesAndForms8
+                
+         */
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestPDF10
-     */
-    public void startrequestPDF(
+         
+                     public net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesAndFormsResponse CreateEnvelopeFromTemplatesAndForms(
 
-    net.docusign.www.api._3_0.RequestPDF requestPDF10,
+                        net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesAndForms createEnvelopeFromTemplatesAndForms8)
+                        throws java.rmi.RemoteException
+             ;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param createEnvelopeFromTemplatesAndForms8
+            
+          */
+        public void startCreateEnvelopeFromTemplatesAndForms(
 
-    throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesAndForms createEnvelopeFromTemplatesAndForms8,
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param getAuthenticationToken12
-     */
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    public net.docusign.www.api._3_0.GetAuthenticationTokenResponse getAuthenticationToken(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.GetAuthenticationToken getAuthenticationToken12) throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param getAuthenticationToken12
-     */
-    public void startgetAuthenticationToken(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestPDF10
+                
+         */
 
-    net.docusign.www.api._3_0.GetAuthenticationToken getAuthenticationToken12,
+         
+                     public net.docusign.www.api._3_0.RequestPDFResponse RequestPDF(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+                        net.docusign.www.api._3_0.RequestPDF requestPDF10)
+                        throws java.rmi.RemoteException
+             ;
 
-    throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestPDF10
+            
+          */
+        public void startRequestPDF(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param createEnvelopeFromTemplates14
-     */
+            net.docusign.www.api._3_0.RequestPDF requestPDF10,
 
-    public net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse createEnvelopeFromTemplates(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.CreateEnvelopeFromTemplates createEnvelopeFromTemplates14) throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param createEnvelopeFromTemplates14
-     */
-    public void startcreateEnvelopeFromTemplates(
+     
 
-    net.docusign.www.api._3_0.CreateEnvelopeFromTemplates createEnvelopeFromTemplates14,
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestEnvelope12
+                
+         */
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+         
+                     public net.docusign.www.api._3_0.RequestEnvelopeResponse RequestEnvelope(
 
-    throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.RequestEnvelope requestEnvelope12)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param createEnvelope16
-     */
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestEnvelope12
+            
+          */
+        public void startRequestEnvelope(
 
-    public net.docusign.www.api._3_0.CreateEnvelopeResponse createEnvelope(
+            net.docusign.www.api._3_0.RequestEnvelope requestEnvelope12,
 
-    net.docusign.www.api._3_0.CreateEnvelope createEnvelope16) throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param createEnvelope16
-     */
-    public void startcreateEnvelope(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.CreateEnvelope createEnvelope16,
+     
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getAuthenticationToken14
+                
+         */
 
-    throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.GetAuthenticationTokenResponse GetAuthenticationToken(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param acknowledgeAuthoritativeCopyExport18
-     */
+                        net.docusign.www.api._3_0.GetAuthenticationToken getAuthenticationToken14)
+                        throws java.rmi.RemoteException
+             ;
 
-    public net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse acknowledgeAuthoritativeCopyExport(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getAuthenticationToken14
+            
+          */
+        public void startGetAuthenticationToken(
 
-    net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport acknowledgeAuthoritativeCopyExport18) throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.GetAuthenticationToken getAuthenticationToken14,
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param acknowledgeAuthoritativeCopyExport18
-     */
-    public void startacknowledgeAuthoritativeCopyExport(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport acknowledgeAuthoritativeCopyExport18,
+            throws java.rmi.RemoteException;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+     
 
-    throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestPDFWithCert16
+                
+         */
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param uploadTemplate20
-     */
+         
+                     public net.docusign.www.api._3_0.RequestPDFWithCertResponse RequestPDFWithCert(
 
-    public net.docusign.www.api._3_0.UploadTemplateResponse uploadTemplate(
+                        net.docusign.www.api._3_0.RequestPDFWithCert requestPDFWithCert16)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.UploadTemplate uploadTemplate20) throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestPDFWithCert16
+            
+          */
+        public void startRequestPDFWithCert(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param uploadTemplate20
-     */
-    public void startuploadTemplate(
+            net.docusign.www.api._3_0.RequestPDFWithCert requestPDFWithCert16,
 
-    net.docusign.www.api._3_0.UploadTemplate uploadTemplate20,
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            throws java.rmi.RemoteException;
 
-    throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestStatusesEx22
-     */
+        /**
+          * Auto generated method signature
+          * 
+                    * @param createEnvelopeFromTemplates18
+                
+         */
 
-    public net.docusign.www.api._3_0.RequestStatusesExResponse requestStatusesEx(
+         
+                     public net.docusign.www.api._3_0.CreateEnvelopeFromTemplatesResponse CreateEnvelopeFromTemplates(
 
-    net.docusign.www.api._3_0.RequestStatusesEx requestStatusesEx22) throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.CreateEnvelopeFromTemplates createEnvelopeFromTemplates18)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestStatusesEx22
-     */
-    public void startrequestStatusesEx(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param createEnvelopeFromTemplates18
+            
+          */
+        public void startCreateEnvelopeFromTemplates(
 
-    net.docusign.www.api._3_0.RequestStatusesEx requestStatusesEx22,
+            net.docusign.www.api._3_0.CreateEnvelopeFromTemplates createEnvelopeFromTemplates18,
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestCorrectToken24
-     */
+     
 
-    public net.docusign.www.api._3_0.RequestCorrectTokenResponse requestCorrectToken(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param createEnvelope20
+                
+         */
 
-    net.docusign.www.api._3_0.RequestCorrectToken requestCorrectToken24) throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.CreateEnvelopeResponse CreateEnvelope(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestCorrectToken24
-     */
-    public void startrequestCorrectToken(
+                        net.docusign.www.api._3_0.CreateEnvelope createEnvelope20)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.RequestCorrectToken requestCorrectToken24,
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param createEnvelope20
+            
+          */
+        public void startCreateEnvelope(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            net.docusign.www.api._3_0.CreateEnvelope createEnvelope20,
 
-    throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param createAndSendEnvelope26
-     */
+            throws java.rmi.RemoteException;
 
-    public net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse createAndSendEnvelope(
+     
 
-    net.docusign.www.api._3_0.CreateAndSendEnvelope createAndSendEnvelope26) throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getFolders22
+                
+         */
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param createAndSendEnvelope26
-     */
-    public void startcreateAndSendEnvelope(
+         
+                     public net.docusign.www.api._3_0.GetFoldersResponse GetFolders(
 
-    net.docusign.www.api._3_0.CreateAndSendEnvelope createAndSendEnvelope26,
+                        net.docusign.www.api._3_0.GetFolders getFolders22)
+                        throws java.rmi.RemoteException
+             ;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getFolders22
+            
+          */
+        public void startGetFolders(
 
-    throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.GetFolders getFolders22,
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param getAddressBookItems28
-     */
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    public net.docusign.www.api._3_0.GetAddressBookItemsResponse getAddressBookItems(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.GetAddressBookItems getAddressBookItems28) throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param getAddressBookItems28
-     */
-    public void startgetAddressBookItems(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getFolder24
+                
+         */
 
-    net.docusign.www.api._3_0.GetAddressBookItems getAddressBookItems28,
+         
+                     public net.docusign.www.api._3_0.GetFolderResponse GetFolder(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+                        net.docusign.www.api._3_0.GetFolder getFolder24)
+                        throws java.rmi.RemoteException
+             ;
 
-    throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getFolder24
+            
+          */
+        public void startGetFolder(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestStatusEx30
-     */
+            net.docusign.www.api._3_0.GetFolder getFolder24,
 
-    public net.docusign.www.api._3_0.RequestStatusExResponse requestStatusEx(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.RequestStatusEx requestStatusEx30) throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestStatusEx30
-     */
-    public void startrequestStatusEx(
+     
 
-    net.docusign.www.api._3_0.RequestStatusEx requestStatusEx30,
+        /**
+          * Auto generated method signature
+          * 
+                    * @param acknowledgeAuthoritativeCopyExport26
+                
+         */
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+         
+                     public net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExportResponse AcknowledgeAuthoritativeCopyExport(
 
-    throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport acknowledgeAuthoritativeCopyExport26)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param getAccountMembershipFeaturesList32
-     */
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param acknowledgeAuthoritativeCopyExport26
+            
+          */
+        public void startAcknowledgeAuthoritativeCopyExport(
 
-    public net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse getAccountMembershipFeaturesList(
+            net.docusign.www.api._3_0.AcknowledgeAuthoritativeCopyExport acknowledgeAuthoritativeCopyExport26,
 
-    net.docusign.www.api._3_0.GetAccountMembershipFeaturesList getAccountMembershipFeaturesList32) throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param getAccountMembershipFeaturesList32
-     */
-    public void startgetAccountMembershipFeaturesList(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.GetAccountMembershipFeaturesList getAccountMembershipFeaturesList32,
+     
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        /**
+          * Auto generated method signature
+          * 
+                    * @param uploadTemplate28
+                
+         */
 
-    throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.UploadTemplateResponse UploadTemplate(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param getRecipientList34
-     */
+                        net.docusign.www.api._3_0.UploadTemplate uploadTemplate28)
+                        throws java.rmi.RemoteException
+             ;
 
-    public net.docusign.www.api._3_0.GetRecipientListResponse getRecipientList(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param uploadTemplate28
+            
+          */
+        public void startUploadTemplate(
 
-    net.docusign.www.api._3_0.GetRecipientList getRecipientList34) throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.UploadTemplate uploadTemplate28,
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param getRecipientList34
-     */
-    public void startgetRecipientList(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.GetRecipientList getRecipientList34,
+            throws java.rmi.RemoteException;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+     
 
-    throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestStatusesEx30
+                
+         */
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param synchEnvelope36
-     */
+         
+                     public net.docusign.www.api._3_0.RequestStatusesExResponse RequestStatusesEx(
 
-    public net.docusign.www.api._3_0.SynchEnvelopeResponse synchEnvelope(
+                        net.docusign.www.api._3_0.RequestStatusesEx requestStatusesEx30)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.SynchEnvelope synchEnvelope36) throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestStatusesEx30
+            
+          */
+        public void startRequestStatusesEx(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param synchEnvelope36
-     */
-    public void startsynchEnvelope(
+            net.docusign.www.api._3_0.RequestStatusesEx requestStatusesEx30,
 
-    net.docusign.www.api._3_0.SynchEnvelope synchEnvelope36,
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            throws java.rmi.RemoteException;
 
-    throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param updateAddressBookItems38
-     */
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestCorrectToken32
+                
+         */
 
-    public net.docusign.www.api._3_0.UpdateAddressBookItemsResponse updateAddressBookItems(
+         
+                     public net.docusign.www.api._3_0.RequestCorrectTokenResponse RequestCorrectToken(
 
-    net.docusign.www.api._3_0.UpdateAddressBookItems updateAddressBookItems38) throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.RequestCorrectToken requestCorrectToken32)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param updateAddressBookItems38
-     */
-    public void startupdateAddressBookItems(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestCorrectToken32
+            
+          */
+        public void startRequestCorrectToken(
 
-    net.docusign.www.api._3_0.UpdateAddressBookItems updateAddressBookItems38,
+            net.docusign.www.api._3_0.RequestCorrectToken requestCorrectToken32,
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param getStatusInDocuSignConnectFormat40
-     */
+     
 
-    public net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse getStatusInDocuSignConnectFormat(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param createAndSendEnvelope34
+                
+         */
 
-    net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat getStatusInDocuSignConnectFormat40) throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.CreateAndSendEnvelopeResponse CreateAndSendEnvelope(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param getStatusInDocuSignConnectFormat40
-     */
-    public void startgetStatusInDocuSignConnectFormat(
+                        net.docusign.www.api._3_0.CreateAndSendEnvelope createAndSendEnvelope34)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat getStatusInDocuSignConnectFormat40,
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param createAndSendEnvelope34
+            
+          */
+        public void startCreateAndSendEnvelope(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            net.docusign.www.api._3_0.CreateAndSendEnvelope createAndSendEnvelope34,
 
-    throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param getAccountSettingsList42
-     */
+            throws java.rmi.RemoteException;
 
-    public net.docusign.www.api._3_0.GetAccountSettingsListResponse getAccountSettingsList(
+     
 
-    net.docusign.www.api._3_0.GetAccountSettingsList getAccountSettingsList42) throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getAddressBookItems36
+                
+         */
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param getAccountSettingsList42
-     */
-    public void startgetAccountSettingsList(
+         
+                     public net.docusign.www.api._3_0.GetAddressBookItemsResponse GetAddressBookItems(
 
-    net.docusign.www.api._3_0.GetAccountSettingsList getAccountSettingsList42,
+                        net.docusign.www.api._3_0.GetAddressBookItems getAddressBookItems36)
+                        throws java.rmi.RemoteException
+             ;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getAddressBookItems36
+            
+          */
+        public void startGetAddressBookItems(
 
-    throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.GetAddressBookItems getAddressBookItems36,
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestDocumentPDFsEx44
-     */
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    public net.docusign.www.api._3_0.RequestDocumentPDFsExResponse requestDocumentPDFsEx(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.RequestDocumentPDFsEx requestDocumentPDFsEx44) throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestDocumentPDFsEx44
-     */
-    public void startrequestDocumentPDFsEx(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestStatusEx38
+                
+         */
 
-    net.docusign.www.api._3_0.RequestDocumentPDFsEx requestDocumentPDFsEx44,
+         
+                     public net.docusign.www.api._3_0.RequestStatusExResponse RequestStatusEx(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+                        net.docusign.www.api._3_0.RequestStatusEx requestStatusEx38)
+                        throws java.rmi.RemoteException
+             ;
 
-    throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestStatusEx38
+            
+          */
+        public void startRequestStatusEx(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param removeAddressBookItems46
-     */
+            net.docusign.www.api._3_0.RequestStatusEx requestStatusEx38,
 
-    public net.docusign.www.api._3_0.RemoveAddressBookItemsResponse removeAddressBookItems(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.RemoveAddressBookItems removeAddressBookItems46) throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param removeAddressBookItems46
-     */
-    public void startremoveAddressBookItems(
+     
 
-    net.docusign.www.api._3_0.RemoveAddressBookItems removeAddressBookItems46,
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getAccountMembershipFeaturesList40
+                
+         */
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+         
+                     public net.docusign.www.api._3_0.GetAccountMembershipFeaturesListResponse GetAccountMembershipFeaturesList(
 
-    throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.GetAccountMembershipFeaturesList getAccountMembershipFeaturesList40)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param saveTemplate48
-     */
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getAccountMembershipFeaturesList40
+            
+          */
+        public void startGetAccountMembershipFeaturesList(
 
-    public net.docusign.www.api._3_0.SaveTemplateResponse saveTemplate(
+            net.docusign.www.api._3_0.GetAccountMembershipFeaturesList getAccountMembershipFeaturesList40,
 
-    net.docusign.www.api._3_0.SaveTemplate saveTemplate48) throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param saveTemplate48
-     */
-    public void startsaveTemplate(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.SaveTemplate saveTemplate48,
+     
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getRecipientList42
+                
+         */
 
-    throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.GetRecipientListResponse GetRecipientList(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param ping50
-     */
+                        net.docusign.www.api._3_0.GetRecipientList getRecipientList42)
+                        throws java.rmi.RemoteException
+             ;
 
-    public net.docusign.www.api._3_0.PingResponse ping(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getRecipientList42
+            
+          */
+        public void startGetRecipientList(
 
-    net.docusign.www.api._3_0.Ping ping50) throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.GetRecipientList getRecipientList42,
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param ping50
-     */
-    public void startping(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.Ping ping50,
+            throws java.rmi.RemoteException;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+     
 
-    throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param synchEnvelope44
+                
+         */
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param getRecipientEsignList52
-     */
+         
+                     public net.docusign.www.api._3_0.SynchEnvelopeResponse SynchEnvelope(
 
-    public net.docusign.www.api._3_0.GetRecipientEsignListResponse getRecipientEsignList(
+                        net.docusign.www.api._3_0.SynchEnvelope synchEnvelope44)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.GetRecipientEsignList getRecipientEsignList52) throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param synchEnvelope44
+            
+          */
+        public void startSynchEnvelope(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param getRecipientEsignList52
-     */
-    public void startgetRecipientEsignList(
+            net.docusign.www.api._3_0.SynchEnvelope synchEnvelope44,
 
-    net.docusign.www.api._3_0.GetRecipientEsignList getRecipientEsignList52,
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            throws java.rmi.RemoteException;
 
-    throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestStatuses54
-     */
+        /**
+          * Auto generated method signature
+          * 
+                    * @param updateAddressBookItems46
+                
+         */
 
-    public net.docusign.www.api._3_0.RequestStatusesResponse requestStatuses(
+         
+                     public net.docusign.www.api._3_0.UpdateAddressBookItemsResponse UpdateAddressBookItems(
 
-    net.docusign.www.api._3_0.RequestStatuses requestStatuses54) throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.UpdateAddressBookItems updateAddressBookItems46)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestStatuses54
-     */
-    public void startrequestStatuses(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param updateAddressBookItems46
+            
+          */
+        public void startUpdateAddressBookItems(
 
-    net.docusign.www.api._3_0.RequestStatuses requestStatuses54,
+            net.docusign.www.api._3_0.UpdateAddressBookItems updateAddressBookItems46,
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param correctAndResendEnvelope56
-     */
+     
 
-    public net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse correctAndResendEnvelope(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getStatusInDocuSignConnectFormat48
+                
+         */
 
-    net.docusign.www.api._3_0.CorrectAndResendEnvelope correctAndResendEnvelope56) throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormatResponse GetStatusInDocuSignConnectFormat(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param correctAndResendEnvelope56
-     */
-    public void startcorrectAndResendEnvelope(
+                        net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat getStatusInDocuSignConnectFormat48)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.CorrectAndResendEnvelope correctAndResendEnvelope56,
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getStatusInDocuSignConnectFormat48
+            
+          */
+        public void startGetStatusInDocuSignConnectFormat(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            net.docusign.www.api._3_0.GetStatusInDocuSignConnectFormat getStatusInDocuSignConnectFormat48,
 
-    throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestDocumentPDFsRecipientsView58
-     */
+            throws java.rmi.RemoteException;
 
-    public net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse requestDocumentPDFsRecipientsView(
+     
 
-    net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView requestDocumentPDFsRecipientsView58) throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getAccountSettingsList50
+                
+         */
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestDocumentPDFsRecipientsView58
-     */
-    public void startrequestDocumentPDFsRecipientsView(
+         
+                     public net.docusign.www.api._3_0.GetAccountSettingsListResponse GetAccountSettingsList(
 
-    net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView requestDocumentPDFsRecipientsView58,
+                        net.docusign.www.api._3_0.GetAccountSettingsList getAccountSettingsList50)
+                        throws java.rmi.RemoteException
+             ;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getAccountSettingsList50
+            
+          */
+        public void startGetAccountSettingsList(
 
-    throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.GetAccountSettingsList getAccountSettingsList50,
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param transferEnvelope60
-     */
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    public net.docusign.www.api._3_0.TransferEnvelopeResponse transferEnvelope(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.TransferEnvelope transferEnvelope60) throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param transferEnvelope60
-     */
-    public void starttransferEnvelope(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestDocumentPDFsEx52
+                
+         */
 
-    net.docusign.www.api._3_0.TransferEnvelope transferEnvelope60,
+         
+                     public net.docusign.www.api._3_0.RequestDocumentPDFsExResponse RequestDocumentPDFsEx(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+                        net.docusign.www.api._3_0.RequestDocumentPDFsEx requestDocumentPDFsEx52)
+                        throws java.rmi.RemoteException
+             ;
 
-    throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestDocumentPDFsEx52
+            
+          */
+        public void startRequestDocumentPDFsEx(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestSenderToken62
-     */
+            net.docusign.www.api._3_0.RequestDocumentPDFsEx requestDocumentPDFsEx52,
 
-    public net.docusign.www.api._3_0.RequestSenderTokenResponse requestSenderToken(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.RequestSenderToken requestSenderToken62) throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestSenderToken62
-     */
-    public void startrequestSenderToken(
+     
 
-    net.docusign.www.api._3_0.RequestSenderToken requestSenderToken62,
+        /**
+          * Auto generated method signature
+          * 
+                    * @param removeAddressBookItems54
+                
+         */
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+         
+                     public net.docusign.www.api._3_0.RemoveAddressBookItemsResponse RemoveAddressBookItems(
 
-    throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.RemoveAddressBookItems removeAddressBookItems54)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param envelopeAuditEvents64
-     */
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param removeAddressBookItems54
+            
+          */
+        public void startRemoveAddressBookItems(
 
-    public net.docusign.www.api._3_0.EnvelopeAuditEventsResponse envelopeAuditEvents(
+            net.docusign.www.api._3_0.RemoveAddressBookItems removeAddressBookItems54,
 
-    net.docusign.www.api._3_0.EnvelopeAuditEvents envelopeAuditEvents64) throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param envelopeAuditEvents64
-     */
-    public void startenvelopeAuditEvents(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.EnvelopeAuditEvents envelopeAuditEvents64,
+     
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        /**
+          * Auto generated method signature
+          * 
+                    * @param saveTemplate56
+                
+         */
 
-    throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.SaveTemplateResponse SaveTemplate(
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param exportAuthoritativeCopy66
-     */
+                        net.docusign.www.api._3_0.SaveTemplate saveTemplate56)
+                        throws java.rmi.RemoteException
+             ;
 
-    public net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse exportAuthoritativeCopy(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param saveTemplate56
+            
+          */
+        public void startSaveTemplate(
 
-    net.docusign.www.api._3_0.ExportAuthoritativeCopy exportAuthoritativeCopy66) throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.SaveTemplate saveTemplate56,
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param exportAuthoritativeCopy66
-     */
-    public void startexportAuthoritativeCopy(
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    net.docusign.www.api._3_0.ExportAuthoritativeCopy exportAuthoritativeCopy66,
+            throws java.rmi.RemoteException;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+     
 
-    throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param ping58
+                
+         */
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param sendEnvelope68
-     */
+         
+                     public net.docusign.www.api._3_0.PingResponse Ping(
 
-    public net.docusign.www.api._3_0.SendEnvelopeResponse sendEnvelope(
+                        net.docusign.www.api._3_0.Ping ping58)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.SendEnvelope sendEnvelope68) throws java.rmi.RemoteException;
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param ping58
+            
+          */
+        public void startPing(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param sendEnvelope68
-     */
-    public void startsendEnvelope(
+            net.docusign.www.api._3_0.Ping ping58,
 
-    net.docusign.www.api._3_0.SendEnvelope sendEnvelope68,
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            throws java.rmi.RemoteException;
 
-    throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param voidEnvelope70
-     */
+        /**
+          * Auto generated method signature
+          * 
+                    * @param getRecipientEsignList60
+                
+         */
 
-    public net.docusign.www.api._3_0.VoidEnvelopeResponse voidEnvelope(
+         
+                     public net.docusign.www.api._3_0.GetRecipientEsignListResponse GetRecipientEsignList(
 
-    net.docusign.www.api._3_0.VoidEnvelope voidEnvelope70) throws java.rmi.RemoteException;
+                        net.docusign.www.api._3_0.GetRecipientEsignList getRecipientEsignList60)
+                        throws java.rmi.RemoteException
+             ;
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param voidEnvelope70
-     */
-    public void startvoidEnvelope(
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param getRecipientEsignList60
+            
+          */
+        public void startGetRecipientEsignList(
 
-    net.docusign.www.api._3_0.VoidEnvelope voidEnvelope70,
+            net.docusign.www.api._3_0.GetRecipientEsignList getRecipientEsignList60,
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    throws java.rmi.RemoteException;
+            throws java.rmi.RemoteException;
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param purgeDocuments72
-     */
+     
 
-    public net.docusign.www.api._3_0.PurgeDocumentsResponse purgeDocuments(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestStatuses62
+                
+         */
 
-    net.docusign.www.api._3_0.PurgeDocuments purgeDocuments72) throws java.rmi.RemoteException;
+         
+                     public net.docusign.www.api._3_0.RequestStatusesResponse RequestStatuses(
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param purgeDocuments72
-     */
-    public void startpurgeDocuments(
+                        net.docusign.www.api._3_0.RequestStatuses requestStatuses62)
+                        throws java.rmi.RemoteException
+             ;
 
-    net.docusign.www.api._3_0.PurgeDocuments purgeDocuments72,
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestStatuses62
+            
+          */
+        public void startRequestStatuses(
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            net.docusign.www.api._3_0.RequestStatuses requestStatuses62,
 
-    throws java.rmi.RemoteException;
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestStatus74
-     */
+            throws java.rmi.RemoteException;
 
-    public net.docusign.www.api._3_0.RequestStatusResponse requestStatus(
+     
 
-    net.docusign.www.api._3_0.RequestStatus requestStatus74) throws java.rmi.RemoteException;
+        /**
+          * Auto generated method signature
+          * 
+                    * @param correctAndResendEnvelope64
+                
+         */
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestStatus74
-     */
-    public void startrequestStatus(
+         
+                     public net.docusign.www.api._3_0.CorrectAndResendEnvelopeResponse CorrectAndResendEnvelope(
 
-    net.docusign.www.api._3_0.RequestStatus requestStatus74,
+                        net.docusign.www.api._3_0.CorrectAndResendEnvelope correctAndResendEnvelope64)
+                        throws java.rmi.RemoteException
+             ;
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param correctAndResendEnvelope64
+            
+          */
+        public void startCorrectAndResendEnvelope(
 
-    throws java.rmi.RemoteException;
+            net.docusign.www.api._3_0.CorrectAndResendEnvelope correctAndResendEnvelope64,
 
-    /**
-     * Auto generated method signature
-     * 
-     * @param requestPDFNoWaterMark76
-     */
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    public net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse requestPDFNoWaterMark(
+            throws java.rmi.RemoteException;
 
-    net.docusign.www.api._3_0.RequestPDFNoWaterMark requestPDFNoWaterMark76) throws java.rmi.RemoteException;
+     
 
-    /**
-     * Auto generated method signature for Asynchronous Invocations
-     * 
-     * @param requestPDFNoWaterMark76
-     */
-    public void startrequestPDFNoWaterMark(
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestDocumentPDFsRecipientsView66
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsViewResponse RequestDocumentPDFsRecipientsView(
+
+                        net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView requestDocumentPDFsRecipientsView66)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestDocumentPDFsRecipientsView66
+            
+          */
+        public void startRequestDocumentPDFsRecipientsView(
+
+            net.docusign.www.api._3_0.RequestDocumentPDFsRecipientsView requestDocumentPDFsRecipientsView66,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param transferEnvelope68
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.TransferEnvelopeResponse TransferEnvelope(
+
+                        net.docusign.www.api._3_0.TransferEnvelope transferEnvelope68)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param transferEnvelope68
+            
+          */
+        public void startTransferEnvelope(
+
+            net.docusign.www.api._3_0.TransferEnvelope transferEnvelope68,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestSenderToken70
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.RequestSenderTokenResponse RequestSenderToken(
+
+                        net.docusign.www.api._3_0.RequestSenderToken requestSenderToken70)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestSenderToken70
+            
+          */
+        public void startRequestSenderToken(
+
+            net.docusign.www.api._3_0.RequestSenderToken requestSenderToken70,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param envelopeAuditEvents72
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.EnvelopeAuditEventsResponse EnvelopeAuditEvents(
+
+                        net.docusign.www.api._3_0.EnvelopeAuditEvents envelopeAuditEvents72)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param envelopeAuditEvents72
+            
+          */
+        public void startEnvelopeAuditEvents(
+
+            net.docusign.www.api._3_0.EnvelopeAuditEvents envelopeAuditEvents72,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param exportAuthoritativeCopy74
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.ExportAuthoritativeCopyResponse ExportAuthoritativeCopy(
+
+                        net.docusign.www.api._3_0.ExportAuthoritativeCopy exportAuthoritativeCopy74)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param exportAuthoritativeCopy74
+            
+          */
+        public void startExportAuthoritativeCopy(
+
+            net.docusign.www.api._3_0.ExportAuthoritativeCopy exportAuthoritativeCopy74,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param sendEnvelope76
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.SendEnvelopeResponse SendEnvelope(
+
+                        net.docusign.www.api._3_0.SendEnvelope sendEnvelope76)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param sendEnvelope76
+            
+          */
+        public void startSendEnvelope(
+
+            net.docusign.www.api._3_0.SendEnvelope sendEnvelope76,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param voidEnvelope78
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.VoidEnvelopeResponse VoidEnvelope(
+
+                        net.docusign.www.api._3_0.VoidEnvelope voidEnvelope78)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param voidEnvelope78
+            
+          */
+        public void startVoidEnvelope(
+
+            net.docusign.www.api._3_0.VoidEnvelope voidEnvelope78,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param purgeDocuments80
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.PurgeDocumentsResponse PurgeDocuments(
+
+                        net.docusign.www.api._3_0.PurgeDocuments purgeDocuments80)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param purgeDocuments80
+            
+          */
+        public void startPurgeDocuments(
+
+            net.docusign.www.api._3_0.PurgeDocuments purgeDocuments80,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestStatus82
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.RequestStatusResponse RequestStatus(
+
+                        net.docusign.www.api._3_0.RequestStatus requestStatus82)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestStatus82
+            
+          */
+        public void startRequestStatus(
+
+            net.docusign.www.api._3_0.RequestStatus requestStatus82,
+
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
+
+            throws java.rmi.RemoteException;
+
+     
+
+        /**
+          * Auto generated method signature
+          * 
+                    * @param requestPDFNoWaterMark84
+                
+         */
+
+         
+                     public net.docusign.www.api._3_0.RequestPDFNoWaterMarkResponse RequestPDFNoWaterMark(
+
+                        net.docusign.www.api._3_0.RequestPDFNoWaterMark requestPDFNoWaterMark84)
+                        throws java.rmi.RemoteException
+             ;
+
+        
+         /**
+            * Auto generated method signature for Asynchronous Invocations
+            * 
+                * @param requestPDFNoWaterMark84
+            
+          */
+        public void startRequestPDFNoWaterMark(
+
+            net.docusign.www.api._3_0.RequestPDFNoWaterMark requestPDFNoWaterMark84,
 
-    net.docusign.www.api._3_0.RequestPDFNoWaterMark requestPDFNoWaterMark76,
+            final net.docusign.wsclient.APIServiceCallbackHandler  callback)
 
-    final net.docusign.wsclient.APIServiceCallbackHandler callback)
+            throws java.rmi.RemoteException;
 
-    throws java.rmi.RemoteException;
+     
 
-    //
-}
+        
+       //
+       }
+    

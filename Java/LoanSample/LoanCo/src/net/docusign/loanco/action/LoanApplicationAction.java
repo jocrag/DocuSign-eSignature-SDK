@@ -116,7 +116,7 @@ public class LoanApplicationAction implements Controller {
 		
 		log.info(LogUtil.logCreateAndSendRequest());
 		
-		CreateAndSendEnvelopeResponse csEnvelopeResponse = apiService.createAndSendEnvelope(csEnvelope);
+		CreateAndSendEnvelopeResponse csEnvelopeResponse = apiService.CreateAndSendEnvelope(csEnvelope);
 		EnvelopeStatus envStatus = csEnvelopeResponse.getCreateAndSendEnvelopeResult();
 
 		log.info(LogUtil.logCreateAndSendResponse(envStatus));
@@ -157,7 +157,7 @@ public class LoanApplicationAction implements Controller {
 		
 		log.info(LogUtil.logRequestRecipientTokenRequest());
 
-		RequestRecipientTokenResponse recTokenResponse = apiService.requestRecipientToken(requestToken);
+		RequestRecipientTokenResponse recTokenResponse = apiService.RequestRecipientToken(requestToken);
 		String token = recTokenResponse.getRequestRecipientTokenResult();
 
 		log.info(LogUtil.logRequestRecipientTokenResponse(token));

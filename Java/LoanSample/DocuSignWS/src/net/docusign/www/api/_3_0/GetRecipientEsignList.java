@@ -1,724 +1,815 @@
-/*
-Copyright (C) DocuSign, Inc.  All rights reserved.
-
-This source code is intended only as a supplement to DocuSign SDK and/or on-line documentation.
-
-This sample is designed to demonstrate DocuSign features and is not intended for production use.
-Code and policy for a production application must be developed to meet the specific data and
-security requirements of the application.
-
-THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR
-FITNESS FOR A PARTICULAR PURPOSE.
+/**
+ * @copyright Copyright (C) DocuSign, Inc.  All rights reserved.
+ *
+ * This source code is intended only as a supplement to DocuSign SDK
+ * and/or on-line documentation.
+ * This sample is designed to demonstrate DocuSign features and is not intended
+ * for production use. Code and policy for a production application must be
+ * developed to meet the specific data and security requirements of the
+ * application.
+ *
+ * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ * PARTICULAR PURPOSE.
  */
-package net.docusign.www.api._3_0;
 
 /**
- * GetRecipientEsignList bean class
+ * GetRecipientEsignList.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis2 version: 1.4  Built on : Apr 26, 2008 (06:25:17 EDT)
  */
+            
+                package net.docusign.www.api._3_0;
+            
 
-public class GetRecipientEsignList implements org.apache.axis2.databinding.ADBBean {
+            /**
+            *  GetRecipientEsignList bean class
+            */
+        
+        public  class GetRecipientEsignList
+        implements org.apache.axis2.databinding.ADBBean{
+        
+                public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName(
+                "http://www.docusign.net/API/3.0",
+                "GetRecipientEsignList",
+                "ns1");
 
-    public static final javax.xml.namespace.QName MY_QNAME = new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "GetRecipientEsignList", "ns1");
+            
 
-    private static java.lang.String generatePrefix(java.lang.String namespace) {
-        if (namespace.equals("http://www.docusign.net/API/3.0")) {
-            return "ns1";
-        }
-        return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
-    }
-
-    /**
-     * field for UserName
-     */
-
-    protected java.lang.String localUserName;
-
-    /*
-     * This tracker boolean wil be used to detect whether the user called the
-     * set method for this attribute. It will be used to determine whether to
-     * include this field in the serialized XML
-     */
-    protected boolean localUserNameTracker = false;
-
-    /**
-     * Auto generated getter method
-     * 
-     * @return java.lang.String
-     */
-    public java.lang.String getUserName() {
-        return localUserName;
-    }
-
-    /**
-     * Auto generated setter method
-     * 
-     * @param param
-     *            UserName
-     */
-    public void setUserName(java.lang.String param) {
-
-        if (param != null) {
-            // update the setting tracker
-            localUserNameTracker = true;
-        } else {
-            localUserNameTracker = false;
-
+        private static java.lang.String generatePrefix(java.lang.String namespace) {
+            if(namespace.equals("http://www.docusign.net/API/3.0")){
+                return "ns1";
+            }
+            return org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
         }
 
-        this.localUserName = param;
+        
 
-    }
+                        /**
+                        * field for UserName
+                        */
 
-    /**
-     * field for SenderEmail
-     */
+                        
+                                    protected java.lang.String localUserName ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localUserNameTracker = false ;
+                           
 
-    protected java.lang.String localSenderEmail;
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getUserName(){
+                               return localUserName;
+                           }
 
-    /*
-     * This tracker boolean wil be used to detect whether the user called the
-     * set method for this attribute. It will be used to determine whether to
-     * include this field in the serialized XML
-     */
-    protected boolean localSenderEmailTracker = false;
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param UserName
+                               */
+                               public void setUserName(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localUserNameTracker = true;
+                                       } else {
+                                          localUserNameTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localUserName=param;
+                                    
 
-    /**
-     * Auto generated getter method
-     * 
-     * @return java.lang.String
-     */
-    public java.lang.String getSenderEmail() {
-        return localSenderEmail;
-    }
+                               }
+                            
 
-    /**
-     * Auto generated setter method
-     * 
-     * @param param
-     *            SenderEmail
-     */
-    public void setSenderEmail(java.lang.String param) {
+                        /**
+                        * field for SenderEmail
+                        */
 
-        if (param != null) {
-            // update the setting tracker
-            localSenderEmailTracker = true;
-        } else {
-            localSenderEmailTracker = false;
+                        
+                                    protected java.lang.String localSenderEmail ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSenderEmailTracker = false ;
+                           
 
-        }
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSenderEmail(){
+                               return localSenderEmail;
+                           }
 
-        this.localSenderEmail = param;
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param SenderEmail
+                               */
+                               public void setSenderEmail(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSenderEmailTracker = true;
+                                       } else {
+                                          localSenderEmailTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSenderEmail=param;
+                                    
 
-    }
+                               }
+                            
 
-    /**
-     * field for SenderAccountId
-     */
+                        /**
+                        * field for SenderAccountId
+                        */
 
-    protected java.lang.String localSenderAccountId;
+                        
+                                    protected java.lang.String localSenderAccountId ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localSenderAccountIdTracker = false ;
+                           
 
-    /*
-     * This tracker boolean wil be used to detect whether the user called the
-     * set method for this attribute. It will be used to determine whether to
-     * include this field in the serialized XML
-     */
-    protected boolean localSenderAccountIdTracker = false;
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getSenderAccountId(){
+                               return localSenderAccountId;
+                           }
 
-    /**
-     * Auto generated getter method
-     * 
-     * @return java.lang.String
-     */
-    public java.lang.String getSenderAccountId() {
-        return localSenderAccountId;
-    }
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param SenderAccountId
+                               */
+                               public void setSenderAccountId(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localSenderAccountIdTracker = true;
+                                       } else {
+                                          localSenderAccountIdTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localSenderAccountId=param;
+                                    
 
-    /**
-     * Auto generated setter method
-     * 
-     * @param param
-     *            SenderAccountId
-     */
-    public void setSenderAccountId(java.lang.String param) {
+                               }
+                            
 
-        if (param != null) {
-            // update the setting tracker
-            localSenderAccountIdTracker = true;
-        } else {
-            localSenderAccountIdTracker = false;
+                        /**
+                        * field for RecipientEmail
+                        */
 
-        }
+                        
+                                    protected java.lang.String localRecipientEmail ;
+                                
+                           /*  This tracker boolean wil be used to detect whether the user called the set method
+                          *   for this attribute. It will be used to determine whether to include this field
+                           *   in the serialized XML
+                           */
+                           protected boolean localRecipientEmailTracker = false ;
+                           
 
-        this.localSenderAccountId = param;
+                           /**
+                           * Auto generated getter method
+                           * @return java.lang.String
+                           */
+                           public  java.lang.String getRecipientEmail(){
+                               return localRecipientEmail;
+                           }
 
-    }
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param RecipientEmail
+                               */
+                               public void setRecipientEmail(java.lang.String param){
+                            
+                                       if (param != null){
+                                          //update the setting tracker
+                                          localRecipientEmailTracker = true;
+                                       } else {
+                                          localRecipientEmailTracker = false;
+                                              
+                                       }
+                                   
+                                            this.localRecipientEmail=param;
+                                    
 
-    /**
-     * field for RecipientEmail
-     */
+                               }
+                            
 
-    protected java.lang.String localRecipientEmail;
-
-    /*
-     * This tracker boolean wil be used to detect whether the user called the
-     * set method for this attribute. It will be used to determine whether to
-     * include this field in the serialized XML
-     */
-    protected boolean localRecipientEmailTracker = false;
-
-    /**
-     * Auto generated getter method
-     * 
-     * @return java.lang.String
-     */
-    public java.lang.String getRecipientEmail() {
-        return localRecipientEmail;
-    }
-
-    /**
-     * Auto generated setter method
-     * 
-     * @param param
-     *            RecipientEmail
-     */
-    public void setRecipientEmail(java.lang.String param) {
-
-        if (param != null) {
-            // update the setting tracker
-            localRecipientEmailTracker = true;
-        } else {
-            localRecipientEmailTracker = false;
-
-        }
-
-        this.localRecipientEmail = param;
-
-    }
-
-    /**
+     /**
      * isReaderMTOMAware
-     * 
      * @return true if the reader supports MTOM
      */
-    public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
+   public static boolean isReaderMTOMAware(javax.xml.stream.XMLStreamReader reader) {
         boolean isReaderMTOMAware = false;
-
-        try {
-            isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
-        } catch (java.lang.IllegalArgumentException e) {
-            isReaderMTOMAware = false;
+        
+        try{
+          isReaderMTOMAware = java.lang.Boolean.TRUE.equals(reader.getProperty(org.apache.axiom.om.OMConstants.IS_DATA_HANDLERS_AWARE));
+        }catch(java.lang.IllegalArgumentException e){
+          isReaderMTOMAware = false;
         }
         return isReaderMTOMAware;
-    }
+   }
+     
+     
+        /**
+        *
+        * @param parentQName
+        * @param factory
+        * @return org.apache.axiom.om.OMElement
+        */
+       public org.apache.axiom.om.OMElement getOMElement (
+               final javax.xml.namespace.QName parentQName,
+               final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException{
 
-    /**
-     * 
-     * @param parentQName
-     * @param factory
-     * @return org.apache.axiom.om.OMElement
-     */
-    public org.apache.axiom.om.OMElement getOMElement(final javax.xml.namespace.QName parentQName, final org.apache.axiom.om.OMFactory factory) throws org.apache.axis2.databinding.ADBException {
 
-        org.apache.axiom.om.OMDataSource dataSource = new org.apache.axis2.databinding.ADBDataSource(this, MY_QNAME) {
+        
+                org.apache.axiom.om.OMDataSource dataSource =
+                       new org.apache.axis2.databinding.ADBDataSource(this,MY_QNAME){
 
-            public void serialize(org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-                GetRecipientEsignList.this.serialize(MY_QNAME, factory, xmlWriter);
-            }
-        };
-        return new org.apache.axiom.om.impl.llom.OMSourcedElementImpl(MY_QNAME, factory, dataSource);
+                 public void serialize(org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+                       GetRecipientEsignList.this.serialize(MY_QNAME,factory,xmlWriter);
+                 }
+               };
+               return new org.apache.axiom.om.impl.llom.OMSourcedElementImpl(
+               MY_QNAME,factory,dataSource);
+            
+       }
 
-    }
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                                       final org.apache.axiom.om.OMFactory factory,
+                                       org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter)
+                                throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+                           serialize(parentQName,factory,xmlWriter,false);
+         }
 
-    public void serialize(final javax.xml.namespace.QName parentQName, final org.apache.axiom.om.OMFactory factory, org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException {
-        serialize(parentQName, factory, xmlWriter, false);
-    }
+         public void serialize(final javax.xml.namespace.QName parentQName,
+                               final org.apache.axiom.om.OMFactory factory,
+                               org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter,
+                               boolean serializeType)
+            throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException{
+            
+                
 
-    public void serialize(final javax.xml.namespace.QName parentQName, final org.apache.axiom.om.OMFactory factory, org.apache.axis2.databinding.utils.writer.MTOMAwareXMLStreamWriter xmlWriter, boolean serializeType) throws javax.xml.stream.XMLStreamException, org.apache.axis2.databinding.ADBException {
 
-        java.lang.String prefix = null;
-        java.lang.String namespace = null;
+                java.lang.String prefix = null;
+                java.lang.String namespace = null;
+                
 
-        prefix = parentQName.getPrefix();
-        namespace = parentQName.getNamespaceURI();
+                    prefix = parentQName.getPrefix();
+                    namespace = parentQName.getNamespaceURI();
 
-        if ((namespace != null) && (namespace.trim().length() > 0)) {
-            java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
-            if (writerPrefix != null) {
-                xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
-            } else {
-                if (prefix == null) {
-                    prefix = generatePrefix(namespace);
+                    if ((namespace != null) && (namespace.trim().length() > 0)) {
+                        java.lang.String writerPrefix = xmlWriter.getPrefix(namespace);
+                        if (writerPrefix != null) {
+                            xmlWriter.writeStartElement(namespace, parentQName.getLocalPart());
+                        } else {
+                            if (prefix == null) {
+                                prefix = generatePrefix(namespace);
+                            }
+
+                            xmlWriter.writeStartElement(prefix, parentQName.getLocalPart(), namespace);
+                            xmlWriter.writeNamespace(prefix, namespace);
+                            xmlWriter.setPrefix(prefix, namespace);
+                        }
+                    } else {
+                        xmlWriter.writeStartElement(parentQName.getLocalPart());
+                    }
+                
+                  if (serializeType){
+               
+
+                   java.lang.String namespacePrefix = registerPrefix(xmlWriter,"http://www.docusign.net/API/3.0");
+                   if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)){
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           namespacePrefix+":GetRecipientEsignList",
+                           xmlWriter);
+                   } else {
+                       writeAttribute("xsi","http://www.w3.org/2001/XMLSchema-instance","type",
+                           "GetRecipientEsignList",
+                           xmlWriter);
+                   }
+
+               
+                   }
+                if (localUserNameTracker){
+                                    namespace = "http://www.docusign.net/API/3.0";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"UserName", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"UserName");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("UserName");
+                                    }
+                                
+
+                                          if (localUserName==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("UserName cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localUserName);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localSenderEmailTracker){
+                                    namespace = "http://www.docusign.net/API/3.0";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"SenderEmail", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"SenderEmail");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("SenderEmail");
+                                    }
+                                
+
+                                          if (localSenderEmail==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("SenderEmail cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSenderEmail);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localSenderAccountIdTracker){
+                                    namespace = "http://www.docusign.net/API/3.0";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"SenderAccountId", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"SenderAccountId");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("SenderAccountId");
+                                    }
+                                
+
+                                          if (localSenderAccountId==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("SenderAccountId cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localSenderAccountId);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             } if (localRecipientEmailTracker){
+                                    namespace = "http://www.docusign.net/API/3.0";
+                                    if (! namespace.equals("")) {
+                                        prefix = xmlWriter.getPrefix(namespace);
+
+                                        if (prefix == null) {
+                                            prefix = generatePrefix(namespace);
+
+                                            xmlWriter.writeStartElement(prefix,"RecipientEmail", namespace);
+                                            xmlWriter.writeNamespace(prefix, namespace);
+                                            xmlWriter.setPrefix(prefix, namespace);
+
+                                        } else {
+                                            xmlWriter.writeStartElement(namespace,"RecipientEmail");
+                                        }
+
+                                    } else {
+                                        xmlWriter.writeStartElement("RecipientEmail");
+                                    }
+                                
+
+                                          if (localRecipientEmail==null){
+                                              // write the nil attribute
+                                              
+                                                     throw new org.apache.axis2.databinding.ADBException("RecipientEmail cannot be null!!");
+                                                  
+                                          }else{
+
+                                        
+                                                   xmlWriter.writeCharacters(localRecipientEmail);
+                                            
+                                          }
+                                    
+                                   xmlWriter.writeEndElement();
+                             }
+                    xmlWriter.writeEndElement();
+               
+
+        }
+
+         /**
+          * Util method to write an attribute with the ns prefix
+          */
+          private void writeAttribute(java.lang.String prefix,java.lang.String namespace,java.lang.String attName,
+                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+              if (xmlWriter.getPrefix(namespace) == null) {
+                       xmlWriter.writeNamespace(prefix, namespace);
+                       xmlWriter.setPrefix(prefix, namespace);
+
+              }
+
+              xmlWriter.writeAttribute(namespace,attName,attValue);
+
+         }
+
+        /**
+          * Util method to write an attribute without the ns prefix
+          */
+          private void writeAttribute(java.lang.String namespace,java.lang.String attName,
+                                      java.lang.String attValue,javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException{
+                if (namespace.equals(""))
+              {
+                  xmlWriter.writeAttribute(attName,attValue);
+              }
+              else
+              {
+                  registerPrefix(xmlWriter, namespace);
+                  xmlWriter.writeAttribute(namespace,attName,attValue);
+              }
+          }
+
+
+           /**
+             * Util method to write an attribute without the ns prefix
+             */
+            private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName,
+                                             javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+
+                java.lang.String attributeNamespace = qname.getNamespaceURI();
+                java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
+                if (attributePrefix == null) {
+                    attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
                 }
-
-                xmlWriter.writeStartElement(prefix, parentQName.getLocalPart(), namespace);
-                xmlWriter.writeNamespace(prefix, namespace);
-                xmlWriter.setPrefix(prefix, namespace);
-            }
-        } else {
-            xmlWriter.writeStartElement(parentQName.getLocalPart());
-        }
-
-        if (serializeType) {
-
-            java.lang.String namespacePrefix = registerPrefix(xmlWriter, "http://www.docusign.net/API/3.0");
-            if ((namespacePrefix != null) && (namespacePrefix.trim().length() > 0)) {
-                writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", namespacePrefix + ":GetRecipientEsignList", xmlWriter);
-            } else {
-                writeAttribute("xsi", "http://www.w3.org/2001/XMLSchema-instance", "type", "GetRecipientEsignList", xmlWriter);
-            }
-
-        }
-        if (localUserNameTracker) {
-            namespace = "http://www.docusign.net/API/3.0";
-            if (!namespace.equals("")) {
-                prefix = xmlWriter.getPrefix(namespace);
-
-                if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-
-                    xmlWriter.writeStartElement(prefix, "UserName", namespace);
-                    xmlWriter.writeNamespace(prefix, namespace);
-                    xmlWriter.setPrefix(prefix, namespace);
-
+                java.lang.String attributeValue;
+                if (attributePrefix.trim().length() > 0) {
+                    attributeValue = attributePrefix + ":" + qname.getLocalPart();
                 } else {
-                    xmlWriter.writeStartElement(namespace, "UserName");
+                    attributeValue = qname.getLocalPart();
                 }
 
-            } else {
-                xmlWriter.writeStartElement("UserName");
-            }
-
-            if (localUserName == null) {
-                // write the nil attribute
-
-                throw new org.apache.axis2.databinding.ADBException("UserName cannot be null!!");
-
-            } else {
-
-                xmlWriter.writeCharacters(localUserName);
-
-            }
-
-            xmlWriter.writeEndElement();
-        }
-        if (localSenderEmailTracker) {
-            namespace = "http://www.docusign.net/API/3.0";
-            if (!namespace.equals("")) {
-                prefix = xmlWriter.getPrefix(namespace);
-
-                if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-
-                    xmlWriter.writeStartElement(prefix, "SenderEmail", namespace);
-                    xmlWriter.writeNamespace(prefix, namespace);
-                    xmlWriter.setPrefix(prefix, namespace);
-
+                if (namespace.equals("")) {
+                    xmlWriter.writeAttribute(attName, attributeValue);
                 } else {
-                    xmlWriter.writeStartElement(namespace, "SenderEmail");
+                    registerPrefix(xmlWriter, namespace);
+                    xmlWriter.writeAttribute(namespace, attName, attributeValue);
                 }
-
-            } else {
-                xmlWriter.writeStartElement("SenderEmail");
             }
+        /**
+         *  method to handle Qnames
+         */
 
-            if (localSenderEmail == null) {
-                // write the nil attribute
-
-                throw new org.apache.axis2.databinding.ADBException("SenderEmail cannot be null!!");
-
-            } else {
-
-                xmlWriter.writeCharacters(localSenderEmail);
-
-            }
-
-            xmlWriter.writeEndElement();
-        }
-        if (localSenderAccountIdTracker) {
-            namespace = "http://www.docusign.net/API/3.0";
-            if (!namespace.equals("")) {
-                prefix = xmlWriter.getPrefix(namespace);
-
+        private void writeQName(javax.xml.namespace.QName qname,
+                                javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+            java.lang.String namespaceURI = qname.getNamespaceURI();
+            if (namespaceURI != null) {
+                java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
                 if (prefix == null) {
-                    prefix = generatePrefix(namespace);
+                    prefix = generatePrefix(namespaceURI);
+                    xmlWriter.writeNamespace(prefix, namespaceURI);
+                    xmlWriter.setPrefix(prefix,namespaceURI);
+                }
 
-                    xmlWriter.writeStartElement(prefix, "SenderAccountId", namespace);
-                    xmlWriter.writeNamespace(prefix, namespace);
-                    xmlWriter.setPrefix(prefix, namespace);
-
+                if (prefix.trim().length() > 0){
+                    xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
                 } else {
-                    xmlWriter.writeStartElement(namespace, "SenderAccountId");
+                    // i.e this is the default namespace
+                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
                 }
 
             } else {
-                xmlWriter.writeStartElement("SenderAccountId");
-            }
-
-            if (localSenderAccountId == null) {
-                // write the nil attribute
-
-                throw new org.apache.axis2.databinding.ADBException("SenderAccountId cannot be null!!");
-
-            } else {
-
-                xmlWriter.writeCharacters(localSenderAccountId);
-
-            }
-
-            xmlWriter.writeEndElement();
-        }
-        if (localRecipientEmailTracker) {
-            namespace = "http://www.docusign.net/API/3.0";
-            if (!namespace.equals("")) {
-                prefix = xmlWriter.getPrefix(namespace);
-
-                if (prefix == null) {
-                    prefix = generatePrefix(namespace);
-
-                    xmlWriter.writeStartElement(prefix, "RecipientEmail", namespace);
-                    xmlWriter.writeNamespace(prefix, namespace);
-                    xmlWriter.setPrefix(prefix, namespace);
-
-                } else {
-                    xmlWriter.writeStartElement(namespace, "RecipientEmail");
-                }
-
-            } else {
-                xmlWriter.writeStartElement("RecipientEmail");
-            }
-
-            if (localRecipientEmail == null) {
-                // write the nil attribute
-
-                throw new org.apache.axis2.databinding.ADBException("RecipientEmail cannot be null!!");
-
-            } else {
-
-                xmlWriter.writeCharacters(localRecipientEmail);
-
-            }
-
-            xmlWriter.writeEndElement();
-        }
-        xmlWriter.writeEndElement();
-
-    }
-
-    /**
-     * Util method to write an attribute with the ns prefix
-     */
-    private void writeAttribute(java.lang.String prefix, java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-        if (xmlWriter.getPrefix(namespace) == null) {
-            xmlWriter.writeNamespace(prefix, namespace);
-            xmlWriter.setPrefix(prefix, namespace);
-
-        }
-
-        xmlWriter.writeAttribute(namespace, attName, attValue);
-
-    }
-
-    /**
-     * Util method to write an attribute without the ns prefix
-     */
-    private void writeAttribute(java.lang.String namespace, java.lang.String attName, java.lang.String attValue, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-        if (namespace.equals("")) {
-            xmlWriter.writeAttribute(attName, attValue);
-        } else {
-            registerPrefix(xmlWriter, namespace);
-            xmlWriter.writeAttribute(namespace, attName, attValue);
-        }
-    }
-
-    /**
-     * Util method to write an attribute without the ns prefix
-     */
-    private void writeQNameAttribute(java.lang.String namespace, java.lang.String attName, javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-
-        java.lang.String attributeNamespace = qname.getNamespaceURI();
-        java.lang.String attributePrefix = xmlWriter.getPrefix(attributeNamespace);
-        if (attributePrefix == null) {
-            attributePrefix = registerPrefix(xmlWriter, attributeNamespace);
-        }
-        java.lang.String attributeValue;
-        if (attributePrefix.trim().length() > 0) {
-            attributeValue = attributePrefix + ":" + qname.getLocalPart();
-        } else {
-            attributeValue = qname.getLocalPart();
-        }
-
-        if (namespace.equals("")) {
-            xmlWriter.writeAttribute(attName, attributeValue);
-        } else {
-            registerPrefix(xmlWriter, namespace);
-            xmlWriter.writeAttribute(namespace, attName, attributeValue);
-        }
-    }
-
-    /**
-     * method to handle Qnames
-     */
-
-    private void writeQName(javax.xml.namespace.QName qname, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
-        java.lang.String namespaceURI = qname.getNamespaceURI();
-        if (namespaceURI != null) {
-            java.lang.String prefix = xmlWriter.getPrefix(namespaceURI);
-            if (prefix == null) {
-                prefix = generatePrefix(namespaceURI);
-                xmlWriter.writeNamespace(prefix, namespaceURI);
-                xmlWriter.setPrefix(prefix, namespaceURI);
-            }
-
-            if (prefix.trim().length() > 0) {
-                xmlWriter.writeCharacters(prefix + ":" + org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
-            } else {
-                // i.e this is the default namespace
                 xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
             }
-
-        } else {
-            xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qname));
         }
-    }
 
-    private void writeQNames(javax.xml.namespace.QName[] qnames, javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
+        private void writeQNames(javax.xml.namespace.QName[] qnames,
+                                 javax.xml.stream.XMLStreamWriter xmlWriter) throws javax.xml.stream.XMLStreamException {
 
-        if (qnames != null) {
-            // we have to store this data until last moment since it is not
-            // possible to write any
-            // namespace data after writing the charactor data
-            java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
-            java.lang.String namespaceURI = null;
-            java.lang.String prefix = null;
+            if (qnames != null) {
+                // we have to store this data until last moment since it is not possible to write any
+                // namespace data after writing the charactor data
+                java.lang.StringBuffer stringToWrite = new java.lang.StringBuffer();
+                java.lang.String namespaceURI = null;
+                java.lang.String prefix = null;
 
-            for (int i = 0; i < qnames.length; i++) {
-                if (i > 0) {
-                    stringToWrite.append(" ");
-                }
-                namespaceURI = qnames[i].getNamespaceURI();
-                if (namespaceURI != null) {
-                    prefix = xmlWriter.getPrefix(namespaceURI);
-                    if ((prefix == null) || (prefix.length() == 0)) {
-                        prefix = generatePrefix(namespaceURI);
-                        xmlWriter.writeNamespace(prefix, namespaceURI);
-                        xmlWriter.setPrefix(prefix, namespaceURI);
+                for (int i = 0; i < qnames.length; i++) {
+                    if (i > 0) {
+                        stringToWrite.append(" ");
                     }
+                    namespaceURI = qnames[i].getNamespaceURI();
+                    if (namespaceURI != null) {
+                        prefix = xmlWriter.getPrefix(namespaceURI);
+                        if ((prefix == null) || (prefix.length() == 0)) {
+                            prefix = generatePrefix(namespaceURI);
+                            xmlWriter.writeNamespace(prefix, namespaceURI);
+                            xmlWriter.setPrefix(prefix,namespaceURI);
+                        }
 
-                    if (prefix.trim().length() > 0) {
-                        stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        if (prefix.trim().length() > 0){
+                            stringToWrite.append(prefix).append(":").append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        } else {
+                            stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
+                        }
                     } else {
                         stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                     }
-                } else {
-                    stringToWrite.append(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(qnames[i]));
                 }
-            }
-            xmlWriter.writeCharacters(stringToWrite.toString());
-        }
-
-    }
-
-    /**
-     * Register a namespace prefix
-     */
-    private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
-        java.lang.String prefix = xmlWriter.getPrefix(namespace);
-
-        if (prefix == null) {
-            prefix = generatePrefix(namespace);
-
-            while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
-                prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                xmlWriter.writeCharacters(stringToWrite.toString());
             }
 
-            xmlWriter.writeNamespace(prefix, namespace);
-            xmlWriter.setPrefix(prefix, namespace);
         }
 
-        return prefix;
-    }
 
-    /**
-     * databinding method to get an XML representation of this object
-     * 
-     */
-    public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName) throws org.apache.axis2.databinding.ADBException {
+         /**
+         * Register a namespace prefix
+         */
+         private java.lang.String registerPrefix(javax.xml.stream.XMLStreamWriter xmlWriter, java.lang.String namespace) throws javax.xml.stream.XMLStreamException {
+                java.lang.String prefix = xmlWriter.getPrefix(namespace);
 
-        java.util.ArrayList elementList = new java.util.ArrayList();
-        java.util.ArrayList attribList = new java.util.ArrayList();
+                if (prefix == null) {
+                    prefix = generatePrefix(namespace);
 
-        if (localUserNameTracker) {
-            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "UserName"));
+                    while (xmlWriter.getNamespaceContext().getNamespaceURI(prefix) != null) {
+                        prefix = org.apache.axis2.databinding.utils.BeanUtil.getUniquePrefix();
+                    }
 
-            if (localUserName != null) {
-                elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localUserName));
-            } else {
-                throw new org.apache.axis2.databinding.ADBException("UserName cannot be null!!");
+                    xmlWriter.writeNamespace(prefix, namespace);
+                    xmlWriter.setPrefix(prefix, namespace);
+                }
+
+                return prefix;
             }
+
+
+  
+        /**
+        * databinding method to get an XML representation of this object
+        *
+        */
+        public javax.xml.stream.XMLStreamReader getPullParser(javax.xml.namespace.QName qName)
+                    throws org.apache.axis2.databinding.ADBException{
+
+
+        
+                 java.util.ArrayList elementList = new java.util.ArrayList();
+                 java.util.ArrayList attribList = new java.util.ArrayList();
+
+                 if (localUserNameTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0",
+                                                                      "UserName"));
+                                 
+                                        if (localUserName != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localUserName));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("UserName cannot be null!!");
+                                        }
+                                    } if (localSenderEmailTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0",
+                                                                      "SenderEmail"));
+                                 
+                                        if (localSenderEmail != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSenderEmail));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("SenderEmail cannot be null!!");
+                                        }
+                                    } if (localSenderAccountIdTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0",
+                                                                      "SenderAccountId"));
+                                 
+                                        if (localSenderAccountId != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSenderAccountId));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("SenderAccountId cannot be null!!");
+                                        }
+                                    } if (localRecipientEmailTracker){
+                                      elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0",
+                                                                      "RecipientEmail"));
+                                 
+                                        if (localRecipientEmail != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRecipientEmail));
+                                        } else {
+                                           throw new org.apache.axis2.databinding.ADBException("RecipientEmail cannot be null!!");
+                                        }
+                                    }
+
+                return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
+            
+            
+
         }
-        if (localSenderEmailTracker) {
-            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SenderEmail"));
 
-            if (localSenderEmail != null) {
-                elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSenderEmail));
-            } else {
-                throw new org.apache.axis2.databinding.ADBException("SenderEmail cannot be null!!");
-            }
-        }
-        if (localSenderAccountIdTracker) {
-            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SenderAccountId"));
+  
 
-            if (localSenderAccountId != null) {
-                elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localSenderAccountId));
-            } else {
-                throw new org.apache.axis2.databinding.ADBException("SenderAccountId cannot be null!!");
-            }
-        }
-        if (localRecipientEmailTracker) {
-            elementList.add(new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientEmail"));
+     /**
+      *  Factory class that keeps the parse method
+      */
+    public static class Factory{
 
-            if (localRecipientEmail != null) {
-                elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localRecipientEmail));
-            } else {
-                throw new org.apache.axis2.databinding.ADBException("RecipientEmail cannot be null!!");
-            }
-        }
-
-        return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
-
-    }
-
-    /**
-     * Factory class that keeps the parse method
-     */
-    public static class Factory {
+        
+        
 
         /**
-         * static method to create the object Precondition: If this object is an
-         * element, the current or next start element starts this object and any
-         * intervening reader events are ignorable If this object is not an
-         * element, it is a complex type and the reader is at the event just
-         * after the outer start element Postcondition: If this object is an
-         * element, the reader is positioned at its end element If this object
-         * is a complex type, the reader is positioned at the end element of its
-         * outer element
-         */
-        public static GetRecipientEsignList parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception {
-            GetRecipientEsignList object = new GetRecipientEsignList();
+        * static method to create the object
+        * Precondition:  If this object is an element, the current or next start element starts this object and any intervening reader events are ignorable
+        *                If this object is not an element, it is a complex type and the reader is at the event just after the outer start element
+        * Postcondition: If this object is an element, the reader is positioned at its end element
+        *                If this object is a complex type, the reader is positioned at the end element of its outer element
+        */
+        public static GetRecipientEsignList parse(javax.xml.stream.XMLStreamReader reader) throws java.lang.Exception{
+            GetRecipientEsignList object =
+                new GetRecipientEsignList();
 
             int event;
             java.lang.String nillableValue = null;
-            java.lang.String prefix = "";
-            java.lang.String namespaceuri = "";
+            java.lang.String prefix ="";
+            java.lang.String namespaceuri ="";
             try {
-
+                
                 while (!reader.isStartElement() && !reader.isEndElement())
                     reader.next();
 
-                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "type") != null) {
-                    java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance", "type");
-                    if (fullTypeName != null) {
-                        java.lang.String nsPrefix = null;
-                        if (fullTypeName.indexOf(":") > -1) {
-                            nsPrefix = fullTypeName.substring(0, fullTypeName.indexOf(":"));
-                        }
-                        nsPrefix = nsPrefix == null ? "" : nsPrefix;
-
-                        java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":") + 1);
-
-                        if (!"GetRecipientEsignList".equals(type)) {
-                            // find namespace for the prefix
-                            java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
-                            return (GetRecipientEsignList) net.docusign.www.api._3_0.ExtensionMapper.getTypeObject(nsUri, type, reader);
-                        }
-
+                
+                if (reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","type")!=null){
+                  java.lang.String fullTypeName = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance",
+                        "type");
+                  if (fullTypeName!=null){
+                    java.lang.String nsPrefix = null;
+                    if (fullTypeName.indexOf(":") > -1){
+                        nsPrefix = fullTypeName.substring(0,fullTypeName.indexOf(":"));
                     }
+                    nsPrefix = nsPrefix==null?"":nsPrefix;
+
+                    java.lang.String type = fullTypeName.substring(fullTypeName.indexOf(":")+1);
+                    
+                            if (!"GetRecipientEsignList".equals(type)){
+                                //find namespace for the prefix
+                                java.lang.String nsUri = reader.getNamespaceContext().getNamespaceURI(nsPrefix);
+                                return (GetRecipientEsignList)net.docusign.www.api._3_0.ExtensionMapper.getTypeObject(
+                                     nsUri,type,reader);
+                              }
+                        
+
+                  }
+                
 
                 }
 
-                // Note all attributes that were handled. Used to differ normal
-                // attributes
+                
+
+                
+                // Note all attributes that were handled. Used to differ normal attributes
                 // from anyAttributes.
                 java.util.Vector handledAttributes = new java.util.Vector();
+                
 
-                reader.next();
-
-                while (!reader.isStartElement() && !reader.isEndElement())
+                 
+                    
                     reader.next();
+                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0","UserName").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setUserName(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0","SenderEmail").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSenderEmail(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0","SenderAccountId").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setSenderAccountId(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0","RecipientEmail").equals(reader.getName())){
+                                
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setRecipientEmail(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                    else {
+                                        
+                                    }
+                                  
+                            while (!reader.isStartElement() && !reader.isEndElement())
+                                reader.next();
+                            
+                                if (reader.isStartElement())
+                                // A start element we are not expecting indicates a trailing invalid property
+                                throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
+                            
 
-                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "UserName").equals(reader.getName())) {
 
-                    java.lang.String content = reader.getElementText();
-
-                    object.setUserName(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-
-                    reader.next();
-
-                } // End of if for expected property start element
-
-                else {
-
-                }
-
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SenderEmail").equals(reader.getName())) {
-
-                    java.lang.String content = reader.getElementText();
-
-                    object.setSenderEmail(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-
-                    reader.next();
-
-                } // End of if for expected property start element
-
-                else {
-
-                }
-
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "SenderAccountId").equals(reader.getName())) {
-
-                    java.lang.String content = reader.getElementText();
-
-                    object.setSenderAccountId(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-
-                    reader.next();
-
-                } // End of if for expected property start element
-
-                else {
-
-                }
-
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                if (reader.isStartElement() && new javax.xml.namespace.QName("http://www.docusign.net/API/3.0", "RecipientEmail").equals(reader.getName())) {
-
-                    java.lang.String content = reader.getElementText();
-
-                    object.setRecipientEmail(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
-
-                    reader.next();
-
-                } // End of if for expected property start element
-
-                else {
-
-                }
-
-                while (!reader.isStartElement() && !reader.isEndElement())
-                    reader.next();
-
-                if (reader.isStartElement())
-                    // A start element we are not expecting indicates a trailing
-                    // invalid property
-                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getLocalName());
 
             } catch (javax.xml.stream.XMLStreamException e) {
                 throw new java.lang.Exception(e);
@@ -727,6 +818,10 @@ public class GetRecipientEsignList implements org.apache.axis2.databinding.ADBBe
             return object;
         }
 
-    }// end of factory class
+        }//end of factory class
 
-}
+        
+
+        }
+           
+          

@@ -42,7 +42,7 @@ public class WebserviceHeartbeatAction implements Controller {
      */
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        Boolean webserviceStatus = apiService.ping(new Ping()).getPingResult();
+        Boolean webserviceStatus = apiService.Ping(new Ping()).getPingResult();
         
         log.info(LogUtil.logWS30PingResponse(webserviceStatus));
         

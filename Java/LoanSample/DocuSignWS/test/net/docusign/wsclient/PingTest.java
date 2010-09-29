@@ -20,7 +20,7 @@ public class PingTest extends WebserviceTestCase {
     public void testPing() throws Exception {
         Ping pingDocument = new Ping();
 
-        PingResponse pingResponse = wsApi.ping(pingDocument);
+        PingResponse pingResponse = wsApi.Ping(pingDocument);
 
         assertNotNull(pingResponse);
         assertTrue(pingResponse.getPingResult());

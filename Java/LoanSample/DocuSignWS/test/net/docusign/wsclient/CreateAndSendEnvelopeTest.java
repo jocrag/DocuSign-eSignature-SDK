@@ -63,7 +63,7 @@ public class CreateAndSendEnvelopeTest extends WebserviceTestCase {
 
         createAndSendEnvelope.setEnvelope(envelope);
 
-        CreateAndSendEnvelopeResponse createAndSendEnvelopeResponse = wsApi.createAndSendEnvelope(createAndSendEnvelope);
+        CreateAndSendEnvelopeResponse createAndSendEnvelopeResponse = wsApi.CreateAndSendEnvelope(createAndSendEnvelope);
 
         assertNotNull(createAndSendEnvelopeResponse);
 
@@ -77,7 +77,7 @@ public class CreateAndSendEnvelopeTest extends WebserviceTestCase {
         RequestStatus statusRequest = new RequestStatus();
         statusRequest.setEnvelopeID(envelopeId);
 
-        RequestStatusResponse statusResponse = wsApi.requestStatus(statusRequest);
+        RequestStatusResponse statusResponse = wsApi.RequestStatus(statusRequest);
 
         assertNotNull(statusResponse);
         assertEquals(envelopeId, statusResponse.getRequestStatusResult().getEnvelopeID());
