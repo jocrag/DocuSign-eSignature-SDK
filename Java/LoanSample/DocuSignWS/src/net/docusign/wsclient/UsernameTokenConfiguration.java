@@ -47,7 +47,11 @@ public class UsernameTokenConfiguration {
     }
 
     protected String readConfiguration(String classpathLocation) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(classpathLocation)));
+        ClassLoader cl = Thread.currentThread().getContextClassLoader();
+        if (cl == null) {
+            cl = getClass().getClassLoader();
+        }
+        BufferedReader reader = new BufferedReader(new InputStreamReader(cl.getResourceAsStream(classpathLocation)));
 
         StringBuilder buffer = new StringBuilder();
         String line;
@@ -60,7 +64,11 @@ public class UsernameTokenConfiguration {
     }
 
     protected File writeConfiguration(String classpathLocation, String axis2Configuration) throws IOException {
-        File usernameTokenConfiguration = new File(getClass().getResource(classpathLocation).getPath());
+        ClassLoader cl = Thread.currentThread().getContextClassLoader();
+        if (cl == null) {
+            cl = getClass().getClassLoader();
+        }
+        File usernameTokenConfiguration = new File(cl.getResource(classpathLocation).getPath());
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(usernameTokenConfiguration));
         writer.write(axis2Configuration);

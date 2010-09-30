@@ -14,7 +14,6 @@ FITNESS FOR A PARTICULAR PURPOSE.
 package net.docusign.wsclient;
 
 import java.util.Properties;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -47,7 +46,11 @@ public class ClientConfiguration {
     private ClientConfiguration() {
         props = new Properties();
         try {
-            props.load(getClass().getResourceAsStream("/".concat(PROP_FILE)));
+            ClassLoader cl = Thread.currentThread().getContextClassLoader();
+            if (cl == null) {
+                cl = getClass().getClassLoader();
+            }
+            props.load(cl.getResourceAsStream("/".concat(PROP_FILE)));
         } catch (Exception e) {
             log.debug("Could not load client.properties", e);
         }

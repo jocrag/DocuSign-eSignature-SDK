@@ -47,11 +47,15 @@ public class X509Configuration extends UsernameTokenConfiguration {
      */
     protected void configureCertProps() throws IOException {
         Properties certProperties = new Properties();
-        certProperties.load(getClass().getResourceAsStream("/cert.properties"));
+        ClassLoader cl = Thread.currentThread().getContextClassLoader();
+        if (cl == null) {
+            cl = getClass().getClassLoader();
+        }
+        certProperties.load(cl.getResourceAsStream("/cert.properties"));
 
         certProperties.setProperty("org.apache.ws.security.crypto.merlin.file", credentials.getKeystoreFile());
         certProperties.setProperty("org.apache.ws.security.crypto.merlin.keystore.alias", credentials.getKeystoreAlias());
         certProperties.setProperty("org.apache.ws.security.crypto.merlin.keystore.password", credentials.getKeystorePass());
-        certProperties.store(new FileWriter(getClass().getResource("/cert.properties").getPath()), null);
+        certProperties.store(new FileWriter(cl.getResource("/cert.properties").getPath()), null);
     }
 }
