@@ -30,6 +30,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="EnforceSignerVisibility" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="EnableWetSign" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="AllowMarkup" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventNotification" type="tns:EventNotification" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ArrayOfDocument">
@@ -77,7 +78,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="Type" type="tns:RecipientTypeCode" />
           <s:element minOccurs="1" maxOccurs="1" name="AccessCode" nillable="true" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="AddAccessCodeToEmail" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="RequireIDLookup" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="RequireIDLookup" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="IDCheckConfigurationName" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="PhoneAuthentication" type="tns:RecipientPhoneAuthentication" />
           <s:element minOccurs="0" maxOccurs="1" name="SignatureInfo" type="tns:RecipientSignatureInfo" />
@@ -92,6 +93,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="TemplateLocked" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="TemplateRequired" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="TemplateAccessCodeRequired" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultRecipient" type="s:boolean" />
         </s:sequence>
       </s:complexType>
       <s:simpleType name="RecipientTypeCode">
@@ -259,6 +261,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ConditionalParentValue" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SharedTab" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="RequireInitialOnSharedTabChange" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ConcealValueOnDocument" type="s:boolean" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="AnchorTab">
@@ -370,6 +373,33 @@
           <s:element minOccurs="0" maxOccurs="1" name="ExpireWarn" type="s:nonNegativeInteger" />
         </s:sequence>
       </s:complexType>
+      <s:complexType name="EventNotification">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoggingEnabled" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnvelopeEvents" type="tns:ArrayOfEnvelopeEvent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEnvelopeEvent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EnvelopeEvent" type="tns:EnvelopeEvent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EnvelopeEvent">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EnvelopeEventStatusCode" type="tns:EnvelopeEventStatusCode" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncludeDocuments" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EnvelopeEventStatusCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="Sent" />
+          <s:enumeration value="Delivered" />
+          <s:enumeration value="Completed" />
+          <s:enumeration value="Declined" />
+          <s:enumeration value="Voided" />
+        </s:restriction>
+      </s:simpleType>
       <s:element name="CreateEnvelopeResponse">
         <s:complexType>
           <s:sequence>
@@ -507,6 +537,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ListValues" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ListSelectedValue" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ScaleValue" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomTabType" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="RecipientStatusEsignAgreementInformation">
@@ -708,6 +739,21 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="RequestPDFResult" type="tns:EnvelopePDF" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestPDFWithCert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnvelopeID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AddWaterMark" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestPDFWithCertResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestPDFWithCertResult" type="tns:EnvelopePDF" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1273,12 +1319,69 @@
           <s:element minOccurs="0" maxOccurs="1" name="EnableWetSign" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="AllowRecipientRecursion" type="s:boolean" />
           <s:element minOccurs="0" maxOccurs="1" name="AllowMarkup" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="EventNotification" type="tns:EventNotification" />
         </s:sequence>
       </s:complexType>
       <s:element name="CreateEnvelopeFromTemplatesResponse">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="CreateEnvelopeFromTemplatesResult" type="tns:EnvelopeStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateEnvelopeFromTemplatesAndForms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnvelopeInformation" type="tns:EnvelopeInformation" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompositeTemplates" type="tns:ArrayOfCompositeTemplate" />
+            <s:element minOccurs="1" maxOccurs="1" name="ActivateEnvelope" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCompositeTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CompositeTemplate" nillable="true" type="tns:CompositeTemplate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CompositeTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServerTemplates" type="tns:ArrayOfServerTemplate" />
+          <s:element minOccurs="0" maxOccurs="1" name="InlineTemplates" type="tns:ArrayOfInlineTemplate" />
+          <s:element minOccurs="0" maxOccurs="1" name="PDFMetaDataTemplate" type="tns:PDFMetaDataTemplate" />
+          <s:element minOccurs="0" maxOccurs="1" name="Document" type="tns:Document" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServerTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServerTemplate" nillable="true" type="tns:ServerTemplate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServerTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sequence" type="s:positiveInteger" />
+          <s:element minOccurs="0" maxOccurs="1" name="TemplateID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInlineTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InlineTemplate" nillable="true" type="tns:InlineTemplate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InlineTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sequence" type="s:positiveInteger" />
+          <s:element minOccurs="0" maxOccurs="1" name="Envelope" type="tns:Envelope" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PDFMetaDataTemplate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sequence" type="s:positiveInteger" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateEnvelopeFromTemplatesAndFormsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateEnvelopeFromTemplatesAndFormsResult" type="tns:EnvelopeStatus" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1583,6 +1686,111 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetFolder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="tns:FolderType" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolderName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartPosition" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FromDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:EnvelopeStatusCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="FolderType">
+        <s:restriction base="s:string">
+          <s:enumeration value="RecycleBin" />
+          <s:enumeration value="Draft" />
+          <s:enumeration value="Inbox" />
+          <s:enumeration value="SentItems" />
+          <s:enumeration value="Normal" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetFolderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFolderResult" type="tns:FolderResults" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FolderResults">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResultSetSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartPosition" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndPosition" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="tns:FolderType" />
+          <s:element minOccurs="1" maxOccurs="1" name="FolderItems" nillable="true" type="tns:ArrayOfFolderItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFolderItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FolderItem" type="tns:FolderItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FolderItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EnvelopeId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:EnvelopeStatusCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="Owner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SenderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SenderEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SenderCompany" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecipientStatuses" type="tns:ArrayOfRecipientStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomFields" type="tns:ArrayOfCustomField" />
+          <s:element minOccurs="0" maxOccurs="1" name="Created" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sent" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Completed" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFolders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFoldersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFoldersResult" type="tns:AvailableFolders" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AvailableFolders">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Folders" nillable="true" type="tns:ArrayOfFolder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfFolder">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Folder" type="tns:Folder" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Folder">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="tns:FolderType" />
+          <s:element minOccurs="0" maxOccurs="1" name="FolderName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RequestEnvelope">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnvelopeID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeDocumentBytes" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestEnvelopeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestEnvelopeResult" type="tns:Envelope" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="CreateEnvelopeSoapIn">
@@ -1620,6 +1828,12 @@
   </wsdl:message>
   <wsdl:message name="RequestPDFSoapOut">
     <wsdl:part name="parameters" element="tns:RequestPDFResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestPDFWithCertSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestPDFWithCert" />
+  </wsdl:message>
+  <wsdl:message name="RequestPDFWithCertSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestPDFWithCertResponse" />
   </wsdl:message>
   <wsdl:message name="RequestDocumentPDFsSoapIn">
     <wsdl:part name="parameters" element="tns:RequestDocumentPDFs" />
@@ -1735,6 +1949,12 @@
   <wsdl:message name="CreateEnvelopeFromTemplatesSoapOut">
     <wsdl:part name="parameters" element="tns:CreateEnvelopeFromTemplatesResponse" />
   </wsdl:message>
+  <wsdl:message name="CreateEnvelopeFromTemplatesAndFormsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateEnvelopeFromTemplatesAndForms" />
+  </wsdl:message>
+  <wsdl:message name="CreateEnvelopeFromTemplatesAndFormsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateEnvelopeFromTemplatesAndFormsResponse" />
+  </wsdl:message>
   <wsdl:message name="GetStatusInDocuSignConnectFormatSoapIn">
     <wsdl:part name="parameters" element="tns:GetStatusInDocuSignConnectFormat" />
   </wsdl:message>
@@ -1813,6 +2033,24 @@
   <wsdl:message name="RequestCorrectTokenSoapOut">
     <wsdl:part name="parameters" element="tns:RequestCorrectTokenResponse" />
   </wsdl:message>
+  <wsdl:message name="GetFolderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFolder" />
+  </wsdl:message>
+  <wsdl:message name="GetFolderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFoldersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFolders" />
+  </wsdl:message>
+  <wsdl:message name="GetFoldersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestEnvelopeSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="RequestEnvelopeSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestEnvelopeResponse" />
+  </wsdl:message>
   <wsdl:portType name="APIServiceSoap">
     <wsdl:operation name="CreateEnvelope">
       <wsdl:input message="tns:CreateEnvelopeSoapIn" />
@@ -1837,6 +2075,10 @@
     <wsdl:operation name="RequestPDF">
       <wsdl:input message="tns:RequestPDFSoapIn" />
       <wsdl:output message="tns:RequestPDFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestPDFWithCert">
+      <wsdl:input message="tns:RequestPDFWithCertSoapIn" />
+      <wsdl:output message="tns:RequestPDFWithCertSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="RequestDocumentPDFs">
       <wsdl:input message="tns:RequestDocumentPDFsSoapIn" />
@@ -1914,6 +2156,10 @@
       <wsdl:input message="tns:CreateEnvelopeFromTemplatesSoapIn" />
       <wsdl:output message="tns:CreateEnvelopeFromTemplatesSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="CreateEnvelopeFromTemplatesAndForms">
+      <wsdl:input message="tns:CreateEnvelopeFromTemplatesAndFormsSoapIn" />
+      <wsdl:output message="tns:CreateEnvelopeFromTemplatesAndFormsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetStatusInDocuSignConnectFormat">
       <wsdl:input message="tns:GetStatusInDocuSignConnectFormatSoapIn" />
       <wsdl:output message="tns:GetStatusInDocuSignConnectFormatSoapOut" />
@@ -1966,6 +2212,18 @@
       <wsdl:input message="tns:RequestCorrectTokenSoapIn" />
       <wsdl:output message="tns:RequestCorrectTokenSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetFolder">
+      <wsdl:input message="tns:GetFolderSoapIn" />
+      <wsdl:output message="tns:GetFolderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFolders">
+      <wsdl:input message="tns:GetFoldersSoapIn" />
+      <wsdl:output message="tns:GetFoldersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestEnvelope">
+      <wsdl:input message="tns:RequestEnvelopeSoapIn" />
+      <wsdl:output message="tns:RequestEnvelopeSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="APIServiceSoap" type="tns:APIServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2016,6 +2274,15 @@
     </wsdl:operation>
     <wsdl:operation name="RequestPDF">
       <soap:operation soapAction="http://www.docusign.net/API/3.0/RequestPDF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestPDFWithCert">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/RequestPDFWithCert" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2194,6 +2461,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateEnvelopeFromTemplatesAndForms">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/CreateEnvelopeFromTemplatesAndForms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetStatusInDocuSignConnectFormat">
       <soap:operation soapAction="http://www.docusign.net/API/3.0/GetStatusInDocuSignConnectFormat" style="document" />
       <wsdl:input>
@@ -2311,6 +2587,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetFolder">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/GetFolder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolders">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/GetFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestEnvelope">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/RequestEnvelope" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="APIServiceSoap12" type="tns:APIServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -2361,6 +2664,15 @@
     </wsdl:operation>
     <wsdl:operation name="RequestPDF">
       <soap12:operation soapAction="http://www.docusign.net/API/3.0/RequestPDF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestPDFWithCert">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/RequestPDFWithCert" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -2539,6 +2851,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateEnvelopeFromTemplatesAndForms">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/CreateEnvelopeFromTemplatesAndForms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetStatusInDocuSignConnectFormat">
       <soap12:operation soapAction="http://www.docusign.net/API/3.0/GetStatusInDocuSignConnectFormat" style="document" />
       <wsdl:input>
@@ -2649,6 +2970,33 @@
     </wsdl:operation>
     <wsdl:operation name="RequestCorrectToken">
       <soap12:operation soapAction="http://www.docusign.net/API/3.0/RequestCorrectToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolder">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/GetFolder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFolders">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/GetFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestEnvelope">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/RequestEnvelope" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
