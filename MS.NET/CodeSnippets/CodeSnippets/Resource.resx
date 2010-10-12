@@ -121,8 +121,14 @@
   <data name="picturePdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\picturePdf.pdf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="sample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\sample.pdf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="sampleTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\sampleTemplate.dpd;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sampleTemplateForForms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\sampleTemplateForForms.dpd;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="twoPagePdfWithMeta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\twoPagePdfWithMeta.pdf;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
