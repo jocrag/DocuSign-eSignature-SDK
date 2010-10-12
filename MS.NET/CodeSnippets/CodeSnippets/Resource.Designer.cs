@@ -67,9 +67,23 @@ namespace CodeSnippets {
             }
         }
         
+        internal static byte[] sample {
+            get {
+                object obj = ResourceManager.GetObject("sample", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] sampleTemplate {
             get {
                 object obj = ResourceManager.GetObject("sampleTemplate", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        internal static byte[] sampleTemplateForForms {
+            get {
+                object obj = ResourceManager.GetObject("sampleTemplateForForms", resourceCulture);
                 return ((byte[])(obj));
             }
         }
