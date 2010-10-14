@@ -217,13 +217,14 @@ namespace CodeSnippets
             DocuSignWeb.Recipient[] recipients = HeartbeatTests.CreateOneSigner();
             DocuSignWeb.TemplateReferenceRoleAssignment[] finalRoleAssignments = new DocuSignWeb.TemplateReferenceRoleAssignment[1];
             finalRoleAssignments[0] = new DocuSignWeb.TemplateReferenceRoleAssignment();
-            finalRoleAssignments[0].RoleName = "Signer";
+            finalRoleAssignments[0].RoleName = recipients[0].RoleName;
             finalRoleAssignments[0].RecipientID = recipients[0].ID;
 
-            // User a server-side template
+            // Use a server-side template -- you could make more than one of these
             DocuSignWeb.TemplateReference templateReference = new DocuSignWeb.TemplateReference();
             templateReference.TemplateLocation = DocuSignWeb.TemplateLocationCode.Server;
             templateReference.Template = "server template ID";
+            templateReference.RoleAssignments = finalRoleAssignments;
 
             // Construct the envelope information
             DocuSignWeb.EnvelopeInformation envelopeInfo = new DocuSignWeb.EnvelopeInformation();
