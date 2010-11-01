@@ -40,6 +40,10 @@ namespace Signing.Tests
                 {
                     credentials.UserName += "[" + ConfigurationManager.AppSettings["IntegratorsKey"] + "]";
                 }
+                else
+                {
+                    Assert.Fail("You must use an integrator's key!");
+                }
                 credentials.UserName += ConfigurationManager.AppSettings["APIUserEmail"];
                 credentials.Password = ConfigurationManager.AppSettings["Password"];
 

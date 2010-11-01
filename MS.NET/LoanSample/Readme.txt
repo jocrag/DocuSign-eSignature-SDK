@@ -1,4 +1,4 @@
-Readme.txt for Docusign SDK MS.NET C# LoanCo sample.
+﻿Readme.txt for Docusign SDK MS.NET C# LoanCo sample.
 ===========================================================================
 
 System Requirements:
@@ -27,16 +27,19 @@ There are four key pieces of information that you need to provide to the
 API Proxy in order to start interfacing with DocuSign on a system to system
 level: 
 
-1) Account ID -needed for all the calls which create envelopes in DocuSign
+1) Account ID - needed for all the calls which create envelopes in DocuSign
 system. 
 
-2) User ID -needed to identify a user that you are going to automate via
+2) User ID - needed to identify a user that you are going to automate via
 API. 
 
 3) Password – this is the same password that was used to set up the system
-user. 
+user.
 
-4) Web Service Endpoint (API URL) – DocuSign maintains several web service
+4) Integrator Key - this is activated in the API section of preferences in
+the member console. You must use an integrator's key. 
+
+5) Web Service Endpoint (API URL) – DocuSign maintains several web service
 endpoints. One is set up for development and all the URLs start with
 demo.docusign.net. Production web service endpoint starts with
 www.docusign.net. All the web service endpoint are completely isolated from

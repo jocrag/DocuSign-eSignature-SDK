@@ -99,12 +99,9 @@ public class BasePage : System.Web.UI.Page
     public AccountCredentials GetAPICredentials(){
         AccountCredentials credentials = new AccountCredentials();
 
-        if (SettingIsSet("APIAccountId") && SettingIsSet("APIUrl") && SettingIsSet("APIUserEmail") && SettingIsSet("Password"))
+        if (SettingIsSet("IntegratorsKey") && SettingIsSet("APIAccountId") && SettingIsSet("APIUrl") && SettingIsSet("APIUserEmail") && SettingIsSet("Password"))
         {
-            if (SettingIsSet("IntegratorsKey"))
-            {
-                credentials.UserName = "[" + ConfigurationManager.AppSettings["IntegratorsKey"] + "]";
-            }
+            credentials.UserName = "[" + ConfigurationManager.AppSettings["IntegratorsKey"] + "]";
             credentials.UserName += ConfigurationManager.AppSettings["APIUserEmail"];
             credentials.Password = ConfigurationManager.AppSettings["Password"];
             credentials.AccountId = ConfigurationManager.AppSettings["APIAccountId"];

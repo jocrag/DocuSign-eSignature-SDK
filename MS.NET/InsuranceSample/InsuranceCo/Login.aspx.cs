@@ -189,16 +189,17 @@ namespace InsuranceCo
             }
             else
             {
-                // an integrators key is an optional part of the api login that allows users without explicit api permissions to use
-                // api functions. An integrators key is provided to the integrator, not to the end users. Do not let end uses get access
-                // to the integrators key.
                 if (base.SettingIsSet("IntegratorsKey"))
                 {
                     apiLogin = "[" + System.Configuration.ConfigurationManager.AppSettings["IntegratorsKey"] + "]";
                 }
+                else
+                {
+                    setLoginErrorMessage("You must use an integrator's key!");
+                    return;
+                }
 
                 apiLogin += txtEmail.Text;
-                
                 try
                 {
                     lr = creds.Login(apiLogin, txtPassword.Text);

@@ -112,6 +112,7 @@ namespace LoanCo
                 {
                     base.GoToErrorPage(excp.Message);
                 }
+
                 // Now that the envelope has been sent, we want to open it up so the applicant can sign it. 
                 // We will get something called a RecipientToken, which is an URL that will open the envelope up for the specified recipient
 
@@ -143,7 +144,7 @@ namespace LoanCo
                 // now we store the envelope & token in session and redirect to the signing host page
                 Session["EmbeddedToken"] = token;
                 Session["Envelope"] = envelope;
-                Response.Redirect("EmbeddedHost.aspx", true);
+                Response.Redirect("EmbeddedHost.aspx", false);
 
             }
         }
