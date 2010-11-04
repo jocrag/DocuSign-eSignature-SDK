@@ -22,10 +22,15 @@ Installation and Use
 Deployment is just copying the entire CodeSnippts directory into your
 htdocs (or equivalent) directory on your server.
 
-Uncomment the methods you want to try out in the index.php file. Search the
-ApiServiceSnippets.php file for tasks labeled "TODO:" and fill in the
-requested configuration items. Then, point your web browser to somthing
-like "http://localhost/CodeSnippets/index.php". You'll see the resulting
-return data in your browser if all the configuration data is correct.
+Uncomment the methods you want to try out in the
+index_of_api_sample_functions.php and index_of_ams_sample_functions.php
+files. Search the ApiServiceSnippets.php and AccountManagementSnippets.php
+files for tasks labeled "TODO:" and fill in the requested configuration
+items. Search include/creds.php and include/utils.php for"TODO:" tasks to
+fill in your credentials and timezone. Then, point your web browser to
+something like
+"http://localhost/CodeSnippets/index_of_api_sample_functions.php". You'll
+see the resulting return data in your browser if all the configuration data
+is correct.
 
 Happy Coding!

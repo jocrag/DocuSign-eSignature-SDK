@@ -1,11 +1,9 @@
-<!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head></head>
-<body>
 <?php
 include_once 'ApiServiceSnippets.php';
-?>
-<?php
+
+//=============================================================================
+// ApiService snippets
+//=============================================================================
 /*
  * Note that those calls marked with TODO: do not have implementations yet.
  *
@@ -52,14 +50,9 @@ include_once 'ApiServiceSnippets.php';
 //print_r2(saveTemplateSample());
 //print_r2(sendEnvelopeSample());
 //print_r2(synchEnvelopeSample());
-//print_r2(transferEnvelopeSample());   //TODO: This test is manual. See
-                                        //header of implementation for more
-                                        //details
+// TODO: print_r2(transferEnvelopeSample());
 //print_r2(updateAddressBookItemsSample());
 //print_r2(uploadTemplateSample());
 //print_r2(voidEnvelopeSample());
-//print_r2(nowXsdDate());
-//print_r2(todayXsdDate());
 ?>
-</body>
-</html>
+

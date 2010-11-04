@@ -20,104 +20,42 @@
 include("api/CredentialService.php");
 // transaction api service proxy classes and soapclient
 include("api/APIService.php");
+// some helper functions
+include_once("include/utils.php");
+// user credentials
+include_once("include/creds.php");
 
 //=============================================================================
 // helper constants
 //=============================================================================
 
-// TODO: Use Integrator's Key from Docusign DevCenter Account Preferences API
-$IntegratorsKey = "your integrator key GUID here";
-// TODO: Use your Docusign DevCenter Account email
-$UserID = "your login email here";
-// TODO: Use your Docusign DevCenter Account password
-$Password = "your password here";
-// TODO: Use API Account ID from Docusign DevCenter Account Preferences API
-$AccountID = "your api account GUID here";
 // TODO: put in a test recipient email
-$Recipient1Email = "some recipient email that you can access here";
+$_apiRecipient1Email = "test email account";
 // TODO: put in users name
-$UserName = "some user name";
-// TODO: put in your timezone or make it null
-$TimeZone = 'America/Los_Angeles';
+$_apiUserName = "test user name";
 
 //=============================================================================
 // Set up the API
 //=============================================================================
-$api_endpoint = "https://demo.docusign.net/api/3.0/api.asmx";
-$api_wsdl = "api/APIService.wsdl";
-$api_options =  array('location'=>$api_endpoint,'trace'=>true,'features' => SOAP_SINGLE_ELEMENT_ARRAYS);
-$api = new APIService($api_wsdl, $api_options);
+$_apiEndpoint = "https://demo.docusign.net/api/3.0/api.asmx";
+$_apiWsdl = "api/APIService.wsdl";
+$api_options =  array('location'=>$_apiEndpoint,'trace'=>true,'features' => SOAP_SINGLE_ELEMENT_ARRAYS);
+$api = new APIService($_apiWsdl, $api_options);
 $api->setCredentials("[" . $IntegratorsKey . "]" . $UserID, $Password);
 
 //=============================================================================
 // helper functions
 //=============================================================================
 /**
- * Prints variable dump pretty for debug and browser
- * @param unknown_type $val
- */
-function print_r2($val) {
-    echo '<pre>';
-    print_r($val);
-    echo  '</pre>';
-}
-
-/**
- * Returns xsd format datetime for start of today
- * @return string
- */
-function todayXsdDate() {
-    global $TimeZone;
-    if ($TimeZone != null) {
-        date_default_timezone_set($TimeZone);
-    }
-    return (date("Y") . "-" . date("m") . "-" . date("d") . "T00:00:00.00");
-}
-
-/**
- * Returns xsd format datetime for now
- * @return string
- */
-function nowXsdDate() {
-    global $TimeZone;
-    if ($TimeZone != null) {
-        date_default_timezone_set($TimeZone);
-    }
-        return (date("Y") . "-" . date("m") . "-" . date("d") . "T" . date("H") . ":" . date("i") . ":" . date("s"));
-}
-
-/**
- * A guid maker for all seasons (note that com_create_guid() only works on windows
- * @return string
- */
-function guid(){
-    if (function_exists('com_create_guid')){
-        return com_create_guid();
-    }else{
-        mt_srand((double)microtime()*10000);//optional for php 4.2.0 and up.
-        $charid = strtoupper(md5(uniqid(rand(), true)));
-        $hyphen = chr(45);// "-"
-        $uuid = chr(123)// "{"
-                .substr($charid, 0, 8).$hyphen
-                .substr($charid, 8, 4).$hyphen
-                .substr($charid,12, 4).$hyphen
-                .substr($charid,16, 4).$hyphen
-                .substr($charid,20,12)
-                .chr(125);// "}"
-        return $uuid;
-    }
-}
-
-/**
  * Creates one signer recipient
  * @return array of one Recipient
  */
 function createOneSigner() {
-    global $Recipient1Email;
+    global $_apiRecipient1Email;
 
     $rcp1 = new Recipient();    // First recipient to put in recipient array
     $rcp1->UserName = "John Doe";
-    $rcp1->Email = $Recipient1Email;
+    $rcp1->Email = $_apiRecipient1Email;
     $rcp1->Type = RecipientTypeCode::Signer;
     $rcp1->ID = "1";
     $rcp1->RoutingOrder = 1;
@@ -165,10 +103,6 @@ function createEnvelopeWithDocumentAndTabs($envelope) {
 
     return $envelope;
 }
-
-//=============================================================================
-// helper classes
-//=============================================================================
 
 //=============================================================================
 // Snippets
@@ -546,16 +480,16 @@ function getRecipientEsignListSample() {
     global $api;
     global $AccountID;
     global $UserID;
-    global $UserName;
-    global $Recipient1Email;
+    global $_apiUserName;
+    global $_apiRecipient1Email;
 
     // Enter account holder's username, email and accountID, and the email of
     // the user that you wish to determine if an esign agreement exists
     $getRecipientEsignListparams = new GetRecipientEsignList();
     $getRecipientEsignListparams->SenderAccountId = $AccountID;
     $getRecipientEsignListparams->SenderEmail = $UserID;
-    $getRecipientEsignListparams->UserName = $UserName;
-    $getRecipientEsignListparams->RecipientEmail = $Recipient1Email;
+    $getRecipientEsignListparams->UserName = $_apiUserName;
+    $getRecipientEsignListparams->RecipientEmail = $_apiRecipient1Email;
     $response = $api->GetRecipientEsignList($getRecipientEsignListparams);
 
     return $response;
@@ -568,13 +502,13 @@ function getRecipientEsignListSample() {
 function getRecipientListSample() {
     global $api;
     global $AccountID;
-    global $Recipient1Email;
+    global $_apiRecipient1Email;
 
     // Enter the account holder's ID and the target email to find all recipients
     // at the target email address
     $getRecipientListparams = new GetRecipientList();
     $getRecipientListparams->SenderAccountId = $AccountID;
-    $getRecipientListparams->RecipientEmail = $Recipient1Email;
+    $getRecipientListparams->RecipientEmail = $_apiRecipient1Email;
     $response = $api->GetRecipientList($getRecipientListparams);
 
     return $response;
