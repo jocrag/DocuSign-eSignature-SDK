@@ -200,7 +200,7 @@ namespace Signing
     {
         public string ApiUrl; // url endpoint of the api
         public string AccountId; // billing account for sending envelopes
-        public string UserName; // the email address used for docusign login. Optionally prefixed with an integrators key
+        public string UserName; // the email address used for docusign login. Prefixed with an integrators key
         public string Password; // password for docusign login.
 
     }

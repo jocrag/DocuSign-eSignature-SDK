@@ -40,6 +40,10 @@ namespace CodeSnippets
             {
                 _userName += "[" + ConfigurationManager.AppSettings["IntegratorsKey"] + "]";
             }
+            else
+            {
+                Assert.Fail("You must use an integrator's key!");
+            }
             _userName += _email;
             _password = ConfigurationManager.AppSettings["Password"];
             _apiClient = new DocuSignWeb.APIServiceSoapClient("APIServiceSoap", _apiUrl);
