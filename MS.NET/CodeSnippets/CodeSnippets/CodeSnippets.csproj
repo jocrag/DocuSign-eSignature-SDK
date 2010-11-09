@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2B510F1F-4BC2-4256-AF4E-C8D34395A7B4}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -86,6 +86,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+    <None Include="resources\LoremIpsum.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="resources\picturePdf.pdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -187,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="README.txt" />
+    <None Include="Service References\DocuSignWeb\configuration91.svcinfo" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

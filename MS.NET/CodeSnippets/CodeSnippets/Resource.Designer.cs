@@ -60,6 +60,13 @@ namespace CodeSnippets {
             }
         }
         
+        internal static byte[] LoremIpsum {
+            get {
+                object obj = ResourceManager.GetObject("LoremIpsum", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
         internal static byte[] picturePdf {
             get {
                 object obj = ResourceManager.GetObject("picturePdf", resourceCulture);

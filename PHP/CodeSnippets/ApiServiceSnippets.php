@@ -287,28 +287,78 @@ function createEnvelopeFromTemplatesAndFormsSample() {
     $envInfo->AccountId = $AccountID;
     $envInfo->EmailBlurb = "testing docusing creation services";
     $envInfo->Subject = "create envelope from templates and forms sample";
+    
+    $recipient1 = new Recipient();
+    $recipient1->UserName = "SignerOne";
+    // TODO: replace email string with actual email
+    $recipient1->Email = "test email 1";
+    $recipient1->Type = RecipientTypeCode::Signer;
+    $recipient1->RequireIDLookup = FALSE;
+    $recipient1->RoutingOrder = 1;
+    $recipient1->RoleName = "One";
+    $recipient1->ID = "1";
+    
+    $recipient2 = new Recipient();
+    $recipient2->UserName = "SignerTwo";
+    // TODO: replace email string with actual email
+    $recipient2->Email = "test email 2";
+    $recipient2->Type = RecipientTypeCode::Signer;
+    $recipient2->RequireIDLookup = FALSE;
+    $recipient2->RoutingOrder = 2;
+    $recipient2->RoleName = "Two";
+    $recipient2->ID = "2";
+    
+    $signers = array($recipient1, $recipient2);
 
     // Build template
     $inlineTemplate = new InlineTemplate();
-    $inlineTemplate->Sequence = "2";
+    $inlineTemplate->Sequence = "1";
     $env = new Envelope();
-    $env->Recipients = createOneSigner();
+    $env->Recipients = $signers;
     $env->AccountId = $AccountID;
+
+    // This tab matches the DateSigned tab assigned to recipient one
+    $tab1 = new Tab();
+    $tab1->RecipientID = "1";
+    $tab1->TabLabel = "DocuSignDateSignedOne";
+    $tab1->Type = TabTypeCode::DateSigned;
+    
+    // This tab matches the SignHere tabs assigned to recipient two
+    $tab2 = new Tab();
+    $tab2->RecipientID = "2";
+    $tab2->TabLabel = "SignTwo\\*";
+    $tab2->Type = TabTypeCode::SignHere;
+    
+    // This tab matches the SignHere tabs assigned to recipient one
+    $tab3 = new Tab();
+    $tab3->RecipientID = "1";
+    $tab3->TabLabel = "SignOne\\*";
+    $tab3->Type = TabTypeCode::SignHere;
+    
+    // This tab matches the DateSigned tab assigned to recipient two
+    $tab4 = new Tab();
+    $tab4->RecipientID = "2";
+    $tab4->TabLabel = "DocuSignDateSignedTwo";
+    $tab4->Type = TabTypeCode::DateSigned;
+    
+    // This tab matches nothing -- but that's okay!
+    // It will just get discarded
+    $tab5 = new Tab();
+    $tab5->RecipientID = "1";
+    $tab5->TabLabel = "asdf";
+    $tab5->Type = TabTypeCode::FullName;
+   
+    $env->Tabs = array($tab1, $tab2, $tab3, $tab4, $tab5);
+    
     $inlineTemplate->Envelope = $env;
     $template = new CompositeTemplate();
     $template->InlineTemplates = array($inlineTemplate);
-
-    // Configure PDF metadata template
-    //    In this case, we want to extract fields from the pdf itself
-    $pdfMetaDateTemplate = new PDFMetaDataTemplate();
-    $pdfMetaDateTemplate->Sequence = "3";
-    $template->PDFMetaDataTemplate = $pdfMetaDateTemplate;
 
     // Configure the document
     $doc = new Document();
     $doc->ID = "1";
     $doc->Name = "Form Document";
-    $doc->PDFBytes = file_get_contents("docs/twoPagePdfWithMeta.pdf");
+    $doc->PDFBytes = file_get_contents("docs/LoremIpsum.pdf");
     $doc->TransformPdfFields = true;
     $doc->FileExtension = "pdf";
     $template->Document = $doc;

@@ -110,107 +110,100 @@ namespace CodeSnippets
         [Test]
         public void CreateEnvelopeFromTemplatesAndFormsTest()
         {
-            // Set up the test by uploading a server template
-            String templateXML = System.IO.File.ReadAllText("resources\\sampleTemplateForForms.dpd");
-
-            // Upload the specified template to the account
-            DocuSignWeb.SaveTemplateResult result = _apiClient.UploadTemplate(templateXML, _accountId, false);
-
             // Configure the envelope information
             DocuSignWeb.EnvelopeInformation envelopeInfo = new DocuSignWeb.EnvelopeInformation();
             envelopeInfo.AccountId = _accountId;
             envelopeInfo.EmailBlurb = "testing docusign creation services";
             envelopeInfo.Subject = "create envelope from templates and forms test";
-            envelopeInfo.SigningLocation = DocuSignWeb.SigningLocationCode.Online;
-            envelopeInfo.SigningLocationSpecified = true;
 
-            // Create the composite template
             DocuSignWeb.CompositeTemplate template = new DocuSignWeb.CompositeTemplate();
 
-            // Use the server template we just uploaded
-            DocuSignWeb.ServerTemplate serverTemplate = new DocuSignWeb.ServerTemplate();
-            serverTemplate.TemplateID = result.TemplateID;
-            serverTemplate.Sequence = "1";
-            template.ServerTemplates = new DocuSignWeb.ServerTemplate[] { serverTemplate };
+            DocuSignWeb.Recipient recipient1 = new DocuSignWeb.Recipient();
+            recipient1.UserName = "SignerOne";
+            // TODO: replace the email string with an actual email
+            recipient1.Email = "test email one";
+            recipient1.Type = DocuSignWeb.RecipientTypeCode.Signer;
+            recipient1.RequireIDLookup = false;
+            recipient1.RequireIDLookupSpecified = true;
+            recipient1.RoutingOrder = 1;
+            recipient1.RoutingOrderSpecified = true;
+            recipient1.RoleName = "One";
+            recipient1.ID = "1";
 
-            // First inline template, applied second
-            DocuSignWeb.InlineTemplate inlineTemplateOne = new DocuSignWeb.InlineTemplate();
-            inlineTemplateOne.Sequence = "2";
-            inlineTemplateOne.Envelope = new DocuSignWeb.Envelope();
-            inlineTemplateOne.Envelope.AccountId = _accountId;
-            inlineTemplateOne.Envelope.Subject = "Sample Form";
-            inlineTemplateOne.Envelope.EmailBlurb = "";
-            inlineTemplateOne.Envelope.SigningLocation = DocuSignWeb.SigningLocationCode.Online;
-            inlineTemplateOne.Envelope.Recipients = HeartbeatTests.CreateFormSigners();
+            DocuSignWeb.Recipient recipient2 = new DocuSignWeb.Recipient();
+            recipient2.UserName = "Signer2";
+            // TODO: replace the email string with an actual email
+            recipient2.Email = "test email two";
+            recipient2.Type = DocuSignWeb.RecipientTypeCode.Signer;
+            recipient2.RequireIDLookup = false;
+            recipient2.RequireIDLookupSpecified = true;
+            recipient2.RoutingOrder = 2;
+            recipient2.RoutingOrderSpecified = true;
+            recipient2.RoleName = "Two";
+            recipient2.ID = "2";
 
-            // This tab will give recipient 1 a "Sign Here" tab
+            DocuSignWeb.Recipient[] signers = { recipient1, recipient2 };
+
+            // Configure the inline templates
+            DocuSignWeb.InlineTemplate inlineTemplate = new DocuSignWeb.InlineTemplate();
+            inlineTemplate.Sequence = "1";
+            inlineTemplate.Envelope = new DocuSignWeb.Envelope();
+            inlineTemplate.Envelope.Recipients = signers;
+            inlineTemplate.Envelope.AccountId = _accountId;
+
+            // This tab matches the DateSigned tab assigned to recipient one
             DocuSignWeb.Tab tab1 = new DocuSignWeb.Tab();
-            tab1.DocumentID = "1";
             tab1.RecipientID = "1";
-            tab1.XPosition = "12";
-            tab1.YPosition = "10";
-            tab1.ScaleValue = 1;
-            tab1.PageNumber = "1";
-            tab1.Type = DocuSignWeb.TabTypeCode.SignHere;
-            tab1.Name = "SignHere";
-            tab1.TabLabel = "Sign Here 1";
-            tab1.CustomTabHeight = 0;
+            tab1.TabLabel = "DocuSignDateSignedOne";
+            tab1.Type = DocuSignWeb.TabTypeCode.DateSigned;
 
-            // This tab will take any fields with the a fld1 label
-            // and assign them to recipient 2
+            // This tab matches the SignHere tabs assigned to recipient two
             DocuSignWeb.Tab tab2 = new DocuSignWeb.Tab();
             tab2.RecipientID = "2";
-            tab2.TabLabel = "fld1";
-            tab2.Value = "From Inline Template";
-            tab2.Type = DocuSignWeb.TabTypeCode.Custom;
+            tab2.TabLabel = "SignTwo\\*";
+            tab2.Type = DocuSignWeb.TabTypeCode.SignHere;
 
-            // This tab will take tabs that match the pattern and
-            // assign them to recipient 2
+            // This tab matches the SignHere tabs assigned to recipient one
             DocuSignWeb.Tab tab3 = new DocuSignWeb.Tab();
-            tab3.RecipientID = "2";
-            tab3.TabLabel = "fld2\\*";
-            Console.WriteLine("{0}", tab3.TabLabel);
-            tab3.Value = "Wild card from Inline Template";
-            tab3.Type = DocuSignWeb.TabTypeCode.Custom;
+            tab3.RecipientID = "1";
+            tab3.TabLabel = "SignOne\\*";
+            tab3.Type = DocuSignWeb.TabTypeCode.SignHere;
 
-            inlineTemplateOne.Envelope.Tabs = new DocuSignWeb.Tab[] { tab1, tab2, tab3 };
+            // This tab matches the DateSigned tab assigned to recipient two
+            DocuSignWeb.Tab tab4 = new DocuSignWeb.Tab();
+            tab4.RecipientID = "2";
+            tab4.TabLabel = "DocuSignDateSignedTwo";
+            tab4.Type = DocuSignWeb.TabTypeCode.DateSigned;
 
-            // First inline template, applied third
-            DocuSignWeb.InlineTemplate inlineTemplateTwo = new DocuSignWeb.InlineTemplate();
-            inlineTemplateTwo.Sequence = "3";
-            inlineTemplateTwo.Envelope = new DocuSignWeb.Envelope();
-            inlineTemplateTwo.Envelope.AccountId = _accountId;
-            inlineTemplateTwo.Envelope.Recipients = new DocuSignWeb.Recipient[] { HeartbeatTests.CreateFormSigners()[0] };
+            // This tab matches nothing -- but that's okay!
+            // It will just get discarded
+            DocuSignWeb.Tab tab5 = new DocuSignWeb.Tab();
+            tab5.RecipientID = "1";
+            tab5.TabLabel = "asdf";
+            tab5.Type = DocuSignWeb.TabTypeCode.FullName;
 
-            // Create one more Sign Here tab on page two, and give it to
-            // recipient 1
-            DocuSignWeb.Tab tab4 = tab1;
-            tab4.PageNumber = "2";
-            inlineTemplateTwo.Envelope.Tabs = new DocuSignWeb.Tab[] { tab1, tab4 };
+            inlineTemplate.Envelope.Tabs = new DocuSignWeb.Tab[] { tab1, tab2, tab3, tab4, tab5 };
 
-            template.InlineTemplates = new DocuSignWeb.InlineTemplate[] { inlineTemplateOne, inlineTemplateTwo };
+            template.InlineTemplates = new DocuSignWeb.InlineTemplate[] { inlineTemplate };
 
-            // Extract metadata from the PDF itself last
-            DocuSignWeb.PDFMetaDataTemplate pdfMetaDatatemplate = new DocuSignWeb.PDFMetaDataTemplate();
-            pdfMetaDatatemplate.Sequence = "4";
-
-            template.PDFMetaDataTemplate = pdfMetaDatatemplate;
-
-            // Use the sample document, and extract information from it
-            DocuSignWeb.Document document = new DocuSignWeb.Document();
-            document.ID = "1";
-            document.Name = "Form Document";
-            document.PDFBytes = Resource.sample;
-            document.TransformPdfFields = true;
-            document.FileExtension = "pdf";
-
-            template.Document = document;
+            // Configure the document
+            template.Document = new DocuSignWeb.Document();
+            template.Document.ID = "1";
+            template.Document.Name = "Form Document";
+            template.Document.PDFBytes = Resource.LoremIpsum;
+            template.Document.TransformPdfFields = true;
+            template.Document.FileExtension = "pdf";
 
             // Create draft with all the composite template information
-            DocuSignWeb.EnvelopeStatus status = _apiClient.CreateEnvelopeFromTemplatesAndForms(envelopeInfo, new DocuSignWeb.CompositeTemplate[] { template }, false);
+            DocuSignWeb.EnvelopeStatus status = _apiClient.CreateEnvelopeFromTemplatesAndForms(envelopeInfo, new DocuSignWeb.CompositeTemplate[] { template/*, template2*/ }, false);
 
             // Confirm that the envelope has been assigned an ID
             Assert.IsNotNullOrEmpty(status.EnvelopeID);
+
+            // Confirm that we have the correct number of tabs for each recipient
+            Assert.AreEqual(3, status.RecipientStatuses[0].TabStatuses.Length);
+            Assert.AreEqual(3, status.RecipientStatuses[1].TabStatuses.Length);
+
             Console.WriteLine("Envelope Id is {0}", status.EnvelopeID);
         }
 
@@ -227,6 +220,7 @@ namespace CodeSnippets
             // Use a server-side template -- you could make more than one of these
             DocuSignWeb.TemplateReference templateReference = new DocuSignWeb.TemplateReference();
             templateReference.TemplateLocation = DocuSignWeb.TemplateLocationCode.Server;
+            // TODO: replace with template ID from your account
             templateReference.Template = "server template ID";
             templateReference.RoleAssignments = finalRoleAssignments;
 
@@ -657,6 +651,7 @@ namespace CodeSnippets
             // Construct the URLs based on username
             DocuSignWeb.Recipient recipient = envelope.Recipients[0];
             DocuSignWeb.RequestRecipientTokenClientURLs urls = new DocuSignWeb.RequestRecipientTokenClientURLs();
+            // TODO: replace urlBase with your own test url
             String urlBase = "http://127.0.0.1/";
             urls.OnSigningComplete = urlBase + "?event=SignComplete&uname=" + recipient.UserName;
             urls.OnViewingComplete = urlBase + "?event=ViewComplete&uname=" + recipient.UserName;
@@ -951,9 +946,10 @@ namespace CodeSnippets
             // Create an address book item with email, user name, account name
             // and account ID
             DocuSignWeb.AddressBookItem contact = new DocuSignWeb.AddressBookItem();
-            contact.Email = "fakeemail@mailinator.com";
-            contact.UserName = "DocuSign Test";
-            contact.AccountName = "Some account";
+            //TODO: replace email, username and accountname with a test information
+            contact.Email = "test email";
+            contact.UserName = "test username";
+            contact.AccountName = "test accountname";
             contact.Shared = true;
             contact.AddressBookID = System.Guid.NewGuid().ToString();
 
@@ -1021,57 +1017,15 @@ namespace CodeSnippets
         internal static DocuSignWeb.Recipient[] CreateOneSigner()
         {
             DocuSignWeb.Recipient[] signers = { new DocuSignWeb.Recipient() };
-            signers[0].Email = "test signer email";
-            signers[0].UserName = "Testing Account";
+            // TODO: replace email, username and rolename with test information
+            signers[0].Email = "test email";
+            signers[0].UserName = "test username";
             signers[0].Type = DocuSignWeb.RecipientTypeCode.Signer;
             signers[0].ID = "1";
             signers[0].RoutingOrder = 1;
+            signers[0].RoleName = "test rolename";
             return signers;
         }
-
-        /// <summary>
-        /// Create three different signers, two with the same routing
-        /// order
-        /// </summary>
-        /// <returns></returns>
-        internal static DocuSignWeb.Recipient[] CreateFormSigners()
-        {
-            DocuSignWeb.Recipient recipient1 = new DocuSignWeb.Recipient();
-            recipient1.UserName = "Test User 1";
-            recipient1.Email = "docusigntest1@mailinator.com";
-            recipient1.Type = DocuSignWeb.RecipientTypeCode.Signer;
-            recipient1.RequireIDLookup = false;
-            recipient1.RoutingOrder = 1;
-            recipient1.RoutingOrderSpecified = true;
-            recipient1.RoleName = "SignerOne";
-            recipient1.DefaultRecipient = true;
-            recipient1.DefaultRecipientSpecified = true;
-            recipient1.RequireIDLookupSpecified = true;
-            recipient1.ID = "1";
-
-            DocuSignWeb.Recipient recipient2 = new DocuSignWeb.Recipient();
-            recipient2.UserName = "Test User 2";
-            recipient2.Email = "docusigntest2@mailinator.com";
-            recipient2.Type = DocuSignWeb.RecipientTypeCode.Signer;
-            recipient2.RequireIDLookup = false;
-            recipient2.RoutingOrder = 2;
-            recipient2.RoutingOrderSpecified = true;
-            recipient2.RoleName = "SignerTwo";
-            recipient2.ID = "2";
-
-            DocuSignWeb.Recipient recipient3 = new DocuSignWeb.Recipient();
-            recipient3.UserName = "Test User 3";
-            recipient3.Email = "docusigntest3@mailinator.com";
-            recipient3.Type = DocuSignWeb.RecipientTypeCode.Signer;
-            recipient3.RequireIDLookup = false;
-            recipient3.RoutingOrder = 1;
-            recipient3.RoutingOrderSpecified = true;
-            recipient3.RoleName = "SignerThree";
-            recipient3.ID = "3";
-
-            return new DocuSignWeb.Recipient[] { recipient1, recipient2, recipient3};
-        }
-
 
         /// <summary>
         /// Create a basic envelope without sending
