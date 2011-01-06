@@ -35,10 +35,10 @@ namespace CodeSnippets
             _apiUrl = ConfigurationManager.AppSettings["APIUrl"];
             _accountId = ConfigurationManager.AppSettings["APIAccountId"];
             _email = ConfigurationManager.AppSettings["APIUserEmail"];
-            _userName = "";
+            
             if (ConfigurationManager.AppSettings["IntegratorsKey"] != null && ConfigurationManager.AppSettings["IntegratorsKey"].Length > 0)
             {
-                _userName += "[" + ConfigurationManager.AppSettings["IntegratorsKey"] + "]";
+                _userName = "[" + ConfigurationManager.AppSettings["IntegratorsKey"] + "]";
             }
             else
             {
@@ -340,43 +340,61 @@ namespace CodeSnippets
         }
 
         [Test]
-        public void GetFoldersTest()
+        public void GetFolderItemsTest()
         {
-            // This is simple -- just input your account ID
-            DocuSignWeb.Folder[] items = _apiClient.GetFolders(_accountId).Folders;
+            // Create the folder filter to specify the scope of your search
+            // Here, we are limiting the item search to the inbox
+            // You can also limit by owner, date, status and position
+            DocuSignWeb.FolderFilter filter = new DocuSignWeb.FolderFilter();
+            filter.AccountId = _accountId;
+            filter.FolderTypeInfo = new DocuSignWeb.FolderTypeInfo();
+            filter.FolderTypeInfo.FolderType = DocuSignWeb.FolderType.Inbox;
 
-            // Everyone should have Draft, Sent Items, Inbox and Deleted Items
-            Assert.GreaterOrEqual(items.Length, 4);
-            Console.WriteLine("There should be at least 4 folders, and there are: {0}", items.Length);
+            // Now, call the method with the filter we created
+            DocuSignWeb.FolderResults results = _apiClient.GetFolderItems(filter);
 
-            // The folder names are:
-            foreach (DocuSignWeb.Folder folder in items)
+            // This test isn't pass fail, because your filter may not match
+            // anything
+            if (results.ResultSetSize > 0)
             {
-                Console.WriteLine("\t{0}", folder.FolderName);
+                Assert.Greater(results.ResultSetSize, 0);
+
+                // Loop through and print out some information about the results
+                Console.WriteLine("Envelopes in the inbox are:");
+                foreach (DocuSignWeb.FolderItem item in results.FolderItems)
+                {
+                    Console.WriteLine("\tEnvelope {0} has status of: {1}", item.EnvelopeId, item.Status);
+                }
+            }
+
+            // If we didn't get anything, it isn't necessarily indicative of failure
+            else
+            {
+                Assert.Inconclusive();
             }
         }
 
         [Test]
-        public void GetFolderTest()
+        public void GetFolderListTest()
         {
-            // Ensure that there's at least one voided envelope
-            DocuSignWeb.Envelope envelope = HeartbeatTests.CreateBasicEnvelope(_accountId, "get folder test");
-            envelope = HeartbeatTests.CreateEnvelopeWithDocumentAndTabs(envelope);
-            DocuSignWeb.EnvelopeStatus status = _apiClient.CreateAndSendEnvelope(envelope);
-            VoidEnvelope(status.EnvelopeID, _apiClient);
+            // Create the folders filter with an account ID
+            DocuSignWeb.FoldersFilter filter = new DocuSignWeb.FoldersFilter();
+            filter.AccountId = _accountId;
 
-            // Retrieve voided envelopes that are from today from sent items
-            DocuSignWeb.FolderResults results = _apiClient.GetFolder(_accountId, DocuSignWeb.FolderType.SentItems,
-                                                                        "", 0, DateTime.Today, DateTime.Now, "",
-                                                                        DocuSignWeb.EnvelopeStatusCode.Voided);
-            
-            // Confirm that there is at least one item in the results;
-            // it should be the one we just sent and voided!
-            Assert.Greater(results.FolderItems.Length, 0);
-            Console.WriteLine("{0} folder item(s) returned", results.FolderItems.Length);
+            // Now, call the method to get a list of the folders on the
+            // specified account
+            DocuSignWeb.AvailableFolders folders = _apiClient.GetFolderList(filter);
 
-            // Purge the envelope from the system
-            HeartbeatTests.PurgeEnvelope(status.EnvelopeID, _apiClient);
+            // Everyone will at least have the folders:
+            // Draft, Sent Items, Inbox and Deleted Items
+            Assert.GreaterOrEqual(folders.Folders.Length, 4);
+
+            // Print out some information about the returned folders
+            Console.WriteLine("The folders available on account {0} are:", _accountId);
+            foreach (DocuSignWeb.Folder folder in folders.Folders)
+            {
+                Console.WriteLine("\t{0} owns folder {1}", folder.FolderOwner.UserName, folder.FolderTypeInfo.FolderName);
+            }
         }
 
         [Test]
@@ -687,6 +705,78 @@ namespace CodeSnippets
             // Confirm that we got a return token
             Assert.IsNotNullOrEmpty(result);
             Console.WriteLine("Sender token is {0}", result);
+        }
+
+        [Test]
+        public void RequestStatusChangesTest()
+        {
+            // Create the status change filter to specify the scope of your search
+            // Here, we are limiting the search to envelopes changed today
+            // You can also limit by user and status
+            DocuSignWeb.EnvelopeStatusChangeFilter filter = new DocuSignWeb.EnvelopeStatusChangeFilter();
+            filter.AccountId = _accountId;
+            DocuSignWeb.EnvelopeStatusFilterBeginDateTime begin = new DocuSignWeb.EnvelopeStatusFilterBeginDateTime();
+            begin.Value = DateTime.Today;
+            filter.StatusChangedSince = begin.Value;
+
+            // Now, make the call with the filter we created
+            DocuSignWeb.FilteredEnvelopeStatusChanges changes = _apiClient.RequestStatusChanges(filter);
+
+            // This test isn't pass fail, because your filter may not match
+            // anything
+            if (changes.ResultSetSize > 0)
+            {
+                Assert.Greater(changes.ResultSetSize, 0);
+
+                // Loop through and print out some information about the results
+                Console.WriteLine("Changes since today are:");
+                foreach (DocuSignWeb.EnvelopeStatusChange change in changes.EnvelopeStatusChanges)
+                {
+                    Console.WriteLine("\tEnvelope {0} has status: {1}\n", change.EnvelopeID, change.Status);
+                }
+            }
+
+            // If we didn't get anything, it isn't necessarily indicative of failure
+            else
+            {
+                Assert.Inconclusive();
+            }
+
+        }
+
+        [Test]
+        public void RequestStatusCodesTest()
+        {
+            // Create the status change filter to specify the scope of your search
+            // Here, we are limiting the search to envelopes changed today
+            // You can also limit by user and status
+            DocuSignWeb.EnvelopeStatusFilter filter = new DocuSignWeb.EnvelopeStatusFilter();
+            filter.AccountId = _accountId;
+            DocuSignWeb.EnvelopeStatusFilterBeginDateTime begin = new DocuSignWeb.EnvelopeStatusFilterBeginDateTime();
+            begin.Value = DateTime.Today;
+            filter.BeginDateTime = begin;
+
+            // Now, make the call with the filter we created
+            DocuSignWeb.FilteredEnvelopeStatusChanges codes = _apiClient.RequestStatusCodes(filter);
+
+            // This test isn't pass fail, because your filter may not match
+            // anything
+            if (codes.ResultSetSize > 0)
+            {
+                Assert.Greater(codes.ResultSetSize, 0);
+                // Loop through and print out some information about the results
+                Console.WriteLine("Changes since today are:");
+                foreach (DocuSignWeb.EnvelopeStatusChange code in codes.EnvelopeStatusChanges)
+                {
+                    Console.WriteLine("\tEnvelope {0} has status: {1}\n", code.EnvelopeID, code.Status);
+                }
+            }
+
+            // If we didn't get anything, it isn't necessarily indicative of failure
+            else
+            {
+                Assert.Inconclusive();
+            }
         }
 
         [Test]

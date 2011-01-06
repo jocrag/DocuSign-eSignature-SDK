@@ -189,7 +189,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="README.txt" />
+    <None Include="Service References\DocuSignWeb\CodeSnippets.DocuSignWeb.FilteredEnvelopeStatusChanges.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DocuSignWeb\configuration91.svcinfo" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
