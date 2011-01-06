@@ -30,9 +30,9 @@ include_once("include/creds.php");
 //=============================================================================
 
 // TODO: put in a test recipient email
-$_apiRecipient1Email = "test email account";
+$_apiRecipient1Email = "craig.smith.docusign@gmail.com";
 // TODO: put in users name
-$_apiUserName = "test user name";
+$_apiUserName = "Craig Smith";
 
 //=============================================================================
 // Set up the API
@@ -254,7 +254,7 @@ function createEnvelopeFromTemplatesSample() {
     $templateRef = new TemplateReference();
     $templateRef->TemplateLocation = TemplateLocationCode::Server;
         // TODO: Replace string with the GUID of a template already uploaded to your account
-    $templateRef->Template = "put in a template GUID here";
+    $templateRef->Template = "BF36E813-A73C-4AB4-B250-1DC5DEB0C6EA";
 
     // Construct the envelope info
     $envInfo = new EnvelopeInformation();
@@ -287,27 +287,27 @@ function createEnvelopeFromTemplatesAndFormsSample() {
     $envInfo->AccountId = $AccountID;
     $envInfo->EmailBlurb = "testing docusing creation services";
     $envInfo->Subject = "create envelope from templates and forms sample";
-    
+
     $recipient1 = new Recipient();
     $recipient1->UserName = "SignerOne";
     // TODO: replace email string with actual email
-    $recipient1->Email = "test email 1";
+    $recipient1->Email = "craig.smith.docusign@gmail.com";
     $recipient1->Type = RecipientTypeCode::Signer;
     $recipient1->RequireIDLookup = FALSE;
     $recipient1->RoutingOrder = 1;
     $recipient1->RoleName = "One";
     $recipient1->ID = "1";
-    
+
     $recipient2 = new Recipient();
     $recipient2->UserName = "SignerTwo";
     // TODO: replace email string with actual email
-    $recipient2->Email = "test email 2";
+    $recipient2->Email = "craig.smith.test1@gmail.com";
     $recipient2->Type = RecipientTypeCode::Signer;
     $recipient2->RequireIDLookup = FALSE;
     $recipient2->RoutingOrder = 2;
     $recipient2->RoleName = "Two";
     $recipient2->ID = "2";
-    
+
     $signers = array($recipient1, $recipient2);
 
     // Build template
@@ -322,34 +322,34 @@ function createEnvelopeFromTemplatesAndFormsSample() {
     $tab1->RecipientID = "1";
     $tab1->TabLabel = "DocuSignDateSignedOne";
     $tab1->Type = TabTypeCode::DateSigned;
-    
+
     // This tab matches the SignHere tabs assigned to recipient two
     $tab2 = new Tab();
     $tab2->RecipientID = "2";
     $tab2->TabLabel = "SignTwo\\*";
     $tab2->Type = TabTypeCode::SignHere;
-    
+
     // This tab matches the SignHere tabs assigned to recipient one
     $tab3 = new Tab();
     $tab3->RecipientID = "1";
     $tab3->TabLabel = "SignOne\\*";
     $tab3->Type = TabTypeCode::SignHere;
-    
+
     // This tab matches the DateSigned tab assigned to recipient two
     $tab4 = new Tab();
     $tab4->RecipientID = "2";
     $tab4->TabLabel = "DocuSignDateSignedTwo";
     $tab4->Type = TabTypeCode::DateSigned;
-    
+
     // This tab matches nothing -- but that's okay!
     // It will just get discarded
     $tab5 = new Tab();
     $tab5->RecipientID = "1";
     $tab5->TabLabel = "asdf";
     $tab5->Type = TabTypeCode::FullName;
-   
+
     $env->Tabs = array($tab1, $tab2, $tab3, $tab4, $tab5);
-    
+
     $inlineTemplate->Envelope = $env;
     $template = new CompositeTemplate();
     $template->InlineTemplates = array($inlineTemplate);
@@ -469,54 +469,51 @@ function getAuthenticationTokenSample() {
     return $response;
 }
 
+
 /**
- * retrieves the list of envelopes that are in draft, inbox, sent items,
- * etc. folders
- * @return GetFolderResponse
+ * requests all the envelopes in a specified folder for the requestor or a Folder
+ * Owner
+ * @return GetFolderItemsResponse
  */
-function getFolderSample() {
+function getFolderItemsSample() {
     global $api;
     global $AccountID;
 
-    // Ensure there's at least one voided envelope
-    $env = createBasicEnvelope($AccountID, "get folder sample");
-    $env = createEnvelopeWithDocumentAndTabs($env);
-    $createAndSendEnvelopeparams = new CreateAndSendEnvelope();
-    $createAndSendEnvelopeparams->Envelope = $env;
-    $createResult = $api->CreateAndSendEnvelope($createAndSendEnvelopeparams)->CreateAndSendEnvelopeResult;
-    $voidEnvelopeparams = new VoidEnvelope();
-    $voidEnvelopeparams->EnvelopeID = $createResult->EnvelopeID;
-    $voidEnvelopeparams->Reason = "void envelope for GetFolder sample";
-    $voidResult = $api->VoidEnvelope($voidEnvelopeparams);
+    // Create the folder filter to specify the scope of your search
+    // Here, we are limiting the item search to the inbox
+    // You can also limit by owner, date, status and position
+    $filter = new FolderFilter();
+    $filter->AccountId = $AccountID;
+    $filter->StartPosition = 0;
+    $filterTypeInfo = new FolderTypeInfo();
+    $filterTypeInfo->FolderType = FolderType::Inbox;
+    $filter->FolderTypeInfo = $filterTypeInfo;
 
     // Send
-    $getFolderparams = new GetFolder();
-    $getFolderparams->AccountId = $AccountID;
-    $getFolderparams->FolderType = FolderType::SentItems;
-    $getFolderparams->FromDate = todayXsdDate();
-    $getFolderparams->ToDate = nowXsdDate();
-    $getFolderparams->Status = EnvelopeStatusCode::Voided;
-    $getFolderparams->StartPosition = 0;
-    $getFolderparams->FolderName = "";
-    $getFolderparams->SearchText = "";
-    $response = $api->GetFolder($getFolderparams);
+    $getFolderItemsparams = new GetFolderItems();
+    $getFolderItemsparams->FolderFilter = $filter;
+    $response = $api->GetFolderItems($getFolderItemsparams);
 
     return $response;
 }
 
 /**
- * retrieves the list of envelopes that are in draft, inbox, sent items,
- * etc. folders
- * @return GetFoldersResponse
+ * requests the list of all folders, including shared folders, available for the
+ * account.
+ * @return GetFolderListResponse
  */
-function getFoldersSample() {
+function getFoldersListSample() {
     global $api;
     global $AccountID;
 
+    // Create the folders filter with an account ID
+    $filter = new FoldersFilter();
+    $filter->AccountId = $AccountID;
+
     // Send
-    $getFoldersparams = new GetFolders();
-    $getFoldersparams->AccountId = $AccountID;
-    $response = $api->GetFolders($getFoldersparams);
+    $getFolderListparams = new GetFolderList();
+    $getFolderListparams->FoldersFilter = $filter;
+    $response = $api->GetFolderList($getFolderListparams);
 
     return $response;
 }
@@ -941,6 +938,54 @@ function requestStatusSample() {
 }
 
 /**
+ * requests the envelope status changes for the envelopes for account on or
+ * after the specified date/time.
+ * @return RequestStatusChangesResponse
+ */
+function requestStatusChangesSample() {
+    global $api;
+    global $AccountID;
+
+    // Create the status change filter to specify the scope of your search
+    // Here, we are limiting the search to envelopes changed today
+    // You can also limit by user and status
+    $filter = new EnvelopeStatusChangeFilter();
+    $filter->AccountId = $AccountID;
+    $filter->StatusChangedSince = todayXsdDate();
+
+    // Send
+    $requestStatusChangesparams = new RequestStatusChanges();
+    $requestStatusChangesparams->EnvelopeStatusChangeFilter = $filter;
+    $response = $api->RequestStatusChanges($requestStatusChangesparams);
+
+    return $response;
+}
+
+/**
+ * requests the current state (Delivered, Complete, Voided, etc.) of the
+ * specified envelopes.
+ * @return RequestStatusCodesResponse
+ */
+function requestStatusCodesSample() {
+    global $api;
+    global $AccountID;
+
+    // Create the status change filter to specify the scope of your search
+    // Here, we are limiting the search to envelopes changed today
+    // You can also limit by user and status
+    $filter = new EnvelopeStatusFilter();
+    $filter->AccountId = $AccountID;
+    $filter->BeginDateTime = todayXsdDate();
+
+    // Send
+    $requestStatusCodesparams = new RequestStatusCodes();
+    $requestStatusCodesparams->EnvelopeStatusFilter = $filter;
+    $response = $api->RequestStatusCodes($requestStatusCodesparams);
+
+    return $response;
+}
+
+/**
  * query the status of existing envelopes with a little Extra
  * @return RequestStatusExResponse
  */
@@ -1203,11 +1248,11 @@ function transferEnvelopeSample() {
     // Request the envelope specified to be transferred to the account specified
     $transferEnvelopeparams = new TransferEnvelope();
         // TODO: replace string with account ID GUID that you will transfer the envelope to
-    $transferEnvelopeparams->AccountID = "someone else's account ID GUID here";
+    $transferEnvelopeparams->AccountID = "086f3f1c-5475-4f92-b909-5dbf552fa641";
         // TODO: replace string with envelope ID GUID that will be transferred
-    $transferEnvelopeparams->EnvelopeID = "your envelopeID GUID here";
+    $transferEnvelopeparams->EnvelopeID = "B3FD51A482FC4654817F6B216D0AA6BA";
         // TODO: replace string with user ID GUID that you will transfer the envelope to
-    $transferEnvelopeparams->UserID = "someone else's user ID as GUID here";
+    $transferEnvelopeparams->UserID = "craig.smith@docusign.com";
     $response = $api->TransferEnvelope($transferEnvelopeparams);
 
     return $response;

@@ -22,15 +22,39 @@ Installation and Use
 Deployment is just copying the entire CodeSnippts directory into your
 htdocs (or equivalent) directory on your server.
 
-Uncomment the methods you want to try out in the
-index_of_api_sample_functions.php and index_of_ams_sample_functions.php
-files. Search the ApiServiceSnippets.php and AccountManagementSnippets.php
-files for tasks labeled "TODO:" and fill in the requested configuration
-items. Search include/creds.php and include/utils.php for"TODO:" tasks to
-fill in your credentials and timezone. Then, point your web browser to
-something like
-"http://localhost/CodeSnippets/index_of_api_sample_functions.php". You'll
-see the resulting return data in your browser if all the configuration data
-is correct.
+Add your credentials to include/creds.php. Modify the following four lines. 
+Valid values for these lines can be found from your DevCenter account member
+console at Preferences->API:
+
+// TODO: Use Integrator's Key from Docusign DevCenter Account Preferences API
+$IntegratorsKey = "integrators key";
+// TODO: Use your Docusign DevCenter Account email
+$UserID = "your docusign devcenter email";
+// TODO: Use your Docusign DevCenter Account password
+$Password = "your docusign devcenter password";
+// TODO: Use API Account ID from Docusign DevCenter Account Preferences API
+$AccountID = "your docusign devcenter account id";
+
+For trying out methods from the APIService class, uncomment lines in
+index_of_api_sample_functions.php. Some methods require some setup in the 
+ApiServiceSnippets.php file at the following lines:
+
+// TODO: put in a test recipient email
+$_apiRecipient1Email = "test email account";
+// TODO: put in users name
+$_apiUserName = "test user name";
+
+
+For trying out methods from the AccountManagement class, uncomment lines in 
+index_of_ams_sample_functions.php. Some methods require the following to be set
+in AccountManagementSnippets.php:
+
+// TODO: email used to create and check accounts
+$_amEmail = "test email account";
+
+The following should be set ininclude/utils.php for your time zone:
+
+// TODO: put in your timezone or make it null
+$TimeZone = 'America/Los_Angeles';
 
 Happy Coding!
