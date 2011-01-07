@@ -3141,10 +3141,10 @@
   </wsdl:binding>
   <wsdl:service name="APIService">
     <wsdl:port name="APIServiceSoap" binding="tns:APIServiceSoap">
-      <soap:address location="https://demo.docusign.net/api/3.0/api.asmx" />
+      <soap:address location="https://preview.docusign.net/api/3.0/api.asmx" />
     </wsdl:port>
     <wsdl:port name="APIServiceSoap12" binding="tns:APIServiceSoap12">
-      <soap12:address location="https://demo.docusign.net/api/3.0/api.asmx" />
+      <soap12:address location="https://preview.docusign.net/api/3.0/api.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

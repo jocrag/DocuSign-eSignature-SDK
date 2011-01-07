@@ -134,6 +134,14 @@
           <s:enumeration value="KaufmannBT" />
           <s:enumeration value="Freehand575" />
           <s:enumeration value="LuciaBT" />
+          <s:enumeration value="DocuSign1" />
+          <s:enumeration value="DocuSign2" />
+          <s:enumeration value="DocuSign3" />
+          <s:enumeration value="DocuSign4" />
+          <s:enumeration value="DocuSign5" />
+          <s:enumeration value="DocuSign6" />
+          <s:enumeration value="DocuSign7" />
+          <s:enumeration value="DocuSign8" />
         </s:restriction>
       </s:simpleType>
       <s:complexType name="RecipientCaptiveInfo">
@@ -537,7 +545,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="ListValues" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ListSelectedValue" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="ScaleValue" type="s:decimal" />
-          <s:element minOccurs="0" maxOccurs="1" name="CustomTabType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomTabType" type="tns:CustomTabType" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="RecipientStatusEsignAgreementInformation">
@@ -849,7 +857,7 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="RequestStatusesEx">
+      <s:element name="RequestStatusCodes">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="EnvelopeStatusFilter" type="tns:EnvelopeStatusFilter" />
@@ -905,6 +913,60 @@
           <s:enumeration value="DepositFailed" />
         </s:restriction>
       </s:simpleType>
+      <s:element name="RequestStatusCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestStatusCodesResult" type="tns:FilteredEnvelopeStatusChanges" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FilteredEnvelopeStatusChanges">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ResultSetSize" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnvelopeStatusChanges" nillable="true" type="tns:ArrayOfEnvelopeStatusChange" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEnvelopeStatusChange">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EnvelopeStatusChange" type="tns:EnvelopeStatusChange" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EnvelopeStatusChange">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="EnvelopeID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:EnvelopeStatusCode" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusChanged" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RequestStatusChanges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnvelopeStatusChangeFilter" type="tns:EnvelopeStatusChangeFilter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="EnvelopeStatusChangeFilter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserInfo" type="tns:UserInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="StatusChangedSince" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Statuses" type="tns:ArrayOfEnvelopeStatusCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RequestStatusChangesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestStatusChangesResult" type="tns:FilteredEnvelopeStatusChanges" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestStatusesEx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnvelopeStatusFilter" type="tns:EnvelopeStatusFilter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="RequestStatusesExResponse">
         <s:complexType>
           <s:sequence>
@@ -1686,20 +1748,31 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetFolder">
+      <s:element name="GetFolderItems">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="tns:FolderType" />
-            <s:element minOccurs="0" maxOccurs="1" name="FolderName" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="StartPosition" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="FromDate" type="s:dateTime" />
-            <s:element minOccurs="1" maxOccurs="1" name="ToDate" type="s:dateTime" />
-            <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:EnvelopeStatusCode" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolderFilter" type="tns:FolderFilter" />
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:complexType name="FolderFilter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FolderOwner" type="tns:UserInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="FolderTypeInfo" type="tns:FolderTypeInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartPosition" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="SearchText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="tns:EnvelopeStatusCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FolderTypeInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="tns:FolderType" />
+          <s:element minOccurs="0" maxOccurs="1" name="FolderName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:simpleType name="FolderType">
         <s:restriction base="s:string">
           <s:enumeration value="RecycleBin" />
@@ -1709,10 +1782,10 @@
           <s:enumeration value="Normal" />
         </s:restriction>
       </s:simpleType>
-      <s:element name="GetFolderResponse">
+      <s:element name="GetFolderItemsResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetFolderResult" type="tns:FolderResults" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetFolderItemsResult" type="tns:FolderResults" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1721,7 +1794,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ResultSetSize" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="StartPosition" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="EndPosition" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="tns:FolderType" />
+          <s:element minOccurs="0" maxOccurs="1" name="FolderTypeInfo" type="tns:FolderTypeInfo" />
           <s:element minOccurs="1" maxOccurs="1" name="FolderItems" nillable="true" type="tns:ArrayOfFolderItem" />
         </s:sequence>
       </s:complexType>
@@ -1746,17 +1819,22 @@
           <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="GetFolders">
+      <s:element name="GetFolderList">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FoldersFilter" type="tns:FoldersFilter" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetFoldersResponse">
+      <s:complexType name="FoldersFilter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFolderListResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetFoldersResult" type="tns:AvailableFolders" />
+            <s:element minOccurs="0" maxOccurs="1" name="GetFolderListResult" type="tns:AvailableFolders" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -1772,8 +1850,8 @@
       </s:complexType>
       <s:complexType name="Folder">
         <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="FolderType" type="tns:FolderType" />
-          <s:element minOccurs="0" maxOccurs="1" name="FolderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FolderOwner" type="tns:UserInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="FolderTypeInfo" type="tns:FolderTypeInfo" />
         </s:sequence>
       </s:complexType>
       <s:element name="RequestEnvelope">
@@ -1864,6 +1942,18 @@
   </wsdl:message>
   <wsdl:message name="RequestStatusSoapOut">
     <wsdl:part name="parameters" element="tns:RequestStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestStatusCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestStatusCodes" />
+  </wsdl:message>
+  <wsdl:message name="RequestStatusCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestStatusCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestStatusChangesSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestStatusChanges" />
+  </wsdl:message>
+  <wsdl:message name="RequestStatusChangesSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestStatusChangesResponse" />
   </wsdl:message>
   <wsdl:message name="RequestStatusesExSoapIn">
     <wsdl:part name="parameters" element="tns:RequestStatusesEx" />
@@ -2033,17 +2123,17 @@
   <wsdl:message name="RequestCorrectTokenSoapOut">
     <wsdl:part name="parameters" element="tns:RequestCorrectTokenResponse" />
   </wsdl:message>
-  <wsdl:message name="GetFolderSoapIn">
-    <wsdl:part name="parameters" element="tns:GetFolder" />
+  <wsdl:message name="GetFolderItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFolderItems" />
   </wsdl:message>
-  <wsdl:message name="GetFolderSoapOut">
-    <wsdl:part name="parameters" element="tns:GetFolderResponse" />
+  <wsdl:message name="GetFolderItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFolderItemsResponse" />
   </wsdl:message>
-  <wsdl:message name="GetFoldersSoapIn">
-    <wsdl:part name="parameters" element="tns:GetFolders" />
+  <wsdl:message name="GetFolderListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFolderList" />
   </wsdl:message>
-  <wsdl:message name="GetFoldersSoapOut">
-    <wsdl:part name="parameters" element="tns:GetFoldersResponse" />
+  <wsdl:message name="GetFolderListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFolderListResponse" />
   </wsdl:message>
   <wsdl:message name="RequestEnvelopeSoapIn">
     <wsdl:part name="parameters" element="tns:RequestEnvelope" />
@@ -2099,6 +2189,14 @@
     <wsdl:operation name="RequestStatus">
       <wsdl:input message="tns:RequestStatusSoapIn" />
       <wsdl:output message="tns:RequestStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestStatusCodes">
+      <wsdl:input message="tns:RequestStatusCodesSoapIn" />
+      <wsdl:output message="tns:RequestStatusCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestStatusChanges">
+      <wsdl:input message="tns:RequestStatusChangesSoapIn" />
+      <wsdl:output message="tns:RequestStatusChangesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="RequestStatusesEx">
       <wsdl:input message="tns:RequestStatusesExSoapIn" />
@@ -2212,13 +2310,13 @@
       <wsdl:input message="tns:RequestCorrectTokenSoapIn" />
       <wsdl:output message="tns:RequestCorrectTokenSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetFolder">
-      <wsdl:input message="tns:GetFolderSoapIn" />
-      <wsdl:output message="tns:GetFolderSoapOut" />
+    <wsdl:operation name="GetFolderItems">
+      <wsdl:input message="tns:GetFolderItemsSoapIn" />
+      <wsdl:output message="tns:GetFolderItemsSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="GetFolders">
-      <wsdl:input message="tns:GetFoldersSoapIn" />
-      <wsdl:output message="tns:GetFoldersSoapOut" />
+    <wsdl:operation name="GetFolderList">
+      <wsdl:input message="tns:GetFolderListSoapIn" />
+      <wsdl:output message="tns:GetFolderListSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="RequestEnvelope">
       <wsdl:input message="tns:RequestEnvelopeSoapIn" />
@@ -2328,6 +2426,24 @@
     </wsdl:operation>
     <wsdl:operation name="RequestStatus">
       <soap:operation soapAction="http://www.docusign.net/API/3.0/RequestStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestStatusCodes">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/RequestStatusCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestStatusChanges">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/RequestStatusChanges" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2587,8 +2703,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetFolder">
-      <soap:operation soapAction="http://www.docusign.net/API/3.0/GetFolder" style="document" />
+    <wsdl:operation name="GetFolderItems">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/GetFolderItems" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2596,8 +2712,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetFolders">
-      <soap:operation soapAction="http://www.docusign.net/API/3.0/GetFolders" style="document" />
+    <wsdl:operation name="GetFolderList">
+      <soap:operation soapAction="http://www.docusign.net/API/3.0/GetFolderList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2718,6 +2834,24 @@
     </wsdl:operation>
     <wsdl:operation name="RequestStatus">
       <soap12:operation soapAction="http://www.docusign.net/API/3.0/RequestStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestStatusCodes">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/RequestStatusCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestStatusChanges">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/RequestStatusChanges" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -2977,8 +3111,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetFolder">
-      <soap12:operation soapAction="http://www.docusign.net/API/3.0/GetFolder" style="document" />
+    <wsdl:operation name="GetFolderItems">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/GetFolderItems" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -2986,8 +3120,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetFolders">
-      <soap12:operation soapAction="http://www.docusign.net/API/3.0/GetFolders" style="document" />
+    <wsdl:operation name="GetFolderList">
+      <soap12:operation soapAction="http://www.docusign.net/API/3.0/GetFolderList" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

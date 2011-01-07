@@ -63,6 +63,14 @@ namespace Signing.DocuSignWeb {
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         Signing.DocuSignWeb.EnvelopeStatus RequestStatus(string EnvelopeID);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.docusign.net/API/3.0/RequestStatusCodes", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        Signing.DocuSignWeb.FilteredEnvelopeStatusChanges RequestStatusCodes(Signing.DocuSignWeb.EnvelopeStatusFilter EnvelopeStatusFilter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.docusign.net/API/3.0/RequestStatusChanges", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute()]
+        Signing.DocuSignWeb.FilteredEnvelopeStatusChanges RequestStatusChanges(Signing.DocuSignWeb.EnvelopeStatusChangeFilter EnvelopeStatusChangeFilter);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.docusign.net/API/3.0/RequestStatusesEx", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         Signing.DocuSignWeb.FilteredEnvelopeStatuses RequestStatusesEx(Signing.DocuSignWeb.EnvelopeStatusFilter EnvelopeStatusFilter);
@@ -178,13 +186,13 @@ namespace Signing.DocuSignWeb {
         [System.ServiceModel.XmlSerializerFormatAttribute()]
         string RequestCorrectToken(string EnvelopeID, bool SuppressNavigation, string ReturnURL);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.docusign.net/API/3.0/GetFolder", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.docusign.net/API/3.0/GetFolderItems", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Signing.DocuSignWeb.FolderResults GetFolder(string AccountId, Signing.DocuSignWeb.FolderType FolderType, string FolderName, int StartPosition, System.DateTime FromDate, System.DateTime ToDate, string SearchText, Signing.DocuSignWeb.EnvelopeStatusCode Status);
+        Signing.DocuSignWeb.FolderResults GetFolderItems(Signing.DocuSignWeb.FolderFilter FolderFilter);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.docusign.net/API/3.0/GetFolders", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.docusign.net/API/3.0/GetFolderList", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
-        Signing.DocuSignWeb.AvailableFolders GetFolders(string AccountId);
+        Signing.DocuSignWeb.AvailableFolders GetFolderList(Signing.DocuSignWeb.FoldersFilter FoldersFilter);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.docusign.net/API/3.0/RequestEnvelope", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute()]
@@ -838,6 +846,98 @@ namespace Signing.DocuSignWeb {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
     public partial class Folder : object, System.ComponentModel.INotifyPropertyChanged {
         
+        private UserInfo folderOwnerField;
+        
+        private FolderTypeInfo folderTypeInfoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public UserInfo FolderOwner {
+            get {
+                return this.folderOwnerField;
+            }
+            set {
+                this.folderOwnerField = value;
+                this.RaisePropertyChanged("FolderOwner");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public FolderTypeInfo FolderTypeInfo {
+            get {
+                return this.folderTypeInfoField;
+            }
+            set {
+                this.folderTypeInfoField = value;
+                this.RaisePropertyChanged("FolderTypeInfo");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
+    public partial class UserInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string userNameField;
+        
+        private string emailField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UserName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                this.userNameField = value;
+                this.RaisePropertyChanged("UserName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("Email");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
+    public partial class FolderTypeInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
         private FolderType folderTypeField;
         
         private string folderNameField;
@@ -918,6 +1018,38 @@ namespace Signing.DocuSignWeb {
             set {
                 this.foldersField = value;
                 this.RaisePropertyChanged("Folders");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
+    public partial class FoldersFilter : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string accountIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string AccountId {
+            get {
+                return this.accountIdField;
+            }
+            set {
+                this.accountIdField = value;
+                this.RaisePropertyChanged("AccountId");
             }
         }
         
@@ -2101,7 +2233,9 @@ namespace Signing.DocuSignWeb {
         
         private bool scaleValueFieldSpecified;
         
-        private string customTabTypeField;
+        private CustomTabType customTabTypeField;
+        
+        private bool customTabTypeFieldSpecified;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -2321,13 +2455,25 @@ namespace Signing.DocuSignWeb {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=16)]
-        public string CustomTabType {
+        public CustomTabType CustomTabType {
             get {
                 return this.customTabTypeField;
             }
             set {
                 this.customTabTypeField = value;
                 this.RaisePropertyChanged("CustomTabType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CustomTabTypeSpecified {
+            get {
+                return this.customTabTypeFieldSpecified;
+            }
+            set {
+                this.customTabTypeFieldSpecified = value;
+                this.RaisePropertyChanged("CustomTabTypeSpecified");
             }
         }
         
@@ -2379,6 +2525,43 @@ namespace Signing.DocuSignWeb {
         
         /// <remarks/>
         SignHereOptional,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
+    public enum CustomTabType {
+        
+        /// <remarks/>
+        Text,
+        
+        /// <remarks/>
+        Checkbox,
+        
+        /// <remarks/>
+        Radio,
+        
+        /// <remarks/>
+        List,
+        
+        /// <remarks/>
+        Date,
+        
+        /// <remarks/>
+        Number,
+        
+        /// <remarks/>
+        SSN,
+        
+        /// <remarks/>
+        ZIP5,
+        
+        /// <remarks/>
+        ZIP5DASH4,
+        
+        /// <remarks/>
+        Email,
     }
     
     /// <remarks/>
@@ -2755,7 +2938,7 @@ namespace Signing.DocuSignWeb {
         
         private int endPositionField;
         
-        private FolderType folderTypeField;
+        private FolderTypeInfo folderTypeInfoField;
         
         private FolderItem[] folderItemsField;
         
@@ -2797,13 +2980,13 @@ namespace Signing.DocuSignWeb {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public FolderType FolderType {
+        public FolderTypeInfo FolderTypeInfo {
             get {
-                return this.folderTypeField;
+                return this.folderTypeInfoField;
             }
             set {
-                this.folderTypeField = value;
-                this.RaisePropertyChanged("FolderType");
+                this.folderTypeInfoField = value;
+                this.RaisePropertyChanged("FolderTypeInfo");
             }
         }
         
@@ -2817,6 +3000,192 @@ namespace Signing.DocuSignWeb {
             set {
                 this.folderItemsField = value;
                 this.RaisePropertyChanged("FolderItems");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
+    public partial class FolderFilter : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string accountIdField;
+        
+        private UserInfo folderOwnerField;
+        
+        private FolderTypeInfo folderTypeInfoField;
+        
+        private int startPositionField;
+        
+        private bool startPositionFieldSpecified;
+        
+        private System.DateTime fromDateField;
+        
+        private bool fromDateFieldSpecified;
+        
+        private System.DateTime toDateField;
+        
+        private bool toDateFieldSpecified;
+        
+        private string searchTextField;
+        
+        private EnvelopeStatusCode statusField;
+        
+        private bool statusFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string AccountId {
+            get {
+                return this.accountIdField;
+            }
+            set {
+                this.accountIdField = value;
+                this.RaisePropertyChanged("AccountId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public UserInfo FolderOwner {
+            get {
+                return this.folderOwnerField;
+            }
+            set {
+                this.folderOwnerField = value;
+                this.RaisePropertyChanged("FolderOwner");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public FolderTypeInfo FolderTypeInfo {
+            get {
+                return this.folderTypeInfoField;
+            }
+            set {
+                this.folderTypeInfoField = value;
+                this.RaisePropertyChanged("FolderTypeInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public int StartPosition {
+            get {
+                return this.startPositionField;
+            }
+            set {
+                this.startPositionField = value;
+                this.RaisePropertyChanged("StartPosition");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StartPositionSpecified {
+            get {
+                return this.startPositionFieldSpecified;
+            }
+            set {
+                this.startPositionFieldSpecified = value;
+                this.RaisePropertyChanged("StartPositionSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public System.DateTime FromDate {
+            get {
+                return this.fromDateField;
+            }
+            set {
+                this.fromDateField = value;
+                this.RaisePropertyChanged("FromDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FromDateSpecified {
+            get {
+                return this.fromDateFieldSpecified;
+            }
+            set {
+                this.fromDateFieldSpecified = value;
+                this.RaisePropertyChanged("FromDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public System.DateTime ToDate {
+            get {
+                return this.toDateField;
+            }
+            set {
+                this.toDateField = value;
+                this.RaisePropertyChanged("ToDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ToDateSpecified {
+            get {
+                return this.toDateFieldSpecified;
+            }
+            set {
+                this.toDateFieldSpecified = value;
+                this.RaisePropertyChanged("ToDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string SearchText {
+            get {
+                return this.searchTextField;
+            }
+            set {
+                this.searchTextField = value;
+                this.RaisePropertyChanged("SearchText");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public EnvelopeStatusCode Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("Status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StatusSpecified {
+            get {
+                return this.statusFieldSpecified;
+            }
+            set {
+                this.statusFieldSpecified = value;
+                this.RaisePropertyChanged("StatusSpecified");
             }
         }
         
@@ -6417,43 +6786,6 @@ namespace Signing.DocuSignWeb {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
     [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
-    public enum CustomTabType {
-        
-        /// <remarks/>
-        Text,
-        
-        /// <remarks/>
-        Checkbox,
-        
-        /// <remarks/>
-        Radio,
-        
-        /// <remarks/>
-        List,
-        
-        /// <remarks/>
-        Date,
-        
-        /// <remarks/>
-        Number,
-        
-        /// <remarks/>
-        SSN,
-        
-        /// <remarks/>
-        ZIP5,
-        
-        /// <remarks/>
-        ZIP5DASH4,
-        
-        /// <remarks/>
-        Email,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
-    [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
@@ -7584,52 +7916,6 @@ namespace Signing.DocuSignWeb {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
-    public partial class UserInfo : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string userNameField;
-        
-        private string emailField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string UserName {
-            get {
-                return this.userNameField;
-            }
-            set {
-                this.userNameField = value;
-                this.RaisePropertyChanged("UserName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-                this.RaisePropertyChanged("Email");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
     public partial class EnvelopeStatusFilterBeginDateTime : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string statusQualifierField;
@@ -7705,6 +7991,188 @@ namespace Signing.DocuSignWeb {
         
         /// <remarks/>
         DepositFailed,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
+    public partial class EnvelopeStatusChangeFilter : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string accountIdField;
+        
+        private UserInfo userInfoField;
+        
+        private System.DateTime statusChangedSinceField;
+        
+        private EnvelopeStatusCode[] statusesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string AccountId {
+            get {
+                return this.accountIdField;
+            }
+            set {
+                this.accountIdField = value;
+                this.RaisePropertyChanged("AccountId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public UserInfo UserInfo {
+            get {
+                return this.userInfoField;
+            }
+            set {
+                this.userInfoField = value;
+                this.RaisePropertyChanged("UserInfo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime StatusChangedSince {
+            get {
+                return this.statusChangedSinceField;
+            }
+            set {
+                this.statusChangedSinceField = value;
+                this.RaisePropertyChanged("StatusChangedSince");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(Order=3)]
+        [System.Xml.Serialization.XmlArrayItemAttribute("Status", IsNullable=false)]
+        public EnvelopeStatusCode[] Statuses {
+            get {
+                return this.statusesField;
+            }
+            set {
+                this.statusesField = value;
+                this.RaisePropertyChanged("Statuses");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
+    public partial class EnvelopeStatusChange : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string envelopeIDField;
+        
+        private EnvelopeStatusCode statusField;
+        
+        private System.DateTime statusChangedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string EnvelopeID {
+            get {
+                return this.envelopeIDField;
+            }
+            set {
+                this.envelopeIDField = value;
+                this.RaisePropertyChanged("EnvelopeID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EnvelopeStatusCode Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+                this.RaisePropertyChanged("Status");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime StatusChanged {
+            get {
+                return this.statusChangedField;
+            }
+            set {
+                this.statusChangedField = value;
+                this.RaisePropertyChanged("StatusChanged");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "2.0.50727.4927")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.docusign.net/API/3.0")]
+    public partial class FilteredEnvelopeStatusChanges : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int resultSetSizeField;
+        
+        private EnvelopeStatusChange[] envelopeStatusChangesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public int ResultSetSize {
+            get {
+                return this.resultSetSizeField;
+            }
+            set {
+                this.resultSetSizeField = value;
+                this.RaisePropertyChanged("ResultSetSize");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true, Order=1)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(IsNullable=false)]
+        public EnvelopeStatusChange[] EnvelopeStatusChanges {
+            get {
+                return this.envelopeStatusChangesField;
+            }
+            set {
+                this.envelopeStatusChangesField = value;
+                this.RaisePropertyChanged("EnvelopeStatusChanges");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     /// <remarks/>
@@ -8946,6 +9414,30 @@ namespace Signing.DocuSignWeb {
         
         /// <remarks/>
         LuciaBT,
+        
+        /// <remarks/>
+        DocuSign1,
+        
+        /// <remarks/>
+        DocuSign2,
+        
+        /// <remarks/>
+        DocuSign3,
+        
+        /// <remarks/>
+        DocuSign4,
+        
+        /// <remarks/>
+        DocuSign5,
+        
+        /// <remarks/>
+        DocuSign6,
+        
+        /// <remarks/>
+        DocuSign7,
+        
+        /// <remarks/>
+        DocuSign8,
     }
     
     /// <remarks/>
@@ -9705,6 +10197,14 @@ namespace Signing.DocuSignWeb {
             return base.Channel.RequestStatus(EnvelopeID);
         }
         
+        public Signing.DocuSignWeb.FilteredEnvelopeStatusChanges RequestStatusCodes(Signing.DocuSignWeb.EnvelopeStatusFilter EnvelopeStatusFilter) {
+            return base.Channel.RequestStatusCodes(EnvelopeStatusFilter);
+        }
+        
+        public Signing.DocuSignWeb.FilteredEnvelopeStatusChanges RequestStatusChanges(Signing.DocuSignWeb.EnvelopeStatusChangeFilter EnvelopeStatusChangeFilter) {
+            return base.Channel.RequestStatusChanges(EnvelopeStatusChangeFilter);
+        }
+        
         public Signing.DocuSignWeb.FilteredEnvelopeStatuses RequestStatusesEx(Signing.DocuSignWeb.EnvelopeStatusFilter EnvelopeStatusFilter) {
             return base.Channel.RequestStatusesEx(EnvelopeStatusFilter);
         }
@@ -9844,12 +10344,12 @@ namespace Signing.DocuSignWeb {
             return base.Channel.RequestCorrectToken(EnvelopeID, SuppressNavigation, ReturnURL);
         }
         
-        public Signing.DocuSignWeb.FolderResults GetFolder(string AccountId, Signing.DocuSignWeb.FolderType FolderType, string FolderName, int StartPosition, System.DateTime FromDate, System.DateTime ToDate, string SearchText, Signing.DocuSignWeb.EnvelopeStatusCode Status) {
-            return base.Channel.GetFolder(AccountId, FolderType, FolderName, StartPosition, FromDate, ToDate, SearchText, Status);
+        public Signing.DocuSignWeb.FolderResults GetFolderItems(Signing.DocuSignWeb.FolderFilter FolderFilter) {
+            return base.Channel.GetFolderItems(FolderFilter);
         }
         
-        public Signing.DocuSignWeb.AvailableFolders GetFolders(string AccountId) {
-            return base.Channel.GetFolders(AccountId);
+        public Signing.DocuSignWeb.AvailableFolders GetFolderList(Signing.DocuSignWeb.FoldersFilter FoldersFilter) {
+            return base.Channel.GetFolderList(FoldersFilter);
         }
         
         public Signing.DocuSignWeb.Envelope RequestEnvelope(string EnvelopeID, bool IncludeDocumentBytes) {
