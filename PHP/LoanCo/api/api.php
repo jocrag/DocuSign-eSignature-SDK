@@ -20,8 +20,8 @@ include("api/CredentialService.php");
 // transaction api service proxy classes and soapclient
 include("api/APIService.php");
 
-// initialize our api proxies here 
-// get creds from ini file 
+// initialize our api proxies here
+// get creds from ini file
 if(!isset($_SESSION["CredentialsSet"])){
 	// check php config
 	if(extension_loaded('soap') && extension_loaded('curl') && extension_loaded('mcrypt') && extension_loaded('xml') && extension_loaded('dom') && extension_loaded('openssl')){
@@ -31,7 +31,7 @@ if(!isset($_SESSION["CredentialsSet"])){
 		header("Location: configcheck.php");
 		die();
 	}
-	
+
 	$ini_array = parse_ini_file("api/Credentials.php");
 
 	if(isset($ini_array["APIUserEmail"]) ) $username = $ini_array["APIUserEmail"];
@@ -40,11 +40,7 @@ if(!isset($_SESSION["CredentialsSet"])){
 	if(isset($ini_array["APIAccountID"]) ) $APIAccountID = $ini_array["APIAccountID"];
 	if(isset($ini_array["APIHost"]))  $APIHost = $ini_array["APIHost"];
 
-
-
-
-
-	if(!isset($username) || !isset($password) || !isset($APIAccountID) || !isset($APIHost) ){
+	if(!isset($username) || !isset($password) || !isset($APIAccountID) || !isset($APIHost) || !isset($IntegratorsKey) || $IntegratorsKey == ""){
 		$_SESSION["errorMessage"] = "Please make sure credentials are set (in credentials.php).";
 		header("Location: error.php");
 		die();
@@ -92,25 +88,24 @@ if(!isset($_SESSION["CredentialsSet"])){
 	$_SESSION["AccountID"] = $APIAccountID;
 	$_SESSION["Password"] = $password;
 	$_SESSION["APIHost"] = $APIHost;
-	if($IntegratorsKey<>""){
-		$_SESSION["IntegratorsKey"] = $IntegratorsKey;
+	$_SESSION["IntegratorsKey"] = $IntegratorsKey;
+	if (!isset($IntegratorsKey)) {
+	    $_SESSION["errorMessage"] = "The Integrator key must be set (in Credentials.php)";
+		header("Location: error.php");
+		die();
 	}
 
 	$_SESSION["CredentialsSet"] = true;
-	
-} 
 
-// setup api connection 
+}
+
+// setup api connection
 $api_endpoint= $_SESSION["APIHost"] . "/api/3.0/api.asmx";
 $api_wsdl = "api/APIService.wsdl";
 $api_options =  array('location'=>$api_endpoint,'trace'=>true,'features' => SOAP_SINGLE_ELEMENT_ARRAYS);
 $api = new APIService($api_wsdl, $api_options);
-// set credentials on the api object - if we have an integrator key then we prepend that to the UserID
-if(isset($_SESSION["IntegratorsKey"]) && $_SESSION["IntegratorsKey"]<>""){
-	$api->setCredentials("[" . $_SESSION["IntegratorsKey"] . "]" . $_SESSION["UserID"], $_SESSION["Password"]);
-} else {
-	$api->setCredentials($_SESSION["UserID"], $_SESSION["Password"]);
-}
+// set credentials on the api object
+$api->setCredentials("[" . $_SESSION["IntegratorsKey"] . "]" . $_SESSION["UserID"], $_SESSION["Password"]);
 
 // functions
 
@@ -163,7 +158,7 @@ function getClientCallbackURLS(){
    $ClientURLs->OnAccessCodeFailed = getCallbackURL("pop.html?id=8");
    $ClientURLs->OnSigningComplete = getCallbackURL("pop.html?id=9");
    $ClientURLs->OnIdCheckFailed = getCallbackURL("pop.html?id=1");
-   
+
 	return $ClientURLs;
 }
 
@@ -191,9 +186,9 @@ function makeRecipient($firstname, $lastname, $email, $useEmbeddedSigning){
 	return $Recipient;
 }
 
-	// security 
+	// security
 	// This section will request an ID Lookup based on the recipients name and address, so we'll prefill those
-	// values from the form data. 
+	// values from the form data.
 function AddIDLookupToRecipient($recipient, $address1=null, $address2=null, $city=null, $state=null, $zip=null){
 	$recipient->RequireIDLookup = true;
 	$recipient->IDCheckConfigurationName = "ID Check $";
@@ -225,13 +220,13 @@ function AddAccessCodeToRecipient($recipient, $accesscode){
 	}
 	return $recipient;
 }
-		
+
 function AddPhoneAuthToRecipient($recipient, $phonenumber){
    $recipient->RequireIDLookup = true;
 	$recipient->IDCheckConfigurationName = "Phone Auth $";
    $recipient->PhoneAuthentication->SenderProvidedNumbers->SenderProvidedNumber[] = $_POST["Phone"];
    $recipient->PhoneAuthentication->RecipMayProvideNumber = true;
-	$recipient->PhoneAuthentication->RecordVoicePrint = true;         
+	$recipient->PhoneAuthentication->RecordVoicePrint = true;
 
 	return $recipient;
 }
@@ -254,7 +249,7 @@ function getCallbackURL($callbackPage){
 	$urlbase = substr($urlbase, 0, strrpos($urlbase, '/'));
 	$urlbase = $urlbase . "/" . $callbackPage;
 	return $urlbase;
-}    
+}
 
 function makeRequestRecipientToken(){
 	// build RequestRecipientToken  - this is used when hosting an embedded signing. the return value
@@ -265,22 +260,22 @@ function makeRequestRecipientToken(){
    $RequestRecipientToken->ClientUserID = session_id();
    $RequestRecipientToken->Username = $_POST["FirstName"]." ".$_POST["LastName"];
    $RequestRecipientToken->Email = $_POST["Email"];
-   
-	// an authentication assertion is a statement by the hosting code (i.e. this code) to docusign that 
+
+	// an authentication assertion is a statement by the hosting code (i.e. this code) to docusign that
 	// the recipient has been authenticated locally, and providing a record of what that authentication method was.
 	$RequestRecipientToken->AuthenticationAssertion->AssertionID = makeFakeID();
 
    $RequestRecipientToken->AuthenticationAssertion->AuthenticationInstant = makeISO8601Date();
    $RequestRecipientToken->AuthenticationAssertion->AuthenticationMethod = "Password";
    $RequestRecipientToken->AuthenticationAssertion->SecurityDomain = $_SERVER['HTTP_HOST'];
-	
-	// Client URLS indicate where the signing session will redirect to when it is finished - because the user 
+
+	// Client URLS indicate where the signing session will redirect to when it is finished - because the user
 	// signed, or cancelled, or failed ID check, etc. You can set separate pages for these or just use
 	// one page and use a param like 'id' to differentiate the events.
    $RequestRecipientToken->ClientURLs= getClientCallbackURLS();
-	
+
 	return $RequestRecipientToken;
-	
+
 }
 
 

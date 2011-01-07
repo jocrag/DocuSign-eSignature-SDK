@@ -23,5 +23,9 @@ System requirements for PHP samples:
 Sample PHP LoanCo solution instructions
 ---------------------------------------------------------------------------
 
+The IntegratorsKey MUST be set in the api/Credentials.php file for authentication
+to succeed. The other values can be entered as part of the online login or in the
+Credentials file.
+
 Recursively copy all files to your server and execute the index.php file to
 begin.

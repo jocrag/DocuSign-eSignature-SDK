@@ -26,6 +26,7 @@ class Envelope {
   public $EnforceSignerVisibility; // boolean
   public $EnableWetSign; // boolean
   public $AllowMarkup; // boolean
+  public $EventNotification; // EventNotification
 }
 
 class Document {
@@ -70,6 +71,7 @@ class Recipient {
   public $TemplateLocked; // boolean
   public $TemplateRequired; // boolean
   public $TemplateAccessCodeRequired; // boolean
+  public $DefaultRecipient; // boolean
 }
 
 class RecipientTypeCode {
@@ -101,6 +103,14 @@ class FontStyleCode {
   const KaufmannBT = 'KaufmannBT';
   const Freehand575 = 'Freehand575';
   const LuciaBT = 'LuciaBT';
+  const DocuSign1 = 'DocuSign1';
+  const DocuSign2 = 'DocuSign2';
+  const DocuSign3 = 'DocuSign3';
+  const DocuSign4 = 'DocuSign4';
+  const DocuSign5 = 'DocuSign5';
+  const DocuSign6 = 'DocuSign6';
+  const DocuSign7 = 'DocuSign7';
+  const DocuSign8 = 'DocuSign8';
 }
 
 class RecipientCaptiveInfo {
@@ -200,6 +210,7 @@ class Tab {
   public $ConditionalParentValue; // string
   public $SharedTab; // boolean
   public $RequireInitialOnSharedTabChange; // boolean
+  public $ConcealValueOnDocument; // boolean
 }
 
 class AnchorTab {
@@ -292,6 +303,25 @@ class Expirations {
   public $ExpireEnabled; // boolean
   public $ExpireAfter; // nonNegativeInteger
   public $ExpireWarn; // nonNegativeInteger
+}
+
+class EventNotification {
+  public $URL; // string
+  public $LoggingEnabled; // boolean
+  public $EnvelopeEvents; // ArrayOfEnvelopeEvent
+}
+
+class EnvelopeEvent {
+  public $EnvelopeEventStatusCode; // EnvelopeEventStatusCode
+  public $IncludeDocuments; // boolean
+}
+
+class EnvelopeEventStatusCode {
+  const Sent = 'Sent';
+  const Delivered = 'Delivered';
+  const Completed = 'Completed';
+  const Declined = 'Declined';
+  const Voided = 'Voided';
 }
 
 class CreateEnvelopeResponse {
@@ -410,6 +440,7 @@ class TabStatus {
   public $ListValues; // string
   public $ListSelectedValue; // string
   public $ScaleValue; // decimal
+  public $CustomTabType; // CustomTabType
 }
 
 class RecipientStatusEsignAgreementInformation {
@@ -550,6 +581,15 @@ class RequestPDFResponse {
   public $RequestPDFResult; // EnvelopePDF
 }
 
+class RequestPDFWithCert {
+  public $EnvelopeID; // string
+  public $AddWaterMark; // boolean
+}
+
+class RequestPDFWithCertResponse {
+  public $RequestPDFWithCertResult; // EnvelopePDF
+}
+
 class RequestDocumentPDFs {
   public $EnvelopeID; // string
 }
@@ -609,7 +649,7 @@ class RequestStatusResponse {
   public $RequestStatusResult; // EnvelopeStatus
 }
 
-class RequestStatusesEx {
+class RequestStatusCodes {
   public $EnvelopeStatusFilter; // EnvelopeStatusFilter
 }
 
@@ -645,6 +685,40 @@ class EnvelopeACStatusCode {
   const Deposited = 'Deposited';
   const DepositedEO = 'DepositedEO';
   const DepositFailed = 'DepositFailed';
+}
+
+class RequestStatusCodesResponse {
+  public $RequestStatusCodesResult; // FilteredEnvelopeStatusChanges
+}
+
+class FilteredEnvelopeStatusChanges {
+  public $ResultSetSize; // int
+  public $EnvelopeStatusChanges; // ArrayOfEnvelopeStatusChange
+}
+
+class EnvelopeStatusChange {
+  public $EnvelopeID; // string
+  public $Status; // EnvelopeStatusCode
+  public $StatusChanged; // dateTime
+}
+
+class RequestStatusChanges {
+  public $EnvelopeStatusChangeFilter; // EnvelopeStatusChangeFilter
+}
+
+class EnvelopeStatusChangeFilter {
+  public $AccountId; // string
+  public $UserInfo; // UserInfo
+  public $StatusChangedSince; // dateTime
+  public $Statuses; // ArrayOfEnvelopeStatusCode
+}
+
+class RequestStatusChangesResponse {
+  public $RequestStatusChangesResult; // FilteredEnvelopeStatusChanges
+}
+
+class RequestStatusesEx {
+  public $EnvelopeStatusFilter; // EnvelopeStatusFilter
 }
 
 class RequestStatusesExResponse {
@@ -924,10 +998,42 @@ class EnvelopeInformation {
   public $EnableWetSign; // boolean
   public $AllowRecipientRecursion; // boolean
   public $AllowMarkup; // boolean
+  public $EventNotification; // EventNotification
 }
 
 class CreateEnvelopeFromTemplatesResponse {
   public $CreateEnvelopeFromTemplatesResult; // EnvelopeStatus
+}
+
+class CreateEnvelopeFromTemplatesAndForms {
+  public $EnvelopeInformation; // EnvelopeInformation
+  public $CompositeTemplates; // ArrayOfCompositeTemplate
+  public $ActivateEnvelope; // boolean
+}
+
+class CompositeTemplate {
+  public $ServerTemplates; // ArrayOfServerTemplate
+  public $InlineTemplates; // ArrayOfInlineTemplate
+  public $PDFMetaDataTemplate; // PDFMetaDataTemplate
+  public $Document; // Document
+}
+
+class ServerTemplate {
+  public $Sequence; // positiveInteger
+  public $TemplateID; // string
+}
+
+class InlineTemplate {
+  public $Sequence; // positiveInteger
+  public $Envelope; // Envelope
+}
+
+class PDFMetaDataTemplate {
+  public $Sequence; // positiveInteger
+}
+
+class CreateEnvelopeFromTemplatesAndFormsResponse {
+  public $CreateEnvelopeFromTemplatesAndFormsResult; // EnvelopeStatus
 }
 
 class GetStatusInDocuSignConnectFormat {
@@ -1121,6 +1227,91 @@ class RequestCorrectTokenResponse {
   public $RequestCorrectTokenResult; // string
 }
 
+class GetFolderItems {
+  public $FolderFilter; // FolderFilter
+}
+
+class FolderFilter {
+  public $AccountId; // string
+  public $FolderOwner; // UserInfo
+  public $FolderTypeInfo; // FolderTypeInfo
+  public $StartPosition; // int
+  public $FromDate; // dateTime
+  public $ToDate; // dateTime
+  public $SearchText; // string
+  public $Status; // EnvelopeStatusCode
+}
+
+class FolderTypeInfo {
+  public $FolderType; // FolderType
+  public $FolderName; // string
+}
+
+class FolderType {
+  const RecycleBin = 'RecycleBin';
+  const Draft = 'Draft';
+  const Inbox = 'Inbox';
+  const SentItems = 'SentItems';
+  const Normal = 'Normal';
+}
+
+class GetFolderItemsResponse {
+  public $GetFolderItemsResult; // FolderResults
+}
+
+class FolderResults {
+  public $ResultSetSize; // int
+  public $StartPosition; // int
+  public $EndPosition; // int
+  public $FolderTypeInfo; // FolderTypeInfo
+  public $FolderItems; // ArrayOfFolderItem
+}
+
+class FolderItem {
+  public $EnvelopeId; // string
+  public $Status; // EnvelopeStatusCode
+  public $Owner; // string
+  public $SenderName; // string
+  public $SenderEmail; // string
+  public $SenderCompany; // string
+  public $RecipientStatuses; // ArrayOfRecipientStatus
+  public $CustomFields; // ArrayOfCustomField
+  public $Created; // dateTime
+  public $Sent; // dateTime
+  public $Completed; // dateTime
+  public $Subject; // string
+}
+
+class GetFolderList {
+  public $FoldersFilter; // FoldersFilter
+}
+
+class FoldersFilter {
+  public $AccountId; // string
+}
+
+class GetFolderListResponse {
+  public $GetFolderListResult; // AvailableFolders
+}
+
+class AvailableFolders {
+  public $Folders; // ArrayOfFolder
+}
+
+class Folder {
+  public $FolderOwner; // UserInfo
+  public $FolderTypeInfo; // FolderTypeInfo
+}
+
+class RequestEnvelope {
+  public $EnvelopeID; // string
+  public $IncludeDocumentBytes; // boolean
+}
+
+class RequestEnvelopeResponse {
+  public $RequestEnvelopeResult; // Envelope
+}
+
 
 /**
  * APIService class
@@ -1168,6 +1359,9 @@ class APIService extends SoapClient {
                                     'Notification' => 'Notification',
                                     'Reminders' => 'Reminders',
                                     'Expirations' => 'Expirations',
+                                    'EventNotification' => 'EventNotification',
+                                    'EnvelopeEvent' => 'EnvelopeEvent',
+                                    'EnvelopeEventStatusCode' => 'EnvelopeEventStatusCode',
                                     'CreateEnvelopeResponse' => 'CreateEnvelopeResponse',
                                     'EnvelopeStatus' => 'EnvelopeStatus',
                                     'RecipientStatus' => 'RecipientStatus',
@@ -1201,6 +1395,8 @@ class APIService extends SoapClient {
                                     'EnvelopePDF' => 'EnvelopePDF',
                                     'RequestPDF' => 'RequestPDF',
                                     'RequestPDFResponse' => 'RequestPDFResponse',
+                                    'RequestPDFWithCert' => 'RequestPDFWithCert',
+                                    'RequestPDFWithCertResponse' => 'RequestPDFWithCertResponse',
                                     'RequestDocumentPDFs' => 'RequestDocumentPDFs',
                                     'RequestDocumentPDFsResponse' => 'RequestDocumentPDFsResponse',
                                     'DocumentPDFs' => 'DocumentPDFs',
@@ -1214,11 +1410,18 @@ class APIService extends SoapClient {
                                     'RequestStatusExResponse' => 'RequestStatusExResponse',
                                     'RequestStatus' => 'RequestStatus',
                                     'RequestStatusResponse' => 'RequestStatusResponse',
-                                    'RequestStatusesEx' => 'RequestStatusesEx',
+                                    'RequestStatusCodes' => 'RequestStatusCodes',
                                     'EnvelopeStatusFilter' => 'EnvelopeStatusFilter',
                                     'UserInfo' => 'UserInfo',
                                     'EnvelopeStatusFilterBeginDateTime' => 'EnvelopeStatusFilterBeginDateTime',
                                     'EnvelopeACStatusCode' => 'EnvelopeACStatusCode',
+                                    'RequestStatusCodesResponse' => 'RequestStatusCodesResponse',
+                                    'FilteredEnvelopeStatusChanges' => 'FilteredEnvelopeStatusChanges',
+                                    'EnvelopeStatusChange' => 'EnvelopeStatusChange',
+                                    'RequestStatusChanges' => 'RequestStatusChanges',
+                                    'EnvelopeStatusChangeFilter' => 'EnvelopeStatusChangeFilter',
+                                    'RequestStatusChangesResponse' => 'RequestStatusChangesResponse',
+                                    'RequestStatusesEx' => 'RequestStatusesEx',
                                     'RequestStatusesExResponse' => 'RequestStatusesExResponse',
                                     'FilteredEnvelopeStatuses' => 'FilteredEnvelopeStatuses',
                                     'RequestStatuses' => 'RequestStatuses',
@@ -1267,6 +1470,12 @@ class APIService extends SoapClient {
                                     'TemplateReferenceFieldDataDataValue' => 'TemplateReferenceFieldDataDataValue',
                                     'EnvelopeInformation' => 'EnvelopeInformation',
                                     'CreateEnvelopeFromTemplatesResponse' => 'CreateEnvelopeFromTemplatesResponse',
+                                    'CreateEnvelopeFromTemplatesAndForms' => 'CreateEnvelopeFromTemplatesAndForms',
+                                    'CompositeTemplate' => 'CompositeTemplate',
+                                    'ServerTemplate' => 'ServerTemplate',
+                                    'InlineTemplate' => 'InlineTemplate',
+                                    'PDFMetaDataTemplate' => 'PDFMetaDataTemplate',
+                                    'CreateEnvelopeFromTemplatesAndFormsResponse' => 'CreateEnvelopeFromTemplatesAndFormsResponse',
                                     'GetStatusInDocuSignConnectFormat' => 'GetStatusInDocuSignConnectFormat',
                                     'GetStatusInDocuSignConnectFormatResponse' => 'GetStatusInDocuSignConnectFormatResponse',
                                     'DocuSignEnvelopeInformation' => 'DocuSignEnvelopeInformation',
@@ -1305,9 +1514,23 @@ class APIService extends SoapClient {
                                     'RequestSenderTokenResponse' => 'RequestSenderTokenResponse',
                                     'RequestCorrectToken' => 'RequestCorrectToken',
                                     'RequestCorrectTokenResponse' => 'RequestCorrectTokenResponse',
+                                    'GetFolderItems' => 'GetFolderItems',
+                                    'FolderFilter' => 'FolderFilter',
+                                    'FolderTypeInfo' => 'FolderTypeInfo',
+                                    'FolderType' => 'FolderType',
+                                    'GetFolderItemsResponse' => 'GetFolderItemsResponse',
+                                    'FolderResults' => 'FolderResults',
+                                    'FolderItem' => 'FolderItem',
+                                    'GetFolderList' => 'GetFolderList',
+                                    'FoldersFilter' => 'FoldersFilter',
+                                    'GetFolderListResponse' => 'GetFolderListResponse',
+                                    'AvailableFolders' => 'AvailableFolders',
+                                    'Folder' => 'Folder',
+                                    'RequestEnvelope' => 'RequestEnvelope',
+                                    'RequestEnvelopeResponse' => 'RequestEnvelopeResponse',
                                    );
 
-  public function APIService($wsdl = "APIService.wsdl.xml", $options = array()) {
+  public function APIService($wsdl = "APIService.wsdl", $options = array()) {
     foreach(self::$classmap as $key => $value) {
       if(!isset($options['classmap'][$key])) {
         $options['classmap'][$key] = $value;
@@ -1403,6 +1626,20 @@ class APIService extends SoapClient {
   /**
    *  
    *
+   * @param RequestPDFWithCert $parameters
+   * @return RequestPDFWithCertResponse
+   */
+  public function RequestPDFWithCert(RequestPDFWithCert $parameters) {
+    return $this->__soapCall('RequestPDFWithCert', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /**
+   *  
+   *
    * @param RequestDocumentPDFs $parameters
    * @return RequestDocumentPDFsResponse
    */
@@ -1464,6 +1701,34 @@ class APIService extends SoapClient {
    */
   public function RequestStatus(RequestStatus $parameters) {
     return $this->__soapCall('RequestStatus', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /**
+   *  
+   *
+   * @param RequestStatusCodes $parameters
+   * @return RequestStatusCodesResponse
+   */
+  public function RequestStatusCodes(RequestStatusCodes $parameters) {
+    return $this->__soapCall('RequestStatusCodes', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /**
+   *  
+   *
+   * @param RequestStatusChanges $parameters
+   * @return RequestStatusChangesResponse
+   */
+  public function RequestStatusChanges(RequestStatusChanges $parameters) {
+    return $this->__soapCall('RequestStatusChanges', array($parameters),       array(
             'uri' => 'http://www.docusign.net/API/3.0',
             'soapaction' => ''
            )
@@ -1669,6 +1934,20 @@ class APIService extends SoapClient {
   /**
    *  
    *
+   * @param CreateEnvelopeFromTemplatesAndForms $parameters
+   * @return CreateEnvelopeFromTemplatesAndFormsResponse
+   */
+  public function CreateEnvelopeFromTemplatesAndForms(CreateEnvelopeFromTemplatesAndForms $parameters) {
+    return $this->__soapCall('CreateEnvelopeFromTemplatesAndForms', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /**
+   *  
+   *
    * @param GetStatusInDocuSignConnectFormat $parameters
    * @return GetStatusInDocuSignConnectFormatResponse
    */
@@ -1848,6 +2127,47 @@ class APIService extends SoapClient {
       );
   }
 
+  /**
+   *  
+   *
+   * @param GetFolderItems $parameters
+   * @return GetFolderItemsResponse
+   */
+  public function GetFolderItems(GetFolderItems $parameters) {
+    return $this->__soapCall('GetFolderItems', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /**
+   *  
+   *
+   * @param GetFolderList $parameters
+   * @return GetFolderListResponse
+   */
+  public function GetFolderList(GetFolderList $parameters) {
+    return $this->__soapCall('GetFolderList', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /**
+   *  
+   *
+   * @param RequestEnvelope $parameters
+   * @return RequestEnvelopeResponse
+   */
+  public function RequestEnvelope(RequestEnvelope $parameters) {
+    return $this->__soapCall('RequestEnvelope', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
 
 /* Everything above this was generated by the wsdltophp.php script.
  * Below this are some custom functions that add WSE security support to all the api calls
@@ -1855,7 +2175,7 @@ class APIService extends SoapClient {
  * wsdl2php: http://www.urdalen.no/wsdl2php/
  * WSASoap, WSSESoap, xmlseclibs: http://www.cdatazone.org/index.php?/archives/54-Xmlseclibs-1.2.2-Released.html
 */
- 
+
 	private $_username;
 	private $_password;
 
@@ -1909,7 +2229,7 @@ class APIService extends SoapClient {
 
 		return parent::__doRequest($request, $location, $saction, $version);
 	}
-	
+
 }
 
 ?>
