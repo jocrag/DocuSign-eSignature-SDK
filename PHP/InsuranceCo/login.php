@@ -16,8 +16,8 @@
  */
 
 /*
-This page is all about setting up the demo. We need to get the users docusign credentials, check to see if they are in multiple accounts, 
-and let them choose which account they want to use, and then check that account for the required template, and upload it if it isn't found. 
+This page is all about setting up the demo. We need to get the users docusign credentials, check to see if they are in multiple accounts,
+and let them choose which account they want to use, and then check that account for the required template, and upload it if it isn't found.
 
 */
 
@@ -38,20 +38,24 @@ function getTransactionAPIProxy($user = null, $password = null){
 	if($password===null && isset($_SESSION["Password"])){
 		$password = $_SESSION["Password"];
 	}
-	
+	// get Integrator Key from credentials.ini
+    $ini_array = parse_ini_file("integrator.php");
+    $IntegratorsKey = $ini_array["IntegratorsKey"];
+    if (!isset($IntegratorsKey) || $IntegratorsKey == "") {
+        $_SESSION["errorMessage"] = "Please make sure integrator key is set (in integrator.php).";
+        header("Location: error.php");
+        die();
+    }
+
 	$api = new APIService($api_wsdl, $api_options);
 	// set credentials on the api object - if we have an integrator key then we prepend that to the UserID
-	if(isset($IntegratorsKey) && $IntegratorsKey<>""){
-		$api->setCredentials("[" . $IntegratorsKey . "]" . $user, $password);
-	} else {
-		$api->setCredentials($user, $password);
-	}
+	$api->setCredentials("[" . $IntegratorsKey . "]" . $user, $password);
 	return $api;
-	
+
 }
 
 function login($user, $password){
-   $retval = false; // 
+   $retval = false; //
 	$_SESSION["lastLoginError"] = "";
 
 	global $creds_wsdl, $creds_options;
@@ -61,14 +65,14 @@ function login($user, $password){
 	$login = new Login();
 	$login->Email=$user;
 	$login->Password=$password;
-	
+
 	try {
 		$response = $credService->Login($login);
    } catch( SoapFault $fault) {
 		$_SESSION["errorMessage"] = $fault;
 		header("Location: error.php");
 		die();
-	}	
+	}
 
 	switch($response->LoginResult->ErrorCode){
 		case "User_Does_Not_Exist_In_System":
@@ -101,18 +105,18 @@ function login($user, $password){
 				$_SESSION["Email"] = $AccountsWithTemplateAccess[0]->Email;
 				$_SESSION["UserID"] = $AccountsWithTemplateAccess[0]->UserID;
 				$_SESSION["Password"] = $password;
-				// If we have more than one account, store them so we can show them in the account selector 
+				// If we have more than one account, store them so we can show them in the account selector
 				if(count($AccountsWithTemplateAccess > 1)) {
 					$_SESSION["Accounts"]=$AccountsWithTemplateAccess;
 				}
-				
+
 			} else {
 				$retval = false;
 				$_SESSION["lastLoginError"] = "None of your accounts have Manage Template permissions. You can correct this in the Member Console";
-				
+
 			}
 			$retval = true;
-		
+
 		break;
 		default:
 			$retval = false;
@@ -124,7 +128,7 @@ function checkAccountsForTemplatePermissions($LoginResult, $userID, $password){
 	// this will attempt a requestTemplates call on each account and if it fail
 	$accounts = array();
 	$api = getTransactionAPIProxy($userID, $password);
-	
+
 	foreach($LoginResult->Accounts->Account as $account){
 		$params = new RequestTemplates();
 		$params->AccountID = $account->AccountID;
@@ -133,7 +137,7 @@ function checkAccountsForTemplatePermissions($LoginResult, $userID, $password){
 			$Templates = $api->RequestTemplates($params);
 			$accounts[] = $account;
 		} catch (SoapFault $fault){
-			
+
 		}
 	}
 
@@ -166,7 +170,7 @@ function clearSessionLogin(){
 function checkAccountForTemplate(){
 	// check our account for the template we need, if not there prompt to save it
 	$retval = false;
-	
+
 	If($_SESSION["LoggedIn"]===true && isset($_SESSION["AccountID"])){
 
 		$api = getTransactionAPIProxy();
@@ -190,7 +194,7 @@ function checkAccountForTemplate(){
 					$_SESSION["TemplateID"] = $TemplateID;
 					$retval = true;
 				}
-			}    
+			}
 		}
 	}
 	if($retval===false) {
@@ -214,7 +218,7 @@ function uploadTemplateToAccount(){
 		// so, due to a bug we have to upload a template in the dpd format
 		// and then download it from the server, which will cause it to be converted to the new format
 		// and then upload it again so that we can use it. However, when we try to upload it we'll hit another
-		// bug that prevents us from saving a template without an email address so we'll specify bogus email 
+		// bug that prevents us from saving a template without an email address so we'll specify bogus email
 		// and then update to the correct email address when we are ready to send the envelope.
 		$requestTemplateParams = new RequestTemplate();
 		$requestTemplateParams->TemplateID = $uploadTemplateResponse->UploadTemplateResult->TemplateID;
@@ -228,7 +232,7 @@ function uploadTemplateToAccount(){
 		$saveTemplateParams = new SaveTemplate();
 		$saveTemplateParams->EnvelopeTemplate = $requestTemplateResponse->RequestTemplateResult;
 		$saveTemplateResponse = $api->SaveTemplate($saveTemplateParams);
-		
+
 		$_SESSION["TemplateID"] = $saveTemplateResponse->SaveTemplateResult->TemplateID;
 	} catch (SoapFault $fault){
 		if(strpos($fault, "User lacks sufficient permissions") > 0){
@@ -241,7 +245,7 @@ function uploadTemplateToAccount(){
 			die();
 		}
 	}
-    
+
 }
 
 // main page loop
@@ -249,7 +253,7 @@ function uploadTemplateToAccount(){
 // api config values
 $ini_array = parse_ini_file("integrator.php");
 $IntegratorsKey = $ini_array["IntegratorsKey"];
-// setup api connection 
+// setup api connection
 $api_endpoint="https://demo.docusign.net/api/3.0/api.asmx";
 $api_wsdl = "api/APIService.wsdl";
 $api_options =  array('location'=>$api_endpoint,'trace'=>true,'features' => SOAP_SINGLE_ELEMENT_ARRAYS);
@@ -266,7 +270,7 @@ if(!checkRequiredModules()){
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 	switch($_POST["mode"]) {
-		
+
 		case "login":
 			clearSessionLogin();
 			if(login($_POST["email"], $_POST["password"])== true ){
@@ -291,15 +295,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 					}
 				}
 				checkAccountForTemplate();
-				
+
 			} else if(isset($_POST["changeAccount"])){
 				// unset session accountId
 				unset($_SESSION["AccountID"]);
-				unset($_SESSION["TemplateID"]); 
-				
+				unset($_SESSION["TemplateID"]);
+
 			}
-		
-		
+
+
 			break;
 		case "uploadTemplate":
 			uploadTemplateToAccount();
@@ -315,7 +319,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			header("Location: error.php");
 			die();
 	}
-	
+
 } else if($_SERVER["REQUEST_METHOD"] == "GET"){
 	// display controlled by session vars
 	if(!isset($_SESSION["LoggedIn"])) {
@@ -333,7 +337,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	if(isset($_SESSION["lastLoginError"])){
 		$errorMessage = $_SESSION["lastLoginError"];
 		unset($_SESSION["lastLoginError"]);
-	} 
+	}
 	if(isset($_SESSION["TemplateUploadError"])){
 		$templateUploadError = true;
 		unset($_SESSION["TemplateUploadError"]);
@@ -346,7 +350,7 @@ $demoTitle = "Demo Setup";
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 
-    
+
         <title>InsuranceCo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
@@ -369,12 +373,12 @@ $demoTitle = "Demo Setup";
                 </table>
             </div>
         </div>
-    
+
         <div class="gutter"></div>
-    
+
         <div class="sidebar">
             <h1>What we offer?</h1>
-    
+
             <div id="navcontainer">
                 <ul id="navlist">
                     <li><a href="index.php">Products</a></li>
@@ -382,10 +386,10 @@ $demoTitle = "Demo Setup";
                 </ul>
             </div>
         </div>
-        
+
         <div class="col1">
 				<?php if( $_SESSION["LoggedIn"] === false) {?>
-            
+
 					<form class="applicationForm" id="applicationForm" method="post">
                 <fieldset>
                    <legend class="heading">Log In</legend>
@@ -394,7 +398,7 @@ $demoTitle = "Demo Setup";
 							will be prompted to select the account you wish to work with if your
 							email address and password match multiple accounts.</p>
 <?php if(isset($errorMessage)) { echo "<p style='color:red;'>".$errorMessage.'</p>'; }?>
-	
+
                     <label for="email">
                         <input name="email" tabindex="1" id="email" size="40" type="text">
                         Email:                    </label>
@@ -407,7 +411,7 @@ $demoTitle = "Demo Setup";
 							<input type="hidden" name="mode" id="mode" value="login">
 	                </fieldset>
 					</form>
-				
+
 				<?php } else { ?>
 
 		         <form class="applicationForm"  id="changeLogin" method="post">
@@ -426,12 +430,12 @@ $demoTitle = "Demo Setup";
 							<?php } else { ?>
 								<select type="select" name="AccountID" id="AccountID">
 									<?php foreach( $_SESSION["Accounts"] as $account) {?>
-										<option value="<?php echo $account->AccountID; ?>" ><?php echo $account->AccountName; ?></option> 
+										<option value="<?php echo $account->AccountID; ?>" ><?php echo $account->AccountName; ?></option>
 									<?php }?>
 								</select>
 				         	<input name="selectAccount" id="selectAccount" tabindex="4" value="Select Account" type="submit">
-							<?php } ?>	
-						<?php } ?>	
+							<?php } ?>
+						<?php } ?>
                </label>
 					</fieldset>
 					</form>
@@ -442,17 +446,17 @@ $demoTitle = "Demo Setup";
 							<legend>Template</legend>
 						<?php if($_SESSION["LoggedIn"]===false) {?>
 						<p>Template will be checked once Credentials are entered.</p>
-						
+
 						<?php } ?>
 						<?php if($_SESSION["LoggedIn"]===true && !isset($_SESSION["AccountID"]) ) {?>
 						<p>Template will be checked once Account is Selected.</p>
-						
+
 						<?php } ?>
 						<?php
 						 	// show this section if we are logged in but don't have a template in the account
 							if(!isset($_SESSION["TemplateID"]) && $_SESSION["LoggedIn"]===true && isset($_SESSION["AccountID"]) ) { ?>
 									<?php if(isset($templateUploadError)) { ?>
-										<p style="color: red">You do not have permissions to upload templates to this account. Please select a different account.<p> 
+										<p style="color: red">You do not have permissions to upload templates to this account. Please select a different account.<p>
 									<?php } else { ?>
 										<p>Your Account does not have the required Template. Click the Upload button to upload it to your account</p>
 										<form id="uploadTemplateForm" method="post">
@@ -461,7 +465,7 @@ $demoTitle = "Demo Setup";
 									<?php } ?>
 									</fieldset>
 						<?php } ?>
-					
+
 					<?php
 					 	// show this section if we are logged in and have a template already in the account
 						if(isset($_SESSION["TemplateID"]) && $_SESSION["LoggedIn"]===true  ) { ?>
@@ -474,7 +478,7 @@ $demoTitle = "Demo Setup";
 
 
         </div>
-    
+
         <div class="footer">
             InsuranceCo - Docusign        </div>
     </body></html>

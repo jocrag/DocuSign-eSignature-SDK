@@ -93,18 +93,21 @@ function am_newAccountSample() {
     $addressInfo->Zip = "99999";
 
     $member = new Member();
-    $member->MemberEmailAddress = "craig.smith.docusign@gmail.com";
-    $member->MemberUserName = "Joe Smith";
-    $member->MemberPassword = "b0x.n3t";
-    $member->MemberForgottenPasswordQuestion = "Your favorite online storage solution";
-    $member->MemberForgottenPasswordAnswer = "Box";
+    // TODO: put your new member credentials here
+    $member->MemberEmailAddress = "member@email.edu";
+    $member->MemberUserName = "Member Name";
+    $member->MemberPassword = "some default password";
+    $member->MemberForgottenPasswordQuestion = "what if you forget your
+                password?";
+    $member->MemberForgottenPasswordAnswer = "Don't Forget";
 
 
     $newAccountparams = new NewAccount();
-    $newAccountparams->AccountName = "Box.net, Inc.";
-    $newAccountparams->DistributorCode = "box";
-    $newAccountparams->DistributorPassword = "b0x$1gnn0w";
-    $newAccountparams->Pgp = "f462b6f1-aa45-42dd-b979-3b3f366c0101";
+    $newAccountparams->AccountName = "Company Name of New Account";
+    // TODO: put your distributor credentials here
+    $newAccountparams->DistributorCode = "your distributor code";
+    $newAccountparams->DistributorPassword = "your distributor password";
+    $newAccountparams->Pgp = "Your pgp guid";
     $newAccountparams->AccountSettings = $accountSettings;
     $newAccountparams->Member = $member;
     $newAccountparams->AddressInformation = $addressInfo;

@@ -13,8 +13,8 @@
  * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
  * PARTICULAR PURPOSE.
- */ 
- 
+ */
+
 // start session and some helper functions
 include("include/session.php");
 
@@ -39,8 +39,8 @@ if(!isset($_SESSION["EmbeddedToken"])){
 			<div class="logorepeat">&nbsp;</div>
 		</div>
 		<div id="content">
-         <iframe src="<?php echo($_SESSION["EmbeddedToken"]) ?>" scrolling="yes" width="100%" height="100%" frameborder="0">
-		</div>	
+         <iframe src="<?php echo($_SESSION["EmbeddedToken"]) ?>" scrolling="yes" width="100%" height="800" frameborder="0">
+		</div>
       <div id="footer">&nbsp;</div>
     </div>
   </body>

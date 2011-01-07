@@ -1,6 +1,9 @@
 <?php
-session_name("InsuranceCo"); 
+session_name("InsuranceCo");
 session_start();
+
+// needed because error.php may be called before this index is set
+$_SESSION["lastRequest"] = "";
 
 function isLoggedIn(){
 	$retval = false;
@@ -14,7 +17,7 @@ function loginCheck($redirectURL){
 	if (!isset($_SESSION["LoggedIn"]) || ($_SESSION["LoggedIn"] <> true )){
 		header("Location: " . $redirectURL);
 	}
-	
+
 }
 
 function CheckSessionValue($key, $val){
@@ -25,42 +28,42 @@ function CheckSessionValue($key, $val){
 	return $retval;
 }
 
-function xmlpp($xml, $html_output=false) {  
-    $level = 4;  
-    $indent = 0; // current indentation level  
-    $pretty = array(); 
+function xmlpp($xml, $html_output=false) {
+    $level = 4;
+    $indent = 0; // current indentation level
+    $pretty = array();
  		$retval = "";
 	try {
-    $xml_obj = new SimpleXMLElement($xml);  
-    // get an array containing each XML element  
-    $xml = explode("\n", preg_replace('/>\s*</', ">\n<", $xml_obj->asXML()));  
+    $xml_obj = new SimpleXMLElement($xml);
+    // get an array containing each XML element
+    $xml = explode("\n", preg_replace('/>\s*</', ">\n<", $xml_obj->asXML()));
 
-    // shift off opening XML tag if present  
-    if (count($xml) && preg_match('/^<\?\s*xml/', $xml[0])) {  
-      $pretty[] = array_shift($xml);  
-    }  
+    // shift off opening XML tag if present
+    if (count($xml) && preg_match('/^<\?\s*xml/', $xml[0])) {
+      $pretty[] = array_shift($xml);
+    }
 
-    foreach ($xml as $el) {  
-      if (preg_match('/^<([\w])+[^>\/]*>$/U', $el)) {  
-          // opening tag, increase indent  
-          $pretty[] = str_repeat(' ', $indent) . $el;  
-          $indent += $level;  
-      } else {  
-        if (preg_match('/^<\/.+>$/', $el)) {              
-          $indent -= $level;  // closing tag, decrease indent  
-        }  
-        if ($indent < 0) {  
-          $indent += $level;  
-        }  
-        $pretty[] = str_repeat(' ', $indent) . $el;  
-      }  
-    }     
-    $xml = implode("\n", $pretty); 
+    foreach ($xml as $el) {
+      if (preg_match('/^<([\w])+[^>\/]*>$/U', $el)) {
+          // opening tag, increase indent
+          $pretty[] = str_repeat(' ', $indent) . $el;
+          $indent += $level;
+      } else {
+        if (preg_match('/^<\/.+>$/', $el)) {
+          $indent -= $level;  // closing tag, decrease indent
+        }
+        if ($indent < 0) {
+          $indent += $level;
+        }
+        $pretty[] = str_repeat(' ', $indent) . $el;
+      }
+    }
+    $xml = implode("\n", $pretty);
     $retval = ($html_output) ? htmlentities($xml) : $xml;
 	} catch(Exception $excp){
-		
+
 	}
-    return $retval;  
+    return $retval;
 }
 
 

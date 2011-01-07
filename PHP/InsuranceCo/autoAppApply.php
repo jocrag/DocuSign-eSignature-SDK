@@ -14,7 +14,7 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
  * PARTICULAR PURPOSE.
  */
- 
+
 // start session and some helper functions
 include("include/session.php");
 //  credential api service proxy classes and soapclient
@@ -28,10 +28,10 @@ function extractInitials($firstname, $lastname){
 	$retval = "";
 	if($firstname <> null && strlen($firstname) > 0){
 		$retval = $retval . substr($firstname, 0,1);
-	} 
+	}
 	if($lastname <> null && strlen($lastname) > 0){
 		$retval = $retval . substr($lastname, 0,1);
-	} 
+	}
 	return $retval;
 }
 
@@ -73,15 +73,15 @@ function makeRecipient(){
 		$Recipient->SignatureInfo->SignatureInitials = extractInitials($_POST["firstName"] , $_POST["lastName"]);
 		$Recipient->SignatureInfo->FontStyle = "Mistral";
 	}
-	
+
 	return $Recipient;
-	
+
 }
 
 function makeTemplateReference(){
-	// build our template request. 
+	// build our template request.
 	$TemplateRef = new TemplateReference();
-	$TemplateRef->Template = $_SESSION["TemplateID"]; 
+	$TemplateRef->Template = $_SESSION["TemplateID"];
 	$TemplateRef->TemplateLocation = "Server";
 	$TemplateRef->Sequence = "1";
 	return $TemplateRef;
@@ -94,7 +94,7 @@ function makeTemplateFormFields(){
 	$field1->TabLabel = "VIN";
    $field1->Value = $_POST["carVIN"];
 	$fields[0] = $field1;
-	
+
 	$field2 = new TemplateReferenceFieldDataDataValue();
 	$field2->TabLabel = "Make";
    $field2->Value = $_POST["carMake"];
@@ -104,9 +104,9 @@ function makeTemplateFormFields(){
 	$field3->TabLabel = "Model";
 	$field3->Value = $_POST["carModel"];
 	$fields[2] = $field3;
-	
+
 	return $fields;
-	
+
 }
 
 function makeEnvelopeInfo(){
@@ -115,11 +115,11 @@ function makeEnvelopeInfo(){
 	$EnvelopeInfo->Subject = "InsuranceCo Auto Rider";
 	$EnvelopeInfo->AccountId = $_SESSION["AccountID"];
 
-	return $EnvelopeInfo;	
+	return $EnvelopeInfo;
 }
 
 function makeRequestRecipientToken($Recipient){
-	
+
 	$RequestRecipientTokenparam = new RequestRecipientToken();
 	$RequestRecipientTokenparam->EnvelopeID = $_SESSION["EnvelopeID"] ;
 	$RequestRecipientTokenparam->ClientUserID = "1";
@@ -139,8 +139,8 @@ function makeRequestRecipientToken($Recipient){
 	$RequestRecipientTokenparam->ClientURLs->OnException = getCallbackURL("pop.html")."?id=7";
 	$RequestRecipientTokenparam->ClientURLs->OnAccessCodeFailed =  getCallbackURL("pop.html")."?id=8";
 	$RequestRecipientTokenparam->ClientURLs->OnSigningComplete =  getCallbackURL("pop.html")."?id=9";
-	$RequestRecipientTokenparam->ClientURLs->OnIdCheckFailed =  getCallbackURL("pop.html")."?id=1";	
-	
+	$RequestRecipientTokenparam->ClientURLs->OnIdCheckFailed =  getCallbackURL("pop.html")."?id=1";
+
 	return $RequestRecipientTokenparam;
 }
 
@@ -157,21 +157,23 @@ function makeCCRecipient($email){
 
 }
 
-// get Integrator Key from credentials.ini 
-$ini_array = parse_ini_file("integrator.php");    
+// get Integrator Key from credentials.ini
+$ini_array = parse_ini_file("integrator.php");
 $IntegratorsKey = $ini_array["IntegratorsKey"];
+if (!isset($IntegratorsKey) || $IntegratorsKey == "") {
+    $_SESSION["errorMessage"] = "Please make sure integrator key is set (in integrator.php).";
+    header("Location: error.php");
+    die();
+}
 
-// setup api connection 
+// setup api connection
 $api_endpoint="https://demo.docusign.net/api/3.0/api.asmx";
 $api_wsdl = "api/APIService.wsdl";
 $api_options =  array('location'=>$api_endpoint,'trace'=>true,'features' => SOAP_SINGLE_ELEMENT_ARRAYS);
 $api = new APIService($api_wsdl, $api_options);
 // set credentials on the api object - if we have an integrator key then we prepend that to the UserID
-if(isset($IntegratorsKey) && $IntegratorsKey<>""){
-	$api->setCredentials($IntegratorsKey . $_SESSION["UserID"], $_SESSION["Password"]);
-} else {
-	$api->setCredentials($_SESSION["UserID"], $_SESSION["Password"]);
-}
+$api->setCredentials("[" . $IntegratorsKey . "]" . $_SESSION["UserID"], $_SESSION["Password"]);
+
 
 
 // main page loop
@@ -182,18 +184,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$Recipient = makeRecipient();
 		// set any selected security options on the recipient
 		if (isset($_POST['AuthenticationMethod']) && $_POST["AuthenticationMethod"]=="IDLookup") {
-          $Recipient->RequireIDLookup =true;         
+          $Recipient->RequireIDLookup =true;
 			 $Recipient->IDCheckConfigurationName = "ID Check $";
       }
       if (isset($_POST['accessCode'])) {
-          $Recipient->AccessCode = $_POST["accessCode"];         
+          $Recipient->AccessCode = $_POST["accessCode"];
       }
       if (isset($_POST['AuthenticationMethod']) && $_POST["AuthenticationMethod"]=="Phone") {
 			$Recipient->RequireIDLookup = true;
 			$Recipient->IDCheckConfigurationName = "Phone Auth $";
          $Recipient->PhoneAuthentication->SenderProvidedNumbers->SenderProvidedNumber[0] = $_POST["authPhoneNumber"];
          $Recipient->PhoneAuthentication->RecipMayProvideNumber = true;
-			$Recipient->PhoneAuthentication->RecordVoicePrint = true;         
+			$Recipient->PhoneAuthentication->RecordVoicePrint = true;
       }
 
 
@@ -201,13 +203,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		$RoleRef = new TemplateReferenceRoleAssignment();
 		$RoleRef->RecipientID = $Recipient->ID;
 		$RoleRef->RoleName = $Recipient->RoleName;
-		
+
 		// get our Template Ref - this indicates that we will use a server side template for the signing
 		$TemplateReference = makeTemplateReference();
 		$TemplateReference->RoleAssignments[0] = $RoleRef;
 		// add form fields to bring in the posted data
 		$TemplateReference->FieldData->DataValues = makeTemplateFormFields();
-		// envelope info - 
+		// envelope info -
 		$EnvelopeInfo = makeEnvelopeInfo();
 
 
@@ -233,7 +235,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 			addToLog("API Call - CreateEnvelopeFromTemplates Request", '<pre>' . xmlpp($api->_lastRequest,true) . '</pre>');
 			addToLog("API Call - CreateEnvelopeFromTemplates Response", '<pre>' . xmlpp($api->__getlastResponse(),true) . '</pre>');
 			$_SESSION["EnvelopeID"] = $Response->CreateEnvelopeFromTemplatesResult->EnvelopeID;
-			
+
 		} catch (SoapFault $fault){
 			$_SESSION["errorMessage"] = $fault;
 			$_SESSION["lastRequest"] = $api->_lastRequest;
@@ -282,27 +284,27 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		}
 
 		header("Location: " . $URL);
-		
+
 	}
 } else {
-	
-}  
-                                            
- 
-        
-        
+
+}
+
+
+
+
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 
-    
+
         <title>InsuranceCo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
         <script type="text/javascript" src="scripts/webservice-status.js"></script>
         <script type="text/javascript" src="scripts/util.js"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        
+
     </head><body>
         <div class="header" style=" background:url(images/fond.jpg); background-repeat:repeat-x; background-position:top">
             <div class="floatLeft">
@@ -329,12 +331,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
             </div>
         </div>
-    
+
         <div class="gutter"></div>
-    
+
         <div class="sidebar">
             <h1>What we offer?</h1>
-    
+
             <div id="navcontainer">
                 <ul id="navlist">
                     <li><a href="index.php">Products</a></li>
@@ -345,17 +347,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                 </ul>
             </div>
         </div>
-        
+
         <div>
             <span class="col1">
                 <h1>Automobile Insurance Application</h1>
-                
+
                 <form class="applicationForm" id="applicationForm" method="post" action="autoAppApply.php">
                     <fieldset>
                         <legend class="heading">Insured Motorist Details</legend>
-    
+
                         <p>Please fill in all fields:</p>
-                        
+
                         <label for="firstName">
                             <input name="firstName"  tabindex="1" size="50" id="firstName" type="text">
                             First Name:                        </label>
@@ -366,7 +368,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                     <br>
                     <fieldset>
                         <legend class="heading">Car Details</legend>
-    
+
                         <p>Please fill in all fields:</p>
                         <label for="carMake">
                             <input name="carMake"  tabindex="3" size="50" id="carMake" type="text">
@@ -400,7 +402,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                             <span>What is the email address of the carbon copied recipient?</span>
                         </label>
                         </div>
-                        
+
                     </fieldset>
                     <br />
                     <fieldset>
@@ -413,7 +415,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 									<input name="AuthenticationMethod" type="radio" class="form" value="IDLookup" onClick="togglePhoneNumberInput()">IDLookup</input><br/>
 									<input name="AuthenticationMethod" type="radio" class="form" value="Phone" onClick="togglePhoneNumberInput()">Phone</input><br/>
 								</label>
-								
+
 								<div id="authPhoneNumberContainer" style="display: none;" >
 	                        <label for="authPhoneNumber">
 	                            <span>Authentication Phone Number:</span>
@@ -476,14 +478,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 		            msg += "\tAuthentication Phone Number (use xxx-xxx-xxxx format)\n";
 		            valid = false;
 		        }
-					
+
 
 		        if(!valid)
 		            alert(msg);
 
-		        return valid;                  
+		        return valid;
 		    }
 
-		</script>    
+		</script>
 		</body>
 </html>

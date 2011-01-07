@@ -103,6 +103,14 @@ class FontStyleCode {
   const KaufmannBT = 'KaufmannBT';
   const Freehand575 = 'Freehand575';
   const LuciaBT = 'LuciaBT';
+  const DocuSign1 = 'DocuSign1';
+  const DocuSign2 = 'DocuSign2';
+  const DocuSign3 = 'DocuSign3';
+  const DocuSign4 = 'DocuSign4';
+  const DocuSign5 = 'DocuSign5';
+  const DocuSign6 = 'DocuSign6';
+  const DocuSign7 = 'DocuSign7';
+  const DocuSign8 = 'DocuSign8';
 }
 
 class RecipientCaptiveInfo {
@@ -432,7 +440,7 @@ class TabStatus {
   public $ListValues; // string
   public $ListSelectedValue; // string
   public $ScaleValue; // decimal
-  public $CustomTabType; // string
+  public $CustomTabType; // CustomTabType
 }
 
 class RecipientStatusEsignAgreementInformation {
@@ -641,7 +649,7 @@ class RequestStatusResponse {
   public $RequestStatusResult; // EnvelopeStatus
 }
 
-class RequestStatusesEx {
+class RequestStatusCodes {
   public $EnvelopeStatusFilter; // EnvelopeStatusFilter
 }
 
@@ -677,6 +685,40 @@ class EnvelopeACStatusCode {
   const Deposited = 'Deposited';
   const DepositedEO = 'DepositedEO';
   const DepositFailed = 'DepositFailed';
+}
+
+class RequestStatusCodesResponse {
+  public $RequestStatusCodesResult; // FilteredEnvelopeStatusChanges
+}
+
+class FilteredEnvelopeStatusChanges {
+  public $ResultSetSize; // int
+  public $EnvelopeStatusChanges; // ArrayOfEnvelopeStatusChange
+}
+
+class EnvelopeStatusChange {
+  public $EnvelopeID; // string
+  public $Status; // EnvelopeStatusCode
+  public $StatusChanged; // dateTime
+}
+
+class RequestStatusChanges {
+  public $EnvelopeStatusChangeFilter; // EnvelopeStatusChangeFilter
+}
+
+class EnvelopeStatusChangeFilter {
+  public $AccountId; // string
+  public $UserInfo; // UserInfo
+  public $StatusChangedSince; // dateTime
+  public $Statuses; // ArrayOfEnvelopeStatusCode
+}
+
+class RequestStatusChangesResponse {
+  public $RequestStatusChangesResult; // FilteredEnvelopeStatusChanges
+}
+
+class RequestStatusesEx {
+  public $EnvelopeStatusFilter; // EnvelopeStatusFilter
 }
 
 class RequestStatusesExResponse {
@@ -1185,15 +1227,24 @@ class RequestCorrectTokenResponse {
   public $RequestCorrectTokenResult; // string
 }
 
-class GetFolder {
+class GetFolderItems {
+  public $FolderFilter; // FolderFilter
+}
+
+class FolderFilter {
   public $AccountId; // string
-  public $FolderType; // FolderType
-  public $FolderName; // string
+  public $FolderOwner; // UserInfo
+  public $FolderTypeInfo; // FolderTypeInfo
   public $StartPosition; // int
   public $FromDate; // dateTime
   public $ToDate; // dateTime
   public $SearchText; // string
   public $Status; // EnvelopeStatusCode
+}
+
+class FolderTypeInfo {
+  public $FolderType; // FolderType
+  public $FolderName; // string
 }
 
 class FolderType {
@@ -1204,15 +1255,15 @@ class FolderType {
   const Normal = 'Normal';
 }
 
-class GetFolderResponse {
-  public $GetFolderResult; // FolderResults
+class GetFolderItemsResponse {
+  public $GetFolderItemsResult; // FolderResults
 }
 
 class FolderResults {
   public $ResultSetSize; // int
   public $StartPosition; // int
   public $EndPosition; // int
-  public $FolderType; // FolderType
+  public $FolderTypeInfo; // FolderTypeInfo
   public $FolderItems; // ArrayOfFolderItem
 }
 
@@ -1231,12 +1282,16 @@ class FolderItem {
   public $Subject; // string
 }
 
-class GetFolders {
+class GetFolderList {
+  public $FoldersFilter; // FoldersFilter
+}
+
+class FoldersFilter {
   public $AccountId; // string
 }
 
-class GetFoldersResponse {
-  public $GetFoldersResult; // AvailableFolders
+class GetFolderListResponse {
+  public $GetFolderListResult; // AvailableFolders
 }
 
 class AvailableFolders {
@@ -1244,8 +1299,8 @@ class AvailableFolders {
 }
 
 class Folder {
-  public $FolderType; // FolderType
-  public $FolderName; // string
+  public $FolderOwner; // UserInfo
+  public $FolderTypeInfo; // FolderTypeInfo
 }
 
 class RequestEnvelope {
@@ -1260,9 +1315,9 @@ class RequestEnvelopeResponse {
 
 /**
  * APIService class
- *
- *
- *
+ * 
+ *  
+ * 
  * @author    {author}
  * @copyright {copyright}
  * @package   {package}
@@ -1355,11 +1410,18 @@ class APIService extends SoapClient {
                                     'RequestStatusExResponse' => 'RequestStatusExResponse',
                                     'RequestStatus' => 'RequestStatus',
                                     'RequestStatusResponse' => 'RequestStatusResponse',
-                                    'RequestStatusesEx' => 'RequestStatusesEx',
+                                    'RequestStatusCodes' => 'RequestStatusCodes',
                                     'EnvelopeStatusFilter' => 'EnvelopeStatusFilter',
                                     'UserInfo' => 'UserInfo',
                                     'EnvelopeStatusFilterBeginDateTime' => 'EnvelopeStatusFilterBeginDateTime',
                                     'EnvelopeACStatusCode' => 'EnvelopeACStatusCode',
+                                    'RequestStatusCodesResponse' => 'RequestStatusCodesResponse',
+                                    'FilteredEnvelopeStatusChanges' => 'FilteredEnvelopeStatusChanges',
+                                    'EnvelopeStatusChange' => 'EnvelopeStatusChange',
+                                    'RequestStatusChanges' => 'RequestStatusChanges',
+                                    'EnvelopeStatusChangeFilter' => 'EnvelopeStatusChangeFilter',
+                                    'RequestStatusChangesResponse' => 'RequestStatusChangesResponse',
+                                    'RequestStatusesEx' => 'RequestStatusesEx',
                                     'RequestStatusesExResponse' => 'RequestStatusesExResponse',
                                     'FilteredEnvelopeStatuses' => 'FilteredEnvelopeStatuses',
                                     'RequestStatuses' => 'RequestStatuses',
@@ -1452,13 +1514,16 @@ class APIService extends SoapClient {
                                     'RequestSenderTokenResponse' => 'RequestSenderTokenResponse',
                                     'RequestCorrectToken' => 'RequestCorrectToken',
                                     'RequestCorrectTokenResponse' => 'RequestCorrectTokenResponse',
-                                    'GetFolder' => 'GetFolder',
+                                    'GetFolderItems' => 'GetFolderItems',
+                                    'FolderFilter' => 'FolderFilter',
+                                    'FolderTypeInfo' => 'FolderTypeInfo',
                                     'FolderType' => 'FolderType',
-                                    'GetFolderResponse' => 'GetFolderResponse',
+                                    'GetFolderItemsResponse' => 'GetFolderItemsResponse',
                                     'FolderResults' => 'FolderResults',
                                     'FolderItem' => 'FolderItem',
-                                    'GetFolders' => 'GetFolders',
-                                    'GetFoldersResponse' => 'GetFoldersResponse',
+                                    'GetFolderList' => 'GetFolderList',
+                                    'FoldersFilter' => 'FoldersFilter',
+                                    'GetFolderListResponse' => 'GetFolderListResponse',
                                     'AvailableFolders' => 'AvailableFolders',
                                     'Folder' => 'Folder',
                                     'RequestEnvelope' => 'RequestEnvelope',
@@ -1475,7 +1540,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param CreateEnvelope $parameters
    * @return CreateEnvelopeResponse
@@ -1489,7 +1554,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param CreateAndSendEnvelope $parameters
    * @return CreateAndSendEnvelopeResponse
@@ -1503,7 +1568,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param SendEnvelope $parameters
    * @return SendEnvelopeResponse
@@ -1517,7 +1582,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param CorrectAndResendEnvelope $parameters
    * @return CorrectAndResendEnvelopeResponse
@@ -1531,7 +1596,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestPDFNoWaterMark $parameters
    * @return RequestPDFNoWaterMarkResponse
@@ -1545,7 +1610,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestPDF $parameters
    * @return RequestPDFResponse
@@ -1559,7 +1624,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestPDFWithCert $parameters
    * @return RequestPDFWithCertResponse
@@ -1573,7 +1638,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestDocumentPDFs $parameters
    * @return RequestDocumentPDFsResponse
@@ -1587,7 +1652,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestDocumentPDFsEx $parameters
    * @return RequestDocumentPDFsExResponse
@@ -1601,7 +1666,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestDocumentPDFsRecipientsView $parameters
    * @return RequestDocumentPDFsRecipientsViewResponse
@@ -1615,7 +1680,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestStatusEx $parameters
    * @return RequestStatusExResponse
@@ -1629,7 +1694,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestStatus $parameters
    * @return RequestStatusResponse
@@ -1643,7 +1708,35 @@ class APIService extends SoapClient {
   }
 
   /**
+   *  
    *
+   * @param RequestStatusCodes $parameters
+   * @return RequestStatusCodesResponse
+   */
+  public function RequestStatusCodes(RequestStatusCodes $parameters) {
+    return $this->__soapCall('RequestStatusCodes', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /**
+   *  
+   *
+   * @param RequestStatusChanges $parameters
+   * @return RequestStatusChangesResponse
+   */
+  public function RequestStatusChanges(RequestStatusChanges $parameters) {
+    return $this->__soapCall('RequestStatusChanges', array($parameters),       array(
+            'uri' => 'http://www.docusign.net/API/3.0',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /**
+   *  
    *
    * @param RequestStatusesEx $parameters
    * @return RequestStatusesExResponse
@@ -1657,7 +1750,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestStatuses $parameters
    * @return RequestStatusesResponse
@@ -1671,7 +1764,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param GetRecipientEsignList $parameters
    * @return GetRecipientEsignListResponse
@@ -1685,7 +1778,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param GetRecipientList $parameters
    * @return GetRecipientListResponse
@@ -1699,7 +1792,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param VoidEnvelope $parameters
    * @return VoidEnvelopeResponse
@@ -1713,7 +1806,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestRecipientToken $parameters
    * @return RequestRecipientTokenResponse
@@ -1727,7 +1820,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param TransferEnvelope $parameters
    * @return TransferEnvelopeResponse
@@ -1741,7 +1834,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param GetAccountMembershipFeaturesList $parameters
    * @return GetAccountMembershipFeaturesListResponse
@@ -1755,7 +1848,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param GetAccountSettingsList $parameters
    * @return GetAccountSettingsListResponse
@@ -1769,7 +1862,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param AcknowledgeAuthoritativeCopyExport $parameters
    * @return AcknowledgeAuthoritativeCopyExportResponse
@@ -1783,7 +1876,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param ExportAuthoritativeCopy $parameters
    * @return ExportAuthoritativeCopyResponse
@@ -1797,7 +1890,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param EnvelopeAuditEvents $parameters
    * @return EnvelopeAuditEventsResponse
@@ -1811,7 +1904,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param Ping $parameters
    * @return PingResponse
@@ -1825,7 +1918,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param CreateEnvelopeFromTemplates $parameters
    * @return CreateEnvelopeFromTemplatesResponse
@@ -1839,7 +1932,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param CreateEnvelopeFromTemplatesAndForms $parameters
    * @return CreateEnvelopeFromTemplatesAndFormsResponse
@@ -1853,7 +1946,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param GetStatusInDocuSignConnectFormat $parameters
    * @return GetStatusInDocuSignConnectFormatResponse
@@ -1867,7 +1960,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param PurgeDocuments $parameters
    * @return PurgeDocumentsResponse
@@ -1881,7 +1974,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param SaveTemplate $parameters
    * @return SaveTemplateResponse
@@ -1895,7 +1988,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param UploadTemplate $parameters
    * @return UploadTemplateResponse
@@ -1909,7 +2002,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestTemplates $parameters
    * @return RequestTemplatesResponse
@@ -1923,7 +2016,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestTemplate $parameters
    * @return RequestTemplateResponse
@@ -1937,7 +2030,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param GetAuthenticationToken $parameters
    * @return GetAuthenticationTokenResponse
@@ -1951,7 +2044,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param GetAddressBookItems $parameters
    * @return GetAddressBookItemsResponse
@@ -1965,7 +2058,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param UpdateAddressBookItems $parameters
    * @return UpdateAddressBookItemsResponse
@@ -1979,7 +2072,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RemoveAddressBookItems $parameters
    * @return RemoveAddressBookItemsResponse
@@ -1993,7 +2086,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param SynchEnvelope $parameters
    * @return SynchEnvelopeResponse
@@ -2007,7 +2100,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestSenderToken $parameters
    * @return RequestSenderTokenResponse
@@ -2021,7 +2114,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestCorrectToken $parameters
    * @return RequestCorrectTokenResponse
@@ -2035,13 +2128,13 @@ class APIService extends SoapClient {
   }
 
   /**
+   *  
    *
-   *
-   * @param GetFolder $parameters
-   * @return GetFolderResponse
+   * @param GetFolderItems $parameters
+   * @return GetFolderItemsResponse
    */
-  public function GetFolder(GetFolder $parameters) {
-    return $this->__soapCall('GetFolder', array($parameters),       array(
+  public function GetFolderItems(GetFolderItems $parameters) {
+    return $this->__soapCall('GetFolderItems', array($parameters),       array(
             'uri' => 'http://www.docusign.net/API/3.0',
             'soapaction' => ''
            )
@@ -2049,13 +2142,13 @@ class APIService extends SoapClient {
   }
 
   /**
+   *  
    *
-   *
-   * @param GetFolders $parameters
-   * @return GetFoldersResponse
+   * @param GetFolderList $parameters
+   * @return GetFolderListResponse
    */
-  public function GetFolders(GetFolders $parameters) {
-    return $this->__soapCall('GetFolders', array($parameters),       array(
+  public function GetFolderList(GetFolderList $parameters) {
+    return $this->__soapCall('GetFolderList', array($parameters),       array(
             'uri' => 'http://www.docusign.net/API/3.0',
             'soapaction' => ''
            )
@@ -2063,7 +2156,7 @@ class APIService extends SoapClient {
   }
 
   /**
-   *
+   *  
    *
    * @param RequestEnvelope $parameters
    * @return RequestEnvelopeResponse
