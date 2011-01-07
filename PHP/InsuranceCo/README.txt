@@ -22,10 +22,8 @@ PHP Requirements
 - 	mcrypt/2.5.7 libcurl/7.19.4 OpenSSL/0.9.8k zlib/1.2.3
 
 To install, copy the entire InsuranceCo directory to somewhere in your
-webserver's documents tree.  If you have an Integrators Key (optionally
-provided as part of your DevCenter account) you can enter the key in the
-integrator.php file.  If you do not have an Integrators Key you do not need
-to do anything. 
+webserver's documents tree.  You MUST add the Integrators Key (provided as part 
+of your DevCenter account) in the integrator.php file.
 
 Assuming you installed the sample in the root folder of the webserver
 documents folder, you should open the url

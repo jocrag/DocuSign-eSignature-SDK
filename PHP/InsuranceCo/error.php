@@ -22,9 +22,9 @@
 		unset($_SESSION["errorMessage"]);
 	} else {
 		$error = "Session Error Message not set";
-	}  
+	}
 	$demoTitle = "Error";
-	
+
 
 
 
@@ -32,7 +32,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 
-    
+
         <title>InsuranceCo</title>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <script type="text/javascript" src="scripts/jquery-1.4.1.min.js"></script>
@@ -57,9 +57,9 @@
             </div>
 
                     </div>
-    
+
         <div class="gutter"></div>
-        
+
 <div>			<h2>An Error Occurred</h2>
 			<p>
 				<?php echo $error; ?>
@@ -68,7 +68,7 @@
 					<?php echo '<pre>' . xmlpp($_SESSION["lastRequest"], true) . '</pre>'; ?>
 				</p>
 </div>
-    
+
         <div class="footer">
             InsuranceCo - Docusign        </div>
     </body></html>
