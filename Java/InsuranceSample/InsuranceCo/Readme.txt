@@ -27,7 +27,7 @@ Configuration
 For UsernameToken authentication: 
 
 -	Uncomment the Authentication: Username Token section of
-	InsuranceCo/WEBINF/ config/spring/masterContext.xml. 
+	InsuranceCo/WEB-INF/config/spring/masterContext.xml. 
 -	Set the following properties in
 	InsuranceCo/WEB-INF/config/config.properties: 
 	-	[REPLACE WITH DOCUSIGN INTEGRATORS KEY] 
