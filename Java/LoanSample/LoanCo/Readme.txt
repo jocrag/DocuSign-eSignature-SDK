@@ -29,7 +29,7 @@ Configuration
 For UsernameToken authentication: 
 
 -	Uncomment the Authentication: Username Token section of
-	LoanCo/WEB-INF/docusignservlet.xml. 
+	LoanCo/WEB-INF/docusign-servlet.xml. 
 -	Set the following properties in LoanCo/src/config.properties: 
 	-	[REPLACE WITH DOCUSIGN INTEGRATORS KEY] 
 	-	[REPLACE WITH EMAIL ADDRESS] 
