@@ -1,0 +1,6 @@
+<apex:page standardStylesheets="false" showHeader="false" action="{!ndaViewPDFPageOpen}"
+    sidebar="false" standardController="NDA_Signer__c" extensions="NDAKioskController">
+<body>
+    {!pdfBytes}{!errmsg}
+</body>
+</apex:page>

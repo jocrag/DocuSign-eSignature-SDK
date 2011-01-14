@@ -250,7 +250,7 @@ public with sharing class NDAKioskController {
     private String getPopURL() {
         String popURL = Site.getCurrentSiteUrl();
         if (popURL == null) {
-            popURL = 'https://na3.salesforce.com/apex/';
+            popURL = 'https://c.cs1.visual.force.com/apex/';
         } 
         return popURL + 'ndaPop';
     }
