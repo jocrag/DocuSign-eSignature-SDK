@@ -7,18 +7,12 @@ public with sharing class NDAKioskController {
     public string validateType {get; set;}
     public string attachmentId {get; set;}
     public string pdfBytes {get; set;}
+    public string reasonVisit {get; set;}
     
     private string id;    // id of current signer object
     private String auth;
     private String envelopeId;
-
-    // Preview 
-//    private String accountId = '6fbf04c2-e230-420e-86f8-c98ef2671cc1';
-//    private String userId = '4f4809a2-8e0f-4e52-b32f-62ce9a059af8 ';
-//    private String password = 'blahblah';
-//    private String integratorsKey = 'DOCU-3d7c7b84-6443-4b63-918e-c28c3b0e0ce5';
-//    private String webServiceUrl = 'https://preview.docusign.net/api/3.0/dsapi.asmx';
-//    private String templateId = '02D16F2F-0C98-46B0-B5D3-6AF6C8566494';
+    private string[] recipients;
 
     // Demo
     private String accountId = 'c5d11f83-7e0c-4ded-81b2-3748cd2cedc6';
@@ -26,7 +20,7 @@ public with sharing class NDAKioskController {
     private String password = 'blahblah';
     private String integratorsKey = 'DOCU-e02eab46-e7ca-48c5-95b5-cfeeb9c150d3';
     private String webServiceUrl = 'https://demo.docusign.net/api/3.0/dsapi.asmx';
-    private String templateId = 'EF8FB968-5B41-4341-B6A3-E7EC60A71BFD';
+    private String templateId = '05CFFEBB-E1EF-4C1B-A27D-65D6731FADCC';
 
 
 //===== Ctor =====            
@@ -41,7 +35,11 @@ public with sharing class NDAKioskController {
                     Email__c, 
                     validate_method__c, 
                     Send_Signed_Copy__c,
-                    selected_name__c
+                    selected_name__c,
+                    Here_to_see__c,
+                    Purpose_of_visit__c,
+                    Company_Name__c,
+                    Phone__c
                 FROM NDA_Signer__c
                 WHERE id = :id];
         }
@@ -138,24 +136,14 @@ public with sharing class NDAKioskController {
         
         // Add data for fields
         DocuSignAPI.TemplateReferenceFieldDataDataValue fd1 = new DocuSignAPI.TemplateReferenceFieldDataDataValue();
-        fd1.TabLabel = 'Date Signed';
-        fd1.Value = DateTime.now().format('MMM dd, yyyy');
-
-        DocuSignAPI.TemplateReferenceFieldDataDataValue fd2 = new DocuSignAPI.TemplateReferenceFieldDataDataValue();
-        fd2.TabLabel = 'Full Name 1';
-        fd2.Value = recipient.UserName;
+        fd1.TabLabel = 'Full Name 1';
+        fd1.Value = recipient.UserName;
         
-        DocuSignAPI.TemplateReferenceFieldDataDataValue fd3 = new DocuSignAPI.TemplateReferenceFieldDataDataValue();
-        fd3.TabLabel = 'Full Name 2';
-        fd3.Value = recipient.UserName;
-
         ndaTemplate.FieldData = new DocuSignAPI.TemplateReferenceFieldData();
         ndaTemplate.FieldData.DataValues = new DocuSignAPI.ArrayOfTemplateReferenceFieldDataDataValue();
-        ndaTemplate.FieldData.DataValues.DataValue = new DocuSignAPI.TemplateReferenceFieldDataDataValue[3];
+        ndaTemplate.FieldData.DataValues.DataValue = new DocuSignAPI.TemplateReferenceFieldDataDataValue[1];
         ndaTemplate.FieldData.DataValues.DataValue[0] = fd1;
-        ndaTemplate.FieldData.DataValues.DataValue[1] = fd2;
-        ndaTemplate.FieldData.DataValues.DataValue[2] = fd3;
-        
+
         // create array of template references
         DocuSignAPI.ArrayOfTemplateReference templateReferences = new DocuSignAPI.ArrayOfTemplateReference();
         templateReferences.TemplateReference = new DocuSignAPI.TemplateReference[1];
@@ -254,6 +242,52 @@ public with sharing class NDAKioskController {
         } 
         return popURL + 'ndaPop';
     }
+    
+    // Checks for existence of 'hear to see' person
+    // Returns email address if found, otherwise null
+    private string findPersonToVisit() {
+        string dsEmail = null;
+        try {
+            Contact dsPerson = 
+                [SELECT Email 
+                FROM Contact 
+                WHERE name = :signer.Here_to_see__c];
+            dsEmail = dsPerson.Email;
+        } catch (Exception ex) {
+            dsEmail = null;
+            System.Debug('Error finding contact: ' + ex.getMessage());
+        }
+        return dsEmail;
+    }
+    
+    // send an outbound email
+    private void emailNow(string dsEmail) {
+        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+        
+        string[] toAddresses = new string[] {dsEmail};
+        mail.setToAddresses(toAddresses);
+        mail.setSenderDisplayName('DocuSign Reception');
+        mail.setUseSignature(false);
+        
+        string emailSubject = signer.name + ' is here to see you ' + DateTime.now() + '.';
+        mail.setSubject(emailSubject);
+        
+        string emailBody = signer.here_to_see__c + '\n\n';
+        emailBody += signer.name +' is here for ';
+        if (signer.Purpose_of_visit__c == 'Business') {
+            emailBody += 'a business meeting.';
+        }
+        else if (signer.Purpose_of_visit__c == 'Interview') {
+            emailBody += 'a job interview.';
+        }
+        else {
+            emailBody += ' a personal visit.';
+        }
+        emailBody += ' Please go to the front desk to meet them. Please remember to sign all guests out when they leave.';
+        mail.setPlainTextBody(emailBody);
+        
+        Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
+    }
 
 //===== ndaWelcome Control Methods =====
     // actions to perform on page open
@@ -262,14 +296,16 @@ public with sharing class NDAKioskController {
         if (id == null) {
             validateType = 'SHOWID';
             selected_name = '';
+            reasonVisit = 'Business';
         }
         else {
             validateType = signer.validate_method__c;
+            reasonVisit = signer.purpose_of_visit__c;
             selected_name = signer.selected_name__c;
         }
     }
     
-    // initialize radio buttons
+    // initialize radio buttons for ID check
     // TODO: make enum
     public List<SelectOption> getValidateItems() {
         List<SelectOption> options = new List<SelectOption>{};
@@ -280,24 +316,27 @@ public with sharing class NDAKioskController {
         return options;
     }
     
+    // initialize radio buttons for reason for visit
+    // TODO: make enum
+    public List<SelectOption> getReasonItems() {
+        List<SelectOption> options = new List<SelectOption>{};
+        options.add(new SelectOption('Business', 'I am here for a business meeting'));
+        options.add(new SelectOption('Interview', 'I am here for a job interview'));
+        options.add(new SelectOption('Personal', 'I am here for persoal reasons'));
+        
+        return options;
+    }
+
     // populates the database with a record and goes to the next page
-    // if the recipient list for email is > 1 then 
-    //    next page is NDANameRes with list of names in URL
-    // else
-    //    next page is NDAeSign
     public PageReference eSign() {
-        // set validation method
-        PageReference nextWindow = null;
-
+        PageReference nextWindow = Page.NDANameRes;
+        errmsg = null;
+        
+        // set picklists
         signer.validate_method__c = validateType;
-
-        String[] recipients = recipientNames();
-        if (recipients != null) {
-            nextWindow = Page.NDANameRes;
-        }
-        else {
-            nextWindow = Page.NDAeSign;
-        }
+        signer.purpose_of_visit__c = reasonVisit;
+        
+        
         signer.selected_name__c = signer.name;
         try {
             if (id == null){
@@ -309,15 +348,24 @@ public with sharing class NDAKioskController {
         }
         catch (DMLException e) {
             errmsg = e.getDmlMessage(0);
-            System.Debug(errmsg);
+        }
+                
+        if (errmsg == null) {
+            // check for email of person to see and send if found
+            // NOTE: This must be after all web service calls (Do not know why)
+            string dsEmail = findPersonToVisit();
+            if (dsEmail == null) {
+                errmsg = 'Cannot locate Person to Visit. Please notify receptionist.';
+                nextWindow = page.ndaNotifyReception;
+            }
+            else {
+                emailNow(dsEmail);
+            }
         }
         
-        if (errmsg != '') {
-            nextWindow = Page.NDAWelcome;
-        }
         nextWindow.getParameters().put('id', signer.id);
         nextWindow.setRedirect(true);            
-
+        System.debug('errmsg: ' + errmsg);
         return nextWindow;
     }
 
@@ -325,12 +373,38 @@ public with sharing class NDAKioskController {
     public void clearWelcomeFields() {
         signer.Name = '';
         signer.Email__c = '';
+        signer.Here_to_see__c = '';
         signer.Send_Signed_Copy__c = false;
     }
+
+//===== ndaNotifyReception Control Methods =====
+    public void ndaNotifyReceptionPageOpen() {
+    }
+    
+    public PageReference ndaNotifyContinue() {
+        PageReference nextWindow = page.ndanameres;
+        nextWindow.getParameters().put('id', signer.id);
+        nextWindow.setRedirect(true);  
+        return nextWindow;
+    }          
+        
     
 //===== ndaNameRes Control Methods =====
     // actions to perform on page open
-    public void ndaNameResPageOpen() {
+    public PageReference ndaNameResPageOpen() {
+        PageReference nextWindow = null;
+        // check if signer has more than one name
+        //    Skip ndsnameres page if signer has more than one
+        recipients = recipientNames();
+        if (recipients == null) {
+            nextWindow = Page.NDAeSign;
+            nextWindow.getParameters().put('id', signer.id);
+            nextWindow.setRedirect(true);            
+        }
+        else {
+            selected_name = recipients[0];
+        }
+        return nextWindow;
     }
     
     // Continue button on Name resolution page
@@ -362,12 +436,11 @@ public with sharing class NDAKioskController {
     
     // initialize from list gotten from DocuSign
     public List<SelectOption> getLegalNames() {
-        String[] legalNames = recipientNames();
         List<SelectOption> options = new List<SelectOption>();
         // start with name in object
         options.add(new SelectOption(signer.Name, signer.Name));
-        if (legalNames != null) {
-            for (String name : legalNames) {
+        if (recipients != null) {
+            for (String name : recipients) {
                 options.add(new SelectOption(name, name));
             }
         }

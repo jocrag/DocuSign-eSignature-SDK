@@ -1,0 +1,17 @@
+<apex:page standardStylesheets="false" showHeader="false" action="{!ndaNotifyReceptionPageOpen}"
+    sidebar="false" standardController="NDA_Signer__c" extensions="NDAKioskController">
+    <apex:stylesheet value="{!URLFOR($Resource.ndaStyles, 'ndastyles.css')}" />
+  <apex:form >
+      <p>
+         The person you are here to see doesn't seem to be listed. Please notify the receptionist, then press continue.
+      </p>
+      <table class="top">
+          <tr>
+              <td class="left"><apex:commandButton styleClass="greenButton" action="{!ndaNotifyContinue}" value="Continue"/></td>
+          </tr>
+      </table>
+      {!errMsg}
+  </apex:form>
+
+</apex:page>
+

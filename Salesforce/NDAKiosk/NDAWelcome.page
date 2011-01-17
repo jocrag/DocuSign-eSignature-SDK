@@ -4,8 +4,11 @@
     <style type="text/css">
     </style>
 
-    <h1>Welcome to ACME!</h1>
-    <p>Before your visit, we ask that you complete a standard non-disclosure agreement.</p>
+    <h1>Welcome to DocuSign!</h1>
+    <p>
+        Please check-in by filling out the form below. Once completed we ask that you 
+        complete a standard non-disclosure agreement using DocuSign.
+    </p>
 
     <apex:form >
         <table>
@@ -42,15 +45,24 @@
         <p>Would you like to receive a signed copy in your e-mail?</p>
         <apex:inputCheckbox styleClass="checkBox" value="{!signer.Send_Signed_Copy__c}" />Yes
 -->
-        <p>How would you like to verify your identity</p>
+        <p>How would you like to verify your identity?</p>
         <apex:selectRadio styleClass="radioButton" value="{!validateType}" layout="pageDirection">
             <apex:selectOptions value="{!validateItems}"/>
+        </apex:selectRadio>
+        <table>
+            <tr><td><h2>Here to see:</h2></td></tr>
+            <tr><td><apex:inputField styleClass="textBox" value="{!signer.Here_to_see__c}" /></td></tr>
+        </table>
+        
+        <p>Purpose of visit</p>
+        <apex:selectRadio styleClass="radioButton" value="{!reasonVisit}" layout="pageDirection">
+            <apex:selectOptions value="{!reasonItems}"/>
         </apex:selectRadio>
 
         <table class="top">
             <tr>
-                <td class="left"><apex:commandButton styleClass="greenButton" action="{!eSign}" value="eSign with DocuSign"/></td>
-                <td class="right"><apex:commandButton styleClass="linkButton" action="{!clearWelcomeFields}" value="Clear Values"/></td>
+                <td class="left"><apex:commandButton styleClass="greenButton" action="{!eSign}" value="Enter"/></td>
+                <td class="right"><apex:commandButton styleClass="linkButton" action="{!clearWelcomeFields}" value="Clear All"/></td>
             </tr>
         </table>
         {!errmsg}
