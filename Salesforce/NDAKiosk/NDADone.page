@@ -1,24 +1,18 @@
 <apex:page standardStylesheets="false" showHeader="false" action="{!ndaDonePageOpen}"
     sidebar="false" standardController="NDA_Signer__c" extensions="NDAKioskController">
     <apex:stylesheet value="{!URLFOR($Resource.ndaStyles, 'ndastyles.css')}" />
+     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1.5;" />
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta names="apple-mobile-web-app-status-bar-style" content="black" />
+     <link rel="apple-touch-icon" sizes="72x72" href="{!URLFOR($Resource.ndaStyles, 'icon_ipad.png')}" />
 
-  <h1>You Are Done!</h1>
-<!-- TODO GET PRINTING WORKING!
-  <p>Thanks for eSigning your NDA. We have sent you a copy. You can print it for your records by pressing the button below</p>
+  <h1>You have completed checking in.</h1>
+  <p>
+    Thanks for checking in. Please take a seat, the person you are here to see will be with you shortly. 
+    Please remember to check out at the end of your visit.
+  </p>
   <apex:form >
-      <table>
-          <tr class="top">
-              <td class="left"><apex:commandButton styleClass="greenButton" action="{!ndaPrint}" value="Print"/></td>
-              <td class="right"><apex:commandButton styleClass="linkButton" action="{!ndaRestart}" value="Start Over"/></td>
-          </tr>
-      </table>
-      <p>Other interesting things</p>
-      <h2><apex:outputLink value="https://github.com/docusign/DocuSign-eSignature-SDK/tree/master/Salesforce/">Get the Source Code</apex:outputLink></h2>
-      <h2><apex:outputLink value="http://www.docusign.com/developers-center/get-free-developer-account">Get a DocuSign Developer Sandbox</apex:outputLink></h2>
-      <h2><apex:outputLink value="http://www.docusign.com/p/APIGuide/APIGuide.htm">Learn more about DocuSign API</apex:outputLink></h2>
--->
-  <p>Thanks for eSigning your NDA!</p>
-  <apex:form >
+<!--
       <table>
           <tr class="top">
               <td></td>
@@ -29,8 +23,13 @@
       <h2><apex:outputLink value="https://github.com/docusign/DocuSign-eSignature-SDK/tree/master/Salesforce/">Get the Source Code</apex:outputLink></h2>
       <h2><apex:outputLink value="http://www.docusign.com/developers-center/get-free-developer-account">Get a DocuSign Developer Sandbox</apex:outputLink></h2>
       <h2><apex:outputLink value="http://www.docusign.com/p/APIGuide/APIGuide.htm">Learn more about DocuSign API</apex:outputLink></h2>
-      
+-->      
   </apex:form>
+  <script type="text/javascript">
+    var url = "http://docusign.devope.cs1.force.com/ndakiosk/";
+    setTimeout("location.href = '"+url+"';",7000);
+  </script>
+
 
 </apex:page>
 

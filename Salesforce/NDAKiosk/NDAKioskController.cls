@@ -18,7 +18,7 @@ public with sharing class NDAKioskController {
     private String accountId = 'c5d11f83-7e0c-4ded-81b2-3748cd2cedc6';
     private String userId = '2053268a-0b64-4002-88c2-7b61d28e3fbe';
     private String password = 'blahblah';
-    private String integratorsKey = 'DOCU-e02eab46-e7ca-48c5-95b5-cfeeb9c150d3';
+    private String integratorsKey = 'DOCU-d16287a6-426a-49c2-8d94-4482e4158f20';
     private String webServiceUrl = 'https://demo.docusign.net/api/3.0/dsapi.asmx';
     private String templateId = '05CFFEBB-E1EF-4C1B-A27D-65D6731FADCC';
 
@@ -269,7 +269,7 @@ public with sharing class NDAKioskController {
         mail.setSenderDisplayName('DocuSign Reception');
         mail.setUseSignature(false);
         
-        string emailSubject = signer.name + ' is here to see you ' + DateTime.now() + '.';
+        string emailSubject = signer.name + ' is here to see you ' + datetime.now().format() + '.';
         mail.setSubject(emailSubject);
         
         string emailBody = signer.here_to_see__c + '\n\n';
@@ -322,7 +322,7 @@ public with sharing class NDAKioskController {
         List<SelectOption> options = new List<SelectOption>{};
         options.add(new SelectOption('Business', 'I am here for a business meeting'));
         options.add(new SelectOption('Interview', 'I am here for a job interview'));
-        options.add(new SelectOption('Personal', 'I am here for persoal reasons'));
+        options.add(new SelectOption('Personal', 'I am here for personal reasons'));
         
         return options;
     }
@@ -463,18 +463,43 @@ public with sharing class NDAKioskController {
     // Perform actions on page open
     public void ndaDonePageOpen() {
         envelopeId = ApexPages.currentPage().getParameters().get('envelopeid');
+//        ndaPrint();
     } 
     
-    // This gets the PDF of the NDA and renders it   
-    public PageReference ndaPrint() {
+    // TODO: This creates a PDF of the name badge, then emails it to front desk  
+    public void ndaPrint() {
         PageReference ndaPrint = Page.ndaPrint;
         ndaPrint.getParameters().put('id', signer.id);
         ndaPrint.getParameters().put('envelopeId', envelopeId);
-        ndaPrint.setRedirect(true);
-        return ndaPrint;
+        Blob pdfBlob = ndaPrint.getContent();
+        
+        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
+        
+        string[] toAddresses = new string[] {'craig.smith@docusign.com'};
+        mail.setToAddresses(toAddresses);
+        mail.setSenderDisplayName('DocuSign Reception');
+        mail.setUseSignature(false);
+        
+        Messaging.EmailFileAttachment attachment = new Messaging.EmailFileAttachment();
+        attachment.setBody(pdfBlob);
+        attachment.setContentType('application/pdf');
+        attachment.setInline(true);
+        attachment.setFileName('Name Badge');
+        Messaging.Emailfileattachment[] attachments = new Messaging.Emailfileattachment[1];
+        attachments[0] = attachment;
+        
+        mail.setFileAttachments(attachments);
+        
+        string emailSubject = signer.name + ' name badge ' + datetime.now().format() + '.';
+        mail.setSubject(emailSubject);
+        
+        string emailBody = '';
+        mail.setPlainTextBody(emailBody);
+        
+        Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
     }
     
-//===== ndaViewPDF Control Methods =====
+/*===== ndaViewPDF Control Methods =====
     public void ndaViewPDFPageOpen() {
         envelopeId = ApexPages.currentPage().getParameters().get('envelopeid');
         DocuSignAPI_document.ApiServiceSOAP dsApiDoc = dsapi_document();
@@ -485,5 +510,5 @@ public with sharing class NDAKioskController {
             System.debug('Exception - ' + e );
             errMsg = 'Exception - ' + e;
         } 
-    }
+    } */
 }

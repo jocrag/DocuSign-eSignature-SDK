@@ -1,8 +1,11 @@
 <apex:page standardStylesheets="false" showHeader="false" action="{!ndaWelcomePageOpen}"
     sidebar="false" standardController="NDA_Signer__c" extensions="NDAKioskController">
+     <meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1.5;" />
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta names="apple-mobile-web-app-status-bar-style" content="black" />
+     <link rel="apple-touch-icon" sizes="72x72" href="{!URLFOR($Resource.ndaStyles, 'icon_ipad.png')}" />
     <apex:stylesheet value="{!URLFOR($Resource.ndaStyles, 'ndastyles.css')}" />
-    <style type="text/css">
-    </style>
+
 
     <h1>Welcome to DocuSign!</h1>
     <p>

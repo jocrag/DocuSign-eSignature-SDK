@@ -1,7 +1,9 @@
-<apex:page standardStylesheets="false" showHeader="false" 
+<apex:page renderAs="pdf" standardStylesheets="false" showHeader="false"
     sidebar="false" standardController="NDA_Signer__c" extensions="NDAKioskController">
-    <body>
-        <embed width="100%" height="100%" src="{!$Page.ndaViewPDF}" type="application/pdf" />
-    </body>
+    <div style="width: 88mm; height: 48mm; border: 2px solid black">
+        <div>Visitor</div>
+        <div>{!signer.Name}</div>
+        <div>To see: {!signer.Here_to_see__c}</div>
+    </div>
 </apex:page>
 
