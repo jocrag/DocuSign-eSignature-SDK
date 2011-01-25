@@ -5,8 +5,6 @@ public with sharing class NDAKioskController {
     public string selected_name {get; set;}
     public string tokenURL {get; set;}
     public string validateType {get; set;}
-    public string attachmentId {get; set;}
-    public string pdfBytes {get; set;}
     public string reasonVisit {get; set;}
     
     private string id;    // id of current signer object
@@ -15,12 +13,12 @@ public with sharing class NDAKioskController {
     private string[] recipients;
 
     // Demo
-    private String accountId = 'c5d11f83-7e0c-4ded-81b2-3748cd2cedc6';
-    private String userId = '2053268a-0b64-4002-88c2-7b61d28e3fbe';
-    private String password = 'blahblah';
-    private String integratorsKey = 'DOCU-d16287a6-426a-49c2-8d94-4482e4158f20';
+    private String accountId = 'TODO: replace with API Account ID';
+    private String userId = 'TODO: replace with API user id or email';
+    private String password = 'TODO: replace with login password';
+    private String integratorsKey = 'TODO: replace with API Activated Integrators Key';
     private String webServiceUrl = 'https://demo.docusign.net/api/3.0/dsapi.asmx';
-    private String templateId = '05CFFEBB-E1EF-4C1B-A27D-65D6731FADCC';
+    private String templateId = 'TODO: replace with GUID of NDA Template (from Docs)';
 
 
 //===== Ctor =====            
@@ -34,16 +32,12 @@ public with sharing class NDAKioskController {
             signer = [SELECT id, name, 
                     Email__c, 
                     validate_method__c, 
-                    Send_Signed_Copy__c,
                     selected_name__c,
                     Here_to_see__c,
-                    Purpose_of_visit__c,
-                    Company_Name__c,
-                    Phone__c
+                    Purpose_of_visit__c
                 FROM NDA_Signer__c
                 WHERE id = :id];
         }
-        
 
         //Set Authentication
         auth = '<DocuSignCredentials><Username>'+ userId 
@@ -51,11 +45,8 @@ public with sharing class NDAKioskController {
             + '</Password><IntegratorKey>' + integratorsKey 
             + '</IntegratorKey></DocuSignCredentials>';
         System.debug('Setting authentication to: ' + auth);
-            
 
-        // init error message
         errmsg = '';
-        
         tokenURL = '';
     }
 
@@ -104,23 +95,8 @@ public with sharing class NDAKioskController {
         roleAssignment.RoleName = recipient.RoleName;
         roleAssignment.RecipientID = recipient.ID;
         
-        // Create cc recipient if they want a copy in their email
+        // Create array of recipients
         DocuSignAPI.ArrayOfRecipient1 signers = new DocuSignAPI.ArrayOfRecipient1();
-/*        if (signer.Send_Signed_Copy__c == true) {
-            signers.Recipient = new DocuSignAPI.Recipient[2];
-            DocuSignAPI.Recipient recipCC = new DocuSignAPI.Recipient();
-            recipCC.ID = 2;
-            recipCC.Type_x = 'CarbonCopy';
-            recipCC.RoutingOrder = 2;
-            recipCC.Email = signer.Email__c;
-            recipCC.UserName = signer.selected_name__c;
-            recipCC.RoleName = 'Signer';
-            signers.Recipient[1] = recipCC;
-        }
-        else {
-            signers.Recipient = new DocuSignAPI.Recipient[1];
-        }
-*/
         signers.Recipient = new DocuSignAPI.Recipient[1];
         signers.Recipient[0] = recipient;
         
@@ -374,7 +350,6 @@ public with sharing class NDAKioskController {
         signer.Name = '';
         signer.Email__c = '';
         signer.Here_to_see__c = '';
-        signer.Send_Signed_Copy__c = false;
     }
 
 //===== ndaNotifyReception Control Methods =====
@@ -457,58 +432,14 @@ public with sharing class NDAKioskController {
 //===== ndaPop Control Methods =====
     // Perform actions on page open
     public void ndaPopPageOpen() {
+	// just putting this in to force class compiler
+	// to ask for the page
+	PageReference ndapop = Page.ndaPop;
     }
 
 //===== ndaDone Control Methods =====
     // Perform actions on page open
     public void ndaDonePageOpen() {
         envelopeId = ApexPages.currentPage().getParameters().get('envelopeid');
-//        ndaPrint();
     } 
-    
-    // TODO: This creates a PDF of the name badge, then emails it to front desk  
-    public void ndaPrint() {
-        PageReference ndaPrint = Page.ndaPrint;
-        ndaPrint.getParameters().put('id', signer.id);
-        ndaPrint.getParameters().put('envelopeId', envelopeId);
-        Blob pdfBlob = ndaPrint.getContent();
-        
-        Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-        
-        string[] toAddresses = new string[] {'craig.smith@docusign.com'};
-        mail.setToAddresses(toAddresses);
-        mail.setSenderDisplayName('DocuSign Reception');
-        mail.setUseSignature(false);
-        
-        Messaging.EmailFileAttachment attachment = new Messaging.EmailFileAttachment();
-        attachment.setBody(pdfBlob);
-        attachment.setContentType('application/pdf');
-        attachment.setInline(true);
-        attachment.setFileName('Name Badge');
-        Messaging.Emailfileattachment[] attachments = new Messaging.Emailfileattachment[1];
-        attachments[0] = attachment;
-        
-        mail.setFileAttachments(attachments);
-        
-        string emailSubject = signer.name + ' name badge ' + datetime.now().format() + '.';
-        mail.setSubject(emailSubject);
-        
-        string emailBody = '';
-        mail.setPlainTextBody(emailBody);
-        
-        Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mail });
-    }
-    
-/*===== ndaViewPDF Control Methods =====
-    public void ndaViewPDFPageOpen() {
-        envelopeId = ApexPages.currentPage().getParameters().get('envelopeid');
-        DocuSignAPI_document.ApiServiceSOAP dsApiDoc = dsapi_document();
-        try {
-            DocuSignAPI_document.EnvelopePDF envPDF = dsApiDoc.RequestPDF(envelopeId);
-            pdfBytes = envPDF.pdfBytes;
-        } catch ( CalloutException e) {
-            System.debug('Exception - ' + e );
-            errMsg = 'Exception - ' + e;
-        } 
-    } */
 }

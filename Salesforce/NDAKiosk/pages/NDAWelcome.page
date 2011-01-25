@@ -20,7 +20,6 @@
                     <h2>Your Name:</h2>
                 </td>
                 <td>
-<!--                    <h2>Your Phone Number:</h2>    -->
                 </td>
             </tr>
             <tr>
@@ -28,7 +27,6 @@
                     <apex:inputField styleClass="textBox" value="{!signer.Name}"/>
                 </td>
                 <td>
-<!--                    <apex:inputField styleClass="textBox" value="{!signer.Phone__c}" />    -->
                 </td>
             </tr>
             <tr>
@@ -44,10 +42,6 @@
                 <td></td>
             </tr>
         </table>
-<!--
-        <p>Would you like to receive a signed copy in your e-mail?</p>
-        <apex:inputCheckbox styleClass="checkBox" value="{!signer.Send_Signed_Copy__c}" />Yes
--->
         <p>How would you like to verify your identity?</p>
         <apex:selectRadio styleClass="radioButton" value="{!validateType}" layout="pageDirection">
             <apex:selectOptions value="{!validateItems}"/>
